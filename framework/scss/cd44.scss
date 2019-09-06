@@ -33,7 +33,6 @@
 // CD44 specific Libraries
 
 @import "_libraries/fonts"; 
-@import "_libraries/skins";
 
 /* ---------------------------------------------------*/
 /* ------ - 3 - KNACSS components             ------- */
@@ -56,3 +55,5 @@
 /* -------------------------------------------------- */
 
 @import "components/collapser";
+@import "components/card";
+@import "components/diaporama";
