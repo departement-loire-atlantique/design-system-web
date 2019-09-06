@@ -15,7 +15,6 @@ var gaps = require('postcss-gap-properties'); // gaps polyfill
 
 var jekyllDir = "docs/",
     scssFile = 'framework/scss/cd44.scss'
-    scssRGFile = 'framework/scss/reset_grid.scss'
     cssDest = 'dist/css',
     jsFiles = 'framework/js/**/*.js'
     jsDest  = 'dist/js';
@@ -60,14 +59,6 @@ gulp.task('build:css:cd44:prod', function () {
       .pipe(gulp.dest(cssDest));
   });
 
-gulp.task('build:css:reset_grid', function () {
-  return gulp.src(scssRGFile)
-    .pipe(sass())
-    .pipe(postcss(postCssPluginsProd))
-    .pipe(rename('reset_grid.min.css'))
-    .pipe(gulp.dest(cssDest));
-});
-
 gulp.task('build:js', function() {
   return gulp.src(jsFiles)
       .pipe(concat('cd44.js'))
@@ -93,7 +84,6 @@ gulp.task('build:jekyll', function(cb) {
 gulp.task('build:ds', gulp.parallel(
     'build:css:cd44:dev', 
     'build:css:cd44:prod', 
-    'build:css:reset_grid',
     'build:js',
     function() {
         return gulp.src(assetsFolders, {base: 'framework'})
