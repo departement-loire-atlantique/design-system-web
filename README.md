@@ -87,7 +87,19 @@ Puis simplement lancer `gulp serve` et ouvrir un http://localhost:4000
 
 Si le port 4000 est déja utilisé sur votre machine, vous pouvez le modifier en modifiant la ligne `PORT:4000` du fichier `.docker/.env`
 
+### Contribuer un nouveau composant
 
+Exemple pour le composant xxx
+
+1. Création le fichier xxx.md dans le dossier doc/components
+2. Créer le dossier xxx dans doc/_variations
+3. Créer les variations (fichier html) dans le dossier précédent + ne pas oublier de mettre (layout:pattern) en haut de fichier
+4. Regénérer le site (Temporairement : couper docker compose - ctrl+c - puis le relancer docker-compose up)
+5. Ouvrir le site localhost:4000 et le nouveau composant doit se trouver dans le menu
+6. Créer un fichier scss pour le composant dans le dosseir framework/scss/components
+7. Importer le précédent fichier dans framework/scss/cd44.scss
+8. A chaque sauvegarde, la css est automatiquement mise à jour dans le navigateur
+9. Dès que le composant est stable : ajouter les fichiers dans "le prochaine commit git" (bouton +) puis "commit" (taper un commentaire sur le champs texte du haut puis entrée) puis "push" (menu "..." > push... )
 
 ### Publier une nouvelle version
 
