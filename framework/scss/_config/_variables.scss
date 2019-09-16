@@ -10,7 +10,7 @@ $small          : 36em !default;     // 576px
 $medium         : 48em !default;     // 768px
 $large          : 62em !default;     // 992px
 $extra-large    : 75em !default;     // 1200px
-$cd44-max-size  : 85.375em !default; // 1366px
+$ds44-max-size  : 85.375em !default; // 1366px
 
 
 // ----------
@@ -78,10 +78,10 @@ $hyphens: false !default;
 $margin-bottom-base       : 1rem !default;
 $headings-margin-bottom   : $margin-bottom-base /2 !default;
 $paragraph-margin-bottom  : $margin-bottom-base !default;
-$cd44-container-vmargin   : $margin-bottom-base *5 !default;
+$ds44-container-vmargin   : $margin-bottom-base *5 !default;
 
-$cd44-container-hmargin  : 3.875em !default; // 62px for main container horizontal margins
-$cd44-portlet-vmargins   : 3rem !default;
+$ds44-container-hmargin  : 3.875em !default; // 62px for main container horizontal margins
+$ds44-portlet-vmargins   : 3rem !default;
 $spacer-tiny             : .5rem  !default;
 $spacer-tiny-plus        : .7rem !default;
 $spacer-small            : 1rem !default;
@@ -102,13 +102,13 @@ $spacer-ultra-large-plus : 20rem !default;
 
 // Color names
 $white                  : #fff !default;
-$cd44-gray              : #666 !default;
-$cd44-lightgray         : #F5F5F5 !default;
-$cd44-iceblue           : #99E6D1 !default;
-$cd44-yellow            : #FFD883 !default;
-$cd44-flat-overlay      : rgba(0, 0, 0, 0.4) !default;
+$ds44-gray              : #666 !default;
+$ds44-lightgray         : #F5F5F5 !default;
+$ds44-iceblue           : #99E6D1 !default;
+$ds44-yellow            : #FFD883 !default;
+$ds44-flat-overlay      : rgba(0, 0, 0, 0.4) !default;
 $black                  : #000 !default;
-.cd44-overlay { // JVI REM : need to find how to embed this gradient in a variable SASS
+.ds44-overlay { // JVI REM : need to find how to embed this gradient in a variable SASS
   /* Permalink to edit this gradient: https://colorzilla.com/gradient-editor/#ffffff+33,ffffff+33,000000+77&0+33,0.8+77,0.8+77 */
   background: -moz-linear-gradient(top, rgba(255,255,255,0) 33%, rgba(0,0,0,0.8) 77%); /* FF3.6-15 */
   background: -webkit-linear-gradient(top, rgba(255,255,255,0) 33%,rgba(0,0,0,0.8) 77%); /* Chrome10-25,Safari5.1-6 */
@@ -140,10 +140,10 @@ $gray-900 : #212529 !default;
 // Semantic colors
 $color-inverse            : $white !default;          // for CD44 texts over dark backgrounds
 $color-dark-text          : $black !default;          // for CD44 standard texts over light backgrounds
-$color-soft-text          : $cd44-gray !default;      // for CD44 light texts (legends, captions etc.)
-$cd44-mid-color           : $cd44-iceblue !default;   // for CD44 cold colored elements
-$cd44-light-color         : $cd44-yellow !default;    // for CD44 light colored elements
-$cd44-light-bg            : $cd44-lightgray !default; // for CD44 light backgrounds
+$color-soft-text          : $ds44-gray !default;      // for CD44 light texts (legends, captions etc.)
+$ds44-mid-color           : $ds44-iceblue !default;   // for CD44 cold colored elements
+$ds44-light-color         : $ds44-yellow !default;    // for CD44 light colored elements
+$ds44-light-bg            : $ds44-lightgray !default; // for CD44 light backgrounds
 
 $color-muted              : $gray-200 !default;       // Knacss colors for buttons (to be adapted later)
 $color-brand              : $green-500 !default;
@@ -158,7 +158,7 @@ $color-ghost              : transparent !default;
 $color-base      : $black !default;
 $background-base : $white !default;
 
-$forms-color     : $cd44-gray !default;
+$forms-color     : $ds44-gray !default;
 
 
 // ---------------

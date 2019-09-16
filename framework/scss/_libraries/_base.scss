@@ -42,24 +42,24 @@ body {
 
 /* Main structure */
 
-.cd44-container-fluid {
-  padding: 0 $cd44-container-hmargin;
+.ds44-container-fluid {
+  padding: 0 $ds44-container-hmargin;
 }
-.cd44-inner-container {
-  margin: $cd44-container-vmargin;
+.ds44-inner-container {
+  margin: $ds44-container-vmargin;
 }
 
 /* xx-large screens */
 /* ---------------- */
 
-@media (min-width: ($cd44-max-size+$cd44-container-hmargin) ) { // larger viewport + margin
+@media (min-width: ($ds44-max-size+$ds44-container-hmargin) ) { // larger viewport + margin
 
   /* layout for high resolution
      when viewport is too large, limits size of the inner container and centers content
      */
 
-  .cd44-inner-container {
-    width: $cd44-max-size;
+  .ds44-inner-container {
+    width: $ds44-max-size;
     margin: 0 auto;
   }
 
