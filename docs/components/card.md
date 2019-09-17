@@ -3,13 +3,13 @@ layout: component-detail
 group: components
 
 title: Cards
-alternative_title: Panel
-description: Bootstrap’s cards provide a flexible and extensible content container with multiple variants and options.
+alternative_title: Tuiles
+description: Une tuile propose un groupement de contenus cliquables menant à un contenu détaillé. Il s'agit d'un lien hypertexte graphique et multi-contenu.
 
 variations:
-- title: Image card
-  description: Class `.card-img-top` places an image to the top of the card. With `.card-text`, text can be added to the card. Text within `.card-text` can also be styled with the standard HTML tags.
-  pattern: cards/card-image.html
+- title: Vertical card with picture
+  description: Class `.card` gives the card context. `.card--verticalPicture` defines a vertical card with picture heading.
+  pattern: cards/card--verticalPicture.html
 - title: Agenda card
   description: Agenda
   pattern: cards/card-agenda.html
