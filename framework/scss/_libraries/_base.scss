@@ -140,12 +140,17 @@ h6, .h6-like {
   font-weight: $weight-medium;
 }
 
+.chapo, .chapo-like {
+  @include font-size(h6);
+  @if variable_exists(font-family-headings) and $font-family-headings != $font-family-base{
+    font-family: $font-family-headings;
+  }
+  background: transparent;
+  font-weight: $weight-bold;
+}
+
 /* Texts */
 
-.chapo {
-  font-weight: 700;
-  font-size: 1.7rem; // 17px
-}
 figcaption {
   font-size: 1.4rem;
   color: $color-soft-text;
