@@ -77,7 +77,7 @@ $hyphens: false !default;
 // Default margin-bottom
 $margin-bottom-base       : 1rem !default;
 $headings-margin-bottom   : $margin-bottom-base /2 !default;
-$paragraph-margin-bottom  : $margin-bottom-base !default;
+$paragraph-margin-bottom  : $margin-bottom-base /2 !default;
 $ds44-container-vmargin   : $margin-bottom-base *5 !default;
 
 $ds44-container-hmargin  : 3.875em !default; // 62px for main container horizontal margins
@@ -199,3 +199,15 @@ $burger-hover-background  : transparent !default;
 $burger-size              : 2.6rem !default;
 $burger-weight            : 5px !default; // size of stripes
 $burger-padding           : 0 !default;
+
+
+// ---------------
+// Animation zone
+// ---------------
+
+$ds44-timing-standard:  0.25s !default;
+$ds44-timing-slower:    0.35s !default;
+$ds44-timing-x2:        0.5s !default;
+$ds44-timing-x3:        0.75s !default;
+$ds44-timing-x4:        1s !default;
+$ds44-timing-faster:    0.15s !default;
