@@ -24,6 +24,7 @@
 .card__globalLink { 
 
     text-decoration: none;
+    color: #000000;
     
     &:focus,
     &:hover,
@@ -32,7 +33,7 @@
     }
 }
 .card__title {
-    margin: 0;
+    margin: $headings-margin-bottom 0;
     padding: 0;
 }
 

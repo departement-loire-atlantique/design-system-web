@@ -75,10 +75,11 @@ $hyphens: false !default;
 // ------------
 
 // Default margin-bottom
-$margin-bottom-base       : 1rem !default;
-$headings-margin-bottom   : $margin-bottom-base /2 !default;
-$paragraph-margin-bottom  : $margin-bottom-base /2 !default;
-$ds44-container-vmargin   : $margin-bottom-base *5 !default;
+$margin-bottom-base           : 1rem !default;
+$headings-margin-bottom       : $margin-bottom-base /2 !default;
+$paragraph-margin-bottom      : $margin-bottom-base /2 !default; // JVI REM : this variable doesn't seem to work correctly.
+$ds44-container-vmargin       : $margin-bottom-base *5 !default;
+$ds44-paragraph-margin-bottom : $margin-bottom-base /2 !default;
 
 $ds44-container-hmargin  : 3.875em !default; // 62px for main container horizontal margins
 $ds44-portlet-vmargins   : 3rem !default;
