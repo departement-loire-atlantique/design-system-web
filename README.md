@@ -90,6 +90,7 @@ Si le port 4000 est déja utilisé sur votre machine, vous pouvez le modifier en
 ### Contribuer un nouveau composant
 
 Exemple pour le composant xxx
+Avant de commencer à travailler, s'assurer que Docker tourne. Sinon, lancer Docker puis ouvrir un terminal et taper : cd .docker.
 
 1. Créer le fichier xxx.md dans le dossier doc/components
 2. Créer le dossier xxx dans doc/_variations
