@@ -4,19 +4,15 @@ group: components
 permalink: /components/page.html
 
 title: Page (Portail)
-description: Modèle de page générique. Les variations présentés ici sont rélisées avec la même page mais avec des configurations différentes. La page doit s'adapter automatiquement suivant les éléments JPlatform renseignés en référence. 
+description: Modèle de page. Les variations présentés ici sont réalisées avec la même page mais avec des configurations différentes. La page doit s'adapter automatiquement suivant les éléments JPlatform renseignés en référence. 
 
 variations:
-- title: Page générique 1 col droite
-  pattern: page/generique_coldroite.html
-- title: Page générique 1 col gauche
-  pattern: page/generique_colgauche.html
-- title: Page générique centre
-  pattern: page/generique_centre.html
+- title: Page type "Carrefour"
+  pattern: page/LA__EntryMenu.html
 ---
 ## Utilisation
 
-Page générique utilisée pour les pages intérieurs des sites.
+Page "carrefour" utilisée pour orienter l'utilisateur au sein d'une catégorie.
 
 Les élements se placent par rapport à leur référence.
 

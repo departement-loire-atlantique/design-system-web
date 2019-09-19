@@ -3,16 +3,16 @@ layout: component-detail
 group: components
 
 title: Gabarits
-description: Gabarits d'affichage.
+description: Gabarits d'affichage utilisés pour construire les différents modèles de templates.
 status: En cours
 
 variations:
-- title: Carte
-  description: Gabarit générique d'une carte
-  pattern: gabarits/card.html
-- title: Page
-  description: Gabarit générique d'une page
-  pattern: gabarits/page.html
+- title: Gabarit générique 1 col droite
+  pattern: gabarits/generique_coldroite.html
+- title: Gabarit générique 1 col gauche
+  pattern: gabarits/generique_colgauche.html
+- title: Gabarit générique centre
+  pattern: gabarits/generique_centre.html
 
 ---
 
