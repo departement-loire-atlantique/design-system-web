@@ -8,7 +8,7 @@ description: Modèles de structures génériques permettant de constituer les pa
 
 variations:
 - title: Template carrefour
-  pattern: templates/templateEntryMenu.html
+  pattern: templates/template-entryMenu.html
 - title: Template générique 1 col gauche
   pattern: templates/generique_colgauche.html
 - title: Template générique centre
@@ -17,7 +17,7 @@ variations:
 
 ## Utilisation
 
-Templates utilisés pour les pages intérieures des sites.
+Templates utilisés pour les pages intérieures des sites. Dans les templates multi-colonnes, les respirations (gouttières) sont obtenues en laissant une colonne vide entre les colonnes de contenu.
 
 Les élements se placent par rapport à leur référence.
 
