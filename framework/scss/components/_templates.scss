@@ -1,0 +1,8 @@
+.ds44-pageHeaderContainer {
+    position: relative;
+}
+.ds44-titleImageContainer {
+    position: absolute;
+    bottom: $ds44-components-vmargin;
+    z-index: 10;
+}
