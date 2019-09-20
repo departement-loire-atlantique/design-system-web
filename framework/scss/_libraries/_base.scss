@@ -126,6 +126,10 @@ h6, .h6-like {
   font-weight: $weight-medium;
 }
 
+.ds44-titleImage {
+  color: $ds44-light-color;
+}
+
 .chapo, .chapo-like {
   @include font-size(h6);
   @if variable_exists(font-family-headings) and $font-family-headings != $font-family-base{
@@ -136,6 +140,10 @@ h6, .h6-like {
 }
 
 /* Texts */
+
+.ds44-breadcrumb {
+  color: $ds44-light-color;
+}
 
 figcaption {
   font-size: 1.4rem;

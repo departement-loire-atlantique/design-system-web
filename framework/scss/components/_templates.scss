@@ -1,8 +1,19 @@
+// Layout global styles
+
 .ds44-pageHeaderContainer {
     position: relative;
 }
 .ds44-titleImageContainer {
     position: absolute;
-    bottom: $ds44-components-vmargin;
+    bottom: 0;
     z-index: 10;
+    padding: $ds44-padding-base;
+    width: 100%;
+    box-sizing: border-box;
+    background: url(../../assets/images/layer-apha-header.png) no-repeat left bottom;
+    background-size: cover;
+    min-height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
 }
