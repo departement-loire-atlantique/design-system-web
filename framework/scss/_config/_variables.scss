@@ -85,8 +85,9 @@ $ds44-components-vmargin      : $margin-bottom-base *3 !default;
 $ds44-container-hmargin  : 5.5% !default;
 $ds44-portlet-vmargins   : 3rem !default;
 
-
 $ds44-padding-base       : 3rem !default;
+$ds44-spacer-std         : 3rem !default;
+
 $spacer-tiny             : .5rem  !default;
 $spacer-tiny-plus        : .7rem !default;
 $spacer-small            : 1rem !default;
@@ -114,7 +115,7 @@ $ds44-Agenda            : #FFD883 !default;
 $ds44-flat-overlay      : rgba(0, 0, 0, 0.4) !default;
 $black                  : #000 !default;
 
-.ds44-overlay { // JVI REM : need to find how to embed this gradient in a variable SASS
+.ds44-gradient { // JVI REM : need to find how to embed this gradient in a variable SASS
   /* Permalink to edit this gradient: https://colorzilla.com/gradient-editor/#ffffff+33,ffffff+33,000000+77&0+33,0.8+77,0.8+77 */
   background: -moz-linear-gradient(top, rgba(255,255,255,0) 33%, rgba(0,0,0,0.8) 77%); /* FF3.6-15 */
   background: -webkit-linear-gradient(top, rgba(255,255,255,0) 33%,rgba(0,0,0,0.8) 77%); /* Chrome10-25,Safari5.1-6 */
@@ -147,7 +148,7 @@ $gray-900 : #212529 !default;
 $color-inverse            : $white !default;          // for CD44 texts over dark backgrounds
 $color-dark-text          : $black !default;          // for CD44 standard texts over light backgrounds
 $color-soft-text          : $ds44-gray !default;      // for CD44 light texts (legends, captions etc.)
-$ds44-mid-color           : $ds44-iceblue !default;   // for CD44 cold colored elements
+$ds44-mid-color           : $ds44-LA !default;        // for CD44 cold colored elements
 $ds44-light-color         : $white !default;          // for CD44 light colored elements
 $ds44-light-bg            : $ds44-lightgray !default; // for CD44 light backgrounds
 

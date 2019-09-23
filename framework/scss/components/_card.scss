@@ -1,6 +1,6 @@
 // Card common styles
 
-.card {
+.ds44-card {
 
     margin: 50px; // JVI REM : à supprimer une fois le composant terminé
 
@@ -16,15 +16,15 @@
     }
 
 }
-.card__section {
+.ds44-card__section {
     padding: 5px 1.4rem;
     background-color: $ds44-lightgray;
     font-size: 1.3rem; // 13px
 }
-.card--darkContext .card__section {
+.ds44-card--darkContext .ds44-card__section {
     background-color: $ds44-light-color;
 }
-.card__globalLink { 
+.ds44-card__globalLink { 
 
     text-decoration: none;
     color: #000000;
@@ -35,7 +35,7 @@
         text-decoration: none;
     }
 }
-.card__title {
+.ds44-card__title {
     margin: $headings-margin-bottom 0;
     padding: 0;
 }
