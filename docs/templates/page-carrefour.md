@@ -3,12 +3,14 @@ layout: component-detail
 group: templates
 permalink: /components/page.html
 
-title: Page (Portail)
-description: Modèle de page. Les variations présentés ici sont réalisées avec la même page mais avec des configurations différentes. La page doit s'adapter automatiquement suivant les éléments JPlatform renseignés en référence. 
+title: Page Carrefour
+description: Modèle de page sommaire basée sur le template "carrefour". 
 
 variations:
 - title: Page type "Carrefour"
   pattern: page/LA__EntryMenu.html
+- title: Template carrefour
+  pattern: templates/template-entryMenu.html
 ---
 ## Utilisation
 
