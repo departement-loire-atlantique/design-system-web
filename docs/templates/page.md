@@ -1,6 +1,6 @@
 ---
 layout: component-detail
-group: components
+group: templates
 permalink: /components/page.html
 
 title: Page (Portail)

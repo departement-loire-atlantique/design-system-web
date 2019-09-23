@@ -23,36 +23,36 @@ $font-family-headings  : "Blogger Sans", sans-serif;   // font for h1, h2.. h6
 $font-family-monospace : consolas, courier, monospace; // font for code and samples
 
 // Font sizes (1.6rem value is "16px" equivalent)
-$font-size-base : 1.5rem !default;
+$font-size-base : 1.5em !default;
 
 $font-sizes: (
   base: (
-    mobile  : 1.4rem,
+    mobile  : 1.4em,
     desktop : $font-size-base
   ),
   h1: (
-    mobile  : 3.4rem,
-    desktop : 6rem
+    mobile  : 3.4em,
+    desktop : 6em
   ),
   h2: (
-    mobile  : 2.8rem,
-    desktop : 3.8rem
+    mobile  : 2.8em,
+    desktop : 3.8em
   ),
   h3: (
-    mobile  : 2.1rem,
-    desktop : 2.8rem
+    mobile  : 2.1em,
+    desktop : 2.8em
   ),
   h4: (
-    mobile  : 1.9rem,
-    desktop : 2.4rem
+    mobile  : 1.9em,
+    desktop : 2.4em
   ),
   h5: (
-    mobile  : 1.8rem,
-    desktop : 2rem
+    mobile  : 1.8em,
+    desktop : 2em
   ),
   h6: (
-    mobile  : 1.7rem,
-    desktop : 1.7rem
+    mobile  : 1.7em,
+    desktop : 1.7em
   )
 ) !default;
 
@@ -109,8 +109,8 @@ $spacer-ultra-large-plus : 20rem !default;
 $white                  : #fff !default;
 $ds44-gray              : #666 !default;
 $ds44-lightgray         : #F5F5F5 !default;
-$ds44-iceblue           : #99E6D1 !default;
-$ds44-yellow            : #FFD883 !default; // JVI REM : rename this var with context (website name)
+$ds44-LA                : #99E6D1 !default;
+$ds44-Agenda            : #FFD883 !default;
 $ds44-flat-overlay      : rgba(0, 0, 0, 0.4) !default;
 $black                  : #000 !default;
 

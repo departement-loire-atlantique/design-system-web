@@ -2,16 +2,16 @@
 layout: component-detail
 group: components
 
-title: Cards
-alternative_title: Tuiles
+title: Tuiles
+alternative_title: Cards
 description: Une tuile propose un groupement de contenus cliquables menant à un contenu détaillé. Il s'agit d'un lien hypertexte graphique et multi-contenu.
 
 variations:
-- title: Vertical card with picture
-  description: Class `.card--verticalPicture` defines a vertical card with picture heading.
+- title: Tuile verticale avec image
+  description: La classe `.card--verticalPicture` définit une tuile verticale prévue pour recevoir une image en en-tête.
   pattern: cards/card--verticalPicture.html
 
-- title: Vertical card with picture on dark context
+- title: Tuile verticale avec image sur fond sombre
   description: Card modification for use over dark backgrounds. Add class `.card--invert` to fit card colors for dark sections.
   pattern: cards/card--verticalPicture--darkContext.html
 

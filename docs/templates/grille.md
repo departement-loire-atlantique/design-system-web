@@ -1,6 +1,6 @@
 ---
 layout: component-detail
-group: components
+group: templates
 permalink: /grille/grille.html
 
 title: Grille

@@ -10,8 +10,15 @@
 - title: Modificateurs style web
   group: utilities
   
+- title: Atomes
+  group: atoms
+  
 - title: Composants web
   group: components
+  
+- title: Pages
+  group: templates
+
 
 - title: Historique
   url: /historique/

@@ -1,6 +1,6 @@
 ---
 layout: component-detail
-group: components
+group: templates
 permalink: /components/templates.html
 
 title: Templates
