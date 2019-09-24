@@ -2,14 +2,14 @@
 layout: component-detail
 group: atoms
 
-title: Buttons
+title: Boutons
 description: Buttons express what action will occur when the user clicks or touches it. Buttons are used to initialize an action, either in the background or foreground of an experience.
 status: Complete
 
 variations:
 - title: Sizes
   description: Fancy larger or smaller buttons? Add `.btn-lg` or `.btn-sm` for additional sizes.
-  pattern: buttons/button-sizes.html
+  pattern: boutons/button-sizes.html
 ---
 
 ## General guidelines
