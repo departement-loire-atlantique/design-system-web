@@ -129,8 +129,23 @@ h6, .h6-like {
   font-weight: $weight-medium;
 }
 
-.ds44-titleImage {
-  color: $ds44-light-color;
+.ds44-mainTitle {
+
+}
+
+.ds44-titleContainer {
+  position: absolute;
+  bottom: 0;
+  z-index: 10;
+  padding: $ds44-padding-base;
+  width: 100%;
+  box-sizing: border-box;
+  background: linear-gradient(to bottom, rgba(0,0,0,0) 0%,rgba(0,0,0,0) 50%,rgba(0,0,0,1) 100%);
+  background-size: cover;
+  min-height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
 }
 
 .ds44-introduction, .ds44-introduction-like {
@@ -144,7 +159,7 @@ h6, .h6-like {
 
 /* Texts */
 
-.ds44-breadcrumb {
+.ds44-text--colorInvert {
   color: $ds44-light-color;
 }
 
