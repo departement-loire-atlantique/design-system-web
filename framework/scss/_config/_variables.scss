@@ -108,59 +108,20 @@ $spacer-ultra-large-plus : 20rem !default;
 
 // Color names
 $white                  : #fff !default;
+$black                  : #000 !default;
 $ds44-gray              : #666 !default;
 $ds44-lightgray         : #F5F5F5 !default;
 $ds44-LA                : #99E6D1 !default;
 $ds44-Agenda            : #FFD883 !default;
 $ds44-flat-overlay      : rgba(0, 0, 0, 0.4) !default;
-$black                  : #000 !default;
-
-.ds44-gradient { // JVI REM : need to find how to embed this gradient in a variable SASS
-  /* Permalink to edit this gradient: https://colorzilla.com/gradient-editor/#ffffff+33,ffffff+33,000000+77&0+33,0.8+77,0.8+77 */
-  background: -moz-linear-gradient(top, rgba(255,255,255,0) 33%, rgba(0,0,0,0.8) 77%); /* FF3.6-15 */
-  background: -webkit-linear-gradient(top, rgba(255,255,255,0) 33%,rgba(0,0,0,0.8) 77%); /* Chrome10-25,Safari5.1-6 */
-  background: linear-gradient(to bottom, rgba(255,255,255,0) 33%,rgba(0,0,0,0.8) 77%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
-  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#00ffffff', endColorstr='#cc000000',GradientType=0 ); /* IE6-9 */ 
-}
-
-// Knacss colors
-// JVI REM : need to be adapted or erased if no need of KNACSS buttons
-$blue-300   : #5BC0DE !default;
-$blue-500   : #0275D8 !default;
-$green-500  : #5CB85C !default;
-$orange-500 : #F0AD4E !default;
-$red-500    : #D9534F !default;
-
-// Gray scale colors
-// JVI REM : need to be adapted or erased if no need
-
-$gray-100 : #f8f9fa !default;
-$gray-200 : #e7e9ed !default;
-$gray-300 : #dee2e6 !default;
-$gray-400 : #ced4da !default;
-$gray-500 : #acb3c2 !default;
-$gray-600 : #727e96 !default;
-$gray-700 : #454d5d !default;
-$gray-800 : #333 !default;
-$gray-900 : #212529 !default;
 
 // Semantic colors
-$color-inverse            : $white !default;          // for CD44 texts over dark backgrounds
+$ds44-color-inverse       : $white !default;          // for CD44 texts over dark backgrounds
 $color-dark-text          : $black !default;          // for CD44 standard texts over light backgrounds
 $color-soft-text          : $ds44-gray !default;      // for CD44 light texts (legends, captions etc.)
 $ds44-mid-color           : $ds44-LA !default;        // for CD44 cold colored elements
 $ds44-light-color         : $white !default;          // for CD44 light colored elements
 $ds44-light-bg            : $ds44-lightgray !default; // for CD44 light backgrounds
-
-$color-muted              : $gray-200 !default;       // Knacss colors for buttons (to be adapted later)
-$color-brand              : $green-500 !default;
-$color-primary            : $blue-500 !default;
-$color-success            : $green-500 !default;
-$color-info               : $blue-300 !default;
-$color-warning            : $orange-500 !default;
-$color-danger             : $red-500 !default;
-$color-inverse            : $gray-800 !default;
-$color-ghost              : transparent !default;
 
 $color-base      : $black !default;
 $background-base : $white !default;
@@ -182,31 +143,6 @@ $link-list-decoration-hover : none !default; // used for menus or link groups
 
 // Global border-radius
 $border-radius: 0 !default;
-
-// Component: quotes
-$quote-color     : $gray-200 !default;
-
-
-// Components: buttons, badges, alerts color variants list
-// Convention is: name - background-color - color - border
-$variants-list: (
-  (primary,    $color-primary,    $white,    none),
-  (success,    $color-success,    $white,    none),
-  (info,       $color-info,       $black,    none),
-  (warning,    $color-warning,    $black,    none),
-  (danger,     $color-danger,     $white,    none),
-  (inverse,    $color-inverse,    $white,    none),
-  (ghost,      $color-ghost,      $white,    0 0 0 1px $white inset)
-) !default;
-
-// Component: nav burger button
-$burger-color             : $gray-800 !default;
-$burger-background        : transparent !default;
-$burger-hover-background  : transparent !default;
-$burger-size              : 2.6rem !default;
-$burger-weight            : 5px !default; // size of stripes
-$burger-padding           : 0 !default;
-
 
 // ---------------
 // Animation zone

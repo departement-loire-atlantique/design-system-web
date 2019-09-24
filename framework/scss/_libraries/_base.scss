@@ -129,10 +129,6 @@ h6, .h6-like {
   font-weight: $weight-medium;
 }
 
-.ds44-mainTitle {
-
-}
-
 .ds44-titleContainer {
   position: absolute;
   bottom: 0;
@@ -298,4 +294,11 @@ blockquote,
 figure {
   margin-left: 0;
   margin-right: 0;
+}
+
+
+/* DS44 specific utilities */
+
+.ds44-darkContext {
+  background-color: $ds44-color-inverse;
 }

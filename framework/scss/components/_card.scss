@@ -16,13 +16,12 @@
     }
 
 }
+.ds44-card--verticalPicture {
+    background-color: $ds44-lightgray;
+}
 .ds44-card__section {
     padding: 5px 1.4rem;
-    background-color: $ds44-lightgray;
     font-size: 1.3rem; // 13px
-}
-.ds44-card--darkContext .ds44-card__section {
-    background-color: $ds44-light-color;
 }
 .ds44-card__globalLink { 
 
