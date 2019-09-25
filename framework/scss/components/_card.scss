@@ -1,6 +1,7 @@
 // Card common styles
 
 .ds44-card {
+    background-color: $ds44-lightgray;
     transition-duration: $ds44-timing-standard;
     transition-property: box-shadow, transform;
     transition-timing-function: ease;
@@ -36,12 +37,6 @@
 }
 
 // Horizontal card specific styles
-
-.ds44-card--horizontal {
-}
-
-.ds44-card--horizontal .ds44-card__imgContainer {
-}
 
 .ds44-card__section--horizontal {
     padding:  $ds44-padding-small $ds44-padding-box;

@@ -8,15 +8,15 @@ description: Une tuile propose un groupement de contenus cliquables menant à un
 
 variations:
 - title: Tuile verticale avec image
-  description: La classe `.card--verticalPicture` définit une tuile verticale prévue pour recevoir une image en en-tête.
+  description: La classe `.ds44-card--verticalPicture` définit une tuile verticale prévue pour recevoir une image en en-tête.
   pattern: cards/card--verticalPicture.html
 
-- title: Tuile verticale avec image sur fond sombre
-  description: Une variante de la tuile verticale pour fonds sombres. Ajouter ou supprimer la classe `.ds44-darkContext` pour gèrer le background de la tuile.
+- title: Tuile sur fond sombre
+  description: Pour adapter une tuile sur un fond gris ou sombre, ajouter la classe `.ds44-darkContext` pour modifier le background de la tuile.
   pattern: cards/card--verticalPicture--darkContext.html
 
 - title: Tuile horizontale
-  description: Ce type de tuile est défini par la classe `.card--horizontal`. Elle présente (en général) une image sur la gauche et un contenu à droite.
+  description: Ce type de tuile est défini par la classe `.ds44-card--horizontal`. Elle présente (en général) une image sur la gauche et un contenu à droite.
   pattern: cards/card--horizontal.html
 ---
 
@@ -26,7 +26,8 @@ Lorem ipsum
 
 ## Documentation
 
-La classe `.card` donne le contexte de tuile à la section.
+La classe `.ds44-card` donne le contexte de tuile à la section.
+Dans le cadre de la charte du site Loire-Atlantique, les tuiles placées dans des contextes sombres ou gris doivent recevoir la classe `.ds44-darkContext` à côté de la classe `.card` afin d'adapter leur couleur de fond.
 
 ## FAQ
 
