@@ -15,17 +15,9 @@ variations:
   description: Une variante de la tuile verticale pour fonds sombres. Ajouter la classe `.ds44-darkContext` gèrer le background de la tuile.
   pattern: cards/card--verticalPicture--darkContext.html
 
-- title: Text card
-  description: Card titles are used by adding `.card-title` to a \<h\*\> tag. In the same way, links are added and placed next to each other by adding `.card-link` to an \<a\> tag. Subtitles are used by adding a `.card-subtitle` to a \<h\*\> tag. If the `.card-title` and the `.card-subtitle` items are placed in a `.card-body` item, the card title and subtitle are aligned nicely.
-  pattern: cards/card-text.html
-
-- title: Header and footer
-  description: Add an optional header and/or footer within a card.
-  pattern: cards/card-header-footer.html
-
-- title: Aide
-  description: Vue liste des aides
-  pattern: cards/card-help.html
+- title: Tuile horizontale
+  description: Ce type de tuile est défini par la classe `.card--horizontal`. Elle présente (en général) une image sur la gauche et un contenu à droite.
+  pattern: cards/card--horizontal.html
 ---
 
 ## Usage
@@ -34,8 +26,7 @@ Lorem ipsum
 
 ## Documentation
 
-Class `.card` gives the card context.
-Use `.card--invert` class aside `.card` when card contect is dark. This will change the background color of the card content.
+La classe `.card` donne le contexte de tuile à la section.
 
 ## FAQ
 

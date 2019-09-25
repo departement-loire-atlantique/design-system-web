@@ -1,9 +1,6 @@
 // Card common styles
 
 .ds44-card {
-
-    margin: 50px; // JVI REM : à supprimer une fois le composant terminé
-
     transition-duration: $ds44-timing-standard;
     transition-property: box-shadow, transform;
     transition-timing-function: ease;
@@ -14,7 +11,6 @@
         box-shadow: 0px 13px 20px 0px rgba(0,0,0,0.35);
         transform: scale(1.01); 
     }
-
 }
 .ds44-card--verticalPicture {
     background-color: $ds44-lightgray;
@@ -24,7 +20,6 @@
     font-size: 1.3rem; // 13px
 }
 .ds44-card__globalLink { 
-
     text-decoration: none;
     color: #000000;
     
@@ -39,6 +34,10 @@
     padding: 0;
 }
 
-// Vertical card with picture specific styles
+// Horizontal card specific styles
 
+.ds44-card--horizontal {
+}
 
+.ds44-card--horizontal .ds44-card__imgContainer {
+}
