@@ -297,11 +297,16 @@ figure {
 }
 
 
-/* DS44 specific utilities */
+/* --------------
+  --- DS44 specific utilities 
+  --- */
 
 .ds44-darkContext {
   background-color: $ds44-color-inverse;
 }
+
+/* Flex utils */
+
 .ds44-flex-container {
   display: flex;
   flex-direction: row;
@@ -309,4 +314,7 @@ figure {
 .ds44-flex-container--column {
   display: flex;
   flex-direction: column;
+}
+.ds44-flex-align-center {  
+  align-items: center;
 }

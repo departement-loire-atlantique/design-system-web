@@ -16,7 +16,7 @@
     background-color: $ds44-lightgray;
 }
 .ds44-card__section {
-    padding: 5px 1.4rem;
+    padding:  $ds44-padding-small $ds44-padding-box;
 }
 .ds44-card__globalLink { 
     text-decoration: none;
@@ -41,4 +41,8 @@
 }
 
 .ds44-card--horizontal .ds44-card__imgContainer {
+}
+
+.ds44-card__section--horizontal {
+    padding:  $ds44-padding-small $ds44-padding-box;
 }

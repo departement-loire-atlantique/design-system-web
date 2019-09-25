@@ -12,7 +12,7 @@ variations:
   pattern: cards/card--verticalPicture.html
 
 - title: Tuile verticale avec image sur fond sombre
-  description: Une variante de la tuile verticale pour fonds sombres. Ajouter la classe `.ds44-darkContext` gèrer le background de la tuile.
+  description: Une variante de la tuile verticale pour fonds sombres. Ajouter ou supprimer la classe `.ds44-darkContext` pour gèrer le background de la tuile.
   pattern: cards/card--verticalPicture--darkContext.html
 
 - title: Tuile horizontale

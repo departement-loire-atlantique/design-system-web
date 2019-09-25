@@ -27,32 +27,32 @@ $ds44-font-size-base : 1.6em !default;
 
 $ds44-font-sizes: (
   base: (
-    mobile  : .875em, // 14px
+    mobile  : 1.4em, // 14px
     desktop : $ds44-font-size-base // 16px
   ),
   h1: (
-    mobile  : 2.125em, // 34px
-    desktop : 3.75em   // 60px
+    mobile  : 2.4285714em,  // 34px
+    desktop : 3.75em        // 60px
   ),
   h2: (
-    mobile  : 1.75em,  // 28px
-    desktop : 2.375em  // 38px
+    mobile  : 2em,          // 28px
+    desktop : 2.375em       // 38px
   ),
   h3: (
-    mobile  : 1.3125em,// 21px
-    desktop : 1.75em   // 28px
+    mobile  : 1.5em,        // 21px
+    desktop : 1.75em        // 28px
   ),
   h4: (
-    mobile  : 1.1875em,// 19px
-    desktop : 1.5em    // 24px
+    mobile  : 1.3571428em,  // 19px
+    desktop : 1.5em         // 24px
   ),
   h5: (
-    mobile  : 1.125em, // 18px
-    desktop : 1.25em   // 20px
+    mobile  : 1.2857142em,  // 18px
+    desktop : 1.25em        // 20px
   ),
   h6: (
-    mobile  : 1.0625em,// 17px
-    desktop : 1.0625em // 17px
+    mobile  : 1.2142857em,  // 17px
+    desktop : 1.0625em      // 17px
   )
 ) !default;
 
@@ -60,16 +60,21 @@ $ds44-font-sizes: (
 $ds44-line-height-base : 1.4 !default;
 
 
+// Margins & paddings
+
 $ds44-margin-bottom-base      : 3rem !default;
 $ds44-container-vmargin       : $ds44-margin-bottom-base *5 !default;
-$ds44-paragraph-margin-bottom : $ds44-margin-bottom-base /3 !default;
+$ds44-paragraph-margin-bottom : $ds44-margin-bottom-base /6 !default;
 $ds44-components-vmargin      : $ds44-margin-bottom-base *3 !default;
 
 $ds44-container-hmargin  : 5.5% !default;
 $ds44-portlet-vmargins   : 3rem !default;
 
-$ds44-padding-base       : 3rem !default;
 $ds44-spacer-std         : 3rem !default;
+$ds44-padding-base       : 3rem !default;
+$ds44-padding-box        : $ds44-padding-base /2 !default;
+$ds44-padding-medium     : $ds44-padding-base /3 !default;
+$ds44-padding-small      : $ds44-padding-base /6 !default;
 
 
 // ----------
