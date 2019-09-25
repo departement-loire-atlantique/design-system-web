@@ -5,12 +5,12 @@
 // ----------------
 
 // Best practice is Mobile First: (min-width: $breakpoint)
-$tiny           : 30em !default;     // 480px
-$small          : 36em !default;     // 576px
-$medium         : 48em !default;     // 768px
-$large          : 62em !default;     // 992px
-$extra-large    : 75em !default;     // 1200px
-$ds44-max-size  : 85.375em !default; // 1366px
+$ds44-tiny           : 30em !default;     // 480px
+$ds44-small          : 36em !default;     // 576px
+$ds44-medium         : 48em !default;     // 768px
+$ds44-large          : 62em !default;     // 992px
+$ds44-extra-large    : 75em !default;     // 1200px
+$ds44-max-size       : 85.375em !default; // 1366px
 
 
 // ----------
@@ -18,17 +18,17 @@ $ds44-max-size  : 85.375em !default; // 1366px
 // ----------
 
 // Font families
-$font-family-base      : Muli, sans-serif;             // texts standard font
-$font-family-headings  : "Blogger Sans", sans-serif;   // font for h1, h2.. h6
-$font-family-monospace : consolas, courier, monospace; // font for code and samples
+$ds44-font-family-base      : Muli, sans-serif;             // texts standard font
+$ds44-font-family-headings  : "Blogger Sans", sans-serif;   // font for h1, h2.. h6
+$ds44-font-family-monospace : consolas, courier, monospace; // font for code and samples
 
 // Font sizes (1.6rem value is "16px" equivalent)
-$font-size-base : 1.5em !default;
+$ds44-font-size-base : 1rem !default;
 
-$font-sizes: (
+$ds44-font-sizes: (
   base: (
-    mobile  : 1.4em,
-    desktop : $font-size-base
+    mobile  : $ds44-font-size-base,
+    desktop : $ds44-font-size-base
   ),
   h1: (
     mobile  : 3.4em,
@@ -56,31 +56,11 @@ $font-sizes: (
   )
 ) !default;
 
-// Line heights
-$line-height-xs   : 1 !default;
-$line-height-s    : 1.2 !default;
-$line-height-base : 1.5 !default;
-$line-height-l    : 1.7 !default;
 
-// Font weights
-$weight-regular : normal !default;
-$weight-medium  : 500 !default;
-$weight-bold    : bold !default;
-
-// Activate hyphenation on small screens
-$hyphens: false !default;
-
-// ------------
-// Spacing zone
-// ------------
-
-// Default margin-bottom
-$margin-bottom-base           : 1rem !default;
-$headings-margin-bottom       : $margin-bottom-base /2 !default;
-$paragraph-margin-bottom      : $margin-bottom-base /2 !default;
-$ds44-container-vmargin       : $margin-bottom-base *5 !default;
-$ds44-paragraph-margin-bottom : $margin-bottom-base /2 !default;
-$ds44-components-vmargin      : $margin-bottom-base *3 !default;
+$ds44-margin-bottom-base      : 3rem !default;
+$ds44-container-vmargin       : $ds44-margin-bottom-base *5 !default;
+$ds44-paragraph-margin-bottom : $ds44-margin-bottom-base /2 !default;
+$ds44-components-vmargin      : $ds44-margin-bottom-base *3 !default;
 
 $ds44-container-hmargin  : 5.5% !default;
 $ds44-portlet-vmargins   : 3rem !default;
@@ -88,45 +68,32 @@ $ds44-portlet-vmargins   : 3rem !default;
 $ds44-padding-base       : 3rem !default;
 $ds44-spacer-std         : 3rem !default;
 
-$spacer-tiny             : .5rem  !default;
-$spacer-tiny-plus        : .7rem !default;
-$spacer-small            : 1rem !default;
-$spacer-small-plus       : 1.5rem !default;
-$spacer-medium           : 2rem !default;
-$spacer-medium-plus      : 3rem !default;
-$spacer-large            : 4rem !default;
-$spacer-large-plus       : 6rem !default;
-$spacer-extra-large      : 8rem !default;
-$spacer-extra-large-plus : 12rem !default;
-$spacer-ultra-large      : 16rem !default;
-$spacer-ultra-large-plus : 20rem !default;
-
 
 // ----------
 // Color zone
 // ----------
 
-// Color names
-$white                  : #fff !default;
-$black                  : #000 !default;
+$ds44-light             : #FFF !default;
+$ds44-dark              : #000 !default;
 $ds44-gray              : #666 !default;
 $ds44-lightgray         : #F5F5F5 !default;
 $ds44-LA                : #99E6D1 !default;
 $ds44-Agenda            : #FFD883 !default;
 $ds44-flat-overlay      : rgba(0, 0, 0, 0.4) !default;
+$ds44-color-soft-text   : #333;
 
 // Semantic colors
-$ds44-color-inverse       : $white !default;          // for CD44 texts over dark backgrounds
-$color-dark-text          : $black !default;          // for CD44 standard texts over light backgrounds
-$color-soft-text          : $ds44-gray !default;      // for CD44 light texts (legends, captions etc.)
+$ds44-color-inverse       : $ds44-light !default;          // for CD44 texts over dark backgrounds
+$ds44-color-dark-text     : $ds44-dark !default;          // for CD44 standard texts over light backgrounds
+$ds44-color-soft-text     : $ds44-gray !default;      // for CD44 light texts (legends, captions etc.)
 $ds44-mid-color           : $ds44-LA !default;        // for CD44 cold colored elements
-$ds44-light-color         : $white !default;          // for CD44 light colored elements
+$ds44-light-color         : $ds44-light !default;          // for CD44 light colored elements
 $ds44-light-bg            : $ds44-lightgray !default; // for CD44 light backgrounds
 
-$color-base      : $black !default;
-$background-base : $white !default;
+$ds44-color-base      : $ds44-dark !default;
+$ds44-background-base : $ds44-light !default;
 
-$forms-color     : $ds44-gray !default;
+$ds44-forms-color     : $ds44-gray !default;
 
 
 // ---------------
@@ -134,15 +101,15 @@ $forms-color     : $ds44-gray !default;
 // ---------------
 
 // Component: links
-$link-color                 : $black !default;
-$link-color-hover           : /*darken($link-color, 15%) !default;*/ $link-color !default;
-$link-decoration            : underline !default;
-$link-decoration-hover      : none !default;
-$link-list-decoration       : none !default; // used for menus or link groups
-$link-list-decoration-hover : none !default; // used for menus or link groups
+$ds44-link-color                 : $ds44-dark !default;
+$ds44-link-color-hover           : /*darken($link-color, 15%) !default;*/ $ds44-link-color !default;
+$ds44-link-decoration            : underline !default;
+$ds44-link-decoration-hover      : none !default;
+$ds44-link-list-decoration       : none !default; // used for menus or link groups
+$ds44-link-list-decoration-hover : none !default; // used for menus or link groups
 
 // Global border-radius
-$border-radius: 0 !default;
+$ds44-border-radius: 0 !default;
 
 // ---------------
 // Animation zone

@@ -17,7 +17,6 @@
 }
 .ds44-card__section {
     padding: 5px 1.4rem;
-    font-size: 1.3rem; // 13px
 }
 .ds44-card__globalLink { 
     text-decoration: none;
@@ -32,6 +31,7 @@
 .ds44-card__title {
     margin: $headings-margin-bottom 0;
     padding: 0;
+    font-size: 1.7em;
 }
 
 // Horizontal card specific styles
