@@ -2,7 +2,7 @@
 layout: component-detail
 group: components
 
-title: Form
+title: Formulaires
 description: Rules for form usage inheried from [Carbon Design System](http://carbondesignsystem.com/components/form/usage)
 
 ---
