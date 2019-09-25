@@ -33,12 +33,11 @@ html {
 
 body {
   margin: 0;
-  @include font-size(base);
-  background-color: $background-base;
-  color: $color-base;
-  font-family: $font-family-base;
-  line-height: $line-height-base;
-  font-size: 1rem;
+  @include ds44-font-sizes(base);
+  background-color: $ds44-background-base;
+  color: $ds44-color-base;
+  font-family: $ds44-font-family-base;
+  line-height: $ds44-line-height-base;
 }
 
 /* Main structure */
@@ -58,13 +57,13 @@ body {
 /* Links */
 a {
   color: $link-color;
-  text-decoration: $link-decoration;
+  text-decoration: $ds44-link-decoration;
   transition: color .4s ease-out;
 
   &:focus,
   &:hover,
   &:active {
-    color: $link-color-hover;
+    color: $ds44-link-color-hover;
     text-decoration: $link-decoration-hover;
   }
 }

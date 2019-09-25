@@ -1,0 +1,56 @@
+// font-size Mixin
+// compiles to font-size mobile + font-size desktop on small-plus devices
+// ex. h2 { @include font-size(h2);}
+@mixin ds44-font-sizes($elem) {
+  $q: map-get($ds44-font-sizes, $elem);
+  $mob: map-get($q, "mobile");
+  $desk: map-get($q, "desktop");
+  font-size: $mob;
+  @include respond-to("small-up") {
+    font-size: $desk;
+  }
+}
+
+// Grid Mixin
+// arguments are : columns number, gutter, min-breakpoint
+// ex. .ingrid { @include grid(4, 1rem, 640px); }
+@mixin grid($number:1, $gutter:0, $breakpoint:0) {
+  @media (min-width: $breakpoint) {
+    display: grid;
+    grid-template-columns: repeat($number, 1fr);
+    grid-gap: $gutter;
+  }
+}
+
+// Additionnal "utility" breakpoints aliases
+// ex. @include respond-to("medium-up") {...}
+$bp-aliases: (
+  'tiny'   : (max-width: #{$ds44-tiny - 1}),
+  'small'  : (max-width: #{$ds44-small - 1}),
+  'medium' : (max-width: #{$ds44-medium - 1}),
+  'large' : (max-width: #{$ds44-large - 1}),
+  'extra-large'  : (max-width: #{$ds44-extra-large - 1}),
+  'tiny-up'   : (min-width: #{$ds44-tiny}),
+  'small-up'  : (min-width: #{$ds44-small}),
+  'medium-up' : (min-width: #{$ds44-medium}),
+  'large-up' : (min-width: #{$ds44-large}),
+  'extra-large-up' : (min-width: #{$ds44-extra-large}),
+  'retina' : (min-resolution: 2dppx)
+);
+
+// Source : https://www.sitepoint.com/managing-responsive-breakpoints-sass/
+@mixin respond-to($name) {
+  // If the key exists in the map
+  @if map-has-key($bp-aliases, $name) {
+    // Prints a media query based on the value
+    @media #{inspect(map-get($bp-aliases, $name))} {
+      @content;
+    }
+  }
+
+  // If the key doesn't exist in the map
+  @else {
+    @warn "Unfortunately, no value could be retrieved from `#{$breakpoint}`. "
+        + "Please make sure it is defined in `$breakpoints` map.";
+  }
+}
