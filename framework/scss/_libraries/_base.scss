@@ -312,7 +312,10 @@ figure {
 /* Thematic colors */
 
 .ds44-theme--LA {
-  background-color: $ds44-LA;
+  background-color: $ds44-LA-color;
+}
+.ds44-theme--Agenda {
+  background-color: $ds44-agenda-color;
 }
 
 /* Flex utils */
