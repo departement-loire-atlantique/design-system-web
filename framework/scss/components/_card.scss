@@ -35,9 +35,13 @@
     font-size: 1.0625em; // 17px
     font-weight: bold;
 }
+.ds44-card__file {
+    @include ds44-font-sizes(smallText);
+    color: $ds44-gray;
+}
 
 // Horizontal card specific styles
 
 .ds44-card__section--horizontal {
-    padding:  $ds44-padding-small $ds44-padding-box;
+    padding:  $ds44-padding-small $ds44-padding-base;
 }

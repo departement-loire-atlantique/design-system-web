@@ -53,6 +53,10 @@ $ds44-font-sizes: (
   h6: (
     mobile  : 1.2142857em,  // 17px
     desktop : 1.0625em      // 17px
+  ),
+  smallText: (
+    mobile  : .8571428em,   // 12px
+    desktop : .875em        // 14px
   )
 ) !default;
 
@@ -91,17 +95,17 @@ $ds44-flat-overlay      : rgba(0, 0, 0, 0.4) !default;
 $ds44-color-soft-text   : #333 !default;
 
 // Semantic colors
-$ds44-color-inverse       : $ds44-light !default;     // for CD44 texts over dark backgrounds
-$ds44-color-dark-text     : $ds44-dark !default;      // for CD44 standard texts over light backgrounds
-$ds44-color-soft-text     : $ds44-gray !default;      // for CD44 light texts (legends, captions etc.)
-$ds44-mid-color           : $ds44-LA !default;        // for CD44 cold colored elements
-$ds44-light-color         : $ds44-light !default;     // for CD44 light colored elements
-$ds44-light-bg            : $ds44-lightgray !default; // for CD44 light backgrounds
+$ds44-color-inverse     : $ds44-light !default;     // for CD44 texts over dark backgrounds
+$ds44-color-dark-text   : $ds44-dark !default;      // for CD44 standard texts over light backgrounds
+$ds44-color-soft-text   : $ds44-gray !default;      // for CD44 light texts (legends, captions etc.)
+$ds44-mid-color         : $ds44-LA !default;        // for CD44 cold colored elements
+$ds44-light-color       : $ds44-light !default;     // for CD44 light colored elements
+$ds44-light-bg          : $ds44-lightgray !default; // for CD44 light backgrounds
 
-$ds44-color-base      : $ds44-dark !default;
-$ds44-background-base : $ds44-light !default;
+$ds44-color-base        : $ds44-dark !default;
+$ds44-background-base   : $ds44-light !default;
 
-$ds44-forms-color     : $ds44-gray !default;
+$ds44-forms-color       : $ds44-gray !default;
 
 
 // ---------------

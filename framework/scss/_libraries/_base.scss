@@ -70,7 +70,7 @@ a {
 
 /* Headings */
 h1, .h1-like {
-  @include font-size(h1);
+  @include ds44-font-sizes(h1);
   @if variable_exists(ds44-font-family-headings) and $ds44-font-family-headings != $ds44-font-family-base{
     font-family: $ds44-font-family-headings;
   }
@@ -78,7 +78,7 @@ h1, .h1-like {
 }
 
 h2, .h2-like {
-  @include font-size(h2);
+  @include ds44-font-sizes(h2);
   @if variable_exists(ds44-font-family-headings) and $ds44-font-family-headings != $ds44-font-family-base{
     font-family: $ds44-font-family-headings;
   }
@@ -94,7 +94,7 @@ h2, .h2-like {
 }
 
 h3, .h3-like {
-  @include font-size(h3);
+  @include ds44-font-sizes(h3);
   @if variable_exists(ds44-font-family-headings) and $ds44-font-family-headings != $ds44-font-family-base{
     font-family: $ds44-font-family-headings;
   }
@@ -103,7 +103,7 @@ h3, .h3-like {
 }
 
 h4, .h4-like {
-  @include font-size(h4);
+  @include ds44-font-sizes(h4);
   @if variable_exists(ds44-font-family-headings) and $ds44-font-family-headings != $ds44-font-family-base{
     font-family: $ds44-font-family-headings;
   }
@@ -112,7 +112,7 @@ h4, .h4-like {
 }
 
 h5, .h5-like {
-  @include font-size(h5);
+  @include ds44-font-sizes(h5);
   @if variable_exists(ds44-font-family-headings) and $ds44-font-family-headings != $ds44-font-family-base{
     font-family: $ds44-font-family-headings;
   }
@@ -121,12 +121,16 @@ h5, .h5-like {
 }
 
 h6, .h6-like {
-  @include font-size(h6);
+  @include ds44-font-sizes(h6);
   @if variable_exists(ds44-font-family-headings) and $ds44-font-family-headings != $ds44-font-family-base{
     font-family: $ds44-font-family-headings;
   }
   background: transparent;
   font-weight: $weight-medium;
+}
+
+.ds44-smallText {
+  @include ds44-font-sizes(smallText);
 }
 
 .ds44-titleContainer {
