@@ -31,7 +31,8 @@
 .ds44-card__title {
     margin: $headings-margin-bottom 0;
     padding: 0;
-    font-size: 1.7em;
+    font-size: 1.0625em; // 17px
+    font-weight: bold;
 }
 
 // Horizontal card specific styles

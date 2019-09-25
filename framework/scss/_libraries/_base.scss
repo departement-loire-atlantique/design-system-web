@@ -56,7 +56,7 @@ body {
 
 /* Links */
 a {
-  color: $link-color;
+  color: $ds44-link-color;
   text-decoration: $ds44-link-decoration;
   transition: color .4s ease-out;
 
@@ -64,23 +64,23 @@ a {
   &:hover,
   &:active {
     color: $ds44-link-color-hover;
-    text-decoration: $link-decoration-hover;
+    text-decoration: $ds44-link-decoration-hover;
   }
 }
 
 /* Headings */
 h1, .h1-like {
   @include font-size(h1);
-  @if variable_exists(font-family-headings) and $font-family-headings != $font-family-base{
-    font-family: $font-family-headings;
+  @if variable_exists(ds44-font-family-headings) and $ds44-font-family-headings != $ds44-font-family-base{
+    font-family: $ds44-font-family-headings;
   }
   font-weight: $weight-medium;
 }
 
 h2, .h2-like {
   @include font-size(h2);
-  @if variable_exists(font-family-headings) and $font-family-headings != $font-family-base{
-    font-family: $font-family-headings;
+  @if variable_exists(ds44-font-family-headings) and $ds44-font-family-headings != $ds44-font-family-base{
+    font-family: $ds44-font-family-headings;
   }
   font-weight: $weight-bold;
   padding: 0 1.5rem;
@@ -95,8 +95,8 @@ h2, .h2-like {
 
 h3, .h3-like {
   @include font-size(h3);
-  @if variable_exists(font-family-headings) and $font-family-headings != $font-family-base{
-    font-family: $font-family-headings;
+  @if variable_exists(ds44-font-family-headings) and $ds44-font-family-headings != $ds44-font-family-base{
+    font-family: $ds44-font-family-headings;
   }
   background: transparent;
   font-weight: $weight-bold;
@@ -104,8 +104,8 @@ h3, .h3-like {
 
 h4, .h4-like {
   @include font-size(h4);
-  @if variable_exists(font-family-headings) and $font-family-headings != $font-family-base{
-    font-family: $font-family-headings;
+  @if variable_exists(ds44-font-family-headings) and $ds44-font-family-headings != $ds44-font-family-base{
+    font-family: $ds44-font-family-headings;
   }
   background: transparent;
   font-weight: $weight-medium;
@@ -113,8 +113,8 @@ h4, .h4-like {
 
 h5, .h5-like {
   @include font-size(h5);
-  @if variable_exists(font-family-headings) and $font-family-headings != $font-family-base{
-    font-family: $font-family-headings;
+  @if variable_exists(ds44-font-family-headings) and $ds44-font-family-headings != $ds44-font-family-base{
+    font-family: $ds44-font-family-headings;
   }
   background: transparent;
   font-weight: $weight-medium;
@@ -122,8 +122,8 @@ h5, .h5-like {
 
 h6, .h6-like {
   @include font-size(h6);
-  @if variable_exists(font-family-headings) and $font-family-headings != $font-family-base{
-    font-family: $font-family-headings;
+  @if variable_exists(ds44-font-family-headings) and $ds44-font-family-headings != $ds44-font-family-base{
+    font-family: $ds44-font-family-headings;
   }
   background: transparent;
   font-weight: $weight-medium;
