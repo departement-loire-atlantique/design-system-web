@@ -64,9 +64,9 @@
     height: 2rem;
     margin-left: 0.5rem;
     margin-top: -0.4rem; // magic number for Chrome vertical align middle issue
-    background: url('../images/icons.svg') no-repeat 0 -120px;
+    background: url('../images/icons.svg') no-repeat -20px -120px;
     opacity: 0;
-    transition: opacity $ds44-timing-faster ease-in;
+    transition: all $ds44-timing-faster ease-in;
   }
 
   &:hover, &:focus, &:active {
@@ -74,6 +74,7 @@
 
     &::after {
       opacity: 1;
+      background-position-x: 0;
     }
 
   }
