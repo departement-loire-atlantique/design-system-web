@@ -18,7 +18,7 @@
 /* row-like button */
 .ds44-collapser_button {
   font-size: 1.6rem;
-  padding: 1.5rem 3.5rem 1.5rem 1.5rem;
+  padding: $ds44-padding-box 3.5rem $ds44-padding-box $ds44-padding-box ;
   display: block;
   width: 100%;
   text-align: left;
@@ -34,7 +34,7 @@
     position: absolute;
     right: 1.5rem;
     top: 1.5rem;
-    transition: all 0.4s ease-in-out;
+    transition: all $ds44-timing-slower ease-in-out;
   }
 
   &.show::after {
@@ -44,47 +44,54 @@
 }
 
 .ds44-collapser_content {
-  padding: 0 3rem;
   background-color: $ds44-light-bg;
   transition: all 0.4s ease-in-out;
   max-height: 0;
   overflow: hidden;
 }
-.show + .ds44-collapser_content {
-  padding: 3rem; // this value is connected to the component JS, changing it results in changing the calculated value of the height in ds44-collapser.js
-}
 
-.ds44-collapser_content--links {
+.ds44-collapser_content--link,
+.ds44-collapser_content--buttonLike {
   text-decoration: $ds44-link-list-decoration;
-  padding: 2rem 2rem 2rem 0;
+  margin: $ds44-padding-large;
   display: block;
+
+  &::after {
+    content: "";
+    display: inline-block;
+    vertical-align: middle;
+    width: 2rem;
+    height: 2rem;
+    margin-left: 0.5rem;
+    margin-top: -0.4rem; // magic number for Chrome vertical align middle issue
+    background: url('../images/icons.svg') no-repeat 0 -120px;
+    opacity: 0;
+    transition: opacity $ds44-timing-faster ease-in;
+  }
 
   &:hover, &:focus, &:active {
     text-decoration: $ds44-link-list-decoration-hover;
 
     &::after {
-      content: "";
-      display: inline-block;
-      vertical-align: middle;
-      width: 2rem;
-      height: 2rem;
-      margin-left: 0.5rem;
-      margin-top: -0.4rem; // magic number for Chrome vertical align middle issue
-      background: url('../images/icons.svg') no-repeat 0 -120px;
+      opacity: 1;
     }
+
   }
+}
+.ds44-collapser_content--buttonLike {
+  margin: $ds44-padding-box;
 }
 
 @media (max-width: $small) {
   
   .ds44-collapser_content {
-    padding: 0 1rem;
+    padding: 0 $ds44-padding-medium;
   }
   .show + .ds44-collapser_content {
-    padding: 1rem;
+    padding: $ds44-padding-medium;
   }
-  .ds44-collapser_content--links {
-    padding: 1rem 2rem 1rem 0;
+  .ds44-collapser_content--link {
+    padding: $ds44-padding-medium $ds44-padding-large;
   }
 
 }
