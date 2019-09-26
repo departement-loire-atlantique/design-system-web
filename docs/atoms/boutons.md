@@ -8,7 +8,7 @@ status: Complete
 
 variations:
 - title: Sizes
-  description: Boutons standard. Pour la version large, ajouter la classe `large`.
+  description: Boutons standards. Pour la version large, ajouter la classe `large`.
   pattern: boutons/buttons.html
 ---
 
