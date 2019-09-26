@@ -1,0 +1,64 @@
+/*
+* CD44 Design System - Forms
+*/
+
+.ds44-form__container {
+    position: relative;
+    margin: $ds44-padding-medium 0;
+}
+
+.ds44-form__label {
+    @include ds44-font-sizes(smallText);
+    position: absolute;
+    z-index: 10;
+    color: $ds44-color-soft-text;
+    transition: all $ds44-timing-standard ease-in-out;
+}
+
+.ds44-form__inpStd {
+    @include ds44-font-sizes(smallText);
+    border-radius: $ds44-border-radius;
+    padding: $ds44-padding-medium $ds44-padding-box;
+    border: 1px solid $ds44-gray;
+    min-width: 100%;
+
+    & + .ds44-form__label {
+        top: $ds44-padding-medium;
+        left: $ds44-padding-box;
+    }
+
+    &:focus + .ds44-form__label,
+    &:valid + .ds44-form__label {
+        font-size: .8125em; // 13px instead of 14px
+        top: -$ds44-padding-medium*2;
+        left: 0;
+    }
+
+    &:disabled {
+        background-color: $ds44-light-bg;
+    }
+}
+
+.ds44-form__inpLarge {
+    @include ds44-font-sizes(smallText);
+    border-radius: $ds44-border-radius;
+    padding: $ds44-padding-large;
+    border: 1px solid $ds44-gray;
+    min-width: 100%;
+
+    & + .ds44-form__label {
+        top: $ds44-padding-large;
+        left: $ds44-padding-large;
+    }
+
+    &:focus + .ds44-form__label,
+    &:valid + .ds44-form__label {
+        font-size: .8125em; // 13px instead of 14px
+        top: -$ds44-padding-large;
+        left: 0;
+    }
+
+    &:disabled {
+        background-color: $ds44-light-bg;
+    }
+}

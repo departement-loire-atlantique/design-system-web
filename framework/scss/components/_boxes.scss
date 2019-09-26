@@ -3,5 +3,8 @@
 .ds44-box-heading {
     @include ds44-font-sizes(h4);
     font-weight: $weight-medium;
-    border: 2px solid red;
+}
+
+.ds44-innerBoxContainer {
+    padding: $ds44-padding-xlarge;
 }
