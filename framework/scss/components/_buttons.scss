@@ -2,18 +2,57 @@
 * CD44 Design System - Buttons
 */
 
-.ds44-btn {
-    @include ds44-font-sizes(h6);
+.ds44-btnStd {
+    @include ds44-font-sizes(bodySize);
     border-radius: $ds44-border-radius;
-    padding: $ds44-padding-large;
     border: 1px solid $ds44-dark;
     font-weight: bold;
     background-color: $ds44-light-color;
+    transition: all ease-in-out $ds44-timing-faster;
     
     &:focus,
     &:hover,
     &:active {
         box-shadow: 0px 13px 20px 0px rgba(0,0,0,0.35);
         transform: scale(1.01); 
+        border: 1px solid $ds44-darkgray;
+    }
+}
+
+.ds44-btnStd--medium {
+    padding: $ds44-padding-box;
+}
+
+.ds44-btnStd--large {
+    padding: $ds44-padding-large;
+}
+
+.ds44-btn--invert {
+    background-color: $ds44-background-dark;
+    color: $ds44-color-inverse;
+
+    &:focus,
+    &:hover,
+    &:active {
+        background-color: $ds44-hover-dark;
+    }
+}
+
+.ds44-btnStd--LA {
+    background-color: $ds44-LA-color;
+
+    &:focus,
+    &:hover,
+    &:active {
+        background-color: $ds44-hover-LA;
+    }
+}
+.ds44-btnStd--Agenda {
+    background-color: $ds44-Agenda-color;
+    
+    &:focus,
+    &:hover,
+    &:active {
+        background-color: $ds44-hover-Agenda;
     }
 }

@@ -27,8 +27,8 @@ $ds44-font-size-base : 1.6em !default;
 
 $ds44-font-sizes: (
   base: (
-    mobile  : 1.4em, // 14px
-    desktop : $ds44-font-size-base // 16px
+    mobile  : 0.875em,              // 14px
+    desktop : $ds44-font-size-base  // 16px
   ),
   h1: (
     mobile  : 2.4285714em,  // 34px
@@ -57,6 +57,10 @@ $ds44-font-sizes: (
   smallText: (
     mobile  : .8571428em,   // 12px
     desktop : .875em        // 14px
+  ),
+  bodySize: (
+    mobile  : 1em,          // 14px
+    desktop : 1em           // 16px
   )
 ) !default;
 
@@ -70,6 +74,8 @@ $ds44-margin-bottom-base      : 3rem !default;
 $ds44-container-vmargin       : $ds44-margin-bottom-base *5 !default;
 $ds44-paragraph-margin-bottom : $ds44-margin-bottom-base /6 !default;
 $ds44-components-vmargin      : $ds44-margin-bottom-base *3 !default;
+$ds44-small-vmargin           : $ds44-margin-bottom-base /3 !default;
+$ds44-medium-vmargin          : $ds44-margin-bottom-base /2 !default;
 
 $ds44-container-hmargin  : 5.5% !default;
 $ds44-portlet-vmargins   : 3rem !default;
@@ -91,25 +97,29 @@ $ds44-light             : #FFF !default;
 $ds44-dark              : #000 !default;
 $ds44-gray              : #666 !default;
 $ds44-lightgray         : #F5F5F5 !default;
+$ds44-darkgray          : #333 !default;
 $ds44-LA                : #99E6D1 !default;
 $ds44-Agenda            : #FFD883 !default;
 $ds44-flat-overlay      : rgba(0, 0, 0, 0.4) !default;
-$ds44-color-soft-text   : #333 !default;
 
 // Semantic colors
+$ds44-color-base        : $ds44-dark !default;
 $ds44-color-inverse     : $ds44-light !default;     // for CD44 texts over dark backgrounds
 $ds44-color-dark-text   : $ds44-dark !default;      // for CD44 standard texts over light backgrounds
 $ds44-color-soft-text   : $ds44-gray !default;      // for CD44 light texts (legends, captions etc.)
 $ds44-LA-color          : $ds44-LA !default;        // for CD44 colored elements
-$ds44-agenda-color      : $ds44-Agenda !default;    // for CD44 agenda website
+$ds44-Agenda-color      : $ds44-Agenda !default;    // for CD44 agenda website
 $ds44-light-color       : $ds44-light !default;     // for CD44 light colored elements
-$ds44-light-bg          : $ds44-lightgray !default; // for CD44 light backgrounds
+$ds44-forms-color       : $ds44-gray !default;
+$ds44-graytext-color    : $ds44-darkgray !default;
 
-$ds44-color-base        : $ds44-dark !default;
 $ds44-background-base   : $ds44-light !default;
 $ds44-background-dark   : $ds44-dark !default;
+$ds44-light-bg          : $ds44-lightgray !default; // for CD44 light backgrounds
 
-$ds44-forms-color       : $ds44-gray !default;
+$ds44-hover-dark        : transparentize(rgba($ds44-background-dark, 1), 0.25) !default;
+$ds44-hover-LA          : transparentize(rgba($ds44-LA, 1), 0.25) !default;    
+$ds44-hover-Agenda      : transparentize(rgba($ds44-Agenda, 1), 0.25) !default; 
 
 
 // ---------------

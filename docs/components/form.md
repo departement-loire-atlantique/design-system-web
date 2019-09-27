@@ -12,6 +12,9 @@ variations:
 - title: Champ large
   description: Champ élargi
   pattern: forms/form--input-large.html
+- title: Champ avec label extérieur
+  description: Type de champ comprenant un label au-dessus et un placeholder à l'intérieur
+  pattern: forms/form--input-externalLabel.html
 ---
 
 ## Usage

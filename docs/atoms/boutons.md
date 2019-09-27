@@ -8,7 +8,7 @@ status: Complete
 
 variations:
 - title: Sizes
-  description: Boutons standards. Pour la version large, ajouter la classe `large`.
+  description: Pour la version large, ajouter la classe `ds44-btnStd--large`. Pour la version sombre, ajouter la classe `ds44-btn--inverted`.
   pattern: boutons/buttons.html
 ---
 
