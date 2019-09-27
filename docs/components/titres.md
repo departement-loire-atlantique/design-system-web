@@ -7,6 +7,9 @@ description: Titres de page (titre principal).
 status: Complete
 
 variations:
+- title: Hiérarchie des titres
+  description: Tous les titres utilisables
+  pattern: titres/all-titles.html
 - title: Titre de page avec image
   description: Titre principal d'une page avec image d'en-tête
   pattern: titres/main-title.html
