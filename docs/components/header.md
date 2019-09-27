@@ -2,8 +2,8 @@
 layout: component-detail
 group: components
 
-title: Header - bandeau principal de la page
-description: Zone de bandeau
+title: Bandeau
+description: Header
 status: En cours
 
 variations:
