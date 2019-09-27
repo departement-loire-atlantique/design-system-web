@@ -1,0 +1,10 @@
+/*
+* CD44 Design System - contextual variables for Loire Atlantique
+*/
+
+// ----------------
+// ---- COLORS ----
+// ----------------
+
+$ds44-contextual-color : #99E6D1 !default;
+$ds44-contextual-hover : transparentize(rgba($ds44-contextual-color, 1), 0.25) !default;

@@ -2,6 +2,26 @@
 * CD44 Design System - Forms
 */
 
+ /**
+  * Input placeholder text base styles
+  */
+  ::-webkit-input-placeholder {
+    color: $ds44-color-soft-text;
+    font-family: $ds44-font-family-base;
+ } 
+ ::-moz-placeholder {  /* Firefox 19+ */
+    color: $ds44-color-soft-text;
+    font-family: $ds44-font-family-base;
+ } 
+ :-ms-input-placeholder {
+    color: $ds44-color-soft-text;
+    font-family: $ds44-font-family-base;
+ }
+ 
+ /**
+  * Input basics
+  */
+
 .ds44-form__container {
     position: relative;
     margin: $ds44-padding-medium 0;

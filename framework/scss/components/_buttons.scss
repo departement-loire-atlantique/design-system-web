@@ -38,6 +38,16 @@
     }
 }
 
+.ds44-btnStd--contextual {
+    background-color: $ds44-contextual-color;
+
+    &:focus,
+    &:hover,
+    &:active {
+        background-color: $ds44-contextual-hover;
+    }
+}
+
 .ds44-btnStd--LA {
     background-color: $ds44-LA-color;
 

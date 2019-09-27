@@ -4,21 +4,24 @@ group: atoms
 
 title: Boutons
 description: Boutons d'action
-status: Complete
+status: En cours
 
 variations:
-- title: Sizes
+- title: Boutons standards
   description: Pour la version large, ajouter la classe `ds44-btnStd--large`. Pour la version sombre, ajouter la classe `ds44-btn--inverted`.
   pattern: boutons/buttons.html
 ---
 
+
 ## General guidelines
+
+Utiliser le bouton contextuel avec la classe `.ds44-btnStd--contextual` pour créer des boutons aux couleurs du site.
 
 Buttons are used primarily on action items. Some examples include Add, Save, Delete, Sign up. Do not use Buttons as navigational elements. Instead, use Links because it takes the user to a new page and is not associated with an action. Each page may have one to two primary buttons. Any remaining calls-to-action are represented as secondary buttons.
 
 ## Usage
 
-| Button type     | Purpose                                                                          |
+| Type de bouton  | Objet                                                                            |
 | --------------- |----------------------------------------------------------------------------------|
 | Primary         | For the principle call to action on the page.                                    |
 | Secondary       | When an action does not require primary dominance on the page.                   |
