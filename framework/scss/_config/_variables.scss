@@ -27,40 +27,40 @@ $ds44-font-size-base : 1.6em !default;
 
 $ds44-font-sizes: (
   base: (
-    mobile  : 1.4em,                // 14px
+    mobile  : 1.5em,                // 15px
     desktop : $ds44-font-size-base  // 16px
   ),
   h1: (
-    mobile  : 2.4285714em,  // 34px
-    desktop : 3.75em        // 60px
+    mobile  : 2.666666667em,  // 34px
+    desktop : 3.75em          // 60px
   ),
   h2: (
-    mobile  : 2em,          // 28px
-    desktop : 2.375em       // 38px
+    mobile  : 1.8666666667em, // 28px
+    desktop : 2.375em         // 38px
   ),
   h3: (
-    mobile  : 1.5em,        // 21px
-    desktop : 1.75em        // 28px
+    mobile  : 1.4em,          // 21px
+    desktop : 1.75em          // 28px
   ),
   h4: (
-    mobile  : 1.3571428em,  // 19px
-    desktop : 1.5em         // 24px
+    mobile  : 1.2666666667em, // 19px
+    desktop : 1.5em           // 24px
   ),
   h5: (
-    mobile  : 1.2857142em,  // 18px
-    desktop : 1.25em        // 20px
+    mobile  : 1.2em,          // 18px
+    desktop : 1.25em          // 20px
   ),
   h6: (
-    mobile  : 1.2142857em,  // 17px
-    desktop : 1.0625em      // 17px
+    mobile  : 1.1333333333em, // 17px
+    desktop : 1.0625em        // 17px
   ),
   smallText: (
-    mobile  : .8571428em,   // 12px
-    desktop : .875em        // 14px
+    mobile  : .8em,           // 12px
+    desktop : .875em          // 14px
   ),
   bodySize: (
-    mobile  : 1em,          // 14px
-    desktop : 1em           // 16px
+    mobile  : 1em,            // 15px
+    desktop : 1em             // 16px
   )
 ) !default;
 
