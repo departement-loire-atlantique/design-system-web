@@ -1,0 +1,21 @@
+/*
+* CD44 Design System - Headers
+*/
+
+.ds44-logo {
+    max-width: 122px;
+    display: block;
+}
+
+
+/* tiny screens */
+/* ------------ */
+
+@media (max-width: $small - 1) {
+
+    .ds44-logo {
+        max-width: 80px;
+    }
+
+
+}
