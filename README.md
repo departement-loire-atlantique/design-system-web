@@ -114,6 +114,13 @@ npm version major
 
 A chaque commit dans la branche master, le site est automatiquement mis à jour si la compilation du projet (documentation et framework) sont en succès.
 
+### Force la regénération des icones à la font
+
+```bash
+cd .docker
+docker-compose exec site gulp build:glyphicons
+```
+
 ## License
 
 Ce projet est basé sur un [modèle de site design-system](https://github.com/lundegaard/design-system-template) et est rendu sous public en open source suivant les termes de la licence [MIT License](https://opensource.org/licenses/MIT).
