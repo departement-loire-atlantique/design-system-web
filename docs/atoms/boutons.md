@@ -10,6 +10,10 @@ variations:
 - title: Boutons standards
   description: Pour la version large, ajouter la classe `ds44-btnStd--large`. Pour la version sombre, ajouter la classe `ds44-btn--inverted`.
   pattern: boutons/buttons.html
+
+- title: Boutons avec icône et texte
+  description: Ces boutons paramétrables ont des tailles et des aspects variables. Ils sont toujours construits autour d'une icône et d'un texte.
+  pattern: boutons/buttons-icotext.html
 ---
 
 
