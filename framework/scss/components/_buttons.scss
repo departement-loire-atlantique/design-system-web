@@ -63,24 +63,6 @@ button {
     }
 }
 
-.ds44-btnStd--LA {
-    background-color: $ds44-LA-color;
-
-    &:focus,
-    &:hover,
-    &:active {
-        background-color: $ds44-hover-LA;
-    }
-}
-.ds44-btnStd--Agenda {
-    background-color: $ds44-Agenda-color;
-    
-    &:focus,
-    &:hover,
-    &:active {
-        background-color: $ds44-hover-Agenda;
-    }
-}
 
 /* Icon buttons */
 
