@@ -1,1 +1,23 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20"><defs><style>.cls-1{fill:none;}</style></defs><title>user</title><g id="Calque_2" data-name="Calque 2"><g id="sources_non_vectorisés_" data-name="sources (non vectorisés)"><g id="user"><g id="Rectangle_956" data-name="Rectangle 956"><rect class="cls-1" width="20" height="20"/></g><g id="Groupe_2252" data-name="Groupe 2252"><g id="Tracé_1109" data-name="Tracé 1109"><path d="M17.76,19H3a.75.75,0,0,1-.75-.7A7.58,7.58,0,0,1,4.15,13a8.23,8.23,0,0,1,6.29-2.3h0c2.77,0,4.88.79,6.28,2.33a7.48,7.48,0,0,1,1.76,5.27A.75.75,0,0,1,17.76,19Zm-14-1.5H17A5.72,5.72,0,0,0,15.63,14a6.7,6.7,0,0,0-5.16-1.83h0A6.82,6.82,0,0,0,5.24,14,5.92,5.92,0,0,0,3.78,17.45Z"/></g><path d="M10.5,10a4,4,0,1,1,4-4A4,4,0,0,1,10.5,10Zm0-6.5A2.5,2.5,0,1,0,13,6,2.5,2.5,0,0,0,10.5,3.5Z"/></g></g></g></g></svg>
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Generator: Adobe Illustrator 23.1.1, SVG Export Plug-In . SVG Version: 6.00 Build 0)  -->
+<svg version="1.1" id="Calque_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+	 viewBox="0 0 480 480" style="enable-background:new 0 0 480 480;" xml:space="preserve">
+<title>user</title>
+<g>
+	<g id="ds44-icons">
+		<g id="user">
+			<g id="Groupe_2252">
+				<g id="Tracé_1109">
+					<path d="M421.6,448.7H58.2c-9.7,0-17.8-7.5-18.4-17.2c-0.2-3.1-4.4-75.6,46.6-130c35.3-37.6,87.4-56.7,154.8-56.7h0.8
+						c68,0.2,120.1,19.5,154.6,57.5c49.6,54.5,43.5,126.6,43.3,129.7C439.1,441.4,431.1,448.7,421.6,448.7z M77.2,411.7H403
+						c-1.4-20.7-7.9-56.6-33.9-84.9c-27.3-29.8-70.1-45-127.2-45.1h-0.7c-56.8,0-99.9,15.1-127.9,45
+						C86.6,355.2,79.2,390.9,77.2,411.7z"/>
+				</g>
+				<path d="M242.8,228.3c-54.4,0-98.5-44.1-98.5-98.5s44.1-98.5,98.5-98.5s98.5,44.1,98.5,98.5
+					C341.2,184.2,297.2,228.2,242.8,228.3z M242.8,68.3c-34,0-61.6,27.6-61.6,61.6s27.6,61.6,61.6,61.6s61.6-27.6,61.6-61.6
+					C304.3,95.8,276.8,68.3,242.8,68.3z"/>
+			</g>
+		</g>
+	</g>
+</g>
+</svg>

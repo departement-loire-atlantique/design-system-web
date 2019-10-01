@@ -1,1 +1,24 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20"><defs><style>.cls-1{fill:none;}</style></defs><title>burger</title><g id="Calque_2" data-name="Calque 2"><g id="sources_non_vectorisés_" data-name="sources (non vectorisés)"><g id="burger"><g id="Rectangle_923" data-name="Rectangle 923"><rect class="cls-1" width="20" height="20"/></g><g id="Ligne_244" data-name="Ligne 244"><path d="M17.36,6.75H3a.75.75,0,0,1,0-1.5H17.36a.75.75,0,0,1,0,1.5Z"/></g><g id="Ligne_245" data-name="Ligne 245"><path d="M17.36,10.85H3a.75.75,0,0,1,0-1.5H17.36a.75.75,0,0,1,0,1.5Z"/></g><g id="Ligne_246" data-name="Ligne 246"><path d="M17.36,15H3a.75.75,0,0,1,0-1.5H17.36a.75.75,0,0,1,0,1.5Z"/></g></g></g></g></svg>
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Generator: Adobe Illustrator 23.1.1, SVG Export Plug-In . SVG Version: 6.00 Build 0)  -->
+<svg version="1.1" id="Calque_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+	 viewBox="0 0 480 480" style="enable-background:new 0 0 480 480;" xml:space="preserve">
+<title>burger</title>
+<g>
+	<g id="ds44-icons">
+		<g id="burger">
+			<g id="Ligne_244">
+				<path d="M416.8,157.5H63.2c-10.2,0-18.5-8.3-18.5-18.5c0-10.2,8.3-18.5,18.5-18.5h353.6c10.2,0,18.5,8.3,18.5,18.5
+					C435.3,149.2,427,157.4,416.8,157.5C416.8,157.5,416.8,157.5,416.8,157.5z"/>
+			</g>
+			<g id="Ligne_245">
+				<path d="M416.8,258.5H63.2c-10.2,0-18.5-8.3-18.5-18.5c0-10.2,8.3-18.5,18.5-18.5h353.6c10.2,0,18.5,8.3,18.5,18.5
+					S427,258.5,416.8,258.5C416.8,258.5,416.8,258.5,416.8,258.5z"/>
+			</g>
+			<g id="Ligne_246">
+				<path d="M416.8,359.5H63.2c-10.2,0-18.5-8.3-18.5-18.5c0-10.2,8.3-18.5,18.5-18.5c0,0,0,0,0,0h353.6c10.2,0,18.5,8.3,18.5,18.5
+					C435.3,351.2,427,359.5,416.8,359.5C416.8,359.5,416.8,359.5,416.8,359.5z"/>
+			</g>
+		</g>
+	</g>
+</g>
+</svg>

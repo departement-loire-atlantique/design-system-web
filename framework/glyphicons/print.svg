@@ -1,1 +1,24 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 21.4 20.61"><defs><style>.cls-1{fill:none;}</style></defs><title>print</title><g id="Calque_2" data-name="Calque 2"><g id="sources_non_vectorisés_" data-name="sources (non vectorisés)"><g id="print"><g id="Rectangle_941" data-name="Rectangle 941"><path d="M14.93,6.16H6.54a.74.74,0,0,1-.75-.75V1.73A.75.75,0,0,1,6.54,1h8.39a.76.76,0,0,1,.75.75V5.41A.75.75,0,0,1,14.93,6.16ZM7.29,4.66h6.89V2.48H7.29Z"/></g><path d="M17.14,6.68H4.42A3.56,3.56,0,0,0,1,10.27V16a.76.76,0,0,0,.75.75H5.79v2.24a.75.75,0,0,0,.75.75h8.39a.76.76,0,0,0,.75-.75V16.71h4.18a.75.75,0,0,0,.75-.75V10.28A3.56,3.56,0,0,0,17.14,6.68Zm-3,11.51H7.29V13h6.89Zm4.93-3H15.68V12.29a.75.75,0,0,0-.75-.75H6.54a.74.74,0,0,0-.75.75v2.93H2.46v-5a2.05,2.05,0,0,1,2-2.08H17.12a2,2,0,0,1,2,2.09Z"/><g id="Ellipse_35" data-name="Ellipse 35"><ellipse cx="16.9" cy="10.45" rx="0.96" ry="0.93"/></g><g id="Rectangle_943" data-name="Rectangle 943"><rect class="cls-1" width="21.4" height="20.61"/></g></g></g></g></svg>
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Generator: Adobe Illustrator 23.1.1, SVG Export Plug-In . SVG Version: 6.00 Build 0)  -->
+<svg version="1.1" id="Calque_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+	 viewBox="0 0 480 480" style="enable-background:new 0 0 480 480;" xml:space="preserve">
+<title>print</title>
+<g>
+	<g id="ds44-icons">
+		<g id="print">
+			<g id="Rectangle_941">
+				<path d="M337.9,141.4H139.5c-9.8,0-17.7-7.9-17.7-17.7V36.6c0-9.8,7.9-17.7,17.7-17.7h198.3c9.8,0,17.7,7.9,17.7,17.7v87.1
+					C355.6,133.5,347.7,141.4,337.9,141.4z M157.3,105.9h162.9V54.4H157.3L157.3,105.9z"/>
+			</g>
+			<path d="M390.1,153.7H89.5C43.6,154.8,6.9,193,7.7,238.5v134.4c0,9.8,7.9,17.7,17.7,17.7H121c0.3,0,0.5-0.2,0.8-0.2v52.9
+				c0,9.8,7.9,17.7,17.7,17.7h198.3c9.8,0,17.7-7.9,17.7-17.7v-52.7h98.9c9.8,0,17.7-7.9,17.7-17.7V238.8
+				C473,193,436.4,154.8,390.1,153.7z M320.2,425.6H157.3V303.9h162.9V425.6z M436.8,355.2h-81.2v-69c0-9.8-7.9-17.7-17.7-17.7
+				H139.5c-9.8,0-17.7,7.9-17.7,17.7v69.2c-0.3,0-0.5-0.2-0.8-0.2H43.2v-117c-0.5-26.4,20.7-48.4,46.7-49.1h299.8
+				c26.6,0.7,47.6,22.8,47.1,49.4L436.8,355.2z"/>
+			<g id="Ellipse_35">
+				<ellipse cx="384.4" cy="242.7" rx="22.6" ry="21.9"/>
+			</g>
+		</g>
+	</g>
+</g>
+</svg>

@@ -1,1 +1,22 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20"><defs><style>.cls-1{fill:none;}</style></defs><title>position</title><g id="Calque_2" data-name="Calque 2"><g id="sources_non_vectorisés_" data-name="sources (non vectorisés)"><g id="position"><circle cx="10" cy="10" r="2.5"/><path d="M18,9.25H16.45a6.5,6.5,0,0,0-5.7-5.7V2a.75.75,0,0,0-1.5,0V3.55a6.49,6.49,0,0,0-5.7,5.7H2a.75.75,0,0,0,0,1.5H3.55a6.49,6.49,0,0,0,5.7,5.7V18a.75.75,0,0,0,1.5,0V16.45a6.5,6.5,0,0,0,5.7-5.7H18a.75.75,0,0,0,0-1.5ZM10,15a5,5,0,1,1,5-5A5,5,0,0,1,10,15Z"/><g id="Rectangle_934" data-name="Rectangle 934"><rect class="cls-1" width="20" height="20"/></g></g></g></g></svg>
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Generator: Adobe Illustrator 23.1.1, SVG Export Plug-In . SVG Version: 6.00 Build 0)  -->
+<svg version="1.1" id="Calque_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+	 viewBox="0 0 480 480" style="enable-background:new 0 0 480 480;" xml:space="preserve">
+<title>position</title>
+<g>
+	<g id="ds44-icons">
+		<g id="position">
+			<g>
+				<path d="M240,178.4c-34,0-61.6,27.6-61.6,61.6s27.6,61.6,61.6,61.6c34,0,61.6-27.6,61.6-61.6c0,0,0,0,0,0
+					C301.7,206,274.1,178.4,240,178.4z"/>
+				<path d="M437,221.5h-38.1c-8.7-73.7-66.8-131.8-140.4-140.4V43c0-10.2-8.3-18.5-18.5-18.5c-10.2,0-18.5,8.3-18.5,18.5v38.1
+					c-73.7,8.7-131.8,66.8-140.4,140.4H43c-10.2,0-18.5,8.3-18.5,18.5c0,10.2,8.3,18.5,18.5,18.5h38.1
+					c8.7,73.7,66.8,131.8,140.4,140.4V437c0,10.2,8.3,18.5,18.5,18.5c10.2,0,18.5-8.3,18.5-18.5v-38.1
+					c73.7-8.7,131.8-66.8,140.4-140.4H437c10.2,0,18.5-8.3,18.5-18.5C455.5,229.8,447.2,221.5,437,221.5
+					C437,221.5,437,221.5,437,221.5z M240,363.1c-68,0-123.1-55.1-123.1-123.1S172,116.9,240,116.9S363.1,172,363.1,240c0,0,0,0,0,0
+					C363,308,308,363,240,363.1z"/>
+			</g>
+		</g>
+	</g>
+</g>
+</svg>

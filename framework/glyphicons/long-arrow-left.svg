@@ -1,1 +1,15 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 30 20"><defs><style>.cls-1{fill:none;}</style></defs><title>long-arrow-left</title><g id="Calque_2" data-name="Calque 2"><g id="sources_non_vectorisés_" data-name="sources (non vectorisés)"><g id="long-arrow-left"><g id="Rectangle_896" data-name="Rectangle 896"><rect class="cls-1" width="30" height="20"/></g><path d="M26.43,9H5.81l4.46-4.46A.75.75,0,1,0,9.21,3.47L3.47,9.21a.78.78,0,0,0-.16.24.72.72,0,0,0-.06.29.75.75,0,0,0,.22.53L9.21,16a.75.75,0,0,0,1.06,0,.75.75,0,0,0,0-1.06L5.81,10.49H26.43a.75.75,0,0,0,0-1.5Z"/></g></g></g></svg>
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Generator: Adobe Illustrator 23.1.1, SVG Export Plug-In . SVG Version: 6.00 Build 0)  -->
+<svg version="1.1" id="Calque_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+	 viewBox="0 0 640 480" style="enable-background:new 0 0 640 480;" xml:space="preserve">
+<title>long-arrow-left</title>
+<g>
+	<g id="ds44-icons">
+		<g id="long-arrow-left">
+			<path d="M596.2,221.5H88.5l109.7-109.7c7.2-7.2,7.2-18.9,0-26.1c-7.2-7.2-18.9-7.2-26.1,0L30.8,226.9c-7.2,7.2-7.3,18.9-0.1,26.1
+				c0,0,0,0,0.1,0.1l141.3,141.3c7.2,7.2,18.9,7.2,26.1,0c7.2-7.2,7.2-18.9,0-26.1c0,0,0,0,0,0L88.4,258.4h507.8
+				c10.2,0,18.5-8.3,18.5-18.5C614.7,229.8,606.4,221.5,596.2,221.5C596.2,221.5,596.2,221.5,596.2,221.5z"/>
+		</g>
+	</g>
+</g>
+</svg>
