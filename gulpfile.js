@@ -14,6 +14,7 @@ var flexbugs = require('postcss-flexbugs-fixes'); // flexbox fixes for IE
 var gaps = require('postcss-gap-properties'); // gaps polyfill
 var iconfont = require("gulp-iconfont");
 var iconfontCss = require("gulp-iconfont-css");
+var fs = require('fs');
 
 var jekyllDir = "docs/",
     scssFile = 'framework/scss/cd44.scss'
@@ -100,6 +101,15 @@ gulp.task('build:glyphicons', function() {
       }),
     )
     .pipe(gulp.dest(distDest));
+	});
+	
+// cd .docker && docker-compose exec site gulp createComponent --name button
+gulp.task('createComponent', function() {
+  var componentName = "ttest";
+
+  var writeStream = fs.createWriteStream("framework/scss/components/_" + componentName + ".scss");
+  writeStream.write("// " + componentName);
+  writeStream.end();
 });
 
 gulp.task('build:ds', gulp.parallel(
