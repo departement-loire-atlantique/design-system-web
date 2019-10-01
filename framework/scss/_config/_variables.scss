@@ -61,6 +61,10 @@ $ds44-font-sizes: (
   bodySize: (
     mobile  : 1em,            // 15px
     desktop : 1em             // 16px
+  ),
+  chapoStyle: (
+    mobile  : 1.1333333333em, // 17px
+    desktop : 1.0625em        // 17px
   )
 ) !default;
 

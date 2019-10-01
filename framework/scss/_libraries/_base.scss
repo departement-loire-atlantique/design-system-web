@@ -147,7 +147,7 @@ h6, .h6-like {
 }
 
 .ds44-introduction, .ds44-introduction-like {
-  @include font-size(h6);
+  @include ds44-font-sizes(chapoStyle);
   @if variable_exists(font-family-headings) and $font-family-headings != $font-family-base{
     font-family: $font-family-headings;
   }
