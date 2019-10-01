@@ -1,15 +1,1 @@
-<?xml version="1.0" encoding="utf-8"?>
-<!-- Generator: Adobe Illustrator 23.1.1, SVG Export Plug-In . SVG Version: 6.00 Build 0)  -->
-<svg version="1.1" id="Calque_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
-	 viewBox="0 0 480 480" style="enable-background:new 0 0 480 480;" xml:space="preserve">
-<title>arrow-down</title>
-<g>
-	<g id="ds44-icons">
-		<g id="arrow-down">
-			<path d="M394.4,238.7c-7.2-7.2-18.9-7.2-26.1,0c0,0,0,0,0,0L258.5,348.5V87c0-10.2-8.3-18.5-18.5-18.5
-				c-10.2,0-18.5,8.3-18.5,18.5c0,0,0,0,0,0v261.5L111.7,238.7c-7.2-7.2-18.9-7.2-26.1,0c-7.2,7.2-7.2,18.9,0,26.1l141.3,141.3
-				c7.2,7.2,18.9,7.2,26.1,0l141.3-141.3C401.6,257.6,401.6,245.9,394.4,238.7C394.4,238.7,394.4,238.7,394.4,238.7z"/>
-		</g>
-	</g>
-</g>
-</svg>
+<svg id="ds44-icons" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 480 480"><title>arrow-down</title><g id="arrow-down"><path d="M394.37,238.66a18.47,18.47,0,0,0-26.12,0L258.47,348.45V87a18.47,18.47,0,1,0-36.93,0V348.45L111.75,238.66a18.47,18.47,0,1,0-26.12,26.11L227,406.09a18.51,18.51,0,0,0,26.11,0L394.37,264.77A18.46,18.46,0,0,0,394.37,238.66Z"/></g></svg>

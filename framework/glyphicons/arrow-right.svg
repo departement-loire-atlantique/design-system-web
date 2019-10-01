@@ -1,16 +1,1 @@
-<?xml version="1.0" encoding="utf-8"?>
-<!-- Generator: Adobe Illustrator 23.1.1, SVG Export Plug-In . SVG Version: 6.00 Build 0)  -->
-<svg version="1.1" id="Calque_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
-	 viewBox="0 0 480 480" style="enable-background:new 0 0 480 480;" xml:space="preserve">
-<title>arrow-right</title>
-<g>
-	<g id="ds44-icons">
-		<g id="arrow-right">
-			<path d="M410.1,247.1c2.9-6.4,1.6-13.9-3.2-19c-0.3-0.4-0.4-0.8-0.8-1.2L264.8,85.6c-7.2-7.2-18.9-7.2-26.1,0
-				c-7.2,7.2-7.2,18.9,0,26.1l109.8,109.8H87c-10.2,0-18.5,8.3-18.5,18.5c0,10.2,8.3,18.5,18.5,18.5c0,0,0,0,0,0h261.5L238.7,368.3
-				c-7.2,7.2-7.2,18.9,0,26.1c7.2,7.2,18.9,7.2,26.1,0c0,0,0,0,0,0l141.3-141.3c0.4-0.4,0.5-0.8,0.8-1.2
-				C408.2,250.5,409.3,248.8,410.1,247.1z"/>
-		</g>
-	</g>
-</g>
-</svg>
+<svg id="ds44-icons" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 480 480"><title>arrow-right</title><g id="arrow-right"><path d="M410.07,247.08a17.37,17.37,0,0,0-3.18-19c-.31-.37-.43-.84-.78-1.19L264.79,85.63a18.47,18.47,0,0,0-26.12,26.11l109.8,109.79H87a18.47,18.47,0,1,0,0,36.94H348.47L238.67,368.26a18.47,18.47,0,0,0,26.12,26.11L406.11,253.06c.35-.35.47-.82.78-1.19A18.34,18.34,0,0,0,410.07,247.08Z"/></g></svg>

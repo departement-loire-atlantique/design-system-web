@@ -1,15 +1,1 @@
-<?xml version="1.0" encoding="utf-8"?>
-<!-- Generator: Adobe Illustrator 23.1.1, SVG Export Plug-In . SVG Version: 6.00 Build 0)  -->
-<svg version="1.1" id="Calque_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
-	 viewBox="0 0 480 480" style="enable-background:new 0 0 480 480;" xml:space="preserve">
-<title>arrow-up</title>
-<g>
-	<g id="ds44-icons">
-		<g id="arrow-up">
-			<path d="M394.4,215.2L253.1,73.9c-7.2-7.2-18.9-7.2-26.1,0c0,0,0,0,0,0L85.6,215.2c-7.2,7.2-7.2,18.9,0,26.1
-				c7.2,7.2,18.9,7.2,26.1,0l0,0l109.8-109.8V393c0,10.2,8.3,18.5,18.5,18.5c10.2,0,18.5-8.3,18.5-18.5c0,0,0,0,0,0V131.5
-				l109.8,109.8c7.2,7.2,18.9,7.2,26.1,0C401.6,234.1,401.6,222.4,394.4,215.2L394.4,215.2z"/>
-		</g>
-	</g>
-</g>
-</svg>
+<svg id="ds44-icons" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 480 480"><title>arrow-up</title><g id="arrow-up"><path d="M394.36,215.21,253.05,73.9a18.46,18.46,0,0,0-26.11,0L85.64,215.21a18.47,18.47,0,0,0,26.12,26.12L221.53,131.54V393.05a18.47,18.47,0,0,0,36.93,0V131.54L368.24,241.33a18.47,18.47,0,0,0,26.12-26.12Z"/></g></svg>
