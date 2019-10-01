@@ -34,7 +34,7 @@
     font-size: 1.0625em; // 17px
     font-weight: bold;
 }
-.ds44-card__file {
+.ds44-cardFile {
     @include ds44-font-sizes(smallText);
     color: $ds44-gray;
 }

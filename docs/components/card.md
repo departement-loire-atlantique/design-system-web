@@ -1,6 +1,7 @@
 ---
 layout: component-detail
 group: components
+status: Brouillon
 
 title: Tuiles
 alternative_title: Cards
