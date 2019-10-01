@@ -329,3 +329,9 @@ figure {
 .ds44-flex-align-center {  
   align-items: center;
 }
+
+/* Icons */
+
+.icon::before {
+  vertical-align: bottom; // fixing font-icon alignement
+}
