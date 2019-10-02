@@ -2,12 +2,36 @@
 /* ==DS44 Utilities           */
 /* -------------------------- */
 
+/* Spacers */
 
-.ds44--xpadding-lr {
+.ds44--xl-padding {
+    padding: $ds44-padding-xlarge; 
+}
+.ds44--xl-padding-lr {
     padding-left: $ds44-padding-xlarge;
     padding-right: $ds44-padding-xlarge;
 }
 
-.ds44--2xpadding-l {
+.ds44--2xl-padding-l {
     padding-left: $ds44-padding-xlarge*2;
 }
+
+/* Flex utils */
+
+.ds44-flex-container {
+    display: flex;
+    flex-direction: row;
+  }
+  .ds44-flex-container--column {
+    display: flex;
+    flex-direction: column;
+  }
+  .ds44-flex-align-center {  
+    align-items: center;
+  }
+  
+  /* Grid utils */
+  
+  .ds44-grid-middle {
+    align-items: center;
+  }

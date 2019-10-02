@@ -316,22 +316,24 @@ figure {
   background-color: $ds44-Agenda-color;
 }
 
-/* Flex utils */
-
-.ds44-flex-container {
-  display: flex;
-  flex-direction: row;
-}
-.ds44-flex-container--column {
-  display: flex;
-  flex-direction: column;
-}
-.ds44-flex-align-center {  
-  align-items: center;
-}
-
 /* Icons */
 
+.icon {
+  vertical-align: middle;
+  line-height: 1; 
+  display: inline-block;
+}
+
+// icon size
 .icon::before {
-  vertical-align: bottom; // fixing font-icon alignement
+  font-size: 1.5em;
+}
+.icon--large::before {
+  font-size: 2.5em;
+}
+
+// icon margins
+.icon + .ds44-btnText,
+.ds44-btnText + .icon {
+  margin-left: 1rem;
 }
