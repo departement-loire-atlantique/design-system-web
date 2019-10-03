@@ -21,17 +21,20 @@
 .ds44-flex-container {
     display: flex;
     flex-direction: row;
-  }
-  .ds44-flex-container--column {
-    display: flex;
-    flex-direction: column;
-  }
-  .ds44-flex-align-center {  
-    align-items: center;
-  }
-  
-  /* Grid utils */
-  
-  .ds44-grid-middle {
-    align-items: center;
-  }
+}
+.ds44-flex-container--column {
+  display: flex;
+  flex-direction: column;
+}
+.ds44-flex-align-center {  
+  align-items: center;
+}
+.ds44-flex-valign-center {  
+  justify-content: center;
+}
+
+/* Grid utils */
+
+.ds44-grid-middle {
+  align-items: center;
+}

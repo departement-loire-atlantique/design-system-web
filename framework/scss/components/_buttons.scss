@@ -15,6 +15,7 @@ button {
     font-family: inherit;
     font-size: inherit;
     line-height: 1;
+    background: transparent;
 
     &:focus {
         -webkit-tap-highlight-color: transparent;
@@ -52,16 +53,45 @@ button {
     }
 }
 
-.ds44-btnStd--contextual {
+.ds44-btn--contextual {
     background-color: $ds44-contextual-color;
+    border-color: $ds44-contextual-color;
 
     &:focus,
     &:hover,
     &:active {
         background-color: $ds44-contextual-hover;
+        border-color: $ds44-contextual-color;
     }
 }
 
+/* Icon-text buttons */
 
-/* Icon buttons */
+.ds44-btnIcoText--maxi {
+    font-size: .9375em;
+    font-weight: bold;
+    text-transform: uppercase;
+}
 
+// text container for icon-text buttons
+.ds44-btnInnerText {
+    display: inline-block;
+    vertical-align: middle;
+}
+
+// icon margins
+.icon + .ds44-btnInnerText,
+.ds44-btnInnerText + .icon {
+  margin-left: 1.5rem;
+}
+
+/* small screens */
+/* ------------- */
+
+@media (max-width: $ds44-medium) {
+
+    .ds44-btnStd--large {
+        padding: $ds44-padding-box;
+    }
+
+}

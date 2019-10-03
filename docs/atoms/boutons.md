@@ -4,7 +4,7 @@ group: atoms
 
 title: Boutons
 description: Boutons d'action
-status: En cours
+status: Brouillon
 
 variations:
 - title: Boutons standards
@@ -19,39 +19,23 @@ variations:
 
 ## General guidelines
 
-Utiliser le bouton contextuel avec la classe `.ds44-btnStd--contextual` pour créer des boutons aux couleurs du site.
+Les boutons sont utilisés pour déclencher des actions. Eviter l'usage des boutons pour naviguer : préférer les liens. Il est possible de donner à un lien un aspect de bouton, si nécessaire, en lui appliquant les mêmes classes qu'à une balise <button>.
 
-Buttons are used primarily on action items. Some examples include Add, Save, Delete, Sign up. Do not use Buttons as navigational elements. Instead, use Links because it takes the user to a new page and is not associated with an action. Each page may have one to two primary buttons. Any remaining calls-to-action are represented as secondary buttons.
+Utiliser le bouton contextuel avec la classe `.ds44-btnStd--contextual` pour créer des boutons aux couleurs du site.
 
 ## Usage
 
-| Type de bouton  | Objet                                                                            |
-| --------------- |----------------------------------------------------------------------------------|
-| Primary         | For the principle call to action on the page.                                    |
-| Secondary       | When an action does not require primary dominance on the page.                   |
-| Danger          | When an action has harmful intentions to the users data (delete, remove, etc).   |
-| Disabled button | Use when the user cannot proceed until an input is collected.                    |
-| Small Button    | Use when there is not enough vertical space for a regular sized button.          |
+| Type de bouton          | Objet                                                                            |
+| ----------------------- |----------------------------------------------------------------------------------|
+| Bouton standard         | A remplir avec Julien                                                            |
+| Bouton standard large   |                                                                                  |
 
-
-## Labels
-
-Button labels tell users what will happen when they click the button. Use verbs that describe the action, such as Add or Delete. Use sentence-style capitalization (only the first word in a phrase and any proper nouns capitalized) and no more than three words for button labels.
-
-For Sets of Buttons, use specific labels, such as Save or Discard, instead of using OK and Cancel. This is particularly helpful when the user is confirming an action.
 
 ## Icon usage
 
-* Use glyphs (16px) within buttons.
-* Glyphs are distinguished by their solid shape and knocked-out details.
-* Glyphs should always appear to the right of the text.
-* Glyphs used in buttons must be directly related to the action that the user is taking.
-* Glyphs must be the same color value as the text within a button.
-* Ghost buttons require a glyph icon (cannot be stand alone text because of poor affordance).
+* Les glyphes-icônes s'utilisent dans des conteneurs de type `<i class="icon"></i>`.
+* Chaque glyphes possède un code appelé par un style. Exemple : la croix est appelée par la classe `icon-cross`. Se référer à la page de preview des icônes pour les noms des classes.
+* Les glyphes sont déclinés en deux tailles : la taille standard et la taille supérieure. Pour la taille supérieure, ajouter la classe `icon--large` sur le conteneur de l'icône.
+* pour des questions d'alignement vertical, dans les boutons contenant des glyphes et du texte, le bloc de texte doit être placé dans un conteur de type `<span class="ds44-btnText>Texte du bouton</span>`.
 
 ## Other rules
-
-1. Rule 1
-2. Rule 2
-3. Rule 3
-4. Rule 4

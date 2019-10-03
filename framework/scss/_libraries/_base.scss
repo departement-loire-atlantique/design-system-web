@@ -326,14 +326,8 @@ figure {
 
 // icon size
 .icon::before {
-  font-size: 1.5em;
+  font-size: 1.2em;
 }
 .icon--large::before {
   font-size: 2.5em;
-}
-
-// icon margins
-.icon + .ds44-btnText,
-.ds44-btnText + .icon {
-  margin-left: 1rem;
 }
