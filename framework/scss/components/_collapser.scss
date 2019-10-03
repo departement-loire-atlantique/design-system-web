@@ -7,12 +7,12 @@
   list-style: none; // if collapser is a list
   padding: 0;
   margin: 2rem 0 4rem 0;
-  border-top: 1px solid $ds44-LA-color;
+  border-top: 1px solid $ds44-contextual-color;
 }
 
 /* container for collapsed content */
 .ds44-collapser_element {
-  border-bottom: 1px solid $ds44-LA-color;
+  border-bottom: 1px solid $ds44-contextual-color;
 }
 
 /* row-like button */
@@ -26,14 +26,15 @@
   position: relative;
 
   &::after {
-    content: "";
-    width:2rem;
-    height:2rem;
+    content: "\E00E";
+    font-family: "ds44-icons";
+    font-size: 1.3em;
+    width: 2rem;
+    height: 2rem;
     display: block;
-    background: url('../images/icons.svg') no-repeat 0 -682px;
     position: absolute;
     right: 1.5rem;
-    top: 1.5rem;
+    top: 1.3rem;
     transition: all $ds44-timing-slower ease-in-out;
   }
 
@@ -45,7 +46,7 @@
 
 .ds44-collapser_content {
   background-color: $ds44-light-bg;
-  transition: all 0.4s ease-in-out;
+  transition: all $ds44-timing-slower ease-in-out;
   max-height: 0;
   overflow: hidden;
 }
@@ -57,14 +58,15 @@
   display: block;
 
   &::after {
-    content: "";
+    content: "\E002";
+    font-family: "ds44-icons";
+    font-size: 1.2em;
     display: inline-block;
     vertical-align: middle;
     width: 2rem;
     height: 2rem;
-    margin-left: 0.5rem;
-    margin-top: -0.4rem; // magic number for Chrome vertical align middle issue
-    background: url('../images/icons.svg') no-repeat -20px -120px;
+    margin-left: 1.5rem;
+    margin-top: -0.8rem; // magic number for vertical align middle issue
     opacity: 0;
     transition: all $ds44-timing-faster ease-in;
   }
