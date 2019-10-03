@@ -95,3 +95,33 @@ button {
     }
 
 }
+@media (max-width: $ds44-small) {
+
+
+    .ds44-btnIcoText--maxi {
+
+        position: relative;
+        background-color: transparent;
+        margin: 0 1rem;
+        padding: 0 0 .5rem 0;
+        text-align: center;
+        min-width: 6rem;
+
+        .ds44-btnInnerText {
+            font-size: .5625em; // 9px
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            text-align: center;
+        }
+
+        // icon margins
+        .icon + .ds44-btnInnerText,
+        .ds44-btnInnerText + .icon {
+          margin-left: 0;
+        }
+    }
+    
+
+}

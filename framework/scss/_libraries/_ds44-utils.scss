@@ -43,7 +43,11 @@
 
 .ds44-colLeft {
   flex-wrap: nowrap;
+  flex: 1;
 }
 .ds44-colRight {
   flex-wrap: nowrap;
+  align-self: flex-end;
+  flex: 3;
+  text-align: right;
 }
