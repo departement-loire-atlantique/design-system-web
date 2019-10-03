@@ -1,6 +1,7 @@
 // Card common styles
 
 .ds44-card {
+    position: relative;
     background-color: $ds44-lightgray;
     transition-duration: $ds44-timing-standard;
     transition-property: box-shadow;
@@ -8,9 +9,33 @@
 
     &:focus,
     &:hover,
-    &:active { // JVI REM :il manque la gestion de la flèche qui doit apparaître au survol (en attente de la webfont de Julien R.)
+    &:active { 
         box-shadow: 0px 13px 20px 0px rgba(0,0,0,0.35);
+
+        &::after { // gestion de la flèche au survol
+            opacity: 1;
+        } 
     }
+
+    &::after { // gestion de la flèche au survol
+        content: "\E002"; // icon arrow right
+        position: absolute;
+        right: 1rem;
+        bottom: 1rem;
+        color: $ds44-contextual-color;
+        font-family: "ds44-icons";
+        -webkit-font-smoothing: antialiased;
+        font-style: normal;
+        font-variant: normal;
+        font-weight: normal;
+        text-decoration: none;
+        text-transform: none;
+        font-size: 1.2em;
+        opacity: 0;
+        transition-duration: $ds44-timing-standard;
+        transition-property: opacity;
+        transition-timing-function: ease;
+    } 
 }
 .ds44-card--verticalPicture {
     background-color: $ds44-lightgray;
@@ -42,5 +67,51 @@
 // Horizontal card specific styles
 
 .ds44-card__section--horizontal {
-    padding:  $ds44-padding-small $ds44-padding-base;
+    padding:  $ds44-padding-small $ds44-padding-xlarge;
+}
+
+// Calendar card
+
+.ds44-card__dateContainer {
+    padding:  $ds44-padding-small;
+    background-color: $ds44-contextual-color;
+    text-align: center;
+    min-height: 14rem;
+    min-width: 14rem;
+}
+.ds44-cardDateNumber {
+    font: bold 2.375em/1 $ds44-font-family-headings;
+    display: block;
+}
+.ds44-cardDateMonth {
+    font: normal 1.5em/1 $ds44-font-family-headings;
+    display: block;
+}
+.ds44-cardMultiDates { // if card displays multiple dates (range)
+    .ds44-cardDateNumber {
+        font-size: 2.1875em;
+    }
+    .ds44-cardDateMonth {
+        font-size: 1.125em;
+    }
+}
+.ds44-cardLocalisation {
+    font-size: .8125em;
+
+    .icon {
+        font-size: 1.2em;
+    }
+}
+
+/* small screens */
+/* ------------- */
+
+@media (max-width: $ds44-small) {
+
+    .ds44-card__dateContainer {
+        padding-left: $spacer-small;
+        padding-right: $spacer-small;
+        min-width: 10rem;
+    }
+
 }
