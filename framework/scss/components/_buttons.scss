@@ -14,7 +14,6 @@ button {
     border: none;
     font-family: inherit;
     font-size: inherit;
-    line-height: 1;
     background: transparent;
 
     &:focus {
@@ -29,6 +28,7 @@ button {
     border: 1px solid $ds44-dark;
     font-weight: bold;
     background-color: $ds44-light-color;
+    line-height: 1;
     
     &:focus,
     &:hover,
