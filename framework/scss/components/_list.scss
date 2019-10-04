@@ -1,9 +1,6 @@
 // DS44 lists
 
-.ds44-list--indent {
-    padding: 0 $ds44-padding-xlarge;
-
-    ul {
-        padding: 0 0 0 $ds44-padding-xlarge*2;
-    }
+.ds44-list {
+    padding: 0;
+    list-style: none;
 }
