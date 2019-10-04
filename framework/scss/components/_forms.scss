@@ -36,7 +36,7 @@
 }
 
 .ds44-form__label--external {
-    @include ds44-font-sizes(smallText);
+    font-size: .9375em; // 15px
     color: $ds44-color-dark-text;
     margin: $ds44-small-vmargin 0;
     display: block;
