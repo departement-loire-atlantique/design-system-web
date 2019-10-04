@@ -24,6 +24,7 @@
   text-align: left;
   background-color: transparent;
   position: relative;
+  line-height: 1.4;
 
   &::after {
     content: "\E00E";
@@ -36,6 +37,7 @@
     right: 1.5rem;
     top: 1.3rem;
     transition: all $ds44-timing-slower ease-in-out;
+    line-height: 1.2;
   }
 
   &.show::after {
