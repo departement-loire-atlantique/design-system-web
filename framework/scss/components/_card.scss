@@ -41,7 +41,7 @@
     background-color: $ds44-lightgray;
 }
 .ds44-card__section {
-    padding:  $ds44-padding-small $ds44-padding-box;
+    padding:  $ds44-padding-medium $ds44-padding-box;
 }
 .ds44-card__globalLink { 
     text-decoration: none;
@@ -54,7 +54,7 @@
     }
 }
 .ds44-card__title {
-    margin: $headings-margin-bottom 0;
+    margin-bottom: $headings-margin-bottom;
     padding: 0;
     font-size: 1.0625em; // 17px
     font-weight: bold;
