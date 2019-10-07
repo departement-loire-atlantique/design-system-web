@@ -8,9 +8,12 @@
 $ds44-tiny           : 30em !default;     // 480px
 $ds44-small          : 36em !default;     // 576px
 $ds44-medium         : 48em !default;     // 768px
-$ds44-large          : 62em !default;     // 992px
+$ds44-large          : 64em !default;     // 1024px
 $ds44-extra-large    : 75em !default;     // 1200px
 $ds44-max-size       : 85.375em !default; // 1366px
+
+// surcharge de la grillade pour réaligner le breakpoint tablette
+$medium: 1020px;
 
 
 // ----------
@@ -71,15 +74,20 @@ $ds44-font-sizes: (
 // Line heights
 $ds44-line-height-base : 1.4 !default;
 
+// Heights
+
+$ds44-largeHeight  : 6.5rem !default;
+$ds44-normalHeight : 4.5rem !default;
+
 
 // Margins & paddings
 
-$ds44-margin-bottom-base      : 3rem !default;
-$ds44-container-vmargin       : $ds44-margin-bottom-base *5 !default;
-$ds44-paragraph-margin-bottom : $ds44-margin-bottom-base /6 !default;
-$ds44-components-vmargin      : $ds44-margin-bottom-base *3 !default;
-$ds44-small-vmargin           : $ds44-margin-bottom-base /3 !default;
-$ds44-medium-vmargin          : $ds44-margin-bottom-base /2 !default;
+$ds44-margin-bottom-base      : 1rem !default;
+$ds44-container-vmargin       : $ds44-margin-bottom-base *5   !default;
+$ds44-paragraph-margin-bottom : $ds44-margin-bottom-base /2   !default;
+$ds44-components-vmargin      : $ds44-margin-bottom-base *3   !default;
+$ds44-small-vmargin           : $ds44-margin-bottom-base      !default;
+$ds44-medium-vmargin          : $ds44-margin-bottom-base *1.5 !default;
 
 $ds44-container-hmargin       : 5.5% !default;
 $ds44-portlet-vmargins        : 3rem !default;
@@ -140,6 +148,10 @@ $ds44-link-list-decoration-hover : none !default; // used for menus or link grou
 
 // Global border-radius
 $ds44-border-radius: 3px !default;
+
+// Standard box shadow
+
+$ds44-boxShadow : 0px 13px 20px 0px rgba(0,0,0,0.35) !default;
 
 // ---------------
 // Animation zone

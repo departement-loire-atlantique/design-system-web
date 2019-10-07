@@ -36,7 +36,7 @@
 }
 
 .ds44-form__label--external {
-    @include ds44-font-sizes(smallText);
+    font-size: .9375em; // 15px
     color: $ds44-color-dark-text;
     margin: $ds44-small-vmargin 0;
     display: block;
@@ -48,6 +48,8 @@
     padding: $ds44-padding-medium $ds44-padding-box;
     border: 1px solid $ds44-gray;
     min-width: 100%;
+    vertical-align: middle;
+    min-height: $ds44-normalHeight;
 
     & + .ds44-form__label {
         top: $ds44-padding-medium;
@@ -67,11 +69,13 @@
 }
 
 .ds44-form__inpLarge {
-    @include ds44-font-sizes(smallText);
+    @include ds44-font-sizes(bodySize);
     border-radius: $ds44-border-radius;
     padding: $ds44-padding-large;
     border: 1px solid $ds44-gray;
     min-width: 100%;
+    vertical-align: middle;
+    min-height: $ds44-largeHeight;
 
     & + .ds44-form__label {
         top: $ds44-padding-large;
@@ -88,4 +92,8 @@
     &:disabled {
         background-color: $ds44-light-bg;
     }
+}
+
+.ds44-bgDark :focus + .ds44-form__label {
+    color: $ds44-color-inverse!important;
 }

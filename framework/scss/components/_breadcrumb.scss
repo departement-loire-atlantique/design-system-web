@@ -1,0 +1,18 @@
+/*
+* CD44 Design System - Breadcrumb
+*/
+
+.ds44-breadcrumb {
+    display: inline-block;
+
+    &::after {
+        content: "/";
+        display: inline-block;
+        margin: 0 .5rem 0 1rem;
+    }
+
+    &:last-child::after {
+        content: "";
+        margin: 0;
+    }
+}

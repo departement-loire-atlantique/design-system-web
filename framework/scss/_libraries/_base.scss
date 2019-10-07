@@ -75,6 +75,8 @@ h1, .h1-like {
     font-family: $ds44-font-family-headings;
   }
   font-weight: $weight-medium;
+  line-height: 1;
+  padding: 0;
 }
 
 h2, .h2-like {
@@ -98,6 +100,7 @@ h3, .h3-like {
   }
   background: transparent;
   font-weight: $weight-bold;
+  padding: 0;
 }
 
 h4, .h4-like {
@@ -107,6 +110,7 @@ h4, .h4-like {
   }
   background: transparent;
   font-weight: $weight-medium;
+  padding: 0;
 }
 
 h5, .h5-like {
@@ -116,6 +120,7 @@ h5, .h5-like {
   }
   background: transparent;
   font-weight: $weight-medium;
+  padding: 0;
 }
 
 h6, .h6-like {
@@ -125,6 +130,7 @@ h6, .h6-like {
   }
   background: transparent;
   font-weight: $weight-medium;
+  padding: 0;
 }
 
 .ds44-smallText {
@@ -135,30 +141,38 @@ h6, .h6-like {
   position: absolute;
   bottom: 0;
   z-index: 10;
-  padding: $ds44-padding-base;
+  padding: 15rem $ds44-padding-xlarge $ds44-padding-large $ds44-padding-xlarge;
   width: 100%;
   box-sizing: border-box;
-  background: linear-gradient(to bottom, rgba(0,0,0,0) 0%,rgba(0,0,0,0) 50%,rgba(0,0,0,1) 100%);
+  background: linear-gradient(to bottom, rgba(0,0,0,0) 0%,rgba(0,0,0,0) 35%,rgba(0,0,0,.75) 70%);
   background-size: cover;
-  min-height: 100%;
   display: flex;
   flex-direction: column;
   justify-content: flex-end;
 }
 
-.ds44-introduction, .ds44-introduction-like {
+.ds44-introduction, .ds44-introduction-like, .ds44-component-chapo {
   @include ds44-font-sizes(chapoStyle);
   @if variable_exists(font-family-headings) and $font-family-headings != $font-family-base{
     font-family: $font-family-headings;
   }
   background: transparent;
   font-weight: $weight-bold;
+  margin-bottom: $ds44-components-vmargin;
+}
+.ds44-component-chapo {
+  max-width: 50%;
 }
 
 /* Texts */
 
 .ds44-text--colorInvert {
   color: $ds44-light-color;
+
+  a {
+    color: $ds44-light-color;
+  }
+
 }
 
 figcaption {
@@ -303,17 +317,11 @@ figure {
   --- DS44 specific utilities 
   --- */
 
-.ds44-darkContext {
-  background-color: $ds44-color-inverse!important;
-}
 
 /* Thematic colors */
 
-.ds44-theme--LA {
-  background-color: $ds44-LA-color;
-}
-.ds44-theme--Agenda {
-  background-color: $ds44-Agenda-color;
+.ds44-theme {
+  background-color: $ds44-contextual-color;
 }
 
 /* Icons */
