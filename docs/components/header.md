@@ -4,7 +4,7 @@ group: components
 
 title: Bandeau
 description: Header
-status: Brouillon
+status: A valider
 
 variations:
 - title: Bandeau principal standard

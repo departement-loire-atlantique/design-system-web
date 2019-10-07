@@ -1,6 +1,7 @@
 ---
 layout: component-detail
 group: components
+status: Brouillon
 
 title: Listes
 description: Affichage des listes

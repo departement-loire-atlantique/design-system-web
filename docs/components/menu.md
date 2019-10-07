@@ -1,6 +1,7 @@
 ---
 layout: component-detail
 group: components
+status: A valider
 
 title: Menu
 description: Un menu permet d'accéder à une liste de liens
