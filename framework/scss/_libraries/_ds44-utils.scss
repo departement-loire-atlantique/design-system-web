@@ -15,6 +15,15 @@
 .ds44--2xl-padding-l {
     padding-left: $ds44-padding-xlarge*2;
 }
+.ds44-mb3 {
+  margin-bottom: $ds44-components-vmargin;
+}
+.ds44-svm {
+  margin-bottom: $ds44-small-vmargin;
+}
+.ds44-mvm {
+  margin-bottom: $ds44-medium-vmargin;
+}
 
 /* Flex utils */
 
@@ -50,4 +59,10 @@
   align-self: flex-end;
   flex: 3;
   text-align: right;
+}
+
+/* Width helpers */
+
+.ds44-w100 {
+  width: 100%;
 }
