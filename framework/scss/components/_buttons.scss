@@ -23,12 +23,13 @@ button {
 
 .ds44-btnStd {
     @include ds44-font-sizes(bodySize);
-    padding: $ds44-padding-box;
+    padding: 0 $ds44-padding-box;
     border-radius: $ds44-border-radius;
     border: 1px solid $ds44-dark;
     font-weight: bold;
     background-color: $ds44-light-color;
     line-height: 1;
+    min-height: $ds44-normalHeight;
     
     &:focus,
     &:hover,
@@ -39,7 +40,8 @@ button {
 }
 
 .ds44-btnStd--large {
-    padding: $ds44-padding-large;
+    padding: 0 $ds44-padding-large;
+    min-height: $ds44-largeHeight;
 }
 
 .ds44-btn--invert {
@@ -67,6 +69,7 @@ button {
 
 /* Icon-text buttons */
 
+// Buttons for header (full height)
 .ds44-btnIcoText--maxi {
     font-size: .9375em;
     font-weight: bold;

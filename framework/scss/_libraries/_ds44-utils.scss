@@ -4,8 +4,11 @@
 
 /* Spacers */
 
+.ds44--l-padding {
+  padding: $ds44-padding-large; // 2rem
+}
 .ds44--xl-padding {
-    padding: $ds44-padding-xlarge; 
+    padding: $ds44-padding-xlarge; // 3rem
 }
 .ds44--xl-padding-lr {
     padding-left: $ds44-padding-xlarge;
@@ -16,7 +19,10 @@
     padding-left: $ds44-padding-xlarge*2;
 }
 .ds44-mb3 {
-  margin-bottom: $ds44-components-vmargin;
+  margin-bottom: $ds44-components-vmargin; // 3rem
+}
+.ds44-m3 {
+  margin: $ds44-components-vmargin auto; // 3rem
 }
 .ds44-svm {
   margin-bottom: $ds44-small-vmargin;
@@ -65,4 +71,13 @@
 
 .ds44-w100 {
   width: 100%;
+}
+
+/* Color utils */
+
+.ds44-bgDark {
+  background-color: $ds44-background-dark;
+}
+.ds44-darkContext {
+  background-color: $ds44-color-inverse!important;
 }
