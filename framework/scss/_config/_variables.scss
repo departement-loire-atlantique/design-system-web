@@ -8,9 +8,12 @@
 $ds44-tiny           : 30em !default;     // 480px
 $ds44-small          : 36em !default;     // 576px
 $ds44-medium         : 48em !default;     // 768px
-$ds44-large          : 62em !default;     // 992px
+$ds44-large          : 64em !default;     // 1024px
 $ds44-extra-large    : 75em !default;     // 1200px
 $ds44-max-size       : 85.375em !default; // 1366px
+
+// surcharge de la grillade pour réaligner le breakpoint tablette
+$medium: 1020px;
 
 
 // ----------
@@ -70,6 +73,11 @@ $ds44-font-sizes: (
 
 // Line heights
 $ds44-line-height-base : 1.4 !default;
+
+// Heights
+
+$ds44-largeHeight  : 6.5rem !default;
+$ds44-normalHeight : 4.5rem !default;
 
 
 // Margins & paddings

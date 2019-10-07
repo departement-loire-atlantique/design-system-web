@@ -141,18 +141,17 @@ h6, .h6-like {
   position: absolute;
   bottom: 0;
   z-index: 10;
-  padding: $ds44-padding-large $ds44-padding-xlarge;
+  padding: 15rem $ds44-padding-xlarge $ds44-padding-large $ds44-padding-xlarge;
   width: 100%;
   box-sizing: border-box;
-  background: linear-gradient(to bottom, rgba(0,0,0,0) 0%,rgba(0,0,0,0) 50%,rgba(0,0,0,1) 100%);
+  background: linear-gradient(to bottom, rgba(0,0,0,0) 0%,rgba(0,0,0,0) 35%,rgba(0,0,0,.75) 70%);
   background-size: cover;
-  min-height: 100%;
   display: flex;
   flex-direction: column;
   justify-content: flex-end;
 }
 
-.ds44-introduction, .ds44-introduction-like {
+.ds44-introduction, .ds44-introduction-like, .ds44-component-chapo {
   @include ds44-font-sizes(chapoStyle);
   @if variable_exists(font-family-headings) and $font-family-headings != $font-family-base{
     font-family: $font-family-headings;
@@ -160,6 +159,9 @@ h6, .h6-like {
   background: transparent;
   font-weight: $weight-bold;
   margin-bottom: $ds44-components-vmargin;
+}
+.ds44-component-chapo {
+  max-width: 50%;
 }
 
 /* Texts */
@@ -315,9 +317,6 @@ figure {
   --- DS44 specific utilities 
   --- */
 
-.ds44-darkContext {
-  background-color: $ds44-color-inverse!important;
-}
 
 /* Thematic colors */
 

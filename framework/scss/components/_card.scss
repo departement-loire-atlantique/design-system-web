@@ -121,3 +121,14 @@
     }
 
 }
+
+/* Medium screens */
+/* ------------- */
+
+@media (max-width: $ds44-large) {
+
+    .ds44-cardPicture--hcardPicture {
+        min-width: 14rem;
+    }
+
+}
