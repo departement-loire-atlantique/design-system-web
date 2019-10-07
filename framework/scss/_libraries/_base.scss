@@ -75,6 +75,8 @@ h1, .h1-like {
     font-family: $ds44-font-family-headings;
   }
   font-weight: $weight-medium;
+  line-height: 1;
+  padding: 0;
 }
 
 h2, .h2-like {
@@ -98,6 +100,7 @@ h3, .h3-like {
   }
   background: transparent;
   font-weight: $weight-bold;
+  padding: 0;
 }
 
 h4, .h4-like {
@@ -107,6 +110,7 @@ h4, .h4-like {
   }
   background: transparent;
   font-weight: $weight-medium;
+  padding: 0;
 }
 
 h5, .h5-like {
@@ -116,6 +120,7 @@ h5, .h5-like {
   }
   background: transparent;
   font-weight: $weight-medium;
+  padding: 0;
 }
 
 h6, .h6-like {
@@ -125,6 +130,7 @@ h6, .h6-like {
   }
   background: transparent;
   font-weight: $weight-medium;
+  padding: 0;
 }
 
 .ds44-smallText {
@@ -135,7 +141,7 @@ h6, .h6-like {
   position: absolute;
   bottom: 0;
   z-index: 10;
-  padding: $ds44-padding-base;
+  padding: $ds44-padding-large $ds44-padding-xlarge;
   width: 100%;
   box-sizing: border-box;
   background: linear-gradient(to bottom, rgba(0,0,0,0) 0%,rgba(0,0,0,0) 50%,rgba(0,0,0,1) 100%);
@@ -159,6 +165,11 @@ h6, .h6-like {
 
 .ds44-text--colorInvert {
   color: $ds44-light-color;
+
+  a {
+    color: $ds44-light-color;
+  }
+
 }
 
 figcaption {
@@ -309,11 +320,8 @@ figure {
 
 /* Thematic colors */
 
-.ds44-theme--LA {
-  background-color: $ds44-LA-color;
-}
-.ds44-theme--Agenda {
-  background-color: $ds44-Agenda-color;
+.ds44-theme {
+  background-color: $ds44-contextual-color;
 }
 
 /* Icons */
