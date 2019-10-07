@@ -2,9 +2,10 @@
 * CD44 Design System - Boxes
 */
 
+
 .ds44-box-heading {
     @include ds44-font-sizes(h4);
-    font-weight: $weight-medium;
+    font-weight: $weight-bold;
 }
 
 .ds44-innerBoxContainer {

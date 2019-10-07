@@ -6,11 +6,12 @@
     transition-duration: $ds44-timing-standard;
     transition-property: box-shadow;
     transition-timing-function: ease;
+    margin-bottom: $ds44-medium-vmargin;
 
     &:focus,
     &:hover,
     &:active { 
-        box-shadow: 0px 13px 20px 0px rgba(0,0,0,0.35);
+        box-shadow: $ds44-boxShadow;
 
         &::after { // gestion de la flèche au survol
             opacity: 1;
@@ -58,6 +59,11 @@
     padding: 0;
     font-size: 1.0625em; // 17px
     font-weight: bold;
+    line-height: 1.2;
+}
+.ds44-cardPicture--hcardPicture {
+    min-width: 38%;
+    object-fit: cover;
 }
 .ds44-cardFile {
     @include ds44-font-sizes(smallText);
