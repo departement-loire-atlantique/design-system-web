@@ -1,6 +1,7 @@
 ---
 layout: component-detail
 group: components
+status: A valider
 
 title: Formulaires
 description: 

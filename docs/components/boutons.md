@@ -1,10 +1,10 @@
 ---
 layout: component-detail
-group: atoms
+group: components
 
 title: Boutons
 description: Boutons d'action
-status: Brouillon
+status: A valider
 
 variations:
 - title: Boutons standards

@@ -4,7 +4,7 @@ group: components
 
 title: Titres
 description: Titres de page (titre principal).
-status: Complete
+status: A valider
 
 variations:
 - title: Hiérarchie des titres

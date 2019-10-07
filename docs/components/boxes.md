@@ -5,6 +5,7 @@ group: components
 title: Encadrés
 alternative_title: boxes
 description: Un encadré permet la mise en exergue de contenus.
+status: A valider
 
 variations:
 - title: Encadré formulaire
