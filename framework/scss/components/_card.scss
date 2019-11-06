@@ -47,9 +47,11 @@
 .ds44-card__title {
     margin-bottom: $headings-margin-bottom;
     padding: 0;
-    font-size: 1.0625em; // 17px
+    font-size: 1.7rem; // 17px
     font-weight: bold;
     line-height: 1.2;
+    background: transparent;
+    font-family: $ds44-font-family-base;
 }
 .ds44-cardPicture {
     min-width: 38%;
@@ -58,6 +60,9 @@
 .ds44-cardFile {
     @include ds44-font-sizes(smallText);
     color: $ds44-gray;
+}
+.ds44-theme .ds44-cardFile {
+    color: $ds44-darkgray;
 }
 
 // Horizontal card specific styles
