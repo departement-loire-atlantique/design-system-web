@@ -15,8 +15,9 @@
     padding-left: $ds44-padding-ico;
     line-height: 1.4;
 
-    &.ds44-cardFile {        
+    .ds44-cardFile {        
         padding-top: $spacer-tiny;
+        display: block;
     }
 }
 
