@@ -26,6 +26,17 @@
     }
 }
 
+/* Bandeau */
+
+.ds44-headerImg {
+    object-fit: cover;
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    top: 0;
+    left: 0;
+}
+
 
 /* tiny screens */
 /* ------------ */
@@ -37,7 +48,6 @@
     }
 
     .ds44-headerImg {
-        object-fit: cover;
         min-height: 260px;
     }
 

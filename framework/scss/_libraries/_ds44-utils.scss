@@ -79,6 +79,14 @@
   margin-left: 15%;
   margin-right: 15%;
 }
+.ds44-l-fluid-margin {
+  margin-left: 10%;
+  margin-right: 10%;
+}
+.ds44-m-fluid-margin {
+  margin-left: 5%;
+  margin-right: 5%;
+}
 
 /* === Flex utils === */
 
@@ -121,7 +129,7 @@
   flex: 3;
   text-align: right;
 }
-.ds44-multiCol {
+.ds44-multiCol  {
   column-count: 2;
   display: block;
 
@@ -132,7 +140,12 @@
                break-inside: avoid-column; /* W3C */
   }
 }
-
+.ds44-multiCol--3 {
+  column-count: 3;
+}
+.ds44-multiCol--border {
+  column-rule: 2px solid #000;
+}
 
 /* === Width helpers === */
 
@@ -144,6 +157,11 @@
 
 .ds44-darkContext {
   background-color: $ds44-color-inverse!important;
+}
+
+.ds44-alphaGradient {
+  background: linear-gradient(to bottom, rgba(0,0,0,0) 0%, rgba(0,0,0,.3) 15%, rgba(0,0,0,.6) 40%, rgba(0,0,0,.75) 70%);
+  background-size: cover;
 }
 
 /* === Backgrounds === */
@@ -201,6 +219,9 @@
 .ds44-bg-bl {
   background-position: bottom -85px left -140px;
 }
+.ds44-bg-b {  
+  background-position-y: bottom -150px;
+}
 
 /* === Icons === */
 
@@ -254,13 +275,53 @@
 
 /* === Overlay === */
 
-.ds44-navOverlay {
+.ds44-overlay {
   position: fixed;
-  left: 0;
-  top: 0;
   height: 100vh;
   width: 100%;
-  overflow: scroll;
+  overflow: auto;
+  z-index: 10000;
+  opacity: 0;
+  transition: all .5s ease-in-out;
+
+  &.show {
+    opacity: 1;
+  }
+}
+.ds44-overlay--navNiv1 {
+  left: 0;
+  top: -2500px;
+  display: none;
+
+    &.show {
+      top: 0;
+      opacity: 1;
+    }
+}
+
+.ds44-overlay--navNiv2 {
+  left: auto;
+  top: 0;
+  right: -2500px;
+  z-index: 11000;
+  display: none;
+
+    &.show {
+      right: 0;
+      opacity: 1;
+    }
+}
+
+.ds44-overlay--navApplis {
+  bottom: -2500px;
+  z-index: 11000;
+  display: none;
+  background-color: $ds44-light-color;
+
+    &.show {
+      bottom: 0;
+      opacity: 1;
+    }
 }
 
 /* === Separators === */
@@ -272,6 +333,9 @@
 
 .ds44-xl-gap {
   column-gap: 15rem;
+}
+.ds44-m-gap {
+  column-gap: 3rem;
 }
 
 @media (max-width: $ds44-medium) {

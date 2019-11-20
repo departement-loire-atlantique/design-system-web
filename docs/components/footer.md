@@ -1,7 +1,7 @@
 ---
 layout: component-detail
 group: components
-status: Décrit
+status: A valider
 
 title: Footer
 description: 

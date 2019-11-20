@@ -45,4 +45,17 @@ layout: pattern
 </div>
 <hr />
 <h2 class="h4-like">Infobulle :</h2>
-<p><span aria-labelledby="help-123" class="ds44-popOver">Exemple d'infobulle</span><button role="definition" type="button" id="help-123" aria-label="Texte de mon infobulle" class="ds44-popOverBtn"><span class="visually-hidden">Aide</span><i class="icon icon-help" aria-hidden="true"></i></button></p>
+<p>
+    <span class="simpletooltip_container ds44-popOver" data-hashtooltip-id="test10">
+      Exemple d'infobulle
+      <button class="js-simple-tooltip" data-simpletooltip-text="Aide" role="definition" type="button" id="help-123" data-hashtooltip-id="test10"
+        aria-describedby="label_simpletooltip_test">
+        <!-- Contenu du bouton -->
+        <i class="icon icon-help" aria-hidden="true"></i> 
+      </button>
+      <span id="label_simpletooltip_test" class="simpletooltip js-simple-tooltip" role="tooltip" aria-hidden="true" data-hashtooltip-id="test10">
+        <!-- Bloc affiché -->
+        Aide
+      </span>
+    </span>
+  </p>

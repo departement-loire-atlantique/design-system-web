@@ -27,22 +27,39 @@
     margin: $ds44-padding-medium 0;
 }
 
-.ds44-form__label {
+.ds44-formLabel {
     @include ds44-font-sizes(smallText);
-    position: absolute;
-    z-index: 10;
     color: $ds44-graytext-color;
-    transition: all $ds44-timing-standard ease-in-out;
+    display: block;
+
+    .ds44-labelTypePlaceholder, 
+    .ds44-labelTypePlaceholderLarge {
+        position: absolute;
+        top: $ds44-padding-medium;
+        left: $ds44-padding-box;
+        transition: all $ds44-timing-standard ease-in-out;
+
+        &.ds44-moveLabel {
+            font-size: .8125em; // 13px instead of 14px
+            top: -$ds44-padding-medium*2;
+            left: 0;
+        }
+    }
+
+    .ds44-labelTypePlaceholderLarge {
+        top: $ds44-padding-large;        
+        font-size: 1.6rem;
+    }
 }
 
-.ds44-form__label--external {
+.ds44-formLabel--external {
     font-size: .9375em; // 15px
     color: $ds44-color-dark-text;
     margin: $ds44-small-vmargin 0;
     display: block;
 }
 
-.ds44-form__inpStd {
+.ds44-inpStd {
     @include ds44-font-sizes(smallText);
     border-radius: $ds44-border-radius;
     padding: $ds44-padding-medium $ds44-padding-box;
@@ -51,24 +68,12 @@
     vertical-align: middle;
     min-height: $ds44-normalHeight;
 
-    & + .ds44-form__label {
-        top: $ds44-padding-medium;
-        left: $ds44-padding-box;
-    }
-
-    &:focus + .ds44-form__label,
-    &:valid + .ds44-form__label {
-        font-size: .8125em; // 13px instead of 14px
-        top: -$ds44-padding-medium*2;
-        left: 0;
-    }
-
     &:disabled {
         background-color: $ds44-light-bg;
     }
 }
 
-.ds44-form__inpLarge {
+.ds44-inpLarge {
     @include ds44-font-sizes(bodySize);
     border-radius: $ds44-border-radius;
     padding: $ds44-padding-large;
@@ -77,23 +82,11 @@
     vertical-align: middle;
     min-height: $ds44-largeHeight;
 
-    & + .ds44-form__label {
-        top: $ds44-padding-large;
-        left: $ds44-padding-large;
-    }
-
-    &:focus + .ds44-form__label,
-    &:valid + .ds44-form__label {
-        font-size: .8125em; // 13px instead of 14px
-        top: -$ds44-padding-large;
-        left: 0;
-    }
-
     &:disabled {
         background-color: $ds44-light-bg;
     }
 }
 
-.ds44-bgDark :focus + .ds44-form__label {
-    color: $ds44-color-inverse!important;
+.ds44-bgDark .ds44-moveLabel {
+    color: $ds44-color-inverse;
 }

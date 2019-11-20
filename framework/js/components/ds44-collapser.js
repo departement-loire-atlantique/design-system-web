@@ -1,7 +1,148 @@
+// Détermine si une valeur est null ou undefined
+function isNullOrUndefined(el) {
+    return el == null || el == undefined;
+}
+
+// Ajoute la classe "show" sur un élément après un timer
+function timerShow(elem, timer) {
+    setTimeout(function() {
+        elem.classList.add('show');
+    }, timer);
+}
+
+// Ajoute le style css "display: none" sur un élément après un timer
+function timerDisplayNone(elem, timer) {
+    setTimeout(function() {
+        elem.style.display = 'none';
+    }, timer);
+}
+
+// Ferme tous les overlays, et ajoute un focus sur le bouton qui a ouvert le dernier overlay affiché
+function performCloseOverlays(querySelector){
+    let overlays = document.querySelectorAll(querySelector);
+    overlays.forEach((overlay)=> {
+        if (overlay.classList.contains("show")) {
+            if ("nav1" == overlay.id) {
+                overlay.parentElement.previousElementSibling.focus();
+            } else if (!isNullOrUndefined(overlay.closest("#nav1"))) {
+                overlay.closest("#nav1").parentElement.previousElementSibling.focus();
+            } else {
+                overlay.previousElementSibling.focus();
+            }
+        }
+        overlay.classList.remove('show');
+        overlay.setAttribute("aria-hidden", "true");
+        removeFocusTabListener(overlay);
+        timerDisplayNone(overlay,500);
+    });
+
+    let overlayBtns = document.querySelectorAll('.ds44-btn--menu, .ds44-overlay--navNiv1 .ds44-ds44-menuBtn');
+    overlayBtns.forEach((btn)=> {
+        btn.setAttribute("aria-expanded","false");
+    });
+
+    document.getElementsByTagName("main")[0].setAttribute("aria-hidden","false");
+    document.getElementsByTagName("footer")[0].setAttribute("aria-hidden","false");
+}
+
+// EventHandler pour piéger le focus clavier dans un bloc précis
+const keepFocusHandler = function keepFocus(e) {
+    var isTabPressed = (e.key === 'Tab' || e.keyCode === KEYCODE_TAB);
+
+    if (!isTabPressed) { 
+        return; 
+    }
+
+    if ( e.shiftKey ) /* shift + tab */ {
+        if (document.activeElement === firstFocusableEl) {
+            lastFocusableEl.focus();
+            e.preventDefault();
+        }
+    } else /* tab */ {
+        if (document.activeElement === lastFocusableEl) {
+            firstFocusableEl.focus();
+            e.preventDefault();
+        }
+    }
+
+}
+
+// Fonction qui va forcer le focus à faire une boucle sur un élément
+// La seconde valeur en option permet de retirer le focus sur un autre élément
+function trapFocus(element, oldElement) {
+    if (!isNullOrUndefined(oldElement)) {
+        removeFocusTabListener(oldElement);
+    }
+
+    var focusableEls = element.querySelectorAll('a[href]:not([disabled]), button:not([disabled]), textarea:not([disabled]), input[type="text"]:not([disabled]), input[type="radio"]:not([disabled]), input[type="checkbox"]:not([disabled]), select:not([disabled])');
+        firstFocusableEl = focusableEls[0];  
+        lastFocusableEl = focusableEls[focusableEls.length - 1];
+        KEYCODE_TAB = 9;
+    
+    element.addEventListener('keydown', keepFocusHandler);
+}
+
+// Retire le piège de focus sur un élément HTML
+function removeFocusTabListener(element) {
+    element.removeEventListener('keydown', keepFocusHandler);
+}
+
 // Collapser ds44
 (function (window) {
     function ds44() {
         var _ds44 = {};
+
+        // composant menu de navigation - spécifique
+        _ds44.menuExpand = function (querySelector) {
+
+            const menuToggler = document.querySelectorAll(querySelector);
+
+            menuToggler.forEach((element) => {
+                element.addEventListener('click', () => {
+                    displayMainNavMenu(element);
+                })
+            });
+
+            let displayMainNavMenu = function (element) {
+                element.setAttribute("aria-expanded","true");
+                let navNivOne = document.querySelector('.ds44-overlay--navNiv1');
+                navNivOne.style.display = 'block';
+                timerShow(navNivOne, 0);
+                navNivOne.setAttribute("aria-hidden", "false");
+                navNivOne.querySelector('.ds44-btnOverlay--closeOverlay').focus();
+                document.getElementsByTagName("main")[0].setAttribute("aria-hidden","true");
+                document.getElementsByTagName("footer")[0].setAttribute("aria-hidden","true");
+                // ajouter l'élément de piège focus sur le menu nv1
+                trapFocus(navNivOne, null);
+            }
+        }
+
+        // Sous-composant expandable qui doit ouvrir son parent et fermer les autres expandables sur tabulation
+        _ds44.ssElemExpandable = function (querySelector) {
+            const toggler = document.querySelectorAll(querySelector);
+
+            //Bind event on keydown (TAB, SHIFT+TAB)
+            toggler.forEach((element) => {
+                element.addEventListener('keyup', function (e) {
+                    performTabFocus(e);
+                });
+            });
+
+            let performTabFocus = function (e) {
+                let KEYCODE_TAB = 9;
+                var isTabPressed = (e.key === 'Tab' || e.keyCode === KEYCODE_TAB);
+
+                if (!isTabPressed) { 
+                    return;
+                }
+
+                var elemParent = e.originalTarget.closest('.ds44-collapser_element');
+                if (!elemParent.querySelector('.ds44-collapser_button').classList.contains('show'))  {
+                    elemParent.querySelector('.ds44-collapser_button').click();
+                }
+            }
+
+        }
 
         // Composant expandable
         _ds44.expandable = function (querySelector) {
@@ -14,14 +155,13 @@
                     showCurrentBlocExpandable(element);
                 })
             });
-
+            
             let showCurrentBlocExpandable = function (element) {
                 const panel = element.nextElementSibling;
-
                 currentElementOpened = element;
                 element.classList.toggle('show');
                 panel.style.maxHeight = (panel.style.maxHeight) ? null : panel.scrollHeight + 60 + "px";
-				panel.style.visibility = 'hidden';
+                panel.style.visibility = 'hidden';
                 element.setAttribute('aria-expanded', 'false');
                 hideAllOtherBlock();
             }
@@ -35,13 +175,88 @@
                         panel.style.maxHeight = null;
                         // elementToHide.setAttribute('aria-expanded', 'false');
                     } else {
-						elementToHide.setAttribute('aria-expanded', 'true');
-						const panel = elementToHide.nextElementSibling;
-						panel.style.visibility = 'visible';
-					}
+                        elementToHide.setAttribute('aria-expanded', 'true');
+                        const panel = elementToHide.nextElementSibling;
+                        panel.style.visibility = 'visible';
+                    }
                 });
             }
         };
+
+        // Composants expandables ouvrant un sous-menu en topbar
+        _ds44.ssMenuExpandable = function (querySelector) {
+
+            const ssMenuToggler = document.querySelectorAll(querySelector);
+
+            ssMenuToggler.forEach((element) => {
+                element.addEventListener('click', () => {
+                    displaySsNavMenu(element);
+                })
+            });
+
+            let displaySsNavMenu = function (element) {
+                element.setAttribute("aria-expanded","true");
+                let navNivOne = document.querySelector('.ds44-overlay--navNiv1');
+                let navNivTwo = document.querySelector("#" + element.getAttribute("data-ssmenu"));
+                navNivTwo.style.display = 'block';
+                timerShow(navNivTwo, 0);
+                navNivTwo.setAttribute("aria-hidden", "false");
+                navNivTwo.querySelector('.ds44-btnOverlay--closeOverlay').focus();
+                // ajouter l'élément de piège focus sur le menu nv2
+                trapFocus(navNivTwo, navNivOne);
+            }
+
+        }
+
+        // Composants "Retour" dans le menu en topbar
+        _ds44.ssMenuReturn = function (querySelector) {
+
+            const ssMenuReturn = document.querySelectorAll(querySelector);
+
+            ssMenuReturn.forEach((element) => {
+                element.addEventListener('click', () => {
+                    returnSsNavMenu(element);
+                })
+            });
+
+            let returnSsNavMenu = function (element) {
+                let navNivOne = document.querySelector('.ds44-overlay--navNiv1');
+                let navCurrent = element.closest("section.ds44-overlay");
+                navCurrent.previousElementSibling.setAttribute("aria-expanded","false");
+                navCurrent.setAttribute("aria-hidden", "true");
+                navCurrent.style.display = 'block';
+                navCurrent.classList.remove('show');
+                navCurrent.previousElementSibling.focus();
+                trapFocus(navNivOne, navCurrent);
+                timerDisplayNone(navCurrent,500);
+            }
+
+        }
+
+        // Composant ouvrant le menu des applications
+        _ds44.menuAppExpander = function (querySelector) {
+
+            const ssMenuReturn = document.querySelectorAll(querySelector);
+
+            ssMenuReturn.forEach((element) => {
+                element.addEventListener('click', () => {
+                    returnSsNavMenu(element);
+                })
+            });
+
+            let returnSsNavMenu = function (element) {
+                element.setAttribute("aria-expanded","true");
+                let navNivOne = document.querySelector('.ds44-overlay--navNiv1');
+                let navApplis = document.querySelector("#navApplis");
+                navApplis.style.display = 'block';
+                timerShow(navApplis, 0);
+                navApplis.setAttribute("aria-hidden", "false");
+                navApplis.querySelector('.ds44-btnOverlay--closeOverlay').focus();
+                // ajouter l'élément de piège focus sur le menu nv2
+                trapFocus(navApplis, navNivOne);
+            }
+
+        }
 
         // Composant popup
         _ds44.popup = function () {
@@ -73,15 +288,15 @@
             window.document.addEventListener("keyup", (e) => {
                 if (e.key === "Escape") {
                     _closePopup();
-					
-					const elementsShow = document.querySelectorAll('.show');
-					elementsShow.forEach((elementShow) => {
-						console.info('debug ' + elementsShow);
-						if (document.activeElement == elementShow) {
-							// hideAllOtherBlock();
-							elementShow.click();
-						}
-					});
+                    
+                    const elementsShow = document.querySelectorAll('.show');
+                    elementsShow.forEach((elementShow) => {
+                        console.info('debug ' + elementsShow);
+                        if (document.activeElement == elementShow) {
+                            // hideAllOtherBlock();
+                            elementShow.click();
+                        }
+                    });
                 }
             });
 
@@ -138,6 +353,8 @@
         _ds44.setFocus = function (selector, params) {
             document.getElementsByTagName('body')[0].classList.add('fullHeight');
             let elementToFocus = (typeof selector === "string") ? document.querySelector(selector) : selector;
+
+            if (isNullOrUndefined(elementToFocus)) return;
 
             //Selon la configuration , on va autorisé le masquage du focus soit au click soit via le bouton échap
             if (params) {
@@ -228,6 +445,56 @@
             document.body.appendChild(newDivBottom);
         }
 
+        _ds44.expandTuileLink = function() {
+            /* Etend le lien dans les tuiles en ajoutant un onclick sur l'ensemble de la tuile */
+
+            let allTuiles = document.querySelectorAll('section.ds44-card');
+
+            if (allTuiles.length) {
+                allTuiles.forEach((tuile) => {
+                    tuile.onclick = function(e) {
+                        tuileLinkArray = tuile.getElementsByTagName('a');
+                        if (tuileLinkArray.length) {
+                            tuileLinkArray[0].click();
+                        }
+                    };
+                });
+            }
+        }
+
+        _ds44.closeOverlays = function(querySelector){
+            let closeBtns = document.querySelectorAll(querySelector);
+            if (closeBtns.length){
+                closeBtns.forEach((btn) => {
+                    btn.onclick = function() {
+                        performCloseOverlays(".ds44-overlay");
+                    };
+                });
+            }
+        }
+
+        _ds44.fiddleInputLabel = function (classCSSAnimation, querySelector) {
+
+                let allInputs = document.querySelectorAll(querySelector);
+
+                if (allInputs.length) {
+                    allInputs.forEach((inputElem) => {
+                        const label = inputElem.previousElementSibling;
+
+                        label.classList.remove(classCSSAnimation);
+
+                        inputElem.addEventListener('focus', (event) => {
+                            label.classList.add(classCSSAnimation);
+                        });
+                        inputElem.addEventListener('blur', (event) => {
+                            if(! inputElem.value) {
+                                label.classList.remove(classCSSAnimation);
+                            }
+                        });
+                    });
+                }
+        }
+
         return _ds44;
     }
 
@@ -237,9 +504,18 @@
     }
 })(window); // Création de la closure en passant en paramètre le scope global
 
+// Initialisation du composant bouton menu
+ds44.menuExpand('.ds44-btn--menu');
+
+// Initialisation des boutons menu ouvrant le niveau 2
+//ds44.meuNiv2Expand('.ds44-overlay--navNiv1 .ds44-ds44-menuBtn');
 
 //Initialisation des composants collapse
 ds44.expandable('.ds44-collapser_button');
+ds44.ssElemExpandable('.ds44-collapser_content--link');
+ds44.ssMenuExpandable('nav[role="navigation"] .ds44-navList .ds44-menuBtn');
+ds44.ssMenuReturn('.ds44-btn-backOverlay');
+ds44.menuAppExpander('#ds44-btn-applis');
 //Initialisation des composants de popup
 /*
 Utilisation :
@@ -269,3 +545,14 @@ document.addEventListener('click', function (e) {
 
 }, true);
 */
+
+ds44.expandTuileLink();
+// sert pour gérer les liens autour des tuiles
+
+ds44.closeOverlays(".ds44-btnOverlay--closeOverlay");
+// ajoute un listener aux boutons qui ferment les overlays
+
+const classAnimInputForm = "ds44-moveLabel";
+
+ds44.fiddleInputLabel(classAnimInputForm, '.'+classAnimInputForm+' + input[type="text"], .' + classAnimInputForm + ' + input[type="email"], .' + classAnimInputForm + ' + input[type="tel"], .' + classAnimInputForm + ' + input[type="search"]');
+// faire une animation CSS sur certains champs inputs pour conserver un DOM lisible pour les lecteurs vocaux

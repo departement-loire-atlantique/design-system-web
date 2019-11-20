@@ -151,17 +151,23 @@ h6, .h6-like {
 }
 
 .ds44-titleContainer {
-  position: absolute;
+  position: relative;
   bottom: 0;
   z-index: 10;
-  padding: 15rem $ds44-padding-xlarge $ds44-padding-large $ds44-padding-xlarge;
   width: 100%;
   box-sizing: border-box;
-  background: linear-gradient(to bottom, rgba(0,0,0,0) 0%,rgba(0,0,0,0) 35%,rgba(0,0,0,.75) 70%);
-  background-size: cover;
   display: flex;
   flex-direction: column;
   justify-content: flex-end;
+  min-height: 460px;
+}
+
+.ds44-pageHeaderContainer__pictureContainer {
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  top: 0;
+  left: 0;
 }
 
 .ds44-introduction, .ds44-introduction-like, .ds44-component-chapo {

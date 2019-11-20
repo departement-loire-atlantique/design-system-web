@@ -2,6 +2,14 @@
 /* ==Navigation full page        */
 /* ----------------------------- */
 
+.ds44-menuBox, .ds44-searchBox {
+    text-align: left;
+    position: fixed;
+    z-index: 1000;
+    top: 0;
+    left: 0;
+    display: inline;
+}
 .ds44-navList {
     list-style: none;
     margin-top: $spacer-large;
@@ -82,6 +90,14 @@
     &:hover .icon, &:focus .icon, &:active .icon {
         right: 0;
         opacity: 1;
+    }
+}
+
+.ds44-navListApplis {
+    margin-top: $ds44-container-vmargin;
+
+    > li {
+        padding-left: $ds44-padding-box;
     }
 }
 
