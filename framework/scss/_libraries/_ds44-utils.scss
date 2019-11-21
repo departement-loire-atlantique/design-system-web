@@ -115,6 +115,28 @@
   flex-grow: 1;
 }
 
+@media (max-width: $ds44-medium) {
+
+  .ds44-flex-wrap-medium {
+    flex-wrap: wrap;
+  }
+  .ds44-flex-grow1-medium {
+    flex-grow: 1;
+  }
+
+}
+
+@media (max-width: $ds44-large) {
+
+  .ds44-flex-wrap-large {
+    flex-wrap: wrap;
+  }
+  .ds44-flex-grow1-large {
+    flex-grow: 1;
+  }
+
+}
+
 /* === Grid utils === */
 
 .ds44-grid-middle {
