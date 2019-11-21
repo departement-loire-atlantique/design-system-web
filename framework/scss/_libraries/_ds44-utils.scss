@@ -34,6 +34,10 @@
 .ds44--l-padding {
   padding: $ds44-padding-large; // 2rem
 }
+.ds44--l-padding-tb {
+  padding-top: $ds44-padding-large; // 2rem
+  padding-bottom: $ds44-padding-large; // 2rem
+}
 .ds44--xl-padding {
     padding: $ds44-padding-xlarge; // 3rem
 }
@@ -106,6 +110,9 @@
 }
 .ds44-fse {  
   justify-content: space-evenly;
+}
+.ds44-fg1 {
+  flex-grow: 1;
 }
 
 /* === Grid utils === */

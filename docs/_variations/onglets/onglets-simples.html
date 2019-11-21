@@ -1,0 +1,28 @@
+---
+layout: pattern
+---
+
+<section class="ds44-ongletsContainer">
+    <div class="js-tabs ds44-tabs" data-existing-hx="h2" data-tabs-prefix-class="ds44" id="onglets">
+        <ul class="js-tablist ds44-tabs__list ds44-theme ds44-flex-container ds44-fse" role="tablist" id="tabs">
+            <li class="js-tablist__item ds44-tabs__item ds44-fg1" role="presentation" id="tabs__1">
+                <a class="js-tablist__link ds44-tabs__link" id="label_id_first" role="tab" aria-controls="id_first" tabindex="0" aria-selected="true">1er onglet</a>
+            </li>
+            <li class="js-tablist__item ds44-tabs__item ds44-fg1" role="presentation" id="tabs__2">
+                <a class="js-tablist__link ds44-tabs__link" id="label_id_second" role="tab" aria-controls="id_second" tabindex="-1" aria-selected="false">2e onglet</a>
+            </li>
+            <li class="js-tablist__item ds44-tabs__item ds44-fg1" role="presentation" id="tabs__3">
+                <a class="js-tablist__link ds44-tabs__link" id="label_id_third" role="tab" aria-controls="id_third" tabindex="-1" aria-selected="false">3e onglet</a>
+            </li>
+        </ul>
+        <div id="id_first" class="js-tabcontent ds44-tabs__content" role="tabpanel" aria-labelledby="label_id_first">
+            <p>Ici le contenu du premier onglet</p>
+        </div>
+        <div id="id_second" class="js-tabcontent ds44-tabs__content" role="tabpanel" aria-labelledby="label_id_second" aria-hidden="true">
+            <p>Ici le contenu du deuxième onglet</p>
+        </div>
+        <div id="id_third" class="js-tabcontent ds44-tabs__content" role="tabpanel" aria-labelledby="label_id_third" aria-hidden="true">
+            <p>Ici le contenu du troisième onglet</p>
+        </div>
+    </div>    
+</section>

@@ -1,0 +1,62 @@
+/*
+* CD44 Design System - système d'onglets
+*/
+
+.invisible {
+    border: 0;
+    clip: rect(0 0 0 0);
+    height: 1px;
+    margin: -1px;
+    overflow: hidden;
+    padding: 0;
+    position: absolute;
+    width: 1px;
+}
+  
+.ds44-tabs__list {
+    margin: 0;
+    padding: $ds44-padding-small $ds44-padding-xlarge $ds44-padding-xlarge $ds44-padding-xlarge;
+}
+
+.ds44-tabs__item {
+    display: inline-block;
+}
+  
+.ds44-tabs__link {
+    display: block;
+    padding: $ds44-padding-box $ds44-padding-xlarge;
+    cursor: pointer;
+    text-decoration: none;
+    font-size: 1.375em; /* 22px */
+    transition: all $ds44-timing-standard ease-in-out;
+    position: relative;
+    text-align: center;
+
+    &::after {
+        content: "";
+        width: 100%;
+        position: absolute;
+        height: 2px;
+        background-color: #FFF;
+        bottom: 0;
+        left: 0;
+    }
+}
+  
+[aria-selected="true"].ds44-tabs__link {
+    font-weight: bolder;
+
+    &::after {
+        height: 5px;
+        background-color: #000;
+    }
+}
+  
+.ds44-tabs__content {
+    padding: $ds44-padding-xlarge;
+}
+  
+[aria-hidden="true"].ds44-tabs__content {
+    display: none;
+}
+  
