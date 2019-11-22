@@ -80,6 +80,10 @@ a {
   }
 }
 
+.ds44-rsLink {
+  padding: $ds44-padding-box;
+}
+
 /* Headings */
 h1, .h1-like {
   @include ds44-font-sizes(h1);
