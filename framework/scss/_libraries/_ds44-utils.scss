@@ -4,6 +4,10 @@
 
 /* === Positions === */
 
+.ds44-centeredBlock {
+  margin-left: auto;
+  margin-right: auto;
+}
 .ds44-posAbs {
   position: absolute;
   z-index: 1;
@@ -31,6 +35,10 @@
 /* === Spacers === */
 
 // paddings
+
+.ds44--m-padding {
+  padding: $ds44-padding-medium; // 1rem
+}
 .ds44--l-padding {
   padding: $ds44-padding-large; // 2rem
 }
@@ -58,6 +66,10 @@
 }
 
 // margins
+
+.ds44-mb-std {
+  margin-bottom: $ds44-medium-vmargin; // 1.5rem
+}
 .ds44-mb3 {
   margin-bottom: $ds44-components-vmargin; // 3rem
 }
@@ -72,6 +84,9 @@
 }
 .ds44-m5 {
   margin: $ds44-container-vmargin; // 5rem
+}
+.ds44-m5c {
+  margin: $ds44-container-vmargin auto; // 5rem
 }
 .ds44-svm {
   margin-bottom: $ds44-small-vmargin;
@@ -162,11 +177,18 @@
   column-count: 2;
   display: block;
 
-  > li { // if multicol is applied to a list, prevent break inside the li element
+  li { // if multicol is applied to a list, prevent break inside the li element
     -webkit-column-break-inside: avoid; /* Chrome, Safari, Opera */
           page-break-inside: avoid; /* Firefox */
                break-inside: avoid; /* IE 10+ */
                break-inside: avoid-column; /* W3C */
+  }
+  .ds44-noCut { // prevent break inside the container ds44-noCut
+    -webkit-column-break-inside: avoid; /* Chrome, Safari, Opera */
+          page-break-inside: avoid; /* Firefox */
+               break-inside: avoid; /* IE 10+ */
+               break-inside: avoid-column; /* W3C */
+               display: inline-block;
   }
 }
 .ds44-multiCol--3 {
@@ -198,6 +220,10 @@
 // Thematic color
 .ds44-theme {
   background-color: $ds44-contextual-color;
+}
+
+.ds44-theme-border {
+  border-color: $ds44-contextual-color;
 }
 
 .ds44-bgDark {
@@ -281,7 +307,7 @@
   font-size: 2.5rem;
 }
 .icon--sizeL::before {
-  font-size: 3rem;
+  font-size: 3.3rem;
 }
 .icon--sizeXL::before {
   font-size: 5rem;
@@ -301,6 +327,12 @@
   top: 1px;
 }
 
+/* === Images === */
+
+/*.ds44-boxCoverPict { // images in boxes
+
+}
+*/
 
 /* === Overlay === */
 
@@ -384,6 +416,14 @@
 
   .ds44-navSep {
     margin: $ds44-components-vmargin $ds44-margin-base;
+  }
+
+}
+
+@media (max-width: $ds44-small) {
+
+  .ds44-hide-smallScreens {
+    display: none;
   }
 
 }

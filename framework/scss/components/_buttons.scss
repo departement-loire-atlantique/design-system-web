@@ -173,7 +173,18 @@ button, a.ds44-btnStd {
     position: absolute;
     top: $ds44-components-vmargin;
     right: $ds44-components-vmargin;
-    //z-index: 100;
+    z-index: 10;
+}
+
+.ds44-btnOverlay--modale {
+    position: absolute;
+    top: 0;
+    right: 0;
+    z-index: 10;
+
+    &:focus {
+        outline: 1px dotted;
+    }
 }
 
 .ds44-fullWBtn {

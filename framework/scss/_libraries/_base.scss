@@ -107,6 +107,7 @@ h2, .h2-like {
   /* Permalink - use to edit and share this gradient: https://colorzilla.com/gradient-editor/#ffffff+40,99e6d1+40,99e6d1+65,ffffff+65 */
   background: $ds44-contextual-color; /* Old browsers */
   background: linear-gradient(to bottom, rgba(255,255,255,0) 55%,$ds44-contextual-color 55%);
+  margin-bottom: $ds44-components-vmargin; // 30px
 }
 
 h3, .h3-like {
@@ -118,6 +119,7 @@ h3, .h3-like {
   font-weight: $weight-bold;
   line-height: 1.2;
   padding: 0;
+  margin-bottom: $ds44-components-vmargin; // 30px
 }
 
 h4, .h4-like {
@@ -150,6 +152,15 @@ h6, .h6-like {
   padding: 0;
 }
 
+[role="heading"] {
+  font-weight: bold;
+
+  a {
+    text-decoration: none;
+  }
+  
+}
+
 .ds44-smallText {
   @include ds44-font-sizes(smallText);
 }
@@ -180,6 +191,7 @@ h6, .h6-like {
   font-weight: $weight-bold;
   margin-bottom: $ds44-components-vmargin;
 }
+
 .ds44-component-chapo {
   max-width: 50%;
 }
@@ -193,6 +205,12 @@ h6, .h6-like {
     color: $ds44-light-color;
   }
 
+}
+
+.ds44-exergue {
+  border: 1px solid $ds44-contextual-color;
+  padding: $ds44-padding-box $ds44-padding-xlarge;
+  margin: $ds44-components-vmargin auto;
 }
 
 figcaption {
@@ -223,8 +241,6 @@ blockquote {
 }
 
 /* Avoid margins on nested elements */
-li p,
-li .p-like,
 li ul,
 li ol,
 ol ol,
@@ -233,10 +249,54 @@ ul ul {
   margin-bottom: 0;
 }
 
+// Listes
+
 /* Remove bullets and padding for lists */
-ol, ul {
+ul {
   list-style: none;
   padding-left: 0;
+}
+
+ol {
+  list-style-position: inside;
+  padding-left: 0;
+}
+
+ol > li {
+  margin-bottom: $ds44-components-vmargin;
+}
+ol > li::marker {
+  font-weight: bold;
+}
+li > p:first-child {
+  display: inline;
+
+  &::after {
+    content: "";
+    display: block;
+    padding-bottom: $ds44-padding-base;
+  }
+}
+
+ul:not(.ds44-list) {
+
+  padding-left: $ds44-padding-xlarge;
+
+  // first-level
+  > li {
+    list-style-position: outside;
+    margin-top: $ds44-padding-box;
+    list-style-image: url(../../../assets/images/right.png);
+    
+    ul:not(.ds44-list) {
+      
+      // second-level
+      > li {
+        list-style-type: disc;
+        list-style-image: unset;
+      }
+    }
+  }
 }
 
 /* Max values */
@@ -259,6 +319,11 @@ img {
 
 img {
   vertical-align: middle;
+}
+
+picture {
+  position: relative;
+  display: block;
 }
 
 sup,
@@ -331,3 +396,25 @@ figure {
   margin-left: 0;
   margin-right: 0;
 }
+
+/* Tables */
+
+table {
+  text-align: center;
+  border-spacing: 0px;
+}
+th, td {
+  padding: 1rem;
+}
+tr:nth-child(odd) {
+  background-color: #f5f5f5;
+}
+td {
+  font-weight: normal;
+}
+caption {
+  margin-bottom: $ds44-medium-vmargin;
+  text-align: left;
+  font-weight: normal;
+}
+

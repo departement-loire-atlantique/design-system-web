@@ -17,6 +17,12 @@ function timerDisplayNone(elem, timer) {
     }, timer);
 }
 
+function timerClass(elem, className, value, timer) {
+    setTimeout(function() {
+        elem.style[className] = value;
+    }, timer);
+}
+
 // Ferme tous les overlays, et ajoute un focus sur le bouton qui a ouvert le dernier overlay affiché
 function performCloseOverlays(querySelector){
     let overlays = document.querySelectorAll(querySelector);
@@ -267,10 +273,14 @@ function removeFocusTabListener(element) {
                 button.addEventListener('click', () => {
                     const modalId = (button.dataset.target) ? button.dataset.target : null;
                     const modal = document.querySelector(modalId);
-                    if (modal) {
+                    if (!isNullOrUndefined(modal)) {
                         _getFocusOnPopup(modal);
-                        modal.classList.toggle('is-visible');
+                        modal.style.display = "flex";
+                        timerShow(modal, 1);
+                        modal.setAttribute('aria-hidden', 'false');
+                        trapFocus(modal, null);
                         const closeButton = modal.querySelector('[data-js="ds44-modal-action-close"]');
+                        closeButton.focus();
                         closeButton.addEventListener('click', () => {
                             _closePopup();
                         });
@@ -301,9 +311,13 @@ function removeFocusTabListener(element) {
             });
 
             let _closePopup = function () {
-                const currentModal = document.querySelector('.is-visible');
+                const currentModal = document.querySelector('.show[role="dialog"]');
                 if (currentModal) {
-                    currentModal.classList.toggle('is-visible');
+                    removeFocusTabListener(currentModal);
+                    currentModal.classList.toggle('show');
+                    timerDisplayNone(currentModal, 300);
+                    currentModal.setAttribute('aria-hidden', 'true');
+                    document.querySelector('[data-js="ds44-modal"][data-target="#'+ currentModal.id +'"]').focus();
                 }
 
                 let allOtherField = document.querySelectorAll('input, button, textarea, a, select');
@@ -495,6 +509,41 @@ function removeFocusTabListener(element) {
                 }
         }
 
+        _ds44.transitionContenuOnglets = function (querySelector) {
+
+                function processTransitionOnglets(target, onglets) {
+                    if (onglets.length) {
+                        onglets.forEach((itOnglet) => {
+
+                            // est-ce que l'onglet cliqué correspond à l'onglet vérifié ?
+                            if (target == itOnglet) {
+                                // On affiche son contenu immédiatement
+                                document.querySelector("#" + itOnglet.getAttribute("aria-controls")).style.display = "block";
+                                timerClass(document.querySelector("#" + itOnglet.getAttribute("aria-controls")), "opacity", "1", 300);
+
+                            } else {
+                                // On cache son contenu avec un délai
+                                timerClass(document.querySelector("#" + itOnglet.getAttribute("aria-controls")), "opacity", "0", 150);
+                                timerDisplayNone(document.querySelector("#" + itOnglet.getAttribute("aria-controls")), 150);
+                            }
+                            
+                        });
+                    }
+                }
+
+                let allOnglets = document.querySelectorAll(querySelector);
+
+                if (allOnglets.length) {
+                    allOnglets.forEach((onglet) => {
+
+                        onglet.addEventListener('click', (event) => {
+                            let target = event.target;
+                            processTransitionOnglets(target, allOnglets);
+                        });
+                    });
+                }
+        }
+
         return _ds44;
     }
 
@@ -556,3 +605,6 @@ const classAnimInputForm = "ds44-moveLabel";
 
 ds44.fiddleInputLabel(classAnimInputForm, '.'+classAnimInputForm+' + input[type="text"], .' + classAnimInputForm + ' + input[type="email"], .' + classAnimInputForm + ' + input[type="tel"], .' + classAnimInputForm + ' + input[type="search"]');
 // faire une animation CSS sur certains champs inputs pour conserver un DOM lisible pour les lecteurs vocaux
+
+ds44.transitionContenuOnglets(".js-tablist__link");
+// effectuer une transition des display:none sur les contenus des onglets

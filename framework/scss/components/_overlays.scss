@@ -1,0 +1,40 @@
+/* ------------------------- */
+/* ==DS44 Overlays           */
+/* ------------------------- */
+
+.ds44-modal-container.show {
+    pointer-events: auto;
+    opacity: 1;
+}
+
+.ds44-modal-container {
+    width: 100%;
+    height: 100vh;
+    background-color: #00000066;
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    z-index: 1000;
+    opacity: 0;
+    pointer-events: none;
+    transition: all $ds44-timing-standard ease-in;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.ds44-modal-box {
+    width: 96%;
+    max-width: $ds44-large;
+    padding: $ds44-padding-box $ds44-padding-xlarge;
+    background-color: $ds44-light-color;
+    position: relative;
+    z-index: 10;
+}
+
+.ds44-modal-gab {
+    padding: $ds44-padding-box;
+}

@@ -15,7 +15,7 @@
   
 .ds44-tabs__list {
     margin: 0;
-    padding: $ds44-padding-small $ds44-padding-xlarge $ds44-padding-xlarge $ds44-padding-xlarge;
+    padding: $ds44-padding-large $ds44-padding-xlarge $ds44-padding-xlarge $ds44-padding-xlarge;
 }
 
 .ds44-tabs__item {
@@ -24,7 +24,7 @@
   
 .ds44-tabs__link {
     display: block;
-    padding: $ds44-padding-box $ds44-padding-xlarge;
+    padding: $ds44-padding-base $ds44-padding-xlarge $ds44-padding-box $ds44-padding-xlarge;
     cursor: pointer;
     text-decoration: none;
     font-size: 1.375em; /* 22px */
@@ -53,13 +53,22 @@
 }
   
 .ds44-tabs__content {
-    padding: $ds44-padding-xlarge;
+    padding: 5rem;
+    opacity: 1;
+    transition: all $ds44-timing-standard ease-in-out;
 }
   
 [aria-hidden="true"].ds44-tabs__content {
     display: none;
+    opacity: 0;
+    transition: all $ds44-timing-standard ease-in-out;
 }
 
+.ds44-blocBtnOnglets {
+    padding-right: $ds44-padding-large;
+    padding-top: $ds44-padding-ico;
+    margin: 0;
+}
 
 
 @media (max-width: $ds44-small) {

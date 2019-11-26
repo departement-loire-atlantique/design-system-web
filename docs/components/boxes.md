@@ -26,6 +26,9 @@ variations:
 - title: Pushs
   description: Encadrés publicitaires
   pattern: boxes/box-push.html
+- title: Media
+  description: Encadrés video
+  pattern: boxes/box-media.html
 ---
 
 ## Usage

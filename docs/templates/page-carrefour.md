@@ -1,7 +1,7 @@
 ---
 layout: component-detail
 group: templates
-permalink: /components/page.html
+permalink:
 
 title: Page Carrefour
 description: Modèle de page sommaire basée sur le template "carrefour". 
