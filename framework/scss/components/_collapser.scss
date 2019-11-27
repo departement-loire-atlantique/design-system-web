@@ -3,16 +3,22 @@
 /* ----------------------------- */
 
 /* component structure */
-.ds44-collapser {
+.ds44-collapser, ul.ds44-collapser {
   list-style: none; // if collapser is a list
   padding: 0;
   margin: 2rem 0 4rem 0;
   border-top: 1px solid $ds44-contextual-color;
+
+  > li.ds44-collapser_element {
+    list-style: none;
+  }
+  
 }
 
 /* container for collapsed content */
 .ds44-collapser_element {
   border-bottom: 1px solid $ds44-contextual-color;
+  list-style: none; // if collapser is a list
 }
 
 /* row-like button */

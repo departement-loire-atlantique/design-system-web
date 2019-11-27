@@ -44,9 +44,15 @@ Dans ce cas, la couleur du titre doit être inversée grâce à la classe `ds44-
 
 Si le titre ne comporte aucune image, il peut être soit ferré à gauche, soit centré.
 * Pour le centrer, ajouter la classe `.txtcenter`.
+* Retirer la classe `ds44-text--colorInvert` positionnée sur la `<ul>` pour redonner aux liens une couleur sombre
 
 
 ## Règles
 
 * Le fil d'Ariane est affiché au-dessus du titre.
+
+
+## Accessibilité
+
+* Ajouter `aria-current="location"` sur l'élément de liste actif.
 

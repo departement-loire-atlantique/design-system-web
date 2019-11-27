@@ -20,6 +20,7 @@
 
 .ds44-tabs__item {
     display: inline-block;
+    align-self: flex-end;
 }
   
 .ds44-tabs__link {
@@ -68,6 +69,19 @@
     padding-right: $ds44-padding-large;
     padding-top: $ds44-padding-ico;
     margin: 0;
+}
+
+
+
+@media (max-width: $ds44-large) {
+
+    .ds44-blocBtnOnglets {
+        padding-right: 0;
+        padding-top: 0;
+        padding-bottom: $ds44-padding-large;
+    }
+
+
 }
 
 

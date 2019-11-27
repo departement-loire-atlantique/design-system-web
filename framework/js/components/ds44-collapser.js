@@ -232,6 +232,15 @@ function removeFocusTabListener(element) {
                 navCurrent.setAttribute("aria-hidden", "true");
                 navCurrent.style.display = 'block';
                 navCurrent.classList.remove('show');
+                // Cacher tous les boutons "Fermer" sauf le bouton de la modale actuelle
+                const allCloseButtons = document.querySelectorAll('.ds44-btnOverlay--closeOverlay');
+                allCloseButtons.forEach((element) => {
+                    if (element != navNivOne.querySelector('.ds44-btnOverlay--closeOverlay')) {
+                        element.style.display = "none";
+                    } else {
+                        element.style.display = "block";
+                    }
+                });
                 navCurrent.previousElementSibling.focus();
                 trapFocus(navNivOne, navCurrent);
                 timerDisplayNone(navCurrent,500);
@@ -257,6 +266,15 @@ function removeFocusTabListener(element) {
                 navApplis.style.display = 'block';
                 timerShow(navApplis, 0);
                 navApplis.setAttribute("aria-hidden", "false");
+                // Cacher tous les boutons "Fermer" sauf le bouton de la modale actuelle
+                const allCloseButtons = document.querySelectorAll('.ds44-btnOverlay--closeOverlay');
+                allCloseButtons.forEach((element) => {
+                    if (element != navApplis.querySelector('.ds44-btnOverlay--closeOverlay')) {
+                        element.style.display = "none";
+                    } else {
+                        element.style.display = "block";
+                    }
+                });
                 navApplis.querySelector('.ds44-btnOverlay--closeOverlay').focus();
                 // ajouter l'élément de piège focus sur le menu nv2
                 trapFocus(navApplis, navNivOne);
@@ -280,6 +298,15 @@ function removeFocusTabListener(element) {
                         modal.setAttribute('aria-hidden', 'false');
                         trapFocus(modal, null);
                         const closeButton = modal.querySelector('[data-js="ds44-modal-action-close"]');
+                        // Cacher tous les boutons "Fermer" sauf le bouton de la modale actuelle
+                        const allCloseButtons = document.querySelectorAll('.ds44-btnOverlay--closeOverlay');
+                        allCloseButtons.forEach((element) => {
+                            if (element != closeButton) {
+                                element.style.display = "none";
+                            } else {
+                                element.style.display = "block";
+                            }
+                        });
                         closeButton.focus();
                         closeButton.addEventListener('click', () => {
                             _closePopup();

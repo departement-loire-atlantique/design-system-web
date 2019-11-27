@@ -162,7 +162,7 @@
                                 isTooltipOrTriggerHovered = false; // LChoquet - indiquer qu'on sort d'un tooltip ou déclencheur
                                 setTimeout(function(){
                                     performHide(tooltipLauncher, "tooltip" == tooltipLauncher.getAttribute('role'));
-                                }, 1000); // LChoquet - délai d'une seconde pour laisser le temps à l'utilisateur de déplacer son curseur vers la tooltip
+                                }, 150); // LChoquet - délai d'une seconde pour laisser le temps à l'utilisateur de déplacer son curseur vers la tooltip
                             }
                         }
 

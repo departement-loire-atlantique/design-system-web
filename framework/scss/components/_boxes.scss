@@ -20,6 +20,10 @@
     min-height: 280px;
 }
 
+.ds44-box__img {
+    width: 100%;
+}
+
 .ds44-box-heading {
     @include ds44-font-sizes(h4);
     font-weight: $weight-bold;

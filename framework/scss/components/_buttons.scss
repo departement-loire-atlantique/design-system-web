@@ -43,7 +43,7 @@ button, a.ds44-btnStd {
     min-height: $ds44-largeHeight;
 }
 
-.ds44-btn--invert {
+.ds44-btn--invert, a.ds44-btn--invert {
     background-color: $ds44-background-dark;
     color: $ds44-color-inverse;
 

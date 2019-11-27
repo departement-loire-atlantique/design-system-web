@@ -21,7 +21,7 @@ layout: pattern
 		</div>
 		<div class="ds44-colRight">            
 			<button class="ds44-btnIcoText--maxi ds44--xl-padding" type="button"><span class="ds44-btnInnerText">Rechercher</span><i class="icon icon-magnifier icon--xlarge" aria-hidden="true"></i></button>
-			<button class="ds44-btnIcoText--maxi ds44-btn--contextual ds44-btn--menu ds44--xl-padding" type="button"><span class="ds44-btnInnerText">Menu</span><i class="icon icon-burger icon--xlarge" aria-hidden="true"></i></button>
+			<button class="ds44-btnIcoText--maxi ds44-btn--contextual ds44-btn--menu ds44--xl-padding" type="button" aria-label="Ouvrir le menu de navigation"><span class="ds44-btnInnerText">Menu</span><i class="icon icon-burger icon--xlarge" aria-hidden="true"></i></button>
 
 			<section class="ds44-menuBox" id="menu">
 
@@ -30,10 +30,10 @@ layout: pattern
 						
 					<button class="ds44-btnOverlay ds44-btnOverlay--closeOverlay" type="button" aria-label="fermer le menu de navigation"><i class="icon icon-cross icon--xlarge" aria-hidden="true"></i><span class="ds44-btnInnerText--bottom">Fermer</span></button>
 				
-					<nav role="navigation">
+					<nav role="navigation" aria-label="Menu de navigation">
 						<div class="ds44-inner-container ds44--antiStickyPad">
 				
-							<ul class="ds44-navList ds44-multiCol ds44-xl-gap">
+							<ul class="ds44-navList ds44-multiCol ds44-xl-gap ds44-list">
 								<li>
 									<button type="button" class="ds44-menuBtn" data-ssmenu="nav2">Besoin d'aides<i class="icon icon-right" aria-hidden="true"></i></button>									
 
@@ -85,7 +85,7 @@ layout: pattern
 													<p role="heading" aria-level="1" class="ds44-menuBackLink">Test panneau 3</p>
 												</div>
 									
-												<ul class="ds44-navListN2 ds44-multiCol ds44-xl-gap ds44-xl-fluid-margin">
+												<ul class="ds44-navListN2 ds44-multiCol ds44-xl-gap ds44-xl-fluid-margin ds44-list">
 													<li><a href="#" class="ds44-menuLink ds44-menuLink--subLvl">Enfance, famille<i class="icon icon-arrow-right" aria-hidden="true"></i></a></li>
 												</ul>
 											</div>
@@ -108,7 +108,7 @@ layout: pattern
 														<p role="heading" aria-level="1" class="ds44-menuBackLink">Test panneau 4</p>
 													</div>
 										
-													<ul class="ds44-navListN2 ds44-multiCol ds44-xl-gap ds44-xl-fluid-margin">
+													<ul class="ds44-navListN2 ds44-multiCol ds44-xl-gap ds44-xl-fluid-margin ds44-list">
 														<li><a href="#" class="ds44-menuLink ds44-menuLink--subLvl">Enfance, famille<i class="icon icon-arrow-right" aria-hidden="true"></i></a></li>
 													</ul>
 												</div>
@@ -119,7 +119,7 @@ layout: pattern
 								<li><button type="button" class="ds44-menuBtn">Mieux nous connaître<i class="icon icon-right" aria-hidden="true"></i></button></li>
 							</ul>
 							<hr class="ds44-navSep" />
-							<ul class="ds44-navList ds44-multiCol ds44-xl-gap">
+							<ul class="ds44-navList ds44-multiCol ds44-xl-gap ds44-list">
 								<li><a href="#" class="ds44-menuLink">Associations, collectivités, partenaires<i class="icon icon-arrow-right" aria-hidden="true"></i></a></li>
 								<li><a href="#" class="ds44-menuLink">On recrute<i class="icon icon-arrow-right" aria-hidden="true"></i></a></li>
 								<li><a href="#" class="ds44-menuLink">Presse<i class="icon icon-arrow-right" aria-hidden="true"></i></a></li>
@@ -152,7 +152,7 @@ layout: pattern
 												<button type="button" title="Retour menu principal" class="ds44-btn-backOverlay"><i class="icon icon-arrow-left icon--xlarge" aria-hidden="true"></i><span class="ds44-btnInnerText--bottom">Retour</span></button>
 												<p role="heading" aria-level="1" class="ds44-menuBackLink">Sites et applis du département</p>
 									
-												<ul class="ds44-navListApplis ds44-multiCol ds44-multiCol--3 ds44-multiCol--border ds44-m-gap ds44-m-fluid-margin">
+												<ul class="ds44-navListApplis ds44-multiCol ds44-multiCol--3 ds44-multiCol--border ds44-m-gap ds44-m-fluid-margin ds44-list">
 													<li>
 														<p role="heading" aria-level="2" class="ds44-menuApplisTitle">Citoyenneté</p>
 														<ul>
@@ -239,7 +239,7 @@ layout: pattern
 			</picture>
 			<div class="ds44-titleContainer">
 				<div class="ds44-alphaGradient ds44--xl-padding">
-					<nav role="navigation" aria-label="Votre position">
+					<nav role="navigation" aria-label="Votre position" class="ds44-hide-smallScreens">
 						<ul class="ds44-list ds44-text--colorInvert">
 							<li class="ds44-breadcrumb"><a href="#"><i class="icon icon-home icon--medium" aria-hidden="true"></i><span class="visually-hidden">Accueil</span></a></li>
 							<li class="ds44-breadcrumb"><a href="#">Page précédente</a></li>
@@ -271,7 +271,7 @@ layout: pattern
 
 						</li>
 						<li class="mrs ds44-ongletsBtnItem">
-							<button class="ds44-btnStd ds44-btn--invert" type="button"><span class="ds44-btnInnerText" data-target="#overlay-faire-demande" data-js="ds44-modal">Faire une demande</span><i class="icon icon-file icon--sizeL" aria-hidden="true"></i></button>
+							<button class="ds44-btnStd ds44-btn--invert" type="button" data-target="#overlay-faire-demande" data-js="ds44-modal"><span class="ds44-btnInnerText">Faire une demande</span><i class="icon icon-file icon--sizeL" aria-hidden="true"></i></button>
 
 							<div class="ds44-modal-container" id="overlay-faire-demande" aria-hidden="true" role="dialog">
 								<div class="ds44-modal-box">
@@ -279,12 +279,12 @@ layout: pattern
 									<h2 class="h2-like">Faire une demande</h2>
 									<div class="ds44-modal-gab">
 										<p>Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum.</p>
-										<div class="ds44-multiCol ds44-multiCol--border ds44-mt3">
-											<div class="ds44-noCut prm">
+										<div class="ds44-flex-container ds44-mt3">
+											<div class="ds44-halfWidth prl">
 												<h3 class="h3-like">Documents utiles :</h3>
 												<p class="ds44-docListElem"><i class="icon icon-file ds44-docListIco" aria-hidden="true"></i><a href="#">Notice explicative éligibilité subvention adaptation logement - Personnes âgées</a><span class="ds44-cardFile">PDF - 291,3 Ko</span></p>
 											</div>
-											<div class="ds44-noCut plm">
+											<div class="ds44-halfWidth pll ds44-border-left">
 												<h3 class="h3-like">En ligne :</h3>
 												<p><button class="ds44-btnStd ds44-btn--invert" type="button"><span class="ds44-btnInnerText">Faire une demande en ligne</span><i class="icon icon-computer icon--sizeL" aria-hidden="true"></i></button></p>
 											</div>
@@ -303,8 +303,8 @@ layout: pattern
 									<h2 class="h2-like">Suivre une demande en cours</h2>
 									<div class="ds44-modal-gab">
 										<p>Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum.</p>
-										<div class="ds44-multiCol ds44-multiCol--border ds44-mt3">
-											<div class="ds44-noCut prm">
+										<div class="ds44-flex-container ds44-mt3">
+											<div class="ds44-halfWidth prl">
 												<h3 class="h3-like">Vous avez un code de suivi :</h3>
 												<p>Saisissez votre code de suivi (transmis à l’enregistrement de votre demande en ligne).</p>
 												<div class="ds44-form__container">        
@@ -313,7 +313,7 @@ layout: pattern
 
 												</div>
 											</div>
-											<div class="ds44-noCut plm">
+											<div class="ds44-halfWidth pll ds44-border-left">
 												<h3 class="h3-like">Vous n’avez pas de code de suivi :</h3>
 												<p><button class="ds44-btnStd ds44-btn--invert" type="button"><span class="ds44-btnInnerText">Connectez-vous</span><i class="icon icon-computer icon--sizeL" aria-hidden="true"></i></button></p>
 											</div>
@@ -361,7 +361,7 @@ layout: pattern
 							  <section class="ds44-box">
 								<p role="heading" aria-level="2" class="ds44-box-heading">Témoignages</p>
 								<div class="ds44-bgGray">
-								  <picture><img src="../../assets/images/sample-media.jpg" alt="" class="ds44-card__img" /><span class="ds44-mediaIndicator"><i class="icon icon-play" aria-hidden="true"></i></span></picture>
+								  <picture><img src="../../assets/images/sample-media.jpg" alt="" class="ds44-box__img" /><span class="ds44-mediaIndicator"><i class="icon icon-play" aria-hidden="true"></i></span></picture>
 								  <div class="ds44--m-padding">
 									<p role="heading" aria-level="3"><a href="#">Monique a aménagé son logement</a></p>
 									<p>86 ans - Retraitée - Nantes</p>
@@ -467,7 +467,7 @@ layout: pattern
 							<section class="ds44-box">
 								<p role="heading" aria-level="2" class="ds44-box-heading">Témoignages</p>
 								<div class="ds44-bgGray">
-								  <picture><img src="../../assets/images/sample-media.jpg" alt="" class="ds44-card__img" /><span class="ds44-mediaIndicator"><i class="icon icon-play" aria-hidden="true"></i></span></picture>
+								  <picture><img src="../../assets/images/sample-media.jpg" alt="" class="ds44-box__img" /><span class="ds44-mediaIndicator"><i class="icon icon-play" aria-hidden="true"></i></span></picture>
 								  <div class="ds44--m-padding">
 									<p role="heading" aria-level="3"><a href="#">Monique a aménagé son logement</a></p>
 									<p>86 ans - Retraitée - Nantes</p>

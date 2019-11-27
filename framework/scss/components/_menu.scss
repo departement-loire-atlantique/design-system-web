@@ -101,6 +101,28 @@
     }
 }
 
+.ds44-menuApplisTitle {
+    @include ds44-font-sizes(h4);
+    @if variable_exists(ds44-font-family-headings) and $ds44-font-family-headings != $ds44-font-family-base{
+      font-family: $ds44-font-family-headings;
+    }
+    background: transparent;
+    font-weight: bold;
+}
+
+
+
+// -------------
+//   TABLETTE
+// ----------
+
+@media (min-width: $ds44-medium) and (max-width: $ds44-large)  {
+
+    .ds44-navListN2 {
+        margin: $ds44-container-vmargin $ds44-container-vmargin $ds44-components-vmargin $ds44-container-vmargin;
+    }
+
+}
 
 // ----------
 //   MOBILE

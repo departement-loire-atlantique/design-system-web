@@ -129,6 +129,9 @@
 .ds44-fg1 {
   flex-grow: 1;
 }
+.ds44-halfWidth {
+  width: 50%;
+}
 
 @media (max-width: $ds44-medium) {
 
@@ -177,13 +180,14 @@
   column-count: 2;
   display: block;
 
-  li { // if multicol is applied to a list, prevent break inside the li element
+  li, .ds44-noCut { // prevent break inside the element
     -webkit-column-break-inside: avoid; /* Chrome, Safari, Opera */
           page-break-inside: avoid; /* Firefox */
                break-inside: avoid; /* IE 10+ */
                break-inside: avoid-column; /* W3C */
   }
-  .ds44-noCut { // prevent break inside the container ds44-noCut
+  
+  li > a { // prevent break inside the container ds44-noCut
     -webkit-column-break-inside: avoid; /* Chrome, Safari, Opera */
           page-break-inside: avoid; /* Firefox */
                break-inside: avoid; /* IE 10+ */
@@ -215,15 +219,22 @@
   background-size: cover;
 }
 
+
+/* === BORDERS === */
+
+.ds44-border-left {
+  border-left: 2px solid $ds44-dark;
+}
+
+.ds44-theme-border {
+  border-color: $ds44-contextual-color;
+}
+
 /* === Backgrounds === */
 
 // Thematic color
 .ds44-theme {
   background-color: $ds44-contextual-color;
-}
-
-.ds44-theme-border {
-  border-color: $ds44-contextual-color;
 }
 
 .ds44-bgDark {
@@ -329,61 +340,7 @@
 
 /* === Images === */
 
-/*.ds44-boxCoverPict { // images in boxes
 
-}
-*/
-
-/* === Overlay === */
-
-.ds44-overlay {
-  position: fixed;
-  height: 100vh;
-  width: 100%;
-  overflow: auto;
-  z-index: 10000;
-  opacity: 0;
-  transition: all .5s ease-in-out;
-
-  &.show {
-    opacity: 1;
-  }
-}
-.ds44-overlay--navNiv1 {
-  left: 0;
-  top: -2500px;
-  display: none;
-
-    &.show {
-      top: 0;
-      opacity: 1;
-    }
-}
-
-.ds44-overlay--navNiv2 {
-  left: auto;
-  top: 0;
-  right: -2500px;
-  z-index: 11000;
-  display: none;
-
-    &.show {
-      right: 0;
-      opacity: 1;
-    }
-}
-
-.ds44-overlay--navApplis {
-  bottom: -2500px;
-  z-index: 11000;
-  display: none;
-  background-color: $ds44-light-color;
-
-    &.show {
-      bottom: 0;
-      opacity: 1;
-    }
-}
 
 /* === Separators === */
 

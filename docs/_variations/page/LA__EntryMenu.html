@@ -21,7 +21,7 @@ layout: pattern
 		</div>
 		<div class="ds44-colRight">            
 			<button class="ds44-btnIcoText--maxi ds44--xl-padding" type="button"><span class="ds44-btnInnerText">Rechercher</span><i class="icon icon-magnifier icon--xlarge" aria-hidden="true"></i></button>
-			<button class="ds44-btnIcoText--maxi ds44-btn--contextual ds44-btn--menu ds44--xl-padding" type="button"><span class="ds44-btnInnerText">Menu</span><i class="icon icon-burger icon--xlarge" aria-hidden="true"></i></button>
+			<button class="ds44-btnIcoText--maxi ds44-btn--contextual ds44-btn--menu ds44--xl-padding" type="button" aria-label="Ouvrir le menu de navigation"><span class="ds44-btnInnerText">Menu</span><i class="icon icon-burger icon--xlarge" aria-hidden="true"></i></button>
 
 			<section class="ds44-menuBox" id="menu">
 
@@ -30,7 +30,7 @@ layout: pattern
 						
 					<button class="ds44-btnOverlay ds44-btnOverlay--closeOverlay" type="button" aria-label="fermer le menu de navigation"><i class="icon icon-cross icon--xlarge" aria-hidden="true"></i><span class="ds44-btnInnerText--bottom">Fermer</span></button>
 				
-					<nav role="navigation">
+					<nav role="navigation" aria-label="Menu de navigation">
 						<div class="ds44-inner-container ds44--antiStickyPad">
 				
 							<ul class="ds44-navList ds44-multiCol ds44-xl-gap ds44-list">
@@ -152,7 +152,7 @@ layout: pattern
 												<button type="button" title="Retour menu principal" class="ds44-btn-backOverlay"><i class="icon icon-arrow-left icon--xlarge" aria-hidden="true"></i><span class="ds44-btnInnerText--bottom">Retour</span></button>
 												<p role="heading" aria-level="1" class="ds44-menuBackLink">Sites et applis du département</p>
 									
-												<ul class="ds44-navListApplis ds44-multiCol ds44-multiCol--3 ds44-multiCol--border ds44-m-gap ds44-m-fluid-margin">
+												<ul class="ds44-navListApplis ds44-multiCol ds44-multiCol--3 ds44-multiCol--border ds44-m-gap ds44-m-fluid-margin ds44-list">
 													<li>
 														<p role="heading" aria-level="2" class="ds44-menuApplisTitle">Citoyenneté</p>
 														<ul>
@@ -239,7 +239,7 @@ layout: pattern
 			</picture>
 			<div class="ds44-titleContainer">
 				<div class="ds44-alphaGradient ds44--xl-padding">
-					<nav role="navigation" aria-label="Votre position">
+					<nav role="navigation" aria-label="Votre position" class="ds44-hide-smallScreens">
 						<ul class="ds44-list ds44-text--colorInvert">
 							<li class="ds44-breadcrumb"><a href="#"><i class="icon icon-home icon--medium" aria-hidden="true"></i><span class="visually-hidden">Accueil</span></a></li>
 							<li class="ds44-breadcrumb"><a href="#">Page précédente</a></li>

@@ -2,6 +2,58 @@
 /* ==DS44 Overlays           */
 /* ------------------------- */
 
+/* === Overlay === */
+
+.ds44-overlay {
+    position: fixed;
+    height: 100vh;
+    width: 100%;
+    overflow: auto;
+    z-index: 10000;
+    opacity: 0;
+    transition: all .5s ease-in-out;
+
+    &.show {
+        opacity: 1;
+    }
+}
+
+.ds44-overlay--navNiv1 {
+left: 0;
+top: -2500px;
+display: none;
+
+    &.show {
+        top: 0;
+        opacity: 1;
+    }
+}
+  
+.ds44-overlay--navNiv2 {
+    left: auto;
+    top: 0;
+    right: -2500px;
+    z-index: 11000;
+    display: none;
+
+    &.show {
+        right: 0;
+        opacity: 1;
+    }
+}
+  
+.ds44-overlay--navApplis {
+    bottom: -2500px;
+    z-index: 11000;
+    display: none;
+    background-color: $ds44-light-color;
+
+    &.show {
+        bottom: 0;
+        opacity: 1;
+    }
+}
+  
 .ds44-modal-container.show {
     pointer-events: auto;
     opacity: 1;
@@ -10,7 +62,7 @@
 .ds44-modal-container {
     width: 100%;
     height: 100vh;
-    background-color: #00000066;
+    background-color: rgba(0,0,0,.66);
     position: fixed;
     top: 0;
     bottom: 0;

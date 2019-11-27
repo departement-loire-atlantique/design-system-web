@@ -3,6 +3,10 @@
 .ds44-list {
     padding: 0;
     list-style: none;
+
+    ul, ul > li {
+        list-style: none;
+    }
 }
 
 .ds44-footerList {
