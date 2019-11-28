@@ -37,31 +37,41 @@
 // paddings
 
 .ds44--m-padding {
-  padding: $ds44-padding-medium; // 1rem
+  padding           : $ds44-padding-medium; // 1rem
 }
 .ds44--l-padding {
-  padding: $ds44-padding-large; // 2rem
+  padding           : $ds44-padding-large; // 2rem
 }
 .ds44--l-padding-tb {
-  padding-top: $ds44-padding-large; // 2rem
-  padding-bottom: $ds44-padding-large; // 2rem
+  padding-top       : $ds44-padding-large; // 2rem
+  padding-bottom    : $ds44-padding-large; // 2rem
 }
 .ds44--xl-padding {
-    padding: $ds44-padding-xlarge; // 3rem
+    padding         : $ds44-padding-xlarge; // 3rem
+}
+.ds44--xl-padding-tb {
+    padding-top     : $ds44-padding-xlarge; // 3rem
+    padding-bottom  : $ds44-padding-xlarge; // 3rem
 }
 .ds44--xl-padding-lr {
-    padding-left: $ds44-padding-xlarge;
-    padding-right: $ds44-padding-xlarge;
+    padding-left    : $ds44-padding-xlarge;
+    padding-right   : $ds44-padding-xlarge;
+}
+.ds44--xl-padding-r {
+    padding-right   : $ds44-padding-xlarge;
+}
+.ds44--xl-padding-l {
+    padding-left    : $ds44-padding-xlarge;
 }
 .ds44--2xl-padding-l {
-    padding-left: $ds44-padding-xlarge*2;
+    padding-left    : $ds44-padding-xlarge*2;
 }
 .ds44--antiStickyPad {
-  padding-bottom: 10rem!important;
+  padding-bottom    : 10rem!important;
 }
 @media (max-width: $ds44-medium) {
   .ds44--antiStickyPad {
-    padding-bottom: 0!important;
+    padding-bottom  : 0!important;
   }
 }
 
@@ -170,12 +180,38 @@
   flex-wrap: nowrap;
   flex: 1;
 }
+
 .ds44-colRight {
   flex-wrap: nowrap;
   align-self: flex-end;
   flex: 3;
   text-align: right;
 }
+
+@media (max-width: $ds44-small - 1) {
+
+  .ds44-colLeft {
+    flex-wrap: wrap;
+  }
+
+  .ds44-colRight {
+    align-self: flex-start;
+  }
+
+}
+
+@media (max-width: $ds44-tiny - 1) {
+
+  .ds44-colLeft {
+    flex: 1;
+  }
+
+  .ds44-colRight {
+    flex: 2;
+  }
+
+}
+
 .ds44-multiCol  {
   column-count: 2;
   display: block;

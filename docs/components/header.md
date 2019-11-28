@@ -10,9 +10,12 @@ variations:
 - title: Bandeau standard
   description: Header Loire Atlantique
   pattern: header/header-LA.html
-- title: Bandeau autres sites
-  description: Header autres sites
-  pattern: header/header-variante.html
+- title: Variante type site Handicap
+  description: Header avec menu supplémentaire
+  pattern: header/header-variante-1.html
+- title: Variante type site Archives
+  description: Header sans recherche
+  pattern: header/header-variante-2.html
 ---
 
 ## General guidelines

@@ -9,8 +9,8 @@
   margin: 2rem 0 4rem 0;
   border-top: 1px solid $ds44-contextual-color;
 
-  > li.ds44-collapser_element {
-    list-style: none;
+  li.ds44-collapser_element, li {
+    list-style: none!important;
   }
   
 }
@@ -19,6 +19,11 @@
 .ds44-collapser_element {
   border-bottom: 1px solid $ds44-contextual-color;
   list-style: none; // if collapser is a list
+  
+  li {
+    list-style: none;
+  }
+
 }
 
 /* row-like button */

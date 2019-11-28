@@ -2,9 +2,24 @@
 * CD44 Design System - Headers
 */
 
+.ds44-logoContainer {
+    text-decoration: none;
+
+    img {
+        height: 62px;
+    }
+}
+
 .ds44-logo {
-    max-width: 122px;
     display: block;
+}
+
+.ds44-titreLogo {
+    text-decoration: none;
+    font-size: 1.6rem;
+    line-height: 1.2;
+    font-weight: bold;
+    margin-left: 2rem;
 }
 
 /* Skip links */
@@ -38,18 +53,101 @@
 }
 
 
-/* tiny screens */
+
+/* --------------- */
+/* Medium screens */
 /* ------------ */
 
-@media (max-width: $small - 1) {
-
-    .ds44-logo {
-        max-width: 80px;
-    }
+@media (max-width: $ds44-large) {
 
     .ds44-headerImg {
         min-height: 260px;
     }
 
+    .ds44-logoContainer {
+        flex-wrap: wrap;       
+    }
+
+    .ds44-header .ds44-colRight .ds44-btnIcoText--maxi .icon::before {
+        min-height: 30px;
+        font-size: 4rem;
+    }
+
+    // when reduced, header column right and buttons gain flex display
+    .ds44-header .ds44-colRight {
+        display: flex;
+        justify-content: end;
+
+        .ds44-btnIcoText--maxi {
+            display: flex;
+            flex-direction: column-reverse;
+            justify-content: flex-start;
+            position: relative;
+            margin: 0 0 0 1rem;
+            min-width: 0;
+
+            &.ds44--xl-padding {
+                padding-left: 1rem;
+                padding-right: 1rem;
+            }
+
+            .icon + .ds44-btnInnerText, 
+            .ds44-btnInnerText + .icon {
+                margin-left: 0;           
+            }
+
+            .ds44-btnInnerText {
+                position: relative;
+                white-space: nowrap;
+                margin-top: .5rem; 
+            }
+
+        }
+    }
+}
+
+/* -------------- */
+/* small screens */
+/* ------------ */
+
+@media (max-width: $ds44-small - 1) {
+
+    .ds44-logoContainer {
+        flex-wrap: wrap;  
+
+        img {
+            height: 35px;
+            max-width: none;
+        }      
+    }
+
+
+}
+
+@media (max-width: $ds44-tiny - 1) {
+
+    .ds44-logoContainer {
+        flex-direction: column;
+        flex-wrap: nowrap;
+
+        .ds44-titreLogo {
+            margin-left: 0;
+            margin-top: .5rem;
+            text-align: center;
+            font-size: .5625em;
+        }
+
+    }
+
+    .ds44-header .ds44-colRight {
+
+        .ds44-btnIcoText--maxi {
+
+            &.ds44--xl-padding {
+                padding-left: 0;
+                padding-right: 0;
+            }
+        }
+    }
 
 }

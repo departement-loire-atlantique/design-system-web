@@ -60,10 +60,21 @@ body {
 .ds44-alternate-container {
   background-color: $ds44-light-bg;
 }
+
 @media (max-width: $ds44-medium) {
+
   .ds44-container-relmob {
     position: relative;
   }
+
+}
+
+@media (max-width: $ds44-small) {
+
+  .ds44-container-fluid {
+    padding: 0 $ds44-mobile-margins;
+  }
+  
 }
 
 /* Links */
