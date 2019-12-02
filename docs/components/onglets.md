@@ -4,7 +4,7 @@ group: components
 
 title: Onglets
 description: Un système de navigation interne
-status: Brouillon
+status: A valider
 
 variations:
 - title: Onglets simples

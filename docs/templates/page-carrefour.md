@@ -5,6 +5,7 @@ permalink:
 
 title: Page Carrefour
 description: Modèle de page sommaire basée sur le template "carrefour". 
+status: A valider
 
 variations:
 - title: Page type "Carrefour"
