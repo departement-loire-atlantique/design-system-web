@@ -92,6 +92,10 @@
 .ds44-m3 {
   margin: $ds44-components-vmargin; // 3rem
 }
+.ds44-mlr3 {
+  margin-left: $ds44-components-vmargin; // 3rem
+  margin-right: $ds44-components-vmargin; // 3rem
+}
 .ds44-m5 {
   margin: $ds44-container-vmargin; // 5rem
 }
@@ -119,6 +123,7 @@
 
 /* === Flex utils === */
 
+/* container properties */
 .ds44-flex-container {
     display: flex;
     flex-direction: row;
@@ -136,11 +141,28 @@
 .ds44-fse {  
   justify-content: space-evenly;
 }
-.ds44-fg1 {
-  flex-grow: 1;
+.ds44-fsb {  
+  justify-content: space-between;
+}
+.ds44-flex-mauto {
+  margin: auto!important;
 }
 .ds44-halfWidth {
   width: 50%;
+}
+
+/* Element properties */
+.ds44-fg1 {
+  flex-grow: 1;
+}
+.ds44-fg2 {
+  flex-grow: 2;
+}
+.ds44-fg3 {
+  flex-grow: 3;
+}
+.ds44-fas {
+  align-self: flex-end;
 }
 
 @media (max-width: $ds44-medium) {
@@ -382,7 +404,8 @@
 
 .ds44-navSep {
   border: 1px solid $ds44-color-dark-text;
-  margin: $ds44-container-vmargin $ds44-components-vmargin;
+  margin: $ds44-container-vmargin 0;
+  width: 100%;
 }
 
 .ds44-xl-gap {
@@ -392,7 +415,7 @@
   column-gap: 3rem;
 }
 
-@media (max-width: $ds44-medium) {
+@media (max-width: $ds44-medium - .0625) {
 
   .ds44-hide-mobile {
     display: none;
@@ -417,6 +440,27 @@
 
   .ds44-hide-smallScreens {
     display: none;
+  }
+
+}
+
+
+@media (min-width: $ds44-medium) {
+
+  .ds44-show-mobile {
+    display: none;
+  }  
+
+  .ds44-multiCol--3 {
+    column-count: 2;
+  }
+
+}
+
+@media (min-width: $ds44-large) { 
+
+  .ds44-multiCol--3 {
+    column-count: 3;
   }
 
 }

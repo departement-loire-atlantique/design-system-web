@@ -8,7 +8,7 @@ status: A valider
 
 variations:
 - title: Menu principal
-  description: Menu de navigation principale, affiché par le bouton "menu" du header
+  description: Menu de navigation principale, cliquer sur le bouton "menu" du header pour afficher le composant
   pattern: menu/navigation-principale.html
 - title: Niveau 2
   description: Menu de navigation principal, sous-niveau (affiché suite à un clic sur un élément du premier niveau)
@@ -24,6 +24,9 @@ variations:
 ## Note d'intégration
 
 Le menu principal de navigation présenté dans le DS44 est réduit graphiquement par l'iframe de présentation qui lui ajoute des marges latérales. Le contenur positionné en bas de page s'affranchit de ces marges car il est relatif à l'iframe, pas à ses conteneurs. Le menu s'affichera correctement en pleine page dès lors qu'il sera implémenté en dehors de l'iframe du DS.
+Pour simuler l'ouverture des menus, des boutons factices et une structure englobante de test ont été ajoutés autour du composant (`<header><main><footer>`).
+
+Pour fonctionner, les boutons qui ouvrent les menus de niveau 2 doivent avoir un attribut `data-ssmenu="navX"` où "navX" correspond à l'ID de l'overlay du menu à ouvrir.
 
 ## Principes généraux
 
