@@ -6,30 +6,29 @@ layout: pattern
 <main>
     <button class="ds44-btnStd ds44-btn--invert" type="button" data-target="#overlay-suivre-demande" data-js="ds44-modal"><span class="ds44-btnInnerText">Suivre ma demande</span><i class="icon icon-computer icon--sizeL" aria-hidden="true"></i></button>
 
-    <div class="ds44-modal-container" id="overlay-suivre-demande" aria-hidden="true" role="dialog">
+    <section class="ds44-modal-container" id="overlay-suivre-demande" aria-hidden="true" role="dialog" aria-labelledby="titre-modale">
         <div class="ds44-modal-box">
-            <button class="ds44-btnOverlay--modale ds44-btnOverlay--closeOverlay" type="button" aria-label="fermer la boite de dialogue" data-js="ds44-modal-action-close"><i class="icon icon-cross icon--xlarge" aria-hidden="true"></i><span class="ds44-btnInnerText--bottom">Fermer</span></button>
-            <h2 class="h2-like">Suivre une demande en cours</h2>
+            <button class="ds44-btnOverlay--modale ds44-btnOverlay--closeOverlay" type="button" title="Fermer la boîte de dialogue : [titre de la modale]" data-js="ds44-modal-action-close"><i class="icon icon-cross icon--xlarge" aria-hidden="true"></i><span class="ds44-btnInnerText--bottom">Fermer</span></button>
+            <h1 class="h2-like" id="titre-modale">Suivre une demande en cours</h1>
             <div class="ds44-modal-gab">
                 <p>Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum.</p>
                 <div class="ds44-flex-container ds44-mt3">
                     <div class="ds44-halfWidth prl">
-                        <h3 class="h3-like">Vous avez un code de suivi :</h3>
-                        <p>Saisissez votre code de suivi (transmis à l’enregistrement de votre demande en ligne).</p>
+                        <h2 class="h3-like">Vous avez un code de suivi :</h2>
+                        <p id="desc-pour-input">Saisissez votre code de suivi (transmis à l’enregistrement de votre demande en ligne).</p>
                         <div class="ds44-form__container">        
-                            <label for="name" class="ds44-formLabel ds44-mb-std"><span class="ds44-labelTypePlaceholder ds44-moveLabel">Code de suivi</span> <input type="text" id="name" class="ds44-inpStd" required /></label>
+                            <label for="name" class="ds44-formLabel ds44-mb-std"><span class="ds44-labelTypePlaceholder ds44-moveLabel">Code de suivi <em class="ds44-format">(format attendu : XXX-XXXX-XX)</em></span> <input type="text" id="name" class="ds44-inpStd" required aria-required="true" aria-describedby="desc-pour-input" title="[Code de suivi (format attendu : XXX-XXXX-XX)]" /></label>
                             <button class="ds44-btnStd ds44-btn--invert" type="button"><span class="ds44-btnInnerText">Valider</span><i class="icon icon-long-arrow-right" aria-hidden="true"></i></button>
-
                         </div>
                     </div>
                     <div class="ds44-halfWidth pll ds44-border-left">
-                        <h3 class="h3-like">Vous n’avez pas de code de suivi :</h3>
+                        <h2 class="h3-like">Vous n’avez pas de code de suivi :</h2>
                         <p><button class="ds44-btnStd ds44-btn--invert" type="button"><span class="ds44-btnInnerText">Connectez-vous</span><i class="icon icon-computer icon--sizeL" aria-hidden="true"></i></button></p>
                     </div>
                 </div>
             </div>
         </div>								
-    </div>
+    </section>
 
 </main>
 <footer></footer>

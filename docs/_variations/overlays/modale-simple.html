@@ -7,15 +7,15 @@ layout: pattern
     <button class="ds44-btnStd ds44-btn--invert" type="button" data-target="#overlay-test" data-js="ds44-modal"><span class="ds44-btnInnerText">Déclencher l'ouverture de l'overlay</span></button>
     <p style="min-height: 300px; margin-top: 50px;">Exemple de gestion d'overlay dans le DS44</p>
 
-    <div class="ds44-modal-container" id="overlay-test" aria-hidden="true" role="dialog">
+    <section class="ds44-modal-container" id="overlay-test" aria-hidden="true" role="dialog" aria-labelledby="titre-modale">
         <div class="ds44-modal-box">
-            <button class="ds44-btnOverlay--modale ds44-btnOverlay--closeOverlay" type="button" aria-label="fermer la boite de dialogue" data-js="ds44-modal-action-close"><i class="icon icon-cross icon--xlarge" aria-hidden="true"></i><span class="ds44-btnInnerText--bottom">Fermer</span></button>
-            <h2 class="h2-like">Titre de l'overlay</h2>
+            <button class="ds44-btnOverlay--modale ds44-btnOverlay--closeOverlay" type="button" title="Fermer la boîte de dialogue : [titre de la modale]" data-js="ds44-modal-action-close"><i class="icon icon-cross icon--xlarge" aria-hidden="true"></i><span class="ds44-btnInnerText--bottom">Fermer</span></button>
+            <h1 class="h2-like" id="titre-modale">Titre de l'overlay</h2>
             <div class="ds44-modal-gab">
                 <p>Contenu de la boite modale.</p>
             </div>
         </div>								
-    </div>
+    </section>
 
 </main>
 <footer></footer>

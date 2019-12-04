@@ -6,15 +6,15 @@
   * Input placeholder text base styles
   */
   ::-webkit-input-placeholder {
-    color: $ds44-color-soft-text;
+    color: $ds44-dark;
     font-family: $ds44-font-family-base;
  } 
  ::-moz-placeholder {  /* Firefox 19+ */
-    color: $ds44-color-soft-text;
+    color: $ds44-dark;
     font-family: $ds44-font-family-base;
  } 
  :-ms-input-placeholder {
-    color: $ds44-color-soft-text;
+    color: $ds44-dark;
     font-family: $ds44-font-family-base;
  }
  
@@ -24,7 +24,7 @@
 
 .ds44-form__container {
     position: relative;
-    margin: $ds44-padding-medium 0;
+    margin: $ds44-large-vmargin 0 $ds44-small-vmargin 0;
 }
 
 .ds44-formLabel {
@@ -89,4 +89,8 @@
 
 .ds44-bgDark .ds44-moveLabel {
     color: $ds44-color-inverse;
+}
+
+.ds44-format {
+    color: $ds44-color-soft-text;
 }

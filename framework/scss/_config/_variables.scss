@@ -21,10 +21,10 @@ $medium: 1020px;
 // ----------
 
 // Font families
-$ds44-font-family-base      : Muli, sans-serif;             // texts standard font
-$ds44-font-family-headings  : "Blogger Sans", sans-serif;   // font for h1, h2.. h6
-$ds44-font-family-monospace : consolas, courier, monospace; // font for code and samples
-$ds44-font-icon             : "ds44-icons";                 // icons
+$ds44-font-family-base      : Muli, Arial, Helvetica, sans-serif;             // texts standard font
+$ds44-font-family-headings  : "Blogger Sans", Arial, Helvetica, sans-serif;   // font for h1, h2.. h6
+$ds44-font-family-monospace : consolas, courier, monospace;                   // font for code and samples
+$ds44-font-icon             : "ds44-icons";                                   // icons
 
 // Font sizes (1rem value is "10px" equivalent)
 $ds44-font-size-base : 1.6em !default;
@@ -105,6 +105,7 @@ $ds44-paragraph-margin-bottom : $ds44-margin-base /2   !default;
 $ds44-components-vmargin      : $ds44-margin-base *3   !default;
 $ds44-small-vmargin           : $ds44-margin-base      !default;
 $ds44-medium-vmargin          : $ds44-margin-base *1.5 !default;
+$ds44-large-vmargin           : $ds44-margin-base *2 !default;
 
 $ds44-container-hmargin       : 5.5% !default;
 $ds44-container-fullWidth     : 100% - ($ds44-container-hmargin *2);

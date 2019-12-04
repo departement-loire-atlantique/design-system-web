@@ -31,6 +31,13 @@ Pour l'instant, le système de déplacement du label fonctionne en pur CSS mais 
 
 Ces deux inconvénients pourront être solutionnés par l'ajout de JS.
 
+## Accessibilité
+
+Les champs obligatoires doivent comporter une séquence à gérer en dur et en JS :
+* Un attribut html `required`
+* Un attribut aria-required="true"
+* Un attribut aria-invalid géré en JS : à "true" si le formulaire est validé mais sans l'élément requis. A "false" si l'élément requis est présent au moment de la validation. Si le contrôle est effectué côté serveur, le patch aria devient optionnel.
+
 ## Effective form design
 
 All forms are comprised of 6 elements:
@@ -54,4 +61,4 @@ All forms are comprised of 6 elements:
 
 ## FAQ
 
-Lorem ipsum
+

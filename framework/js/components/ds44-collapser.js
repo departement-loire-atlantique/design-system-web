@@ -1,6 +1,6 @@
 // Détermine si une valeur est null ou undefined
 function isNullOrUndefined(el) {
-    return el == null || el == undefined;
+    return el == null || el == undefined || "null" == el || "undefined" == el;
 }
 
 // Ajoute la classe "show" sur un élément après un timer
@@ -25,6 +25,7 @@ function timerClass(elem, className, value, timer) {
 
 // Ferme tous les overlays, et ajoute un focus sur le bouton qui a ouvert le dernier overlay affiché
 function performCloseOverlays(querySelector){
+    document.querySelector("header#top").setAttribute("aria-hidden", "false");
     let overlays = document.querySelectorAll(querySelector);
     overlays.forEach((overlay)=> {
         if (overlay.classList.contains("show")) {
@@ -38,12 +39,11 @@ function performCloseOverlays(querySelector){
         }
         overlay.classList.remove('show');
         overlay.setAttribute("aria-hidden", "true");
-		// Ré-afficher tous les boutons "fermer"
+        // Ré-afficher tous les boutons "fermer"
         const allCloseButtons = document.querySelectorAll('.ds44-btnOverlay--closeOverlay');
         allCloseButtons.forEach((element) => {
           element.style.display = "block";
-        });										 
-        removeFocusTabListener(overlay);
+        });                                      
         timerDisplayNone(overlay,500);
     });
 
@@ -52,50 +52,103 @@ function performCloseOverlays(querySelector){
         btn.setAttribute("aria-expanded","false");
     });
 
-    document.getElementsByTagName("main")[0].setAttribute("aria-hidden","false");
-    document.getElementsByTagName("footer")[0].setAttribute("aria-hidden","false");
+    toggleMainHeaderFooterAriaHidden(null);
+    document.querySelector("footer").setAttribute("aria-hidden","false");
 }
 
-// EventHandler pour piéger le focus clavier dans un bloc précis
-const keepFocusHandler = function keepFocus(e) {
-    var isTabPressed = (e.key === 'Tab' || e.keyCode === KEYCODE_TAB);
-
-    if (!isTabPressed) { 
-        return; 
-    }
-
-    if ( e.shiftKey ) /* shift + tab */ {
-        if (document.activeElement === firstFocusableEl) {
-            lastFocusableEl.focus();
-            e.preventDefault();
+// Cacher tous les boutons "Fermer" sauf le bouton de la modale actuelle
+function hideCloseButtons(exceptionElem) {
+    const allCloseButtons = document.querySelectorAll('.ds44-btnOverlay--closeOverlay');
+    allCloseButtons.forEach((element) => {
+        if (element != exceptionElem) {
+            element.style.display = "none";
+        } else {
+            element.style.display = "block";
         }
-    } else /* tab */ {
-        if (document.activeElement === lastFocusableEl) {
-            firstFocusableEl.focus();
-            e.preventDefault();
-        }
-    }
-
+    });
 }
 
 // Fonction qui va forcer le focus à faire une boucle sur un élément
 // La seconde valeur en option permet de retirer le focus sur un autre élément
-function trapFocus(element, oldElement) {
-    if (!isNullOrUndefined(oldElement)) {
-        removeFocusTabListener(oldElement);
-    }
-
+function trapFocus(element) {
     var focusableEls = element.querySelectorAll('a[href]:not([disabled]), button:not([disabled]), textarea:not([disabled]), input[type="text"]:not([disabled]), input[type="radio"]:not([disabled]), input[type="checkbox"]:not([disabled]), select:not([disabled])');
-        firstFocusableEl = focusableEls[0];  
-        lastFocusableEl = focusableEls[focusableEls.length - 1];
-        KEYCODE_TAB = 9;
     
-    element.addEventListener('keydown', keepFocusHandler);
+    var counter = 0;
+
+    focusableEls.forEach((itFocusElem) => {
+        itFocusElem.setAttribute("tabindex", counter);
+        counter++;
+    });
 }
 
-// Retire le piège de focus sur un élément HTML
-function removeFocusTabListener(element) {
-    element.removeEventListener('keydown', keepFocusHandler);
+// Effectue les actions liées à la méthode toggleMainHeaderFooterAriaHidden
+function performToggleAriaHidden(element, ariaHiddenValue, exceptionNode) {
+    element.setAttribute("aria-hidden", ariaHiddenValue);
+    var focusableEls = element.querySelectorAll('a[href]:not([disabled]), button:not([disabled]), textarea:not([disabled]), input[type="text"]:not([disabled]), input[type="radio"]:not([disabled]), input[type="checkbox"]:not([disabled]), select:not([disabled])');
+    if (ariaHiddenValue) {
+        // le main est caché, on ajoute tabindex=-1 sur le main et ses sous-éléments interactifs
+        element.setAttribute("tabindex", "-1");
+        focusableEls.forEach((itFocusElem) => {
+            if (!exceptionNode.contains(itFocusElem)) { // on ignore les éléments du bloc à exclure
+                itFocusElem.setAttribute("oldtabindex", itFocusElem.getAttribute("tabindex"));
+                itFocusElem.setAttribute("tabindex", "-1");
+            }
+        });
+    } else {
+        // le main est affiché, on retire l'attribut tabindex sur le main et ses sous-éléments interactifs
+        element.removeAttribute("tabindex");
+        focusableEls.forEach((itFocusElem) => {
+            if (isNullOrUndefined(itFocusElem.getAttribute("oldtabindex"))) {
+                itFocusElem.removeAttribute("oldtabindex");
+                itFocusElem.removeAttribute("tabindex");
+            } else {
+                itFocusElem.setAttribute("tabindex", itFocusElem.getAttribute("oldtabindex"));
+                itFocusElem.removeAttribute("oldtabindex");  
+            }
+        });
+    }
+}
+
+// Modifie la valeur de l'attribut "aria-hidden" de <main>, <header> et <footer>, et effectue des actions en fonction de sa valeur
+function toggleMainHeaderFooterAriaHidden(exceptionNode) {
+    let mainElem = document.querySelector("main");
+    let headerElem = document.querySelector("header");
+    let footerElem = document.querySelector("footer");
+    let ariaHiddenValue = "false" == mainElem.getAttribute("aria-hidden") || isNullOrUndefined(mainElem.getAttribute("aria-hidden"));
+    if (ariaHiddenValue && isNullOrUndefined(exceptionNode)) {
+        return;
+    }
+    if (!isNullOrUndefined(mainElem)) {
+        performToggleAriaHidden(mainElem, ariaHiddenValue, exceptionNode);
+    }
+    if (!isNullOrUndefined(headerElem)) {
+        performToggleAriaHidden(headerElem, ariaHiddenValue, exceptionNode);
+    }
+    if (!isNullOrUndefined(footerElem)) {
+        performToggleAriaHidden(footerElem, ariaHiddenValue, exceptionNode);
+    }
+}
+
+// Modifie la valeur 'aria-hidden' des éléments section#menu section.ds44-overlay en 'true' sauf pour l'élément en paramètre
+function toggleAriaHiddenSsMenu(exceptionElem) {
+    let allSsMenuSections = document.querySelectorAll("section#menu section.ds44-overlay");
+
+    allSsMenuSections.forEach((itSsMenu) => {
+        if (itSsMenu == exceptionElem) {
+            itSsMenu.setAttribute("aria-hidden", "false");
+        } else {
+            itSsMenu.setAttribute("aria-hidden", "true");
+        }
+    });
+}
+
+// Passe l'attribut "tabindex" des éléments 'focusables' d'un élément à -1
+function disableAllTabIndexes(element) {
+    var focusableEls = element.querySelectorAll('a[href]:not([disabled]), button:not([disabled]), textarea:not([disabled]), input[type="text"]:not([disabled]), input[type="radio"]:not([disabled]), input[type="checkbox"]:not([disabled]), select:not([disabled])');
+
+    focusableEls.forEach((itFocusElem) => {
+        itFocusElem.setAttribute("tabindex", "-1");
+    });
 }
 
 // Collapser ds44
@@ -115,8 +168,10 @@ function removeFocusTabListener(element) {
             });
 
             let displayMainNavMenu = function (element) {
+                document.querySelector("header#top").setAttribute("aria-hidden", "true");
                 element.setAttribute("aria-expanded","true");
                 let navNivOne = document.querySelector('.ds44-overlay--navNiv1');
+                toggleMainHeaderFooterAriaHidden(navNivOne);
                 navNivOne.style.display = 'block';
                 timerShow(navNivOne, 0);
                 navNivOne.setAttribute("aria-hidden", "false");
@@ -124,7 +179,8 @@ function removeFocusTabListener(element) {
                 document.getElementsByTagName("main")[0].setAttribute("aria-hidden","true");
                 document.getElementsByTagName("footer")[0].setAttribute("aria-hidden","true");
                 // ajouter l'élément de piège focus sur le menu nv1
-                trapFocus(navNivOne, null);
+                trapFocus(navNivOne);
+                toggleAriaHiddenSsMenu(navNivOne);
             }
         }
 
@@ -146,8 +202,7 @@ function removeFocusTabListener(element) {
                 if (!isTabPressed) { 
                     return;
                 }
-
-                var elemParent = e.originalTarget.closest('.ds44-collapser_element');
+                var elemParent = e.target.closest('.ds44-collapser_element');
                 if (!elemParent.querySelector('.ds44-collapser_button').classList.contains('show'))  {
                     elemParent.querySelector('.ds44-collapser_button').click();
                 }
@@ -172,26 +227,11 @@ function removeFocusTabListener(element) {
                 currentElementOpened = element;
                 element.classList.toggle('show');
                 panel.style.maxHeight = (panel.style.maxHeight) ? null : panel.scrollHeight + 60 + "px";
-                panel.style.visibility = 'hidden';
                 element.setAttribute('aria-expanded', 'false');
-                hideAllOtherBlock();
+                currentElementOpened.setAttribute('aria-expanded', 'true');
+                panel.setAttribute("aria-hidden", !element.classList.contains("show"));
             }
 
-            let hideAllOtherBlock = function () {
-                const elementsToHide = document.querySelectorAll(querySelector + '.show');
-                elementsToHide.forEach((elementToHide) => {
-                    if (elementToHide !== currentElementOpened) {
-                        let panel = elementToHide.nextElementSibling;
-                        elementToHide.classList.remove('show');
-                        panel.style.maxHeight = null;
-                        // elementToHide.setAttribute('aria-expanded', 'false');
-                    } else {
-                        elementToHide.setAttribute('aria-expanded', 'true');
-                        const panel = elementToHide.nextElementSibling;
-                        panel.style.visibility = 'visible';
-                    }
-                });
-            }
         };
 
         // Composants expandables ouvrant un sous-menu en topbar
@@ -207,23 +247,16 @@ function removeFocusTabListener(element) {
 
             let displaySsNavMenu = function (element) {
                 element.setAttribute("aria-expanded","true");
-                let navNivOne = document.querySelector('.ds44-overlay--navNiv1');
                 let navNivTwo = document.querySelector("#" + element.getAttribute("data-ssmenu"));
                 navNivTwo.style.display = 'block';
                 timerShow(navNivTwo, 0);
                 navNivTwo.setAttribute("aria-hidden", "false");
-				// Cacher tous les boutons "Fermer" sauf le bouton de la modale actuelle
-                const allCloseButtons = document.querySelectorAll('.ds44-btnOverlay--closeOverlay');
-                allCloseButtons.forEach((element) => {
-                    if (element != navNivTwo.querySelector('.ds44-btnOverlay--closeOverlay')) {
-                        element.style.display = "none";
-                    } else {
-                        element.style.display = "block";
-                    }
-                });																		
-                navNivTwo.querySelector('.ds44-btnOverlay--closeOverlay').focus();
+                hideCloseButtons(navNivTwo.querySelector('.ds44-btnOverlay--closeOverlay'));                                                                    
+                navNivTwo.querySelector('.ds44-btn-backOverlay').focus();
                 // ajouter l'élément de piège focus sur le menu nv2
-                trapFocus(navNivTwo, navNivOne);
+                disableAllTabIndexes(document.querySelector("header"));
+                trapFocus(navNivTwo);
+                toggleAriaHiddenSsMenu(navNivTwo);
             }
 
         }
@@ -246,17 +279,11 @@ function removeFocusTabListener(element) {
                 navCurrent.setAttribute("aria-hidden", "true");
                 navCurrent.style.display = 'block';
                 navCurrent.classList.remove('show');
-                // Cacher tous les boutons "Fermer" sauf le bouton de la modale actuelle
-                const allCloseButtons = document.querySelectorAll('.ds44-btnOverlay--closeOverlay');
-                allCloseButtons.forEach((element) => {
-                    if (element != navNivOne.querySelector('.ds44-btnOverlay--closeOverlay')) {
-                        element.style.display = "none";
-                    } else {
-                        element.style.display = "block";
-                    }
-                });
+                hideCloseButtons(navNivOne.querySelector('.ds44-btnOverlay--closeOverlay'));
                 navCurrent.previousElementSibling.focus();
-                trapFocus(navNivOne, navCurrent);
+                disableAllTabIndexes(document.querySelector("header"));
+                trapFocus(navNivOne);
+                toggleAriaHiddenSsMenu(navNivOne);
                 timerDisplayNone(navCurrent,500);
             }
 
@@ -280,18 +307,12 @@ function removeFocusTabListener(element) {
                 navApplis.style.display = 'block';
                 timerShow(navApplis, 0);
                 navApplis.setAttribute("aria-hidden", "false");
-                // Cacher tous les boutons "Fermer" sauf le bouton de la modale actuelle
-                const allCloseButtons = document.querySelectorAll('.ds44-btnOverlay--closeOverlay');
-                allCloseButtons.forEach((element) => {
-                    if (element != navApplis.querySelector('.ds44-btnOverlay--closeOverlay')) {
-                        element.style.display = "none";
-                    } else {
-                        element.style.display = "block";
-                    }
-                });
+                hideCloseButtons(navApplis.querySelector('.ds44-btnOverlay--closeOverlay'));
                 navApplis.querySelector('.ds44-btnOverlay--closeOverlay').focus();
                 // ajouter l'élément de piège focus sur le menu nv2
-                trapFocus(navApplis, navNivOne);
+                disableAllTabIndexes(document.querySelector("header"));
+                trapFocus(navApplis);
+                toggleAriaHiddenSsMenu(document.querySelector(".ds44-overlay--navApplis"));
             }
 
         }
@@ -306,21 +327,17 @@ function removeFocusTabListener(element) {
                     const modalId = (button.dataset.target) ? button.dataset.target : null;
                     const modal = document.querySelector(modalId);
                     if (!isNullOrUndefined(modal)) {
+                        toggleMainHeaderFooterAriaHidden(modal);
+                        document.querySelector("main").setAttribute("aria-hidden","true");
                         _getFocusOnPopup(modal);
                         modal.style.display = "flex";
                         timerShow(modal, 1);
                         modal.setAttribute('aria-hidden', 'false');
-                        trapFocus(modal, null);
+                        modal.removeAttribute("tabindex");
+                        disableAllTabIndexes(document.querySelector("section.ds44-ongletsContainer"));
+                        trapFocus(modal);
                         const closeButton = modal.querySelector('[data-js="ds44-modal-action-close"]');
-                        // Cacher tous les boutons "Fermer" sauf le bouton de la modale actuelle
-                        const allCloseButtons = document.querySelectorAll('.ds44-btnOverlay--closeOverlay');
-                        allCloseButtons.forEach((element) => {
-                            if (element != closeButton) {
-                                element.style.display = "none";
-                            } else {
-                                element.style.display = "block";
-                            }
-                        });
+                        hideCloseButtons(closeButton);
                         closeButton.focus();
                         closeButton.addEventListener('click', () => {
                             _closePopup();
@@ -354,17 +371,17 @@ function removeFocusTabListener(element) {
             let _closePopup = function () {
                 const currentModal = document.querySelector('.show[role="dialog"]');
                 if (currentModal) {
-                    removeFocusTabListener(currentModal);
+                    toggleMainHeaderFooterAriaHidden(null);
                     currentModal.classList.toggle('show');
                     timerDisplayNone(currentModal, 300);
                     currentModal.setAttribute('aria-hidden', 'true');
-                    document.querySelector('[data-js="ds44-modal"][data-target="#'+ currentModal.id +'"]').focus();
+                    if (currentModal.classList.contains("ds44-modal-container")) {
+                        currentModal.setAttribute("tabindex", "-1");
+                        document.querySelector('[data-js="ds44-modal"][data-target="#'+ currentModal.id +'"]').focus();
+                    } else if (currentModal.classList.contains("ds44-overlay")) {
+                        performCloseOverlays(".ds44-overlay");
+                    }
                 }
-
-                let allOtherField = document.querySelectorAll('input, button, textarea, a, select');
-                allOtherField.forEach((element) => {
-                    element.tabIndex = element.oldTabIndex
-                });
 
             }
 
@@ -373,25 +390,9 @@ function removeFocusTabListener(element) {
                 let allFields = modal.querySelectorAll('input, button, textarea, a, select');
                 let tabIndex = 1;
 
-                disableTabIndex();
-                setIndexForModalElements();
                 firstField.focus();
 
                 modal.addEventListener('focusout', dontAllowFocusOnOtherElements);
-
-                function disableTabIndex() {
-                    var allOtherField = document.querySelectorAll('input, button, textarea, a, select');
-                    allOtherField.forEach((element) => {
-                        element.oldTabIndex = element.tabIndex;
-                        element.tabIndex = 0;
-                    });
-                }
-
-                function setIndexForModalElements() {
-                    allFields.forEach((element) => {
-                        element.tabIndex = tabIndex++;
-                    });
-                }
 
                 function dontAllowFocusOnOtherElements(event) {
                     event.stopPropagation();
@@ -585,6 +586,24 @@ function removeFocusTabListener(element) {
                 }
         }
 
+        _ds44.reactOnInvalidInput = function() {
+            allInputs = document.querySelectorAll("input");
+
+            if (allInputs.length) {
+                allInputs.forEach((itInput) => {
+                    itInput.addEventListener("invalid", function() {
+                        itInput.setAttribute("aria-invalid", "true");
+                    });
+                    itInput.addEventListener("blur", function() {
+                        itInput.setAttribute("aria-invalid", "false");
+                        itInput.checkValidity();
+                    });
+                });
+            }
+
+
+        }
+
         return _ds44;
     }
 
@@ -649,3 +668,6 @@ ds44.fiddleInputLabel(classAnimInputForm, '.'+classAnimInputForm+' + input[type=
 
 ds44.transitionContenuOnglets(".js-tablist__link");
 // effectuer une transition des display:none sur les contenus des onglets
+
+ds44.reactOnInvalidInput();
+// effectuer une action sur les champs "input" invalides

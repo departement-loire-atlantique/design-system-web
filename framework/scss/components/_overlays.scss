@@ -57,6 +57,7 @@ display: none;
 .ds44-modal-container.show {
     pointer-events: auto;
     opacity: 1;
+    display: block;
 }
 
 .ds44-modal-container {
@@ -76,6 +77,7 @@ display: none;
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    display: none;
 }
 
 .ds44-modal-box {
@@ -85,6 +87,8 @@ display: none;
     background-color: $ds44-light-color;
     position: relative;
     z-index: 10;
+    max-height: 90vh;
+    overflow-x: auto;
 }
 
 .ds44-modal-gab {
