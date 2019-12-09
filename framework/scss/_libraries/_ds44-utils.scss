@@ -415,6 +415,11 @@
   column-gap: 3rem;
 }
 
+
+/* =======
+  GENERIC MEDIA QUERIES
+  === */
+
 @media (max-width: $ds44-medium - .0625) {
 
   .ds44-hide-mobile {
@@ -434,12 +439,17 @@
     margin: $ds44-components-vmargin $ds44-margin-base;
   }
 
+
 }
 
 @media (max-width: $ds44-small) {
 
   .ds44-hide-smallScreens {
     display: none;
+  }
+
+  .ds44-halfWidth {
+    width: 100%;
   }
 
 }

@@ -94,3 +94,42 @@ display: none;
 .ds44-modal-gab {
     padding: $ds44-padding-box;
 }
+
+.ds44-modal-column {
+
+    padding-right: $ds44-padding-xxlarge;
+
+    &:last-child {
+        border-left: 2px solid #000;
+        padding-right: 0;
+        padding-left: $ds44-padding-xxlarge;
+    }
+}
+
+
+
+@media (max-width: $ds44-large) {
+
+        
+    .ds44-modal-column {
+        padding-bottom: $ds44-padding-large;
+        padding-right: 0;
+        padding-left: 0;
+
+        &:last-child {
+            border-left: none;
+            border-top: 2px solid #000;;
+            padding-top: $ds44-padding-large;
+            padding-left: 0;
+        }
+    }
+
+    .ds44-modal-box {
+        padding: $ds44-padding-box $ds44-padding-medium;
+
+        .h2-like {
+            max-width: 80%;
+        }
+    }
+
+}

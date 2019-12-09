@@ -73,11 +73,8 @@ function hideCloseButtons(exceptionElem) {
 function trapFocus(element) {
     var focusableEls = element.querySelectorAll('a[href]:not([disabled]), button:not([disabled]), textarea:not([disabled]), input[type="text"]:not([disabled]), input[type="radio"]:not([disabled]), input[type="checkbox"]:not([disabled]), select:not([disabled])');
     
-    var counter = 0;
-
     focusableEls.forEach((itFocusElem) => {
-        itFocusElem.setAttribute("tabindex", counter);
-        counter++;
+        itFocusElem.setAttribute("tabindex", "0");
     });
 }
 

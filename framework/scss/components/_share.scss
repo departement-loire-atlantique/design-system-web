@@ -1,0 +1,20 @@
+// Share component
+
+
+/* =======
+  MEDIA QUERIES
+  === */
+
+
+  @media (max-width: $ds44-small) {
+
+    .ds44-partage {
+        flex-direction: column;
+        text-align: center;
+
+        > ul {
+            margin-top: 1rem;
+        }
+    }
+
+  }

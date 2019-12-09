@@ -130,7 +130,7 @@ h3, .h3-like {
   font-weight: $weight-bold;
   line-height: 1.2;
   padding: 0;
-  margin-bottom: $ds44-components-vmargin; // 30px
+  margin-bottom: $ds44-small-vmargin; // 1rem
 }
 
 h4, .h4-like {
@@ -435,3 +435,22 @@ caption {
   font-weight: normal;
 }
 
+
+
+
+/* =======
+  GENERIC MEDIA QUERIES
+  === */
+
+
+@media (max-width: $ds44-small) {
+
+  .ds44-titleContainer {
+    min-height: 250px;
+
+    .ds44-alphaGradient {
+      padding: 1rem;
+    }
+  }
+
+}

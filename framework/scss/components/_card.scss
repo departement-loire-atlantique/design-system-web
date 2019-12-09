@@ -55,7 +55,6 @@
     font-family: $ds44-font-family-base;
 }
 .ds44-cardPicture {
-    min-width: 38%;
     object-fit: cover;
 }
 .ds44-cardFile {
@@ -116,6 +115,19 @@
         min-width: 10rem;
     }
 
+    .ds44-card--horizontal {
+    
+        .ds44-card__img {
+            min-height: 100%;
+        }
+    
+    }
+
+    .ds44-card__section--horizontal {
+        padding-right: $ds44-padding-box;
+        padding-left: $ds44-padding-box;
+    }
+
 }
 
 /* Large screens */
@@ -123,8 +135,6 @@
 
 @media (max-width: $ds44-large) {
 
-    .ds44-cardPicture {
-        min-width: 140px;
-    }
+    
 
 }

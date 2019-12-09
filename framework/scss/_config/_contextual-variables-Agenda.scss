@@ -1,7 +1,10 @@
 /*
-* CD44 Design System - contextual variables for Loire Atlantique
+* CD44 Design System - contextual variables for Agenda Loire Atlantique
 */
 
 // ----------------
 // ---- COLORS ----
 // ----------------
+
+$ds44-contextual-color : #FFD883 !default;
+$ds44-contextual-hover : transparentize(rgba($ds44-contextual-color, 1), 0.25) !default;

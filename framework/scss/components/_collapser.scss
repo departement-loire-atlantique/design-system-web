@@ -12,18 +12,23 @@
   li.ds44-collapser_element, li {
     list-style: none!important;
   }
-  
-}
 
-/* container for collapsed content */
-.ds44-collapser_element {
-  border-bottom: 1px solid $ds44-contextual-color;
-  list-style: none; // if collapser is a list
-  
-  li {
-    list-style: none;
+  /* container for collapsed content */
+  .ds44-collapser_element {
+    border-bottom: 1px solid $ds44-contextual-color;
+    list-style: none; // if collapser is a list
+    
+    .ds44-collapser_content li {
+      list-style: none;
+      margin-top: 0;
+
+      &:first-child {
+        margin-top: 1.5rem;
+      }
+    }
+
   }
-
+  
 }
 
 /* row-like button */

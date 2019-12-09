@@ -24,7 +24,10 @@
 
 .ds44-form__container {
     position: relative;
-    margin: $ds44-large-vmargin 0 $ds44-small-vmargin 0;
+    margin: $ds44-medium-vmargin 0;
+}
+.ds44-form__container--external {
+    margin: 0 0 $ds44-medium-vmargin 0;
 }
 
 .ds44-formLabel {
@@ -57,6 +60,12 @@
     color: $ds44-color-dark-text;
     margin: $ds44-small-vmargin 0;
     display: block;
+}
+
+.ds44-form__container--external {
+    .ds44-formLabel--external {
+        margin-top: .5rem;
+    }
 }
 
 .ds44-inpStd {

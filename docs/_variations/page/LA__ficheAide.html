@@ -291,7 +291,31 @@ layout: pattern
 					</ul>
 					<ul class="ds44-flex-container ds44-fse ds44--l-padding-tb ds44-flex-grow1-large ds44-blocBtnOnglets ds44-list">
 						<li class="mrs mls ds44-ongletsBtnItem">
-							<button class="ds44-btnStd ds44-btn--invert" type="button" data-target="#overlay-qui-contacter" data-js="ds44-modal"><span class="ds44-btnInnerText">Qui contacter</span><i class="icon icon-phone icon--sizeL" aria-hidden="true"></i></button>
+							<button class="ds44-btnStd ds44-btn--invert" type="button" data-target="#overlay-qui-contacter" data-js="ds44-modal"><span class="ds44-btnInnerText">Qui contacter</span><i class="icon icon-phone icon--sizeL" aria-hidden="true"></i></button>							
+
+							<section class="ds44-modal-container" id="overlay-qui-contacter" aria-hidden="true" role="dialog" aria-labelledby="titre-modale-qui-contacter">
+								<div class="ds44-modal-box">
+									<button class="ds44-btnOverlay--modale ds44-btnOverlay--closeOverlay" type="button" title="Fermer la boite de dialogue : qui contacter" data-js="ds44-modal-action-close"><i class="icon icon-cross icon--xlarge" aria-hidden="true"></i><span class="ds44-btnInnerText--bottom">Fermer</span></button>
+									<h1 class="h2-like" id="titre-modale-qui-contacter">Qui contacter ?</h1>
+									<div class="ds44-modal-gab">
+										<p>Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum.</p>
+										<div class="ds44-mt3 grid-12-small-1">
+											<div class="col-6 ds44-modal-column">
+												<p class="ds44-docListElem"><i class="icon icon-marker ds44-docListIco" aria-hidden="true"></i>Service habitat</p>
+												<p class="ds44-docListElem">3 quai Ceineray<br /> CS 94109 44041 Nantes</p>
+												<p class="ds44-docListElem mtm"><i class="icon icon-phone ds44-docListIco" aria-hidden="true"></i>02 40 99 12 82 - 02 40 99 19 10</p>
+												<p class="ds44-docListElem mtm"><i class="icon icon-mail ds44-docListIco" aria-hidden="true"></i><a href="#mailto:contact@loire-atlantique.fr" aria-label="Contacter Service habitat par mail">contact@loire-atlantique.fr</a></p>
+											</div>
+											<div class="col-6 ds44-modal-column">
+												<h2 class="h3-like">Besoin d'aide ?</h2>
+												<p class="ds44-docListElem"><i class="icon icon-time ds44-docListIco" aria-hidden="true"></i>du lundi au vendredi, de 12h30 à 14h30</p>
+												<p class="ds44-docListElem mtm"><i class="icon icon-phone ds44-docListIco" aria-hidden="true"></i>02 40 99 12 82</p>
+												<p class="ds44-docListElem mtm"><i class="icon icon-mail ds44-docListIco" aria-hidden="true"></i><a href="#mailto:contact@loire-atlantique.fr" aria-label="Contacter Service habitat par mail">support-aidepermis@loire-atlantique.fr</a></p>
+											</div>
+										</div>
+									</div>
+								</div>								
+							</section>
 						</li>
 						<li class="mrs ds44-ongletsBtnItem">
 							<button class="ds44-btnStd ds44-btn--invert" type="button" data-target="#overlay-faire-demande" data-js="ds44-modal"><span class="ds44-btnInnerText">Faire une demande</span><i class="icon icon-file icon--sizeL" aria-hidden="true"></i></button>
@@ -302,12 +326,12 @@ layout: pattern
 									<h1 class="h2-like" id="titre-modale-faire-demande">Faire une demande</h1>
 									<div class="ds44-modal-gab">
 										<p>Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum.</p>
-										<div class="ds44-flex-container ds44-mt3">
-											<div class="ds44-halfWidth prl">
+										<div class="ds44-mt3 grid-12-small-1">
+											<div class="col-6 ds44-modal-column">
 												<h2 class="h3-like">Documents utiles :</h2>
 												<p class="ds44-docListElem"><i class="icon icon-file ds44-docListIco" aria-hidden="true"></i><a href="#">Notice explicative éligibilité subvention adaptation logement - Personnes âgées</a><span class="ds44-cardFile">PDF - 291,3 Ko</span></p>
 											</div>
-											<div class="ds44-halfWidth pll ds44-border-left">
+											<div class="col-6 ds44-modal-column">
 												<h2 class="h3-like">En ligne :</h2>
 												<p><button class="ds44-btnStd ds44-btn--invert" type="button"><span class="ds44-btnInnerText">Faire une demande en ligne</span><i class="icon icon-computer icon--sizeL" aria-hidden="true"></i></button></p>
 											</div>
@@ -326,8 +350,8 @@ layout: pattern
 									<h1 class="h2-like" id="titre-modale">Suivre une demande en cours</h1>
 									<div class="ds44-modal-gab">
 										<p>Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum.</p>
-										<div class="ds44-flex-container ds44-mt3">
-											<div class="ds44-halfWidth prl">
+										<div class="ds44-mt3 grid-12-small-1">
+											<div class="col-6 ds44-modal-column">
 												<h2 class="h3-like">Vous avez un code de suivi :</h2>
 												<p id="desc-pour-input">Saisissez votre code de suivi (transmis à l’enregistrement de votre demande en ligne.</p>
 												<div class="ds44-form__container">        
@@ -335,7 +359,7 @@ layout: pattern
 													<button class="ds44-btnStd ds44-btn--invert" type="button"><span class="ds44-btnInnerText">Valider</span><i class="icon icon-long-arrow-right" aria-hidden="true"></i></button>
 												</div>
 											</div>
-											<div class="ds44-halfWidth pll ds44-border-left">
+											<div class="col-6 ds44-modal-column">
 												<h2 class="h3-like">Vous n’avez pas de code de suivi :</h2>
 												<p><button class="ds44-btnStd ds44-btn--invert" type="button"><span class="ds44-btnInnerText">Connectez-vous</span><i class="icon icon-computer icon--sizeL" aria-hidden="true"></i></button></p>
 											</div>
