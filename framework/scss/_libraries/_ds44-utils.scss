@@ -420,11 +420,15 @@
   GENERIC MEDIA QUERIES
   === */
 
-@media (max-width: $ds44-medium - .0625) {
+@media (max-width: $ds44-small) {
 
-  .ds44-hide-mobile {
-    display: none;
+  .ds44-halfWidth {
+    width: 100%;
   }
+
+}
+
+@media (max-width: $ds44-medium - .0625) {
   
   .ds44-xl-fluid-margin {
     margin-left: 5.5%;
@@ -442,24 +446,7 @@
 
 }
 
-@media (max-width: $ds44-small) {
-
-  .ds44-hide-smallScreens {
-    display: none;
-  }
-
-  .ds44-halfWidth {
-    width: 100%;
-  }
-
-}
-
-
 @media (min-width: $ds44-medium) {
-
-  .ds44-show-mobile {
-    display: none;
-  }  
 
   .ds44-multiCol--3 {
     column-count: 2;

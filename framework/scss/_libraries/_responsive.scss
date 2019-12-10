@@ -282,3 +282,32 @@
   }
 
 }
+
+
+/* =======
+  SPECIFIC DS44 MEDIA QUERIES
+  === */
+
+@media (min-width: $ds44-medium) {
+
+  .ds44-show-mobile {
+    display: none;
+  } 
+
+}
+
+@media (max-width: $ds44-medium - .0625) {
+
+  .ds44-hide-mobile {
+    display: none;
+  }
+
+}
+
+@media (max-width: $ds44-small) {
+
+  .ds44-hide-smallScreens {
+    display: none;
+  }
+
+}

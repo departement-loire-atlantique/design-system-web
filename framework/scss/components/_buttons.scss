@@ -21,7 +21,7 @@ button, a.ds44-btnStd {
 }
 
 .ds44-btnStd, a.ds44-btnStd {
-    font-size: .875em; // 14px
+    @include ds44-font-sizes(button);
     padding: $ds44-padding-box;
     border-radius: $ds44-border-radius;
     border: 1px solid $ds44-dark;

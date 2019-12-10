@@ -28,11 +28,11 @@
 @import "./node_modules/knacss/sass/_library/utilities";            // width and spacer helpers
 @import "./node_modules/knacss/sass/_library/grillade-grid";        // Grid System 
 @import "./node_modules/knacss/sass/_library/layout";               // alignment, modules, positionning
-@import "_libraries/ds44-utils";                                    // DS44 utilities
-@import "_libraries/responsive";                                    // Responsive Web Design helpers
 
 // KNACSS modified Libraries
 
+@import "_libraries/ds44-utils";                                    // DS44 utilities
+@import "_libraries/responsive";                                    // Responsive Web Design helpers
 @import "_libraries/base";
 
 // CD44 specific Libraries
@@ -74,3 +74,4 @@
 @import "components/onglets.scss";
 @import "components/overlays.scss";
 @import "components/share.scss";
+@import "components/manteaux.scss";
