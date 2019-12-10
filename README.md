@@ -124,3 +124,6 @@ docker-compose exec site gulp build:glyphicons
 ## License
 
 Ce projet est basé sur un [modèle de site design-system](https://github.com/lundegaard/design-system-template) et est rendu sous public en open source suivant les termes de la licence [MIT License](https://opensource.org/licenses/MIT).
+
+## Notes
+1. Si une erreur liée au certificat se produit, vous pouvez lancer la commande "npm set strict-ssl false" avant de lancer la commande "npm intall"

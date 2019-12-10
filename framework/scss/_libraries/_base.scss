@@ -343,3 +343,22 @@ caption {
   font-weight: normal;
 }
 
+
+
+
+/* =======
+  GENERIC MEDIA QUERIES
+  === */
+
+
+@media (max-width: $ds44-small) {
+
+  .ds44-titleContainer {
+    min-height: 250px;
+
+    .ds44-alphaGradient {
+      padding: 1rem;
+    }
+  }
+
+}

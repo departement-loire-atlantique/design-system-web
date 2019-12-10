@@ -1,4 +1,4 @@
-FROM ruby:2.3.3
+FROM ruby:2.6.5
 MAINTAINER Julien BAYLE <julien.bayle@loire-atlantique.fr>
 
 # install nodejs
