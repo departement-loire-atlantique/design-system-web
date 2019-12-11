@@ -1,0 +1,72 @@
+// Carrousel DS44
+
+div .swiper-button-next,
+div .swiper-button-prev {
+    color: #000;
+    width: 12.85px;
+    height: 37.5px;
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    border-radius: 60px;
+    z-index: 9999;
+}
+
+div .swiper-button-prev {
+    left: -36px;
+}
+
+div .swiper-button-next {
+    right: -36px;
+}
+
+div .swiper-button-next::after,
+div .swiper-button-prev::after {
+    font-size: 25px;
+}
+
+div .swiper-button-next i::before,
+div .swiper-button-prev i::before {
+    content: none;
+}
+
+div .swiper-button-disabled {
+    display: none;
+}
+
+div .swipper-carousel-wrap {
+    position: relative;
+    width: 100%;
+}
+
+div .swiper-slide {
+    z-index: 1;
+}
+
+/*style quand il n'y a pas de js*/
+.ds44-carousel-swiper {
+    flex-wrap: wrap;
+}
+
+.ds44-carousel-swiper li {
+    width: calc(25% - 10px);
+    flex-shrink: 1;
+    margin-right: 10px;
+}
+
+.ds44-carousel-swiper li:last-child {
+    margin-right: 0px;
+}
+
+.ds44-carousel-swiper li:nth-child(4n) {
+    margin-right: 0px;
+}
+
+
+@media screen and (max-width: $ds44-small) {
+
+    .ds44-carousel-swiper li {
+        width: auto;
+    }
+
+}
