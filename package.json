@@ -46,6 +46,7 @@
     "Android >= 7"
   ],
   "dependencies": {
-    "gulp-cli": "^2.2.0"
+    "gulp-cli": "^2.2.0",
+    "swiper": "^5.0.0"
   }
 }
