@@ -66,14 +66,6 @@
 .ds44--2xl-padding-l {
     padding-left    : $ds44-padding-xlarge*2;
 }
-.ds44--antiStickyPad {
-  padding-bottom    : 10rem!important;
-}
-@media (max-width: $ds44-medium) {
-  .ds44--antiStickyPad {
-    padding-bottom  : 0!important;
-  }
-}
 
 // margins
 

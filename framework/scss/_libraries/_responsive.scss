@@ -288,9 +288,9 @@
   SPECIFIC DS44 MEDIA QUERIES
   === */
 
-@media (min-width: $ds44-medium) {
+@media (max-width: $ds44-large) {
 
-  .ds44-show-mobile {
+  .ds44-hide-tinyToLarge {
     display: none;
   } 
 
@@ -309,5 +309,13 @@
   .ds44-hide-smallScreens {
     display: none;
   }
+
+}
+
+@media (min-width: $ds44-medium) {
+
+  .ds44-show-mobile {
+    display: none;
+  } 
 
 }
