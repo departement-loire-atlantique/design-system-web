@@ -10,14 +10,6 @@ div .swiper-button-prev {
   z-index: 9999;
 }
 
-div .swiper-button-prev {
-  left: -36px;
-}
-
-div .swiper-button-next {
-  right: -36px;
-}
-
 div .swiper-button-next::after,
 div .swiper-button-prev::after {
   font-size: 25px;
@@ -32,12 +24,13 @@ div .swiper-button-disabled {
   display: none;
 }
 
-ul.swipper-carousel-wrap {
+div .swipper-carousel-wrap {
   position: relative;
   width: 100%;
+  padding: 0px 36px;
 }
 
-li.swiper-slide {
+div .swiper-slide {
   z-index: 1;
 }
 
