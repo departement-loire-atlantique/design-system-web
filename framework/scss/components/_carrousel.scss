@@ -12,14 +12,6 @@ div .swiper-button-prev {
     z-index: 9999;
 }
 
-div .swiper-button-prev {
-    left: -36px;
-}
-
-div .swiper-button-next {
-    right: -36px;
-}
-
 div .swiper-button-next::after,
 div .swiper-button-prev::after {
     font-size: 25px;
@@ -37,6 +29,7 @@ div .swiper-button-disabled {
 div .swipper-carousel-wrap {
     position: relative;
     width: 100%;
+    padding: 0px 36px;
 }
 
 div .swiper-slide {
@@ -44,6 +37,7 @@ div .swiper-slide {
 }
 
 /*style quand il n'y a pas de js*/
+
 .ds44-carousel-swiper {
     flex-wrap: wrap;
 }
@@ -58,15 +52,18 @@ div .swiper-slide {
     margin-right: 0px;
 }
 
-.ds44-carousel-swiper li:nth-child(4n) {
+.ds44-carousel-swiper.grid-3-small-1 li:nth-child(3n) {
     margin-right: 0px;
 }
 
+.ds44-carousel-swiper.grid-4-small-1 li:nth-child(4n) {
+    margin-right: 0px;
+}
 
 @media screen and (max-width: $ds44-small) {
-
+  
     .ds44-carousel-swiper li {
         width: auto;
     }
-
+    
 }

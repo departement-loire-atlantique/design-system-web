@@ -2,13 +2,13 @@ version: '3'
 services:
   site:
     command: gulp serve
-    # Use on first time "npm rebuild node-sass --force" if you have an error 
+    # Use on first time "npm rebuild node-sass --force" if you have an error
     # or npm install about linux version of node-sass
-    
-    image: julienbayle/dsbuilder
+
+    image: lchoquet/dsbuilder
     # Replace imageby the following line to use a local built image
     # build: .
-    
+
     volumes:
       - ./..:/app
       - ./cache/bundle:/usr/local/bundle
