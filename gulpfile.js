@@ -17,9 +17,11 @@ var iconfontCss = require("gulp-iconfont-css");
 var fs = require('fs');
 
 var jekyllDir = "docs/",
-    scssFile = 'framework/scss/cd44.scss'
+    scssFile = 'framework/scss/cd44.scss',
+    scssFileSwiper = 'node_modules/swiper/css/swiper.min.css',
     cssDest = 'dist/css',
-    jsFiles = 'framework/js/**/*.js'
+    jsFiles = 'framework/js/**/*.js',
+    jsFileSwiper = 'node_modules/swiper/js/swiper.min.js',
     jsDest  = 'dist/js';
     distDest = 'dist/';
     assetsFolders = ['framework/fonts/**', 'framework/images/**'];
@@ -44,10 +46,10 @@ var postCssPluginsProd =  [
 ];
 
 gulp.task('build:css:cd44:dev', function () {
-  return gulp.src(scssFile)
+  return gulp.src([scssFileSwiper, scssFile])
     .pipe(sass({
       // CSS non minifiée plus lisible ('}' à la ligne)
-      outputStyle: 'expanded' 
+      outputStyle: 'expanded'
     }))
     .pipe(postcss(postCssPluginsDev))
     .pipe(rename('cd44.css'))
@@ -56,15 +58,15 @@ gulp.task('build:css:cd44:dev', function () {
 });
 
 gulp.task('build:css:cd44:prod', function () {
-    return gulp.src(scssFile)
+    return gulp.src([scssFileSwiper, scssFile])
       .pipe(sass())
       .pipe(postcss(postCssPluginsProd))
-      .pipe(rename('cd44.min.css'))
+      .pipe(concat('cd44.min.css'))
       .pipe(gulp.dest(cssDest));
   });
 
 gulp.task('build:js', function() {
-  return gulp.src(jsFiles)
+  return gulp.src([jsFileSwiper, jsFiles])
       .pipe(concat('cd44.js'))
       .pipe(gulp.dest(jsDest));
 });
@@ -150,7 +152,7 @@ gulp.task('serve', gulp.series('build', function() {
 
   // Watch framework .js files
   gulp.watch('framework/js/**/*.js', {interval: 500, usePolling: true}, gulp.series('build:js', function(done) {
-    browserSync.reload(); 
+    browserSync.reload();
     done();
   }));
 
