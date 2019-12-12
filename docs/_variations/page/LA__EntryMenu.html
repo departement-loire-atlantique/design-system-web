@@ -4,252 +4,448 @@ layout: pattern
 
 <header role="banner" id="top" class="ds44-container-fluid ds44-header">
 
-	<ul class="ds44-list">
-		<li><a href="#content" class="ds44-skiplinks--link">Aller au contenu</a></li>
-		<li><a href="#menu" class="ds44-skiplinks--link">Aller au menu</a></li>
-		<li><a href="#search" class="ds44-skiplinks--link">Aller à la recherche</a></li>
-		<li><a href="#" class="ds44-skiplinks--link">Aller à la page d'accessibilité</a></li>
-	</ul>
+	<div class="ds44-blocBandeau">
+		<ul class="ds44-list">
+			<li><a href="#content" class="ds44-skiplinks--link">Aller au contenu</a></li>
+			<li><a href="#menu" class="ds44-skiplinks--link">Aller au menu</a></li>
+			<li><a href="#search" class="ds44-skiplinks--link">Aller à la recherche</a></li>
+			<li><a href="#" class="ds44-skiplinks--link">Aller à la page d'accessibilité</a></li>
+		</ul>
 
-	<div class="ds44-flex-container ds44-flex-valign-center">
-		<div class="ds44-colLeft">
-            <a href="#" class="ds44-logoContainer">
-                <picture class="ds44-logo">
-                    <img src="../../assets/images/logo-loire-atlantique.svg" alt="Retour à l'accueil - Loire Atlantique" />
-                </picture>
-            </a>
-        </div>
-		<div class="ds44-colRight">            
-			<button class="ds44-btnIcoText--maxi ds44--xl-padding" type="button"><span class="ds44-btnInnerText">Rechercher</span><i class="icon icon-magnifier icon--large" aria-hidden="true"></i></button>
-			<button class="ds44-btn--menu ds44-btnIcoText--maxi ds44-btn--contextual ds44--xl-padding" type="button" aria-label="Ouvrir le menu de navigation"><span class="ds44-btnInnerText">Menu</span><i class="icon icon-burger icon--xlarge" aria-hidden="true"></i></button>
+		<div class="ds44-flex-container ds44-flex-valign-center">
+			<div class="ds44-colLeft">
+				<a href="#" class="ds44-logoContainer">
+					<picture class="ds44-logo">
+						<img src="../../assets/images/logo-loire-atlantique.svg"
+							alt="Retour à l'accueil - Loire Atlantique" />
+					</picture>
+				</a>
+			</div>
+			<div class="ds44-colRight">
+				<button class="ds44-btnIcoText--maxi ds44--xl-padding" type="button"><span
+						class="ds44-btnInnerText">Rechercher</span><i class="icon icon-magnifier icon--large"
+						aria-hidden="true"></i></button>
+				<button class="ds44-btn--menu ds44-btnIcoText--maxi ds44-btn--contextual ds44--xl-padding" type="button"
+					aria-label="Ouvrir le menu de navigation" aria-controls="menu"><span class="ds44-btnInnerText">Menu</span><i
+						class="icon icon-burger icon--xlarge" aria-hidden="true"></i></button>
+			</div>
+		</div>
+	</div>
+	<div class="ds44-blocMenu">
 
-			<section class="ds44-menuBox" id="menu">
+		<section class="ds44-menuBox" id="menu">
 
-				<div class="ds44-overlay ds44-theme ds44-bgCircle ds44-bg-br ds44-overlay--navNiv1" role="dialog" aria-label="Menu principal niveau 1" id="nav1">
-					<p role="heading" aria-level="1" class="visually-hidden">Menu de navigation</p>
-						
-					<button class="ds44-btnOverlay ds44-btnOverlay--closeOverlay" type="button" aria-label="Fermer le menu de navigation"><i class="icon icon-cross icon--xlarge" aria-hidden="true"></i><span class="ds44-btnInnerText--bottom">Fermer</span></button>
-				
-					<nav role="navigation" class="ds44-navContainer ds44-flex-container--column ds44-flex-valign-center" aria-label="Menu de navigation">
-						<div class="ds44-inner-container ds44-flex-container--column ds44-flex-mauto">
-							<ul class="ds44-navList ds44-multiCol ds44-xl-gap ds44-list">
-								<li>
-									<button type="button" class="ds44-menuBtn" data-ssmenu="nav2">Besoin d'aides<i class="icon icon-right" aria-hidden="true"></i></button>									
+			<div class="ds44-overlay ds44-theme ds44-bgCircle ds44-bg-br ds44-overlay--navNiv1" role="dialog"
+				aria-label="Menu principal niveau 1" id="nav1">
+				<p role="heading" aria-level="1" class="visually-hidden">Menu de navigation</p>
 
-									<section id="nav2" class="ds44-overlay ds44-theme ds44-bgCircle ds44-bg-br ds44-overlay--navNiv2" role="dialog" aria-label="Menu principal niveau 2">
+				<button class="ds44-btnOverlay ds44-btnOverlay--closeOverlay" type="button"
+					aria-label="Fermer le menu de navigation"><i class="icon icon-cross icon--xlarge"
+						aria-hidden="true"></i><span class="ds44-btnInnerText--bottom">Fermer</span></button>
 
-										<div class="ds44-container-menuBackLink">
-											<button type="button" title="Retour au menu de navigation" class="ds44-btn-backOverlay"><i class="icon icon-arrow-left icon--xlarge" aria-hidden="true"></i><span class="ds44-btnInnerText--bottom">Retour</span></button>
-											<p role="heading" aria-level="1" class="ds44-menuBackLink">Besoin d'aides</p>
-										</div>
-										<button class="ds44-btnOverlay ds44-btnOverlay--closeOverlay" type="button" aria-label="Fermer le menu de navigation"><i class="icon icon-cross icon--xlarge" aria-hidden="true"></i><span class="ds44-btnInnerText--bottom">Fermer</span></button>
-										
-										<nav role="navigation" aria-label="Menu de navigation" class="ds44-navContainer ds44-flex-container--column ds44-fse">
-											<div class="ds44-navList">
-									
-												<ul class="ds44-navListN2 ds44-multiCol ds44-xl-gap ds44-xl-fluid-margin ds44-list">
-													<li><a href="#" class="ds44-menuLink ds44-menuLink--subLvl">Enfance, famille<i class="icon icon-arrow-right" aria-hidden="true"></i></a></li>
-													<li><a href="#" class="ds44-menuLink ds44-menuLink--subLvl">Education, collèges<i class="icon icon-arrow-right" aria-hidden="true"></i></a></li>
-													<li><a href="#" class="ds44-menuLink ds44-menuLink--subLvl">Jeunesse<i class="icon icon-arrow-right" aria-hidden="true"></i></a></li>
-													<li><a href="#" class="ds44-menuLink ds44-menuLink--subLvl">Handicap<i class="icon icon-arrow-right" aria-hidden="true"></i></a></li>
-													<li><a href="#" class="ds44-menuLink ds44-menuLink--subLvl">Seniors, personnes âgées<i class="icon icon-arrow-right" aria-hidden="true"></i></a></li>
-													<li><a href="#" class="ds44-menuLink ds44-menuLink--subLvl">Insertion, emploi<i class="icon icon-arrow-right" aria-hidden="true"></i></a></li>
-													<li><a href="#" class="ds44-menuLink ds44-menuLink--subLvl">Habitat, logement<i class="icon icon-arrow-right" aria-hidden="true"></i></a></li>
-													<li><a href="#" class="ds44-menuLink ds44-menuLink--subLvl">Déplacements<i class="icon icon-arrow-right" aria-hidden="true"></i></a></li>
-													<li><a href="#" class="ds44-menuLink ds44-menuLink--subLvl">Environnement<i class="icon icon-arrow-right" aria-hidden="true"></i></a></li>
-													<li><a href="#" class="ds44-menuLink ds44-menuLink--subLvl">Culture<i class="icon icon-arrow-right" aria-hidden="true"></i></a></li>
-													<li><a href="#" class="ds44-menuLink ds44-menuLink--subLvl">Sport<i class="icon icon-arrow-right" aria-hidden="true"></i></a></li>
-													<li><a href="#" class="ds44-menuLink ds44-menuLink--subLvl">Aménagement, économie<i class="icon icon-arrow-right" aria-hidden="true"></i></a></li>
-													<li><a href="#" class="ds44-menuLink ds44-menuLink--subLvl">Citoyenneté, vie associative<i class="icon icon-arrow-right" aria-hidden="true"></i></a></li>
-													<li><a href="#" class="ds44-menuLink ds44-menuLink--subLvl">Tourisme<i class="icon icon-arrow-right" aria-hidden="true"></i></a></li>
-												</ul>
-											</div>
-										</nav>
-									
-									</section>
-								</li>
-								<li>
-									<button type="button" class="ds44-menuBtn" data-ssmenu="nav3">Besoin d'air<i class="icon icon-right" aria-hidden="true"></i></button>
-				
-									<section id="nav3" class="ds44-overlay ds44-theme ds44-bgCircle ds44-bg-br ds44-overlay--navNiv2" role="dialog" aria-label="Menu principal niveau 2">
+				<nav role="navigation" class="ds44-navContainer ds44-flex-container--column ds44-flex-valign-center"
+					aria-label="Menu de navigation">
+					<div class="ds44-inner-container ds44-flex-container--column ds44-flex-mauto">
+						<ul class="ds44-navList ds44-multiCol ds44-xl-gap ds44-list">
+							<li>
+								<button type="button" class="ds44-menuBtn" data-ssmenu="nav2">Besoin d'aides<i
+										class="icon icon-right" aria-hidden="true"></i></button>
 
-											<div class="ds44-container-menuBackLink">
-												<button type="button" title="Retour au menu de navigation" class="ds44-btn-backOverlay"><i class="icon icon-arrow-left icon--xlarge" aria-hidden="true"></i><span class="ds44-btnInnerText--bottom">Retour</span></button>
-												<p role="heading" aria-level="1" class="ds44-menuBackLink">Besoin d'aides</p>
-											</div>
-											<button class="ds44-btnOverlay ds44-btnOverlay--closeOverlay" type="button" aria-label="Fermer le menu de navigation"><i class="icon icon-cross icon--xlarge" aria-hidden="true"></i><span class="ds44-btnInnerText--bottom">Fermer</span></button>
-											
-											<nav role="navigation" aria-label="Menu de navigation" class="ds44-navContainer ds44-flex-container--column ds44-fse">
-												<div class="ds44-navList">
-										
-													<ul class="ds44-navListN2 ds44-multiCol ds44-xl-gap ds44-xl-fluid-margin ds44-list">
-														<li><a href="#" class="ds44-menuLink ds44-menuLink--subLvl">Enfance, famille<i class="icon icon-arrow-right" aria-hidden="true"></i></a></li>
-														<li><a href="#" class="ds44-menuLink ds44-menuLink--subLvl">Education, collèges<i class="icon icon-arrow-right" aria-hidden="true"></i></a></li>
-														<li><a href="#" class="ds44-menuLink ds44-menuLink--subLvl">Jeunesse<i class="icon icon-arrow-right" aria-hidden="true"></i></a></li>
-														<li><a href="#" class="ds44-menuLink ds44-menuLink--subLvl">Handicap<i class="icon icon-arrow-right" aria-hidden="true"></i></a></li>
-														<li><a href="#" class="ds44-menuLink ds44-menuLink--subLvl">Seniors, personnes âgées<i class="icon icon-arrow-right" aria-hidden="true"></i></a></li>
-														<li><a href="#" class="ds44-menuLink ds44-menuLink--subLvl">Insertion, emploi<i class="icon icon-arrow-right" aria-hidden="true"></i></a></li>
-														<li><a href="#" class="ds44-menuLink ds44-menuLink--subLvl">Habitat, logement<i class="icon icon-arrow-right" aria-hidden="true"></i></a></li>
-														<li><a href="#" class="ds44-menuLink ds44-menuLink--subLvl">Déplacements<i class="icon icon-arrow-right" aria-hidden="true"></i></a></li>
-														<li><a href="#" class="ds44-menuLink ds44-menuLink--subLvl">Environnement<i class="icon icon-arrow-right" aria-hidden="true"></i></a></li>
-														<li><a href="#" class="ds44-menuLink ds44-menuLink--subLvl">Culture<i class="icon icon-arrow-right" aria-hidden="true"></i></a></li>
-														<li><a href="#" class="ds44-menuLink ds44-menuLink--subLvl">Sport<i class="icon icon-arrow-right" aria-hidden="true"></i></a></li>
-														<li><a href="#" class="ds44-menuLink ds44-menuLink--subLvl">Aménagement, économie<i class="icon icon-arrow-right" aria-hidden="true"></i></a></li>
-														<li><a href="#" class="ds44-menuLink ds44-menuLink--subLvl">Citoyenneté, vie associative<i class="icon icon-arrow-right" aria-hidden="true"></i></a></li>
-														<li><a href="#" class="ds44-menuLink ds44-menuLink--subLvl">Tourisme<i class="icon icon-arrow-right" aria-hidden="true"></i></a></li>
-													</ul>
-												</div>
-											</nav>
-										
-									</section>
-								</li>
-								<li>
-									<button type="button" class="ds44-menuBtn" data-ssmenu="nav4">Près de chez vous<i class="icon icon-right" aria-hidden="true"></i></button>
+								<section id="nav2"
+									class="ds44-overlay ds44-theme ds44-bgCircle ds44-bg-br ds44-overlay--navNiv2"
+									role="dialog" aria-label="Menu principal niveau 2">
 
-									<section id="nav4" class="ds44-overlay ds44-theme ds44-bgCircle ds44-bg-br ds44-overlay--navNiv2" role="dialog" aria-label="Menu principal niveau 2">
+									<div class="ds44-container-menuBackLink">
+										<button type="button" title="Retour au menu de navigation"
+											class="ds44-btn-backOverlay"><i class="icon icon-arrow-left icon--xlarge"
+												aria-hidden="true"></i><span
+												class="ds44-btnInnerText--bottom">Retour</span></button>
+										<p role="heading" aria-level="1" class="ds44-menuBackLink">Besoin d'aides</p>
+									</div>
+									<button class="ds44-btnOverlay ds44-btnOverlay--closeOverlay" type="button"
+										aria-label="Fermer le menu de navigation"><i
+											class="icon icon-cross icon--xlarge" aria-hidden="true"></i><span
+											class="ds44-btnInnerText--bottom">Fermer</span></button>
 
-											<div class="ds44-container-menuBackLink">
-												<button type="button" title="Retour au menu de navigation" class="ds44-btn-backOverlay"><i class="icon icon-arrow-left icon--xlarge" aria-hidden="true"></i><span class="ds44-btnInnerText--bottom">Retour</span></button>
-												<p role="heading" aria-level="1" class="ds44-menuBackLink">Besoin d'aides</p>
-											</div>
-											<button class="ds44-btnOverlay ds44-btnOverlay--closeOverlay" type="button" aria-label="Fermer le menu de navigation"><i class="icon icon-cross icon--xlarge" aria-hidden="true"></i><span class="ds44-btnInnerText--bottom">Fermer</span></button>
-											
-											<nav role="navigation" aria-label="Menu de navigation" class="ds44-navContainer ds44-flex-container--column ds44-fse">
-												<div class="ds44-navList">
-										
-													<ul class="ds44-navListN2 ds44-multiCol ds44-xl-gap ds44-xl-fluid-margin ds44-list">
-														<li><a href="#" class="ds44-menuLink ds44-menuLink--subLvl">Enfance, famille<i class="icon icon-arrow-right" aria-hidden="true"></i></a></li>
-														<li><a href="#" class="ds44-menuLink ds44-menuLink--subLvl">Education, collèges<i class="icon icon-arrow-right" aria-hidden="true"></i></a></li>
-														<li><a href="#" class="ds44-menuLink ds44-menuLink--subLvl">Jeunesse<i class="icon icon-arrow-right" aria-hidden="true"></i></a></li>
-														<li><a href="#" class="ds44-menuLink ds44-menuLink--subLvl">Handicap<i class="icon icon-arrow-right" aria-hidden="true"></i></a></li>
-														<li><a href="#" class="ds44-menuLink ds44-menuLink--subLvl">Seniors, personnes âgées<i class="icon icon-arrow-right" aria-hidden="true"></i></a></li>
-														<li><a href="#" class="ds44-menuLink ds44-menuLink--subLvl">Insertion, emploi<i class="icon icon-arrow-right" aria-hidden="true"></i></a></li>
-														<li><a href="#" class="ds44-menuLink ds44-menuLink--subLvl">Habitat, logement<i class="icon icon-arrow-right" aria-hidden="true"></i></a></li>
-														<li><a href="#" class="ds44-menuLink ds44-menuLink--subLvl">Déplacements<i class="icon icon-arrow-right" aria-hidden="true"></i></a></li>
-														<li><a href="#" class="ds44-menuLink ds44-menuLink--subLvl">Environnement<i class="icon icon-arrow-right" aria-hidden="true"></i></a></li>
-														<li><a href="#" class="ds44-menuLink ds44-menuLink--subLvl">Culture<i class="icon icon-arrow-right" aria-hidden="true"></i></a></li>
-														<li><a href="#" class="ds44-menuLink ds44-menuLink--subLvl">Sport<i class="icon icon-arrow-right" aria-hidden="true"></i></a></li>
-														<li><a href="#" class="ds44-menuLink ds44-menuLink--subLvl">Aménagement, économie<i class="icon icon-arrow-right" aria-hidden="true"></i></a></li>
-														<li><a href="#" class="ds44-menuLink ds44-menuLink--subLvl">Citoyenneté, vie associative<i class="icon icon-arrow-right" aria-hidden="true"></i></a></li>
-														<li><a href="#" class="ds44-menuLink ds44-menuLink--subLvl">Tourisme<i class="icon icon-arrow-right" aria-hidden="true"></i></a></li>
-													</ul>
-												</div>
-											</nav>
-										
-									</section>
-								</li>
-								<li><button type="button" class="ds44-menuBtn">Mieux nous connaître<i class="icon icon-right" aria-hidden="true"></i></button></li>
-							</ul>
-							<hr class="ds44-navSep" />
-							<ul class="ds44-multiCol ds44-xl-gap ds44-list">
-								<li><a href="#" class="ds44-menuLink">Associations, collectivités, partenaires<i class="icon icon-arrow-right" aria-hidden="true"></i></a></li>
-								<li><a href="#" class="ds44-menuLink">On recrute<i class="icon icon-arrow-right" aria-hidden="true"></i></a></li>
-								<li><a href="#" class="ds44-menuLink">Presse<i class="icon icon-arrow-right" aria-hidden="true"></i></a></li>
-								<li><a href="#" class="ds44-menuLink">Contact<i class="icon icon-arrow-right" aria-hidden="true"></i></a></li>
-							</ul>
-				
-						</div>
-				
-						<div class="ds44-flex-container">
-							<p class="h4-like mbm ds44-hide-mobile">Suivez-nous sur les réseaux</p>
-							<ul class="ds44-list ds44-flex-container ds44-fse">                
-								<li><a href="#" class="ds44-rsHeadLink" title="Le Département Loire Atlantique sur Facebook"><i class="icon icon-facebook" aria-hidden="true"></i><span class="visually-hidden">Le Département Loire Atlantique sur Facebook</span></a></li>
-								<li><a href="#" class="ds44-rsHeadLink" title="Le Département Loire Atlantique sur Twitter"><i class="icon icon-twitter" aria-hidden="true"></i><span class="visually-hidden">Le Département Loire Atlantique sur Twitter</span></a></li>
-								<li><a href="#" class="ds44-rsHeadLink" title="Le Département Loire Atlantique sur Instagram"><i class="icon icon-instagram" aria-hidden="true"></i><span class="visually-hidden">Le Département Loire Atlantique sur Instagram</span></a></li>
-								<li><a href="#" class="ds44-rsHeadLink" title="Le Département Loire Atlantique sur Youtube"><i class="icon icon-youtube" aria-hidden="true"></i><span class="visually-hidden">Le Département Loire Atlantique sur Youtube</span></a></li>
-								<li><a href="#" class="ds44-rsHeadLink" title="Le Département Loire Atlantique sur Mag Web"><i class="icon icon-magweb" aria-hidden="true"></i><span class="visually-hidden">Le Département Loire Atlantique sur Magweb</span></a></li>
-							</ul>
-						</div>
-						<button type="button" class="ds44-fullWBtn ds44-btn--invert" id="ds44-btn-applis"><span class="ds44-btnInnerText">Sites et applis du Département</span><i class="icon icon-down" aria-hidden="true"></i></button>							
-						<section class="ds44-overlay ds44-overlay--navApplis ds44-wave-grey ds44-bg-b" role="dialog" aria-label="Menu des sites et applications du département" id="navApplis">
+									<nav role="navigation" aria-label="Menu de navigation"
+										class="ds44-navContainer ds44-flex-container--column ds44-fse">
+										<div class="ds44-navList">
 
-								<div class="ds44-container-menuBackLink ds44-hide-mobile">
-									<button type="button" title="Retour au menu de navigation" class="ds44-btn-backOverlay"><i class="icon icon-arrow-left icon--xlarge" aria-hidden="true"></i><span class="ds44-btnInnerText--bottom">Retour</span></button>
-									<p role="heading" aria-level="1" class="ds44-menuBackLink">Sites et applis du département</p>
-								</div>
-
-								<div class="ds44-container-menuBackLink ds44-show-mobile">
-									<p role="heading" aria-level="1" class="ds44-menuBackLink">Sites et applis du département</p>
-								</div>
-	
-								<button class="ds44-btnOverlay ds44-btnOverlay--closeOverlay" type="button" aria-label="fermer le menu des sites et applications"><i class="icon icon-cross icon--xlarge" aria-hidden="true"></i><span class="ds44-btnInnerText--bottom">Fermer</span></button>
-							
-								<nav role="navigation">
-										<div class="ds44-inner-container">
-								
-											<ul class="ds44-navListApplis ds44-multiCol ds44-multiCol--3 ds44-multiCol--border ds44-m-gap ds44-list">
-												<li>
-													<p role="heading" aria-level="2" class="ds44-menuApplisTitle">Citoyenneté</p>
-													<ul>
-														<li><a href="#" class="ds44-menuLink ds44-menuLink--subLvl">Budget 2019<i class="icon icon-arrow-right" aria-hidden="true"></i></a></li>
-														<li><a href="#" class="ds44-menuLink ds44-menuLink--subLvl">Participer<i class="icon icon-arrow-right" aria-hidden="true"></i></a></li>
-													</ul>
+											<ul
+												class="ds44-navListN2 ds44-multiCol ds44-xl-gap ds44-xl-fluid-margin ds44-list">
+												<li><a href="#" class="ds44-menuLink ds44-menuLink--subLvl">Enfance,
+														famille<i class="icon icon-arrow-right"
+															aria-hidden="true"></i></a></li>
+												<li><a href="#" class="ds44-menuLink ds44-menuLink--subLvl">Education,
+														collèges<i class="icon icon-arrow-right"
+															aria-hidden="true"></i></a></li>
+												<li><a href="#" class="ds44-menuLink ds44-menuLink--subLvl">Jeunesse<i
+															class="icon icon-arrow-right" aria-hidden="true"></i></a>
 												</li>
-												<li>
-													<p role="heading" aria-level="2" class="ds44-menuApplisTitle">Culture</p>
-													<ul>
-														<li><a href="#" class="ds44-menuLink ds44-menuLink--subLvl">Archives<i class="icon icon-arrow-right" aria-hidden="true"></i></a></li>
-														<li><a href="#" class="ds44-menuLink ds44-menuLink--subLvl">Grand-patrimoine<i class="icon icon-arrow-right" aria-hidden="true"></i></a></li>
-														<li><a href="#" class="ds44-menuLink ds44-menuLink--subLvl">Catalogue-BDLA<i class="icon icon-arrow-right" aria-hidden="true"></i></a></li>
-													</ul>
+												<li><a href="#" class="ds44-menuLink ds44-menuLink--subLvl">Handicap<i
+															class="icon icon-arrow-right" aria-hidden="true"></i></a>
 												</li>
-												<li>
-													<p role="heading" aria-level="2" class="ds44-menuApplisTitle">Enfance, famille</p>
-													<ul>
-														<li><a href="#" class="ds44-menuLink ds44-menuLink--subLvl">Nature.loire-atlantique.fr<i class="icon icon-arrow-right" aria-hidden="true"></i></a></li>
-														<li><a href="#" class="ds44-menuLink ds44-menuLink--subLvl">Maison du lac de Grand Lieu<i class="icon icon-arrow-right" aria-hidden="true"></i></a></li>
-													</ul>
+												<li><a href="#" class="ds44-menuLink ds44-menuLink--subLvl">Seniors,
+														personnes âgées<i class="icon icon-arrow-right"
+															aria-hidden="true"></i></a></li>
+												<li><a href="#" class="ds44-menuLink ds44-menuLink--subLvl">Insertion,
+														emploi<i class="icon icon-arrow-right"
+															aria-hidden="true"></i></a></li>
+												<li><a href="#" class="ds44-menuLink ds44-menuLink--subLvl">Habitat,
+														logement<i class="icon icon-arrow-right"
+															aria-hidden="true"></i></a></li>
+												<li><a href="#"
+														class="ds44-menuLink ds44-menuLink--subLvl">Déplacements<i
+															class="icon icon-arrow-right" aria-hidden="true"></i></a>
 												</li>
-												<li>
-													<p role="heading" aria-level="2" class="ds44-menuApplisTitle">Développement, innovation</p>
-													<ul>
-														<li><a href="#" class="ds44-menuLink ds44-menuLink--subLvl">Data<i class="icon icon-arrow-right" aria-hidden="true"></i></a></li>
-														<li><a href="#" class="ds44-menuLink ds44-menuLink--subLvl">Imaginela<i class="icon icon-arrow-right" aria-hidden="true"></i></a></li>
-														<li><a href="#" class="ds44-menuLink ds44-menuLink--subLvl">Loire-Atlantique-Développement<i class="icon icon-arrow-right" aria-hidden="true"></i></a></li>
-														<li><a href="#" class="ds44-menuLink ds44-menuLink--subLvl">Tourisme<i class="icon icon-arrow-right" aria-hidden="true"></i></a></li>
-														<li><a href="#" class="ds44-menuLink ds44-menuLink--subLvl">Numérique<i class="icon icon-arrow-right" aria-hidden="true"></i></a></li>
-													</ul>
+												<li><a href="#"
+														class="ds44-menuLink ds44-menuLink--subLvl">Environnement<i
+															class="icon icon-arrow-right" aria-hidden="true"></i></a>
 												</li>
-												<li>
-													<p role="heading" aria-level="2" class="ds44-menuApplisTitle">&Eacute;ducation</p>
-													<ul>
-														<li><a href="#" class="ds44-menuLink ds44-menuLink--subLvl">Stage 3e<i class="icon icon-arrow-right" aria-hidden="true"></i></a></li>
-													</ul>
+												<li><a href="#" class="ds44-menuLink ds44-menuLink--subLvl">Culture<i
+															class="icon icon-arrow-right" aria-hidden="true"></i></a>
 												</li>
-												<li>
-													<p role="heading" aria-level="2" class="ds44-menuApplisTitle">Environnement</p>
-													<ul>
-														<li><a href="#" class="ds44-menuLink ds44-menuLink--subLvl">Assmat<i class="icon icon-arrow-right" aria-hidden="true"></i></a></li>
-														<li><a href="#" class="ds44-menuLink ds44-menuLink--subLvl">Mobilités, tansport<i class="icon icon-arrow-right" aria-hidden="true"></i></a></li>
-														<li><a href="#" class="ds44-menuLink ds44-menuLink--subLvl">Inforoutes<i class="icon icon-arrow-right" aria-hidden="true"></i></a></li>
-														<li><a href="#" class="ds44-menuLink ds44-menuLink--subLvl">Personnes âgées<i class="icon icon-arrow-right" aria-hidden="true"></i></a></li>
-														<li><a href="#" class="ds44-menuLink ds44-menuLink--subLvl">Agir Seniors<i class="icon icon-arrow-right" aria-hidden="true"></i></a></li>
-														<li><a href="#" class="ds44-menuLink ds44-menuLink--subLvl">Handicap<i class="icon icon-arrow-right" aria-hidden="true"></i></a></li>
-													</ul>
+												<li><a href="#" class="ds44-menuLink ds44-menuLink--subLvl">Sport<i
+															class="icon icon-arrow-right" aria-hidden="true"></i></a>
 												</li>
-												<li>
-													<p role="heading" aria-level="2" class="ds44-menuApplisTitle">Territoire</p>
-													<ul>
-														<li><a href="#" class="ds44-menuLink ds44-menuLink--subLvl">Vue du ciel<i class="icon icon-arrow-right" aria-hidden="true"></i></a></li>
-														<li><a href="#" class="ds44-menuLink ds44-menuLink--subLvl">Observatoire<i class="icon icon-arrow-right" aria-hidden="true"></i></a></li>
-														<li><a href="#" class="ds44-menuLink ds44-menuLink--subLvl">Atlas<i class="icon icon-arrow-right" aria-hidden="true"></i></a></li>
-													</ul>
+												<li><a href="#" class="ds44-menuLink ds44-menuLink--subLvl">Aménagement,
+														économie<i class="icon icon-arrow-right"
+															aria-hidden="true"></i></a></li>
+												<li><a href="#" class="ds44-menuLink ds44-menuLink--subLvl">Citoyenneté,
+														vie associative<i class="icon icon-arrow-right"
+															aria-hidden="true"></i></a></li>
+												<li><a href="#" class="ds44-menuLink ds44-menuLink--subLvl">Tourisme<i
+															class="icon icon-arrow-right" aria-hidden="true"></i></a>
 												</li>
 											</ul>
 										</div>
 									</nav>
-							
-						</section>
 
-					</nav>
-				
-				</div>
+								</section>
+							</li>
+							<li>
+								<button type="button" class="ds44-menuBtn" data-ssmenu="nav3">Besoin d'air<i
+										class="icon icon-right" aria-hidden="true"></i></button>
 
-			</section>
+								<section id="nav3"
+									class="ds44-overlay ds44-theme ds44-bgCircle ds44-bg-br ds44-overlay--navNiv2"
+									role="dialog" aria-label="Menu principal niveau 2">
 
-		</div>
+									<div class="ds44-container-menuBackLink">
+										<button type="button" title="Retour au menu de navigation"
+											class="ds44-btn-backOverlay"><i class="icon icon-arrow-left icon--xlarge"
+												aria-hidden="true"></i><span
+												class="ds44-btnInnerText--bottom">Retour</span></button>
+										<p role="heading" aria-level="1" class="ds44-menuBackLink">Besoin d'aides</p>
+									</div>
+									<button class="ds44-btnOverlay ds44-btnOverlay--closeOverlay" type="button"
+										aria-label="Fermer le menu de navigation"><i
+											class="icon icon-cross icon--xlarge" aria-hidden="true"></i><span
+											class="ds44-btnInnerText--bottom">Fermer</span></button>
+
+									<nav role="navigation" aria-label="Menu de navigation"
+										class="ds44-navContainer ds44-flex-container--column ds44-fse">
+										<div class="ds44-navList">
+
+											<ul
+												class="ds44-navListN2 ds44-multiCol ds44-xl-gap ds44-xl-fluid-margin ds44-list">
+												<li><a href="#" class="ds44-menuLink ds44-menuLink--subLvl">Enfance,
+														famille<i class="icon icon-arrow-right"
+															aria-hidden="true"></i></a></li>
+												<li><a href="#" class="ds44-menuLink ds44-menuLink--subLvl">Education,
+														collèges<i class="icon icon-arrow-right"
+															aria-hidden="true"></i></a></li>
+												<li><a href="#" class="ds44-menuLink ds44-menuLink--subLvl">Jeunesse<i
+															class="icon icon-arrow-right" aria-hidden="true"></i></a>
+												</li>
+												<li><a href="#" class="ds44-menuLink ds44-menuLink--subLvl">Handicap<i
+															class="icon icon-arrow-right" aria-hidden="true"></i></a>
+												</li>
+												<li><a href="#" class="ds44-menuLink ds44-menuLink--subLvl">Seniors,
+														personnes âgées<i class="icon icon-arrow-right"
+															aria-hidden="true"></i></a></li>
+												<li><a href="#" class="ds44-menuLink ds44-menuLink--subLvl">Insertion,
+														emploi<i class="icon icon-arrow-right"
+															aria-hidden="true"></i></a></li>
+												<li><a href="#" class="ds44-menuLink ds44-menuLink--subLvl">Habitat,
+														logement<i class="icon icon-arrow-right"
+															aria-hidden="true"></i></a></li>
+												<li><a href="#"
+														class="ds44-menuLink ds44-menuLink--subLvl">Déplacements<i
+															class="icon icon-arrow-right" aria-hidden="true"></i></a>
+												</li>
+												<li><a href="#"
+														class="ds44-menuLink ds44-menuLink--subLvl">Environnement<i
+															class="icon icon-arrow-right" aria-hidden="true"></i></a>
+												</li>
+												<li><a href="#" class="ds44-menuLink ds44-menuLink--subLvl">Culture<i
+															class="icon icon-arrow-right" aria-hidden="true"></i></a>
+												</li>
+												<li><a href="#" class="ds44-menuLink ds44-menuLink--subLvl">Sport<i
+															class="icon icon-arrow-right" aria-hidden="true"></i></a>
+												</li>
+												<li><a href="#" class="ds44-menuLink ds44-menuLink--subLvl">Aménagement,
+														économie<i class="icon icon-arrow-right"
+															aria-hidden="true"></i></a></li>
+												<li><a href="#" class="ds44-menuLink ds44-menuLink--subLvl">Citoyenneté,
+														vie associative<i class="icon icon-arrow-right"
+															aria-hidden="true"></i></a></li>
+												<li><a href="#" class="ds44-menuLink ds44-menuLink--subLvl">Tourisme<i
+															class="icon icon-arrow-right" aria-hidden="true"></i></a>
+												</li>
+											</ul>
+										</div>
+									</nav>
+
+								</section>
+							</li>
+							<li>
+								<button type="button" class="ds44-menuBtn" data-ssmenu="nav4">Près de chez vous<i
+										class="icon icon-right" aria-hidden="true"></i></button>
+
+								<section id="nav4"
+									class="ds44-overlay ds44-theme ds44-bgCircle ds44-bg-br ds44-overlay--navNiv2"
+									role="dialog" aria-label="Menu principal niveau 2">
+
+									<div class="ds44-container-menuBackLink">
+										<button type="button" title="Retour au menu de navigation"
+											class="ds44-btn-backOverlay"><i class="icon icon-arrow-left icon--xlarge"
+												aria-hidden="true"></i><span
+												class="ds44-btnInnerText--bottom">Retour</span></button>
+										<p role="heading" aria-level="1" class="ds44-menuBackLink">Besoin d'aides</p>
+									</div>
+									<button class="ds44-btnOverlay ds44-btnOverlay--closeOverlay" type="button"
+										aria-label="Fermer le menu de navigation"><i
+											class="icon icon-cross icon--xlarge" aria-hidden="true"></i><span
+											class="ds44-btnInnerText--bottom">Fermer</span></button>
+
+									<nav role="navigation" aria-label="Menu de navigation"
+										class="ds44-navContainer ds44-flex-container--column ds44-fse">
+										<div class="ds44-navList">
+
+											<ul
+												class="ds44-navListN2 ds44-multiCol ds44-xl-gap ds44-xl-fluid-margin ds44-list">
+												<li><a href="#" class="ds44-menuLink ds44-menuLink--subLvl">Enfance,
+														famille<i class="icon icon-arrow-right"
+															aria-hidden="true"></i></a></li>
+												<li><a href="#" class="ds44-menuLink ds44-menuLink--subLvl">Education,
+														collèges<i class="icon icon-arrow-right"
+															aria-hidden="true"></i></a></li>
+												<li><a href="#" class="ds44-menuLink ds44-menuLink--subLvl">Jeunesse<i
+															class="icon icon-arrow-right" aria-hidden="true"></i></a>
+												</li>
+												<li><a href="#" class="ds44-menuLink ds44-menuLink--subLvl">Handicap<i
+															class="icon icon-arrow-right" aria-hidden="true"></i></a>
+												</li>
+												<li><a href="#" class="ds44-menuLink ds44-menuLink--subLvl">Seniors,
+														personnes âgées<i class="icon icon-arrow-right"
+															aria-hidden="true"></i></a></li>
+												<li><a href="#" class="ds44-menuLink ds44-menuLink--subLvl">Insertion,
+														emploi<i class="icon icon-arrow-right"
+															aria-hidden="true"></i></a></li>
+												<li><a href="#" class="ds44-menuLink ds44-menuLink--subLvl">Habitat,
+														logement<i class="icon icon-arrow-right"
+															aria-hidden="true"></i></a></li>
+												<li><a href="#"
+														class="ds44-menuLink ds44-menuLink--subLvl">Déplacements<i
+															class="icon icon-arrow-right" aria-hidden="true"></i></a>
+												</li>
+												<li><a href="#"
+														class="ds44-menuLink ds44-menuLink--subLvl">Environnement<i
+															class="icon icon-arrow-right" aria-hidden="true"></i></a>
+												</li>
+												<li><a href="#" class="ds44-menuLink ds44-menuLink--subLvl">Culture<i
+															class="icon icon-arrow-right" aria-hidden="true"></i></a>
+												</li>
+												<li><a href="#" class="ds44-menuLink ds44-menuLink--subLvl">Sport<i
+															class="icon icon-arrow-right" aria-hidden="true"></i></a>
+												</li>
+												<li><a href="#" class="ds44-menuLink ds44-menuLink--subLvl">Aménagement,
+														économie<i class="icon icon-arrow-right"
+															aria-hidden="true"></i></a></li>
+												<li><a href="#" class="ds44-menuLink ds44-menuLink--subLvl">Citoyenneté,
+														vie associative<i class="icon icon-arrow-right"
+															aria-hidden="true"></i></a></li>
+												<li><a href="#" class="ds44-menuLink ds44-menuLink--subLvl">Tourisme<i
+															class="icon icon-arrow-right" aria-hidden="true"></i></a>
+												</li>
+											</ul>
+										</div>
+									</nav>
+
+								</section>
+							</li>
+							<li><button type="button" class="ds44-menuBtn">Mieux nous connaître<i
+										class="icon icon-right" aria-hidden="true"></i></button></li>
+						</ul>
+						<hr class="ds44-navSep" />
+						<ul class="ds44-multiCol ds44-xl-gap ds44-list">
+							<li><a href="#" class="ds44-menuLink">Associations, collectivités, partenaires<i
+										class="icon icon-arrow-right" aria-hidden="true"></i></a></li>
+							<li><a href="#" class="ds44-menuLink">On recrute<i class="icon icon-arrow-right"
+										aria-hidden="true"></i></a></li>
+							<li><a href="#" class="ds44-menuLink">Presse<i class="icon icon-arrow-right"
+										aria-hidden="true"></i></a></li>
+							<li><a href="#" class="ds44-menuLink">Contact<i class="icon icon-arrow-right"
+										aria-hidden="true"></i></a></li>
+						</ul>
+
+					</div>
+
+					<div class="ds44-flex-container">
+						<p class="h4-like mbm ds44-hide-mobile">Suivez-nous sur les réseaux</p>
+						<ul class="ds44-list ds44-flex-container ds44-fse">
+							<li><a href="#" class="ds44-rsHeadLink"
+									title="Le Département Loire Atlantique sur Facebook"><i class="icon icon-facebook"
+										aria-hidden="true"></i><span class="visually-hidden">Le Département Loire
+										Atlantique sur Facebook</span></a></li>
+							<li><a href="#" class="ds44-rsHeadLink"
+									title="Le Département Loire Atlantique sur Twitter"><i class="icon icon-twitter"
+										aria-hidden="true"></i><span class="visually-hidden">Le Département Loire
+										Atlantique sur Twitter</span></a></li>
+							<li><a href="#" class="ds44-rsHeadLink"
+									title="Le Département Loire Atlantique sur Instagram"><i class="icon icon-instagram"
+										aria-hidden="true"></i><span class="visually-hidden">Le Département Loire
+										Atlantique sur Instagram</span></a></li>
+							<li><a href="#" class="ds44-rsHeadLink"
+									title="Le Département Loire Atlantique sur Youtube"><i class="icon icon-youtube"
+										aria-hidden="true"></i><span class="visually-hidden">Le Département Loire
+										Atlantique sur Youtube</span></a></li>
+							<li><a href="#" class="ds44-rsHeadLink"
+									title="Le Département Loire Atlantique sur Mag Web"><i class="icon icon-magweb"
+										aria-hidden="true"></i><span class="visually-hidden">Le Département Loire
+										Atlantique sur Magweb</span></a></li>
+						</ul>
+					</div>
+					<button type="button" class="ds44-fullWBtn ds44-btn--invert" id="ds44-btn-applis"><span
+							class="ds44-btnInnerText">Sites et applis du Département</span><i class="icon icon-down"
+							aria-hidden="true"></i></button>
+					<section class="ds44-overlay ds44-overlay--navApplis ds44-wave-grey ds44-bg-b" role="dialog"
+						aria-label="Menu des sites et applications du département" id="navApplis">
+
+						<div class="ds44-container-menuBackLink ds44-hide-mobile">
+							<button type="button" title="Retour au menu de navigation" class="ds44-btn-backOverlay"><i
+									class="icon icon-arrow-left icon--xlarge" aria-hidden="true"></i><span
+									class="ds44-btnInnerText--bottom">Retour</span></button>
+							<p role="heading" aria-level="1" class="ds44-menuBackLink">Sites et applis du département
+							</p>
+						</div>
+
+						<div class="ds44-container-menuBackLink ds44-show-mobile">
+							<p role="heading" aria-level="1" class="ds44-menuBackLink">Sites et applis du département
+							</p>
+						</div>
+
+						<button class="ds44-btnOverlay ds44-btnOverlay--closeOverlay" type="button"
+							aria-label="fermer le menu des sites et applications"><i
+								class="icon icon-cross icon--xlarge" aria-hidden="true"></i><span
+								class="ds44-btnInnerText--bottom">Fermer</span></button>
+
+						<nav role="navigation">
+							<div class="ds44-inner-container">
+
+								<ul
+									class="ds44-navListApplis ds44-multiCol ds44-multiCol--3 ds44-multiCol--border ds44-m-gap ds44-list">
+									<li>
+										<p role="heading" aria-level="2" class="ds44-menuApplisTitle">Citoyenneté</p>
+										<ul>
+											<li><a href="#" class="ds44-menuLink ds44-menuLink--subLvl">Budget 2019<i
+														class="icon icon-arrow-right" aria-hidden="true"></i></a></li>
+											<li><a href="#" class="ds44-menuLink ds44-menuLink--subLvl">Participer<i
+														class="icon icon-arrow-right" aria-hidden="true"></i></a></li>
+										</ul>
+									</li>
+									<li>
+										<p role="heading" aria-level="2" class="ds44-menuApplisTitle">Culture</p>
+										<ul>
+											<li><a href="#" class="ds44-menuLink ds44-menuLink--subLvl">Archives<i
+														class="icon icon-arrow-right" aria-hidden="true"></i></a></li>
+											<li><a href="#"
+													class="ds44-menuLink ds44-menuLink--subLvl">Grand-patrimoine<i
+														class="icon icon-arrow-right" aria-hidden="true"></i></a></li>
+											<li><a href="#" class="ds44-menuLink ds44-menuLink--subLvl">Catalogue-BDLA<i
+														class="icon icon-arrow-right" aria-hidden="true"></i></a></li>
+										</ul>
+									</li>
+									<li>
+										<p role="heading" aria-level="2" class="ds44-menuApplisTitle">Enfance, famille
+										</p>
+										<ul>
+											<li><a href="#"
+													class="ds44-menuLink ds44-menuLink--subLvl">Nature.loire-atlantique.fr<i
+														class="icon icon-arrow-right" aria-hidden="true"></i></a></li>
+											<li><a href="#" class="ds44-menuLink ds44-menuLink--subLvl">Maison du lac de
+													Grand Lieu<i class="icon icon-arrow-right"
+														aria-hidden="true"></i></a></li>
+										</ul>
+									</li>
+									<li>
+										<p role="heading" aria-level="2" class="ds44-menuApplisTitle">Développement,
+											innovation</p>
+										<ul>
+											<li><a href="#" class="ds44-menuLink ds44-menuLink--subLvl">Data<i
+														class="icon icon-arrow-right" aria-hidden="true"></i></a></li>
+											<li><a href="#" class="ds44-menuLink ds44-menuLink--subLvl">Imaginela<i
+														class="icon icon-arrow-right" aria-hidden="true"></i></a></li>
+											<li><a href="#"
+													class="ds44-menuLink ds44-menuLink--subLvl">Loire-Atlantique-Développement<i
+														class="icon icon-arrow-right" aria-hidden="true"></i></a></li>
+											<li><a href="#" class="ds44-menuLink ds44-menuLink--subLvl">Tourisme<i
+														class="icon icon-arrow-right" aria-hidden="true"></i></a></li>
+											<li><a href="#" class="ds44-menuLink ds44-menuLink--subLvl">Numérique<i
+														class="icon icon-arrow-right" aria-hidden="true"></i></a></li>
+										</ul>
+									</li>
+									<li>
+										<p role="heading" aria-level="2" class="ds44-menuApplisTitle">&Eacute;ducation
+										</p>
+										<ul>
+											<li><a href="#" class="ds44-menuLink ds44-menuLink--subLvl">Stage 3e<i
+														class="icon icon-arrow-right" aria-hidden="true"></i></a></li>
+										</ul>
+									</li>
+									<li>
+										<p role="heading" aria-level="2" class="ds44-menuApplisTitle">Environnement</p>
+										<ul>
+											<li><a href="#" class="ds44-menuLink ds44-menuLink--subLvl">Assmat<i
+														class="icon icon-arrow-right" aria-hidden="true"></i></a></li>
+											<li><a href="#" class="ds44-menuLink ds44-menuLink--subLvl">Mobilités,
+													tansport<i class="icon icon-arrow-right" aria-hidden="true"></i></a>
+											</li>
+											<li><a href="#" class="ds44-menuLink ds44-menuLink--subLvl">Inforoutes<i
+														class="icon icon-arrow-right" aria-hidden="true"></i></a></li>
+											<li><a href="#" class="ds44-menuLink ds44-menuLink--subLvl">Personnes
+													âgées<i class="icon icon-arrow-right" aria-hidden="true"></i></a>
+											</li>
+											<li><a href="#" class="ds44-menuLink ds44-menuLink--subLvl">Agir Seniors<i
+														class="icon icon-arrow-right" aria-hidden="true"></i></a></li>
+											<li><a href="#" class="ds44-menuLink ds44-menuLink--subLvl">Handicap<i
+														class="icon icon-arrow-right" aria-hidden="true"></i></a></li>
+										</ul>
+									</li>
+									<li>
+										<p role="heading" aria-level="2" class="ds44-menuApplisTitle">Territoire</p>
+										<ul>
+											<li><a href="#" class="ds44-menuLink ds44-menuLink--subLvl">Vue du ciel<i
+														class="icon icon-arrow-right" aria-hidden="true"></i></a></li>
+											<li><a href="#" class="ds44-menuLink ds44-menuLink--subLvl">Observatoire<i
+														class="icon icon-arrow-right" aria-hidden="true"></i></a></li>
+											<li><a href="#" class="ds44-menuLink ds44-menuLink--subLvl">Atlas<i
+														class="icon icon-arrow-right" aria-hidden="true"></i></a></li>
+										</ul>
+									</li>
+								</ul>
+							</div>
+						</nav>
+
+					</section>
+
+				</nav>
+
+			</div>
+
+		</section>
 	</div>
-	
 </header>
 
 
@@ -265,7 +461,8 @@ layout: pattern
 				<div class="ds44-alphaGradient ds44--xl-padding">
 					<nav role="navigation" aria-label="Votre position" class="ds44-hide-smallScreens">
 						<ul class="ds44-list ds44-text--colorInvert">
-							<li class="ds44-breadcrumb"><a href="#"><i class="icon icon-home icon--medium" aria-hidden="true"></i><span class="visually-hidden">Accueil</span></a></li>
+							<li class="ds44-breadcrumb"><a href="#"><i class="icon icon-home icon--medium"
+										aria-hidden="true"></i><span class="visually-hidden">Accueil</span></a></li>
 							<li class="ds44-breadcrumb"><a href="#">Page précédente</a></li>
 							<li class="ds44-breadcrumb" aria-current="location"><span>Page courante</span></li>
 						</ul>
@@ -279,102 +476,177 @@ layout: pattern
 			<div class="grid-12-small-1">
 				<div class="col-7">
 
-					<p class="ds44-introduction">Après 60 ans, au fil des années et selon sa situation, chacun peut avoir à faire des choix : rester chez soi, envisager un nouveau logement ou entrer dans un établissement. Pour aujourd’hui ou pour demain, découvrez les possibilités offertes en Loire-Atlantique et les prestations du Département pour vous accompagner.</p>
+					<p class="ds44-introduction">Après 60 ans, au fil des années et selon sa situation, chacun peut
+						avoir à faire des choix : rester chez soi, envisager un nouveau logement ou entrer dans un
+						établissement. Pour aujourd’hui ou pour demain, découvrez les possibilités offertes en
+						Loire-Atlantique et les prestations du Département pour vous accompagner.</p>
 
 					<h2 class="h3-like">Je souhaite…</h2>
 					<ul class="ds44-collapser">
-						<li class="ds44-collapser_element">        
-							<button type="button" aria-controls="collapser-elem-1" class="ds44-collapser_button" aria-expanded="false">Vivre à domicile<i class="icon icon-down" aria-hidden="true"></i></button>
+						<li class="ds44-collapser_element">
+							<button type="button" aria-controls="collapser-elem-1" class="ds44-collapser_button"
+								aria-expanded="false">Vivre à domicile<i class="icon icon-down"
+									aria-hidden="true"></i></button>
 							<div class="ds44-collapser_content" id="collapser-elem-1">
 								<ul class="ds44-list ds44-collapser_content--level2">
-									<li><a href="#" class="ds44-collapser_content--link">L'adaptation de son logement<i class="icon icon-arrow-right" aria-hidden="true"></i></a></li>
-									<li><a href="#" class="ds44-collapser_content--link">La téléassistance<i class="icon icon-arrow-right" aria-hidden="true"></i></a></li>
+									<li><a href="#" class="ds44-collapser_content--link">L'adaptation de son logement<i
+												class="icon icon-arrow-right" aria-hidden="true"></i></a></li>
+									<li><a href="#" class="ds44-collapser_content--link">La téléassistance<i
+												class="icon icon-arrow-right" aria-hidden="true"></i></a></li>
 									<li>
-										<a href="#" class="ds44-collapser_content--link">L’aide et l’accompagnement à domicile<i class="icon icon-arrow-right" aria-hidden="true"></i></a>
+										<a href="#" class="ds44-collapser_content--link">L’aide et l’accompagnement à
+											domicile<i class="icon icon-arrow-right" aria-hidden="true"></i></a>
 										<ul class="ds44-list ds44-collapser_content--level3">
-											<li><a href="#" class="ds44-collapser_content--link">L’annuaire des services d’aide à domicile (SAAD)<i class="icon icon-arrow-right" aria-hidden="true"></i></a></li>
-											<li><a href="#" class="ds44-collapser_content--link">L’aide ménagère<i class="icon icon-arrow-right" aria-hidden="true"></i></a></li>
-											<li><a href="#" class="ds44-collapser_content--link">Le portage de repas<i class="icon icon-arrow-right" aria-hidden="true"></i></a></li>
+											<li><a href="#" class="ds44-collapser_content--link">L’annuaire des services
+													d’aide à domicile (SAAD)<i class="icon icon-arrow-right"
+														aria-hidden="true"></i></a></li>
+											<li><a href="#" class="ds44-collapser_content--link">L’aide ménagère<i
+														class="icon icon-arrow-right" aria-hidden="true"></i></a></li>
+											<li><a href="#" class="ds44-collapser_content--link">Le portage de repas<i
+														class="icon icon-arrow-right" aria-hidden="true"></i></a></li>
 										</ul>
 									</li>
-									<li><a href="#" class="ds44-collapser_content--link">Les services de soins infirmiers (SSIAD)<i class="icon icon-arrow-right" aria-hidden="true"></i></a></li>
-									<li><a href="#" class="ds44-collapser_content--link">Les déplacements<i class="icon icon-arrow-right" aria-hidden="true"></i></a></li>
+									<li><a href="#" class="ds44-collapser_content--link">Les services de soins
+											infirmiers (SSIAD)<i class="icon icon-arrow-right"
+												aria-hidden="true"></i></a></li>
+									<li><a href="#" class="ds44-collapser_content--link">Les déplacements<i
+												class="icon icon-arrow-right" aria-hidden="true"></i></a></li>
 								</ul>
 							</div>
 						</li>
 						<li class="ds44-collapser_element">
-							<button type="button" aria-controls="collapser-elem-2" class="ds44-collapser_button" aria-expanded="false">Changer de lieu de vie<i class="icon icon-down" aria-hidden="true"></i></button>
+							<button type="button" aria-controls="collapser-elem-2" class="ds44-collapser_button"
+								aria-expanded="false">Changer de lieu de vie<i class="icon icon-down"
+									aria-hidden="true"></i></button>
 							<div class="ds44-collapser_content" id="collapser-elem-2">
 								<ul class="ds44-list ds44-collapser_content--level2">
-									<li><a href="#" class="ds44-collapser_content--link">Lien direct vers N2 (sans sous-catégorie N3)<i class="icon icon-arrow-right" aria-hidden="true"></i></a></li>
-									<li><a href="#" class="ds44-collapser_content--link">Lien direct vers N2 (sans sous-catégorie N3)<i class="icon icon-arrow-right" aria-hidden="true"></i></a></li>
+									<li><a href="#" class="ds44-collapser_content--link">Lien direct vers N2 (sans
+											sous-catégorie N3)<i class="icon icon-arrow-right"
+												aria-hidden="true"></i></a></li>
+									<li><a href="#" class="ds44-collapser_content--link">Lien direct vers N2 (sans
+											sous-catégorie N3)<i class="icon icon-arrow-right"
+												aria-hidden="true"></i></a></li>
 									<li>
-										<a href="#" class="ds44-collapser_content--link">Lien direct vers sous-catégorie N2<i class="icon icon-arrow-right" aria-hidden="true"></i></a>
+										<a href="#" class="ds44-collapser_content--link">Lien direct vers sous-catégorie
+											N2<i class="icon icon-arrow-right" aria-hidden="true"></i></a>
 										<ul class="ds44-list ds44-collapser_content--level3">
-											<li><a href="#" class="ds44-collapser_content--link">Lien direct (dernier niveau)<i class="icon icon-arrow-right" aria-hidden="true"></i></a></li>
-											<li><a href="#" class="ds44-collapser_content--link">Lien direct (dernier niveau)<i class="icon icon-arrow-right" aria-hidden="true"></i></a></li>
-											<li><a href="#" class="ds44-collapser_content--link">Lien direct (dernier niveau)<i class="icon icon-arrow-right" aria-hidden="true"></i></a></li>
+											<li><a href="#" class="ds44-collapser_content--link">Lien direct (dernier
+													niveau)<i class="icon icon-arrow-right" aria-hidden="true"></i></a>
+											</li>
+											<li><a href="#" class="ds44-collapser_content--link">Lien direct (dernier
+													niveau)<i class="icon icon-arrow-right" aria-hidden="true"></i></a>
+											</li>
+											<li><a href="#" class="ds44-collapser_content--link">Lien direct (dernier
+													niveau)<i class="icon icon-arrow-right" aria-hidden="true"></i></a>
+											</li>
 										</ul>
 									</li>
-									<li><a href="#" class="ds44-collapser_content--link">Lien direct vers sous-catégorie N2<i class="icon icon-arrow-right" aria-hidden="true"></i></a></li>
-									<li><a href="#" class="ds44-collapser_content--link">Lien direct vers sous-catégorie N2<i class="icon icon-arrow-right" aria-hidden="true"></i></a></li>
+									<li><a href="#" class="ds44-collapser_content--link">Lien direct vers sous-catégorie
+											N2<i class="icon icon-arrow-right" aria-hidden="true"></i></a></li>
+									<li><a href="#" class="ds44-collapser_content--link">Lien direct vers sous-catégorie
+											N2<i class="icon icon-arrow-right" aria-hidden="true"></i></a></li>
 								</ul>
 							</div>
 						</li>
 						<li class="ds44-collapser_element">
-							<button type="button" aria-controls="collapser-elem-3" class="ds44-collapser_button" aria-expanded="false">Trouver des solutions relais<i class="icon icon-down" aria-hidden="true"></i></button>
+							<button type="button" aria-controls="collapser-elem-3" class="ds44-collapser_button"
+								aria-expanded="false">Trouver des solutions relais<i class="icon icon-down"
+									aria-hidden="true"></i></button>
 							<div class="ds44-collapser_content" id="collapser-elem-3">
 								<ul class="ds44-list ds44-collapser_content--level2">
-									<li><a href="#" class="ds44-collapser_content--link">Lien direct vers N2 (sans sous-catégorie N3)<i class="icon icon-arrow-right" aria-hidden="true"></i></a></li>
-									<li><a href="#" class="ds44-collapser_content--link">Lien direct vers N2 (sans sous-catégorie N3)<i class="icon icon-arrow-right" aria-hidden="true"></i></a></li>
+									<li><a href="#" class="ds44-collapser_content--link">Lien direct vers N2 (sans
+											sous-catégorie N3)<i class="icon icon-arrow-right"
+												aria-hidden="true"></i></a></li>
+									<li><a href="#" class="ds44-collapser_content--link">Lien direct vers N2 (sans
+											sous-catégorie N3)<i class="icon icon-arrow-right"
+												aria-hidden="true"></i></a></li>
 									<li>
-										<a href="#" class="ds44-collapser_content--link">Lien direct vers sous-catégorie N2<i class="icon icon-arrow-right" aria-hidden="true"></i></a>
+										<a href="#" class="ds44-collapser_content--link">Lien direct vers sous-catégorie
+											N2<i class="icon icon-arrow-right" aria-hidden="true"></i></a>
 										<ul class="ds44-list ds44-collapser_content--level3">
-											<li><a href="#" class="ds44-collapser_content--link">Lien direct (dernier niveau)<i class="icon icon-arrow-right" aria-hidden="true"></i></a></li>
-											<li><a href="#" class="ds44-collapser_content--link">Lien direct (dernier niveau)<i class="icon icon-arrow-right" aria-hidden="true"></i></a></li>
-											<li><a href="#" class="ds44-collapser_content--link">Lien direct (dernier niveau)<i class="icon icon-arrow-right" aria-hidden="true"></i></a></li>
+											<li><a href="#" class="ds44-collapser_content--link">Lien direct (dernier
+													niveau)<i class="icon icon-arrow-right" aria-hidden="true"></i></a>
+											</li>
+											<li><a href="#" class="ds44-collapser_content--link">Lien direct (dernier
+													niveau)<i class="icon icon-arrow-right" aria-hidden="true"></i></a>
+											</li>
+											<li><a href="#" class="ds44-collapser_content--link">Lien direct (dernier
+													niveau)<i class="icon icon-arrow-right" aria-hidden="true"></i></a>
+											</li>
 										</ul>
 									</li>
-									<li><a href="#" class="ds44-collapser_content--link">Lien direct vers sous-catégorie N2<i class="icon icon-arrow-right" aria-hidden="true"></i></a></li>
-									<li><a href="#" class="ds44-collapser_content--link">Lien direct vers sous-catégorie N2<i class="icon icon-arrow-right" aria-hidden="true"></i></a></li>
+									<li><a href="#" class="ds44-collapser_content--link">Lien direct vers sous-catégorie
+											N2<i class="icon icon-arrow-right" aria-hidden="true"></i></a></li>
+									<li><a href="#" class="ds44-collapser_content--link">Lien direct vers sous-catégorie
+											N2<i class="icon icon-arrow-right" aria-hidden="true"></i></a></li>
 								</ul>
 							</div>
 						</li>
 						<li class="ds44-collapser_element">
-							<button type="button" aria-controls="collapser-elem-4" class="ds44-collapser_button" aria-expanded="false">Profiter de son temps libre<i class="icon icon-down" aria-hidden="true"></i></button>
+							<button type="button" aria-controls="collapser-elem-4" class="ds44-collapser_button"
+								aria-expanded="false">Profiter de son temps libre<i class="icon icon-down"
+									aria-hidden="true"></i></button>
 							<div class="ds44-collapser_content" id="collapser-elem-4">
 								<ul class="ds44-list ds44-collapser_content--level2">
-									<li><a href="#" class="ds44-collapser_content--link">Lien direct vers N2 (sans sous-catégorie N3)<i class="icon icon-arrow-right" aria-hidden="true"></i></a></li>
-									<li><a href="#" class="ds44-collapser_content--link">Lien direct vers N2 (sans sous-catégorie N3)<i class="icon icon-arrow-right" aria-hidden="true"></i></a></li>
+									<li><a href="#" class="ds44-collapser_content--link">Lien direct vers N2 (sans
+											sous-catégorie N3)<i class="icon icon-arrow-right"
+												aria-hidden="true"></i></a></li>
+									<li><a href="#" class="ds44-collapser_content--link">Lien direct vers N2 (sans
+											sous-catégorie N3)<i class="icon icon-arrow-right"
+												aria-hidden="true"></i></a></li>
 									<li>
-										<a href="#" class="ds44-collapser_content--link">Lien direct vers sous-catégorie N2<i class="icon icon-arrow-right" aria-hidden="true"></i></a>
+										<a href="#" class="ds44-collapser_content--link">Lien direct vers sous-catégorie
+											N2<i class="icon icon-arrow-right" aria-hidden="true"></i></a>
 										<ul class="ds44-list ds44-collapser_content--level3">
-											<li><a href="#" class="ds44-collapser_content--link">Lien direct (dernier niveau)<i class="icon icon-arrow-right" aria-hidden="true"></i></a></li>
-											<li><a href="#" class="ds44-collapser_content--link">Lien direct (dernier niveau)<i class="icon icon-arrow-right" aria-hidden="true"></i></a></li>
-											<li><a href="#" class="ds44-collapser_content--link">Lien direct (dernier niveau)<i class="icon icon-arrow-right" aria-hidden="true"></i></a></li>
+											<li><a href="#" class="ds44-collapser_content--link">Lien direct (dernier
+													niveau)<i class="icon icon-arrow-right" aria-hidden="true"></i></a>
+											</li>
+											<li><a href="#" class="ds44-collapser_content--link">Lien direct (dernier
+													niveau)<i class="icon icon-arrow-right" aria-hidden="true"></i></a>
+											</li>
+											<li><a href="#" class="ds44-collapser_content--link">Lien direct (dernier
+													niveau)<i class="icon icon-arrow-right" aria-hidden="true"></i></a>
+											</li>
 										</ul>
 									</li>
-									<li><a href="#" class="ds44-collapser_content--link">Lien direct vers sous-catégorie N2<i class="icon icon-arrow-right" aria-hidden="true"></i></a></li>
-									<li><a href="#" class="ds44-collapser_content--link">Lien direct vers sous-catégorie N2<i class="icon icon-arrow-right" aria-hidden="true"></i></a></li>
+									<li><a href="#" class="ds44-collapser_content--link">Lien direct vers sous-catégorie
+											N2<i class="icon icon-arrow-right" aria-hidden="true"></i></a></li>
+									<li><a href="#" class="ds44-collapser_content--link">Lien direct vers sous-catégorie
+											N2<i class="icon icon-arrow-right" aria-hidden="true"></i></a></li>
 								</ul>
 							</div>
 						</li>
 						<li class="ds44-collapser_element">
-							<button type="button" aria-controls="collapser-elem-5" class="ds44-collapser_button" aria-expanded="false">Trouver des lieux d’information et d’accompagnement<i class="icon icon-down" aria-hidden="true"></i></button>
+							<button type="button" aria-controls="collapser-elem-5" class="ds44-collapser_button"
+								aria-expanded="false">Trouver des lieux d’information et d’accompagnement<i
+									class="icon icon-down" aria-hidden="true"></i></button>
 							<div class="ds44-collapser_content" id="collapser-elem-5">
 								<ul class="ds44-list ds44-collapser_content--level2">
-									<li><a href="#" class="ds44-collapser_content--link">Lien direct vers N2 (sans sous-catégorie N3)<i class="icon icon-arrow-right" aria-hidden="true"></i></a></li>
-									<li><a href="#" class="ds44-collapser_content--link">Lien direct vers N2 (sans sous-catégorie N3)<i class="icon icon-arrow-right" aria-hidden="true"></i></a></li>
+									<li><a href="#" class="ds44-collapser_content--link">Lien direct vers N2 (sans
+											sous-catégorie N3)<i class="icon icon-arrow-right"
+												aria-hidden="true"></i></a></li>
+									<li><a href="#" class="ds44-collapser_content--link">Lien direct vers N2 (sans
+											sous-catégorie N3)<i class="icon icon-arrow-right"
+												aria-hidden="true"></i></a></li>
 									<li>
-										<a href="#" class="ds44-collapser_content--link">Lien direct vers sous-catégorie N2<i class="icon icon-arrow-right" aria-hidden="true"></i></a>
+										<a href="#" class="ds44-collapser_content--link">Lien direct vers sous-catégorie
+											N2<i class="icon icon-arrow-right" aria-hidden="true"></i></a>
 										<ul class="ds44-list ds44-collapser_content--level3">
-											<li><a href="#" class="ds44-collapser_content--link">Lien direct (dernier niveau)<i class="icon icon-arrow-right" aria-hidden="true"></i></a></li>
-											<li><a href="#" class="ds44-collapser_content--link">Lien direct (dernier niveau)<i class="icon icon-arrow-right" aria-hidden="true"></i></a></li>
-											<li><a href="#" class="ds44-collapser_content--link">Lien direct (dernier niveau)<i class="icon icon-arrow-right" aria-hidden="true"></i></a></li>
+											<li><a href="#" class="ds44-collapser_content--link">Lien direct (dernier
+													niveau)<i class="icon icon-arrow-right" aria-hidden="true"></i></a>
+											</li>
+											<li><a href="#" class="ds44-collapser_content--link">Lien direct (dernier
+													niveau)<i class="icon icon-arrow-right" aria-hidden="true"></i></a>
+											</li>
+											<li><a href="#" class="ds44-collapser_content--link">Lien direct (dernier
+													niveau)<i class="icon icon-arrow-right" aria-hidden="true"></i></a>
+											</li>
 										</ul>
 									</li>
-									<li><a href="#" class="ds44-collapser_content--link">Lien direct vers sous-catégorie N2<i class="icon icon-arrow-right" aria-hidden="true"></i></a></li>
-									<li><a href="#" class="ds44-collapser_content--link">Lien direct vers sous-catégorie N2<i class="icon icon-arrow-right" aria-hidden="true"></i></a></li>
+									<li><a href="#" class="ds44-collapser_content--link">Lien direct vers sous-catégorie
+											N2<i class="icon icon-arrow-right" aria-hidden="true"></i></a></li>
+									<li><a href="#" class="ds44-collapser_content--link">Lien direct vers sous-catégorie
+											N2<i class="icon icon-arrow-right" aria-hidden="true"></i></a></li>
 								</ul>
 							</div>
 						</li>
@@ -382,118 +654,206 @@ layout: pattern
 
 					<h2 class="h3-like">Pour les professionnels et les institutions</h2>
 					<ul class="ds44-collapser">
-						<li class="ds44-collapser_element"><a href="#" class="ds44-collapser_content--buttonLike">Les demandes de subventions<i class="icon icon-arrow-right" aria-hidden="true"></i></a></li>
-						<li class="ds44-collapser_element">        
-							<button type="button" aria-controls="collapser-elem-6" class="ds44-collapser_button" aria-expanded="false">Les appels à projets<i class="icon icon-down" aria-hidden="true"></i></button>
+						<li class="ds44-collapser_element"><a href="#" class="ds44-collapser_content--buttonLike">Les
+								demandes de subventions<i class="icon icon-arrow-right" aria-hidden="true"></i></a></li>
+						<li class="ds44-collapser_element">
+							<button type="button" aria-controls="collapser-elem-6" class="ds44-collapser_button"
+								aria-expanded="false">Les appels à projets<i class="icon icon-down"
+									aria-hidden="true"></i></button>
 							<div class="ds44-collapser_content" id="collapser-elem-6">
 								<ul class="ds44-list ds44-collapser_content--level2">
-									<li><a href="#" class="ds44-collapser_content--link">L'adaptation de son logement<i class="icon icon-arrow-right" aria-hidden="true"></i></a></li>
-									<li><a href="#" class="ds44-collapser_content--link">La téléassistance<i class="icon icon-arrow-right" aria-hidden="true"></i></a></li>
-									<li><a href="#" class="ds44-collapser_content--link">L’aide et l’accompagnement à domicile<i class="icon icon-arrow-right" aria-hidden="true"></i></a></li>
+									<li><a href="#" class="ds44-collapser_content--link">L'adaptation de son logement<i
+												class="icon icon-arrow-right" aria-hidden="true"></i></a></li>
+									<li><a href="#" class="ds44-collapser_content--link">La téléassistance<i
+												class="icon icon-arrow-right" aria-hidden="true"></i></a></li>
+									<li><a href="#" class="ds44-collapser_content--link">L’aide et l’accompagnement à
+											domicile<i class="icon icon-arrow-right" aria-hidden="true"></i></a></li>
 									<li>
 										<ul class="ds44-list ds44-collapser_content--level3">
-											<li><a href="#" class="ds44-collapser_content--link">L’annuaire des services d’aide à domicile (SAAD)<i class="icon icon-arrow-right" aria-hidden="true"></i></a></li>
-											<li><a href="#" class="ds44-collapser_content--link">L’aide ménagère<i class="icon icon-arrow-right" aria-hidden="true"></i></a></li>
-											<li><a href="#" class="ds44-collapser_content--link">Le portage de repas<i class="icon icon-arrow-right" aria-hidden="true"></i></a></li>
+											<li><a href="#" class="ds44-collapser_content--link">L’annuaire des services
+													d’aide à domicile (SAAD)<i class="icon icon-arrow-right"
+														aria-hidden="true"></i></a></li>
+											<li><a href="#" class="ds44-collapser_content--link">L’aide ménagère<i
+														class="icon icon-arrow-right" aria-hidden="true"></i></a></li>
+											<li><a href="#" class="ds44-collapser_content--link">Le portage de repas<i
+														class="icon icon-arrow-right" aria-hidden="true"></i></a></li>
 										</ul>
 									</li>
-									<li><a href="#" class="ds44-collapser_content--link">Les services de soins infirmiers (SSIAD)<i class="icon icon-arrow-right" aria-hidden="true"></i></a></li>
-									<li><a href="#" class="ds44-collapser_content--link">Les déplacements<i class="icon icon-arrow-right" aria-hidden="true"></i></a></li>
+									<li><a href="#" class="ds44-collapser_content--link">Les services de soins
+											infirmiers (SSIAD)<i class="icon icon-arrow-right"
+												aria-hidden="true"></i></a></li>
+									<li><a href="#" class="ds44-collapser_content--link">Les déplacements<i
+												class="icon icon-arrow-right" aria-hidden="true"></i></a></li>
 								</ul>
 							</div>
 						</li>
 						<li class="ds44-collapser_element">
-							<button type="button" aria-controls="collapser-elem-7" class="ds44-collapser_button" aria-expanded="false">Dispositifs innovants de vie à domicile : appel à manifestation d’intérêt<i class="icon icon-down" aria-hidden="true"></i></button>
+							<button type="button" aria-controls="collapser-elem-7" class="ds44-collapser_button"
+								aria-expanded="false">Dispositifs innovants de vie à domicile : appel à manifestation
+								d’intérêt<i class="icon icon-down" aria-hidden="true"></i></button>
 							<div class="ds44-collapser_content" id="collapser-elem-7">
 								<ul class="ds44-list ds44-collapser_content--level2">
-									<li><a href="#" class="ds44-collapser_content--link">Lien direct vers N2 (sans sous-catégorie N3)<i class="icon icon-arrow-right" aria-hidden="true"></i></a></li>
-									<li><a href="#" class="ds44-collapser_content--link">Lien direct vers N2 (sans sous-catégorie N3)<i class="icon icon-arrow-right" aria-hidden="true"></i></a></li>
+									<li><a href="#" class="ds44-collapser_content--link">Lien direct vers N2 (sans
+											sous-catégorie N3)<i class="icon icon-arrow-right"
+												aria-hidden="true"></i></a></li>
+									<li><a href="#" class="ds44-collapser_content--link">Lien direct vers N2 (sans
+											sous-catégorie N3)<i class="icon icon-arrow-right"
+												aria-hidden="true"></i></a></li>
 									<li>
-										<a href="#" class="ds44-collapser_content--link">Lien direct vers sous-catégorie N2<i class="icon icon-arrow-right" aria-hidden="true"></i></a>
+										<a href="#" class="ds44-collapser_content--link">Lien direct vers sous-catégorie
+											N2<i class="icon icon-arrow-right" aria-hidden="true"></i></a>
 										<ul class="ds44-list ds44-collapser_content--level3">
-											<li><a href="#" class="ds44-collapser_content--link">Lien direct (dernier niveau)<i class="icon icon-arrow-right" aria-hidden="true"></i></a></li>
-											<li><a href="#" class="ds44-collapser_content--link">Lien direct (dernier niveau)<i class="icon icon-arrow-right" aria-hidden="true"></i></a></li>
-											<li><a href="#" class="ds44-collapser_content--link">Lien direct (dernier niveau)<i class="icon icon-arrow-right" aria-hidden="true"></i></a></li>
+											<li><a href="#" class="ds44-collapser_content--link">Lien direct (dernier
+													niveau)<i class="icon icon-arrow-right" aria-hidden="true"></i></a>
+											</li>
+											<li><a href="#" class="ds44-collapser_content--link">Lien direct (dernier
+													niveau)<i class="icon icon-arrow-right" aria-hidden="true"></i></a>
+											</li>
+											<li><a href="#" class="ds44-collapser_content--link">Lien direct (dernier
+													niveau)<i class="icon icon-arrow-right" aria-hidden="true"></i></a>
+											</li>
 										</ul>
 									</li>
-									<li><a href="#" class="ds44-collapser_content--link">Lien direct vers sous-catégorie N2<i class="icon icon-arrow-right" aria-hidden="true"></i></a></li>
-									<li><a href="#" class="ds44-collapser_content--link">Lien direct vers sous-catégorie N2<i class="icon icon-arrow-right" aria-hidden="true"></i></a></li>
+									<li><a href="#" class="ds44-collapser_content--link">Lien direct vers sous-catégorie
+											N2<i class="icon icon-arrow-right" aria-hidden="true"></i></a></li>
+									<li><a href="#" class="ds44-collapser_content--link">Lien direct vers sous-catégorie
+											N2<i class="icon icon-arrow-right" aria-hidden="true"></i></a></li>
 								</ul>
 							</div>
 						</li>
 						<li class="ds44-collapser_element">
-							<button type="button" aria-controls="collapser-elem-8" class="ds44-collapser_button" aria-expanded="false">L’autorisation pour la création et gestion d’un Service d’Aide à Domicile (SAAD)<i class="icon icon-down" aria-hidden="true"></i></button>
+							<button type="button" aria-controls="collapser-elem-8" class="ds44-collapser_button"
+								aria-expanded="false">L’autorisation pour la création et gestion d’un Service d’Aide à
+								Domicile (SAAD)<i class="icon icon-down" aria-hidden="true"></i></button>
 							<div class="ds44-collapser_content" id="collapser-elem-8">
 								<ul class="ds44-list ds44-collapser_content--level2">
-									<li><a href="#" class="ds44-collapser_content--link">Lien direct vers N2 (sans sous-catégorie N3)<i class="icon icon-arrow-right" aria-hidden="true"></i></a></li>
-									<li><a href="#" class="ds44-collapser_content--link">Lien direct vers N2 (sans sous-catégorie N3)<i class="icon icon-arrow-right" aria-hidden="true"></i></a></li>
+									<li><a href="#" class="ds44-collapser_content--link">Lien direct vers N2 (sans
+											sous-catégorie N3)<i class="icon icon-arrow-right"
+												aria-hidden="true"></i></a></li>
+									<li><a href="#" class="ds44-collapser_content--link">Lien direct vers N2 (sans
+											sous-catégorie N3)<i class="icon icon-arrow-right"
+												aria-hidden="true"></i></a></li>
 									<li>
-										<a href="#" class="ds44-collapser_content--link">Lien direct vers sous-catégorie N2<i class="icon icon-arrow-right" aria-hidden="true"></i></a>
+										<a href="#" class="ds44-collapser_content--link">Lien direct vers sous-catégorie
+											N2<i class="icon icon-arrow-right" aria-hidden="true"></i></a>
 										<ul class="ds44-list ds44-collapser_content--level3">
-											<li><a href="#" class="ds44-collapser_content--link">Lien direct (dernier niveau)<i class="icon icon-arrow-right" aria-hidden="true"></i></a></li>
-											<li><a href="#" class="ds44-collapser_content--link">Lien direct (dernier niveau)<i class="icon icon-arrow-right" aria-hidden="true"></i></a></li>
-											<li><a href="#" class="ds44-collapser_content--link">Lien direct (dernier niveau)<i class="icon icon-arrow-right" aria-hidden="true"></i></a></li>
+											<li><a href="#" class="ds44-collapser_content--link">Lien direct (dernier
+													niveau)<i class="icon icon-arrow-right" aria-hidden="true"></i></a>
+											</li>
+											<li><a href="#" class="ds44-collapser_content--link">Lien direct (dernier
+													niveau)<i class="icon icon-arrow-right" aria-hidden="true"></i></a>
+											</li>
+											<li><a href="#" class="ds44-collapser_content--link">Lien direct (dernier
+													niveau)<i class="icon icon-arrow-right" aria-hidden="true"></i></a>
+											</li>
 										</ul>
 									</li>
-									<li><a href="#" class="ds44-collapser_content--link">Lien direct vers sous-catégorie N2<i class="icon icon-arrow-right" aria-hidden="true"></i></a></li>
-									<li><a href="#" class="ds44-collapser_content--link">Lien direct vers sous-catégorie N2<i class="icon icon-arrow-right" aria-hidden="true"></i></a></li>
+									<li><a href="#" class="ds44-collapser_content--link">Lien direct vers sous-catégorie
+											N2<i class="icon icon-arrow-right" aria-hidden="true"></i></a></li>
+									<li><a href="#" class="ds44-collapser_content--link">Lien direct vers sous-catégorie
+											N2<i class="icon icon-arrow-right" aria-hidden="true"></i></a></li>
 								</ul>
 							</div>
 						</li>
 						<li class="ds44-collapser_element">
-							<button type="button" aria-controls="collapser-elem-9" class="ds44-collapser_button" aria-expanded="false">Les États généraux des EHPAD<i class="icon icon-down" aria-hidden="true"></i></button>
+							<button type="button" aria-controls="collapser-elem-9" class="ds44-collapser_button"
+								aria-expanded="false">Les États généraux des EHPAD<i class="icon icon-down"
+									aria-hidden="true"></i></button>
 							<div class="ds44-collapser_content" id="collapser-elem-9">
 								<ul class="ds44-list ds44-collapser_content--level2">
-									<li><a href="#" class="ds44-collapser_content--link">Lien direct vers N2 (sans sous-catégorie N3)<i class="icon icon-arrow-right" aria-hidden="true"></i></a></li>
-									<li><a href="#" class="ds44-collapser_content--link">Lien direct vers N2 (sans sous-catégorie N3)<i class="icon icon-arrow-right" aria-hidden="true"></i></a></li>
+									<li><a href="#" class="ds44-collapser_content--link">Lien direct vers N2 (sans
+											sous-catégorie N3)<i class="icon icon-arrow-right"
+												aria-hidden="true"></i></a></li>
+									<li><a href="#" class="ds44-collapser_content--link">Lien direct vers N2 (sans
+											sous-catégorie N3)<i class="icon icon-arrow-right"
+												aria-hidden="true"></i></a></li>
 									<li>
-										<a href="#" class="ds44-collapser_content--link">Lien direct vers sous-catégorie N2<i class="icon icon-arrow-right" aria-hidden="true"></i></a>
+										<a href="#" class="ds44-collapser_content--link">Lien direct vers sous-catégorie
+											N2<i class="icon icon-arrow-right" aria-hidden="true"></i></a>
 										<ul class="ds44-list ds44-collapser_content--level3">
-											<li><a href="#" class="ds44-collapser_content--link">Lien direct (dernier niveau)<i class="icon icon-arrow-right" aria-hidden="true"></i></a></li>
-											<li><a href="#" class="ds44-collapser_content--link">Lien direct (dernier niveau)<i class="icon icon-arrow-right" aria-hidden="true"></i></a></li>
-											<li><a href="#" class="ds44-collapser_content--link">Lien direct (dernier niveau)<i class="icon icon-arrow-right" aria-hidden="true"></i></a></li>
+											<li><a href="#" class="ds44-collapser_content--link">Lien direct (dernier
+													niveau)<i class="icon icon-arrow-right" aria-hidden="true"></i></a>
+											</li>
+											<li><a href="#" class="ds44-collapser_content--link">Lien direct (dernier
+													niveau)<i class="icon icon-arrow-right" aria-hidden="true"></i></a>
+											</li>
+											<li><a href="#" class="ds44-collapser_content--link">Lien direct (dernier
+													niveau)<i class="icon icon-arrow-right" aria-hidden="true"></i></a>
+											</li>
 										</ul>
 									</li>
-									<li><a href="#" class="ds44-collapser_content--link">Lien direct vers sous-catégorie N2<i class="icon icon-arrow-right" aria-hidden="true"></i></a></li>
-									<li><a href="#" class="ds44-collapser_content--link">Lien direct vers sous-catégorie N2<i class="icon icon-arrow-right" aria-hidden="true"></i></a></li>
+									<li><a href="#" class="ds44-collapser_content--link">Lien direct vers sous-catégorie
+											N2<i class="icon icon-arrow-right" aria-hidden="true"></i></a></li>
+									<li><a href="#" class="ds44-collapser_content--link">Lien direct vers sous-catégorie
+											N2<i class="icon icon-arrow-right" aria-hidden="true"></i></a></li>
 								</ul>
 							</div>
 						</li>
 						<li class="ds44-collapser_element">
-							<button type="button" aria-controls="collapser-elem-10" class="ds44-collapser_button" aria-expanded="false">Publications utiles<i class="icon icon-down" aria-hidden="true"></i></button>
+							<button type="button" aria-controls="collapser-elem-10" class="ds44-collapser_button"
+								aria-expanded="false">Publications utiles<i class="icon icon-down"
+									aria-hidden="true"></i></button>
 							<div class="ds44-collapser_content" id="collapser-elem-10">
 								<ul class="ds44-list ds44-collapser_content--level2">
-									<li><a href="#" class="ds44-collapser_content--link">Lien direct vers N2 (sans sous-catégorie N3)<i class="icon icon-arrow-right" aria-hidden="true"></i></a></li>
-									<li><a href="#" class="ds44-collapser_content--link">Lien direct vers N2 (sans sous-catégorie N3)<i class="icon icon-arrow-right" aria-hidden="true"></i></a></li>
+									<li><a href="#" class="ds44-collapser_content--link">Lien direct vers N2 (sans
+											sous-catégorie N3)<i class="icon icon-arrow-right"
+												aria-hidden="true"></i></a></li>
+									<li><a href="#" class="ds44-collapser_content--link">Lien direct vers N2 (sans
+											sous-catégorie N3)<i class="icon icon-arrow-right"
+												aria-hidden="true"></i></a></li>
 									<li>
-										<a href="#" class="ds44-collapser_content--link">Lien direct vers sous-catégorie N2<i class="icon icon-arrow-right" aria-hidden="true"></i></a>
+										<a href="#" class="ds44-collapser_content--link">Lien direct vers sous-catégorie
+											N2<i class="icon icon-arrow-right" aria-hidden="true"></i></a>
 										<ul class="ds44-list ds44-collapser_content--level3">
-											<li><a href="#" class="ds44-collapser_content--link">Lien direct (dernier niveau)<i class="icon icon-arrow-right" aria-hidden="true"></i></a></li>
-											<li><a href="#" class="ds44-collapser_content--link">Lien direct (dernier niveau)<i class="icon icon-arrow-right" aria-hidden="true"></i></a></li>
-											<li><a href="#" class="ds44-collapser_content--link">Lien direct (dernier niveau)<i class="icon icon-arrow-right" aria-hidden="true"></i></a></li>
+											<li><a href="#" class="ds44-collapser_content--link">Lien direct (dernier
+													niveau)<i class="icon icon-arrow-right" aria-hidden="true"></i></a>
+											</li>
+											<li><a href="#" class="ds44-collapser_content--link">Lien direct (dernier
+													niveau)<i class="icon icon-arrow-right" aria-hidden="true"></i></a>
+											</li>
+											<li><a href="#" class="ds44-collapser_content--link">Lien direct (dernier
+													niveau)<i class="icon icon-arrow-right" aria-hidden="true"></i></a>
+											</li>
 										</ul>
 									</li>
-									<li><a href="#" class="ds44-collapser_content--link">Lien direct vers sous-catégorie N2<i class="icon icon-arrow-right" aria-hidden="true"></i></a></li>
-									<li><a href="#" class="ds44-collapser_content--link">Lien direct vers sous-catégorie N2<i class="icon icon-arrow-right" aria-hidden="true"></i></a></li>
+									<li><a href="#" class="ds44-collapser_content--link">Lien direct vers sous-catégorie
+											N2<i class="icon icon-arrow-right" aria-hidden="true"></i></a></li>
+									<li><a href="#" class="ds44-collapser_content--link">Lien direct vers sous-catégorie
+											N2<i class="icon icon-arrow-right" aria-hidden="true"></i></a></li>
 								</ul>
 							</div>
 						</li>
 						<li class="ds44-collapser_element">
-							<button type="button" aria-controls="collapser-elem-11" class="ds44-collapser_button" aria-expanded="false">Appel à candidature pour l’accueil de jeunes en service civique en EHPAD<i class="icon icon-down" aria-hidden="true"></i></button>
+							<button type="button" aria-controls="collapser-elem-11" class="ds44-collapser_button"
+								aria-expanded="false">Appel à candidature pour l’accueil de jeunes en service civique en
+								EHPAD<i class="icon icon-down" aria-hidden="true"></i></button>
 							<div class="ds44-collapser_content" id="collapser-elem-11">
 								<ul class="ds44-list ds44-collapser_content--level2">
-									<li><a href="#" class="ds44-collapser_content--link">Lien direct vers N2 (sans sous-catégorie N3)<i class="icon icon-arrow-right" aria-hidden="true"></i></a></li>
-									<li><a href="#" class="ds44-collapser_content--link">Lien direct vers N2 (sans sous-catégorie N3)<i class="icon icon-arrow-right" aria-hidden="true"></i></a></li>
+									<li><a href="#" class="ds44-collapser_content--link">Lien direct vers N2 (sans
+											sous-catégorie N3)<i class="icon icon-arrow-right"
+												aria-hidden="true"></i></a></li>
+									<li><a href="#" class="ds44-collapser_content--link">Lien direct vers N2 (sans
+											sous-catégorie N3)<i class="icon icon-arrow-right"
+												aria-hidden="true"></i></a></li>
 									<li>
-										<a href="#" class="ds44-collapser_content--link">Lien direct vers sous-catégorie N2<i class="icon icon-arrow-right" aria-hidden="true"></i></a>
+										<a href="#" class="ds44-collapser_content--link">Lien direct vers sous-catégorie
+											N2<i class="icon icon-arrow-right" aria-hidden="true"></i></a>
 										<ul class="ds44-list ds44-collapser_content--level3">
-											<li><a href="#" class="ds44-collapser_content--link">Lien direct (dernier niveau)<i class="icon icon-arrow-right" aria-hidden="true"></i></a></li>
-											<li><a href="#" class="ds44-collapser_content--link">Lien direct (dernier niveau)<i class="icon icon-arrow-right" aria-hidden="true"></i></a></li>
-											<li><a href="#" class="ds44-collapser_content--link">Lien direct (dernier niveau)<i class="icon icon-arrow-right" aria-hidden="true"></i></a></li>
+											<li><a href="#" class="ds44-collapser_content--link">Lien direct (dernier
+													niveau)<i class="icon icon-arrow-right" aria-hidden="true"></i></a>
+											</li>
+											<li><a href="#" class="ds44-collapser_content--link">Lien direct (dernier
+													niveau)<i class="icon icon-arrow-right" aria-hidden="true"></i></a>
+											</li>
+											<li><a href="#" class="ds44-collapser_content--link">Lien direct (dernier
+													niveau)<i class="icon icon-arrow-right" aria-hidden="true"></i></a>
+											</li>
 										</ul>
 									</li>
-									<li><a href="#" class="ds44-collapser_content--link">Lien direct vers sous-catégorie N2<i class="icon icon-arrow-right" aria-hidden="true"></i></a></li>
-									<li><a href="#" class="ds44-collapser_content--link">Lien direct vers sous-catégorie N2<i class="icon icon-arrow-right" aria-hidden="true"></i></a></li>
+									<li><a href="#" class="ds44-collapser_content--link">Lien direct vers sous-catégorie
+											N2<i class="icon icon-arrow-right" aria-hidden="true"></i></a></li>
+									<li><a href="#" class="ds44-collapser_content--link">Lien direct vers sous-catégorie
+											N2<i class="icon icon-arrow-right" aria-hidden="true"></i></a></li>
 								</ul>
 							</div>
 						</li>
@@ -501,16 +861,19 @@ layout: pattern
 
 				</div>
 				<div class="col-1 grid-offset ds44-hide-tinyToLarge"></div>
-				<aside class="col-4">					
+				<aside class="col-4">
 					<section class="ds44-box ds44-theme ds44-mb3">
 						<div class="ds44-innerBoxContainer">
-						<p role="heading" aria-level="2" class="ds44-box-heading">Près de chez vous</p>
+							<p role="heading" aria-level="2" class="ds44-box-heading">Près de chez vous</p>
 							<form>
 								<p class="ds44-form__container ds44-form__container--external">
-								<label for="name" class="ds44-formLabel--external">Recherchez un contact</label>
-								<input type="text" id="name" class="ds44-inpStd" required aria-required="true" placeholder="Nom de la commune" title="Nom de la commune" />
+									<label for="name" class="ds44-formLabel--external">Recherchez un contact</label>
+									<input type="text" id="name" class="ds44-inpStd" required aria-required="true"
+										placeholder="Nom de la commune" title="Nom de la commune" />
 								</p>
-								<p><button class="ds44-btnStd ds44-btn--invert" type="submit"><span class="ds44-btnInnerText">Valider</span><i class="icon icon-long-arrow-right" aria-hidden="true"></i></button></p>
+								<p><button class="ds44-btnStd ds44-btn--invert" type="submit"><span
+											class="ds44-btnInnerText">Valider</span><i
+											class="icon icon-long-arrow-right" aria-hidden="true"></i></button></p>
 							</form>
 						</div>
 					</section>
@@ -520,10 +883,12 @@ layout: pattern
 						<section class="ds44-card ds44-card--horizontal">
 							<div class="ds44-flex-container ds44-flex-valign-center">
 								<picture class="ds44-cardPicture">
-									<img src="../../assets/images/ds44-card--sampleImg.png" alt="" class="ds44-card__img" />
+									<img src="../../assets/images/ds44-card--sampleImg.png" alt=""
+										class="ds44-card__img" />
 								</picture>
 								<div class="ds44-card__section--horizontal">
-									<p role="heading" aria-level="2" class="ds44-card__title"><a href="#" class="ds44-card__globalLink">Bien vieillir en Loire-Atlantique</a></p>
+									<p role="heading" aria-level="2" class="ds44-card__title"><a href="#"
+											class="ds44-card__globalLink">Bien vieillir en Loire-Atlantique</a></p>
 									<p class="ds44-cardFile">PDF - 291,3 Ko</p>
 									<i class="icon icon-arrow-right ds44-cardArrow" aria-hidden="true"></i>
 								</div>
@@ -533,10 +898,13 @@ layout: pattern
 						<section class="ds44-card ds44-card--horizontal">
 							<div class="ds44-flex-container ds44-flex-valign-center">
 								<picture class="ds44-cardPicture">
-									<img src="../../assets/images/ds44-card--sampleImg.png" alt="" class="ds44-card__img" />
+									<img src="../../assets/images/ds44-card--sampleImg.png" alt=""
+										class="ds44-card__img" />
 								</picture>
 								<div class="ds44-card__section--horizontal">
-									<p role="heading" aria-level="2" class="ds44-card__title"><a href="#" class="ds44-card__globalLink">Téléassistance : un nouveau service avec un téléphone mobile</a></p>
+									<p role="heading" aria-level="2" class="ds44-card__title"><a href="#"
+											class="ds44-card__globalLink">Téléassistance : un nouveau service avec un
+											téléphone mobile</a></p>
 									<i class="icon icon-arrow-right ds44-cardArrow" aria-hidden="true"></i>
 								</div>
 							</div>
@@ -552,7 +920,8 @@ layout: pattern
 		<div class="ds44-inner-container">
 			<header class="txtcenter">
 				<h2 class="h2-like center">En ce moment</h2>
-				<p class="ds44-component-chapo ds44-centeredBlock">Les actualités des personnes âgées, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore.</p>
+				<p class="ds44-component-chapo ds44-centeredBlock">Les actualités des personnes âgées, consetetur
+					sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore.</p>
 			</header>
 		</div>
 	</section>
@@ -561,43 +930,58 @@ layout: pattern
 		<div class="ds44-inner-container">
 			<header class="txtcenter">
 				<h2 class="h2-like center">Vos rendez-vous</h2>
-				<p class="ds44-component-chapo ds44-centeredBlock">Les idées de sorties en Loire Atlantique, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore.</p>
+				<p class="ds44-component-chapo ds44-centeredBlock">Les idées de sorties en Loire Atlantique, consetetur
+					sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore.</p>
 			</header>
 		</div>
 	</section>
-	
+
 </main>
 
 <footer role="contentinfo">
 	<section class="ds44-container-fluid">
 
-        <div class="ds44-inner-container">            
-            <div class="grid-12-small-1 ds44-hasGutter-xxl">
-                <div class="col-2-small-1">
-                    <picture class="ds44-logo ds44-mb3">
-                        <img src="../../assets/images/logo-loire-atlantique.svg" alt="Loire Atlantique" />
-                    </picture>
-                </div>
-                <div class="col-5-small-1">
-                    <h2 class="h4-like" id="idTitreFooter1">Recevez nos infos par mail</h2>
-                    <p class="ds44-mb3">Pour être alerté lors de la parution des magazines ou recevoir l’actu selon mes centres d’intérêts</p>
-                    <p><button class="ds44-btnStd" type="button" title="Je m'abonne par mail aux informations du CD44"><span class="ds44-btnInnerText">Je m'abonne</span><i class="icon icon-long-arrow-right" aria-hidden="true"></i></button></p>
-                </div>
-                <div class="col-5-small-1">
-                    <h2 class="h4-like mbm" id="idTitreFooter2">Suivez-nous sur les réseaux sociaux :</h2>
-                    <ul class="ds44-list ds44-flex-container ds44-flex-align-center ds44-fse">
-                        <li><a href="#" class="ds44-rsFootLink" title="Le Département Loire Atlantique sur Facebook"><i class="icon icon-facebook" aria-hidden="true"></i><span class="visually-hidden">Le Département Loire Atlantique sur Facebook</span></a></li>
-                        <li><a href="#" class="ds44-rsFootLink" title="Le Département Loire Atlantique sur Twitter"><i class="icon icon-twitter" aria-hidden="true"></i><span class="visually-hidden">Le Département Loire Atlantique sur Twitter</span></a></li>
-                        <li><a href="#" class="ds44-rsFootLink" title="Le Département Loire Atlantique sur Instagram"><i class="icon icon-instagram" aria-hidden="true"></i><span class="visually-hidden">Le Département Loire Atlantique sur Instagram</span></a></li>
-                        <li><a href="#" class="ds44-rsFootLink" title="Le Département Loire Atlantique sur Youtube"><i class="icon icon-youtube" aria-hidden="true"></i><span class="visually-hidden">Le Département Loire Atlantique sur Youtube</span></a></li>
-                        <li><a href="#" class="ds44-rsFootLink" title="Le Département Loire Atlantique sur Mag Web"><i class="icon icon-magweb" aria-hidden="true"></i><span class="visually-hidden">Le Département Loire Atlantique sur Magweb</span></a></li>
-                    </ul>
-                </div>
-            </div>
+		<div class="ds44-inner-container">
+			<div class="grid-12-small-1 ds44-hasGutter-xxl">
+				<div class="col-2-small-1">
+					<picture class="ds44-logo ds44-mb3">
+						<img src="../../assets/images/logo-loire-atlantique.svg" alt="Loire Atlantique" />
+					</picture>
+				</div>
+				<div class="col-5-small-1">
+					<h2 class="h4-like" id="idTitreFooter1">Recevez nos infos par mail</h2>
+					<p class="ds44-mb3">Pour être alerté lors de la parution des magazines ou recevoir l’actu selon mes
+						centres d’intérêts</p>
+					<p><button class="ds44-btnStd" type="button"
+							title="Je m'abonne par mail aux informations du CD44"><span class="ds44-btnInnerText">Je
+								m'abonne</span><i class="icon icon-long-arrow-right" aria-hidden="true"></i></button>
+					</p>
+				</div>
+				<div class="col-5-small-1">
+					<h2 class="h4-like mbm" id="idTitreFooter2">Suivez-nous sur les réseaux sociaux :</h2>
+					<ul class="ds44-list ds44-flex-container ds44-flex-align-center ds44-fse">
+						<li><a href="#" class="ds44-rsFootLink" title="Le Département Loire Atlantique sur Facebook"><i
+									class="icon icon-facebook" aria-hidden="true"></i><span class="visually-hidden">Le
+									Département Loire Atlantique sur Facebook</span></a></li>
+						<li><a href="#" class="ds44-rsFootLink" title="Le Département Loire Atlantique sur Twitter"><i
+									class="icon icon-twitter" aria-hidden="true"></i><span class="visually-hidden">Le
+									Département Loire Atlantique sur Twitter</span></a></li>
+						<li><a href="#" class="ds44-rsFootLink" title="Le Département Loire Atlantique sur Instagram"><i
+									class="icon icon-instagram" aria-hidden="true"></i><span class="visually-hidden">Le
+									Département Loire Atlantique sur Instagram</span></a></li>
+						<li><a href="#" class="ds44-rsFootLink" title="Le Département Loire Atlantique sur Youtube"><i
+									class="icon icon-youtube" aria-hidden="true"></i><span class="visually-hidden">Le
+									Département Loire Atlantique sur Youtube</span></a></li>
+						<li><a href="#" class="ds44-rsFootLink" title="Le Département Loire Atlantique sur Mag Web"><i
+									class="icon icon-magweb" aria-hidden="true"></i><span class="visually-hidden">Le
+									Département Loire Atlantique sur Magweb</span></a></li>
+					</ul>
+				</div>
+			</div>
 
-        </div>
+		</div>
 
-    </section>
+	</section>
 
 	<section class="ds44-container-fluid ds44-bgGray">
 		<div class="ds44-inner-container">
@@ -615,9 +999,9 @@ layout: pattern
 		</div>
 	</section>
 
-    <p class="ds44-posAbs ds44-posTop ds44-posRi">
-        <a class="ds44-icoLink ds44-icoLink--footer" href="#top"><i class="icon icon-arrow-up icon--sizeXL" aria-hidden="true"></i><span class="ds44-icoTxtWrapper">Haut de page</span></a>
-    </p>
+	<p class="ds44-posAbs ds44-posTop ds44-posRi">
+		<a class="ds44-icoLink ds44-icoLink--footer" href="#top"><i class="icon icon-arrow-up icon--sizeXL"
+				aria-hidden="true"></i><span class="ds44-icoTxtWrapper">Haut de page</span></a>
+	</p>
 
 </footer>
-	

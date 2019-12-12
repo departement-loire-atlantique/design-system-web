@@ -2,47 +2,82 @@
 layout: pattern
 ---
 <header id="top">
-    <button class="ds44-btnIcoText--maxi ds44-btn--contextual ds44-btn--menu ds44--xl-padding" type="button" aria-label="Ouvrir le menu de navigation"><span class="ds44-btnInnerText">Menu</span><i class="icon icon-burger icon--xlarge" aria-hidden="true"></i></button>
+    <button class="ds44-btnIcoText--maxi ds44-btn--contextual ds44-btn--menu ds44--xl-padding" type="button"
+        aria-label="Ouvrir le menu de navigation" aria-controls="menu"><span class="ds44-btnInnerText">Menu</span><i
+            class="icon icon-burger icon--xlarge" aria-hidden="true"></i></button>
 
-    <section class="ds44-menuBox" id="menu">
 
-        <div class="ds44-overlay ds44-theme ds44-bgCircle ds44-bg-br ds44-overlay--navNiv1" role="dialog" aria-label="Menu principal niveau 1" id="nav1">
-            <p role="heading" aria-level="1" class="visually-hidden">Menu</p>
-                
-            <button class="ds44-btnOverlay ds44-btnOverlay--closeOverlay" type="button" aria-label="Fermer le menu de navigation"><i class="icon icon-cross icon--xlarge" aria-hidden="true"></i><span class="ds44-btnInnerText--bottom">Fermer</span></button>
+    <div class="ds44-blocMenu">
 
-            <nav role="navigation" class="ds44-navContainer ds44-flex-container--column ds44-flex-valign-center" aria-label="Menu de navigation">
-                <div class="ds44-inner-container ds44-flex-container--column ds44-flex-mauto">
-                    <ul class="ds44-navList ds44-multiCol ds44-xl-gap ds44-list">
-                        <li><button type="button" class="ds44-menuBtn" data-ssmenu="nav2">Besoin d'aides<i class="icon icon-right" aria-hidden="true"></i></button></li>
-                        <li><button type="button" class="ds44-menuBtn" data-ssmenu="nav3">Besoin d'air<i class="icon icon-right" aria-hidden="true"></i></button></li>
-                        <li><button type="button" class="ds44-menuBtn" data-ssmenu="nav4">Près de chez vous<i class="icon icon-right" aria-hidden="true"></i></button></li>
-                        <li><button type="button" class="ds44-menuBtn" data-ssmenu="nav5">Mieux nous connaître<i class="icon icon-right" aria-hidden="true"></i></button></li>
-                    </ul>
-                    <hr class="ds44-navSep" />
-                    <ul class="ds44-multiCol ds44-xl-gap ds44-list">
-                        <li><a href="#" class="ds44-menuLink">Associations, collectivités, partenaires<i class="icon icon-arrow-right" aria-hidden="true"></i></a></li>
-                        <li><a href="#" class="ds44-menuLink">On recrute<i class="icon icon-arrow-right" aria-hidden="true"></i></a></li>
-                        <li><a href="#" class="ds44-menuLink">Presse<i class="icon icon-arrow-right" aria-hidden="true"></i></a></li>
-                        <li><a href="#" class="ds44-menuLink">Contact<i class="icon icon-arrow-right" aria-hidden="true"></i></a></li>
-                    </ul>
-                </div>
-                <div class="ds44-flex-container">
-                    <p class="h4-like mbm mrl ds44-hide-mobile">Suivez-nous sur les réseaux</p>
-                    <ul class="ds44-list ds44-flex-container ds44-fse">                
-                        <li><a href="#" class="ds44-rsHeadLink" title="Le Département Loire Atlantique sur Facebook"><i class="icon icon-facebook" aria-hidden="true"></i><span class="visually-hidden">Le Département Loire Atlantique sur Facebook</span></a></li>
-                        <li><a href="#" class="ds44-rsHeadLink" title="Le Département Loire Atlantique sur Twitter"><i class="icon icon-twitter" aria-hidden="true"></i><span class="visually-hidden">Le Département Loire Atlantique sur Twitter</span></a></li>
-                        <li><a href="#" class="ds44-rsHeadLink" title="Le Département Loire Atlantique sur Instagram"><i class="icon icon-instagram" aria-hidden="true"></i><span class="visually-hidden">Le Département Loire Atlantique sur Instagram</span></a></li>
-                        <li><a href="#" class="ds44-rsHeadLink" title="Le Département Loire Atlantique sur Youtube"><i class="icon icon-youtube" aria-hidden="true"></i><span class="visually-hidden">Le Département Loire Atlantique sur Youtube</span></a></li>
-                        <li><a href="#" class="ds44-rsHeadLink" title="Le Département Loire Atlantique sur Mag Web"><i class="icon icon-magweb" aria-hidden="true"></i><span class="visually-hidden">Le Département Loire Atlantique sur Magweb</span></a></li>
-                    </ul>
-                </div>
-                <button type="button" class="ds44-fullWBtn ds44-btn--invert" id="ds44-btn-applis"><span class="ds44-btnInnerText">Sites et applis du Département</span><i class="icon icon-down" aria-hidden="true"></i></button>
-            </nav>
+        <section class="ds44-menuBox" id="menu">
 
-        </div>
+            <div class="ds44-overlay ds44-theme ds44-bgCircle ds44-bg-br ds44-overlay--navNiv1" role="dialog"
+                aria-label="Menu principal niveau 1" id="nav1">
+                <p role="heading" aria-level="1" class="visually-hidden">Menu</p>
 
-    </section>
+                <button class="ds44-btnOverlay ds44-btnOverlay--closeOverlay" type="button"
+                    aria-label="Fermer le menu de navigation"><i class="icon icon-cross icon--xlarge"
+                        aria-hidden="true"></i><span class="ds44-btnInnerText--bottom">Fermer</span></button>
+
+                <nav role="navigation" class="ds44-navContainer ds44-flex-container--column ds44-flex-valign-center"
+                    aria-label="Menu de navigation">
+                    <div class="ds44-inner-container ds44-flex-container--column ds44-flex-mauto">
+                        <ul class="ds44-navList ds44-multiCol ds44-xl-gap ds44-list">
+                            <li><button type="button" class="ds44-menuBtn" data-ssmenu="nav2">Besoin d'aides<i
+                                        class="icon icon-right" aria-hidden="true"></i></button></li>
+                            <li><button type="button" class="ds44-menuBtn" data-ssmenu="nav3">Besoin d'air<i
+                                        class="icon icon-right" aria-hidden="true"></i></button></li>
+                            <li><button type="button" class="ds44-menuBtn" data-ssmenu="nav4">Près de chez vous<i
+                                        class="icon icon-right" aria-hidden="true"></i></button></li>
+                            <li><button type="button" class="ds44-menuBtn" data-ssmenu="nav5">Mieux nous connaître<i
+                                        class="icon icon-right" aria-hidden="true"></i></button></li>
+                        </ul>
+                        <hr class="ds44-navSep" />
+                        <ul class="ds44-multiCol ds44-xl-gap ds44-list">
+                            <li><a href="#" class="ds44-menuLink">Associations, collectivités, partenaires<i
+                                        class="icon icon-arrow-right" aria-hidden="true"></i></a></li>
+                            <li><a href="#" class="ds44-menuLink">On recrute<i class="icon icon-arrow-right"
+                                        aria-hidden="true"></i></a></li>
+                            <li><a href="#" class="ds44-menuLink">Presse<i class="icon icon-arrow-right"
+                                        aria-hidden="true"></i></a></li>
+                            <li><a href="#" class="ds44-menuLink">Contact<i class="icon icon-arrow-right"
+                                        aria-hidden="true"></i></a></li>
+                        </ul>
+                    </div>
+                    <div class="ds44-flex-container">
+                        <p class="h4-like mbm mrl ds44-hide-mobile">Suivez-nous sur les réseaux</p>
+                        <ul class="ds44-list ds44-flex-container ds44-fse">
+                            <li><a href="#" class="ds44-rsHeadLink"
+                                    title="Le Département Loire Atlantique sur Facebook"><i class="icon icon-facebook"
+                                        aria-hidden="true"></i><span class="visually-hidden">Le Département Loire
+                                        Atlantique sur Facebook</span></a></li>
+                            <li><a href="#" class="ds44-rsHeadLink"
+                                    title="Le Département Loire Atlantique sur Twitter"><i class="icon icon-twitter"
+                                        aria-hidden="true"></i><span class="visually-hidden">Le Département Loire
+                                        Atlantique sur Twitter</span></a></li>
+                            <li><a href="#" class="ds44-rsHeadLink"
+                                    title="Le Département Loire Atlantique sur Instagram"><i class="icon icon-instagram"
+                                        aria-hidden="true"></i><span class="visually-hidden">Le Département Loire
+                                        Atlantique sur Instagram</span></a></li>
+                            <li><a href="#" class="ds44-rsHeadLink"
+                                    title="Le Département Loire Atlantique sur Youtube"><i class="icon icon-youtube"
+                                        aria-hidden="true"></i><span class="visually-hidden">Le Département Loire
+                                        Atlantique sur Youtube</span></a></li>
+                            <li><a href="#" class="ds44-rsHeadLink"
+                                    title="Le Département Loire Atlantique sur Mag Web"><i class="icon icon-magweb"
+                                        aria-hidden="true"></i><span class="visually-hidden">Le Département Loire
+                                        Atlantique sur Magweb</span></a></li>
+                        </ul>
+                    </div>
+                    <button type="button" class="ds44-fullWBtn ds44-btn--invert" id="ds44-btn-applis"><span
+                            class="ds44-btnInnerText">Sites et applis du Département</span><i class="icon icon-down"
+                            aria-hidden="true"></i></button>
+                </nav>
+
+            </div>
+
+        </section>
+    </div>
 </header>
 <main></main>
 <footer></footer>
