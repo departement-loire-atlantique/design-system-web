@@ -71,6 +71,14 @@
     padding:  $ds44-padding-small $ds44-padding-xlarge;
 }
 
+.ds44-card--horizontal {
+
+    .ds44-cardPicture {
+        min-width: 38%;
+    }
+
+}
+
 // Calendar card
 
 .ds44-card__dateContainer {

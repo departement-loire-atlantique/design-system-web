@@ -2,7 +2,7 @@
 layout: component-detail
 group: components
 
-title: Bandeau
+title: Header
 description: Header
 status: A valider
 

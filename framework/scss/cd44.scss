@@ -14,8 +14,8 @@
 
 // CD44 config
 @import "_config/variables";
-@import "_config/contextual-variables-LA.scss";        // Choose the right contextual file - and only one /!\
-//@import "_config/contextual-variables-Agenda.scss";  // Switch contextual files according to actual website  /!\
+@import "_config/contextual-variables-aqua.scss";        // Choose the right contextual file - and only one /!\
+//@import "_config/contextual-variables-bright.scss";  // Switch contextual files according to actual website  /!\
 @import "_config/mixins";
 
 /* -------------------------------*/
@@ -61,7 +61,7 @@
 
 @import "components/collapser";
 @import "components/card";
-@import "components/diaporama";
+@import "components/carrousel";
 @import "components/templates.scss";
 @import "components/boxes.scss";
 @import "components/list.scss";
