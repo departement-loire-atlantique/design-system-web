@@ -162,8 +162,18 @@
   .ds44-flex-wrap-medium {
     flex-wrap: wrap;
   }
+
   .ds44-flex-grow1-medium {
     flex-grow: 1;
+  }
+  
+  .ds44-flex-container--colMed {
+    flex-direction: column;
+  
+    &--colRev {
+      flex-flow: column-reverse;
+    }
+
   }
 
 }

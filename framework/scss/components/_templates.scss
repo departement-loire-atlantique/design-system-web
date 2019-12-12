@@ -25,6 +25,10 @@
     background-color: $ds44-light-bg;
 }
 
+.ds44-contenuArticle {
+  margin: $ds44-components-vmargin auto;
+}
+
 @media (max-width: $ds44-medium) {
 
     .ds44-container-relmob {
@@ -70,6 +74,14 @@
     background: transparent;
     font-weight: $weight-bold;
     margin-bottom: $ds44-components-vmargin;
+}
+
+/* Alternate containers and structures */
+
+/* Nouveau container push full width */
+.ds44-container-fluid-alternate {
+  padding: $ds44-padding-large;
+  position: relative;
 }
 
 /* Links */

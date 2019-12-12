@@ -53,17 +53,42 @@
     width: calc(50% + 15px);
     align-self: center;
     padding: $ds44-padding-box;
+
+    &--fluid {
+        width: 100%;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+
+        p {
+            margin: 0;
+            padding-left: 1.5rem;
+            max-width: 30%;
+
+            &[role="heading"] {
+                max-width: 45%;
+            }
+        }
+
+    }
+
 }
 
 .ds44-boxPushPic {
     width: calc(50% - 15px);
     position: relative;
     align-self: flex-end;
+    
+    &--horizontal {
+        width: calc(20% - 15px);
+    }
+
 }
 
 .ds44-pictoStore {
     height: 32px;
 }
+
 
 // Média
 
@@ -80,6 +105,42 @@
 }
 
 
+/* =======
+  MEDIA QUERIES
+  === */
+
+@media (max-width: $ds44-medium) {
+
+    .ds44-boxPushContent {
+        width: 100%;
+        
+        &--fluid {
+            flex-direction: column;
+            text-align: center;
+
+            p {
+                max-width: 100%;
+                padding: $ds44-padding-box;
+    
+                &[role="heading"] {
+                    max-width: 100%;
+                }
+            }
+        }
+
+    }
+
+    .ds44-boxPushPic {
+        
+        &--horizontal {
+            width: 100%;
+            text-align: center;
+        }
+    
+    }
+
+}
+
 @media (max-width: $ds44-small) {
 
     // Pushs
@@ -88,10 +149,6 @@
         text-align: center;
         min-height: 0;
         padding-top: $spacer-small;
-    }
-
-    .ds44-boxPushContent {
-        width: 100%;
     }
 
     .ds44-boxPushPic {

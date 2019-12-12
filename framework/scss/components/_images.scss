@@ -1,0 +1,44 @@
+// Images global styles
+
+
+.ds44-container-imgRatio {
+    width: 100%;
+    height: 0;
+    display: block;
+    padding-top: 66.13%;
+    position: relative;
+}
+
+.ds44-imgRatio {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    display: block;
+    object-fit: cover;
+}
+
+.ds44-img50 {
+    background: linear-gradient(to bottom, #F5F5F5 50%, #fff 50%);
+}
+
+
+/* légende d'image */
+figure {
+    margin: 0;
+}
+
+.ds44-legendeContainer {
+    position: relative;
+}
+
+.ds44-legendeContainer figcaption {
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    background: $ds44-color-dark-text;
+    color: $ds44-color-inverse;
+    padding: 0 .5rem;
+    z-index: 1;
+}
