@@ -52,7 +52,7 @@ gulp.task('build:css:cd44:dev', function () {
       outputStyle: 'expanded'
     }))
     .pipe(postcss(postCssPluginsDev))
-    .pipe(rename('cd44.css'))
+    .pipe(concat('cd44.css'))
     .pipe(browserSync.stream())
     .pipe(gulp.dest(cssDest));
 });
@@ -104,7 +104,7 @@ gulp.task('build:glyphicons', function() {
     )
     .pipe(gulp.dest(distDest));
 	});
-	
+
 // cd .docker && docker-compose exec site gulp createComponent --name button
 gulp.task('createComponent', function() {
   var componentName = "ttest";
@@ -115,8 +115,8 @@ gulp.task('createComponent', function() {
 });
 
 gulp.task('build:ds', gulp.parallel(
-  'build:css:cd44:dev', 
-  'build:css:cd44:prod', 
+  'build:css:cd44:dev',
+  'build:css:cd44:prod',
   'build:glyphicons',
   'build:js',
   function() {
@@ -127,11 +127,11 @@ gulp.task('build:ds', gulp.parallel(
 
 gulp.task('build', gulp.parallel(
     'build:jekyll',
-    'build:ds' 
+    'build:ds'
     ));
 
 gulp.task('serve', gulp.series('build', function() {
-  
+
   browserSync.init({
     server: {
       baseDir : 'dist'
@@ -143,7 +143,7 @@ gulp.task('serve', gulp.series('build', function() {
   });
 
   gulp.watch('docs/**/*', {interval: 500, usePolling: true}, gulp.series('build:jekyll:fast', function(done) {
-    browserSync.reload(); 
+    browserSync.reload();
     done();
   }));
 
