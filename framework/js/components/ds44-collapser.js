@@ -30,9 +30,9 @@ function performCloseOverlays(querySelector){
     overlays.forEach((overlay)=> {
         if (overlay.classList.contains("show")) {
             if ("nav1" == overlay.id) {
-                overlay.parentElement.previousElementSibling.focus();
+                document.querySelector(".ds44-btn--menu").focus();
             } else if (!isNullOrUndefined(overlay.closest("#nav1"))) {
-                overlay.closest("#nav1").parentElement.previousElementSibling.focus();
+                document.querySelector(".ds44-btn--menu").focus();
             } else {
                 overlay.previousElementSibling.focus();
             }
@@ -74,7 +74,7 @@ function trapFocus(element) {
     var focusableEls = element.querySelectorAll('a[href]:not([disabled]), button:not([disabled]), textarea:not([disabled]), input[type="text"]:not([disabled]), input[type="radio"]:not([disabled]), input[type="checkbox"]:not([disabled]), select:not([disabled])');
     
     focusableEls.forEach((itFocusElem) => {
-        itFocusElem.setAttribute("tabindex", "0");
+        itFocusElem.removeAttribute("tabindex");
     });
 }
 
@@ -106,12 +106,15 @@ function performToggleAriaHidden(element, ariaHiddenValue, exceptionNode) {
     }
 }
 
+var isMenuOpened = false;
+
 // Modifie la valeur de l'attribut "aria-hidden" de <main>, <header> et <footer>, et effectue des actions en fonction de sa valeur
 function toggleMainHeaderFooterAriaHidden(exceptionNode) {
     let mainElem = document.querySelector("main");
-    let headerElem = document.querySelector("header");
+    let headerElem = isMenuOpened ? document.querySelector("header .ds44-blocBandeau") : document.querySelector("header");
     let footerElem = document.querySelector("footer");
     let ariaHiddenValue = "false" == mainElem.getAttribute("aria-hidden") || isNullOrUndefined(mainElem.getAttribute("aria-hidden"));
+    isMenuOpened = false;
     if (ariaHiddenValue && isNullOrUndefined(exceptionNode)) {
         return;
     }
@@ -165,10 +168,12 @@ function disableAllTabIndexes(element) {
             });
 
             let displayMainNavMenu = function (element) {
-                document.querySelector("header#top").setAttribute("aria-hidden", "true");
+                document.querySelector("header#top .ds44-blocBandeau").setAttribute("aria-hidden", "true");
                 element.setAttribute("aria-expanded","true");
                 let navNivOne = document.querySelector('.ds44-overlay--navNiv1');
+                isMenuOpened = true; // indiquer qu'on ouvre le menu
                 toggleMainHeaderFooterAriaHidden(navNivOne);
+                isMenuOpened = true; // duplicata pour qu'une fermeture d'overlay se souvienne que le menu est ouvert
                 navNivOne.style.display = 'block';
                 timerShow(navNivOne, 0);
                 navNivOne.setAttribute("aria-hidden", "false");
