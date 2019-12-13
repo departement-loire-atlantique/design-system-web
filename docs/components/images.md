@@ -8,7 +8,8 @@ status: A valider
 
 variations:
 - title: Légende d'image
-  description: Utilisé pour ajouter un copyright sous une image.
+  description: Légende utilisée pour ajouter un copyright sous une image.
+  pattern: images/legende.html
 ---
 
 

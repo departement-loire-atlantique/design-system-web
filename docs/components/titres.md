@@ -13,6 +13,9 @@ variations:
 - title: Titre de page avec image
   description: Titre principal d'une page avec image d'en-tête
   pattern: titres/main-title.html
+- title: Titre article ou actu avec image
+  description: Titre d'une page article ou actualité avec image d'en-tête
+  pattern: titres/actu-title.html
 - title: Titre de page sans image
   description: Titre principal standard sans image d'en-tête
   pattern: titres/main-title-noImage.html

@@ -66,8 +66,13 @@
     }
   }
 
-  &.show .icon::before {
-    transform: rotate(180deg);
+  &.show {
+
+    font-weight: bolder;
+
+    .icon::before {
+      transform: rotate(180deg);
+    }
   }
 
 }

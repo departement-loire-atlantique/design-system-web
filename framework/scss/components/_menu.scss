@@ -13,6 +13,12 @@
 
 .ds44-navContainer {
     min-height: 100%;
+
+    > .ds44-inner-container {
+        overflow-y: auto;
+        max-height: 80vh;
+    }
+
 }
 
 .ds44-navListN2 {
@@ -163,6 +169,15 @@
         &::after {
             padding-bottom: 1rem!important;
         }
+    }
+
+    .ds44-menuBackLink {
+        margin-top: .5rem;
+        padding-right: $ds44-padding-xxlarge;
+    }
+
+    .ds44-menuLink {
+        margin-bottom: $ds44-medium-vmargin;
     }
 
 }
