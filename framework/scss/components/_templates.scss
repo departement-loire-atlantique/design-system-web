@@ -25,8 +25,8 @@
     background-color: $ds44-light-bg;
 }
 
-.ds44-contenuArticle {
-  margin: $ds44-components-vmargin auto;
+.ds44-contenuArticle, .ds44-contenuMedia {
+  margin: 0 auto $ds44-components-vmargin auto;
 }
 
 @media (max-width: $ds44-medium) {

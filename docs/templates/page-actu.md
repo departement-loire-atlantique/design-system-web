@@ -3,19 +3,19 @@ layout: component-detail
 group: templates
 permalink:
 
-title: Page article
+title: Page actualité
 description: Modèle de page basée sur le template "centré". 
-status: A valider
+status: Brouillon
 
 variations:
-- title: Page type article
-  pattern: page/LA__article.html
+- title: Page type actualité
+  pattern: page/LA__actu.html
 - title: Template centré
   pattern: templates/template-generique-centre.html
 ---
 ## Utilisation
 
-Page "article / actualité" utilisée pour afficher des contenus article ou actualité.
+Page actualité utilisée pour afficher des contenus actualité.
 
 
 ## Liste des références de la page
