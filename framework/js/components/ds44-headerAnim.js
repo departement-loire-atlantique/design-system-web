@@ -6,6 +6,10 @@
 		// Génère dynamiquement la largeur du bandeau en fonction de la page
 	    _ds44_headerAnim.refreshBandeauWidth = function() {
 	    	var bandeau = document.querySelector(".ds44-blocBandeau");
+	    	if (window.innerWidth <= 576) {
+	    		bandeau.style.width = 'calc(100% - 2rem)';
+	    		return;
+	    	}
 	    	var referenceComponent = document.querySelector("main .ds44-container-fluid");
 	    	var referenceStyle = window.getComputedStyle(referenceComponent);
 	    	var padding = parseFloat(referenceStyle.paddingLeft) + parseFloat(referenceStyle.paddingRight);
