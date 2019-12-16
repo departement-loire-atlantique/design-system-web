@@ -42,6 +42,29 @@
     }
 }
 
+.ds44-header {
+    position: fixed;
+    top: 0;
+    padding: 0;
+    z-index: 9999;
+    width: 100%;
+    background-color: $ds44-light;
+    visibility: visible;
+    opacity: 1;
+    transition: visibility $ds44-timing-standard ease, opacity $ds44-timing-standard ease, margin-top $ds44-timing-standard ease;
+
+    &.hidden {
+        margin-top: -100px;
+        opacity: 0;
+        visibility: hidden;
+        transition: visibility $ds44-timing-standard ease, opacity $ds44-timing-standard ease, margin-top $ds44-timing-standard ease;
+    }
+
+    .ds44-blocBandeau {
+        margin-left: calc(5.5% - 1px); /* Aligner sur le body */
+    }
+}
+
 /* Bandeau */
 
 .ds44-headerImg {
@@ -126,7 +149,9 @@
         min-height: 245px;
     }
 
-
+    .ds44-header .ds44-blocBandeau {
+        margin-left: 2%;
+    }
 }
 
 @media (max-width: $ds44-tiny - 1) {
