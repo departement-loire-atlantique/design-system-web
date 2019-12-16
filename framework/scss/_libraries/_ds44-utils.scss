@@ -338,6 +338,8 @@
   background-repeat: repeat-x;
 }
 
+
+
 // Background positions
 .ds44-bg-br {
   background-position: bottom -85px right -140px;
@@ -426,6 +428,12 @@
 
   .ds44-halfWidth {
     width: 100%;
+  }
+
+  .ds44-bgCircle {
+    background-size: 380px;
+    background-position-x: 180px;
+    background-position-y: bottom -180px;
   }
 
 }

@@ -1,7 +1,7 @@
 ---
 layout: component-detail
 group: components
-status: A valider
+status: Validé
 
 title: Fil d'Ariane
 description: Liste de liens de navigation

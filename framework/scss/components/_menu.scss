@@ -21,6 +21,10 @@
 
 }
 
+.ds44-rsHeaderContainer {
+    width: 100%;
+}
+
 .ds44-navListN2 {
     list-style: none;
     margin-top: $spacer-extra-large-plus;
@@ -38,6 +42,7 @@
     padding-left: 0;
     width: 100%;
     text-align: left;
+    text-decoration: none;
 
     .icon {
         position: absolute;
@@ -78,8 +83,10 @@
     left: 0;
 }
 
-.ds44-menuBackLink {
-    font: bold 1.75em/1 $ds44-font-family-headings; // 28px
+.ds44-menuBackLink {    
+    @include ds44-font-sizes(menuBackLinks);
+    font-weight: bold;
+    font-family: $ds44-font-family-headings;
     display: inline-block;
 }
 
@@ -159,6 +166,7 @@
 
     .ds44-rsHeadLink {
         margin: $spacer-small-plus; // 1.5rem;
+        padding-left: 0;
     }
     
     .ds44-container-menuBackLink {
