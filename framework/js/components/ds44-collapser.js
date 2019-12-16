@@ -172,7 +172,7 @@ function disableAllTabIndexes(element) {
 
             let displayMainNavMenu = function (element) {
                 document.querySelector("body").style.overflow = "hidden";
-                document.querySelector("header#top .ds44-blocBandeau").setAttribute("aria-hidden", "true");
+                document.querySelector("header#top > *:not(ds44-blocMenu)").setAttribute("aria-hidden", "true");
                 element.setAttribute("aria-expanded","true");
                 let navNivOne = document.querySelector('.ds44-overlay--navNiv1');
                 isMenuOpened = true; // indiquer qu'on ouvre le menu
@@ -233,9 +233,9 @@ function disableAllTabIndexes(element) {
                 currentElementOpened = element;
                 element.classList.toggle('show');
                 panel.style.maxHeight = (panel.style.maxHeight) ? null : panel.scrollHeight + 60 + "px";
-                element.setAttribute('aria-expanded', 'false');
-                currentElementOpened.setAttribute('aria-expanded', 'true');
+                element.setAttribute('aria-expanded', element.classList.contains("show"));
                 panel.setAttribute("aria-hidden", !element.classList.contains("show"));
+                panel.style.visibility = element.classList.contains("show") ? "visible" : "hidden";
             }
 
         };

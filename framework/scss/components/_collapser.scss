@@ -82,6 +82,7 @@
   transition: all $ds44-timing-slower ease-in-out;
   max-height: 0;
   overflow: hidden;
+  visibility: hidden;
 }
 
 .ds44-collapser_content--link,
