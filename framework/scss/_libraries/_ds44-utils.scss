@@ -406,12 +406,6 @@
 
 /* === Separators === */
 
-.ds44-navSep {
-  border: 1px solid $ds44-color-dark-text;
-  margin: $ds44-container-vmargin 0;
-  width: 100%;
-}
-
 .ds44-xl-gap {
   column-gap: 15rem;
 }
@@ -448,11 +442,6 @@
   .ds44-multiCol {
     column-count: 1;
   }
-
-  .ds44-navSep {
-    margin: $ds44-components-vmargin $ds44-margin-base;
-  }
-
 
 }
 

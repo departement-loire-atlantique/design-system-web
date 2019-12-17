@@ -8,11 +8,21 @@
     position: relative;
 }
 
+
 .ds44-inner-container {
-    margin: 0 auto;
-    padding: $ds44-container-vmargin $ds44-container-hmargin;
-    max-width:$ds44-max-size;
-    position: relative;
+  margin: 0 auto;
+  width: 100%;
+  position: relative;
+  padding: $ds44-container-vmargin $ds44-medium-vmargin;
+}
+
+@media (min-width: $ds44-extra-large) {
+
+  .ds44-inner-container {
+      padding: $ds44-container-vmargin $ds44-container-hmargin;
+      max-width: $ds44-max-size;
+  }
+
 }
 
 .ds44-container-fixed {
@@ -33,6 +43,16 @@
 
     .ds44-container-relmob {
         position: relative;
+    }
+
+    .ds44-navContainer {
+
+      padding-top: $ds44-container-vmargin;
+
+      .ds44-inner-container {
+        padding: 0 $ds44-medium-vmargin;
+        margin-top: 0;
+      }
     }
 
 }

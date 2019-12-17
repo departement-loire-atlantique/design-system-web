@@ -16,7 +16,7 @@
 
     > .ds44-inner-container {
         overflow-y: auto;
-        max-height: 80vh;
+        max-height: 70vh;
     }
 
 }
@@ -64,7 +64,7 @@
 .ds44-menuLink {
     @include ds44-font-sizes(menuLinks);
     text-decoration: none;
-    margin-bottom: $ds44-components-vmargin;
+    margin-bottom: $ds44-large-vmargin; // 20px
     display: block;
 }
 
@@ -134,6 +134,13 @@
     }
 }
 
+// Separator
+.ds44-navSep {
+  border: 1px solid $ds44-color-dark-text;
+  margin: $ds44-container-vmargin 0;
+  width: 100%;
+}
+
 
 
 // -------------
@@ -152,7 +159,7 @@
 //   MOBILE
 // ----------
 
-@media (max-width: $ds44-medium) {
+@media (max-width: $ds44-medium - .0625) {
   
     .ds44-navList {
         margin-left: $ds44-margin-base;
@@ -186,6 +193,20 @@
 
     .ds44-menuLink {
         margin-bottom: $ds44-medium-vmargin;
+    }
+  
+    .ds44-navList {
+        margin-left: 0;
+        margin-right: 0;
+    }
+
+    .ds44-navSep {
+      margin: $ds44-components-vmargin 0;
+    }
+    
+
+    li:first-child .ds44-menuBtn { 
+        margin-top: 0;
     }
 
 }
