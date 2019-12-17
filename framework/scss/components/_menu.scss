@@ -27,7 +27,7 @@
 
 .ds44-navListN2 {
     list-style: none;
-    margin-top: $spacer-extra-large-plus;
+    margin-top: 0;
     margin-bottom: $ds44-components-vmargin;
     column-rule: 2px solid #000000;
 }
@@ -36,7 +36,7 @@
     @include ds44-font-sizes(menuHeaders);
     font-family: $ds44-font-family-headings;
     font-weight: bold;
-    margin-top: $ds44-components-vmargin;
+    margin-bottom: $ds44-components-vmargin;
     position: relative;
     padding-right: 6rem;
     padding-left: 0;
@@ -150,7 +150,7 @@
 @media (min-width: $ds44-medium) and (max-width: $ds44-extra-large)  {
 
     .ds44-navListN2 {
-        margin: $ds44-container-vmargin $ds44-container-vmargin $ds44-components-vmargin $ds44-container-vmargin;
+        margin: 0 $ds44-container-vmargin $ds44-components-vmargin $ds44-container-vmargin;
     }
 
 }
@@ -164,11 +164,11 @@
     .ds44-navList {
         margin-left: $ds44-margin-base;
         margin-right: $ds44-margin-base;
-        margin-top: $ds44-margin-base;
+        margin-top: 0;
     }
 
     .ds44-navListN2 {
-        margin-top: 9rem;
+        margin-top: 5rem;
     }
 
     .ds44-rsHeadLink {
@@ -178,6 +178,7 @@
     
     .ds44-container-menuBackLink {
         margin: 1rem;
+        width: calc(100% - 90px);
     }
 
     .ds44-menuApplisTitle {    
@@ -187,8 +188,9 @@
     }
 
     .ds44-menuBackLink {
-        margin-top: .5rem;
-        padding-right: $ds44-padding-xxlarge;
+        margin-top: .8rem;
+        width: calc(100% - 65px);
+        line-height: 1.1;
     }
 
     .ds44-menuLink {
@@ -202,11 +204,14 @@
 
     .ds44-navSep {
       margin: $ds44-components-vmargin 0;
-    }
-    
+    }    
 
     li:first-child .ds44-menuBtn { 
         margin-top: 0;
+    }
+
+    .ds44-btn-backOverlay {
+        vertical-align: top;
     }
 
 }

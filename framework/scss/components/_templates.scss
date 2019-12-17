@@ -25,6 +25,16 @@
 
 }
 
+.ds44-navContainer {
+
+  padding-top: $ds44-components-vmargin*2;
+
+  .ds44-inner-container {
+    padding: 0 $ds44-medium-vmargin;
+    margin-top: 0;
+  }
+}
+
 .ds44-container-fixed {
     position: fixed;
     width: 100%;
@@ -45,14 +55,8 @@
         position: relative;
     }
 
-    .ds44-navContainer {
-
+    .ds44-navContainer {    
       padding-top: $ds44-container-vmargin;
-
-      .ds44-inner-container {
-        padding: 0 $ds44-medium-vmargin;
-        margin-top: 0;
-      }
     }
 
 }

@@ -445,6 +445,15 @@
 
 }
 
+
+@media (max-width: $ds44-large) { 
+
+  .ds44-xl-gap {
+    column-gap: 5rem;
+  }
+
+}
+
 @media (min-width: $ds44-medium) {
 
   .ds44-multiCol--3 {
