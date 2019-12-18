@@ -70,14 +70,11 @@ for(let element of allCarousel) {
   prevEl.addEventListener("click", function() {
     if(indexTuileActive > 1 || indexTuileActiveSwipper > 1) {
       arrSlide[indexTuileActive-1].setAttribute("tabindex", "-1");
-      console.log("PREVIOUS --------------------------------------- ");
       if(indexTuileActive > 1) {
         indexTuileActive--;
-        console.log("diminue index to : "+indexTuileActive);
       }
       if(indexTuileActiveSwipper > 1) {
         indexTuileActiveSwipper--;
-        console.log("diminue indexSwipper to : "+indexTuileActiveSwipper);
       }
       arrSlide[indexTuileActive-1].setAttribute("tabindex", "2");
       arrSlide[indexTuileActive-1].focus();
@@ -88,14 +85,11 @@ for(let element of allCarousel) {
   nextEl.addEventListener("click", function(event) {
     if(indexTuileActive < nbrSlide || indexTuileActiveSwipper < maxIndexTuileActiveSwipper) {
       arrSlide[indexTuileActive-1].setAttribute("tabindex", "-1");
-      console.log("NEXT ------------------------------------------- ");
       if(indexTuileActive < nbrSlide) {
         indexTuileActive++;
-        console.log("augmente index to : "+indexTuileActive);
       }
       if(indexTuileActiveSwipper < maxIndexTuileActiveSwipper) {
         indexTuileActiveSwipper++;
-        console.log("augmente indexSwipper to : "+indexTuileActiveSwipper);
       }
       arrSlide[indexTuileActive-1].setAttribute("tabindex", "2");
       arrSlide[indexTuileActive-1].focus();
@@ -146,7 +140,6 @@ for(let element of allCarousel) {
     button.addEventListener("keypress", button2 => function(event, button2){
       if(event.key === "Enter" || event.key === " " || event.key === "Spacebar") {
         event.preventDefault();
-        console.log("keypress into click");
         button2.click();
       }
     });
