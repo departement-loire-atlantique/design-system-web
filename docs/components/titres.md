@@ -38,7 +38,8 @@ Privilégier la première solution si possible, la balise de titre étant import
 
 ## Usage
 
-Le titre de la page est positionné dans le conteneur `ds44-pageHeaderContainer`, lui-même peut être positionné dans le corps de la page (`main`) ou dans le header, selon les nécessités d'intégration.
+Un titre de page avec image doit être positionné dans un conteneur `ds44-pageHeaderContainer`.
+Un titre sans image doit être positionné directement dans un conteneur vierge (type balise `<header>`).
 
 Si le bandeau de titre comporte une image, deux nouveaux conteneurs sont ajoutés :
 * Le conteneur de l'image : `ds44-pageHeaderContainer__pictureContainer`.
@@ -47,7 +48,7 @@ Dans ce cas, la couleur du titre doit être inversée grâce à la classe `ds44-
 
 Si le titre ne comporte aucune image, il peut être soit ferré à gauche, soit centré.
 * Pour le centrer, ajouter la classe `.txtcenter`.
-* Retirer la classe `ds44-text--colorInvert` positionnée sur la `<ul>` pour redonner aux liens une couleur sombre
+* Retirer la classe `ds44-text--colorInvert` positionnée sur la `<ul>` pour redonner aux liens une couleur sombre.
 
 
 ## Règles
