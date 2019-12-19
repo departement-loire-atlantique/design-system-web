@@ -1,6 +1,6 @@
 // Images global styles
 
-
+/* Ratio img générique tuile 62:41 */
 .ds44-container-imgRatio {
     width: 100%;
     height: 0;
@@ -8,7 +8,6 @@
     padding-top: 66.13%;
     position: relative;
 }
-
 .ds44-imgRatio {
     width: 100%;
     height: 100%;
@@ -17,6 +16,54 @@
     left: 0;
     display: block;
     object-fit: cover;
+}
+
+/* Ratio img tuile 1:1 */
+.ds44-container-imgRatio--carre {
+  padding-top: 100%;
+}
+
+/* Ratio img tuile 31:13 */
+.ds44-container-imgRatio--tuileMiseEnAvant {
+  padding-top: 41.93%;
+}
+
+/* legend block positionnement */
+.ds44-legendeContainer .ds44-blockAbsolute {
+  position: absolute;
+  z-index: 1;
+  width: 30%;
+}
+.ds44-legendeContainer .ds44-blockAbsolute--br {
+  bottom: 0;
+  right: 0;
+}
+.ds44-legendeContainer .ds44-blockAbsolute--bl {
+  bottom: 0;
+  left: 0;
+}
+.ds44-legendeContainer .ds44-blockAbsolute--tl {
+  top: 0;
+  left: 0;
+}
+.ds44-legendeContainer .ds44-blockAbsolute--tr {
+  top: 0;
+  right: 0;
+}
+
+/* Ratio img profil */
+.ds44-container-imgRatio--profil {
+  padding-top: 0;
+  width: 110px;
+  height: 110px;
+}
+.ds44-imgRatio--profil {
+  border-radius: 50%;
+}
+
+/* Ratio img A4 99:70 */
+.ds44-container-imgRatio--A4 {
+  padding-top: 141.43%;
 }
 
 .ds44-img50 {
@@ -42,4 +89,29 @@ figure {
     color: $ds44-color-inverse;
     padding: 0 .5rem;
     z-index: 15;
+}
+
+/* =======
+  MEDIA QUERIES
+  === */
+@media (max-width: 64em) {
+  .ds44-legendeContainer .ds44-blockAbsolute {
+    width: 50%;
+  }
+}
+@media (max-width: 48em) {
+  .ds44-legendeContainer .ds44-blockAbsolute {
+    position: relative;
+    z-index: 1;
+    width: 100%;
+  }
+}
+@media (max-width: 36em) {
+  .ds44-legendeContainer.ds44-container-imgRatio {
+    width: 100%;
+    height: 0;
+    display: block;
+    padding-top: 66.13%;
+    position: relative;
+  }
 }
