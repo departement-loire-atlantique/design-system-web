@@ -13,7 +13,7 @@ for(let element of allCarousel) {
   const wrapper = element.getElementsByClassName("swiper-wrapper")[0];
   const nbrMaxSlide = wrapper.classList.contains("grid-3-small-1") ? 3 : 4;
 
-  allSwiper.push(new Swiper (swiper, {
+  var swiperObj = new Swiper (swiper, {
     direction: 'horizontal',
     spaceBetween: 10,
     navigation: {
@@ -33,7 +33,9 @@ for(let element of allCarousel) {
         slidesPerView: nbrMaxSlide,
       },
     }
-  }));
+  });
+
+  allSwiper.push(swiperObj);
 
   const prevSlideMessageStr = 'Voir le contenu précédent';
   const nextSlideMessageStr = 'Voir le contenu suivant';
@@ -51,49 +53,39 @@ for(let element of allCarousel) {
   }
   const titleCarrousel = title ? title.innerText : "Carrousel n°"+i;
 
-  var indexTuileActive = 1;
-  var indexTuileActiveSwipper = 1;
-  const maxIndexTuileActiveSwipper = nbrSlide+1 - nbrMaxSlide;
+  var indexTuileActive = 0;
 
   disableAllTabIndexes(element);
   prevEl.setAttribute("tabindex", "1");
   nextEl.setAttribute("tabindex", "3");
-  arrSlide[indexTuileActive-1].setAttribute("tabindex", "2");
 
   var updatePrevAndNextSlideMessage = function() {
-    prevEl.setAttribute("title", prevSlideMessageStr+" "+titleCarrousel+" - "+indexTuileActive+"/"+nbrSlide);
-    nextEl.setAttribute("title", nextSlideMessageStr+" "+titleCarrousel+" - "+indexTuileActive+"/"+nbrSlide);
+    prevEl.setAttribute("title", prevSlideMessageStr+" "+titleCarrousel+" - "+(indexTuileActive+1)+"/"+nbrSlide);
+    nextEl.setAttribute("title", nextSlideMessageStr+" "+titleCarrousel+" - "+(indexTuileActive+1)+"/"+nbrSlide);
   };
 
   updatePrevAndNextSlideMessage();
 
+  var titreTuileActive = arrSlide[indexTuileActive].querySelector(".ds44-card__title a[href]:not([disabled])");
+  titreTuileActive.setAttribute("tabindex", "2");
+
   prevEl.addEventListener("click", function() {
-    if(indexTuileActive > 1 || indexTuileActiveSwipper > 1) {
-      arrSlide[indexTuileActive-1].setAttribute("tabindex", "-1");
-      if(indexTuileActive > 1) {
-        indexTuileActive--;
-      }
-      if(indexTuileActiveSwipper > 1) {
-        indexTuileActiveSwipper--;
-      }
-      arrSlide[indexTuileActive-1].setAttribute("tabindex", "2");
-      arrSlide[indexTuileActive-1].focus();
-      arrSlide[indexTuileActive-1].select();
+    if(indexTuileActive > 0) {
+      titreTuileActive.setAttribute("tabindex", "-1");
+      indexTuileActive--;
+      titreTuileActive = arrSlide[indexTuileActive].querySelector(".ds44-card__title a[href]:not([disabled])");
+      titreTuileActive.setAttribute("tabindex", "2");
+      titreTuileActive.focus();
     }
   }, false);
 
   nextEl.addEventListener("click", function(event) {
-    if(indexTuileActive < nbrSlide || indexTuileActiveSwipper < maxIndexTuileActiveSwipper) {
-      arrSlide[indexTuileActive-1].setAttribute("tabindex", "-1");
-      if(indexTuileActive < nbrSlide) {
-        indexTuileActive++;
-      }
-      if(indexTuileActiveSwipper < maxIndexTuileActiveSwipper) {
-        indexTuileActiveSwipper++;
-      }
-      arrSlide[indexTuileActive-1].setAttribute("tabindex", "2");
-      arrSlide[indexTuileActive-1].focus();
-      arrSlide[indexTuileActive-1].select();
+    if(indexTuileActive < (nbrSlide-1)) {
+      titreTuileActive.setAttribute("tabindex", "-1");
+      indexTuileActive++;
+      titreTuileActive = arrSlide[indexTuileActive].querySelector(".ds44-card__title a[href]:not([disabled])");
+      titreTuileActive.setAttribute("tabindex", "2");
+      titreTuileActive.focus();
     }
   }, false);
 
@@ -102,23 +94,24 @@ for(let element of allCarousel) {
   }
 
   var updateVisibilityPrevAndNext = function(){
-    if(indexTuileActiveSwipper == 1 && indexTuileActive > 1) {
+    if(swiperObj.realIndex == 0 && indexTuileActive > 0) {
       //cas ou la fleche prev n'est pas visible de la meme maniere pour les utilisateurs voyants et malvoyants
       prevEl.classList.remove("swiper-button-disabled");
       prevEl.classList.add("swiper-button-hidden");
     } else {
       prevEl.classList.remove("swiper-button-hidden");
-      if(indexTuileActive == 1) {
+      if(indexTuileActive == 0) {
         prevEl.classList.add("swiper-button-disabled");
       }
     }
-    if(indexTuileActiveSwipper == maxIndexTuileActiveSwipper && indexTuileActive < nbrSlide) {
+    var realIndexMax = nbrSlide > nbrMaxSlide ? nbrSlide-nbrMaxSlide : nbrSlide-1;
+    if(swiperObj.realIndex == realIndexMax && indexTuileActive < (nbrSlide-1)) {
       //cas ou la fleche next n'est pas visible de la meme maniere pour les utilisateurs voyants et malvoyants
       nextEl.classList.remove("swiper-button-disabled");
       nextEl.classList.add("swiper-button-hidden");
     } else {
       nextEl.classList.remove("swiper-button-hidden");
-      if(indexTuileActive == nbrSlide) {
+      if(indexTuileActive == (nbrSlide-1)) {
         nextEl.classList.add("swiper-button-disabled");
       }
     }
@@ -137,13 +130,22 @@ for(let element of allCarousel) {
       }, 5);
     }, false);
 
-    button.addEventListener("keypress", button2 => function(event, button2){
-      if(event.key === "Enter" || event.key === " " || event.key === "Spacebar") {
-        event.preventDefault();
-        button2.click();
-      }
-    });
+
   }
+
+  prevEl.addEventListener("keypress", function(event){
+    if(event.key === "Enter" || event.key === " " || event.key === "Spacebar") {
+      event.preventDefault();
+      prevEl.click();
+    }
+  });
+
+  nextEl.addEventListener("keypress", function(event){
+    if(event.key === "Enter" || event.key === " " || event.key === "Spacebar") {
+      event.preventDefault();
+      nextEl.click();
+    }
+  });
 
 }
 
