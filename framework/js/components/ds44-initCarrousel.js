@@ -11,7 +11,7 @@ for(let element of allCarousel) {
   const arrSlide = swiper.getElementsByClassName("swiper-slide")
   const nbrSlide = arrSlide.length;
   const wrapper = element.getElementsByClassName("swiper-wrapper")[0];
-  const nbrMaxSlide = wrapper.classList.contains("grid-3-small-1") ? 3 : 4;
+  var nbrMaxSlide = wrapper.classList.contains("grid-3-small-1") ? 3 : 4;
 
   var swiperObj = new Swiper (swiper, {
     direction: 'horizontal',
@@ -26,7 +26,6 @@ for(let element of allCarousel) {
     },
     breakpoints: {
       576: {
-        loop: nbrSlide > 1,
         slidesPerView: 1,
       },
       768: {
@@ -104,6 +103,7 @@ for(let element of allCarousel) {
         prevEl.classList.add("swiper-button-disabled");
       }
     }
+    if(window.innerWidth < 576) nbrMaxSlide = 1;
     var realIndexMax = nbrSlide > nbrMaxSlide ? nbrSlide-nbrMaxSlide : nbrSlide-1;
     if(swiperObj.realIndex == realIndexMax && indexTuileActive < (nbrSlide-1)) {
       //cas ou la fleche next n'est pas visible de la meme maniere pour les utilisateurs voyants et malvoyants
