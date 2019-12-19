@@ -3,10 +3,6 @@
 /* ---------------------------------------- */
 
 
-h2 + p {
-    margin-top: $ds44-medium-vmargin;
-}
-
-.ds44-contenuArticle h2 + p {
-    margin-top: $ds44-components-vmargin;
+.ds44-contenuArticle h2 {
+    margin-bottom: $ds44-components-vmargin;
 }

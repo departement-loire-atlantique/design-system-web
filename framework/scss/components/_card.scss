@@ -11,7 +11,7 @@
 
     &:focus,
     &:hover,
-    &:active { 
+    &:active {
         box-shadow: $ds44-boxShadow;
 
         .ds44-cardArrow {
@@ -36,10 +36,10 @@
 .ds44-card__section {
     padding:  $ds44-padding-medium $ds44-padding-box;
 }
-.ds44-card__globalLink { 
+.ds44-card__globalLink {
     text-decoration: none;
     color: #000000;
-    
+
     &:focus,
     &:hover,
     &:active {
@@ -72,12 +72,8 @@
     padding:  $ds44-padding-small $ds44-padding-xlarge;
 }
 
-.ds44-card--horizontal {
-
-    .ds44-cardPicture {
-        min-width: 38%;
-    }
-
+.ds44-card__section--horizontal--img {
+  width: 38%;
 }
 
 // Calendar card
@@ -125,11 +121,11 @@
     }
 
     .ds44-card--horizontal {
-    
+
         .ds44-card__img {
             min-height: 100%;
         }
-    
+
     }
 
     .ds44-card__section--horizontal {
@@ -144,6 +140,6 @@
 
 @media (max-width: $ds44-large) {
 
-    
+
 
 }
