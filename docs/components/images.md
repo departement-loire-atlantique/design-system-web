@@ -8,12 +8,14 @@ status: A valider
 
 variations:
 - title: Images sous différents ratios
-  description: Images sous différents ratios qui s'adaptent à leur conteneur, peu importe le format d'upload.
+  description: Images sous différents ratios qui s'adaptent à leur conteneur peu importe le format d'upload.
   pattern: images/ratio.html
-- title: Légende d'image avec balise figure
+
+- title: Légende image avec balise figure
   description: Légende utilisée pour ajouter un copyright sous une image.
   pattern: images/legende.html
-- title: Légende d'image avec balise picture
+
+- title: Légende image avec balise picture
   description: Légende utilisée pour ajouter un copyright sous une image.
   pattern: images/legende2.html
 ---
