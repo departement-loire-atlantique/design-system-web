@@ -28,25 +28,40 @@ function performCloseOverlays(querySelector){
     document.querySelector("body").style.overflow = "initial";
     document.querySelector("header#top").setAttribute("aria-hidden", "false");
     let overlays = document.querySelectorAll(querySelector);
+    var foundShownOverlay = false;
     overlays.forEach((overlay)=> {
-        if (overlay.classList.contains("show")) {
-            if ("nav1" == overlay.id) {
-                document.querySelector(".ds44-btn--menu").focus();
-            } else if (!isNullOrUndefined(overlay.closest("#nav1"))) {
-                document.querySelector(".ds44-btn--menu").focus();
-            } else {
-                overlay.previousElementSibling.focus();
+        if (!foundShownOverlay) {
+            if (overlay.classList.contains("show")) {
+                if ("nav1" == overlay.id) {
+                    document.querySelector(".ds44-btn--menu").focus();
+                    foundShownOverlay = true;
+                } else if (!isNullOrUndefined(overlay.closest("#nav1"))) {
+                    document.querySelector(".ds44-btn--menu").focus();
+                    foundShownOverlay = true;
+                } else {
+                    overlay.previousElementSibling.focus();
+                    foundShownOverlay = true;
+                }
             }
+            overlay.classList.remove('show');
+            overlay.setAttribute("aria-hidden", "true");
+            // Ré-afficher tous les boutons "fermer"
+            const allCloseButtons = document.querySelectorAll('.ds44-btnOverlay--closeOverlay');
+            allCloseButtons.forEach((element) => {
+              element.style.display = "block";
+            });                                      
+            timerDisplayNone(overlay,500);
         }
-        overlay.classList.remove('show');
-        overlay.setAttribute("aria-hidden", "true");
-        // Ré-afficher tous les boutons "fermer"
-        const allCloseButtons = document.querySelectorAll('.ds44-btnOverlay--closeOverlay');
-        allCloseButtons.forEach((element) => {
-          element.style.display = "block";
-        });                                      
-        timerDisplayNone(overlay,500);
     });
+    if (!foundShownOverlay) {
+        // Rien n'a été trouvé : on focus sur l'élément "bouton" le plus proche de l'élément courant
+        let activeElement = document.activeElement;
+        if (document.querySelector("#menu").contains(activeElement)) {
+            document.querySelector("button.ds44-btn--menu").focus();
+        } else {
+            activeElement.closest("section").parent().querySelector("button.ds44-stdBtn").focus();
+        }
+    }
 
     let overlayBtns = document.querySelectorAll('.ds44-btn--menu, .ds44-overlay--navNiv1 .ds44-ds44-menuBtn');
     overlayBtns.forEach((btn)=> {
@@ -80,12 +95,10 @@ function trapFocus(element) {
 }
 
 // Effectue les actions liées à la méthode toggleMainHeaderFooterAriaHidden
-function performToggleAriaHidden(element, ariaHiddenValue, exceptionNode) {
-    element.setAttribute("aria-hidden", ariaHiddenValue);
-    var focusableEls = element.querySelectorAll('a[href]:not([disabled]), button:not([disabled]), textarea:not([disabled]), input[type="text"]:not([disabled]), input[type="radio"]:not([disabled]), input[type="checkbox"]:not([disabled]), select:not([disabled])');
+function performToggleTabindex(exceptionNode, ariaHiddenValue) {
+    var focusableEls = document.querySelectorAll('a[href]:not([disabled]), button:not([disabled]), textarea:not([disabled]), input[type="text"]:not([disabled]), input[type="radio"]:not([disabled]), input[type="checkbox"]:not([disabled]), select:not([disabled])');
     if (ariaHiddenValue) {
-        // le main est caché, on ajoute tabindex=-1 sur le main et ses sous-éléments interactifs
-        element.setAttribute("tabindex", "-1");
+        // on ajoute tabindex=-1 sur le main et ses sous-éléments interactifs
         focusableEls.forEach((itFocusElem) => {
             if (!exceptionNode.contains(itFocusElem)) { // on ignore les éléments du bloc à exclure
                 itFocusElem.setAttribute("oldtabindex", itFocusElem.getAttribute("tabindex"));
@@ -94,8 +107,7 @@ function performToggleAriaHidden(element, ariaHiddenValue, exceptionNode) {
             }
         });
     } else {
-        // le main est affiché, on retire l'attribut tabindex sur le main et ses sous-éléments interactifs
-        element.removeAttribute("tabindex");
+        // on retire l'attribut tabindex sur le main et ses sous-éléments interactifs
         focusableEls.forEach((itFocusElem) => {
             if (isNullOrUndefined(itFocusElem.getAttribute("oldtabindex"))) {
                 itFocusElem.removeAttribute("oldtabindex");
@@ -111,7 +123,8 @@ function performToggleAriaHidden(element, ariaHiddenValue, exceptionNode) {
 
 var isMenuOpened = false;
 
-// Modifie la valeur de l'attribut "aria-hidden" de <main>, <header> et <footer>, et effectue des actions en fonction de sa valeur
+// Modifie la valeur de l'attribut "aria-hidden" de <main>, <header> et <footer>,
+// puis applique une modification de tabindex en fonction de la modification
 function toggleMainHeaderFooterAriaHidden(exceptionNode) {
     let mainElem = document.querySelector("main");
     let headerElem = isMenuOpened ? document.querySelector("header .ds44-blocBandeau") : document.querySelector("header");
@@ -122,14 +135,15 @@ function toggleMainHeaderFooterAriaHidden(exceptionNode) {
         return;
     }
     if (!isNullOrUndefined(mainElem)) {
-        performToggleAriaHidden(mainElem, ariaHiddenValue, exceptionNode);
+        mainElem.setAttribute("aria-hidden", ariaHiddenValue);
     }
     if (!isNullOrUndefined(headerElem)) {
-        performToggleAriaHidden(headerElem, ariaHiddenValue, exceptionNode);
+        headerElem.setAttribute("aria-hidden", ariaHiddenValue);
     }
     if (!isNullOrUndefined(footerElem)) {
-        performToggleAriaHidden(footerElem, ariaHiddenValue, exceptionNode);
+        footerElem.setAttribute("aria-hidden", ariaHiddenValue);
     }
+    performToggleTabindex(exceptionNode, ariaHiddenValue);
 }
 
 // Modifie la valeur 'aria-hidden' des éléments section#menu section.ds44-overlay en 'true' sauf pour l'élément en paramètre
@@ -335,6 +349,8 @@ function disableAllTabIndexes(element) {
                     if (!isNullOrUndefined(modal)) {
                         toggleMainHeaderFooterAriaHidden(modal);
                         document.querySelector("main").setAttribute("aria-hidden","true");
+                        document.querySelector("body").style.overflow = "hidden";
+                        ds44_headerAnim.refreshBandeauWidth();
                         _getFocusOnPopup(modal);
                         modal.style.display = "flex";
                         timerShow(modal, 1);
@@ -377,6 +393,8 @@ function disableAllTabIndexes(element) {
             let _closePopup = function () {
                 const currentModal = document.querySelector('.show[role="dialog"]');
                 if (currentModal) {
+                    document.querySelector("body").style.overflow = null;
+                    ds44_headerAnim.refreshBandeauWidth();
                     toggleMainHeaderFooterAriaHidden(null);
                     currentModal.classList.toggle('show');
                     timerDisplayNone(currentModal, 300);
@@ -599,9 +617,15 @@ function disableAllTabIndexes(element) {
                 allInputs.forEach((itInput) => {
                     itInput.addEventListener("invalid", function() {
                         itInput.setAttribute("aria-invalid", "true");
+                        if (itInput.tagName === 'SELECT') {
+                            itInput.setAttribute("aria-label", textLabels.invalid_input_select); 
+                        } else {
+                           itInput.setAttribute("aria-label", textLabels.invalid_input_text); 
+                       }
                     });
                     itInput.addEventListener("blur", function() {
                         itInput.setAttribute("aria-invalid", "false");
+                        itInput.removeAttribute("aria-label");
                         itInput.checkValidity();
                     });
                 });
