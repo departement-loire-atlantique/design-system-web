@@ -73,11 +73,15 @@ h2, .h2-like {
   font-weight: $weight-bold;
   padding: 0 1.5rem;
   line-height: 1.2;
-  display: inline-block;
-  /* Permalink - use to edit and share this gradient: https://colorzilla.com/gradient-editor/#ffffff+40,99e6d1+40,99e6d1+65,ffffff+65 */
-  background: $ds44-contextual-color; /* Old browsers */
   background: linear-gradient(to bottom, rgba(255,255,255,0) 55%,$ds44-contextual-color 55%);
-  margin-bottom: $ds44-components-vmargin; // 30px
+  display: inline;
+
+  // Any element after the title gains margin top
+  & + * {
+    margin-top: $ds44-components-vmargin;
+  }
+  
+
 }
 
 h3, .h3-like {
@@ -341,24 +345,4 @@ caption {
   margin-bottom: $ds44-medium-vmargin;
   text-align: left;
   font-weight: normal;
-}
-
-
-
-
-/* =======
-  GENERIC MEDIA QUERIES
-  === */
-
-
-@media (max-width: $ds44-small) {
-
-  .ds44-titleContainer {
-    min-height: 250px;
-
-    .ds44-alphaGradient {
-      padding: 1rem;
-    }
-  }
-
 }

@@ -5,7 +5,7 @@ permalink:
 
 title: Page actualité
 description: Modèle de page basée sur le template "centré". 
-status: Brouillon
+status: A valider
 
 variations:
 - title: Page type actualité
@@ -16,6 +16,9 @@ variations:
 ## Utilisation
 
 Page actualité utilisée pour afficher des contenus actualité.
+
+## Notes d'accessibilité
+
 
 
 ## Liste des références de la page

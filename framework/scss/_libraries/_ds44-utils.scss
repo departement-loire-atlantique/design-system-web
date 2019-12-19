@@ -145,8 +145,8 @@
 .ds44-flex-mauto {
   margin: auto!important;
 }
-.ds44-halfWidth {
-  width: 50%;
+.ds44-frw {
+  flex-direction: row-reverse;
 }
 
 /* Element properties */
@@ -429,10 +429,6 @@
   === */
 
 @media (max-width: $ds44-small) {
-
-  .ds44-halfWidth {
-    width: 100%;
-  }
 
   .ds44-bgCircle {
     background-size: 380px;

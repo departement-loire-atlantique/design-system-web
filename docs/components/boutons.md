@@ -41,7 +41,7 @@ Utiliser le bouton contextuel avec la classe `ds44-btnStd--contextual` pour cré
 
 ## Icon usage
 
-* Les glyphes-icônes s'utilisent dans des conteneurs de type `<i class="icon" aria-hidden="true"></i>`. L'attribut aria-hidden ne doit être placé que sur les icônes de décoration, pas sur les icônes contenant un texte (souvent dissimulé par une classe `visually-hidden`. Exemple : `<a href="#" class="ds44-rsFootLink" title="Facebook"><i class="icon icon-facebook"><span class="visually-hidden">Facebook</span></i></a>`)
+* Les glyphes-icônes s'utilisent dans des conteneurs de type `<i class="icon" aria-hidden="true"></i>`. L'attribut aria-hidden ne doit être placé que sur les icônes de décoration, pas sur les icônes contenant un texte (souvent dissimulé par une classe `visually-hidden`. Exemple : `<a href="#" class="ds44-rsFootLink" title="Facebook"><i class="icon icon-facebook" aria-hidden="true"><span class="visually-hidden">Facebook</span></i></a>`)
 * Chaque glyphe possède un code appelé par un style. Exemple : la croix est appelée par la classe `icon-cross`. Se référer à la page de preview des icônes pour les noms des classes.
 * Les glyphes sont déclinés en différentes tailles, relatives ou fixes (se référer à la documentation des icônes).
 * pour des questions d'alignement vertical, dans les boutons contenant des glyphes et du texte, le bloc de texte doit être placé dans un conteur de type `<span class="ds44-btnText>Texte du bouton</span>`.
