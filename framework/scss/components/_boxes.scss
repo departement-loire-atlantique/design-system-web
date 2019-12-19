@@ -31,6 +31,7 @@
     background: transparent;
     padding: 0;
     margin-bottom: 0;
+    line-height: 1.2em;
 }
 
 .ds44-innerBoxContainer {
@@ -78,7 +79,7 @@
     width: calc(50% - 15px);
     position: relative;
     align-self: flex-end;
-    
+
     &--horizontal {
         width: calc(20% - 15px);
     }
@@ -113,7 +114,7 @@
 
     .ds44-boxPushContent {
         width: 100%;
-        
+
         &--fluid {
             flex-direction: column;
             text-align: center;
@@ -121,7 +122,7 @@
             p {
                 max-width: 100%;
                 padding: $ds44-padding-box;
-    
+
                 &[role="heading"] {
                     max-width: 100%;
                 }
@@ -131,12 +132,12 @@
     }
 
     .ds44-boxPushPic {
-        
+
         &--horizontal {
             width: 100%;
             text-align: center;
         }
-    
+
     }
 
 }
@@ -154,8 +155,8 @@
     .ds44-boxPushPic {
         width: 100%;
     }
-    
-  
+
+
 }
 
 
