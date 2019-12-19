@@ -60,6 +60,7 @@ h1, .h1-like {
   @if variable_exists(ds44-font-family-headings) and $ds44-font-family-headings != $ds44-font-family-base{
     font-family: $ds44-font-family-headings;
   }
+  background: transparent;
   font-weight: $weight-medium;
   line-height: 1;
   padding: 0;
@@ -80,7 +81,6 @@ h2, .h2-like {
   & + * {
     margin-top: $ds44-components-vmargin;
   }
-  
 
 }
 
@@ -185,13 +185,8 @@ ul {
   padding-left: 0;
 }
 
-ol {
-  list-style-position: inside;
-  padding-left: 0;
-}
-
 ol > li {
-  margin-bottom: $ds44-components-vmargin;
+  margin-bottom: $ds44-medium-vmargin;
 }
 ol > li::marker {
   font-weight: bold;

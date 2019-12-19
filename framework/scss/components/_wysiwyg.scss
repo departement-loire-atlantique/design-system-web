@@ -6,3 +6,46 @@
 .ds44-contenuArticle h2 + * {
     margin-top: $ds44-components-vmargin;
 }
+
+blockquote {
+
+    border-left: 1px solid $ds44-contextual-color;
+    padding: 0 $ds44-padding-xxlarge;
+    margin-bottom: $ds44-medium-vmargin;
+    
+    &::after, &::before {
+        @include ds44-font-sizes(quotes);
+        color: $ds44-contextual-color;
+        font-family: $ds44-font-family-headings;
+        font-weight: bold;
+        position: absolute;
+        height: .4em;
+        line-height: .9;
+    }
+
+    &::before {
+        left: 1.5rem;
+        top: .5rem;
+    }
+
+    &::after {
+        content: "\201D";
+        right: 1.5rem;
+        bottom: .5rem;
+    }
+
+}
+
+.ds44-wsg-encadreContour {
+    padding: $ds44-padding-xlarge;
+    border: 1px solid $ds44-contextual-color;
+}
+
+.ds44-wsg-encadreApplat {
+    padding: $ds44-padding-xlarge;
+    background-color: $ds44-contextual-color;
+}
+
+.ds44-wsg-smallText {    
+  @include ds44-font-sizes(smallText);
+}
