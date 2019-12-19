@@ -49,7 +49,7 @@ function performCloseOverlays(querySelector){
             const allCloseButtons = document.querySelectorAll('.ds44-btnOverlay--closeOverlay');
             allCloseButtons.forEach((element) => {
               element.style.display = "block";
-            });                                      
+            });
             timerDisplayNone(overlay,500);
         }
     });
@@ -88,7 +88,7 @@ function hideCloseButtons(exceptionElem) {
 // La seconde valeur en option permet de retirer le focus sur un autre élément
 function trapFocus(element) {
     var focusableEls = element.querySelectorAll('a[href]:not([disabled]), button:not([disabled]), textarea:not([disabled]), input[type="text"]:not([disabled]), input[type="radio"]:not([disabled]), input[type="checkbox"]:not([disabled]), select:not([disabled])');
-    
+
     focusableEls.forEach((itFocusElem) => {
         itFocusElem.removeAttribute("tabindex");
     });
@@ -114,7 +114,7 @@ function performToggleTabindex(exceptionNode, ariaHiddenValue) {
                 itFocusElem.removeAttribute("tabindex");
             } else {
                 itFocusElem.setAttribute("tabindex", itFocusElem.getAttribute("oldtabindex"));
-                itFocusElem.removeAttribute("oldtabindex"); 
+                itFocusElem.removeAttribute("oldtabindex");
             }
             itFocusElem.removeAttribute("aria-hidden");
         });
@@ -219,7 +219,7 @@ function disableAllTabIndexes(element) {
                 let KEYCODE_TAB = 9;
                 var isTabPressed = (e.key === 'Tab' || e.keyCode === KEYCODE_TAB);
 
-                if (!isTabPressed) { 
+                if (!isTabPressed) {
                     return;
                 }
                 var elemParent = e.target.closest('.ds44-collapser_element');
@@ -241,7 +241,7 @@ function disableAllTabIndexes(element) {
                     showCurrentBlocExpandable(element);
                 })
             });
-            
+
             let showCurrentBlocExpandable = function (element) {
                 const panel = element.nextElementSibling;
                 currentElementOpened = element;
@@ -271,7 +271,7 @@ function disableAllTabIndexes(element) {
                 navNivTwo.style.display = 'block';
                 timerShow(navNivTwo, 0);
                 navNivTwo.setAttribute("aria-hidden", "false");
-                hideCloseButtons(navNivTwo.querySelector('.ds44-btnOverlay--closeOverlay'));                                                                    
+                hideCloseButtons(navNivTwo.querySelector('.ds44-btnOverlay--closeOverlay'));
                 navNivTwo.querySelector('.ds44-btn-backOverlay').focus();
                 // ajouter l'élément de piège focus sur le menu nv2
                 disableAllTabIndexes(document.querySelector("header"));
@@ -378,7 +378,7 @@ function disableAllTabIndexes(element) {
             window.document.addEventListener("keyup", (e) => {
                 if (e.key === "Escape") {
                     _closePopup();
-                    
+
                     const elementsShow = document.querySelectorAll('.show');
                     elementsShow.forEach((elementShow) => {
                         console.info('debug ' + elementsShow);
@@ -592,7 +592,7 @@ function disableAllTabIndexes(element) {
                                 timerClass(document.querySelector("#" + itOnglet.getAttribute("aria-controls")), "opacity", "0", 150);
                                 timerDisplayNone(document.querySelector("#" + itOnglet.getAttribute("aria-controls")), 150);
                             }
-                            
+
                         });
                     }
                 }
@@ -618,9 +618,9 @@ function disableAllTabIndexes(element) {
                     itInput.addEventListener("invalid", function() {
                         itInput.setAttribute("aria-invalid", "true");
                         if (itInput.tagName === 'SELECT') {
-                            itInput.setAttribute("aria-label", textLabels.invalid_input_select); 
+                            itInput.setAttribute("aria-label", textLabels.invalid_input_select);
                         } else {
-                           itInput.setAttribute("aria-label", textLabels.invalid_input_text); 
+                           itInput.setAttribute("aria-label", textLabels.invalid_input_text);
                        }
                     });
                     itInput.addEventListener("blur", function() {
@@ -689,6 +689,7 @@ ds44.expandTuileLink();
 // sert pour gérer les liens autour des tuiles
 
 ds44.closeOverlays(".ds44-btnOverlay--closeOverlay");
+ds44.ssMenuReturn('#navApplis .ds44-btnOverlay--closeOverlay');
 // ajoute un listener aux boutons qui ferment les overlays
 
 const classAnimInputForm = "ds44-moveLabel";
