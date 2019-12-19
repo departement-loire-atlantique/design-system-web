@@ -48,3 +48,9 @@ blockquote {
 .ds44-wsg-smallText {    
   @include ds44-font-sizes(smallText);
 }
+
+.ds44-wsg-exergue {
+    font-weight: bold;
+    background-color: $ds44-contextual-color;
+    padding: .5rem 1rem;
+}

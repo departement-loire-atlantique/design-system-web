@@ -64,6 +64,7 @@ h1, .h1-like {
   font-weight: $weight-medium;
   line-height: 1;
   padding: 0;
+  display: block;
 }
 
 h2, .h2-like {
@@ -94,6 +95,7 @@ h3, .h3-like {
   line-height: 1.2;
   padding: 0;
   margin-bottom: $ds44-small-vmargin; // 1rem
+  display: block;
 }
 
 h4, .h4-like {
@@ -104,6 +106,7 @@ h4, .h4-like {
   background: transparent;
   font-weight: $weight-medium;
   padding: 0;
+  display: block;
 }
 
 h5, .h5-like {
@@ -114,6 +117,7 @@ h5, .h5-like {
   background: transparent;
   font-weight: $weight-medium;
   padding: 0;
+  display: block;
 }
 
 h6, .h6-like {
@@ -124,6 +128,7 @@ h6, .h6-like {
   background: transparent;
   font-weight: $weight-medium;
   padding: 0;
+  display: block;
 }
 
 [role="heading"] {

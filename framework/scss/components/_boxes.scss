@@ -43,8 +43,13 @@
 }
 
 .ds44-txtExergue {
-    font-size: 1.5em; // 24px
+    @include ds44-font-sizes(bigText);
     display: block;
+}
+
+.ds44-borderContainer {
+    border: 1px solid $ds44-contextual-color;
+    padding: $ds44-padding-xlarge;
 }
 
 // Pushs
