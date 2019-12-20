@@ -22,7 +22,7 @@
 			var bandeau = document.querySelector(".ds44-blocBandeau");
 			if (bandeau == undefined) return;
 			var body = document.querySelector("body");
-			body.style.paddingTop = (bandeau.offsetHeight + 15) + "px";
+			body.style.paddingTop = (bandeau.offsetHeight) + "px";
 	    }
 
 	    // Sur le focus au clavier d'un élément caché sous le header,
