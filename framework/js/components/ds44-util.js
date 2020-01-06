@@ -15,3 +15,40 @@ function getSiblings(elem) {
 	return siblings;
 
 };
+
+// Détermine si une valeur est null ou undefined
+function isNullOrUndefined(el) {
+    return el == null || el == undefined || "null" == el || "undefined" == el;
+}
+
+// Ajoute la classe "show" sur un élément après un timer
+function timerShow(elem, timer) {
+    setTimeout(function() {
+        elem.classList.add('show');
+    }, timer);
+}
+
+// Ajoute le style css "display: none" sur un élément après un timer
+function timerDisplayNone(elem, timer) {
+    setTimeout(function() {
+        elem.style.display = 'none';
+    }, timer);
+}
+
+function timerClass(elem, className, value, timer) {
+    setTimeout(function() {
+        elem.style[className] = value;
+    }, timer);
+}
+
+function getFirstFocusableElement() {
+	var currentFocusable = document.querySelectorAll(queryCurrentFocusableElements);
+	if (currentFocusable == undefined) return null; 
+	return currentFocusable[0];
+}
+
+function getLastFocusableElement() {
+	var currentFocusable = document.querySelectorAll(queryCurrentFocusableElements);
+	if (currentFocusable == undefined) return null; 
+	return currentFocusable[currentFocusable.length - 1];
+}

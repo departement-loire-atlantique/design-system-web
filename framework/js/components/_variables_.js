@@ -1,0 +1,2 @@
+const queryAllFocusableElements = 'a:not([disabled]), link:not([disabled]), button:not([disabled]), textarea:not([disabled]), input:not([disabled]), select:not([disabled]), object:not([disabled])';
+const queryCurrentFocusableElements = 'a:not([tabindex="-1"]), link:not([tabindex="-1"]), button:not([tabindex="-1"]), textarea:not([tabindex="-1"]), input:not([tabindex="-1"]), select:not([tabindex="-1"]), object:not([tabindex="-1"])';

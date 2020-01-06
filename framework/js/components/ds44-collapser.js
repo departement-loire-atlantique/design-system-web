@@ -1,27 +1,3 @@
-// Détermine si une valeur est null ou undefined
-function isNullOrUndefined(el) {
-    return el == null || el == undefined || "null" == el || "undefined" == el;
-}
-
-// Ajoute la classe "show" sur un élément après un timer
-function timerShow(elem, timer) {
-    setTimeout(function() {
-        elem.classList.add('show');
-    }, timer);
-}
-
-// Ajoute le style css "display: none" sur un élément après un timer
-function timerDisplayNone(elem, timer) {
-    setTimeout(function() {
-        elem.style.display = 'none';
-    }, timer);
-}
-
-function timerClass(elem, className, value, timer) {
-    setTimeout(function() {
-        elem.style[className] = value;
-    }, timer);
-}
 
 // Ferme tous les overlays, et ajoute un focus sur le bouton qui a ouvert le dernier overlay affiché
 function performCloseOverlays(querySelector){
@@ -87,8 +63,7 @@ function hideCloseButtons(exceptionElem) {
 // Fonction qui va forcer le focus à faire une boucle sur un élément
 // La seconde valeur en option permet de retirer le focus sur un autre élément
 function trapFocus(element) {
-    var focusableEls = element.querySelectorAll('a[href]:not([disabled]), button:not([disabled]), textarea:not([disabled]), input[type="text"]:not([disabled]), input[type="radio"]:not([disabled]), input[type="checkbox"]:not([disabled]), select:not([disabled])');
-
+    var focusableEls = element.querySelectorAll(queryAllFocusableElements);
     focusableEls.forEach((itFocusElem) => {
         itFocusElem.removeAttribute("tabindex");
     });
@@ -96,7 +71,7 @@ function trapFocus(element) {
 
 // Effectue les actions liées à la méthode toggleMainHeaderFooterAriaHidden
 function performToggleTabindex(exceptionNode, ariaHiddenValue) {
-    var focusableEls = document.querySelectorAll('a[href]:not([disabled]), button:not([disabled]), textarea:not([disabled]), input[type="text"]:not([disabled]), input[type="radio"]:not([disabled]), input[type="checkbox"]:not([disabled]), select:not([disabled])');
+    var focusableEls = document.querySelectorAll(queryAllFocusableElements);
     if (ariaHiddenValue) {
         // on ajoute tabindex=-1 sur le main et ses sous-éléments interactifs
         focusableEls.forEach((itFocusElem) => {
@@ -161,7 +136,7 @@ function toggleAriaHiddenSsMenu(exceptionElem) {
 
 // Passe l'attribut "tabindex" des éléments 'focusables' d'un élément à -1
 function disableAllTabIndexes(element) {
-    var focusableEls = element.querySelectorAll('a[href]:not([disabled]), button:not([disabled]), textarea:not([disabled]), input[type="text"]:not([disabled]), input[type="radio"]:not([disabled]), input[type="checkbox"]:not([disabled]), select:not([disabled])');
+    var focusableEls = element.querySelectorAll(queryAllFocusableElements);
 
     focusableEls.forEach((itFocusElem) => {
         itFocusElem.setAttribute("tabindex", "-1");

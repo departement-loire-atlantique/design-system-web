@@ -50,9 +50,13 @@
 			var header = document.querySelector(".ds44-header");
 			if (header == undefined) return;
 
+			var headerHeight = header.offsetHeight;
+
 	    	window.addEventListener("scroll", () =>{
 	    		setTimeout(function() {
 	    			const currentScroll = window.pageYOffset;
+	    			var body = document.querySelector("body");
+	    			var bodyTopCoordinate = body.getBoundingClientRect().top + parseInt(body.style.paddingTop);
 
 					if (currentScroll == 0) {
 						header.classList.remove("hidden");
@@ -65,8 +69,10 @@
 						return;
 					}
 
-					if (currentScroll > lastScroll && !header.classList.contains("hidden")) {
-						// Scroll vers le bas
+					if (currentScroll > lastScroll && !header.classList.contains("hidden")
+							&& bodyTopCoordinate <= 0) {
+						// Scroll vers le bas, uniquement si le haut de page est 
+						// en dessous de la hauteur du header
 						header.classList.add("hidden");
 						header.setAttribute("aria-hidden", "true");
 					} else if (currentScroll < lastScroll && header.classList.contains("hidden")) {
