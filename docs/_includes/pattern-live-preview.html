@@ -2,7 +2,7 @@
 {% assign pattern = site.variations | where:"path", include.pattern_path | first %}
 
 <div class="preview {% if include.border == false %} preview--noborder{% endif %}">
-    <iframe class="preview__iframe" frameBorder="0" width="100%" height="100%" src="{{ pattern.url | prepend: site.baseurl }}"></iframe>
+    <iframe class="preview__iframe" frameborder="0" width="100%" height="100%" style="padding: 2px;" src="{{ pattern.url | prepend: site.baseurl }}"></iframe>
     <div class="preview__handle"></div>
 
     {% if include.storybook_url %}
