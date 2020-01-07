@@ -23,7 +23,7 @@
       margin-top: 0;
 
       &:first-child {
-        margin-top: 1rem;
+        margin-top: $ds44-padding-box;
       }
 
       > ul > li:first-child {
@@ -36,6 +36,7 @@
   .ds44-collapser_content--level2 {
     padding-left    : $ds44-padding-xlarge;
     padding-right   : $ds44-padding-xlarge;
+    padding-bottom  : $ds44-padding-box;
   }
   .ds44-collapser_content--level3 {
     padding-left    : $ds44-padding-xlarge*2;
@@ -72,6 +73,7 @@
 
     .icon::before {
       transform: rotate(180deg);
+      margin-top: 5px;
     }
   }
 
@@ -119,12 +121,6 @@
 
 @media (max-width: $small) {
   
-  .ds44-collapser_content {
-    padding: 0 $ds44-padding-medium;
-  }
-  .show + .ds44-collapser_content {
-    padding: $ds44-padding-medium;
-  }
   .ds44-collapser_content--link {
     padding: $ds44-padding-medium $ds44-padding-large;
   }
@@ -136,8 +132,8 @@
   .ds44-collapser, ul.ds44-collapser {
     
     .ds44-collapser_content--level2 {
-      padding-left    : $ds44-padding-medium;
-      padding-right   : $ds44-padding-medium;
+      padding-left    : 0;
+      padding-right   : 0;
     }
     
     .ds44-collapser_content--level3 {

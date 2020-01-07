@@ -16,6 +16,15 @@
   padding: $ds44-container-vmargin $ds44-medium-vmargin;
 }
 
+
+@media (max-width: $ds44-medium) {
+
+  .ds44-inner-container {
+      padding: $ds44-components-vmargin $ds44-padding-box;
+  }
+
+}
+
 @media (min-width: $ds44-extra-large) {
 
   .ds44-inner-container {
@@ -30,7 +39,7 @@
   padding-top: $ds44-components-vmargin*2;
 
   .ds44-inner-container {
-    padding: 0 $ds44-medium-vmargin;
+    padding: 0 $ds44-padding-large;
     margin-top: 0;
   }
 }
@@ -53,10 +62,6 @@
 
     .ds44-container-relmob {
         position: relative;
-    }
-
-    .ds44-navContainer {    
-      padding-top: $ds44-container-vmargin;
     }
 
 }
@@ -150,10 +155,10 @@
 
   .ds44-titleContainer {
     min-height: 250px;
+  }
 
-    .ds44-alphaGradient {
-      padding: 1rem;
-    }
+  .ds44-alphaGradient--header {
+    padding: $ds44-padding-base;
   }
 
 }
