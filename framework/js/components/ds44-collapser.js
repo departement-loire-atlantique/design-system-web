@@ -1,6 +1,8 @@
 
 // Ferme tous les overlays, et ajoute un focus sur le bouton qui a ouvert le dernier overlay affiché
 function performCloseOverlays(querySelector){
+    deleteOtherFocus();
+
     document.querySelector("body").style.overflow = "initial";
     document.querySelector("header#topPage").setAttribute("aria-hidden", "false");
     let overlays = document.querySelectorAll(querySelector);
@@ -55,15 +57,6 @@ function hideCloseButtons(exceptionElem) {
         } else {
             element.style.display = "block";
         }
-    });
-}
-
-// Fonction qui va forcer le focus à faire une boucle sur un élément
-// La seconde valeur en option permet de retirer le focus sur un autre élément
-function trapFocus(element) {
-    var focusableEls = element.querySelectorAll(queryAllFocusableElements);
-    focusableEls.forEach((itFocusElem) => {
-        itFocusElem.removeAttribute("tabindex");
     });
 }
 
@@ -137,10 +130,21 @@ function toggleAriaHiddenSsMenu(exceptionElem) {
 function disableAllTabIndexes(element) {
     if (isNullOrUndefined(element)) return;
     
-    var focusableEls = element.querySelectorAll(queryAllFocusableElements);
+    var focusableEls = element.querySelectorAll(queryCurrentFocusableElements);
 
     focusableEls.forEach((itFocusElem) => {
         itFocusElem.setAttribute("tabindex", "-1");
+    });
+}
+
+// Supprime l'attribut "tabindex" des éléments focusables d'un élément
+function enableAllTabIndexes(element) {
+    if (isNullOrUndefined(element)) return;
+    
+    var focusableEls = element.querySelectorAll(queryAllFocusableElements);
+
+    focusableEls.forEach((itFocusElem) => {
+        itFocusElem.removeAttribute("tabindex");
     });
 }
 
@@ -255,6 +259,7 @@ function disableAllTabIndexes(element) {
                 navNivTwo.querySelector('.ds44-btn-backOverlay').focus();
                 // ajouter l'élément de piège focus sur le menu nv2
                 disableAllTabIndexes(document.querySelector("header"));
+                enableAllTabIndexes(navNivTwo);
                 trapFocus(navNivTwo);
                 toggleAriaHiddenSsMenu(navNivTwo);
             }
@@ -282,6 +287,7 @@ function disableAllTabIndexes(element) {
                 navCurrent.classList.remove('show');
                 hideCloseButtons(navNivOne.querySelector('.ds44-btnOverlay--closeOverlay'));
                 disableAllTabIndexes(document.querySelector("header"));
+                enableAllTabIndexes(navNivOne);
                 trapFocus(navNivOne);
                 toggleAriaHiddenSsMenu(navNivOne);
                 setTimeout(function() {
@@ -314,6 +320,7 @@ function disableAllTabIndexes(element) {
                 navApplis.querySelector('.ds44-btnOverlay--closeOverlay').focus();
                 // ajouter l'élément de piège focus sur le menu nv2
                 disableAllTabIndexes(document.querySelector("header"));
+                enableAllTabIndexes(navApplis);
                 trapFocus(navApplis);
                 toggleAriaHiddenSsMenu(document.querySelector(".ds44-overlay--navApplis"));
             }
@@ -340,6 +347,7 @@ function disableAllTabIndexes(element) {
                         modal.setAttribute('aria-hidden', 'false');
                         modal.removeAttribute("tabindex");
                         disableAllTabIndexes(document.querySelector("section.ds44-ongletsContainer"));
+                        enableAllTabIndexes(modal);
                         trapFocus(modal);
                         const closeButton = modal.querySelector('[data-js="ds44-modal-action-close"]');
                         hideCloseButtons(closeButton);

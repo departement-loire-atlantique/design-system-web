@@ -426,6 +426,12 @@
   column-gap: 3rem;
 }
 
+/* === Hidden blocks for focus loops === */
+
+.ds44-tmpFocusHidden {
+  position: absolute;
+  top: -50rem;
+}
 
 /* =======
   GENERIC MEDIA QUERIES
