@@ -308,6 +308,19 @@ a.ds44-btn--contextual,
 /* /tooltip */
 
 
+
+/* medium screens */
+/* ------------- */
+
+@media (max-width: $ds44-large) {
+
+    .ds44-btnOverlay {
+        top: $ds44-margin-base;
+        right: $ds44-margin-base;
+    }
+
+}
+
 /* small screens */
 /* ------------- */
 
@@ -317,12 +330,8 @@ a.ds44-btn--contextual,
         padding: $ds44-padding-box;
     }
 
-    .ds44-btnOverlay {
-        top: $ds44-margin-base;
-        right: $ds44-margin-base;
-    }
-
 }
+
 @media (max-width: $ds44-small) {
 
     .ds44-btnIcoText--maxi {

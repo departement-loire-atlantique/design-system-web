@@ -299,7 +299,7 @@
 @media (max-width: $ds44-medium - .0625) {
 
   .ds44-hide-mobile {
-    display: none;
+    display: none!important;
   }
 
 }

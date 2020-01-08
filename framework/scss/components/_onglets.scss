@@ -43,7 +43,10 @@
     }
 }
   
-[aria-selected="true"].ds44-tabs__link {
+[aria-selected="true"].ds44-tabs__link,
+.ds44-tabs__link:hover,
+.ds44-tabs__link:focus,
+.ds44-tabs__link:active {
     font-weight: bolder;
 
     &::after {
@@ -57,6 +60,7 @@
     padding: 5rem;
     opacity: 1;
     transition: all $ds44-timing-standard ease-in-out;
+    position: relative;
 }
   
 [aria-hidden="true"].ds44-tabs__content {
@@ -72,7 +76,6 @@
 }
 
 
-
 @media (max-width: $ds44-large) {
 
     .ds44-blocBtnOnglets {
@@ -85,9 +88,12 @@
 }
 
 
-@media (max-width: $ds44-small) {
+@media (max-width: $ds44-small) {  
 
-  
+    .ds44-navOnglets {
+        width: 100%;
+    }
+    
     .ds44-tabs__content {
         padding: 3rem 1rem;
     }
