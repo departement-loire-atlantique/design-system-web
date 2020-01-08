@@ -45,6 +45,11 @@ blockquote {
     background-color: $ds44-contextual-color;
 }
 
+.ds44-wsg-encadreGris {
+    padding: $ds44-padding-xlarge;
+    background-color: $ds44-light-bg;
+}
+
 .ds44-wsg-smallText {    
   @include ds44-font-sizes(smallText);
 }
