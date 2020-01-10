@@ -11,7 +11,7 @@ function processTransitionOnglets(tabClicked, allTabs) {
 
     } else {
       // On cache le contenu avec un délai
-      timerClass(tabpanel, "opacity", "0", 150);
+      tabpanel.style["opacity"] = "0";
       timerDisplayNone(tabpanel, 150);
     }
 
