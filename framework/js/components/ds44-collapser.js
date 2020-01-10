@@ -566,41 +566,6 @@ function enableAllTabIndexes(element) {
                 }
         }
 
-        _ds44.transitionContenuOnglets = function (querySelector) {
-
-                function processTransitionOnglets(target, onglets) {
-                    if (onglets.length) {
-                        onglets.forEach((itOnglet) => {
-
-                            // est-ce que l'onglet cliqué correspond à l'onglet vérifié ?
-                            if (target == itOnglet) {
-                                // On affiche son contenu immédiatement
-                                document.querySelector("#" + itOnglet.getAttribute("aria-controls")).style.display = "block";
-                                timerClass(document.querySelector("#" + itOnglet.getAttribute("aria-controls")), "opacity", "1", 300);
-
-                            } else {
-                                // On cache son contenu avec un délai
-                                timerClass(document.querySelector("#" + itOnglet.getAttribute("aria-controls")), "opacity", "0", 150);
-                                timerDisplayNone(document.querySelector("#" + itOnglet.getAttribute("aria-controls")), 150);
-                            }
-
-                        });
-                    }
-                }
-
-                let allOnglets = document.querySelectorAll(querySelector);
-
-                if (allOnglets.length) {
-                    allOnglets.forEach((onglet) => {
-
-                        onglet.addEventListener('click', (event) => {
-                            let target = event.target;
-                            processTransitionOnglets(target, allOnglets);
-                        });
-                    });
-                }
-        }
-
         _ds44.reactOnInvalidInput = function() {
             allInputs = document.querySelectorAll("input");
 
@@ -687,9 +652,6 @@ const classAnimInputForm = "ds44-moveLabel";
 
 ds44.fiddleInputLabel(classAnimInputForm, '.'+classAnimInputForm+' + input[type="text"], .' + classAnimInputForm + ' + input[type="email"], .' + classAnimInputForm + ' + input[type="tel"], .' + classAnimInputForm + ' + input[type="search"]');
 // faire une animation CSS sur certains champs inputs pour conserver un DOM lisible pour les lecteurs vocaux
-
-ds44.transitionContenuOnglets(".js-tablist__link");
-// effectuer une transition des display:none sur les contenus des onglets
 
 ds44.reactOnInvalidInput();
 // effectuer une action sur les champs "input" invalides
