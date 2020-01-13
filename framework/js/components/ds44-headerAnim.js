@@ -32,6 +32,7 @@
 	    	if (header == undefined) return;
 	    	
 	    	document.addEventListener('keyup', (event) => {
+	    		if (isModalShown) return;
 	    		if (event.key === "Tab") {
 	    			var activeElement = document.activeElement;
 	    			if (header.contains(activeElement)) return;
