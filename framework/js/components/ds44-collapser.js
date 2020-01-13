@@ -303,6 +303,8 @@ function enableAllTabIndexes(element) {
 
             const ssMenuReturn = document.querySelectorAll(querySelector);
 
+            console.log(ssMenuReturn);
+
             ssMenuReturn.forEach((element) => {
                 element.addEventListener('click', () => {
                     returnSsNavMenu(element);
@@ -680,7 +682,6 @@ ds44.expandTuileLink();
 // sert pour gérer les liens autour des tuiles
 
 ds44.closeOverlays(".ds44-btnOverlay--closeOverlay");
-ds44.ssMenuReturn('#navApplis .ds44-btnOverlay--closeOverlay');
 // ajoute un listener aux boutons qui ferment les overlays
 
 const classAnimInputForm = "ds44-moveLabel";
