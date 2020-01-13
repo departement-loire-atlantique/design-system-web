@@ -43,12 +43,19 @@ function timerClass(elem, className, value, timer) {
 
 function getFirstFocusableElement() {
 	var currentFocusable = document.querySelectorAll(queryCurrentFocusableElements);
-	if (currentFocusable == undefined) return null; 
+	if (currentFocusable == undefined) return null;
 	return currentFocusable[0];
 }
 
 function getLastFocusableElement() {
 	var currentFocusable = document.querySelectorAll(queryCurrentFocusableElements);
-	if (currentFocusable == undefined) return null; 
+	if (currentFocusable == undefined) return null;
 	return currentFocusable[currentFocusable.length - 1];
+}
+
+function fusionneKeyPressedWithClicked(event) {
+  if(event.key === "Enter" || event.key === " " || event.key === "Spacebar") {
+    event.preventDefault();
+    event.target.click();
+  }
 }
