@@ -6,7 +6,7 @@
 # Encrypt the private key and add $encrypted_xxx_key and $encrypted_xxx_key to the env
 # travis login --org
 # sous windows (gitbash):
-# - travis encrypt key_password=sdfjlqdsfjdqsmlj798fds
+# - travis encrypt key_password=exemplepassword
 # - gpg -c deploy_rsa
 # - Then add secure env variable and "echo $key_password | gpg --passphrase-fd 0 deploy_rsa.gpg" to the defore-reploy
 # sous Linux : 
@@ -25,12 +25,12 @@
 # 
 env:
   global:
-    secure: "CUodewXD3rxjk246jtq7ku25QjzGXcOAuuDaSBcU7yhNNarvXhR+cx9cgjkTViX+1H0fgy9Hi4NITj3823VCZzGn3UCQrbQvQIkIUE8qkV2SDIfd8G/c9Usi3zCQNl4RPY+rd+cgEfb3UJ+xGUOLDTeQl7F5LniDmUCRNctZteXPYpDWq5hR6vyBlV+IywnuDNEbLdDiItn3+i4Ggne2mx86GEBWPsaMpyryyySsmfW/pmYCP7Dj1WTbl4gHQZqlUEZMrPubeM2pbWWm7ZoO0VSA5jYMy6v67TKd8EehyUm3yXjNJje25CfQwvKhJRqBKdM0IaCx3LsJWUWzJhKgD2ZVe2MJCAG0o0S2k7eJzMIEAV4rRrrD3IlEve7heVis/Ner9lrKU6nHm75OSsKbNKa3VGPbnoeKVhXZGF0OWnOXAFrn4ipy1/bGG7O5SPSXTHJsIAHPg+tefiXdE35HZXItaG2hNtb0Na+1SNwxiC0iDt4bq/8aebQZNQXMNF8iaLjuPcM1xZYj1A5maBFEdaxVjdxJyebWwpAO7aR740h/KfuT1bP5QPauyUusSB+wFOUBtx+fn/FmkiKEgb6fyln5E5GBfPXMc5ZvTBm+p3HNjsjexR1t3/I2vHnoEokvEC5aFp2ZTVDK1LdImsUqTSfdqLx+cLohc9pEKSWIAS0="
+    secure: "MP1b9TMwdtDmc9DLsnI6hzD31BMvMxNphUqDJPpcNHLAPEb2O7RJF2kWGW1GwaJpXLuGIgZc+vQa8WfIy7wnJYzWC8czdrLNffIOcGYA54v4co+ewMW0NxD8ux+OKBynglND/eYtE8rzx1TYa8JshF5yoHlGNVwnsH1MrvLI/HgTqaHNolL769aO7+xd+IRg7P5scIKpeOnmmLVQ4KMiFfMlBT+x+Ibr6TYhSzvAoJBNB+aLfNgi71mh2AyFQxfC6nQ4FKI49c4FOp4jxQXxTaUeIyqg4lCnzkmCVFKcjuaC78p4lhf3ylypz0Mz4U6qpAsiNMgAxmyeige+MGZBUPko7XKdBx5VdD+T27L5ic7CsoYnboSxi1HK0kY+DxL9+XmuFcubbrlnWA2Td6vE2CV8TahAWIXF0SEdoFFpw4escz5opZ5nbJIO/ghOdVOl1bzmV/R1GjwVcLRd5ZtM4ym7lm5oXiPBQNwYkdKDBuJdNlCme9kA2151JXaUqsVqd3V0iZ1QYDSoXPG6KW3NipQIKIo1YbjgjQwXJkCnKBCu9JGtqw4YZeYbAJvFQbBxEDzP9DAtZmBcPZF3v7uLI67KKPKOlm4oesmP2z4DANT62X6LBKje7zfJ4tykku4h2C4DccyajqDQZcQhCIl5NU6gQSz3rkcPzeHl1wZt0qI="
 
 addons:
   ssh_known_hosts: ssh.cluster011.hosting.ovh.net
   
-before_script:
+install:
   - npm install -g gulp-cli
   - npm install
 

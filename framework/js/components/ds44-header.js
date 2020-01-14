@@ -2,6 +2,7 @@
 
 class Ds44Header {
     lastScroll = 0;
+    isTabEnabled = true;
 
     constructor() {
         if (document.querySelector('.ds44-blocBandeau') !== null) {
@@ -11,6 +12,8 @@ class Ds44Header {
                 window.setTimeout(this.scroll, 100)
             });
             document.addEventListener('layout:change', this.refresh);
+            document.addEventListener('modal:show', () => {this.isTabEnabled = false;});
+            document.addEventListener('modal:hide', () => {this.isTabEnabled = true;});
 
             // Initialization
             this.checkFocusPosition();
@@ -51,7 +54,10 @@ class Ds44Header {
         document.addEventListener(
             'keyup',
             (event) => {
-                if ((event.key || '').toLowerCase() === 'tab') {
+                if (
+                    this.isTabEnabled === true &&
+                    (event.key || '').toLowerCase() === 'tab'
+                ) {
                     const activeElement = document.activeElement;
                     if (header.contains(activeElement)) {
                         return;
