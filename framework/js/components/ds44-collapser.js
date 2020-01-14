@@ -340,7 +340,7 @@ function enableAllTabIndexes(element) {
                         toggleMainHeaderFooterAriaHidden(modal);
                         document.querySelector("main").setAttribute("aria-hidden","true");
                         document.querySelector("body").style.overflow = "hidden";
-                        ds44_headerAnim.refreshBandeauWidth();
+                        document.dispatchEvent(new CustomEvent('layout:change'));
                         _getFocusOnPopup(modal);
                         modal.style.display = "flex";
                         timerShow(modal, 1);
@@ -385,7 +385,7 @@ function enableAllTabIndexes(element) {
                 const currentModal = document.querySelector('.show[role="dialog"]');
                 if (currentModal) {
                     document.querySelector("body").style.overflow = null;
-                    ds44_headerAnim.refreshBandeauWidth();
+                    document.dispatchEvent(new CustomEvent('layout:change'));
                     toggleMainHeaderFooterAriaHidden(null);
                     currentModal.classList.toggle('show');
                     timerDisplayNone(currentModal, 300);
