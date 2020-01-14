@@ -11,7 +11,7 @@ blockquote {
     border-left: 1px solid $ds44-contextual-color;
     padding: 0 $ds44-padding-xxlarge;
     margin-bottom: $ds44-medium-vmargin;
-    
+
     &::after, &::before {
         @include ds44-font-sizes(quotes);
         color: $ds44-contextual-color;
@@ -50,7 +50,7 @@ blockquote {
     background-color: $ds44-light-bg;
 }
 
-.ds44-wsg-smallText {    
+.ds44-wsg-smallText {
   @include ds44-font-sizes(smallText);
 }
 
@@ -58,4 +58,12 @@ blockquote {
     font-weight: bold;
     background-color: $ds44-contextual-color;
     padding: .5rem 1rem;
+}
+
+@media (max-width: 64em) {
+  .col.mrl ,
+  .col.mll {
+      margin-left: 0;
+      margin-right: 0;
+  }
 }

@@ -169,7 +169,7 @@
     }
 
     .ds44-navListN2 {
-        margin-top: 4rem;
+        margin-top: $ds44-components-vmargin;
     }
 
     .ds44-rsHeadLink {
@@ -223,10 +223,12 @@
         text-align: left;
     }
 
-    .ds44-navListApplis, .ds44-navListApplis > li {
-        margin-left: 0;
-        margin-right: 0;
-        padding-left: 0;
+    .ds44-navListApplis {
+        margin-left: $ds44-large-margin;
+
+        > li {
+            padding-left: 0;
+        }
     }
 
     .ds44-navContainer {
@@ -243,10 +245,6 @@
 
     .ds44-navContainer > .ds44-inner-container {
         max-width: 90%;   
-    }
-
-    .ds44-navList .ds44-xl-gap {
-        column-gap: 8rem;
     }
 
 }

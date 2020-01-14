@@ -57,6 +57,7 @@
 }
 .ds44-cardPicture {
     object-fit: cover;
+    min-width: 120px;
 }
 .ds44-cardFile {
     @include ds44-font-sizes(smallText);
@@ -133,13 +134,8 @@
         padding-left: $ds44-padding-box;
     }
 
-}
-
-/* Large screens */
-/* ------------- */
-
-@media (max-width: $ds44-large) {
-
-
+    .ds44-cardPicture {
+        min-width: 105px;
+    }
 
 }

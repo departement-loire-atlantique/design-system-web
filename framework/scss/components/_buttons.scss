@@ -1,7 +1,7 @@
 /*
 * CD44 Design System - Buttons
 */
-  
+
 
 button, a.ds44-btnStd {
     display: inline-block;
@@ -28,7 +28,7 @@ button, a.ds44-btnStd {
     font-weight: bold;
     line-height: 1;
     min-height: $ds44-normalHeight;
-    
+
     &:focus,
     &:hover,
     &:active {
@@ -73,7 +73,7 @@ a.ds44-btn--contextual,
 // Link style buttons
 .ds44-btnIcoText {
     font-weight: bolder;
-    
+
     .icon + .ds44-btnInnerText,
     .ds44-btnInnerText + .icon {
         margin-left: 1rem;
@@ -147,7 +147,7 @@ a.ds44-btn--contextual,
     font-weight: bold;
     line-height: 1;
     min-height: $ds44-normalHeight;
-    
+
     &:focus,
     &:hover,
     &:active {
@@ -210,6 +210,17 @@ a.ds44-btn--contextual,
 }
 
 
+// Bouton retour à la liste / page précédente
+
+.ds44-btnStd--retourPage,
+a.ds44-btnStd--retourPage {
+    position: absolute;
+    top: 20px;
+    left: 20px;
+    max-width: 14%;
+}
+
+
 /* --------------- styles for Tooltip -----------------------*/
 
 .js-simple-tooltip {
@@ -230,8 +241,8 @@ a.ds44-btn--contextual,
 }
 
 /* tooltip styles */
-.simpletooltip, 
-.minimalist-simpletooltip, 
+.simpletooltip,
+.minimalist-simpletooltip,
 .minimalist-left-simpletooltip {
   position: absolute;
   z-index: 666;
@@ -241,7 +252,7 @@ a.ds44-btn--contextual,
   font-size: 1.4rem;
   padding: $spacer-small;
 }
-.simpletooltip, 
+.simpletooltip,
 .minimalist-simpletooltip {
   right: 0;
   bottom: 2.5rem;
@@ -281,7 +292,7 @@ a.ds44-btn--contextual,
 /* for this example: mobile */
 @media (max-width: 44.375em) {
 
-  .simpletooltip, 
+  .simpletooltip,
   .minimalist-simpletooltip,
   .minimalist-left-simpletooltip  {
     top: 100%;
@@ -291,7 +302,7 @@ a.ds44-btn--contextual,
 	margin-top: .7em;
 	margin-left: -5em;
   }
-  .simpletooltip::before, 
+  .simpletooltip::before,
   .minimalist-simpletooltip::before,
   .minimalist-left-simpletooltip::before  {
     top: -10px;
@@ -302,7 +313,7 @@ a.ds44-btn--contextual,
     border: 10px solid transparent;
     border-bottom: 10px solid rgba( 0, 0, 0, .9 );
   }
-  
+
 }
 
 /* /tooltip */
@@ -318,6 +329,14 @@ a.ds44-btn--contextual,
         top: $ds44-margin-base;
         right: $ds44-margin-base;
     }
+    .ds44-btnStd--retourPage,
+    a.ds44-btnStd--retourPage {
+    position: relative;
+    top: 40px;
+    left: 16.666%;
+    max-width: 100%;
+    margin-bottom: 20px;
+  }
 
 }
 
@@ -329,6 +348,10 @@ a.ds44-btn--contextual,
     .ds44-btnStd--large {
         padding: $ds44-padding-box;
     }
+    .ds44-btnStd--retourPage,
+    a.ds44-btnStd--retourPage {
+    left: 5%;
+  }
 
 }
 
@@ -358,11 +381,11 @@ a.ds44-btn--contextual,
           margin-left: 0;
         }
     }
-    
+
     .ds44-fullWBtn {
         padding: $spacer-tiny;
         font-size: 1.4rem;
     }
-    
+
 
 }

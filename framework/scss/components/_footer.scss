@@ -4,7 +4,7 @@
 
 footer {
     border-top: 1px solid #CCCCCC;
-    position: relative;
+    position: relative; 
 }
 
 .footerLink {
@@ -26,6 +26,7 @@ footer .ds44-logo {
 }
 .ds44-icoLink--footer {
     margin-top: 5rem;
+    margin-right: 2rem;
 }
 
 /* smaller screens */
@@ -36,8 +37,13 @@ footer .ds44-logo {
     footer {
         text-align: center;
     }
+    
     footer .ds44-logo {
         max-width: 122px;
+    }
+    
+    .ds44-rsFootLink {
+        margin-bottom: $ds44-container-vmargin;
     }
 
 }

@@ -4,23 +4,40 @@
 /* Main structure */
 
 .ds44-container-fluid {
-    padding: 0 $ds44-container-hmargin;
     position: relative;
+    width: 100%;
 }
 
+.ds44-container-large {
+    position: relative;
+    max-width: $ds44-max-size;
+    margin-left: $ds44-container-large-margin;
+    margin-right: $ds44-container-large-margin;
+}
 
 .ds44-inner-container {
-  margin: 0 auto;
-  width: 100%;
+  margin-left: auto;
+  margin-right: auto;
+  max-width: $ds44-max-inner-size;
   position: relative;
-  padding: $ds44-container-vmargin $ds44-medium-vmargin;
 }
 
+main {
+  padding-top: $header-height-large;
+}
 
-@media (max-width: $ds44-medium) {
+@media (max-width: $ds44-large) {
 
-  .ds44-inner-container {
-      padding: $ds44-components-vmargin $ds44-padding-box;
+  main {
+    padding-top: $header-height-medium;
+  }
+
+}
+
+@media (max-width: $ds44-small) {
+
+  main {
+    padding-top: $header-height-small;
   }
 
 }
@@ -28,8 +45,7 @@
 @media (min-width: $ds44-extra-large) {
 
   .ds44-inner-container {
-      padding: $ds44-container-vmargin $ds44-container-hmargin;
-      max-width: $ds44-max-size;
+      max-width: $ds44-max-inner-size;
   }
 
 }
@@ -40,7 +56,6 @@
 
   .ds44-inner-container {
     padding: 0 $ds44-padding-large;
-    margin-top: 0;
   }
 }
 
@@ -50,15 +65,11 @@
     left: 0;
 }
 
-.ds44-alternate-container {
-    background-color: $ds44-light-bg;
-}
-
 .ds44-contenuArticle, .ds44-contenuMedia {
   margin: 0 auto $ds44-components-vmargin auto;
 }
 
-@media (max-width: $ds44-medium) {
+@media (max-width: $ds44-medium - .0625) {
 
     .ds44-container-relmob {
         position: relative;
@@ -66,9 +77,9 @@
 
 }
 
-@media (max-width: $ds44-small) {
+@media (max-width: $ds44-small - .0625) {
 
-    .ds44-container-fluid {
+    .ds44-container-large {
         padding: 0 $ds44-mobile-margins;
     }
 
@@ -106,14 +117,6 @@
     margin-bottom: $ds44-components-vmargin;
 }
 
-/* Alternate containers and structures */
-
-/* Nouveau container push full width */
-.ds44-container-fluid-alternate {
-  padding: $ds44-padding-large;
-  position: relative;
-}
-
 /* Links */
 
 .ds44-rsLink {
@@ -124,18 +127,18 @@
 
 .ds44-text--colorInvert {
     color: $ds44-light-color;
-  
+
     a {
       color: $ds44-light-color;
     }
-  
+
 }
 
 .ds44-exergue {
     border: 1px solid $ds44-contextual-color;
     padding: $ds44-padding-box $ds44-padding-xlarge;
     margin: $ds44-components-vmargin auto;
-}  
+}
 
 .ds44-smallText {
   @include ds44-font-sizes(smallText);
@@ -150,8 +153,27 @@
   GENERIC MEDIA QUERIES
   === */
 
+@media (max-width: $ds44-extra-large - .0625) {
 
-@media (max-width: $ds44-small) {
+  .ds44-titleContainer {
+    min-height: 340px;
+  }
+
+}
+
+@media (max-width: $ds44-large - .0625) {
+
+  aside {
+      margin-top: $ds44-components-vmargin;
+  }
+
+  .ds44-container-large {
+      margin: 0 $ds44-components-vmargin;
+  }
+
+}
+
+@media (max-width: $ds44-small - .0625) {
 
   .ds44-titleContainer {
     min-height: 250px;
@@ -161,12 +183,23 @@
     padding: $ds44-padding-base;
   }
 
+  .ds44-container-large {
+      margin: 0 $ds44-margin-base;
+  }
+
+  .ds44-component-chapo {
+      max-width: 85%;
+      display: none;
+  }
+
 }
 
-@media (max-width: $ds44-large) {
+@media (min-width: $ds44-max-size) {
 
-  aside {
-      margin-top: $ds44-components-vmargin;
-  }
+    .ds44-container-large {
+      margin: 0 auto;
+      padding-left: $ds44-container-large-margin;
+      padding-right: $ds44-container-large-margin;
+    }
 
 }

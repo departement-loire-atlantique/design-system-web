@@ -43,6 +43,12 @@
   padding-top      : $ds44-padding-medium; // 1rem
   padding-bottom   : $ds44-padding-medium; // 1rem
 }
+.ds44--m-padding-b {
+  padding-bottom   : $ds44-padding-medium; // 1rem
+}
+.ds44--m-padding-t {
+  padding-top      : $ds44-padding-medium; // 1rem
+}
 .ds44--l-padding {
   padding          : $ds44-padding-large; // 2rem
 }
@@ -79,30 +85,38 @@
 .ds44--2xl-padding-t {
   padding-top    : $ds44-padding-xlarge*2;
 }
+.ds44--xxl-padding-tb {
+  padding-top    : $ds44-padding-xxlarge; // 5rem
+  padding-bottom : $ds44-padding-xxlarge; // 5rem
+}
 
 // margins
 
 .ds44-mb-std {
-  margin-bottom: $ds44-medium-vmargin; // 1.5rem
+  margin-bottom: $ds44-medium-vmargin;      // 1.5rem
 }
 .ds44-mt-std {
-  margin-top: $ds44-medium-vmargin; // 1.5rem
+  margin-top: $ds44-medium-vmargin;         // 1.5rem
 }
 .ds44-mb3 {
-  margin-bottom: $ds44-components-vmargin; // 3rem
+  margin-bottom: $ds44-components-vmargin;  // 3rem
 }
 .ds44-mt3 {
-  margin-top: $ds44-components-vmargin; // 3rem
+  margin-top: $ds44-components-vmargin;     // 3rem
+}
+.ds44-mtb3 {
+  margin-bottom: $ds44-components-vmargin;  // 3rem
+  margin-top: $ds44-components-vmargin;     // 3rem
 }
 .ds44-m3c {
-  margin: $ds44-components-vmargin auto; // 3rem
+  margin: $ds44-components-vmargin auto;    // 3rem
 }
 .ds44-m3 {
-  margin: $ds44-components-vmargin; // 3rem
+  margin: $ds44-components-vmargin;         // 3rem
 }
 .ds44-mlr3 {
-  margin-left: $ds44-components-vmargin; // 3rem
-  margin-right: $ds44-components-vmargin; // 3rem
+  margin-left: $ds44-components-vmargin;    // 3rem
+  margin-right: $ds44-components-vmargin;   // 3rem
 }
 .ds44-m5 {
   margin: $ds44-container-vmargin; // 5rem
@@ -127,6 +141,10 @@
 .ds44-m-fluid-margin {
   margin-left: 5%;
   margin-right: 5%;
+}
+.ds44-xl-margin-tb {
+  margin-top: $ds44-container-vmargin;    // 5rem
+  margin-bottom: $ds44-container-vmargin; // 5rem
 }
 
 /* === Flex utils === */
@@ -228,6 +246,16 @@
   text-align: right;
 }
 
+.ds44-grid12-offset-1 {
+  padding-left: 8.333%;
+  padding-right: 8.333%;
+}
+
+.ds44-grid12-offset-2 {
+  padding-left: 16.666%;
+  padding-right: 16.666%;
+}
+
 @media (max-width: $ds44-small - 1) {
 
   .ds44-colLeft {
@@ -237,6 +265,17 @@
   .ds44-colRight {
     align-self: flex-start;
   }
+
+  .ds44-grid12-offset-1 {
+    padding-left: 5%;
+    padding-right: 5%;
+  }
+  
+  .ds44-grid12-offset-2 {
+    padding-left: 5%;
+    padding-right: 5%;
+  }
+  
 
 }
 
@@ -326,6 +365,10 @@
 }
 
 .ds44-bgGray {
+  background-color: $ds44-light-bg;
+}
+
+.ds44-lightBG {
   background-color: $ds44-light-bg;
 }
 
@@ -468,12 +511,38 @@
   GENERIC MEDIA QUERIES
   === */
 
-@media (max-width: $ds44-small) {
+
+@media (min-width: $ds44-medium) {
+
+  .ds44-multiCol--3 {
+    column-count: 2;
+  }
+
+}
+
+@media (min-width: $ds44-large) {
+
+  .ds44-multiCol--3 {
+    column-count: 3;
+  }
+
+}
+
+@media (max-width: $ds44-small - .0625) {
 
   .ds44-bgCircle {
     background-size: 380px;
     background-position-x: 180px;
     background-position-y: bottom -180px;
+  }
+
+  .ds44--xxl-padding-tb {
+    padding-top    : $ds44-padding-xlarge; // 3rem
+    padding-bottom : $ds44-padding-xlarge; // 3rem
+  }
+  .ds44-xl-margin-tb {
+    margin-top     : $ds44-components-margin;  // 3rem
+    margin-bottom  : $ds44-components-vmargin; // 3rem
   }
 
 }
@@ -491,16 +560,7 @@
 
 }
 
-
-@media (max-width: $ds44-extra-large) {
-
-  .ds44-xl-gap {
-    column-gap: 8rem;
-  }
-
-}
-
-@media (max-width: $ds44-large) {
+@media (max-width: $ds44-large - .0625) {
 
   .ds44-xl-gap {
     column-gap: 5rem;
@@ -508,18 +568,10 @@
 
 }
 
-@media (min-width: $ds44-medium) {
+@media (max-width: $ds44-extra-large - .0625) {
 
-  .ds44-multiCol--3 {
-    column-count: 2;
-  }
-
-}
-
-@media (min-width: $ds44-large) {
-
-  .ds44-multiCol--3 {
-    column-count: 3;
+  .ds44-xl-gap {
+    column-gap: 8rem;
   }
 
 }

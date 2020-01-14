@@ -38,7 +38,7 @@ Le conteneur fluide `ds44-container-fluid` sert de conteneur principal pour chaq
 - `ds44-bgTriangle-right` -> triangle blanc ferré à droite ;
 - `ds44-wave-white` -> vague blanche ;
 - `ds44-wave-grey` -> vague grise ;
-- `ds44-alternate-container` -> affiche un fond gris afin de marquer l'alternance des lignes.
+- `ds44-lightBG` -> affiche un fond gris afin de marquer l'alternance des lignes.
 
 Le conteneur fluide prend la largeur de la page mais applique des marges intérieures (5,5% de la largeur de la page) de façon à détacher les contenus (mais pas les fonds de couleur) des bords.
 Il peut être complété par le conteneur interne qui fixe les contenus à une taille maximale de 1366px avec des marges internes latérales (de 75px).

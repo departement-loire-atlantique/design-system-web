@@ -3,7 +3,16 @@
 */
 
 .ds44-breadcrumb {
+    margin-left: 3rem;
+    font-size: 0.875em;
+}
+
+.ds44-breadcrumb_item {
     display: inline;
+
+    &:first-child {
+        margin-left: -3rem;
+    }
 
     &::after {
         content: "/";
@@ -15,4 +24,17 @@
         content: "";
         margin: 0;
     }
+}
+
+
+/* =======
+  GENERIC MEDIA QUERIES
+  === */
+
+@media (min-width: $ds44-small) and (max-width: $ds44-large) {
+
+    .ds44-breadcrumb {
+        margin-top: 3rem;
+    }
+
 }

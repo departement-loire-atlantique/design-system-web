@@ -208,7 +208,7 @@ li > p:first-child {
 
 ul:not(.ds44-list):not(.ds44-collapser) {
 
-  padding-left: $ds44-padding-xlarge;
+  padding-left: $ds44-padding-large*2; // 4rem
 
   // first-level
   > li {

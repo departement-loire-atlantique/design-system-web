@@ -10,7 +10,8 @@ $ds44-small          : 36em !default;     // 576px
 $ds44-medium         : 48em !default;     // 768px
 $ds44-large          : 64em !default;     // 1024px
 $ds44-extra-large    : 75em !default;     // 1200px
-$ds44-max-size       : 85.375em !default; // 1366px
+$ds44-max-inner-size : 70em !default;     // 1120px
+$ds44-max-size       : 100em !default;    // 1600px
 
 // surcharge de la grillade pour réaligner le breakpoint tablette
 $medium: 1020px;
@@ -32,22 +33,27 @@ $ds44-font-size-base : 1.6em !default;
 $ds44-font-sizes: (
   base: (
     mobile  : $ds44-font-size-base,  // 16px
+    tablet  : $ds44-font-size-base,  // 16px
     desktop : $ds44-font-size-base   // 16px
   ),
   h1: (
     mobile  : 2.125em,        // 34px
+    tablet  : 3em,            // 48px
     desktop : 3.75em          // 60px
   ),
   h2: (
     mobile  : 1.75em,         // 28px
+    tablet  : 2em,            // 32px
     desktop : 2.375em         // 38px
   ),
   h3: (
     mobile  : 1.3125em,       // 21px
+    tablet  : 1.5em,          // 24px
     desktop : 1.75em          // 28px
   ),
   h4: (
     mobile  : 1.1875em,       // 19px
+    tablet  : 1.375em,        // 22px
     desktop : 1.5em           // 24px
   ),
   h5: (
@@ -109,8 +115,11 @@ $ds44-line-height-base : 1.5 !default;
 
 // Heights
 
-$ds44-largeHeight  : 6.5rem !default;
-$ds44-normalHeight : 4.5rem !default;
+$ds44-largeHeight         : 6.5rem !default;
+$ds44-normalHeight        : 4.5rem !default;
+$header-height-large      : 9.9rem;
+$header-height-medium     : 11.8rem;
+$header-height-small      : 7rem;
 
 
 // Margins & paddings
@@ -119,9 +128,12 @@ $ds44-margin-base             : 1rem !default;
 $ds44-container-vmargin       : $ds44-margin-base *5   !default;
 $ds44-paragraph-margin-bottom : $ds44-margin-base /2   !default;
 $ds44-components-vmargin      : $ds44-margin-base *3   !default;
+$ds44-components-margin       : $ds44-margin-base *3   !default;
 $ds44-small-vmargin           : $ds44-margin-base      !default;
 $ds44-medium-vmargin          : $ds44-margin-base *1.5 !default;
-$ds44-large-vmargin           : $ds44-margin-base *2 !default;
+$ds44-large-vmargin           : $ds44-margin-base *2   !default;
+$ds44-large-margin            : $ds44-margin-base *2   !default;
+$ds44-container-large-margin  : $ds44-margin-base *6   !default;
 
 $ds44-container-hmargin       : 5.5% !default;
 $ds44-container-fullWidth     : 100% - ($ds44-container-hmargin *2);
@@ -168,8 +180,8 @@ $ds44-background-dark   : $ds44-dark !default;
 $ds44-light-bg          : $ds44-lightgray !default; // for CD44 light backgrounds
 
 $ds44-hover-dark        : lighten($ds44-background-dark, 25%) !default;
-$ds44-hover-LA          : lighten($ds44-LA, 25%) !default;    
-$ds44-hover-Agenda      : lighten($ds44-Agenda, 25%) !default; 
+$ds44-hover-LA          : lighten($ds44-LA, 25%) !default;
+$ds44-hover-Agenda      : lighten($ds44-Agenda, 25%) !default;
 
 
 // ---------------

@@ -94,27 +94,45 @@ figure {
 /* =======
   MEDIA QUERIES
   === */
-  @media (max-width: 64em) {
+
+@media (max-width: $ds44-large) {
+
     .ds44-legendeContainer .ds44-blockAbsolute {
       width: 50%;
     }
-  }
-@media (max-width: 48em) {
-  .ds44-legendeContainer .ds44-blockAbsolute {
-    width: 60%;
-  }
-  .ds44-legendeContainer.ds44-container-imgRatio {
-    padding-top: 80%;
-  }
+    .ds44-legendeContainer.ds44-container-imgRatio {
+      height: auto;
+    }
+
 }
-@media (max-width: 32em) {
+
+@media (max-width: $ds44-medium) {
+
+    .ds44-legendeContainer .ds44-blockAbsolute {
+      width: 60%;
+    }
+
+    .ds44-legendeContainer.ds44-container-imgRatio {
+      padding-top: 0;
+    }
+    
+  .ds44-imgRatio {
+      position: relative;
+      height: auto;
+    }
+
+}
+
+@media (max-width: $ds44-small) {
+
   .ds44-legendeContainer.ds44-container-imgRatio {
     height: auto;
-    padding-top: 41.93%;
   }
-  .ds44-legendeContainer.ds44-container-imgRatio .ds44-imgRatio{
+
+  .ds44-legendeContainer.ds44-container-imgRatio .ds44-imgRatio {
     height: auto;
   }
+
   .ds44-legendeContainer .ds44-blockAbsolute {
     position: relative;
     z-index: 1;
@@ -122,4 +140,9 @@ figure {
     bottom: 0;
     left: 0;
   }
+
+  .ds44-imgCaption {
+    display: none;
+  }
+
 }

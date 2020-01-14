@@ -303,8 +303,6 @@ function enableAllTabIndexes(element) {
 
             const ssMenuReturn = document.querySelectorAll(querySelector);
 
-            console.log(ssMenuReturn);
-
             ssMenuReturn.forEach((element) => {
                 element.addEventListener('click', () => {
                     returnSsNavMenu(element);
@@ -342,7 +340,7 @@ function enableAllTabIndexes(element) {
                         toggleMainHeaderFooterAriaHidden(modal);
                         document.querySelector("main").setAttribute("aria-hidden", "true");
                         document.querySelector("body").style.overflow = "hidden";
-                        document.dispatchEvent(new CustomEvent('layout:change'));
+
                         _getFocusOnPopup(modal);
                         modal.style.display = "flex";
                         timerShow(modal, 1);
@@ -389,7 +387,7 @@ function enableAllTabIndexes(element) {
                 const currentModal = document.querySelector('.show[role="dialog"]');
                 if (currentModal) {
                     document.querySelector("body").style.overflow = null;
-                    document.dispatchEvent(new CustomEvent('layout:change'));
+
                     toggleMainHeaderFooterAriaHidden(null);
                     document.querySelector("main").removeAttribute("aria-hidden");
                     currentModal.classList.toggle('show');

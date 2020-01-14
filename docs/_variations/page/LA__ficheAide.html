@@ -2,11 +2,11 @@
 layout: pattern
 ---
 
-{% include components/header.html %}
+{% include header/header.html %}
 
 <main role="main" id="content">
 
-	<section class="ds44-container-fluid">
+	<section class="ds44-container-large">
 
 		<div class="ds44-pageHeaderContainer">
 			<picture class="ds44-pageHeaderContainer__pictureContainer">
@@ -27,277 +27,226 @@ layout: pattern
 			</div>
 		</div>
 
-		<section class="ds44-ongletsContainer">
-			<div class="js-tabs ds44-tabs" data-existing-hx="h2" data-tabs-prefix-class="ds44" id="onglets">
+		{% include onglets/onglets-composites.html
+		  titleOngletUn="En résumé"
+		  titleOngletDeux="En détail"
+		  titleOngletTrois="FAQ"
+		  titleBoutonUn="Qui contacter"
+		  titleBoutonDeux="Faire une demande"
+		  titleBoutonTrois="Suivre ma demande"
+		  contenuOngletUn='<div class="grid-12-small-1">
+				<div class="col-7">
 
-				<div class="ds44-theme ds44-flex-container ds44-flex-wrap-large">
-					<ul class="js-tablist ds44-tabs__list ds44-fg1 ds44-flex-container ds44-list" role="tablist"
-						id="tabs">
-						<li class="js-tablist__item ds44-tabs__item ds44-fg1" role="presentation" id="tabs__1">
-							<a class="js-tablist__link ds44-tabs__link" id="label_id_first" role="tab"
-								aria-controls="id_first" tabindex="0" aria-selected="true">En résumé</a>
-						</li>
-						<li class="js-tablist__item ds44-tabs__item ds44-fg1" role="presentation" id="tabs__2">
-							<a class="js-tablist__link ds44-tabs__link" id="label_id_second" role="tab"
-								aria-controls="id_second" tabindex="-1" aria-selected="false">En détail</a>
-						</li>
-						<li class="js-tablist__item ds44-tabs__item ds44-fg1" role="presentation" id="tabs__3">
-							<a class="js-tablist__link ds44-tabs__link" id="label_id_third" role="tab"
-								aria-controls="id_third" tabindex="-1" aria-selected="false">FAQ</a>
-						</li>
-					</ul>
+					<p class="ds44-introduction">Le Département propose sous conditions de ressources une aide
+						financière pour soutenir les personnes âgées qui souhaitent réaliser des travaux
+						d’adaptation de leur logement. Ascenseurs / monte personne, aménagement intérieur pour
+						adapter votre logement, chemins extérieurs, cours, passages, locaux communs ou extension
+						de logement, le Département peut vous aider à financer des travaux pour vous permettre
+						de mieux vivre chez vous.</p>
 
-					<ul	class="ds44-flex-container ds44-fse ds44--l-padding-tb ds44-flex-grow1-large ds44-blocBtnOnglets ds44-list">
-						<li class="mrs mls ds44-ongletsBtnItem">
-							<button class="ds44-btnStd ds44-btn--invert" type="button"
-								data-target="#overlay-qui-contacter" data-js="ds44-modal"><span
-									class="ds44-btnInnerText">Qui contacter</span><i class="icon icon-phone icon--sizeL"
-									aria-hidden="true"></i></button>
-						</li>
-						<li class="mrs ds44-ongletsBtnItem">
-							<button class="ds44-btnStd ds44-btn--invert" type="button"
-								data-target="#overlay-faire-demande" data-js="ds44-modal"><span
-									class="ds44-btnInnerText">Faire une demande</span><i
-									class="icon icon-file icon--sizeL" aria-hidden="true"></i></button>
-						</li>
-						<li class="mrs ds44-ongletsBtnItem">
-							<button class="ds44-btnStd ds44-btn--invert" type="button"
-								data-target="#overlay-suivre-demande" data-js="ds44-modal"><span
-									class="ds44-btnInnerText">Suivre ma demande</span><i
-									class="icon icon-computer icon--sizeL" aria-hidden="true"></i></button>
-						</li>
-					</ul>
+					<h2 class="h2-like mtm">Pour qui ?</h2>
+					<p>Cette aide est destinée aux propriétaires occupants de 60 ans et plus bénéficiaires de
+						l’aide personnalisée à l’autonomie (ou de moins de 60 ans justifiant d’un handicap) et
+						dont les ressources ne dépassent pas les plafonds « très modestes » de l’Agence
+						Nationale de l’Habitat (ANAH).</p>
+
+					<section class="ds44-partage ds44-flex-container ds44-flex-align-center ds44-m5c">
+						<h2 class="h4-like" id="idPartageRS">Partagez cette page :</h2>
+						<ul class="ds44-list ds44-flex-container ds44-flex-align-center ds44-fse">
+							<li><a href="#" class="ds44-rsLink"
+									title="Le Département de Loire-Atlantique sur Facebook"><i
+										class="icon icon-facebook icon--sizeL" aria-hidden="true"></i><span
+										class="visually-hidden">Le Département de Loire-Atlantique sur
+										Facebook</span></a></li>
+							<li><a href="#" class="ds44-rsLink"
+									title="Le Département de Loire-Atlantique sur Twitter"><i
+										class="icon icon-twitter icon--sizeL" aria-hidden="true"></i><span
+										class="visually-hidden">Le Département de Loire-Atlantique sur
+										Twitter</span></a></li>
+							<li><a href="#" class="ds44-rsLink"
+									title="Le Département de Loire-Atlantique sur Linkedin"><i
+										class="icon icon-linkedin icon--sizeL" aria-hidden="true"></i><span
+										class="visually-hidden">Le Département de Loire-Atlantique sur
+										Linkedin</span></a></li>
+							<li><a href="#" class="ds44-rsLink"
+									title="Contacter Le Département de Loire-Atlantique"><i
+										class="icon icon-mail icon--sizeL" aria-hidden="true"></i><span
+										class="visually-hidden">Contacter le Département Loire
+										Atlantique</span></a></li>
+						</ul>
+					</section>
+
 				</div>
 
-				<div id="id_first" class="js-tabcontent ds44-tabs__content" role="tabpanel"
-					aria-labelledby="label_id_first">
+				<div class="col-1 grid-offset ds44-hide-tinyToLarge"></div>
 
-					<div class="grid-12-small-1">
-						<div class="col-7">
-
-							<p class="ds44-introduction">Le Département propose sous conditions de ressources une aide
-								financière pour soutenir les personnes âgées qui souhaitent réaliser des travaux
-								d’adaptation de leur logement. Ascenseurs / monte personne, aménagement intérieur pour
-								adapter votre logement, chemins extérieurs, cours, passages, locaux communs ou extension
-								de logement, le Département peut vous aider à financer des travaux pour vous permettre
-								de mieux vivre chez vous.</p>
-
-							<h2 class="h2-like mtm">Pour qui ?</h2>
-							<p>Cette aide est destinée aux propriétaires occupants de 60 ans et plus bénéficiaires de
-								l’aide personnalisée à l’autonomie (ou de moins de 60 ans justifiant d’un handicap) et
-								dont les ressources ne dépassent pas les plafonds « très modestes » de l’Agence
-								Nationale de l’Habitat (ANAH).</p>
-
-							<section class="ds44-partage ds44-flex-container ds44-flex-align-center ds44-m5c">
-								<h2 class="h4-like" id="idPartageRS">Partagez cette page :</h2>
-								<ul class="ds44-list ds44-flex-container ds44-flex-align-center ds44-fse">
-									<li><a href="#" class="ds44-rsLink"
-											title="Le Département de Loire-Atlantique sur Facebook"><i
-												class="icon icon-facebook icon--sizeL" aria-hidden="true"></i><span
-												class="visually-hidden">Le Département de Loire-Atlantique sur
-												Facebook</span></a></li>
-									<li><a href="#" class="ds44-rsLink"
-											title="Le Département de Loire-Atlantique sur Twitter"><i
-												class="icon icon-twitter icon--sizeL" aria-hidden="true"></i><span
-												class="visually-hidden">Le Département de Loire-Atlantique sur
-												Twitter</span></a></li>
-									<li><a href="#" class="ds44-rsLink"
-											title="Le Département de Loire-Atlantique sur Linkedin"><i
-												class="icon icon-linkedin icon--sizeL" aria-hidden="true"></i><span
-												class="visually-hidden">Le Département de Loire-Atlantique sur
-												Linkedin</span></a></li>
-									<li><a href="#" class="ds44-rsLink"
-											title="Contacter Le Département de Loire-Atlantique"><i
-												class="icon icon-mail icon--sizeL" aria-hidden="true"></i><span
-												class="visually-hidden">Contacter le Département Loire
-												Atlantique</span></a></li>
-								</ul>
-							</section>
-
+				<aside class="col-4">
+					<section class="ds44-box ds44-theme ds44-mb3">
+						<div class="ds44-innerBoxContainer">
+							<p role="heading" aria-level="2" class="ds44-box-heading">Bon à savoir</p>
+							<p>Le Département vous invite à faire appel à l’un de ses partenaires pour
+								formaliser votre demande.</p>
+							<p class="mts"><a href="#" class="ds44-btnLink"><span
+										class="ds44-btnInnerText">Découvrir les partenaires</span><i
+										class="icon icon-long-arrow-right" aria-hidden="true"></i></a></p>
 						</div>
+					</section>
+					<section class="ds44-box">
+						<p role="heading" aria-level="2" class="ds44-box-heading">Témoignages</p>
+						<div class="ds44-bgGray">
+							<picture><img src="../../assets/images/sample-media.jpg" alt=""
+									class="ds44-box__img" /><span class="ds44-mediaIndicator"
+									aria-label="Page comportant de la vidéo"><i class="icon icon-play"
+										aria-hidden="true"></i></span></picture>
+							<div class="ds44--m-padding">
+								<p role="heading" aria-level="3"><a href="#">Monique a aménagé son logement</a>
+								</p>
+								<p>86 ans - Retraitée - Nantes</p>
+							</div>
+						</div>
+					</section>
+				</aside>
 
-						<div class="col-1 grid-offset ds44-hide-tinyToLarge"></div>
+			</div>'
+			contenuOngletDeux='<div class="grid-12-small-1">
+				<div class="col-7">
+					<h2 class="h2-like">Pour qui ?</h2>
+					<h3 class="h3-like">Je suis éligible quand je réunis 5 critères :</h3>
 
-						<aside class="col-4">
-							<section class="ds44-box ds44-theme ds44-mb3">
-								<div class="ds44-innerBoxContainer">
-									<p role="heading" aria-level="2" class="ds44-box-heading">Bon à savoir</p>
-									<p>Le Département vous invite à faire appel à l’un de ses partenaires pour
-										formaliser votre demande.</p>
-									<p class="mts"><a href="#" class="ds44-btnLink"><span
-												class="ds44-btnInnerText">Découvrir les partenaires</span><i
-												class="icon icon-long-arrow-right" aria-hidden="true"></i></a></p>
-								</div>
-							</section>
-							<section class="ds44-box">
-								<p role="heading" aria-level="2" class="ds44-box-heading">Témoignages</p>
-								<div class="ds44-bgGray">
-									<picture><img src="../../assets/images/sample-media.jpg" alt=""
-											class="ds44-box__img" /><span class="ds44-mediaIndicator"
-											aria-label="Page comportant de la vidéo"><i class="icon icon-play"
-												aria-hidden="true"></i></span></picture>
-									<div class="ds44--m-padding">
-										<p role="heading" aria-level="3"><a href="#">Monique a aménagé son logement</a>
-										</p>
-										<p>86 ans - Retraitée - Nantes</p>
-									</div>
-								</div>
-							</section>
-						</aside>
-
-					</div>
-
-				</div>
-
-				<div id="id_second" class="js-tabcontent ds44-tabs__content" role="tabpanel"
-					aria-labelledby="label_id_second" aria-hidden="true">
-					<div class="grid-12-small-1">
-						<div class="col-7">
-							<h2 class="h2-like">Pour qui ?</h2>
-							<h3 class="h3-like">Je suis éligible quand je réunis 5 critères :</h3>
-
-							<ol>
-								<li><strong>Je suis propriétaire ou usufruitier(e) d’un logement construit depuis plus
-										de 15 ans</strong></li>
-								<li><strong>Je suis bénéficiaire de l’Aide Personnalisée à l’Autonomie (APA)</strong>
-								</li>
-								<li><strong>Mes ressources ne dépassent pas les montants indiqués ci-dessous :</strong>
-									<table>
-										<caption>(Barème de ressources « très modestes » 2019 à vérifier sur l’avis
-											d’imposition N-2)</caption>
-										<tbody>
-											<tr>
-												<th scope="col">Nombre de personnes composant le ménage</th>
-												<th scope="col">Plafonds de ressources (Revenu fiscal de référence)</th>
-											</tr>
-											<tr>
-												<td>1</td>
-												<td>14 790 €</td>
-											</tr>
-											<tr>
-												<td>2</td>
-												<td>21 630 €</td>
-											</tr>
-											<tr>
-												<td>3</td>
-												<td>26 013 €</td>
-											</tr>
-											<tr>
-												<td>4</td>
-												<td>30 784 €</td>
-											</tr>
-											<tr>
-												<td>5</td>
-												<td>34 784 €</td>
-											</tr>
-											<tr>
-												<td>Personne supplémentaire</td>
-												<td>+ 4 385 €</td>
-											</tr>
-										</tbody>
-									</table>
-								</li>
+					<ol>
+						<li><strong>Je suis propriétaire ou usufruitier(e) d’un logement construit depuis plus
+								de 15 ans</strong></li>
+						<li><strong>Je suis bénéficiaire de l’Aide Personnalisée à l’Autonomie (APA)</strong>
+						</li>
+						<li><strong>Mes ressources ne dépassent pas les montants indiqués ci-dessous :</strong>
+							<table>
+								<caption>(Barème de ressources « très modestes » 2019 à vérifier sur l’avis
+									d’imposition N-2)</caption>
+								<tbody>
+									<tr>
+										<th scope="col">Nombre de personnes composant le ménage</th>
+										<th scope="col">Plafonds de ressources (Revenu fiscal de référence)</th>
+									</tr>
+									<tr>
+										<td>1</td>
+										<td>14 790 €</td>
+									</tr>
+									<tr>
+										<td>2</td>
+										<td>21 630 €</td>
+									</tr>
+									<tr>
+										<td>3</td>
+										<td>26 013 €</td>
+									</tr>
+									<tr>
+										<td>4</td>
+										<td>30 784 €</td>
+									</tr>
+									<tr>
+										<td>5</td>
+										<td>34 784 €</td>
+									</tr>
+									<tr>
+										<td>Personne supplémentaire</td>
+										<td>+ 4 385 €</td>
+									</tr>
+								</tbody>
+							</table>
+						</li>
+						<li>
+							<p><strong>Les travaux que je réalise sont conformes au projet présenté et effectués
+									par des professionnels du bâtiment inscrits soit au registre du commerce,
+									soit au répertoire des métiers.</strong></p>
+							<p>Seuls les travaux correspondant à la liste consultable ici sont éligibles :</p>
+							<ul>
+								<li><strong>Ascenseur / montepersonne :</strong> Installation, adaptation ou
+									travaux de mise aux normes d’un ascenseur ou autres appareils permettant
+									notamment le transport de personnes à mobilité réduite</li>
 								<li>
-									<p><strong>Les travaux que je réalise sont conformes au projet présenté et effectués
-											par des professionnels du bâtiment inscrits soit au registre du commerce,
-											soit au répertoire des métiers.</strong></p>
-									<p>Seuls les travaux correspondant à la liste consultable ici sont éligibles :</p>
+									<p><strong>Aménagement intérieur dans le cadre d’une adaptation du logement
+											:</strong></p>
 									<ul>
-										<li><strong>Ascenseur / montepersonne :</strong> Installation, adaptation ou
-											travaux de mise aux normes d’un ascenseur ou autres appareils permettant
-											notamment le transport de personnes à mobilité réduite</li>
-										<li>
-											<p><strong>Aménagement intérieur dans le cadre d’une adaptation du logement
-													:</strong></p>
-											<ul>
-												<li>Création, modification ou remplacement d’équipements sanitaires et
-													robinetterie et les travaux induits (carrelage, réfection de sols,
-													plâtrerie…)</li>
-												<li>Revêtements de sol, y compris travaux préparatoires (chapes,
-													isolations…) à l’exception des sols souples (moquettes, lino…)</li>
-												<li>Création, suppression ou modification de cloisons de distribution et
-													cloisons séparatives</li>
-												<li>Travaux de remplacement ou installation de menuiseries intérieures
-												</li>
-												<li>Installation de mains-courantes, barres d’appui, poignées de rappel
-													de porte, protection de murs et de portes</li>
-												<li>Installation ou adaptation des systèmes de commande de fermeture et
-													d’ouverture (portes, fenêtres, volets)</li>
-												<li>Alerte à distance</li>
-												<li>Modification ou installation des boîtes aux lettres</li>
-											</ul>
+										<li>Création, modification ou remplacement d’équipements sanitaires et
+											robinetterie et les travaux induits (carrelage, réfection de sols,
+											plâtrerie…)</li>
+										<li>Revêtements de sol, y compris travaux préparatoires (chapes,
+											isolations…) à l’exception des sols souples (moquettes, lino…)</li>
+										<li>Création, suppression ou modification de cloisons de distribution et
+											cloisons séparatives</li>
+										<li>Travaux de remplacement ou installation de menuiseries intérieures
 										</li>
-										<li>
-											<p><strong>Chemins extérieurs, cours, passages, locaux communs :</strong>
-											</p>
-											<ul>
-												<li>Réfection ou adaptation des cheminements extérieurs, de cour ou de
-													passage dans un projet d’accessibilité ou de restructuration</li>
-												<li>Aménagement de bateaux pour franchir le trottoir</li>
-												<li>Élargissement ou aménagement de place de parking (uniquement en cas
-													de travaux pour l’autonomie de la personne)</li>
-											</ul>
-										</li>
-										<li><strong>Extension de logement : </strong>Dans la limite de 45 m² de surface
-											habitable (annexion de parties communes, sur-élévation, création de volume…)
-										</li>
+										<li>Installation de mains-courantes, barres d’appui, poignées de rappel
+											de porte, protection de murs et de portes</li>
+										<li>Installation ou adaptation des systèmes de commande de fermeture et
+											d’ouverture (portes, fenêtres, volets)</li>
+										<li>Alerte à distance</li>
+										<li>Modification ou installation des boîtes aux lettres</li>
 									</ul>
 								</li>
-								<li><strong>Je ne bénéficie, pour ce projet de travaux, d’aucune aide de caisse(s) de
-										retraite</strong></li>
-							</ol>
-							<h2 class="h2-like">C’est quoi ?</h2>
-							<p>Si je réunis tous les critères, je pourrai prétendre à une subvention correspondant à
-								<strong>20 % du montant hors taxe (HT) de mes travaux et qui ne dépassera pas 1 200
-									€</strong>.</p>
-							<p class="ds44-exergue">Tout bénéficiaire d’une subvention à l’amélioration de l’habitat
-								privé dispose d’un délai de 4 ans pour présenter sa demande de versement. La subvention
-								n’est donc plus valable au 31 décembre de la quatrième année qui suit son attribution.
-							</p>
+								<li>
+									<p><strong>Chemins extérieurs, cours, passages, locaux communs :</strong>
+									</p>
+									<ul>
+										<li>Réfection ou adaptation des cheminements extérieurs, de cour ou de
+											passage dans un projet d’accessibilité ou de restructuration</li>
+										<li>Aménagement de bateaux pour franchir le trottoir</li>
+										<li>Élargissement ou aménagement de place de parking (uniquement en cas
+											de travaux pour l’autonomie de la personne)</li>
+									</ul>
+								</li>
+								<li><strong>Extension de logement : </strong>Dans la limite de 45 m² de surface
+									habitable (annexion de parties communes, sur-élévation, création de volume…)
+								</li>
+							</ul>
+						</li>
+						<li><strong>Je ne bénéficie, pour ce projet de travaux, d’aucune aide de caisse(s) de
+								retraite</strong></li>
+					</ol>
+					<h2 class="h2-like">C’est quoi ?</h2>
+					<p>Si je réunis tous les critères, je pourrai prétendre à une subvention correspondant à
+						<strong>20 % du montant hors taxe (HT) de mes travaux et qui ne dépassera pas 1 200
+							€</strong>.</p>
+					<p class="ds44-exergue">Tout bénéficiaire d’une subvention à l’amélioration de l’habitat
+						privé dispose d’un délai de 4 ans pour présenter sa demande de versement. La subvention
+						n’est donc plus valable au 31 décembre de la quatrième année qui suit son attribution.
+					</p>
+				</div>
+
+				<div class="col-1 grid-offset"></div>
+
+				<aside class="col-4">
+					<section class="ds44-box ds44-theme ds44-mb3">
+						<div class="ds44-innerBoxContainer">
+							<p role="heading" aria-level="2" class="ds44-box-heading">Bon à savoir</p>
+							<p>Le Département vous invite à faire appel à l’un de ses partenaires pour
+								formaliser votre demande.</p>
+							<p class="mts"><a href="#" class="ds44-btnLink"><span
+										class="ds44-btnInnerText">Découvrir les partenaires</span><i
+										class="icon icon-long-arrow-right" aria-hidden="true"></i></a></p>
 						</div>
+					</section>
 
-						<div class="col-1 grid-offset"></div>
 
-						<aside class="col-4">
-							<section class="ds44-box ds44-theme ds44-mb3">
-								<div class="ds44-innerBoxContainer">
-									<p role="heading" aria-level="2" class="ds44-box-heading">Bon à savoir</p>
-									<p>Le Département vous invite à faire appel à l’un de ses partenaires pour
-										formaliser votre demande.</p>
-									<p class="mts"><a href="#" class="ds44-btnLink"><span
-												class="ds44-btnInnerText">Découvrir les partenaires</span><i
-												class="icon icon-long-arrow-right" aria-hidden="true"></i></a></p>
-								</div>
-							</section>
+					<section class="ds44-box">
+						<p role="heading" aria-level="2" class="ds44-box-heading">Témoignages</p>
+						<div class="ds44-bgGray">
+						<picture><img src="../../assets/images/sample-media.jpg" alt="" class="ds44-box__img" /><span class="ds44-mediaIndicator" aria-label="Page comportant de la vidéo"><i class="icon icon-play" aria-hidden="true"></i></span></picture>
+						<div class="ds44--m-padding">
+							<p role="heading" aria-level="3"><a href="#">Monique a aménagé son logement</a></p>
+							<p>86 ans - Retraitée - Nantes</p>
+						</div>
+						</div>
+					</section>
 
-							
-							<section class="ds44-box">
-								<p role="heading" aria-level="2" class="ds44-box-heading">Témoignages</p>
-								<div class="ds44-bgGray">
-								<picture><img src="../../assets/images/sample-media.jpg" alt="" class="ds44-box__img" /><span class="ds44-mediaIndicator" aria-label="Page comportant de la vidéo"><i class="icon icon-play" aria-hidden="true"></i></span></picture>
-								<div class="ds44--m-padding">
-									<p role="heading" aria-level="3"><a href="#">Monique a aménagé son logement</a></p>
-									<p>86 ans - Retraitée - Nantes</p>
-								</div>
-								</div>
-							</section>
+				</aside>
 
-						</aside>
+			</div>'
+		  contenuOngletTrois='<p>FAQ à compléter</p>
+			<p><a href="#">Lien de test</a></p>'
+		%}
 
-					</div>
-				</div>
-
-				<div id="id_third" class="js-tabcontent ds44-tabs__content" role="tabpanel"
-					aria-labelledby="label_id_third" aria-hidden="true">
-					<p>FAQ à compléter</p>
-					<p><a href="#">Lien de test</a></p>
-				</div>
-
-			</div>
-		</section>
-	</section>
-
-	<section class="ds44-container-fluid ds44-alternate-container ds44-wave-white">
+	<section class="ds44-container-fluid ds44-lightBG ds44-wave-white">
 		<div class="ds44-inner-container">
 			<header class="txtcenter">
 				<h2 class="h2-like center">Cette page vous a-t-elle été utile ?</h2>
@@ -431,60 +380,4 @@ role="dialog" aria-labelledby="titre-modale">
 	</div>
 </section>
 
-<footer role="contentinfo">
-	<section class="ds44-container-fluid">
-
-		<div class="ds44-inner-container">
-			<div class="grid-12-small-1 ds44-hasGutter-xxl">
-				<div class="col-2-small-1">
-					<picture class="ds44-logo ds44-mb3">
-						<img src="../../assets/images/logo-loire-atlantique.svg" alt="Loire Atlantique" />
-					</picture>
-				</div>
-				<div class="col-5-small-1">
-					<h2 class="h4-like" id="idTitreFooter1">Recevez nos infos par mail</h2>
-					<p class="ds44-mb3">Pour être alerté lors de la parution des magazines ou recevoir l’actu selon mes
-						centres d’intérêts</p>
-					<p><button class="ds44-btnStd" type="button"
-							title="Je m'abonne par mail aux informations du CD44"><span class="ds44-btnInnerText">Je
-								m'abonne</span><i class="icon icon-long-arrow-right" aria-hidden="true"></i></button>
-					</p>
-				</div>
-				<div class="col-5-small-1">
-					<p role="heading" aria-level="2" class="h4-like mbm" id="idTitreFooter2">Suivez-nous sur les réseaux sociaux :</p>					
-                    <ul class="ds44-list ds44-flex-container ds44-flex-align-center ds44-fse">
-                        <li><a href="#" target="_blank" class="ds44-rsFootLink" title="Le Département de Loire-Atlantique sur Facebook - nouvelle fenêtre"><i class="icon icon-facebook" aria-hidden="true"></i><span class="visually-hidden">Le Département de Loire-Atlantique sur Facebook</span></a></li>
-                        <li><a href="#" target="_blank" class="ds44-rsFootLink" title="Le Département de Loire-Atlantique sur Twitter - nouvelle fenêtre"><i class="icon icon-twitter" aria-hidden="true"></i><span class="visually-hidden">Le Département de Loire-Atlantique sur Twitter</span></a></li>
-                        <li><a href="#" target="_blank" class="ds44-rsFootLink" title="Le Département de Loire-Atlantique sur Instagram - nouvelle fenêtre"><i class="icon icon-instagram" aria-hidden="true"></i><span class="visually-hidden">Le Département de Loire-Atlantique sur Instagram</span></a></li>
-                        <li><a href="#" target="_blank" class="ds44-rsFootLink" title="Le Département de Loire-Atlantique sur Youtube - nouvelle fenêtre"><i class="icon icon-youtube" aria-hidden="true"></i><span class="visually-hidden">Le Département de Loire-Atlantique sur Youtube</span></a></li>
-                        <li><a href="#" target="_blank" class="ds44-rsFootLink" title="Le Département de Loire-Atlantique sur Mag Web - nouvelle fenêtre"><i class="icon icon-magweb" aria-hidden="true"></i><span class="visually-hidden">Le Département de Loire-Atlantique sur Magweb</span></a></li>
-                    </ul>
-				</div>
-			</div>
-
-		</div>
-
-	</section>
-
-	<section class="ds44-container-fluid ds44-bgGray">
-		<div class="ds44-inner-container">
-			<ul class="ds44-list ds44-flex-container ds44-footerList">
-				<li><a href="#" class="footerLink">Nous écrire</a></li>
-				<li><a href="#" class="footerLink">Mentions légales</a></li>
-				<li><a href="#" class="footerLink">Plan du site</a></li>
-				<li><a href="#" class="footerLink">Accessibilité</a></li>
-				<li><a href="#" class="footerLink">Offres d’emplois</a></li>
-				<li><a href="#" class="footerLink">Espace presse</a></li>
-				<li><a href="#" class="footerLink">Marchés publics</a></li>
-				<li><a href="#" class="footerLink">Enquêtes publiques</a></li>
-				<li><a href="#" class="footerLink">Espace contributeurs</a></li>
-			</ul>
-		</div>
-	</section>
-
-	<p class="ds44-posAbs ds44-posTop ds44-posRi">
-		<a class="ds44-icoLink ds44-icoLink--footer" href="#top"><i class="icon icon-arrow-up icon--sizeXL"
-				aria-hidden="true"></i><span class="ds44-icoTxtWrapper">Haut de page</span></a>
-	</p>
-
-</footer>
+{% include footer/footer-LA.html %}

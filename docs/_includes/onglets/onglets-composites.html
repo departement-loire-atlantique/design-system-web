@@ -1,0 +1,52 @@
+<section class="ds44-ongletsContainer">
+    <div class="ds44-tabs" data-existing-hx="h2" data-tabs-prefix-class="ds44" id="onglets">
+        <div class="ds44-theme ds44-flex-container ds44-flex-wrap-large">
+            <nav role="navigation" aria-label="xxx" id="yyy" class="ds44-flex-container ds44-fg1 ds44-navOnglets">
+                <ul class="ds44-tabs__list ds44-fg1 ds44-flex-container ds44-list" id="tabs">
+                    <li class="ds44-tabs__item ds44-fg1" id="tabs__1">
+                        <a href="#id_first" class="js-tablist__link ds44-tabs__link" id="label_id_first" aria-current="true">{{ include.titleOngletUn }}</a>
+                    </li>
+                    <li class="ds44-tabs__item ds44-fg1" id="tabs__2">
+                        <a href="#id_second" class="js-tablist__link ds44-tabs__link" id="label_id_second">{{ include.titleOngletDeux }}</a>
+                    </li>
+                    <li class="ds44-tabs__item ds44-fg1" id="tabs__3">
+                        <a href="#id_third" class="js-tablist__link ds44-tabs__link" id="label_id_third">{{ include.titleOngletTrois }}</a>
+                    </li>
+                </ul>
+            </nav>
+            <div class="ds44-flex-container ds44-flex-grow1-large ds44-fse">
+                <ul class="ds44-flex-container ds44--l-padding-tb ds44-blocBtnOnglets ds44-list">
+                    <li class="mrs mls ds44-ongletsBtnItem">
+                        <button class="ds44-btnStd ds44-btn--invert" type="button"><span class="ds44-btnInnerText">{{ include.titleBoutonUn }}</span><i class="icon icon-phone icon--sizeL" aria-hidden="true"></i></button>
+                    </li>
+                    <li class="mrs ds44-ongletsBtnItem">
+                        <button class="ds44-btnStd ds44-btn--invert" type="button"><span class="ds44-btnInnerText">{{ include.titleBoutonDeux }}</span><i class="icon icon-file icon--sizeL" aria-hidden="true"></i></button>
+                    </li>
+                    <li class="mrs ds44-ongletsBtnItem">
+                        <button class="ds44-btnStd ds44-btn--invert" type="button"><span class="ds44-btnInnerText">{{ include.titleBoutonTrois }}</span><i class="icon icon-computer icon--sizeL" aria-hidden="true"></i></button>
+                    </li>
+                </ul>
+            </div>
+        </div>
+        <div id="id_first" class="js-tabcontent ds44-tabs__content" aria-labelledby="label_id_first">
+            <a name="onglet-1" id="onglet-1"></a>
+            <h2 class="visually-hidden">1er onglet</h2>
+            {{ include.contenuOngletUn }}
+            <p class="ds44-keyboard-show"><a href="#label_id_first">Revenir au premier onglet</a></p>
+        </div>
+        <div id="id_second" class="js-tabcontent ds44-tabs__content" aria-labelledby="label_id_second" aria-hidden="true">
+            <a name="onglet-2" id="onglet-2"></a>
+            <h2 class="visually-hidden">2e onglet</h2>
+            {{ include.contenuOngletDeux }}
+            <p>Ici le contenu du deuxième onglet <a href="#">Tab 2</a></p>
+            <p class="ds44-keyboard-show"><a href="#label_id_second">Revenir au second onglet</a></p>
+        </div>
+        <div id="id_third" class="js-tabcontent ds44-tabs__content" aria-labelledby="label_id_third" aria-hidden="true">
+            <a name="onglet-3" id="onglet-3"></a>
+            <h2 class="visually-hidden">3e onglet</h2>
+            {{ include.contenuOngletTrois }}
+            <p>Ici le contenu du troisième onglet <a href="#">Tab 3</a></p>
+            <p class="ds44-keyboard-show"><a href="#label_id_third">Revenir au troisième onglet</a></p>
+        </div>
+    </div>
+</section>

@@ -26,12 +26,12 @@ function trapFocus(element) {
 	firstFocusableElem.classList.add("ds44-tmpFirstFocus");
 	lastFocusableElem.classList.add("ds44-tmpLastFocus");
 
-	let tmpFocusBegin = document.createElement("a");
+	let tmpFocusBegin = document.createElement("span");
 	tmpFocusBegin.classList.add("ds44-tmpFocusHidden");
 	tmpFocusBegin.setAttribute("tabindex", "0");
 	tmpFocusBegin.setAttribute("onfocus", "focusBackToElement('.ds44-tmpLastFocus');");
 
-	let tmpFocusEnd = document.createElement("input");
+	let tmpFocusEnd = document.createElement("span");
 	tmpFocusEnd.classList.add("ds44-tmpFocusHidden");
 	tmpFocusEnd.setAttribute("tabindex", "0");
 	tmpFocusEnd.setAttribute("onfocus", "focusBackToElement('.ds44-tmpFirstFocus');");

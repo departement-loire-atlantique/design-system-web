@@ -288,6 +288,15 @@
   SPECIFIC DS44 MEDIA QUERIES
   === */
 
+
+@media (min-width: $ds44-medium) {
+
+  .ds44-show-mobile {
+    display: none;
+  } 
+
+}
+
 @media (max-width: $ds44-large) {
 
   .ds44-hide-tinyToLarge {
@@ -304,18 +313,22 @@
 
 }
 
-@media (max-width: $ds44-small) {
+@media (max-width: $ds44-small - .0625) {
 
   .ds44-hide-smallScreens {
     display: none;
   }
 
-}
+  .ds44-mobile-reduced-pt {
+    padding-top: $ds44-padding-base;
+  }
 
-@media (min-width: $ds44-medium) {
+  .ds44-mobile-reduced-mb {
+    margin-bottom: $ds44-margin-base ;
+  }
 
-  .ds44-show-mobile {
-    display: none;
-  } 
+  .ds44-mobile-reduced-mt {
+    margin-top: $ds44-margin-base ;
+  }
 
 }

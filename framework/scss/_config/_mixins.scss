@@ -4,9 +4,13 @@
 @mixin ds44-font-sizes($elem) {
   $q: map-get($ds44-font-sizes, $elem);
   $mob: map-get($q, "mobile");
+  $tab: map-get($q, "tablet");
   $desk: map-get($q, "desktop");
   font-size: $mob;
   @include respond-to("small-up") {
+    font-size: $tab;
+  }
+  @include respond-to("large-up") {
     font-size: $desk;
   }
 }

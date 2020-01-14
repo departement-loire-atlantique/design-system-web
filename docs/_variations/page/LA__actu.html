@@ -2,139 +2,129 @@
 layout: pattern
 ---
 
-{% include components/header.html %}
+{% include header/header.html %}
 
 <main role="main" id="content">
 
-	<article class="ds44-container-fluid">
+	<article class="ds44-container-large">	
 
-		<div class="ds44-alternate-container">
-			<div class="ds44--xl-padding-t pbs large-w66 mauto">
-				<nav role="navigation" aria-label="Votre position" class="ds44-hide-smallScreens">
-					<ul class="ds44-list">
-						<li class="ds44-breadcrumb"><a href="#"><i class="icon icon-home icon--medium"
-									aria-hidden="true"></i><span class="visually-hidden">Accueil</span></a></li>
-						<li class="ds44-breadcrumb"><a href="#">Besoin d'aide(s)</a></li>
-						<li class="ds44-breadcrumb"><a href="#">Tourisme</a></li>
-						<li class="ds44-breadcrumb"><a href="#">Le canal de Nantes à Brest, l'Erdre et la Sèvre</a></li>
-						<li class="ds44-breadcrumb" aria-current="location"><span>Le canal de Nantes à Brest ouvre à la
-								navigation</span></li>
+		<div class="ds44-lightBG">
+			<div class="ds44-inner-container ds44--xl-padding-t ds44--m-padding-b ds44-mobile-reduced-pt">	
+				<div class="ds44-grid12-offset-2">
+					{% include breadcrumb/breadcrumb.html %}				
+					<h1 class="h1-like mbm mtm ds44-mobile-reduced-mb ds44-mobile-reduced-mt" id="idTitre1">Le canal de Nantes à Brest ouvre à la navigation</h1>
+					<p class="ds44-textLegend">Publié le 12/09/19</p>
+				</div>
+			</div>
+		</div>
+		<div class="ds44-img50">
+			<div class="ds44-inner-container">
+				<div class="ds44-grid12-offset-1">
+					<figure class="ds44-legendeContainer ds44-container-imgRatio" role="figure"
+						aria-label="Légende associée © Copyright">
+						<img src="../../assets/images/img_article_bigger@2x.jpg" alt="" class="ds44-w100 ds44-imgRatio">
+						<figcaption class="ds44-imgCaption">Légende associée © Copyright</figcaption>
+					</figure>
+				</div>
+			</div>
+		</div>
+
+		<section class="ds44-contenuArticle" id="section1">
+			<div class="ds44-inner-container ds44-mtb3">
+				<div class="ds44-grid12-offset-2">
+					<p class="ds44-introduction">Jusqu'au 27 octobre, le canal de Nantes à Brest repasse en mode beaux jours,
+						avec le retour de la navigation. Le Département, propriétaire de cet ouvrage, a profité de l'hiver pour
+						l'entretenir, avec la restauration de portes d'écluses à Nort-sur-Erdre et à Blain, le curage du canal
+						et l'entretien des berges.
+					</p>
+					<p>Avec l’arrivée des beaux jours, la navigation sur le canal de Nantes à Brest va reprendre. Du vendredi 29
+						mars 2019 jusqu'au dimanche 27 octobre inclus (sauf l’écluse de la Digue du lundi 13 mai 2019 au
+						dimanche 15 septembre 2019 inclus), les plaisancières et plaisanciers pourront de nouveau naviguer en
+						toute sécurité sur le canal.
+					</p>
+				</div>				
+			</div>
+		</section>
+
+		<section class="ds44-contenuArticle" id="section2">
+			<div class="ds44-inner-container ds44-mtb3">
+				<div class="ds44-grid12-offset-2">
+					<h2 id="idTitre2">Des travaux pendant l'hiver</h2>
+					<p>La section Nantes- Saint-Nicolas-de-Redon comprend 18 écluses et permet de parcourir 95 km en empruntant
+						d’abord l’Erdre. Au total, pas moins de 300 ouvrages (barrages, écluses, souterrains, arcades, ponceaux,
+						aqueducs, siphons, vannes…) doivent être entretenus. Cette maintenance, dont le Département de
+						Loire-Atlantique a la charge, est permanente. En 2018, ces travaux ont représenté un budget de 2
+						millions d'euros.
+					</p>
+				</div>				
+			</div>
+		</section>
+
+		<div class="ds44-contenuMedia">
+			<div class="ds44-inner-container ds44-mtb3">
+				<div class="ds44-grid12-offset-1">
+					<a href="#"><img src="../../assets/images/img_video_bigger@2x.jpg" alt="Vidéo : le Canal ouvre à la navigation" class="ds44-w100"></a>
+				</div>				
+			</div>
+		</div>
+
+		<section class="ds44-contenuArticle" id="section3">
+			<div class="ds44-inner-container ds44-mtb3">
+				<div class="ds44-grid12-offset-2">
+					<h3 id="idTitre3">Quelques exemples de travaux réalisés cet hiver :</h3>
+					<ul>
+						<li>Restauration des portes d’écluses de la Rabinière (Nort-sur-Erdre) et la Paudais (Blain)</li>
+						<li>Curage du canal sur plusieurs secteurs : à proximité de l’écluse du Terrier puis sur les secteurs de
+							Barel et la Prée à Blain</li>
+						<li>Réfection des berges sur plusieurs secteurs : la Remaudais et à Bout de Bois à Héric</li>
+						<li>Restauration du barrage de Bout de bois</li>
+						<li>Travaux d’élagage et d’abattage d’arbres à Carheil (Plessée), Cohignac et Paudais (Blain)</li>
 					</ul>
-				</nav>
-
-        <h1 class="h1-like mbm mtm" id="idTitre1">Le canal de Nantes à Brest ouvre à la navigation</h1>
-
-				<p class="ds44-textLegend">Publié le 12/09/19</p>
+				</div>				
 			</div>
-		</div>
+		</section>
 
-		<div class="ds44-alternate-container ds44-img50">
-			<div class="large-w75 mauto">
-				<figure class="ds44-legendeContainer ds44-container-imgRatio" role="figure"
-					aria-label="Légende associée © Copyright">
-					<img src="../../assets/images/img_article_bigger@2x.jpg" alt="" class="ds44-w100 ds44-imgRatio">
-					<figcaption class="ds44-imgCaption">Légende associée © Copyright</figcaption>
-				</figure>
+		<section class="ds44-contenuArticle" id="section4">
+			<div class="ds44-inner-container ds44-mtb3">
+				<div class="ds44-grid12-offset-2">
+
+					<h2 id="idTitre4">Pour franchir une écluse</h2>
+					<p>De Quiheix (Nort-sur-Erdre) à La Digue (Saint-Nicolas-de-Redon), les conditions de passage aux écluses
+						sont les suivantes :</p>
+					<ul>
+						<li>Le passage en libre-service est interdit. Les plaisanciers sont systématiquement accompagnés par un
+							éclusier à toutes les écluses. En l’absence d’un éclusier, les écluses seront fermées.</li>
+						<li>Le service est assuré par du personnel en poste ou en accompagnement à toutes les écluses en
+							fonction des périodes et des horaires.</li>
+						<li>Horaires de passages aux écluses du lundi au dimanche : de 9h15 à 12h30 et de 14h à 18h30 (excepté
+							le vendredi jusqu’à 18h45)</li>
+					</ul>
+					<p>Pour limiter l’attente aux écluses, communiquez au plus tôt votre passage :</p>
+					<ul>
+						<li>Le passage en libre-service est interdit. Les plaisanciers sont systématiquement accompagnés par un
+							éclusier à toutes les écluses. En l’absence d’un éclusier, les écluses seront fermées.</li>
+						<li>Le service est assuré par du personnel en poste ou en accompagnement à toutes les écluses en
+							fonction des périodes et des horaires.</li>
+						<li>Horaires de passages aux écluses du lundi au dimanche : de 9h15 à 12h30 et de 14h à 18h30 (excepté
+							le vendredi jusqu’à 18h45)</li>
+					</ul>
+					<p>Pour limiter l’attente aux écluses, communiquez au plus tôt votre passage :</p>
+					<ul>
+						<li>En semaine : contactez le service aménagement / Délégation Châteaubriant au plus tard à 16h la
+							veille de la navigation souhaitée en semaine ; jusqu’au vendredi midi pour les weekends : 02 40 79
+							47 56 ou 06 71 01 99 56</li>
+						<li>Le week-end : contactez l’unité voies navigables Délégation Châteaubriant : 06 48 66 40 70</li>
+					</ul>
+				</div>				
 			</div>
-		</div>
-
-		<section class="ds44-contenuArticle large-w66" id="section1">
-			<p class="ds44-introduction">Jusqu'au 27 octobre, le canal de Nantes à Brest repasse en mode beaux jours,
-				avec le retour de la navigation. Le Département, propriétaire de cet ouvrage, a profité de l'hiver pour
-				l'entretenir, avec la restauration de portes d'écluses à Nort-sur-Erdre et à Blain, le curage du canal
-				et l'entretien des berges.
-			</p>
-			<p>Avec l’arrivée des beaux jours, la navigation sur le canal de Nantes à Brest va reprendre. Du vendredi 29
-				mars 2019 jusqu'au dimanche 27 octobre inclus (sauf l’écluse de la Digue du lundi 13 mai 2019 au
-				dimanche 15 septembre 2019 inclus), les plaisancières et plaisanciers pourront de nouveau naviguer en
-				toute sécurité sur le canal.
-			</p>
-		</section>
-
-		<section class="ds44-contenuArticle large-w66" id="section2">
-			<h2 id="idTitre2">Des travaux pendant l'hiver</h2>
-			<p>La section Nantes- Saint-Nicolas-de-Redon comprend 18 écluses et permet de parcourir 95 km en empruntant
-				d’abord l’Erdre. Au total, pas moins de 300 ouvrages (barrages, écluses, souterrains, arcades, ponceaux,
-				aqueducs, siphons, vannes…) doivent être entretenus. Cette maintenance, dont le Département de
-				Loire-Atlantique a la charge, est permanente. En 2018, ces travaux ont représenté un budget de 2
-				millions d'euros.</p>
-		</section>
-
-		<div class="ds44-contenuMedia large-w75 mauto">
-			<a href="#"><img src="../../assets/images/img_video_bigger@2x.jpg"
-					alt="Vidéo : le Canal ouvre à la navigation" class="ds44-w100"></a>
-		</div>
-
-		<section class="ds44-contenuArticle large-w66" id="section3">
-			<h3 id="idTitre3">Quelques exemples de travaux réalisés cet hiver :</h3>
-			<ul>
-				<li>Restauration des portes d’écluses de la Rabinière (Nort-sur-Erdre) et la Paudais (Blain)</li>
-				<li>Curage du canal sur plusieurs secteurs : à proximité de l’écluse du Terrier puis sur les secteurs de
-					Barel et la Prée à Blain</li>
-				<li>Réfection des berges sur plusieurs secteurs : la Remaudais et à Bout de Bois à Héric</li>
-				<li>Restauration du barrage de Bout de bois</li>
-				<li>Travaux d’élagage et d’abattage d’arbres à Carheil (Plessée), Cohignac et Paudais (Blain)</li>
-			</ul>
-		</section>
-
-		<section class="ds44-contenuArticle large-w66" id="section4">
-
-			<h2 id="idTitre4">Pour franchir une écluse</h2>
-			<p>De Quiheix (Nort-sur-Erdre) à La Digue (Saint-Nicolas-de-Redon), les conditions de passage aux écluses
-				sont les suivantes :</p>
-			<ul>
-				<li>Le passage en libre-service est interdit. Les plaisanciers sont systématiquement accompagnés par un
-					éclusier à toutes les écluses. En l’absence d’un éclusier, les écluses seront fermées.</li>
-				<li>Le service est assuré par du personnel en poste ou en accompagnement à toutes les écluses en
-					fonction des périodes et des horaires.</li>
-				<li>Horaires de passages aux écluses du lundi au dimanche : de 9h15 à 12h30 et de 14h à 18h30 (excepté
-					le vendredi jusqu’à 18h45)</li>
-			</ul>
-			<p>Pour limiter l’attente aux écluses, communiquez au plus tôt votre passage :</p>
-			<ul>
-				<li>Le passage en libre-service est interdit. Les plaisanciers sont systématiquement accompagnés par un
-					éclusier à toutes les écluses. En l’absence d’un éclusier, les écluses seront fermées.</li>
-				<li>Le service est assuré par du personnel en poste ou en accompagnement à toutes les écluses en
-					fonction des périodes et des horaires.</li>
-				<li>Horaires de passages aux écluses du lundi au dimanche : de 9h15 à 12h30 et de 14h à 18h30 (excepté
-					le vendredi jusqu’à 18h45)</li>
-			</ul>
-			<p>Pour limiter l’attente aux écluses, communiquez au plus tôt votre passage :</p>
-			<ul>
-				<li>En semaine : contactez le service aménagement / Délégation Châteaubriant au plus tard à 16h la
-					veille de la navigation souhaitée en semaine ; jusqu’au vendredi midi pour les weekends : 02 40 79
-					47 56 ou 06 71 01 99 56</li>
-				<li>Le week-end : contactez l’unité voies navigables Délégation Châteaubriant : 06 48 66 40 70</li>
-			</ul>
 
 		</section>
 
-		<section class="ds44-partage ds44-flex-container ds44-flex-align-center ds44-m3c pal">
-			<h2 class="h4-like" id="idPartageRS">Partagez cette page :</h2>
-			<ul class="ds44-list ds44-flex-container ds44-flex-align-center ds44-fse">
-
-				<li><a href="#" class="ds44-rsLink" title="Le Département de Loire-Atlantique sur Facebook"><i
-							class="icon icon-facebook icon--sizeL" aria-hidden="true"></i><span
-							class="visually-hidden">Le Département de Loire-Atlantique sur
-							Facebook</span></a></li>
-				<li><a href="#" class="ds44-rsLink" title="Le Département de Loire-Atlantique sur Twitter"><i
-							class="icon icon-twitter icon--sizeL" aria-hidden="true"></i><span
-							class="visually-hidden">Le Département de Loire-Atlantique sur
-							Twitter</span></a></li>
-				<li><a href="#" class="ds44-rsLink" title="Le Département de Loire-Atlantique sur Linkedin"><i
-							class="icon icon-linkedin icon--sizeL" aria-hidden="true"></i><span
-							class="visually-hidden">Le Département de Loire-Atlantique sur
-							Linkedin</span></a></li>
-				<li><a href="#" class="ds44-rsLink" title="Contacter Le Département de Loire-Atlantique"><i
-							class="icon icon-mail icon--sizeL" aria-hidden="true"></i><span
-							class="visually-hidden">Contacter Le Département de Loire-Atlantique</span></a>
-				</li>
-			</ul>
-		</section>
+		{% include partage/partage-interne.html %}
 
 	</article>
 
-	<div class="ds44-container-fluid">
+	<div class="ds44-container-large">
 
 		<section class="ds44-box ds44-theme ds44-bgTriangle-left mbm">
 			<div class="ds44-flex-container ds44-flex-container--colMed ds44-flex-container--colMed--colRev">
@@ -154,87 +144,16 @@ layout: pattern
 
 	</div>
 
-	<section class="ds44-container-fluid ds44-alternate-container ds44-wave-white">
-		<div class="ds44-inner-container">
-			<header class="txtcenter">
-				<h2 class="h2-like" id="idTitre5">Sur le même thème</h2>
-			</header>
+	<section class="ds44-container-fluid ds44-lightBG ds44-wave-white ds44--xl-padding-tb">
+		<header class="txtcenter ds44--xl-padding-tb">
+			<h2 class="h2-like" id="idTitre5">Sur le même thème</h2>
+		</header>
+		<div class="ds44-container-large">
+			{% include carrousel/carrousel-x4.html %}
 		</div>
-		{% include carrousel/carrousel-x4.html %}
 	</section>
 
 </main>
 
 
-<footer role="contentinfo">
-	<section class="ds44-container-fluid">
-
-		<div class="ds44-inner-container">
-			<div class="grid-12-small-1 ds44-hasGutter-xxl">
-				<div class="col-2-small-1">
-					<picture class="ds44-logo ds44-mb3">
-						<img src="../../assets/images/logo-loire-atlantique.svg" alt="Loire Atlantique" />
-					</picture>
-				</div>
-				<div class="col-5-small-1">
-					<h2 class="h4-like" id="idTitreFooter1">Recevez nos infos par mail</h2>
-					<p class="ds44-mb3">Pour être alerté lors de la parution des magazines ou recevoir l’actu selon mes
-						centres d’intérêts</p>
-					<p><button class="ds44-btnStd" type="button"
-							title="Je m'abonne par mail aux informations du CD44"><span class="ds44-btnInnerText">Je
-								m'abonne</span><i class="icon icon-long-arrow-right" aria-hidden="true"></i></button>
-					</p>
-				</div>
-				<div class="col-5-small-1">
-					<p role="heading" aria-level="2" class="h4-like mbm" id="idTitreFooter2">Suivez-nous sur les réseaux sociaux :</p>
-					<ul class="ds44-list ds44-flex-container ds44-flex-align-center ds44-fse">
-						<li><a href="#" target="_blank" class="ds44-rsFootLink"
-								title="Le Département de Loire-Atlantique sur Facebook - nouvelle fenêtre"><i
-									class="icon icon-facebook" aria-hidden="true"></i><span class="visually-hidden">Le
-									Département Loire Atlantique sur Facebook</span></a></li>
-						<li><a href="#" target="_blank" class="ds44-rsFootLink"
-								title="Le Département de Loire-Atlantique sur Twitter - nouvelle fenêtre"><i
-									class="icon icon-twitter" aria-hidden="true"></i><span class="visually-hidden">Le
-									Département Loire Atlantique sur Twitter</span></a></li>
-						<li><a href="#" target="_blank" class="ds44-rsFootLink"
-								title="Le Département de Loire-Atlantique sur Instagram - nouvelle fenêtre"><i
-									class="icon icon-instagram" aria-hidden="true"></i><span class="visually-hidden">Le
-									Département Loire Atlantique sur Instagram</span></a></li>
-						<li><a href="#" target="_blank" class="ds44-rsFootLink"
-								title="Le Département de Loire-Atlantique sur Youtube - nouvelle fenêtre"><i
-									class="icon icon-youtube" aria-hidden="true"></i><span class="visually-hidden">Le
-									Département Loire Atlantique sur Youtube</span></a></li>
-						<li><a href="#" target="_blank" class="ds44-rsFootLink"
-								title="Le Département de Loire-Atlantique sur Mag Web - nouvelle fenêtre"><i
-									class="icon icon-magweb" aria-hidden="true"></i><span class="visually-hidden">Le
-									Département Loire Atlantique sur Magweb</span></a></li>
-					</ul>
-				</div>
-			</div>
-
-		</div>
-
-	</section>
-
-	<section class="ds44-container-fluid ds44-bgGray">
-		<div class="ds44-inner-container">
-			<ul class="ds44-list ds44-flex-container ds44-footerList">
-				<li><a href="#" class="footerLink">Nous écrire</a></li>
-				<li><a href="#" class="footerLink">Mentions légales</a></li>
-				<li><a href="#" class="footerLink">Plan du site</a></li>
-				<li><a href="#" class="footerLink">Accessibilité</a></li>
-				<li><a href="#" class="footerLink">Offres d’emplois</a></li>
-				<li><a href="#" class="footerLink">Espace presse</a></li>
-				<li><a href="#" class="footerLink">Marchés publics</a></li>
-				<li><a href="#" class="footerLink">Enquêtes publiques</a></li>
-				<li><a href="#" class="footerLink">Espace contributeurs</a></li>
-			</ul>
-		</div>
-	</section>
-
-	<p class="ds44-posAbs ds44-posTop ds44-posRi">
-		<a class="ds44-icoLink ds44-icoLink--footer" href="#top"><i class="icon icon-arrow-up icon--sizeXL"
-				aria-hidden="true"></i><span class="ds44-icoTxtWrapper">Haut de page</span></a>
-	</p>
-
-</footer>
+{% include footer/footer-LA.html %}

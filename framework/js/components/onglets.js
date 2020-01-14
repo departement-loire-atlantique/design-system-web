@@ -6,7 +6,7 @@ function processTransitionOnglets(tabClicked, allTabs) {
     let tabpanel = document.querySelector(tab.getAttribute("href"));
 
     if (tabClicked == tab) {
-      tab.setAttribute("aria-selected", "true");
+      tab.classList.add("ds44-tabs__linkSelected");
 
       timerClass(tabpanel, "display", "block", 150);
       timerClass(tabpanel, "opacity", "1", 300);
@@ -15,7 +15,7 @@ function processTransitionOnglets(tabClicked, allTabs) {
       tabpanelAnchor.focus();
 
     } else {
-      tab.setAttribute("aria-selected", "false");
+      tab.classList.remove("ds44-tabs__linkSelected");
 
       tabpanel.style["opacity"] = "0";
       timerDisplayNone(tabpanel, 150);
@@ -29,6 +29,10 @@ if (allTabs) {
   allTabs.forEach((tab) => {
     tab.addEventListener('click', () => processTransitionOnglets(tab, allTabs));
     tab.addEventListener("keypress", (event) => fusionneKeyPressedWithClicked(event));
+
+    if(tab.hasAttribute("aria-current")) {
+      tab.classList.add("ds44-tabs__linkSelected");
+    }
 
     let tabpanel = document.querySelector(tab.getAttribute("href"));
     let tabpanelExit = tabpanel.children[tabpanel.children.length-1];
