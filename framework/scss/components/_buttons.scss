@@ -3,7 +3,7 @@
 */
   
 
-button, a.ds44-btnStd {
+button, a.ds44-btnStd, a > .ds44-btnStd, .ds44-btnStd > a  {
     display: inline-block;
     cursor: pointer;
     user-select: none;
@@ -37,13 +37,17 @@ button, a.ds44-btnStd {
     }
 }
 
-.ds44-btnStd--large, a.ds44-btnStd--large {
-    font-size: 1em; // 16px
+.ds44-btnStd--large,
+a.ds44-btnStd--large, 
+.ds44-btnStd--large > a,  // pour wysiwyg
+a > .ds44-btnStd--large   // pour wysiwyg 
+{
+    @include ds44-font-sizes(largeButton);  // 16px
     padding: $ds44-padding-large;
     min-height: $ds44-largeHeight;
 }
 
-.ds44-btn--invert, a.ds44-btn--invert {
+.ds44-btn--invert, a.ds44-btn--invert, a > .ds44-btn--invert, .ds44-btn--invert > a {
     background-color: $ds44-background-dark;
     color: $ds44-color-inverse;
 
