@@ -1,10 +1,11 @@
 'use strict';
 
 class Header {
-    lastScroll = 0;
-    isTabEnabled = true;
 
     constructor() {
+				this.lastScroll = 0;
+		    this.isTabEnabled = true;
+				
         if (document.querySelector('.ds44-blocBandeau') !== null) {
             // Bind events
             window.addEventListener('scroll', () => {
