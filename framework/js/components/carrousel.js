@@ -10,8 +10,7 @@ class Carrousel {
 
     const allCarrousel = document.querySelectorAll('.swipper-carousel-wrap');
 
-    if(allCarrousel != null) {
-      allCarrousel.forEach((element, indexCarrousel) => {
+    allCarrousel.forEach((element, indexCarrousel) => {
 
         const nextEl = element.getElementsByClassName('swiper-button-next')[0];
         const innerTextNextEl = nextEl.getElementsByClassName('visually-hidden')[0];
@@ -27,7 +26,7 @@ class Carrousel {
 
         nbrMaxSlide = screenWidth >= 768 ? nbrMaxSlide : 1;
 
-        var swiperObj = new Swiper (swiper, {
+        let swiperObj = new Swiper (swiper, {
           direction: 'horizontal',
           spaceBetween: 16,
           watchOverflow: true,
@@ -39,16 +38,23 @@ class Carrousel {
           loop: screenWidth >= 768 ? (nbrSlide > nbrMaxSlide) : (nbrSlide > 1),
         });
 
+        // si on loop, il faut gerer la navigation des tuiles avec les differents event de swiper
+        // cela implique d'initialiser et mettre a jour l'apparence des boutons de navigation et des tuiles du carrousel
         if(swiperObj.params.loop) {
 
-          setTimeout( () => {
+          swiperObj.on('init', () => {
             for(let i = 0 ; i < arrSlide.length ; i++) {
               let tuile = arrSlide[i];
               tuile.style.margin = '0 8px';
             }
             arrSlide[0].style.margin = '0 8px 0 0';
             arrSlide[arrSlide.length-1].style.margin = '0 0 0 8px';
-          }, 1000);
+
+            let spanNotif = element.getElementsByClassName('swiper-notification')[0];
+            if(spanNotif) {
+                spanNotif.remove();
+            }
+          });
 
           let blocTitle = element.previousElementSibling;
 
@@ -93,115 +99,90 @@ class Carrousel {
 
           this.updateVisibiliteTuiles(arrSlide, nbrSlide, swiperObj.activeIndex, getIndexDerniereTuileVisible());
 
-          for(var button of [nextEl, prevEl]) {
-            button.classList.remove('swiper-button-disabled');
-            button.removeAttribute('aria-label');
-            button.removeAttribute('role');
+          [nextEl, prevEl]
+            .forEach(bouton => {
+                bouton.classList.remove('swiper-button-disabled');
+                bouton.removeAttribute('aria-label');
+                bouton.removeAttribute('role');
 
-            let ua = navigator.userAgent;
-            if (! ua.includes('Edge/42')) {
-              button.classList.add('ds44-not-edge-42');
-            }
+                let ua = navigator.userAgent;
+                if (! ua.includes('Edge/42')) {
+                  bouton.classList.add('ds44-not-edge-42');
+                }
+          });
 
-            button.addEventListener('click', (event) => {
-
-              //pour que la methode ait lieu apres swipper
-              setTimeout(updatePrevAndNextSlideMessage, 5);
-            });
-
-          }
-
-          prevEl.addEventListener('click', (event) => {
-
-            let tuileActive = arrSlide[swiperObj.activeIndex];
-            let titreTuileActive = tuileActive.querySelector(this.queryTitreTuile);
-
+          swiperObj.on('slideChangeTransitionStart', () => {
             for(let i = 0 ; i < arrSlide.length ; i++) {
               let tuile = arrSlide[i];
               tuile.style.visibility = 'visible';
             }
-            //pour que la methode ait lieu apres l'animation de scroll
-            setTimeout(() => {
-              this.updateVisibiliteTuiles(arrSlide, nbrSlide, swiperObj.activeIndex, getIndexDerniereTuileVisible());
-              titreTuileActive.focus();
-            }, 200);
-
           });
 
-          nextEl.addEventListener('click', (event) => {
+          //pour que la methode ait lieu apres swipper
+          swiperObj.on('slideChangeTransitionEnd', updatePrevAndNextSlideMessage);
+
+          //pour que la methode ait lieu apres l'animation de scroll
+          swiperObj.on('slidePrevTransitionEnd', () => {
+
+            let tuileActive = arrSlide[swiperObj.activeIndex];
+            let titreTuileActive = tuileActive.querySelector(this.queryTitreTuile);
+
+            this.updateVisibiliteTuiles(arrSlide, nbrSlide, swiperObj.activeIndex, getIndexDerniereTuileVisible());
+            titreTuileActive.focus();
+          });
+
+          //pour que la methode ait lieu apres l'animation de scroll
+          swiperObj.on('slideNextTransitionEnd', () => {
 
             let indexDerniereTuile = getIndexDerniereTuileVisible();
 
             let tuileActive = arrSlide[indexDerniereTuile];
             let titreTuileActive = tuileActive.querySelector(this.queryTitreTuile);
 
-            for(let i = 0 ; i < arrSlide.length ; i++) {
-              let tuile = arrSlide[i];
-              tuile.style.visibility = 'visible';
-            }
-            //pour que la methode ait lieu apres l'animation de scroll
-            setTimeout(() => {
-              this.updateVisibiliteTuiles(arrSlide, nbrSlide, swiperObj.activeIndex, indexDerniereTuile);
-              titreTuileActive.focus();
-            }, 200);
-
+            this.updateVisibiliteTuiles(arrSlide, nbrSlide, swiperObj.activeIndex, indexDerniereTuile);
+            titreTuileActive.focus();
           });
 
-          prevEl.addEventListener('keypress', (event) => fusionneKeyPressedWithClicked(event));
-          nextEl.addEventListener('keypress', (event) => fusionneKeyPressedWithClicked(event));
-
-          element.addEventListener('mousedown', (event) => {
-            if(event.buttons === 1) {
+          swiperObj.on('touchStart', (evt) => {
+            if(evt.buttons === 1) {
               for(let i = 0 ; i < arrSlide.length ; i++) {
                 let tuile = arrSlide[i];
                 tuile.style.visibility = 'visible';
               }
-              if(typeof element.setPointerCapture === 'function') {
-                try {
-                  element.setPointerCapture(event.pointerId);
-                } catch (e) {
-                  // empeche Edge d'envoyer des erreurs
-                }
-              }
             }
           });
 
-          element.addEventListener('mouseup', (event) => {
-            //pour que la methode ait lieu apres l'animation de scroll
-            setTimeout(() => {
-              let tuileActive = arrSlide[swiperObj.activeIndex];
-              let titreTuileActive = tuileActive.querySelector(this.queryTitreTuile);
+          swiperObj.on('touchEnd', (evt) => {
 
-              this.updateVisibiliteTuiles(arrSlide, nbrSlide, swiperObj.activeIndex, getIndexDerniereTuileVisible());
-              titreTuileActive.focus();
-            }, 200);
-            if(typeof element.releasePointerCapture === 'function') {
-              try {
-                element.releasePointerCapture(event.pointerId);
-              } catch (e) {
-                // empeche Edge d'envoyer des erreurs
-              }
-            }
+            let tuileActive = arrSlide[swiperObj.activeIndex];
+            let titreTuileActive = tuileActive.querySelector(this.queryTitreTuile);
+
+            this.updateVisibiliteTuiles(arrSlide, nbrSlide, swiperObj.activeIndex, getIndexDerniereTuileVisible());
+            titreTuileActive.focus();
           });
 
         }
-        let spanNotif = element.getElementsByClassName('swiper-notification')[0];
-        //pour que la methode ait lieu apres swipper
-        setTimeout(spanNotif.remove(), 5);
-      });
-    }
+    });
     // besoin de garder les classes pour l'initialisation des caroussel avec js, donc on les enleve qu'a la fin
     this.removeAffichageSansJs();
   }
 
+
+  // Met a jour la visibilite des tuiles en fonction du placement et du nombre de tuile visible
   updateVisibiliteTuiles(arrSlide, nbrSlide, indexPremiereTuileVisible, indexDerniereTuileVisible) {
 
-    if(indexDerniereTuileVisible === indexPremiereTuileVisible) { // mobile - 1 tuile d'affiche
+    // format mobile - 1 seule tuile d'affiche avec la tuile precedente et la tuile suivante visibles partiellement
+    if(indexDerniereTuileVisible === indexPremiereTuileVisible) {
+
       let indexTuileVisible = indexDerniereTuileVisible;
       let indexTuilePrecedente = indexTuileVisible != 0 ? indexTuileVisible - 1 : nbrSlide;
       let indexTuileSuivante = indexTuileVisible != nbrSlide ? indexTuileVisible + 1 : 0;
+
+
       for(let index = 0 ; index < arrSlide.length ; index++) {
         let slide = arrSlide[index];
+
+        // c'est la tuile visible totalement
         if ( index === indexTuileVisible ) {
           slide.removeAttribute('aria-hidden');
           slide.style.visibility= 'visible';
@@ -209,6 +190,8 @@ class Carrousel {
           for (let element of allElementsFocusables) {
             element.removeAttribute('tabindex');
           }
+
+        // c'est la tuile precedente ou suivante, qui sont visibles partiellement
         } else if (
           index === indexTuilePrecedente ||
           index === indexTuileSuivante
@@ -218,6 +201,8 @@ class Carrousel {
           for (let element of allElementsFocusables) {
             element.setAttribute('tabindex', '-1');
           }
+
+        // c'est une tuile a masquer
         } else {
           slide.setAttribute('aria-hidden', 'true');
           slide.style.visibility= 'hidden';
@@ -227,23 +212,35 @@ class Carrousel {
           }
         }
       }
-    } else if(indexDerniereTuileVisible >= indexPremiereTuileVisible) { // desktop - tuiles au milieu de la liste
+
+
+    // format desktop - les tuiles visibles sont au milieu de la liste
+    } else if(indexDerniereTuileVisible >= indexPremiereTuileVisible) {
       for(let index = 0 ; index < arrSlide.length ; index++) {
         let slide = arrSlide[index];
+
+        // la tuile est a rendre visible
         if (
           index >= indexPremiereTuileVisible &&
           index <= indexDerniereTuileVisible
         ) {
           slide.removeAttribute('aria-hidden');
           slide.style.visibility= 'visible';
+
+        // la tuile est a masquer
         } else {
           slide.setAttribute('aria-hidden', 'true');
           slide.style.visibility= 'hidden';
         }
       }
-    } else { // desktop - tuiles aux deux extremes de la luste
+
+
+    // format desktop - les tuiles visibles sont aux deux extremes de la liste
+    } else {
       for(let index = 0 ; index < arrSlide.length ; index++) {
         let slide = arrSlide[index];
+
+        // la tuile est a rendre visible
         if (
             (
               index >= indexPremiereTuileVisible &&
@@ -256,6 +253,8 @@ class Carrousel {
         ) {
           slide.removeAttribute('aria-hidden');
           slide.removeAttribute('style');
+
+        // la tuile est a masquer
         } else {
           slide.setAttribute('aria-hidden', 'true');
           slide.setAttribute('style', 'display:none;');
