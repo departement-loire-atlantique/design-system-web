@@ -54,16 +54,26 @@
 
 // Pushs
 
+.ds44-pushTitle {
+    @include ds44-font-sizes(pushTitle);
+    @if variable_exists(ds44-font-family-headings) and $ds44-font-family-headings != $ds44-font-family-base{
+      font-family: $ds44-font-family-headings;
+    }
+    line-height: 1.1;
+}
+
 .ds44-boxPushContent {
-    width: calc(50% + 15px);
+    max-width: calc(50% + 15px);
     align-self: center;
     padding: $ds44-padding-box;
 
     &--fluid {
         width: 100%;
+        max-width: 100%;
         display: flex;
         justify-content: space-between;
         align-items: center;
+        padding-right: $ds44-padding-xlarge;
 
         p {
             margin: 0;
@@ -80,12 +90,11 @@
 }
 
 .ds44-boxPushPic {
-    width: calc(50% - 15px);
     position: relative;
     align-self: flex-end;
 
     &--horizontal {
-        width: calc(20% - 15px);
+        width: calc(30% - 15px);
     }
 
 }
@@ -129,7 +138,16 @@
   //   }
   // }
 
-@media (max-width: $ds44-medium) {
+@media (max-width: $ds44-large - .0625) {
+
+  .ds44-grid12-offset-1 .col:last-child{
+    margin-top: 2em;
+    padding: 0;
+  }
+
+}
+
+@media (max-width: $ds44-medium - .0625) {
 
     .ds44-boxPushContent {
         width: 100%;
@@ -161,9 +179,22 @@
 
 }
 
-@media (max-width: $ds44-small) {
+@media (max-width: $ds44-tiny - .0625) {
+
+    .ds44-innerBoxContainer {
+        padding: $ds44-padding-large;
+    }
 
     // Pushs
+
+    .ds44-boxPushContent {
+        max-width: 100%;
+        
+        &--fluid {
+            padding-right: $ds44-padding-box;
+        }
+    }
+
     .ds44-box--push {
         flex-direction: column-reverse;
         text-align: center;
@@ -175,15 +206,19 @@
         width: 100%;
     }
 
-
 }
 
 
 
-@media (max-width: $ds44-tiny) {
 
-    .ds44-innerBoxContainer {
-        padding: $ds44-padding-large;
+@media (min-width: $ds44-extra-large) {
+
+    .ds44-boxPushPic {
+
+        &--horizontal {
+            width: calc(20% - 15px);
+        }
+
     }
 
 }

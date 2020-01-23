@@ -94,7 +94,7 @@ $ds44-font-sizes: (
   ),
   menuBackLinks: (
     mobile  : 1.3125em,       // 21px
-    desktop : 1.75em          // 21px
+    desktop : 1.75em          // 28px
   ),
   collapserLinks: (
     mobile  : 1.125em,        // 18px
@@ -107,6 +107,10 @@ $ds44-font-sizes: (
   largeButton: (
     mobile  : 1em,          // 16px
     desktop : 1em           // 16px
+  ),
+  pushTitle : (
+    mobile  : 1.75em,        // 28px
+    desktop : 1.75em         // 28px
   ),
   quotes: (
     mobile  : 2.375em,       // 38px
@@ -121,7 +125,7 @@ $ds44-line-height-base : 1.5 !default;
 
 $ds44-largeHeight         : 6.5rem !default;
 $ds44-normalHeight        : 4.5rem !default;
-$header-height-large      : 9.9rem;
+$header-height-large      : 9.8rem;
 $header-height-medium     : 12rem; // En raison de l'agrandissement du header, lié au passage sur deux lignes des contenus en mode tablette
 $header-height-small      : 6.2rem;
 

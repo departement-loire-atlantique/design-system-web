@@ -38,9 +38,9 @@ button, a.ds44-btnStd, a > .ds44-btnStd, .ds44-btnStd > a  {
 }
 
 .ds44-btnStd--large,
-a.ds44-btnStd--large, 
+a.ds44-btnStd--large,
 .ds44-btnStd--large > a,  // pour wysiwyg
-a > .ds44-btnStd--large   // pour wysiwyg 
+a > .ds44-btnStd--large   // pour wysiwyg
 {
     @include ds44-font-sizes(largeButton);  // 16px
     padding: $ds44-padding-large;
@@ -222,6 +222,7 @@ a.ds44-btnStd--retourPage {
     top: 20px;
     left: 20px;
     max-width: 14%;
+    text-align: center;
 }
 
 

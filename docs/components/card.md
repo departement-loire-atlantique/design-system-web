@@ -37,7 +37,15 @@ Lorem ipsum
 
 - La classe `ds44-card` donne le contexte de tuile à la section.
 - Dans le cadre de la charte du site Loire-Atlantique, les tuiles placées dans des contextes sombres ou gris doivent recevoir la classe `ds44-darkContext` à côté de la classe `ds44-card` afin d'adapter leur couleur de fond.
-- En raison de leur contexte variable et imprévisible, les titres des tuiles ne sont pas balisés par des `<hn>` mais par des paragraphes (`<p>`) auxquels on pousse un contexte de titre de niveau 2 pour les assistances techniques (via `role="heading"` et `aria-level="2"`).
+- En raison de leur contexte variable et imprévisible, les titres des tuiles ne sont pas balisés par des `<hn>` mais par des paragraphes (`<p>`) auxquels on pousse un contexte de titre pour les assistances techniques (via `role="heading"` et `aria-level="x"`).
+
+## Notes d'intégration
+
+Les composants de tuile sont intégrés via des inclusions dans le DS. Certains paramètres sont importants pour l'accessibilité **mais pas codés directement dans le composant**. Ils sont générés via un paramètre passé dans l'include. Par exemple :
+- Ajouter un target="_blank" sur les liens qui téléchargent des documents et un title comportant le libellé du lien, le poids du document et la mention "nouvelle fenêtre". Ce qui se traduit dans le DS par :
+`include card/card--horizontal.html title="Bien vieillir en Loire-Atlantique - PDF - 291,3 Ko - nouvelle fenêtre" text="PDF - 291,3 Ko" target='target="_blank"' ariaLevel='"aria-level="3"'`
+
+**Ne pas oublier ces paramètres lors de l'intégration du composant dans le CMS**.
 
 ## FAQ
 

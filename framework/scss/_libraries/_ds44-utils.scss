@@ -177,6 +177,14 @@
   flex-direction: row-reverse;
 }
 
+@media (max-width: $ds44-medium - .0625) {
+
+  .ds44-tiny-to-med-ftop {
+    justify-content: flex-start;
+  }
+
+}
+
 /* Element properties */
 .ds44-fg1 {
   flex-grow: 1;
@@ -191,7 +199,7 @@
   align-self: flex-end;
 }
 
-@media (max-width: $ds44-medium) {
+@media (max-width: $ds44-medium - .0625) {
 
   .ds44-flex-wrap-medium {
     flex-wrap: wrap;
@@ -212,7 +220,7 @@
 
 }
 
-@media (max-width: $ds44-large) {
+@media (max-width: $ds44-large - .0625) {
 
   .ds44-flex-wrap-large {
     flex-wrap: wrap;
@@ -256,7 +264,7 @@
   padding-right: 16.666%;
 }
 
-@media (max-width: $ds44-small - 1) {
+@media (max-width: $ds44-small - .0625) {
 
   .ds44-colLeft {
     flex-wrap: wrap;
@@ -279,7 +287,7 @@
 
 }
 
-@media (max-width: $ds44-tiny - 1) {
+@media (max-width: $ds44-tiny - .0625) {
 
   .ds44-colLeft {
     flex: 1;
@@ -328,13 +336,6 @@
 .ds44-darkContext {
   background-color: $ds44-color-inverse!important;
 }
-.ds44-alphaGradient {
-  background: linear-gradient(to bottom, rgba(0,0,0,0) 0%, rgba(0,0,0,.5) 24%, rgba(0,0,0,.6) 40%, rgba(0,0,0,.75) 70%);
-  background-size: cover;
-}
-.ds44-alphaGradient--header {
-  padding: $ds44-padding-xxlarge*2 $ds44-padding-xlarge $ds44-padding-large $ds44-padding-xlarge;
-}
 
 /* === Text utils === */
 
@@ -370,6 +371,15 @@
 
 .ds44-lightBG {
   background-color: $ds44-light-bg;
+}
+
+// Dégradé du header
+.ds44-alphaGradient {
+  background: linear-gradient(to bottom, rgba(0,0,0,0) 0%, rgba(0,0,0,.5) 30%, rgba(0,0,0,.6) 40%, rgba(0,0,0,.75) 70%);
+  background-size: cover;
+}
+.ds44-alphaGradient--header {
+  padding: $ds44-padding-xxlarge*2 $ds44-padding-xlarge $ds44-padding-large $ds44-padding-xlarge;
 }
 
 .ds44-bgCircle {
@@ -471,7 +481,7 @@
 .ds44-docListIco {
   position: absolute;
   left: 0;
-  top: -1px;
+  top: 0;
 }
 
 /* === Accessibilité === */

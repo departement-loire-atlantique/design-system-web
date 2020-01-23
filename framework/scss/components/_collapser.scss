@@ -95,39 +95,21 @@
   display: block;
   position: relative;
 
-  .icon {
-    position: absolute;
-    right: 1rem;
-    top: 0;
-    transition: all ease-in-out $ds44-timing-standard;
-    opacity: 0;
-    padding: $ds44-padding-box;
-
-      &::before {
-          line-height: .7;
-      }
-  }
-
-  &:hover .icon, &:focus .icon, &:active .icon {
-      right: 0;
-      opacity: 1;
-  }
-
   &:hover, &:focus, &:active {
-    text-decoration: $ds44-link-list-decoration-hover;
+    text-decoration: underline;
   }
 
 }
 
-@media (max-width: $small) {
-  
-  .ds44-collapser_content--link {
-    padding: $ds44-padding-medium $ds44-padding-large;
-  }
 
-}
+/* --
+  -------------
+  MEDIA QUERIES
+  -------------
+  -- */
 
-@media (max-width: $medium) {
+
+@media (max-width: $medium - .0625) {
   
   .ds44-collapser, ul.ds44-collapser {
     
@@ -144,3 +126,11 @@
   
 }
 
+
+@media (max-width: $small - .0625) {
+  
+  .ds44-collapser_content--link {
+    padding: $ds44-padding-medium $ds44-padding-large;
+  }
+
+}

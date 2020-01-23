@@ -1,63 +1,31 @@
 ---
 layout: pattern
 ---
-
 <button type="button" class="ds44-menuBtn testBtnNiv2" data-ssmenu="nav2">Ouverture du menu de niveau 2<i class="icon icon-right" aria-hidden="true"></i></button>
 
-
-<section id="nav2" class="ds44-overlay ds44-theme ds44-bgCircle ds44-bg-br ds44-overlay--navNiv2" role="dialog" aria-label="Menu principal niveau 2">
-
-    <div class="ds44-container-menuBackLink">
-        <button type="button" title="Retour au menu de navigation" class="ds44-btn-backOverlay"><i class="icon icon-arrow-left icon--xlarge" aria-hidden="true"></i><span class="ds44-btnInnerText--bottom">Retour</span></button>
-        <p role="heading" aria-level="1" class="ds44-menuBackLink">Besoin d'aides</p>
-    </div>
-    <button class="ds44-btnOverlay ds44-btnOverlay--closeOverlay" type="button" aria-label="Fermer le menu de navigation"><i class="icon icon-cross icon--xlarge" aria-hidden="true"></i><span class="ds44-btnInnerText--bottom">Fermer</span></button>
-
-    <nav role="navigation" aria-label="Menu de navigation" class="ds44-navContainer ds44-flex-container--column ds44-flex-align-center">
-        <div class="ds44-navList">
-
-            <ul class="ds44-navListN2 ds44-multiCol ds44-xl-gap ds44-list">
-                <li><a href="#" class="ds44-menuLink ds44-menuLink--subLvl">Enfance, famille<i class="icon icon-arrow-right" aria-hidden="true"></i></a></li>
-                <li><a href="#" class="ds44-menuLink ds44-menuLink--subLvl">Education, collèges<i class="icon icon-arrow-right" aria-hidden="true"></i></a></li>
-                <li><a href="#" class="ds44-menuLink ds44-menuLink--subLvl">Jeunesse<i class="icon icon-arrow-right" aria-hidden="true"></i></a></li>
-                <li><a href="#" class="ds44-menuLink ds44-menuLink--subLvl">Handicap<i class="icon icon-arrow-right" aria-hidden="true"></i></a></li>
-                <li><a href="#" class="ds44-menuLink ds44-menuLink--subLvl">Seniors, personnes âgées<i class="icon icon-arrow-right" aria-hidden="true"></i></a></li>
-                <li><a href="#" class="ds44-menuLink ds44-menuLink--subLvl">Insertion, emploi<i class="icon icon-arrow-right" aria-hidden="true"></i></a></li>
-                <li><a href="#" class="ds44-menuLink ds44-menuLink--subLvl">Habitat, logement<i class="icon icon-arrow-right" aria-hidden="true"></i></a></li>
-                <li><a href="#" class="ds44-menuLink ds44-menuLink--subLvl">Déplacements<i class="icon icon-arrow-right" aria-hidden="true"></i></a></li>
-                <li><a href="#" class="ds44-menuLink ds44-menuLink--subLvl">Environnement<i class="icon icon-arrow-right" aria-hidden="true"></i></a></li>
-                <li><a href="#" class="ds44-menuLink ds44-menuLink--subLvl">Culture<i class="icon icon-arrow-right" aria-hidden="true"></i></a></li>
-                <li><a href="#" class="ds44-menuLink ds44-menuLink--subLvl">Sport<i class="icon icon-arrow-right" aria-hidden="true"></i></a></li>
-                <li><a href="#" class="ds44-menuLink ds44-menuLink--subLvl">Aménagement, économie<i class="icon icon-arrow-right" aria-hidden="true"></i></a></li>
-                <li><a href="#" class="ds44-menuLink ds44-menuLink--subLvl">Citoyenneté, vie associative<i class="icon icon-arrow-right" aria-hidden="true"></i></a></li>
-                <li><a href="#" class="ds44-menuLink ds44-menuLink--subLvl">Tourisme<i class="icon icon-arrow-right" aria-hidden="true"></i></a></li>
-            </ul>
-        </div>
-    </nav>
-
-</section>
+{% include menu/navigation-principale-n2.html %}
 
 
 <script>
-const ssMenuToggler = document.querySelectorAll(".testBtnNiv2");
+    const ssMenuToggler = document.querySelectorAll(".testBtnNiv2");
 
-ssMenuToggler.forEach((element) => {
-    element.addEventListener('click', () => {
-        displaySsNavMenu(element);
-    })
-});
+    ssMenuToggler.forEach((element) => {
+        element.addEventListener('click', () => {
+            displaySsNavMenu(element);
+        })
+    });
 
-let displaySsNavMenu = function (element) {
-    element.setAttribute("aria-expanded","true");
-    let navNivTwo = document.querySelector("#" + element.getAttribute("data-ssmenu"));
-    navNivTwo.style.display = 'block';
-    timerShow(navNivTwo, 0);
-    navNivTwo.setAttribute("aria-hidden", "false");
-    hideCloseButtons(navNivTwo.querySelector('.ds44-btnOverlay--closeOverlay'));                                                                    
-    navNivTwo.querySelector('.ds44-btn-backOverlay').focus();
-    // ajouter l'élément de piège focus sur le menu nv2
-    disableAllTabIndexes(document.querySelector("header"));
-    trapFocus(navNivTwo);
-    toggleAriaHiddenSsMenu(navNivTwo);
-}
-</script>
+    let displaySsNavMenu = function (element) {
+        element.setAttribute("aria-expanded","true");
+        let navNivTwo = document.querySelector("#" + element.getAttribute("data-ssmenu"));
+        navNivTwo.style.display = 'block';
+        timerShow(navNivTwo, 0);
+        navNivTwo.setAttribute("aria-hidden", "false");
+        hideCloseButtons(navNivTwo.querySelector('.ds44-btnOverlay--closeOverlay'));                                                                    
+        navNivTwo.querySelector('.ds44-btn-backOverlay').focus();
+        // ajouter l'élément de piège focus sur le menu nv2
+        disableAllTabIndexes(document.querySelector("header"));
+        trapFocus(navNivTwo);
+        toggleAriaHiddenSsMenu(navNivTwo);
+    }
+    </script>

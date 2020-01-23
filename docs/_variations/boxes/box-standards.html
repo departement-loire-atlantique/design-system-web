@@ -1,31 +1,11 @@
 ---
 layout: pattern
 ---
-<h2 class="h4-like mbm" id="idTitre1">Encadré avec formulaire (type "Près de chez vous")</h2>
-<section class="ds44-box ds44-theme">
-  <div class="ds44-innerBoxContainer">
-    <p role="heading" aria-level="2" class="ds44-box-heading">Titre de l'encadré</p>
-    <form>
-      <div class="ds44-form__container ds44-form__container--external">
-        <label for="name" class="ds44-formLabel--external">Nom du champ</label>
-        <input type="text" id="name" class="ds44-inpStd" required aria-required="true" aria-invalid="true" placeholder="Placeholder [ + format attendu si nécessaire]" title="Placeholder [ + format attendu si nécessaire]">
-      </div>
-      <p><button class="ds44-btnStd ds44-btn--invert" type="submit"><span class="ds44-btnInnerText">Valider</span><i class="icon icon-long-arrow-right" aria-hidden="true"></i></button></p>
-    </form>
-  </div>
-</section>
+<h2 class="h4-like mbm mtl" id="idTitre2">Encadré simple avec formulaire (type "Près de chez vous")</h2>
+{% include boxes/box-std-form.html title="Près de chez vous" text="Recherchez un contact" placeholder="Nom de la commune" submitText="Valider" ariaLabel="Valider votre recherche de contact dans une commune" %}
 
 <h2 class="h4-like mbm mtl" id="idTitre2">Encadré simple avec lien (type "Bon à savoir")</h2>
-<section class="ds44-box ds44-theme">
-  <div class="ds44-innerBoxContainer">
-    <p role="heading" aria-level="2" class="ds44-box-heading">Titre de l'encadré</p>
-      <p>Neque porro quisquam est qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit.</p>
-      <p class="mts"><a href="#" class="ds44-btnLink"><span class="ds44-btnInnerText">Découvrir les partenaires</span><i class="icon icon-long-arrow-right" aria-hidden="true"></i></a></p>
-  </div>
-</section>
+{% include boxes/box-std-link.html title="Titre de l'encadré" text="Neque porro quisquam est qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit." btnText="Découvrir les partenaires" %}
 
 <h2 class="h4-like mbm mtl" id="idTitre3">Encadré simple avec bordure</h2>
-<section class="ds44-innerBoxContainer ds44-borderContainer">
-  <h2 id="idTitre3-2" class="h2-like">Titre de l'encadré</h2>
-  <p>Développer une agriculture innovante, économiquement viable et pérenne, attentive à la répartition de ses moyens de production en vue de conforter, transmettre et installer des activités, en phase avec son environnement humain et naturel.</p>
-</section>
+{% include boxes/box-std-border.html title="Titre de l'encadré" text="Développer une agriculture innovante, économiquement viable et pérenne, attentive à la répartition de ses moyens de production en vue de conforter, transmettre et installer des activités, en phase avec son environnement humain et naturel." %}
