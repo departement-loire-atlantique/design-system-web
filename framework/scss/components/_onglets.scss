@@ -12,7 +12,7 @@
     position: absolute;
     width: 1px;
 }
-  
+
 .ds44-tabs__list {
     margin: 0;
     padding: $ds44-padding-large $ds44-padding-xlarge $ds44-padding-xlarge $ds44-padding-xlarge;
@@ -22,7 +22,7 @@
     display: inline-block;
     align-self: flex-end;
 }
-  
+
 .ds44-tabs__link {
     display: block;
     padding: $ds44-padding-base $ds44-padding-xlarge $ds44-padding-box $ds44-padding-xlarge;
@@ -42,8 +42,8 @@
         left: 0;
     }
 }
-  
-[aria-selected="true"].ds44-tabs__link,
+
+.ds44-tabs__linkSelected.ds44-tabs__link,
 .ds44-tabs__link:hover,
 .ds44-tabs__link:focus,
 .ds44-tabs__link:active {
@@ -55,14 +55,14 @@
         transition: all $ds44-timing-standard ease-in-out;
     }
 }
-  
+
 .ds44-tabs__content {
     padding: $ds44-padding-xxlarge;
     opacity: 1;
     transition: all $ds44-timing-standard ease-in-out;
     position: relative;
 }
-  
+
 [aria-hidden="true"].ds44-tabs__content {
     display: none;
     opacity: 0;
@@ -96,16 +96,16 @@
 
 }
 
-@media (max-width: $ds44-small - .0625) {  
+@media (max-width: $ds44-small - .0625) {
 
     .ds44-navOnglets {
         width: 100%;
     }
-    
+
     .ds44-tabs__content {
         padding: $ds44-padding-xlarge $ds44-padding-base;
     }
-  
+
     .ds44-tabs__list {
         padding: $ds44-padding-base/2 $ds44-padding-large $ds44-padding-large+0.5 $ds44-padding-large;
     }
@@ -161,7 +161,7 @@
             }
 
             .ds44-btnStd { // all buttons within the panel
-                width: 100%;                
+                width: 100%;
             }
         }
     }

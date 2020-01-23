@@ -3,8 +3,8 @@
 class Header {
 
     constructor() {
-        this.lastScroll = 0;
-        this.isTabEnabled = true;
+		this.lastScroll = 0;
+		this.isTabEnabled = true;
 
         if (document.querySelector('.ds44-blocBandeau') !== null) {
             // Bind events

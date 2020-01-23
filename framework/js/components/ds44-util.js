@@ -59,3 +59,14 @@ function fusionneKeyPressedWithClicked(event) {
     event.target.click();
   }
 }
+
+function getPositionY(element) {
+    var yPosition = 0;
+
+    while(element) {
+        yPosition += (element.offsetTop - element.scrollTop + element.clientTop);
+        element = element.offsetParent;
+    }
+
+    return yPosition;
+}

@@ -10,27 +10,11 @@ layout: pattern
 
 		{% include titres/main-title-noImage.html %}
 
-		<section class="ds44-ongletsContainer">
-			<div class="js-tabs ds44-tabs" data-existing-hx="h2" data-tabs-prefix-class="ds44" id="onglets">
-				<ul class="js-tablist ds44-tabs__list ds44-theme ds44-flex-container ds44-fse ds44-list" role="tablist"
-					id="tabs">
-					<li class="js-tablist__item ds44-tabs__item ds44-fg1" role="presentation" id="tabs__1">
-						<a class="js-tablist__link ds44-tabs__link" id="label_id_first" role="tab"
-							aria-controls="id_first" tabindex="0" aria-selected="true">Détails</a>
-					</li>
-					<li class="js-tablist__item ds44-tabs__item ds44-fg1" role="presentation" id="tabs__2">
-						<a class="js-tablist__link ds44-tabs__link" id="label_id_second" role="tab"
-							aria-controls="id_second" tabindex="-1" aria-selected="false">Enjeux</a>
-					</li>
-					<li class="js-tablist__item ds44-tabs__item ds44-fg1" role="presentation" id="tabs__3">
-						<a class="js-tablist__link ds44-tabs__link" id="label_id_third" role="tab"
-							aria-controls="id_third" tabindex="-1" aria-selected="false">Bénéfices</a>
-					</li>
-				</ul>
-				<div id="id_first" class="js-tabcontent ds44-tabs__content" role="tabpanel"
-					aria-labelledby="label_id_first">
-
-					<div class="grid-12-small-1">
+		{% include onglets/onglets-simples.html
+		  titleOngletUn="Détails"
+		  titleOngletDeux="Enjeux"
+		  titleOngletTrois="Bénéfices"
+		  contenuOngletUn='<div class="grid-12-small-1">
 						<div class="col-7">
 							<section class="ds44-contenuArticle" id="section1">
 								<p class="ds44-introduction">Le périmètre de protection d’espaces agricoles et
@@ -104,19 +88,14 @@ layout: pattern
 								</div>
 							</section>
 						</aside>
-					</div>
-
-				</div>
-				<div id="id_second" class="js-tabcontent ds44-tabs__content" role="tabpanel"
-					aria-labelledby="label_id_second" aria-hidden="true">
-
-					<div class="grid-12-small-1">
+					</div>'
+		  contenuOngletDeux='<div class="grid-12-small-1">
 						<div class="col-7">
 							<section class="ds44-contenuArticle" id="section4">
-								<h2 id="idTitre4">Quels sont les enjeux d'un PEAN sur le secteur Cens/Gesvres/Erdre
+								<h2 id="idTitre4">Quels sont les enjeux d’un PEAN sur le secteur Cens/Gesvres/Erdre
 									?</h2>
 								<p>Le Département de Loire-Atlantique s’est lancé dès 2009 dans l’élaboration d’un
-									« PEAN » dans ce secteur, travaillant avec les acteurs locaux (communes,
+									« PEAN » dans ce secteur, travaillant avec les acteurs locaux (communes,
 									intercommunalités, représentants des agriculteurs). La superficie retenue - 17
 									300 ha - constitue le plus vaste périmètre de protection jamais développé en
 									France depuis l’entrée en vigueur de la loi. Ce périmètre couvre également 60 %
@@ -178,13 +157,8 @@ layout: pattern
 								</div>
 							</section>
 						</aside>
-					</div>
-
-				</div>
-				<div id="id_third" class="js-tabcontent ds44-tabs__content" role="tabpanel"
-					aria-labelledby="label_id_third" aria-hidden="true">
-
-					<div class="grid-12-small-1">
+					</div>'
+		  contenuOngletTrois='<div class="grid-12-small-1">
 						<div class="col-7">
 							<section class="ds44-contenuArticle" id="section3">
 								<h2 id="idTitre3">Les bénéfices attendus du PEAN sont multiples :</h2>
@@ -246,17 +220,8 @@ layout: pattern
 								</div>
 							</section>
 						</aside>
-					</div>
-
-				</div>
-			</div>
-			<div class="ds44-inner-container">
-				{% include partage/partage-interne.html %}
-			</div>
-		</section>
-
-
-
+					</div>'
+		%}
 	</article>
 
 	<section class="ds44-container-fluid ds44-lightBG ds44-wave-white">

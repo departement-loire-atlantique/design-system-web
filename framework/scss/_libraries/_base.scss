@@ -338,6 +338,12 @@ th, td {
 tr:nth-child(odd) {
   background-color: #f5f5f5;
 }
+thead + tbody > tr:nth-child(even) {
+  background-color: #f5f5f5;
+}
+thead + tbody > tr:nth-child(odd) {
+  background-color: #fff;
+}
 td {
   font-weight: normal;
 }

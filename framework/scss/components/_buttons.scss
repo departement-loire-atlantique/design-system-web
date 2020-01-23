@@ -20,7 +20,7 @@ button, a.ds44-btnStd, a > .ds44-btnStd, .ds44-btnStd > a  {
     }
 }
 
-.ds44-btnStd, a.ds44-btnStd {
+.ds44-btnStd, a.ds44-btnStd, a > .ds44-btnStd, .ds44-btnStd > a {
     @include ds44-font-sizes(button);
     padding: $ds44-padding-box;
     border-radius: $ds44-border-radius;
@@ -35,6 +35,17 @@ button, a.ds44-btnStd, a > .ds44-btnStd, .ds44-btnStd > a  {
         box-shadow: 0px 13px 20px 0px rgba(0,0,0,0.35);
         border: 1px solid $ds44-darkgray;
     }
+}
+
+a > .ds44-btnStd, 
+.ds44-btnStd > a, 
+.ds44-btnStd--large > a,
+a > .ds44-btnStd--large { // gestion de l'alignement des icones dans les boutons wysiwyg
+
+    .icon {
+        line-height: 1.1;
+    }
+
 }
 
 .ds44-btnStd--large,
@@ -60,7 +71,9 @@ a > .ds44-btnStd--large   // pour wysiwyg
 
 .ds44-btn--contextual,
 a.ds44-btn--contextual,
-.ds44-contextualBtnLink {
+.ds44-contextualBtnLink,
+a > .ds44-btn--contextual, 
+.ds44-btn--contextual > a {
     background-color: $ds44-contextual-color;
     border-color: $ds44-contextual-color;
 
