@@ -122,21 +122,13 @@
 /* =======
   MEDIA QUERIES
   === */
-@media (max-width: $ds44-large) {
+@media (max-width: $ds44-large - .0625) {
 
   .ds44-grid12-offset-1 .col:last-child{
     margin-top: 2em;
   }
 
 }
-
-  // @media (max-width: $ds44-small - 1) {
-  //
-  //   .ds44-grid12-offset-1 .col{
-  //     padding-left: 5%;
-  //     padding-right: 5%;
-  //   }
-  // }
 
 @media (max-width: $ds44-large - .0625) {
 
@@ -189,7 +181,7 @@
 
     .ds44-boxPushContent {
         max-width: 100%;
-        
+
         &--fluid {
             padding-right: $ds44-padding-box;
         }

@@ -126,7 +126,7 @@ div .swiper-button-next::after, div .swiper-button-prev::after {
 
 }
 
-@media screen and (max-width: $ds44-small) {
+@media screen and (max-width: $ds44-small -.0625) {
 
     .swipper-carousel-wrap {
         margin-left: -$ds44-mobile-margins;
