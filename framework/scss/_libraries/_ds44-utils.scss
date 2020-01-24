@@ -177,14 +177,6 @@
   flex-direction: row-reverse;
 }
 
-@media (max-width: $ds44-medium - .0625) {
-
-  .ds44-tiny-to-med-ftop {
-    justify-content: flex-start;
-  }
-
-}
-
 /* Element properties */
 .ds44-fg1 {
   flex-grow: 1;
@@ -199,7 +191,22 @@
   align-self: flex-end;
 }
 
+@media (max-width: $ds44-large - .0625) {
+
+  .ds44-flex-wrap-large {
+    flex-wrap: wrap;
+  }
+  .ds44-flex-grow1-large {
+    flex-grow: 1;
+  }
+
+}
+
 @media (max-width: $ds44-medium - .0625) {
+
+  .ds44-tiny-to-med-ftop {
+    justify-content: flex-start;
+  }
 
   .ds44-flex-wrap-medium {
     flex-wrap: wrap;
@@ -220,12 +227,13 @@
 
 }
 
-@media (max-width: $ds44-large - .0625) {
+@media (max-width: $ds44-small - .0625) {
 
-  .ds44-flex-wrap-large {
-    flex-wrap: wrap;
+  .ds44-small-flex-col { // change l'orientation flex de row à column sur les petits écrans
+    flex-direction: column;
   }
-  .ds44-flex-grow1-large {
+
+  .ds44-small-fg1 { // étire l'élément en mobile
     flex-grow: 1;
   }
 

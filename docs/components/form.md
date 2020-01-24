@@ -16,6 +16,9 @@ variations:
 - title: Champ avec label extérieur
   description: Type de champ comprenant un label au-dessus et un placeholder à l'intérieur
   pattern: forms/form--input-externalLabel.html
+- title: Moteur de recherche à facettes
+  description: Ensemble de composants de formulaire dédié aux recherches
+  pattern: forms/form--recherche-facettes.html
 ---
 
 ## Usage
@@ -23,13 +26,8 @@ variations:
 Les champs de formulaire peuvent être soit obligatoires soit optionnels. S'ils sont obligatoires, placer l'attribut `required` dans la balise `input`.
 Ajouter l'attribut `disabled` si le champ n'est pas saisissable mais doit rester visible.
 
-### Note d'intégration
+### Conseils d'intégration
 
-Pour l'instant, le système de déplacement du label fonctionne en pur CSS mais nécessite deux éléments obligatoires :
-1. Il faut que le label soit placé directement en dessous du champ ;
-2. Le champ doit posséder un attribut required (true).
-
-Ces deux inconvénients pourront être solutionnés par l'ajout de JS.
 
 ## Accessibilité
 
@@ -38,26 +36,6 @@ Les champs obligatoires doivent comporter une séquence à gérer en dur et en J
 * Un attribut aria-required="true"
 * Un attribut aria-invalid géré en JS : à "true" si le formulaire est validé mais sans l'élément requis. A "false" si l'élément requis est présent au moment de la validation. Si le contrôle est effectué côté serveur, le patch aria devient optionnel.
 
-## Effective form design
-
-All forms are comprised of 6 elements:
-
-* Labels: Inform users what the corresponding input fields mean.
-* Input fields: Enable users to provide information. Information can be entered through a variety of different input fields ranging from text fields, checkboxes, and many other types.
-* Help text: Provides assistance on how to fill out a field. Help text is optional.
-* Placeholder text: Hints at what goes into a field. Placeholder text is optional.
-* Actions: Allow users to submit a form.
-* Validation: Ensures the data submitted by the user conforms to acceptable parameters.
-
-![Form usage](../assets/images/form-usage-1.png)
-
-## Form logic
-
-* Radio Buttons are used when there is a list of two or more options that are mutually exclusive and the user must select exactly one choice. In other words, clicking a non-selected radio button will deselect whatever other button was previously selected in the list.
-* Checkboxes are used when there are lists of options and the user may select any number of choices, including zero, one, or several. In other words, each checkbox is independent of all other checkboxes in the list, so checking one box doesn’t uncheck the others. A stand-alone checkbox, or a toggle can be used for a single option that the user can turn on or off.
-* For fields in which a single selection is required and there are a large number of possible options, consider using a Select element.
-
-![Form usage](../assets/images/form-usage-4.png)
 
 ## FAQ
 
