@@ -5,18 +5,20 @@
  /**
   * Input placeholder text base styles
   */
-  ::-webkit-input-placeholder {
+::-webkit-input-placeholder {
     color: $ds44-dark;
     font-family: $ds44-font-family-base;
- } 
- ::-moz-placeholder {  /* Firefox 19+ */
+}
+
+::-moz-placeholder {  /* Firefox 19+ */
     color: $ds44-dark;
     font-family: $ds44-font-family-base;
- } 
- :-ms-input-placeholder {
+} 
+
+:-ms-input-placeholder {
     color: $ds44-dark;
     font-family: $ds44-font-family-base;
- }
+}
  
  /**
   * Input basics
@@ -111,7 +113,7 @@
  * Moteurs de recherche à facettes
  */
 
- .ds44-facetteContainer {
+.ds44-facetteContainer {
      padding: $ds44-padding-large;
      background-color: $ds44-dark;
      position: relative;
@@ -119,24 +121,45 @@
      .ds44-moveLabel {
          color: $ds44-color-inverse;
      }
- }
+}
 
- .ds44-fieldContainer {
+.ds44-fieldContainer {
      margin-right: $ds44-margin-base;
      position: relative;
 
      &:last-child {
          margin-right: 0;
      }
- }
+}
 
- .ds44-listSelect { // faux champ de formulaire, conteneur pour les listes de sélection
+.ds44-listSelect { // faux champ de formulaire, conteneur pour les listes de sélection
     background-color: $ds44-light-color;
- }
+}
 
- .ds44-labelLarge {
+.ds44-labelLarge {
      font-size: 1.6rem;
- }
+}
+
+ 
+ /**
+  * Error messages
+  */
+
+.ds44-error {
+    border-color: $ds44-error-red;
+}
+
+.ds44-errorMsg-container {
+    @include ds44-font-sizes(errMsg);
+    background-color: $ds44-error-red-bg;
+    padding: $ds44-padding-small $ds44-padding-box;
+
+    .icon {
+        color: $ds44-error-red;
+    }
+}
+
+
  
 /* ----------------------------- */
 /* ------- MEDIA QUERIES ------- */
