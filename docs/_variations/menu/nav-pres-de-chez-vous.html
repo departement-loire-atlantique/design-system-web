@@ -7,10 +7,11 @@ layout: pattern
 </div>
 
 <script>
-    if (document.querySelector("#nav-pdcv")) {
-        document.querySelector("#nav-pdcv").style.display = 'block';
-        document.querySelector("#nav-pdcv").style.visibility = 'visible';
-        document.querySelector("#nav-pdcv").classList.add('show');
+    const navPdcv = document.querySelector("#nav-pdcv");
+    if (navPdcv) {
+        navPdcv.style.display = 'block';
+        navPdcv.style.visibility = 'visible';
+        navPdcv.classList.add('show');
     }
     
 
