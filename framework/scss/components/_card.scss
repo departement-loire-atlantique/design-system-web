@@ -145,6 +145,7 @@
     text-align: center;
     min-height: 14rem;
     min-width: 14rem;
+    flex-direction: column;
 
     @media (max-width: $ds44-small - .0625) {
         padding-left: $spacer-small;
@@ -164,11 +165,19 @@
 .ds44-cardDateNumber {
     font: bold 2.375em/1 $ds44-font-family-headings;
     display: block;
+
+    .ds44-two-dates & {
+        font: bold 2em/1 $ds44-font-family-headings;
+    }
 }
 
 .ds44-cardDateMonth {
     font: normal 1.5em/1 $ds44-font-family-headings;
     display: block;
+
+    .ds44-two-dates & {
+        font: normal 1.2em/1 $ds44-font-family-headings;
+    }
 }
 
 .ds44-cardMultiDates { // if card displays multiple dates (range)

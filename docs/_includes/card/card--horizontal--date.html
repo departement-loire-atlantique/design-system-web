@@ -1,13 +1,17 @@
 <section class="ds44-card ds44-card--horizontal">
-  <div class="ds44-flex-container ds44-flex-valign-center">
-    <div class="ds44-card__dateContainer ds44-flex-container ds44-flex-align-center ds44-flex-valign-center" aria-hidden="true">
-      <p><span class="ds44-cardDateNumber">8</span> <span class="ds44-cardDateMonth">avr.</span></p>
+    <div class="ds44-flex-container ds44-flex-valign-center">
+        <div class="ds44-card__dateContainer ds44-flex-container ds44-flex-align-center ds44-flex-valign-center {% if include.date-2 %}ds44-two-dates{% endif %}" aria-hidden="true">
+            <p><span class="ds44-cardDateNumber">8</span> <span class="ds44-cardDateMonth">avr.</span></p>
+            {% if include.date-2 %}
+            <i class="icon icon-down" aria-hidden="true"></i>
+            <p><span class="ds44-cardDateNumber">5</span> <span class="ds44-cardDateMonth">sep.</span></p>
+            {% endif %}
+        </div>
+        <div class="ds44-card__section--horizontal">
+            <p role="heading" aria-level="2" class="ds44-card__title"><a href="#" class="ds44-card__globalLink">{{ include.title }}</a></p>
+            <p class="visually-hidden">{% if include.date-2 %}Du {{ include.date-1 }} au {{ include.date-2 }}{% else %}{{ include.date-1 }}{% endif %}</p>
+            <p class="ds44-cardLocalisation"><i class="icon icon-{{ include.icon }}" aria-hidden="true"></i><span class="ds44-iconInnerText">{{ include.info }}</span></p>
+            <i class="icon icon-arrow-right ds44-cardArrow" aria-hidden="true"></i>
+        </div>
     </div>
-    <div class="ds44-card__section--horizontal">
-      <p role="heading" aria-level="2" class="ds44-card__title"><a href="#" class="ds44-card__globalLink">{{ include.title }}</a></p>
-      <p class="visually-hidden">{{ include.date }}</p>
-      <p class="ds44-cardLocalisation"><i class="icon icon-marker" aria-hidden="true"></i><span class="ds44-iconInnerText">{{ include.lieu }}</span></p>
-      <i class="icon icon-arrow-right ds44-cardArrow" aria-hidden="true"></i>
-    </div>
-  </div>
 </section>
