@@ -10,4 +10,9 @@ layout: pattern
     document.querySelector("#nav-pdcv").style.display = 'block';
     document.querySelector("#nav-pdcv").style.visibility = 'visible';
     document.querySelector("#nav-pdcv").classList.add('show');
+
+    let allHiddenElems = document.querySelectorAll('[aria-hidden="true"]');
+    allHiddenElems.forEach((element) => {
+        element.removeAttribute('aria-hidden');
+    });
 </script>
