@@ -318,6 +318,9 @@
   .ds44-stl-m6t {
     margin-top: $ds44-container-large-margin !important;
   }
+  .ds44-stl-p6t {
+    margin-top: $ds44-container-large-margin !important;
+  }
 
   .ds44-stl-center {
     text-align: center !important;
@@ -337,6 +340,12 @@
 
   .ds44-hide-tiny-to-medium {
     display: none!important;
+  }
+  .ds44-ttm-m9t {
+    margin-top: $ds44-margin-base *9 !important;
+  }
+  .ds44-ttm-p9t {
+    padding-top: $ds44-margin-base *9 !important;
   }
 
 }
@@ -365,6 +374,9 @@
 
   .ds44-mobile-reduced-mt {
     margin-top: $ds44-margin-base !important;
+  }
+  .ds44-tts-m9t {
+    margin-top: $ds44-margin-base *9 !important;
   }
 
 }
