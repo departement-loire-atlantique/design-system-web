@@ -161,14 +161,18 @@ $ds44-padding-xxlarge         : $ds44-padding-base *5 !default;
 // Color zone
 // ----------
 
-$ds44-light             : #FFF !default;
-$ds44-dark              : #000 !default;
-$ds44-gray              : #666 !default;
-$ds44-lightgray         : #F5F5F5 !default;
-$ds44-darkgray          : #333 !default;
-$ds44-LA                : #99E6D1 !default;
-$ds44-Agenda            : #FFD883 !default;
-$ds44-flat-overlay      : rgba(0, 0, 0, 0.4) !default;
+$ds44-light             : #FFF                !default;
+$ds44-dark              : #000                !default;
+$ds44-gray              : #666                !default;
+$ds44-lightgray         : #F5F5F5             !default;
+$ds44-darkgray          : #333                !default;
+$ds44-LA                : #99E6D1             !default;
+$ds44-Agenda            : #FFD883             !default;
+$ds44-valid-green       : #24883E             !default;
+$ds44-valid-green-bg    : #F3F9F5             !default;
+$ds44-error-red         : #DC3545             !default;
+$ds44-error-red-bg      : #FEF4F5             !default;
+$ds44-flat-overlay      : rgba(0, 0, 0, 0.4)  !default;
 
 // Semantic colors
 $ds44-color-base        : $ds44-dark !default;

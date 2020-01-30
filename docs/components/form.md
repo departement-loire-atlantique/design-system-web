@@ -16,6 +16,9 @@ variations:
 - title: Champ avec label extérieur
   description: Type de champ comprenant un label au-dessus et un placeholder à l'intérieur
   pattern: forms/form--input-externalLabel.html
+- title: Messages d erreur
+  description:
+  pattern: forms/form--error.html
 ---
 
 ## Usage
