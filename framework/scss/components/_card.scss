@@ -12,6 +12,14 @@
     &.ds44-card--contact {
         border-bottom: 0.1875rem solid $ds44-contextual-color;
         background: $ds44-lightgray;
+
+        .ds44-card__section {
+            padding: $ds44-padding-large;
+        }
+
+        .ds44-innerBoxContainer {
+            padding: 0;
+        }
     }
 
     &.ds44-cardIsPartner {
@@ -27,7 +35,7 @@
         }
 
         .ds44-cardTitle {
-            padding-top: 1rem !important;
+            padding-top: $ds44-padding-large !important;
         }
     }
 
@@ -39,6 +47,10 @@
         .ds44-cardArrow {
             opacity: 1;
         }
+    }
+
+    .ds44-cardTitle {
+        font-size: 2.4rem;
     }
 
     .ds44-imgRatio {
