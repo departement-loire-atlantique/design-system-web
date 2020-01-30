@@ -107,6 +107,7 @@ h4, .h4-like {
   font-weight: $weight-medium;
   padding: 0;
   display: block;
+  line-height: 1.2;
 }
 
 h5, .h5-like {
@@ -351,4 +352,10 @@ caption {
   margin-bottom: $ds44-medium-vmargin;
   text-align: left;
   font-weight: normal;
+}
+
+/* Global classes */
+
+.hidden {
+  display: none;
 }

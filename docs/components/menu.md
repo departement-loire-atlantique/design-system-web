@@ -7,6 +7,9 @@ description: Un menu permet d'accéder à une liste de liens
 status: A valider
 
 variations:
+- title: Menu Près de chez vous
+  description: Menu de navigation "Près de chez vous"
+  pattern: menu/nav-pres-de-chez-vous.html
 - title: Menu principal
   description: Menu de navigation principale, cliquer sur le bouton "menu" du header pour afficher le composant
   pattern: menu/navigation-principale.html

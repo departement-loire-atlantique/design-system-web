@@ -184,6 +184,10 @@ a > .ds44-btn--contextual,
     }
 }
 
+.ds44-btnOpen {
+    top: .75rem;
+}
+
 /* == Specific buttons == */
 
 .ds44-btnOverlay {
@@ -226,7 +230,6 @@ a > .ds44-btn--contextual,
     }
 }
 
-
 // Bouton retour à la liste / page précédente
 
 .ds44-btnStd--retourPage,
@@ -237,106 +240,6 @@ a.ds44-btnStd--retourPage {
     max-width: 14%;
     text-align: center;
 }
-
-
-/* --------------- styles for Tooltip -----------------------*/
-
-.js-simple-tooltip {
-    padding: 0;
-    margin-top: -5px;
-}
-.simpletooltip[aria-hidden="true"],
-.minimalist-simpletooltip[aria-hidden="true"],
-.minimalist-left-simpletooltip[aria-hidden="true"] {
-  display: none;
-}
-/* position relative for containers */
-.simpletooltip_container,
-.minimalist-simpletooltip_container,
-.minimalist-left-simpletooltip_container {
-  position: relative;
-  padding: 0;
-}
-
-/* tooltip styles */
-.simpletooltip,
-.minimalist-simpletooltip,
-.minimalist-left-simpletooltip {
-  position: absolute;
-  z-index: 666;
-  border-radius: $ds44-border-radius;
-  background-color: #FFF;
-  box-shadow: $ds44-smallShadow;
-  font-size: 1.4rem;
-  padding: $spacer-small;
-}
-.simpletooltip,
-.minimalist-simpletooltip {
-  right: 0;
-  bottom: 2.5rem;
-  margin-left: .5em;
-}
-.minimalist-left-simpletooltip {
-  right: 100%;
-  left: auto;
-  margin-right: .5em;
-}
-/* used pseudo-element to make arrows */
-.simpletooltip::before,
-.minimalist-simpletooltip::before,
-.minimalist-left-simpletooltip::before {
-  content: '';
-  speak: none;
-  position: absolute;
-  z-index: 0;
-  width: 11px;
-  height: 11px;
-  pointer-events: none;
-}
-.simpletooltip::before,
-.minimalist-simpletooltip::before {
-  left: 50%;
-  bottom: -6px;
-  margin-left: -5px;
-  transform: rotate(45deg);
-  background-color: #fff;
-  box-shadow: none;
-  border-right: 1px solid #ccc;
-  border-bottom: 1px solid #ccc;
-}
-
-/* it can be easily adapted in media-queries for tablets/mobile */
-
-/* for this example: mobile */
-@media (max-width: 44.375em) {
-
-  .simpletooltip,
-  .minimalist-simpletooltip,
-  .minimalist-left-simpletooltip  {
-    top: 100%;
-    left: 50%;
-	right: 0;
-    margin: 0;
-	margin-top: .7em;
-	margin-left: -5em;
-  }
-  .simpletooltip::before,
-  .minimalist-simpletooltip::before,
-  .minimalist-left-simpletooltip::before  {
-    top: -10px;
-    right: auto;
-    left: 50%;
-    margin-left: -5px;
-    margin-top: -10px;
-    border: 10px solid transparent;
-    border-bottom: 10px solid rgba( 0, 0, 0, .9 );
-  }
-
-}
-
-/* /tooltip */
-
-
 
 /* medium screens */
 /* ------------- */

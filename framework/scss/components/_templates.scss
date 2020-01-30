@@ -88,6 +88,28 @@ main {
 .ds44-pageHeaderContainer {
     position: relative;
     background-color: #777777; // for accessibility reasons (in case of no image)
+
+    &--deuxCol {
+      display: flex;
+    }
+    &__left {
+      width: 70%;
+      box-sizing: border-box;
+      display: flex;
+      justify-content: flex-start;
+      position: relative;
+    }
+    &__right {
+      width: 30%;
+      box-sizing: border-box;
+      display: flex;
+      justify-content: flex-start;
+
+      hr {
+        margin: 1em 0 1em;
+        background-color: #939393;
+      }
+    }
 }
 
 .ds44-titleContainer {
@@ -109,6 +131,11 @@ main {
     top: 0;
     left: 0;
 }
+
+.ds44-pageHeaderContainer--deuxCol .ds44-bgGray{
+      width: 100%;
+  }
+
 
 .ds44-introduction, .ds44-introduction-like, .ds44-component-chapo {
     @include ds44-font-sizes(chapoStyle);
@@ -169,6 +196,22 @@ main {
 
   .ds44-container-large {
       margin: 0 $ds44-components-vmargin;
+  }
+
+}
+
+@media (max-width: $ds44-medium - .0625) {
+
+  .ds44-pageHeaderContainer {
+
+      &--deuxCol{
+        display: block;
+      }
+
+      &__left,
+      &__right {
+        width: 100%;
+      }
   }
 
 }

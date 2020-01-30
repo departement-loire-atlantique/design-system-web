@@ -177,14 +177,6 @@
   flex-direction: row-reverse;
 }
 
-@media (max-width: $ds44-medium - .0625) {
-
-  .ds44-tiny-to-med-ftop {
-    justify-content: flex-start;
-  }
-
-}
-
 /* Element properties */
 .ds44-fg1 {
   flex-grow: 1;
@@ -199,7 +191,22 @@
   align-self: flex-end;
 }
 
+@media (max-width: $ds44-large - .0625) {
+
+  .ds44-flex-wrap-large {
+    flex-wrap: wrap;
+  }
+  .ds44-flex-grow1-large {
+    flex-grow: 1;
+  }
+
+}
+
 @media (max-width: $ds44-medium - .0625) {
+
+  .ds44-tiny-to-med-ftop {
+    justify-content: flex-start;
+  }
 
   .ds44-flex-wrap-medium {
     flex-wrap: wrap;
@@ -220,12 +227,13 @@
 
 }
 
-@media (max-width: $ds44-large - .0625) {
+@media (max-width: $ds44-small - .0625) {
 
-  .ds44-flex-wrap-large {
-    flex-wrap: wrap;
+  .ds44-small-flex-col { // change l'orientation flex de row à column sur les petits écrans
+    flex-direction: column;
   }
-  .ds44-flex-grow1-large {
+
+  .ds44-small-fg1 { // étire l'élément en mobile
     flex-grow: 1;
   }
 
@@ -238,6 +246,9 @@
 }
 .ds44-hasGutter-xxl {
   gap: 7%;
+}
+.ds44-grid-valign-center {
+  align-items: center;
 }
 
 /* === Layout utils === */
@@ -329,6 +340,12 @@
 
 .ds44-w100 {
   width: 100%;
+}
+
+/* === Height helpers === */
+
+.ds44-hv100 {
+  min-height: 100vh;
 }
 
 /* === Color utils === */
@@ -484,6 +501,21 @@
   top: 0;
 }
 
+/* === Text effects === */
+
+.ds44-txtBulle {
+  @include ds44-font-sizes(bigText);  
+  @if variable_exists(ds44-font-family-headings) and $ds44-font-family-headings != $ds44-font-family-base{
+    font-family: $ds44-font-family-headings;
+  }
+  text-transform: lowercase;
+  background-color: $ds44-light-color;
+  border-radius: 6rem;
+  padding: 1.2rem 1.5rem 1.5rem 1.5rem;
+  display: inline-block;
+  line-height: 1;
+}
+
 /* === Accessibilité === */
 
 .ds44-keyboard-show {
@@ -507,8 +539,6 @@
 
 }
 
-
-
 /* === Separators === */
 
 .ds44-xl-gap {
@@ -517,6 +547,39 @@
 .ds44-m-gap {
   column-gap: 3rem;
 }
+.ds44-separator {
+  position: relative;
+  height: 390px;
+
+  &::before {
+    position: absolute;
+    content: "";
+    height: 390px;
+    width: 2px;
+    background-color: #000;
+    z-index: 1;
+  }
+
+  p {
+    z-index: 10;
+  }
+}
+
+@media (max-width: $ds44-large - .0625) {
+
+  .ds44-separator {
+    height: auto;
+    padding: $ds44-padding-xlarge;
+    
+    &::before {
+      height: 2px;
+      width: 100%;
+    }
+  
+  }
+
+}
+
 
 /* === Hidden blocks for focus loops === */
 

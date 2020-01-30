@@ -34,6 +34,9 @@
     @include ds44-font-sizes(smallText);
     color: $ds44-graytext-color;
     display: block;
+    position: relative;
+    font-weight: normal;
+    margin-bottom: 0;
 
     .ds44-labelTypePlaceholder, 
     .ds44-labelTypePlaceholderLarge {
@@ -50,7 +53,7 @@
     }
 
     .ds44-labelTypePlaceholderLarge {
-        top: $ds44-padding-large;        
+        top: $ds44-padding-large;    
         font-size: 1.6rem;
     }
 }
@@ -102,4 +105,78 @@
 
 .ds44-format {
     color: $ds44-color-soft-text;
+}
+ 
+/**
+ * Moteurs de recherche à facettes
+ */
+
+ .ds44-facetteContainer {
+     padding: $ds44-padding-large;
+     background-color: $ds44-dark;
+     position: relative;
+
+     .ds44-moveLabel {
+         color: $ds44-color-inverse;
+     }
+ }
+
+ .ds44-fieldContainer {
+     margin-right: $ds44-margin-base;
+     position: relative;
+
+     &:last-child {
+         margin-right: 0;
+     }
+ }
+
+ .ds44-listSelect { // faux champ de formulaire, conteneur pour les listes de sélection
+    background-color: $ds44-light-color;
+ }
+
+ .ds44-labelLarge {
+     font-size: 1.6rem;
+ }
+ 
+/* ----------------------------- */
+/* ------- MEDIA QUERIES ------- */
+/* ----------------------------- */
+ 
+
+/* medium screens */
+/* ------------- */
+
+@media (max-width: $ds44-large - .0625) {
+
+
+}
+
+/* small screens */
+/* ------------- */
+
+@media (max-width: $ds44-medium - .0625) {
+
+
+}
+
+@media (max-width: $ds44-small - .0625) {
+
+    .ds44-fieldContainer {
+        margin-right: 0;
+        margin-bottom: $ds44-medium-vmargin;
+
+        &:last-child {
+            margin-bottom: 0;
+        }
+
+        &.ds44-small-fg1 > .ds44-btnStd {
+            width: 100%;
+            text-align: left;
+
+            .icon {
+                float: right;
+            }
+        }
+    }
+  
 }

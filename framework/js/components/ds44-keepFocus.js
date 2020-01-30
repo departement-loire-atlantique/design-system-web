@@ -6,8 +6,8 @@ function deleteOtherFocus() {
     });
     let firstFocusableElem = document.querySelector(".ds44-tmpFirstFocus");
     let lastFocusableElem = document.querySelector(".ds44-tmpLastFocus");
-    if (!isNullOrUndefined(firstFocusableElem)) firstFocusableElem.classList.remove("ds44-tmpFirstFocus");
-    if (!isNullOrUndefined(lastFocusableElem)) lastFocusableElem.classList.remove("ds44-tmpLastFocus");
+    if (firstFocusableElem !== null) firstFocusableElem.classList.remove("ds44-tmpFirstFocus");
+    if (lastFocusableElem !== null) lastFocusableElem.classList.remove("ds44-tmpLastFocus");
 }
 
 // Fonction qui va forcer le focus à faire une boucle sur un élément
@@ -43,5 +43,5 @@ function trapFocus(element) {
 // Remettre le focus sur un élément précis
 function focusBackToElement(query) {
 	let itElem = document.querySelector(query);
-	if (!isNullOrUndefined(itElem)) itElem.focus();
+	if (itElem !== null) itElem.focus();
 }

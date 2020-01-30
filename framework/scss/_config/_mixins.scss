@@ -18,11 +18,11 @@
 // Additionnal "utility" breakpoints aliases
 // ex. @include respond-to("medium-up") {...}
 $bp-aliases: (
-  'tiny'   : (max-width: #{$ds44-tiny - 1}),
-  'small'  : (max-width: #{$ds44-small - 1}),
-  'medium' : (max-width: #{$ds44-medium - 1}),
-  'large' : (max-width: #{$ds44-large - 1}),
-  'extra-large'  : (max-width: #{$ds44-extra-large - 1}),
+  'tiny'   : (max-width: #{$ds44-tiny - .0625}),
+  'small'  : (max-width: #{$ds44-small - .0625}),
+  'medium' : (max-width: #{$ds44-medium - .0625}),
+  'large' : (max-width: #{$ds44-large - .0625}),
+  'extra-large'  : (max-width: #{$ds44-extra-large - .0625}),
   'tiny-up'   : (min-width: #{$ds44-tiny}),
   'small-up'  : (min-width: #{$ds44-small}),
   'medium-up' : (min-width: #{$ds44-medium}),
