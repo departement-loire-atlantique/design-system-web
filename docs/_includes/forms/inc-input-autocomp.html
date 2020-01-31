@@ -1,0 +1,16 @@
+<div class="ds44-form__container">
+    <label for="name" class="ds44-formLabel"><span class="ds44-labelTypePlaceholderLarge ds44-moveLabel">{{ include.label }}{{ include.requiredStar }}</span> <input type="text" id="name" class="ds44-inpLarge" {{ include.required }} aria-label="Tag" role="combobox" aria-expanded="true" aria-autocomplete="list" aria-owns="owned_listbox" aria-activedescendant="selected_option" /></label>
+    <div class="ds44-autocomp-container">
+        <div class="ds44-flex-container">
+            <button class="ds44-btnStd ds44-bgGray ds44-btnStd--plat ds44-fg1" type="button">Bouton plat</button>
+            <button class="ds44-btnStd ds44-bgGray ds44-btnStd--plat ds44-fg1 ds44-border-left--light" type="button"><span class="ds44-btnInnerText">Bouton plat + icône</span><i class="icon icon-position" aria-hidden="true"></i></button>
+        </div>
+        <div class="ds44-autocomp-list">
+            <ul class="ds44-list" role="listbox" id="owned_listbox">
+                <li class="ds44-autocomp-list_elem" role="option" id="selected_option">44600 Saint-Nazaire</li>
+                <li class="ds44-autocomp-list_elem" role="option">44460 Saint Nicolas de Redon</li>
+            </ul>
+            <p><a href="#" class="ds44-lightLink">33 suggestions supplémentaires</a></p>
+        </div>
+    </div>
+</div>

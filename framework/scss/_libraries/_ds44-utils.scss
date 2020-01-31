@@ -365,8 +365,16 @@
 
 /* === BORDERS === */
 
+%ds44-separating-border {
+  border-left: 2px solid!important;
+}
 .ds44-border-left {
-  border-left: 2px solid $ds44-dark;
+  @extend %ds44-separating-border;
+  border-color: $ds44-dark!important;
+  &--light {
+    @extend %ds44-separating-border;
+    border-color: $ds44-light!important;
+  }
 }
 
 .ds44-theme-border {

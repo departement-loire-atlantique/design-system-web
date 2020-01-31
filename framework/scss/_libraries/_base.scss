@@ -52,6 +52,19 @@ a {
     color: $ds44-link-color-hover;
     text-decoration: $ds44-link-decoration-hover;
   }
+
+  &.ds44-lightLink {
+    color: $ds44-color-soft-text;
+    text-decoration: $ds44-link-decoration-hover;
+
+    &:focus,
+    &:hover,
+    &:active {
+      color: $ds44-link-color-hover;
+      text-decoration: $ds44-link-decoration;
+    }
+  }
+
 }
 
 /* Headings */
@@ -241,13 +254,10 @@ svg {
   max-width: 100%;
 }
 
-img {
-  height: auto;
-}
-
 /* Styling elements */
 
 img {
+  height: auto;
   vertical-align: middle;
 }
 

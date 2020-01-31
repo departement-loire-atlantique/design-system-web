@@ -141,6 +141,31 @@
 }
 
  
+/**
+ * Autocompletion fields
+ */
+
+.ds44-autocomp-container {
+    padding: $ds44-padding-medium;
+    box-shadow: $ds44-boxShadow;
+    background-color: $ds44-light-color;
+}
+.ds44-autocomp-list {
+    padding: $ds44-padding-xlarge $ds44-padding-large;
+}
+.ds44-autocomp-list_elem {
+    font-size: 1.125em; // 18px
+    margin-bottom: $ds44-large-vmargin;
+
+    &:focus,
+    &:hover,
+    &:active {
+      text-decoration: underline;
+      cursor: pointer;
+    }
+}
+
+ 
  /**
   * Error messages
   */

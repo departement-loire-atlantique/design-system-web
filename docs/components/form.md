@@ -7,19 +7,16 @@ title: Formulaires
 description: 
 
 variations:
-- title: Champ standard
+- title: Champs standards
   description: 
   pattern: forms/form--input-std.html
-- title: Champ large
-  description: Champ élargi
-  pattern: forms/form--input-large.html
-- title: Champ avec label extérieur
-  description: Type de champ comprenant un label au-dessus et un placeholder à l'intérieur
-  pattern: forms/form--input-externalLabel.html
+- title: Champ autocompletion
+  description: 
+  pattern: forms/form--input-autocomplete.html
 - title: Messages d erreur
   description:
   pattern: forms/form--error.html
-- title: Moteur de recherche à facettes
+- title: Recherche à facettes
   description: Ensemble de composants de formulaire dédié aux recherches
   pattern: forms/form--recherche-facettes.html
 ---
@@ -38,6 +35,15 @@ Les champs obligatoires doivent comporter une séquence à gérer en dur et en J
 * Un attribut html `required`
 * Un attribut aria-required="true"
 * Un attribut aria-invalid géré en JS : à "true" si le formulaire est validé mais sans l'élément requis. A "false" si l'élément requis est présent au moment de la validation. Si le contrôle est effectué côté serveur, le patch aria devient optionnel.
+
+### Messages d'erreur
+
+Sur le champ en erreur, déclarer  :
+* le focus sur le premier élément de formulaire en erreur ;
+* un attribut aria-invalid=”true” (dynamiquement et uniquement en cas d’erreur ) ;
+* un attribut aria-hidden=”true” sur le chevron vers le bas de l'élément d'ouverture  Intaria-invalid="true"
+* un attribut id de valeur unique dans la balise <p> ou <ul> englobant le message d’erreur ;
+* un attribut aria-describedby dans le champ en erreur où la valeur de aria-describedby reprend la valeur de l’attribut id du message d’erreur.
 
 
 ## FAQ
