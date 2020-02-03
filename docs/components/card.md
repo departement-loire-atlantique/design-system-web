@@ -20,13 +20,9 @@ variations:
   description: La classe `ds44-container-imgRatio--tuileMiseEnAvant` définit une tuile prévue pour recevoir un contenu mis en avant avec une image en en-tête et le descriptif dans un bloc interne à la couleur de la thématique.
   pattern: cards/card--misEnAvant.html
 
-- title: Tuile contact
-  description: ...
-  pattern: cards/card--contact.html
-
-- title: Tuile calendrier horizontale
-  description: Il s'agit d'une tuile horizontale avec un conteneur `ds44-card__dateContainer` à la place du conteneur d'image (`<picture>`). Elle comporte une date encadrée dans la couleur contextuelle sur la gauche et un contenu à droite. Pour les événements se déroulant sur un laps de temps compris entre deux dates, utiliser la classe `ds44-cardMultiDates` sur le conteneur ou la balise encadrante.
-  pattern: cards/card--horizontal--date.html
+- title: Tuiles de contenu
+  description: Liste des tuiles de type photo + contenu ou contenu seul (contact, élu, aide etc.)
+  pattern: cards/card--content.html
 ---
 
 ## Usage
