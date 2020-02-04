@@ -1,5 +1,3 @@
-'use strict';
-
 class MiscDom {
     static getAttribute(element, attributeName, defautValue = null) {
         return (element.hasAttribute(attributeName) === true ? element.getAttribute(attributeName) : defautValue);

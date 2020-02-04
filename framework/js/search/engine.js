@@ -1,5 +1,3 @@
-'use strict';
-
 // Import : MiscEvent
 // Import : MiscRequest
 // Import : MiscUrl

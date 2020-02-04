@@ -4,28 +4,3 @@ layout: pattern
 <button type="button" class="ds44-menuBtn testBtnNiv2" data-ssmenu="nav2">Ouverture du menu de niveau 2<i class="icon icon-right" aria-hidden="true"></i></button>
 
 {% include menu/navigation-principale-n2.html %}
-
-
-<script>
-    const ssMenuToggler = document.querySelectorAll(".testBtnNiv2");
-
-    ssMenuToggler.forEach((element) => {
-        element.addEventListener('click', () => {
-            displaySsNavMenu(element);
-        })
-    });
-
-    let displaySsNavMenu = function (element) {
-        element.setAttribute("aria-expanded","true");
-        let navNivTwo = document.querySelector("#" + element.getAttribute("data-ssmenu"));
-        navNivTwo.style.display = 'block';
-        timerShow(navNivTwo, 0);
-        navNivTwo.setAttribute("aria-hidden", "false");
-        hideCloseButtons(navNivTwo.querySelector('.ds44-btnOverlay--closeOverlay'));                                                                    
-        navNivTwo.querySelector('.ds44-btn-backOverlay').focus();
-        // ajouter l'élément de piège focus sur le menu nv2
-        disableAllTabIndexes(document.querySelector("header"));
-        trapFocus(navNivTwo);
-        toggleAriaHiddenSsMenu(navNivTwo);
-    }
-    </script>

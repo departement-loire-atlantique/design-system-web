@@ -127,13 +127,6 @@
 /* =======
   MEDIA QUERIES
   === */
-@media (max-width: $ds44-large - .0625) {
-
-  .ds44-grid12-offset-1 .col:last-child{
-    margin-top: 2em;
-  }
-
-}
 
 @media (min-width: $ds44-large - .625) {
 
@@ -148,9 +141,13 @@
 
 @media (max-width: $ds44-large - .0625) {
 
-  .ds44-grid12-offset-1 .col:last-child{
+  .ds44-box .col{
     margin-top: 2em;
     padding: 0;
+  }
+
+  .ds44-box .col:first-child{
+    margin-top: 0;
   }
 
   .grid-12-small-1 .colPush{

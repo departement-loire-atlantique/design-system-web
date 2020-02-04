@@ -33,11 +33,11 @@ class MiscUrl {
         let newUrl = document.location.href.split('#')[0] + '#';
 
         const sortedParameters = {};
-        Object.keys(parameters).sort().forEach(function(key) {
+        Object.keys(parameters).sort().forEach(function (key) {
             sortedParameters[key] = parameters[key];
         });
 
-        for(let key in sortedParameters) {
+        for (let key in sortedParameters) {
             let value = sortedParameters[key];
 
             newUrl += key.toLowerCase() + (value ? '=' + window.decodeURIComponent(value) : '') + '&';
