@@ -139,6 +139,7 @@ $header-height-small      : 6.2rem;
 $ds44-margin-base             : 1rem !default;
 $ds44-container-vmargin       : $ds44-margin-base *5    !default;
 $ds44-paragraph-margin-bottom : $ds44-margin-base /2    !default;
+$ds44-half-base-margin        : $ds44-margin-base /2    !default;
 $ds44-components-vmargin      : $ds44-margin-base *3    !default;
 $ds44-components-margin       : $ds44-margin-base *3    !default;
 $ds44-small-vmargin           : $ds44-margin-base       !default;
@@ -172,10 +173,10 @@ $ds44-lightgray         : #F5F5F5             !default;
 $ds44-darkgray          : #333                !default;
 $ds44-LA                : #99E6D1             !default;
 $ds44-Agenda            : #FFD883             !default;
-$ds44-valid-green       : #24883E             !default;
-$ds44-valid-green-bg    : #F3F9F5             !default;
-$ds44-error-red         : #DC3545             !default;
-$ds44-error-red-bg      : #FEF4F5             !default;
+$ds44-valid             : #24883E             !default;
+$ds44-valid-bg          : #F3F9F5             !default;
+$ds44-error             : #DC3545             !default;
+$ds44-error-bg          : #FEF4F5             !default;
 $ds44-flat-overlay      : rgba(0, 0, 0, 0.4)  !default;
 
 // Semantic colors
@@ -222,9 +223,11 @@ $ds44-smallShadow : 0px 3px 10px 0px rgba(0,0,0,0.35)   !default;
 // Animation zone
 // ---------------
 
+$ds44-timing-faster   : 0.15s !default;
 $ds44-timing-standard : 0.25s !default;
 $ds44-timing-slower   : 0.35s !default;
 $ds44-timing-x2       : 0.5s  !default;
 $ds44-timing-x3       : 0.75s !default;
 $ds44-timing-x4       : 1s    !default;
-$ds44-timing-faster   : 0.15s !default;
+
+$ds44-transition-std  : ease-in-out !default;

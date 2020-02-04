@@ -9,4 +9,15 @@ layout: pattern
         </div>
     </div>
     <div><input type="submit" class="ds44-btnStd" value="Tester le champ" /></div>
+
+</form>
+
+<form>
+    {% include forms/inc-checkboxes.html label="Choix" number="1" requiredStar='<sup aria-hidden="true">*</sup>' required='required aria-required="true"' error="ds44-boxError" ariaError=' aria-describedby="msgErrorChk" aria-invalid="true"' %}
+    {% include forms/inc-checkboxes.html label="Choix" number="2" requiredStar='<sup aria-hidden="true">*</sup>' required='required aria-required="true"' error="ds44-boxError" %}
+    <div class="ds44-errorMsg-container">
+        <p id="msgErrorChk" class="ds44-msgErrorText"><i class="icon icon-cross icon--sizeM" aria-hidden="true"></i> <span class="ds44-iconInnerText">Veuillez cocher un élément</span></p>
+    </div>
+    <div><input type="submit" class="ds44-btnStd" value="Tester les cases" /></div>
+
 </form>

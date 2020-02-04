@@ -26,6 +26,12 @@ variations:
 Les champs de formulaire peuvent être soit obligatoires soit optionnels. S'ils sont obligatoires, placer l'attribut `required` dans la balise `input`.
 Ajouter l'attribut `disabled` si le champ n'est pas saisissable mais doit rester visible.
 
+### Cases à cocher et boutons radios
+
+Pour des questions de design, les cases à cocher et boutons radios ont été refaits via CSS. Ce qui impose une façon de coder : **les inputs checkbox ou radio doivent obligatoirement être codés à gauche du label dans le HTML, sans aucune balise entre les deux**.
+
+Dans le cas où on voudrait changer la position des cases par rapport au label, il faudrait recréer des styles spécifiques.
+
 ### Conseils d'intégration
 
 

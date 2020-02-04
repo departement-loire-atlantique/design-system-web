@@ -110,6 +110,53 @@
 }
  
 /**
+ * Checkboxes & radiobuttons
+ */
+
+.ds44-boxLabel { // label for checkboxes and radiobuttons
+    @include ds44-font-sizes(smallText); // 14px
+    margin-right: $ds44-components-margin;
+    padding-left: 3rem;
+    display: inline-block;
+
+    &::before {
+        content: "";
+        display: block;
+        position: absolute;
+        top: .3rem;
+        left: 0;
+        border: 1px solid $ds44-dark;
+        border-radius: 2px;
+        height: 1.6rem;
+        width: 1.6rem;
+        transition: background-size $ds44-timing-faster ease-out;
+        background-position: center;
+        background-size: 0rem;
+    }
+}
+
+input[type=checkbox],
+.ds44-checkbox {
+    position: absolute;
+    left: -9999px;
+
+    &:focus + .ds44-boxLabel::before {
+        outline: 1px dotted $ds44-dark;
+    }
+
+    &:checked + .ds44-boxLabel::before {
+        background: url(../../../assets/images/cd44-check-black.png) no-repeat center;
+        background-size: 1rem;
+    }
+
+    &.ds44-boxError + .ds44-boxLabel::before {
+        border-color: $ds44-error;
+    }
+}
+
+ 
+
+/**
  * Moteurs de recherche à facettes
  */
 
@@ -166,21 +213,21 @@
 }
 
  
- /**
-  * Error messages
-  */
+/**
+* Error messages
+*/
 
 .ds44-error {
-    border-color: $ds44-error-red;
+    border-color: $ds44-error;
 }
 
 .ds44-errorMsg-container {
     @include ds44-font-sizes(errMsg);
-    background-color: $ds44-error-red-bg;
+    background-color: $ds44-error-bg;
     padding: $ds44-padding-small $ds44-padding-box;
 
     .icon {
-        color: $ds44-error-red;
+        color: $ds44-error;
     }
 }
 
