@@ -141,7 +141,8 @@ main {
     @include ds44-font-sizes(chapoStyle);
     background: transparent;
     font-weight: $weight-bold;
-    margin-bottom: $ds44-components-vmargin;
+    margin-top: $ds44-large-vmargin;
+    margin-bottom: $ds44-large-vmargin;
 }
 
 /* Links */

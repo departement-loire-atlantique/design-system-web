@@ -26,6 +26,9 @@
 /* Ratio img tuile 31:13 */
 .ds44-container-imgRatio--tuileMiseEnAvant {
   padding-top: 41.93%;
+  p {
+    font-size: 0.875em;
+  }
 }
 
 /* legend block positionnement */
@@ -170,6 +173,9 @@ figure {
 @media (min-width: $ds44-small - .625) {
   .ds44-container-imgRatio--tuileMiseEnAvant .ds44-card__title {
       font-size: 2.4rem; // 24px
+  }
+  .col .ds44-container-imgRatio--tuileMiseEnAvant .ds44-card__title {
+      font-size: 1.7rem; // 17px
   }
 }
 

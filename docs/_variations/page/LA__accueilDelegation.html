@@ -52,33 +52,14 @@ layout: pattern
 				<p class="ds44-component-chapo ds44-centeredBlock">Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut</p>
 			</header>
 		</div>
-		<div class="ds44-container-large grid-12-small-1">
-		  <div class="col-6">
-		    <div class="ds44-card ds44-legendeContainer ds44-container-imgRatio ds44-container-imgRatio--tuileMiseEnAvant">
-		    	<img src="../../assets/images/sample-img-6.jpg" alt="" class="ds44-w100 ds44-imgRatio" id="image1">
-		    	<div class="ds44-theme ds44-innerBoxContainer ds44-blockAbsolute ds44-blockAbsolute--bl">
-		        <p role="heading" aria-level="3" class="ds44-card__title"><a href="#" class="ds44-card__globalLink">Exposition Précieux poisons d’Amazonie</a></p>
-		        <p>Du 29/06/19 au 01/09/19</p>
-		        <p class="ds44-cardLocalisation"><i class="icon icon-marker" aria-hidden="true"></i><span class="ds44-iconInnerText">Domaine Garenne Lemot</span></p>
-		    	</div>
-		    </div>
-		  </div>
-		  <div class="col-6">
-		    <div class="ds44-card ds44-legendeContainer ds44-container-imgRatio ds44-container-imgRatio--tuileMiseEnAvant">
-		    	<img src="../../assets/images/sample-img-6.jpg" alt="" class="ds44-w100 ds44-imgRatio" id="image1">
-		    	<div class="ds44-theme ds44-innerBoxContainer ds44-blockAbsolute ds44-blockAbsolute--bl">
-		        <p role="heading" aria-level="3" class="ds44-card__title"><a href="#" class="ds44-card__globalLink">Exposition Précieux poisons d’Amazonie</a></p>
-		        <p>Du 29/06/19 au 01/09/19</p>
-		        <p class="ds44-cardLocalisation"><i class="icon icon-marker" aria-hidden="true"></i><span class="ds44-iconInnerText">Domaine Garenne Lemot</span></p>
-		    	</div>
-		    </div>
-		  </div>
+		<div class="ds44-container-large">
+			{% include card/card--miseEnAvant--2col.html title="Exposition Précieux poisons d’Amazonie" date="Du 29/06/19 au 01/09/19" localisation="Domaine Garenne Lemot"%}
 		</div>
 		{% include carrousel/carrousel-x4--bgGrey.html %}
 	</section>
 
 
-	<section class="ds44-container-fluid ds44--xl-padding-t ds44-mt3">
+	<section class="ds44-container-fluid ds44--l-padding-t ds44-mt3">
 		<div class="ds44-inner-container">
 			<header class="txtcenter">
 				<h2 class="h2-like center">Vos rendez-vous</h2>
