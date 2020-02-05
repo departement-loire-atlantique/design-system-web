@@ -2,15 +2,12 @@
 layout: pattern
 ---
 <form>
-    <div class="ds44-facetteContainer ds44-flex-container ds44-small-flex-col">
+    <div class="ds44-facetteContainer ds44-bgDark ds44-flex-container ds44-small-flex-col">
         <div class="ds44-fieldContainer ds44-fg1">
             <label for="field1" class="ds44-formLabel"><span class="ds44-labelTypePlaceholderLarge ds44-moveLabel">Nom du champ<sup aria-hidden="true">*</sup></span> <input type="text" id="field1" class="ds44-inpLarge" required aria-required="true" /></label>
         </div>
         <div class="ds44-fieldContainer ds44-fg1">
-            <div id="field2" class="ds44-inpLarge ds44-listSelect" role="listbox">
-                <p role="heading" aria-level="2" class="ds44-formLabel" id="titreChamp"><span class="ds44-labelLarge">Nom du champ de selection</span></p>
-                <button class="ds44-btnIco ds44-posAbs ds44-posRi ds44-btnOpen" type="button"><i class="icon icon-down" aria-hidden="true"></i><span class="visually-hidden">Choisir une option</span></button>
-            </div>
+            {% include forms/inc-select.html label="Label select" number="1" requiredStar='<sup aria-hidden="true">*</sup>' required='required aria-required="true"' %}
         </div>
         <div class="ds44-fieldContainer ds44-small-fg1">            
             <button class="ds44-btnStd ds44-btnStd--large ds44-theme" type="button"><span class="ds44-btnInnerText">Large button</span><i class="icon icon-long-arrow-right" aria-hidden="true"></i></button>

@@ -54,6 +54,10 @@
             left: 0;
             color: $ds44-dark;
         }
+
+        .ds44-bgDark &.ds44-moveLabel {
+            color: $ds44-light-color;
+        }
     }
 
     .ds44-labelTypePlaceholderLarge {
@@ -221,12 +225,7 @@ input[type=radio],
 
 .ds44-facetteContainer {
      padding: $ds44-padding-large;
-     background-color: $ds44-dark;
      position: relative;
-
-     .ds44-moveLabel {
-         color: $ds44-color-inverse;
-     }
 }
 
 .ds44-fieldContainer {
@@ -235,6 +234,10 @@ input[type=radio],
 
      &:last-child {
          margin-right: 0;
+     }
+
+     .ds44-form__container {
+         margin: 0;
      }
 }
 
@@ -260,7 +263,8 @@ input[type=radio],
 
 .ds44-select__shape {
     cursor: pointer;
-    
+    background-color: $ds44-light-color;
+
     &.ds44-boxError {
         border-color: $ds44-error;
     }
@@ -271,6 +275,7 @@ input[type=radio],
     @include ds44-font-sizes(largeButton);
     color: $ds44-color-soft-text;
     font-weight: normal;
+    margin-bottom: 0;
 }
 
 .ds44-moveSelectLabel {
@@ -286,9 +291,11 @@ input[type=radio],
 }
 
 .ds44-select-container {
-    position: relative;
+    position: absolute;
+    width: 100%;
     box-shadow: $ds44-boxShadow;
     background-color: $ds44-light-color;
+    z-index: 10;
 }
 
 .ds44-select-list_elem {
@@ -303,6 +310,7 @@ input[type=radio],
     label {
         @include ds44-font-sizes(formListElem);
         display: block;
+        color: $ds44-dark;
 
         &:hover,
         &:focus,
@@ -325,6 +333,9 @@ input[type=radio],
     padding: $ds44-padding-medium;
     box-shadow: $ds44-boxShadow;
     background-color: $ds44-light-color;
+    position: absolute;
+    width: 100%;
+    z-index: 10;
 }
 
 .ds44-autocomp-list {
