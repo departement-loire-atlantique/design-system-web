@@ -228,6 +228,17 @@ a > .ds44-btn--contextual,
     }
 }
 
+.ds44-btnSelect {
+
+    @include ds44-font-sizes(largeButton);  // 16px
+    font-weight: bold;
+
+    .ds44-btnInnerText {
+        vertical-align: middle;
+    }
+
+}
+
 // Popover - help tool
 
 .ds44-popOver {
@@ -258,14 +269,15 @@ a.ds44-btnStd--retourPage {
         top: $ds44-margin-base;
         right: $ds44-margin-base;
     }
+
     .ds44-btnStd--retourPage,
     a.ds44-btnStd--retourPage {
-    position: relative;
-    top: 40px;
-    left: 16.666%;
-    max-width: 100%;
-    margin-bottom: 20px;
-  }
+        position: relative;
+        top: 40px;
+        left: 16.666%;
+        max-width: 100%;
+        margin-bottom: 20px;
+    }
 
 }
 
@@ -277,11 +289,12 @@ a.ds44-btnStd--retourPage {
     .ds44-btnStd--large {
         padding: $ds44-padding-box;
     }
+
     .ds44-btnStd--retourPage,
     a.ds44-btnStd--retourPage {
         left: 5%;
         top: 1.5rem;
-  }
+    }
 
 }
 
@@ -315,6 +328,11 @@ a.ds44-btnStd--retourPage {
     .ds44-fullWBtn {
         padding: $spacer-tiny;
         font-size: 1.4rem;
+    }
+
+    .ds44-btnSelect {
+        @include ds44-font-sizes(largeButton);
+        padding: $ds44-padding-large;
     }
 
 

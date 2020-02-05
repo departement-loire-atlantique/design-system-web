@@ -125,7 +125,7 @@
         content: "";
         display: block;
         position: absolute;
-        top: .3rem;
+        top: .4rem;
         left: 0;
         border: 1px solid $ds44-dark;
         border-radius: 2px;
@@ -238,10 +238,6 @@ input[type=radio],
      }
 }
 
-.ds44-listSelect { // faux champ de formulaire, conteneur pour les listes de sélection
-    background-color: $ds44-light-color;
-}
-
 .ds44-labelStd {
      font-size: 1.4rem;
      line-height: 1rem;
@@ -254,6 +250,70 @@ input[type=radio],
 
 
 /**
+ * SELECTS
+ */
+
+.ds44-listSelect { // faux champ de formulaire, conteneur pour les listes de sélection
+    background-color: $ds44-light-color;
+    padding: $ds44-padding-large;
+}
+
+.ds44-select__shape {
+    cursor: pointer;
+}
+
+.ds44-selectLabel {
+    cursor: pointer;
+    @include ds44-font-sizes(largeButton);
+    color: $ds44-color-soft-text;
+    font-weight: normal;
+}
+
+.ds44-moveSelectLabel {
+    font-size: 1.3rem; // 13px
+    position: absolute;
+    top: -$ds44-padding-medium*2;
+    left: 0;
+    color: $ds44-dark;
+
+    .ds44-bgDark & {
+        color: $ds44-color-inverse;
+    }
+}
+
+.ds44-select-container {
+    position: relative;
+    box-shadow: $ds44-boxShadow;
+    background-color: $ds44-light-color;
+}
+
+.ds44-select-list_elem {
+    margin-bottom: $ds44-large-vmargin;
+
+    &:focus,
+    &:hover,
+    &:active {
+      cursor: pointer;
+    }
+
+    label {
+        @include ds44-font-sizes(formListElem);
+        display: block;
+
+        &:hover,
+        &:focus,
+        &:active {
+            cursor: pointer;
+            text-decoration: none;
+        }
+    }
+
+    .ds44-form__container {
+        margin: 0;
+    }
+}
+
+/**
  * Autocompletion fields
  */
 
@@ -262,11 +322,13 @@ input[type=radio],
     box-shadow: $ds44-boxShadow;
     background-color: $ds44-light-color;
 }
+
 .ds44-autocomp-list {
     padding: $ds44-padding-xlarge $ds44-padding-large;
 }
+
 .ds44-autocomp-list_elem {
-    font-size: 1.125em; // 18px
+    @include ds44-font-sizes(formListElem);
     margin-bottom: $ds44-large-vmargin;
 
     &:focus,
@@ -274,6 +336,17 @@ input[type=radio],
     &:active {
       text-decoration: underline;
       cursor: pointer;
+    }
+
+    label {
+        display: block;
+
+        &:hover,
+        &:focus,
+        &:active {
+            cursor: pointer;
+            text-decoration: none;
+        }
     }
 }
 

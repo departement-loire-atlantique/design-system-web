@@ -34,6 +34,10 @@
 
 /* === Spacers === */
 
+.ds44-noLineH {
+  line-height: 0;
+}
+
 // paddings
 
 .ds44--m-padding {
@@ -85,8 +89,14 @@
 .ds44--2xl-padding-t {
   padding-top    : $ds44-padding-xlarge*2;
 }
+.ds44--2xl-padding-b {
+  padding-bottom : $ds44-padding-xlarge*2;
+}
 .ds44--xxl-padding-tb {
   padding-top    : $ds44-padding-xxlarge; // 5rem
+  padding-bottom : $ds44-padding-xxlarge; // 5rem
+}
+.ds44--xxl-padding-b {
   padding-bottom : $ds44-padding-xxlarge; // 5rem
 }
 

@@ -35,7 +35,10 @@ Pour des questions de design, les cases à cocher et boutons radios ont été re
 
 Dans le cas où on voudrait changer la position des cases par rapport au label, il faudrait recréer des styles spécifiques.
 
-### Conseils d'intégration
+### Faux selects
+
+Les selects du DS n'emploient pas de balises `<select>`. Ils sont reconstruits en HTML/CSS/JS + aria.
+Le JS ajoute la classe `ds44-moveSelectLabel` sur le titre du select quand un élément est sélectionné, de façon à faire sortir le (faux) label du champ.
 
 
 ## Accessibilité
