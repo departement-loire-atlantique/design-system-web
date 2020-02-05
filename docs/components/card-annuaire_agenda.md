@@ -17,7 +17,7 @@ variations:
   pattern: cards/card--AA--contact.html
 
 - title: Magazine
-  description: Ce type de tuile met en avant des magazines avec le visuel sur la droite et le contenu textuelle sur la droite.
+  description: Ce type de tuile met en avant des magazines avec le visuel sur la droite et le contenu textuel sur la droite.
   pattern: cards/card--AA--magazine.html
 
 
