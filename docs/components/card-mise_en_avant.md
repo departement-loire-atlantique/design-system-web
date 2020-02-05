@@ -3,26 +3,34 @@ layout: component-detail
 group: components
 status: A valider
 
-title: Tuiles
-alternative_title: Cards
-description: Une tuile propose un groupement de contenus cliquables menant à un contenu détaillé. Il s'agit d'un lien hypertexte graphique et multi-contenu.
+title: Tuiles Mise en avant
+alternative_title: Cards Mise en avant
+description: Une tuile propose un groupement de contenus cliquables menant à un contenu détaillé. Il s'agit d'un lien hypertexte graphique et multi-contenu. Les tuiles de mise en avant représentent des tuiles que l'on retrouve dans le corps de page (sous forme de carrousel ou de bloc indépendant)
 
 variations:
-- title: Tuile photo verticale
+- title: Photo verticale
   description: La classe `ds44-card--verticalPicture` définit une tuile verticale prévue pour recevoir une image en en-tête.
-  pattern: cards/card--verticalPicture.html
+  pattern: cards/card--MeA--verticalPicture.html
 
-- title: Tuile photo horizontale
+- title: Photo horizontale
   description: Ce type de tuile est défini par la classe `ds44-card--horizontal`. Elle présente (en général) une image sur la gauche et un contenu à droite.
-  pattern: cards/card--horizontal.html
+  pattern: cards/card--MeA--horizontal.html
 
-- title: Tuile mise en avant
-  description: La classe `ds44-container-imgRatio--tuileMiseEnAvant` définit une tuile prévue pour recevoir un contenu mis en avant avec une image en en-tête et le descriptif dans un bloc interne à la couleur de la thématique.
-  pattern: cards/card--misEnAvant.html
+- title: Contenu en avant
+  description: La classe `ds44-container-imgRatio--tuileMiseEnAvant` définit une tuile prévue pour recevoir un contenu mis en avant avec une image en en-tête et le descriptif dans un bloc interne à la couleur de la thématique. Pour changer la position du block interne, il suffit de changer la fin de la classe `ds44-blockAbsolute--bl` (bl bottom left. tl top left. br bottom right. tr top right)
+  pattern: cards/card--MeA--misEnAvant.html
 
-- title: Tuiles de contenu
-  description: Liste des tuiles de type photo + contenu ou contenu seul (contact, élu, aide etc.)
-  pattern: cards/card--content.html
+- title: En 1 clic
+  description: Ce type de tuile est défini par la classe `ds44-card--horizontal`. Elle présente (en général) une image sur la gauche et un contenu à droite. On retrouve ce type de bloc d accès rapide en colonne secondaire.
+  pattern: cards/card--MeA--unClic.html
+
+- title: Témoignages
+  description: On retrouve ce type de tuile en colonne secondaire, il est utilisé pour mettre en avant un témoignage ou une vidéo.
+  pattern: cards/card--MeA--temoignages.html
+
+- title: Élu
+  description: La classe `ds44-card--verticalPicture` définit une tuile verticale prévue pour recevoir une image en en-tête de forme ronde et par la suite le descriptif de l élu.
+  pattern: cards/card--MeA--elu.html
 ---
 
 ## Usage
