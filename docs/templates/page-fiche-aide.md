@@ -4,13 +4,13 @@ group: templates
 permalink:
 
 title: Fiche aide
-description: Modèle de fiche basé sur le template "carrefour". 
+description: Modèle de fiche basé sur le template "carrefour".
 status: A valider
 
 variations:
 - title: Page type "Fiche aide"
   pattern: page/LA__ficheAide.html
-- title: Template type "onglets"
+- title: Template carrefour
   pattern: templates/template-entryMenu.html
 ---
 ## Utilisation

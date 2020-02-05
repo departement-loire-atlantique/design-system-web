@@ -4,11 +4,11 @@ group: templates
 permalink:
 
 title: Page actualité
-description: Modèle de page basée sur le template "centré". 
+description: Modèle de page basée sur le template "centré".
 status: A valider
 
 variations:
-- title: Page type actualité
+- title: Page type "Actualité"
   pattern: page/LA__actu.html
 - title: Template centré
   pattern: templates/template-generique-centre.html

@@ -2,58 +2,74 @@
 layout: pattern
 ---
 
-<header role="banner" id="topPage" class="ds44-container-fluid">
-	<img src="../../assets/images/ds44-header--sample.png" alt="header" class="ds44-w100" />
+<header role="banner" id="topPage">
+    <div class="ds44-blocBandeau ds44-header">
+        <div class="ds44-container-large">
+			<img src="../../assets/images/ds44-header--sample.png" alt="header" class="ds44-w100"  />
+		</div>
+	</div>
 </header>
 
 <main role="main" id="content">
 
-	<article class="ds44-container-fluid">
+	<article class="ds44-container-large">
 
 		<div class="ds44-lightBG">
-			<div class="pam large-w66 mauto">
-				<nav role="navigation" aria-label="Votre position" class="ds44-hide-smallScreens">
-					<ul class="ds44-list">
-						<li class="ds44-breadcrumb"><a href="#"><i class="icon icon-home icon--medium"
-									aria-hidden="true"></i><span class="visually-hidden">Accueil</span></a></li>
-						<li class="ds44-breadcrumb"><a href="#">Categ 1</a></li>
-						<li class="ds44-breadcrumb"><a href="#">Categ 2</a></li>
-						<li class="ds44-breadcrumb"><a href="#">Categ 3</a></li>
-						<li class="ds44-breadcrumb" aria-current="location"><span>Je suis ici</span></li>
-					</ul>
-				</nav>
-				<h1 class="h1-like mbm" id="idTitre1">Titre de l'article</h1>
-				<p class="ds44-textLegend">Publié le xx/xx/xx</p>
+			<div class="ds44-inner-container ds44--xl-padding-t ds44--m-padding-b ds44-mobile-reduced-pt">
+				<div class="ds44-grid12-offset-2">
+					{% include breadcrumb/breadcrumb.html %}
+					<h1 class="h1-like mbs mts ds44-mobile-reduced-mb ds44-mobile-reduced-mt" id="idTitre1">Titre de l'article</h1>
+					<p class="ds44-textLegend">Publié le xx/xx/xx</p>
+				</div>
+			</div>
+		</div>
+		<div class="ds44-img50">
+			<div class="ds44-inner-container">
+				<div class="ds44-grid12-offset-1">
+					<figure class="ds44-legendeContainer ds44-container-imgRatio" role="figure"
+						aria-label="Légende associée © Copyright">
+						<img src="../../assets/images/ds44-logo--sampleImg--tpl.png" alt="Légende associée © Copyright" class="ds44-w100 ds44-imgRatio">
+						<figcaption class="ds44-imgCaption">Légende associée © Copyright</figcaption>
+					</figure>
+				</div>
 			</div>
 		</div>
 
-		<div class="ds44-lightBG ds44-img50">
-			<div class="large-w75 mauto">
-				<figure class="ds44-legendeContainer ds44-container-imgRatio">
-					<img src="../../assets/images/ds44-logo--sampleImg--tpl.png" alt="Image"
-						class="ds44-w100 ds44-imgRatio">
-					<figcaption>Légende associée © Copyright</figcaption>
-				</figure>
+		<section class="ds44-contenuArticle" id="section1">
+			<div class="ds44-inner-container ds44-mtb3">
+				<div class="ds44-grid12-offset-2">
+					<p class="ds44-introduction">Chapô</p>
+				</div>
+			</div>
+		</section>
+
+		<section class="ds44-contenuArticle" id="section2">
+			<div class="ds44-inner-container ds44-mtb3">
+				<div class="ds44-grid12-offset-2">
+					<h2 id="idTitre2">Titre de section wysiwyg</h2>
+					<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse massa nisi, varius nec vehicula ut, condimentum ac nisl. Vivamus sodales vestibulum suscipit. Vivamus eu egestas nisi. Donec nec augue ultricies, cursus mauris quis, aliquet lacus. Sed convallis lacinia enim vitae fringilla. Fusce sit amet lorem aliquam orci efficitur cursus nec vel massa. Maecenas quis varius arcu, in vehicula enim. Donec imperdiet, sem a venenatis fermentum, lorem diam egestas sapien, eget sodales diam mi ut nisl. Ut vitae tellus et mauris tempor fermentum ut in sem. Duis sagittis mi non tempor placerat.
+					</p>
+				</div>
+			</div>
+		</section>
+
+		<div class="ds44-contenuMedia">
+			<div class="ds44-inner-container ds44-mtb3">
+				<div class="ds44-grid12-offset-1">
+					<img src="../../assets/images/ds44-logo--sampleImg--tpl.png" alt="Légende associée © Copyright" class="ds44-w100 ds44-imgRatio">
+				</div>
 			</div>
 		</div>
 
-		<section class="ds44-contenuArticle large-w66" id="section1">
-			<p class="ds44-introduction">Chapô</p>
+		<section class="ds44-container-fluid ds44-lightBG ds44-wave-white ds44-mtb3 ds44--xl-padding-tb">
+			<div class="ds44-inner-container">
+				<img src="../../assets/images/ds44-logo--sampleImg--columnH.png" alt="column" class="ds44-w100" />
+			</div>
 		</section>
 
-		<section class="ds44-contenuArticle large-w66" id="section2">
-			<h2 id="idTitre2">Titre de section wysiwyg</h2>
-			<p>Contenun de section wysiwyg</p>
-		</section>
-
-	</article>
 
 </main>
 
-<footer>
-	<section class="ds44-container-fluid">
-		<div class="ds44-inner-container">
-			<img src="../../assets/images/ds44-logo--sampleImg--footer.png" alt="footer" class="ds44-w100" />
-		</div>
-	</section>
+<footer role="contentinfo">
+	<img src="../../assets/images/ds44-logo--sampleImg--footer.png" alt="footer" class="ds44-w100" />
 </footer>

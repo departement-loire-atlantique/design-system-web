@@ -8,10 +8,11 @@ description: Modèle de page sommaire basée sur le template "carrefour".
 status: A valider
 
 variations:
-- title: Page type "Carrefour"
+- title: Page type "Accueil Délégation"
   pattern: page/LA__accueilDelegation.html
-- title: Template carrefour
-  pattern: templates/template-entryMenu.html
+- title: Template home
+  pattern: templates/template-home.html
+
 ---
 ## Utilisation
 

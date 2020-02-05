@@ -8,10 +8,10 @@ description: Modèle de page basée sur le template "centré".
 status: Brouillon
 
 variations:
-- title: Page type lieu
+- title: Page type "Lieu"
   pattern: page/LA__lieu.html
 - title: Template centré
-  pattern: templates/template-entryMenu.html
+  pattern: templates/template-generique-centre.html
 ---
 ## Utilisation
 

@@ -8,9 +8,9 @@ description: Modèle de page basée sur le template "centré".
 status: A valider
 
 variations:
-- title: Page type article
+- title: Page type "Article"
   pattern: page/LA__article.html
-- title: Template centré
+- title: Template carrefour
   pattern: templates/template-entryMenu.html
 ---
 ## Utilisation

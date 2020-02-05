@@ -4,7 +4,7 @@ group: templates
 permalink: /components/templates.html
 
 title: Templates
-description: Modèles de structures génériques permettant de constituer les pages. 
+description: Modèles de structures génériques permettant de constituer les pages.
 status: Décrit
 
 variations:
@@ -12,6 +12,8 @@ variations:
   pattern: templates/template-entryMenu.html
 - title: Template générique centre
   pattern: templates/template-generique-centre.html
+- title: Template home
+  pattern: templates/template-home.html
 ---
 
 ## Utilisation
