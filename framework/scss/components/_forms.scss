@@ -260,6 +260,10 @@ input[type=radio],
 
 .ds44-select__shape {
     cursor: pointer;
+    
+    &.ds44-boxError {
+        border-color: $ds44-error;
+    }
 }
 
 .ds44-selectLabel {

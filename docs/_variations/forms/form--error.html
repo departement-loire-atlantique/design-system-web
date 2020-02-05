@@ -1,31 +1,37 @@
 ---
 layout: pattern
 ---
-<form>
-    <div class="ds44-form__container">        
-        <label for="name" class="ds44-formLabel"><span class="ds44-labelTypePlaceholder ds44-moveLabel">Nom du champ<sup aria-hidden="true">*</sup></span> <input type="text" id="name" class="ds44-inpStd ds44-error" required aria-required="true" aria-describedby="msgError1" aria-invalid="true" /></label>
-        <div class="ds44-errorMsg-container">
-            <p id="msgError1" class="ds44-msgErrorText"><i class="icon icon-cross icon--sizeM" aria-hidden="true"></i> <span class="ds44-iconInnerText">Veuillez remplir ce champ</span></p>
-        </div>
-    </div>
-    <div><input type="submit" class="ds44-btnStd" value="Tester le champ" /></div>
 
-</form>
-
-<form>
-    {% include forms/inc-checkboxes.html label="Choix" number="1" requiredStar='<sup aria-hidden="true">*</sup>' required='required aria-required="true"' error="ds44-boxError" ariaError=' aria-describedby="msgErrorChk" aria-invalid="true"' %}
-    {% include forms/inc-checkboxes.html label="Choix" number="2" requiredStar='<sup aria-hidden="true">*</sup>' required='required aria-required="true"' error="ds44-boxError" %}
+<div class="ds44-form__container">        
+    <label for="name" class="ds44-formLabel"><span class="ds44-labelTypePlaceholder ds44-moveLabel">Nom du champ<sup aria-hidden="true">*</sup></span> <input type="text" id="name" class="ds44-inpStd ds44-error" required aria-required="true" aria-describedby="msgError1" aria-invalid="true" /></label>
     <div class="ds44-errorMsg-container">
-        <p id="msgErrorChk" class="ds44-msgErrorText"><i class="icon icon-cross icon--sizeM" aria-hidden="true"></i> <span class="ds44-iconInnerText">Veuillez cocher un élément</span></p>
+        <p id="msgError1" class="ds44-msgErrorText"><i class="icon icon-cross icon--sizeM" aria-hidden="true"></i> <span class="ds44-iconInnerText">Veuillez remplir ce champ</span></p>
     </div>
-    <div><input type="submit" class="ds44-btnStd" value="Tester les cases" /></div>
-</form>
+</div>
+<div><input type="submit" class="ds44-btnStd" value="Tester le champ" /></div>
 
-<form>
-    {% include forms/inc-radio.html label="Choix" number="1" requiredStar='<sup aria-hidden="true">*</sup>' required='required aria-required="true"' error="ds44-boxError" ariaError=' aria-describedby="msgErrorChk" aria-invalid="true"' %}
-    {% include forms/inc-radio.html label="Choix" number="2" requiredStar='<sup aria-hidden="true">*</sup>' required='required aria-required="true"' error="ds44-boxError" %}
-    <div class="ds44-errorMsg-container">
-        <p id="msgErrorChk" class="ds44-msgErrorText"><i class="icon icon-cross icon--sizeM" aria-hidden="true"></i> <span class="ds44-iconInnerText">Veuillez sélectionner un élément</span></p>
-    </div>
-    <div><input type="submit" class="ds44-btnStd" value="Tester les radios" /></div>
-</form>
+<hr />
+
+{% include forms/inc-checkboxes.html label="Choix" number="1" requiredStar='<sup aria-hidden="true">*</sup>' required='required aria-required="true"' error="ds44-boxError" ariaError=' aria-describedby="msgErrorChk" aria-invalid="true"' %}
+{% include forms/inc-checkboxes.html label="Choix" number="2" requiredStar='<sup aria-hidden="true">*</sup>' required='required aria-required="true"' error="ds44-boxError" %}
+<div class="ds44-errorMsg-container">
+    <p id="msgErrorChk" class="ds44-msgErrorText"><i class="icon icon-cross icon--sizeM" aria-hidden="true"></i> <span class="ds44-iconInnerText">Veuillez cocher un élément</span></p>
+</div>
+<div><input type="submit" class="ds44-btnStd" value="Tester les cases" /></div>
+
+<hr />
+
+{% include forms/inc-radio.html label="Choix" number="1" requiredStar='<sup aria-hidden="true">*</sup>' required='required aria-required="true"' error="ds44-boxError" ariaError=' aria-describedby="msgErrorChk" aria-invalid="true"' %}
+{% include forms/inc-radio.html label="Choix" number="2" requiredStar='<sup aria-hidden="true">*</sup>' required='required aria-required="true"' error="ds44-boxError" %}
+<div class="ds44-errorMsg-container">
+    <p id="msgErrorChk2" class="ds44-msgErrorText"><i class="icon icon-cross icon--sizeM" aria-hidden="true"></i> <span class="ds44-iconInnerText">Veuillez sélectionner un élément</span></p>
+</div>
+<div><input type="submit" class="ds44-btnStd" value="Tester les radios" /></div>
+
+<hr />
+
+{% include forms/inc-select.html label="Label select" number="1" requiredStar='<sup aria-hidden="true">*</sup>' required='required aria-required="true"' error="ds44-boxError" %}
+<div class="ds44-errorMsg-container">
+    <p id="msgErrorChk3" class="ds44-msgErrorText"><i class="icon icon-cross icon--sizeM" aria-hidden="true"></i> <span class="ds44-iconInnerText">Veuillez sélectionner un élément</span></p>
+</div>
+<div><input type="submit" class="ds44-btnStd" value="Tester le select" /></div>
