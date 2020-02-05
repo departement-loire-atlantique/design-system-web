@@ -259,6 +259,7 @@ input[type=radio],
 .ds44-listSelect { // faux champ de formulaire, conteneur pour les listes de sélection
     background-color: $ds44-light-color;
     padding: $ds44-padding-large;
+    padding-bottom: 0;
 }
 
 .ds44-select__shape {
