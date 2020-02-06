@@ -1,29 +1,27 @@
-class Input {
-    constructor() {
+class InputAbstract {
+    constructor(inputSelector) {
         this.mainClassName = 'ds44-moveLabel';
         this.errorMessages = {
-            'select': {
-                'default': 'Le champ "{fieldName}" n\'est pas valide',
-                'valueMissing': 'Veuillez sélectionner un élément de la liste',
-            },
-            'input': {
-                'default': 'Le champ "{fieldName}" n\'est pas valide',
-                'valueMissing': 'Veuillez renseigner le champ : {fieldName}',
-                'patternMismatch': 'Veuillez renseigner le champ "{fieldName}" avec le bon format',
-            }
+            'default': 'Le champ "{fieldName}" n\'est pas valide',
+            'valueMissing': 'Veuillez renseigner le champ : {fieldName}',
+            'patternMismatch': 'Veuillez renseigner le champ "{fieldName}" avec le bon format',
         };
 
         document
-            .querySelectorAll('input, select, textarea')
+            .querySelectorAll(inputSelector)
             .forEach((element) => {
-                if (element.previousElementSibling) {
-                    element.previousElementSibling.classList.remove(this.mainClassName);
-                }
-
-                MiscEvent.addListener('focus', this.focus.bind(this), element);
-                MiscEvent.addListener('blur', this.blur.bind(this), element);
-                MiscEvent.addListener('invalid', this.invalid.bind(this), element);
+                this.create(element);
             });
+    }
+
+    create(element) {
+        if (element.previousElementSibling) {
+            element.previousElementSibling.classList.remove(this.mainClassName);
+        }
+
+        MiscEvent.addListener('focus', this.focus.bind(this), element);
+        MiscEvent.addListener('blur', this.blur.bind(this), element);
+        MiscEvent.addListener('invalid', this.invalid.bind(this), element);
     }
 
     focus(evt) {
@@ -78,13 +76,13 @@ class Input {
             }
 
             let isInError = element.validity[key];
-            if (isInError && this.errorMessages[element.tagName.toLowerCase()][key]) {
-                errorMessage = this.errorMessages[element.tagName.toLowerCase()][key];
+            if (isInError && this.errorMessages[key]) {
+                errorMessage = this.errorMessages[key];
                 break;
             }
         }
         if (errorMessage === null) {
-            errorMessage = this.errorMessages[element.tagName.toLowerCase()]['default'];
+            errorMessage = this.errorMessages['default'];
         }
         errorMessage = this.formatErrorMessage(errorMessage, elementPlaceholder);
 
@@ -122,6 +120,3 @@ class Input {
             .replace('{fieldName}', elementPlaceholder.innerText.replace(/\*$/, ''))
     }
 }
-
-// Singleton
-new Input();
