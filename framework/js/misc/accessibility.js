@@ -1,6 +1,6 @@
 class MiscAccessibility {
     static getEnabledElementsSelector() {
-        return ['a[href]', 'link[href]', 'button', 'textarea', 'input:not([type="hidden"])', 'select', 'object'].map(selector => selector + ':not([disabled])');
+        return ['a[href]', 'link[href]', 'button', 'textarea', 'input:not([type="hidden"])', 'select', 'object', 'area'].map(selector => selector + ':not([disabled])');
     }
 
     // Fonction qui va forcer le focus à faire une boucle sur un élément
