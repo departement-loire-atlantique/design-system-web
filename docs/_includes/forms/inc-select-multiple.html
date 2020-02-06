@@ -4,13 +4,23 @@
         <button class="ds44-btnIco ds44-posAbs ds44-posRi ds44-btnOpen" type="button"><i class="icon icon-down" aria-hidden="true"></i><span class="visually-hidden">Choisir une option</span></button>
     </div>
     <div class="ds44-select-container" role="combobox" aria-expanded="true" aria-owns="listbox{{ include.number }}" aria-activedescendant="selected_option" aria-labelledby="{{ include.label }}">
+        <div class="ds44-flex-container ds44--m-padding">
+            <button class="ds44-btnStd ds44-bgGray ds44-btnStd--plat ds44-fg1" type="button"><span class="ds44-btnInnerText">Tout cocher</span><i class="icon icon-check icon--medium" aria-hidden="true"></i></button>
+            <button class="ds44-btnStd ds44-bgGray ds44-btnStd--plat ds44-fg1 ds44-border-left--light" type="button"><span class="ds44-btnInnerText">Tout décocher</span><i class="icon icon-cross icon--medium" aria-hidden="true"></i></button>
+        </div>
         <div class="ds44-listSelect">
             <ul class="ds44-list" role="listbox" id="listbox{{ include.number }}">
                 <li class="ds44-select-list_elem" role="option" id="selected_option">
-                    {% include forms/inc-radio.html label="Choix" number="x1" %}
+                    {% include forms/inc-checkboxes.html label="Choix" number="10" %}
                 </li>
                 <li class="ds44-select-list_elem" role="option">
-                    {% include forms/inc-radio.html label="Choix" number="x2" %}
+                    {% include forms/inc-checkboxes.html label="Choix" number="11" %}
+                </li>
+                <li class="ds44-select-list_elem" role="option">
+                    {% include forms/inc-checkboxes.html label="Choix" number="12" %}
+                </li>
+                <li class="ds44-select-list_elem" role="option">
+                    {% include forms/inc-checkboxes.html label="Choix" number="13" %}
                 </li>
             </ul>            
         </div>

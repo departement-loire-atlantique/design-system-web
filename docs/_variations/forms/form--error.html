@@ -30,8 +30,26 @@ layout: pattern
 
 <hr />
 
-{% include forms/inc-select.html label="Label select" number="1" requiredStar='<sup aria-hidden="true">*</sup>' required='required aria-required="true"' error="ds44-boxError" size="ds44-inpLarge"  %}
-<div class="ds44-errorMsg-container">
-    <p id="msgErrorChk3" class="ds44-msgErrorText"><i class="icon icon-cross icon--sizeM" aria-hidden="true"></i> <span class="ds44-iconInnerText">Veuillez sélectionner un élément</span></p>
-</div>
+{%  include forms/inc-select.html 
+    label="Label select" 
+    number="3" 
+    requiredStar='<sup aria-hidden="true">*</sup>' 
+    required='required aria-required="true"' 
+    error="ds44-boxError" 
+    size="ds44-inpLarge"
+    errorMsg='<div class="ds44-errorMsg-container"><p id="msgErrorChk3" class="ds44-msgErrorText"><i class="icon icon-cross icon--sizeM" aria-hidden="true"></i> <span class="ds44-iconInnerText">Veuillez sélectionner un élément</span></p></div>'
+%}
 <div><input type="submit" class="ds44-btnStd" value="Tester le select" /></div>
+
+<hr style="margin: 100px 0 80px 0;" />
+
+{% include forms/inc-select-multiple.html 
+    label="Label select" 
+    number="4" 
+    requiredStar='<sup aria-hidden="true">*</sup>' 
+    required='required aria-required="true"' 
+    error="ds44-boxError" 
+    size="ds44-inpLarge"
+    errorMsg='<div class="ds44-errorMsg-container"><p id="msgErrorChk4" class="ds44-msgErrorText"><i class="icon icon-cross icon--sizeM" aria-hidden="true"></i> <span class="ds44-iconInnerText">Veuillez sélectionner un élément</span></p></div>' 
+%}
+<div><input type="submit" class="ds44-btnStd" value="Tester le select multiple" /></div>
