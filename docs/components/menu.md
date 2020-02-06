@@ -7,18 +7,22 @@ description: Un menu permet d'accéder à une liste de liens
 status: A valider
 
 variations:
-- title: Menu Près de chez vous
-  description: Menu de navigation "Près de chez vous"
-  pattern: menu/nav-pres-de-chez-vous.html
 - title: Menu principal
   description: Menu de navigation principale, cliquer sur le bouton "menu" du header pour afficher le composant
   pattern: menu/navigation-principale.html
+
 - title: Niveau 2
   description: Menu de navigation principal, sous-niveau (affiché suite à un clic sur un élément du premier niveau)
   pattern: menu/navigation-principale-n2.html
+
+- title: Menu Près de chez vous
+  description: Menu de navigation "Près de chez vous"
+  pattern: menu/nav-pres-de-chez-vous.html
+
 - title: Menu des applications
   description: Ouvert depuis le menu de navigation principal niveau 1 (sous les réseaux sociaux)
   pattern: menu/navigation-applis.html
+  
 - title: Menu intérieur
   description: Menu de navigation intérieur de type "accordéon"
   pattern: menu/menu-navigation-interieur.html
