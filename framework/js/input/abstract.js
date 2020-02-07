@@ -1,5 +1,6 @@
 class InputAbstract {
     constructor(inputSelector) {
+        this.objects = [];
         this.mainClassName = 'ds44-moveLabel';
         this.errorMessages = {
             'default': 'Le champ "{fieldName}" n\'est pas valide',
@@ -15,67 +16,80 @@ class InputAbstract {
     }
 
     create(element) {
-        if (element.previousElementSibling) {
-            element.previousElementSibling.classList.remove(this.mainClassName);
+        const object = {
+            'id': MiscUtils.generateId(),
+            'inputElement': element,
+            'labelElement': MiscDom.getPreviousSibling(element, 'span'),
+            'containerElement': element.closest('.ds44-form__container'),
+        }
+        this.objects.push(object);
+        const objectIndex = (this.objects.length - 1);
+
+        if (object.labelElement) {
+            object.labelElement.classList.remove(this.mainClassName);
         }
 
-        MiscEvent.addListener('focus', this.focus.bind(this), element);
-        MiscEvent.addListener('blur', this.blur.bind(this), element);
-        MiscEvent.addListener('invalid', this.invalid.bind(this), element);
+        MiscEvent.addListener('focus', this.focus.bind(this, objectIndex), element);
+        MiscEvent.addListener('blur', this.blur.bind(this, objectIndex), element);
+        MiscEvent.addListener('invalid', this.invalid.bind(this, objectIndex), element);
     }
 
-    focus(evt) {
-        const element = evt.currentTarget;
-        if (element.previousElementSibling) {
-            element.previousElementSibling.classList.add(this.mainClassName);
+    focus(objectIndex) {
+        const object = this.objects[objectIndex];
+
+        if (object.labelElement) {
+            object.labelElement.classList.add(this.mainClassName);
         }
     }
 
-    blur(evt) {
-        const element = evt.currentTarget;
-
-        element.removeAttribute('aria-invalid');
-        element.removeAttribute('aria-label');
-        element.removeAttribute('aria-describedby')
-        element.classList.remove('ds44-error');
-
-        if (!element.value && element.previousElementSibling) {
-            element.previousElementSibling.classList.remove(this.mainClassName);
+    blur(objectIndex) {
+        const object = this.objects[objectIndex];
+        if (!object.inputElement) {
+            return;
         }
 
-        const elementContainer = element.closest('.ds44-form__container');
-        if (elementContainer) {
-            let elementError = elementContainer.querySelector('.ds44-errorMsg-container');
+        object.inputElement.removeAttribute('aria-invalid');
+        object.inputElement.removeAttribute('aria-label');
+        object.inputElement.removeAttribute('aria-describedby')
+        object.inputElement.classList.remove('ds44-error');
+
+        if (!object.inputElement.value && object.labelElement) {
+            object.labelElement.classList.remove(this.mainClassName);
+        }
+
+        if (object.containerElement) {
+            let elementError = object.containerElement.querySelector('.ds44-errorMsg-container');
             if (elementError) {
                 elementError.remove();
             }
         }
-        element.checkValidity();
+        object.inputElement.checkValidity();
     }
 
-    invalid(evt) {
-        const element = evt.currentTarget;
-        const elementContainer = element.closest('.ds44-form__container');
-        if (!elementContainer) {
+    invalid(objectIndex) {
+        const object = this.objects[objectIndex];
+        if (!object.inputElement) {
             return;
         }
-        const elementPlaceholder = elementContainer.querySelector('.ds44-labelTypePlaceholder');
-        if (!elementPlaceholder) {
+        if (!object.labelElement) {
+            return;
+        }
+        if (!object.containerElement) {
             return;
         }
 
-        let elementError = elementContainer.querySelector('.ds44-errorMsg-container');
-        if (elementError) {
-            elementError.remove();
+        let errorElement = object.containerElement.querySelector('.ds44-errorMsg-container');
+        if (errorElement) {
+            errorElement.remove();
         }
 
         let errorMessage = null;
-        for (let key in element.validity) {
+        for (let key in object.inputElement.validity) {
             if (key === 'valid') {
                 continue;
             }
 
-            let isInError = element.validity[key];
+            let isInError = object.inputElement.validity[key];
             if (isInError && this.errorMessages[key]) {
                 errorMessage = this.errorMessages[key];
                 break;
@@ -84,39 +98,39 @@ class InputAbstract {
         if (errorMessage === null) {
             errorMessage = this.errorMessages['default'];
         }
-        errorMessage = this.formatErrorMessage(errorMessage, elementPlaceholder);
+        errorMessage = this.formatErrorMessage(errorMessage, object.labelElement);
 
-        elementError = document.createElement('div');
-        elementError.classList.add('ds44-errorMsg-container');
-        elementContainer.appendChild(elementError);
+        errorElement = document.createElement('div');
+        errorElement.classList.add('ds44-errorMsg-container');
+        object.containerElement.appendChild(errorElement);
 
-        const elementErrorMessageId = MiscUtils.generateId();
-        let elementErrorMessage = document.createElement('p');
-        elementErrorMessage.setAttribute('id', elementErrorMessageId);
-        elementErrorMessage.classList.add('ds44-msgErrorText');
-        elementErrorMessage.classList.add('ds44-msgErrorInvalid');
-        elementError.appendChild(elementErrorMessage);
+        const errorMessageElementId = MiscUtils.generateId();
+        let errorMessageElement = document.createElement('p');
+        errorMessageElement.setAttribute('id', errorMessageElementId);
+        errorMessageElement.classList.add('ds44-msgErrorText');
+        errorMessageElement.classList.add('ds44-msgErrorInvalid');
+        errorElement.appendChild(errorMessageElement);
 
-        let elementErrorIcon = document.createElement('i');
-        elementErrorIcon.classList.add('icon');
-        elementErrorIcon.classList.add('icon-cross');
-        elementErrorIcon.classList.add('icon--sizeM');
-        elementErrorIcon.setAttribute('aria-hidden', 'true');
-        elementErrorMessage.appendChild(elementErrorIcon);
+        let errorIconElement = document.createElement('i');
+        errorIconElement.classList.add('icon');
+        errorIconElement.classList.add('icon-cross');
+        errorIconElement.classList.add('icon--sizeM');
+        errorIconElement.setAttribute('aria-hidden', 'true');
+        errorMessageElement.appendChild(errorIconElement);
 
-        let elementErrorText = document.createElement('span');
-        elementErrorText.classList.add('ds44-iconInnerText');
-        elementErrorText.innerHTML = errorMessage;
-        elementErrorMessage.appendChild(elementErrorText);
+        let errorTextElement = document.createElement('span');
+        errorTextElement.classList.add('ds44-iconInnerText');
+        errorTextElement.innerHTML = errorMessage;
+        errorMessageElement.appendChild(errorTextElement);
 
-        element.classList.add('ds44-error');
-        element.setAttribute('aria-invalid', 'true');
-        element.setAttribute('aria-label', errorMessage);
-        element.setAttribute('aria-describedby', elementErrorMessageId)
+        object.inputElement.classList.add('ds44-error');
+        object.inputElement.setAttribute('aria-invalid', 'true');
+        object.inputElement.setAttribute('aria-label', errorMessage);
+        object.inputElement.setAttribute('aria-describedby', errorMessageElementId)
     }
 
-    formatErrorMessage(errorMessage, elementPlaceholder) {
+    formatErrorMessage(errorMessage, labelElement) {
         return errorMessage
-            .replace('{fieldName}', elementPlaceholder.innerText.replace(/\*$/, ''))
+            .replace('{fieldName}', labelElement.innerText.replace(/\*$/, ''))
     }
 }

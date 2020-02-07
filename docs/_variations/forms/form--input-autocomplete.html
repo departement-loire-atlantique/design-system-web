@@ -2,4 +2,12 @@
 layout: pattern
 ---
 
-{% include forms/inc-input-autocomp.html label="Nom du champ" requiredStar='<sup aria-hidden="true">*</sup>' required='required aria-required="true"' %}
+<br>
+<br>
+{% include forms/inc-input-autocomp.html id="name1" label="Champ texte libre" requiredStar='<sup aria-hidden="true">*</sup>' required='required aria-required="true"' options='data-mode="free-text"' %}
+<br>
+<br>
+<br>
+{% include forms/inc-input-autocomp.html id="name2" label="Champ selection seulement" requiredStar='<sup aria-hidden="true">*</sup>' required='required aria-required="true"' options='data-mode="select-only"' %}
+<br>
+<br>

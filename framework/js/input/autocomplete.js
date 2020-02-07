@@ -6,117 +6,204 @@ class InputAutoComplete extends InputAbstract {
     create(element) {
         super.create(element);
 
-        this.hide(null, element);
+        this.FREE_TEXT_MODE = 'free-text';
+        this.SELECT_ONLY_MODE = 'select-only';
 
-        MiscEvent.addListener('keyUp:*', this.autoComplete.bind(this, element));
+        // Create corresponding hidden input to store the value
+        let hiddenInputElement = document.createElement('input');
+        hiddenInputElement.setAttribute('type', 'hidden');
+        hiddenInputElement.setAttribute('aria-hidden', 'true');
+        element.parentNode.insertBefore(hiddenInputElement, element);
+
+        const objectIndex = (this.objects.length - 1);
+        const object = this.objects[objectIndex];
+        object.hiddenInputElement = hiddenInputElement;
+        object.autoCompleterElement = null;
+        if (object.containerElement) {
+            object.autoCompleterElement = object.containerElement.querySelector('.ds44-autocomp-container');
+        }
+        if (object.autoCompleterElement) {
+            object.autoCompleterListElement = object.autoCompleterElement.querySelector('.ds44-list');
+        }
+        if (object.autoCompleterListElement) {
+            object.autoCompleterListElement.setAttribute('id', 'owned_listbox_' + object.id);
+        }
+        if(element.getAttribute('data-mode') === this.SELECT_ONLY_MODE) {
+            object.mode = this.SELECT_ONLY_MODE;
+        } else {
+            object.mode = this.FREE_TEXT_MODE;
+        }
+        element.setAttribute('aria-owns', 'owned_listbox_' + object.id);
+
+        this.hide(objectIndex);
+
+        MiscEvent.addListener('keyDown:*', this.record.bind(this, objectIndex));
+        MiscEvent.addListener('keyUp:*', this.autoComplete.bind(this, objectIndex));
+        MiscEvent.addListener('keyUp:escape', this.hide.bind(this, objectIndex));
+        if (object.containerElement) {
+            MiscEvent.addListener('focusout', this.focusOut.bind(this, objectIndex), object.containerElement);
+        }
     }
 
-    autoComplete(element) {
-        if (!element.value) {
-            this.hide(null, element);
+    record(objectIndex) {
+        const object = this.objects[objectIndex];
+        if (!object.inputElement) {
+            return;
+        }
+
+        object.currentInputElementValue = object.inputElement.value;
+    }
+
+    autoComplete(objectIndex) {
+        const object = this.objects[objectIndex];
+        if (!object.inputElement) {
+            return;
+        }
+        if (!object.hiddenInputElement) {
+            return;
+        }
+
+        if (object.currentInputElementValue === object.inputElement.value) {
+            return;
+        }
+
+        if (object.mode === this.FREE_TEXT_MODE) {
+            this.setNewValue(
+                objectIndex,
+                object.inputElement.value,
+                object.inputElement.value
+            );
+        } else if (object.mode === this.SELECT_ONLY_MODE) {
+            object.hiddenInputElement.value = null;
+        }
+
+        if (!object.inputElement.value) {
+            this.hide(objectIndex);
 
             return;
         }
 
         MiscRequest.send(
-            element.getAttribute('data-url') + '?search=' + encodeURIComponent(element.value),
-            this.autoCompleteSuccess.bind(this, element),
-            this.autoCompleteError.bind(this, element)
+            object.inputElement.getAttribute('data-url') + '?search=' + encodeURIComponent(object.inputElement.value),
+            this.autoCompleteSuccess.bind(this, objectIndex),
+            this.autoCompleteError.bind(this, objectIndex)
         );
     }
 
-    autoCompleteSuccess(element, results) {
-        this.autoCompleteFill(element, results);
+    autoCompleteSuccess(objectIndex, results) {
+        this.autoCompleteFill(objectIndex, results);
     }
 
-    autoCompleteError(element) {
-        this.autoCompleteFill(element, {});
+    autoCompleteError(objectIndex) {
+        this.autoCompleteFill(objectIndex, {'data': {}, 'total': 0});
     }
 
-    autoCompleteFill(element, results) {
-        const elementAutoCompleter = this.getAutoCompleterElement(element);
-        if (!elementAutoCompleter) {
+    autoCompleteFill(objectIndex, results) {
+        const object = this.objects[objectIndex];
+        if (!object.inputElement) {
+            return;
+        }
+        if (!object.autoCompleterElement) {
+            return;
+        }
+        if (!object.autoCompleterListElement) {
             return;
         }
 
-        const elementAutoCompleterList = elementAutoCompleter.querySelector('.ds44-list');
-        if (!elementAutoCompleterList) {
-            return;
-        }
-
-        Array.from(elementAutoCompleterList.children).map((childElement) => {
+        object.inputElement.removeAttribute('aria-activedescendant');
+        Array.from(object.autoCompleterListElement.children).map((childElement) => {
             childElement.remove();
         });
 
-        for (let key in results) {
+        for (let key in results.data) {
             let elementAutoCompleterListItem = document.createElement('li');
             elementAutoCompleterListItem.classList.add('ds44-autocomp-list_elem');
             elementAutoCompleterListItem.setAttribute('role', 'option');
             elementAutoCompleterListItem.setAttribute('data-value', key);
-            elementAutoCompleterListItem.innerHTML = this.highlightSearch(results[key].name, element.value);
-            elementAutoCompleterList.appendChild(elementAutoCompleterListItem);
+            elementAutoCompleterListItem.innerHTML = this.highlightSearch(results.data[key].name, object.inputElement.value);
+            object.autoCompleterListElement.appendChild(elementAutoCompleterListItem);
+
+            MiscEvent.addListener('mousedown', this.select.bind(this, objectIndex), elementAutoCompleterListItem);
         }
 
-        const elementAutoCompleterTotal = elementAutoCompleter.querySelector('.ds44-lightLink');
+        const elementAutoCompleterTotal = object.autoCompleterElement.querySelector('.ds44-lightLink');
         if (elementAutoCompleterTotal) {
-            let totalSentence = elementAutoCompleterTotal.innerHTML.split(' ');
-            totalSentence.splice(0, 1, Object.keys(results).length);
-            elementAutoCompleterTotal.innerHTML = totalSentence.join(' ');
+            const total = (parseInt(results.total, 10) - Object.keys(results.data).length);
+            elementAutoCompleterTotal.innerHTML = total + ' ' + (total > 1 ? 'suggestions supplémentaires' : 'suggestion supplémentaire');
         }
 
-        elementAutoCompleter.classList.remove('hidden');
+        this.show(objectIndex);
     }
 
-    focus(evt) {
-        const element = evt.currentTarget;
-        if (element.value) {
-            this.autoComplete(element);
+    focus(objectIndex) {
+        this.autoComplete(objectIndex);
+
+        super.focus(objectIndex);
+    }
+
+    focusOut(objectIndex, evt) {
+        const object = this.objects[objectIndex];
+        if (!object.inputElement) {
+            return;
         }
-
-        super.focus(evt);
-    }
-
-    blur(evt) {
-        this.hide(evt);
-
-        super.blur(evt);
-    }
-
-    invalid(evt) {
-        this.hide(evt);
-
-        super.invalid(evt);
-    }
-
-    hide(evt, element) {
-        if (!element) {
-            element = evt.currentTarget;
+        if (!object.hiddenInputElement) {
+            return;
         }
-
-        const elementAutoCompleter = this.getAutoCompleterElement(element);
-        if (!elementAutoCompleter) {
+        if (!object.containerElement) {
             return;
         }
 
-        elementAutoCompleter.classList.add('hidden');
+        if (
+            evt &&
+            object.containerElement.contains(evt.target) &&
+            object.containerElement.contains(evt.relatedTarget)
+        ) {
+            return;
+        }
+
+        if (
+            object.mode === this.SELECT_ONLY_MODE &&
+            !object.hiddenInputElement.value
+        ) {
+            object.inputElement.value = null;
+            this.blur(objectIndex);
+        }
+
+        this.hide(objectIndex);
     }
 
-    getAutoCompleterElement(element) {
-        if (!element) {
-            return null;
+    invalid(objectIndex) {
+        this.hide(objectIndex);
+
+        super.invalid(objectIndex);
+    }
+
+    show(objectIndex) {
+        const object = this.objects[objectIndex];
+        if (!object.inputElement) {
+            return;
+        }
+        if (!object.autoCompleterElement) {
+            return;
         }
 
-        const elementContainer = element.closest('.ds44-form__container');
-        if (!elementContainer) {
-            return null;
+        object.autoCompleterElement.classList.remove('hidden');
+        MiscAccessibility.show(object.autoCompleterElement, true);
+        object.inputElement.setAttribute('aria-expanded', 'true');
+    }
+
+    hide(objectIndex) {
+        const object = this.objects[objectIndex];
+        if (!object.inputElement) {
+            return;
+        }
+        if (!object.autoCompleterElement) {
+            return;
         }
 
-        const elementAutoCompleter = elementContainer.querySelector('.ds44-autocomp-container');
-        if (!elementAutoCompleter) {
-            return null;
-        }
-
-        return elementAutoCompleter;
+        object.autoCompleterElement.classList.add('hidden');
+        MiscAccessibility.hide(object.autoCompleterElement, true);
+        object.inputElement.removeAttribute('aria-expanded');
     }
 
     highlightSearch(result, search) {
@@ -125,6 +212,62 @@ class InputAutoComplete extends InputAbstract {
         }
 
         return result.replace(new RegExp(search, 'gi'), str => `<strong>${str}</strong>`);
+    }
+
+    select(objectIndex, evt) {
+        if(evt) {
+            evt.preventDefault();
+        }
+
+        const object = this.objects[objectIndex];
+        if (!object.inputElement) {
+            return;
+        }
+        if (!object.autoCompleterElement) {
+            return;
+        }
+
+        const currentListItem = evt.currentTarget;
+        const selectedListItem = currentListItem.parentNode.querySelector('.ds44-autocomp-list_elem.selected_option');
+        if (selectedListItem) {
+            selectedListItem.classList.remove('selected_option');
+            selectedListItem.removeAttribute('id');
+        }
+        currentListItem.classList.add('selected_option');
+        currentListItem.setAttribute('id', 'selected_option_' + object.id);
+        object.inputElement.setAttribute('aria-activedescendant', 'selected_option_' + object.id);
+
+        if (object.mode === this.FREE_TEXT_MODE) {
+            this.setNewValue(
+                objectIndex,
+                currentListItem.innerText,
+                currentListItem.innerText
+            );
+        } else {
+            this.setNewValue(
+                objectIndex,
+                currentListItem.getAttribute('data-value'),
+                currentListItem.innerText
+            );
+        }
+
+        MiscAccessibility.setFocus(object.inputElement);
+
+        this.hide(objectIndex);
+    }
+
+    setNewValue(objectIndex, newValue, text) {
+        const object = this.objects[objectIndex];
+        if (!object.inputElement) {
+            return;
+        }
+        if (!object.hiddenInputElement) {
+            return;
+        }
+
+        object.inputElement.value = text;
+        object.hiddenInputElement.value = newValue;
+        object.currentInputElementValue = text;
     }
 }
 
