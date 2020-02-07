@@ -335,5 +335,12 @@ a.ds44-btnStd--retourPage {
         padding: $ds44-padding-large;
     }
 
+    .ds44-btnStd, a.ds44-btnStd, a > .ds44-btnStd, .ds44-btnStd > a {
+
+        &.ds44-btnStd--plat {
+            padding: $ds44-padding-medium;
+        }
+
+    } 
 
 }

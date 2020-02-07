@@ -151,6 +151,11 @@ input[type=checkbox],
         outline: 1px dotted $ds44-dark;
     }
 
+    &.ds44-chkInder + .ds44-boxLabel::before {
+        background: url(../../../assets/images/tiret.png) no-repeat center;
+        background-size: 1rem;
+    }
+
     &:checked + .ds44-boxLabel::before {
         background: url(../../../assets/images/cd44-check-black.png) no-repeat center;
         background-size: 1rem;
@@ -323,6 +328,59 @@ input[type=radio],
 
     .ds44-form__container {
         margin: 0;
+    }
+}
+
+/* multilevel selects */
+
+.ds44-select__categ {
+
+    position: relative;
+    padding: 0 $ds44-padding-large;
+
+    label {
+        @include ds44-font-sizes(formListElem);
+        min-width: calc(100% - 4.5rem);
+        cursor: pointer;
+    }
+    
+    .ds44-form__container {
+        margin-bottom: 0;
+        margin-top: 0;
+    }
+}
+
+/* surcharge du collapser */
+
+.ds44-collapser--select {
+    position: relative;
+    margin-bottom: $ds44-large-vmargin;
+
+    .ds44-select-list_elem {
+
+        label {
+            @include ds44-font-sizes(largeButton);
+        }
+
+        &:last-child {
+            margin-bottom: 0;
+        }
+    }
+
+    .ds44-collapser_content--level2 {
+        padding-left: $ds44-container-vmargin!important;
+    }
+}
+
+/* surcharge du bouton du collapser */
+.ds44-collapser_button--select {
+    position: absolute;
+    right: $ds44-padding-medium;
+    top: -5px;
+    width: 2rem;
+
+    .ds44-noLineH::before {
+        line-height: 0!important;
     }
 }
 

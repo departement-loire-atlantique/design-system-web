@@ -1,0 +1,62 @@
+<div class="ds44-form__container">
+    <div class="ds44-select__shape {{ include.size }} {{ include.error }}">
+        <p role="heading" aria-level="2" class="ds44-selectLabel">{{ include.label }}{{ include.requiredStar }}</p>
+        <button class="ds44-btnIco ds44-posAbs ds44-posRi ds44-btnOpen"><i class="icon icon-down" aria-hidden="true"></i><span class="visually-hidden">Choisir une option</span></button>
+    </div>
+    <div class="ds44-select-container" role="combobox" aria-expanded="true" aria-owns="listbox1" aria-activedescendant="selected_option" aria-labelledby="{{ include.label }}">
+        <div class="ds44-flex-container ds44--m-padding">
+            <button class="ds44-btnStd ds44-bgGray ds44-btnStd--plat ds44-fg1"><span class="ds44-btnInnerText">Tout cocher</span><i class="icon icon-check icon--medium" aria-hidden="true"></i></button>
+            <button class="ds44-btnStd ds44-bgGray ds44-btnStd--plat ds44-fg1 ds44-border-left--light"><span class="ds44-btnInnerText">Tout décocher</span><i class="icon icon-cross icon--medium" aria-hidden="true"></i></button>
+        </div>
+
+        <ul class="ds44-collapser ds44-listSelect">
+            <li class="ds44-collapser_element ds44-collapser--select">
+                <div class="ds44-select__categ">
+                    {% include forms/inc-checkboxes.html label="Catégorie" number="1" indeterminate="ds44-chkInder" %}
+                </div>
+                <button aria-controls="collapser-elem-1" class="ds44-collapser_button ds44-collapser_button--select" aria-expanded="false"><span class="visually-hidden">Déplier</span><i class="icon icon-down ds44-noLineH" aria-hidden="true"></i></button>                
+                <div class="ds44-collapser_content" id="collapser-elem-1">
+                    <ul class="ds44-list ds44-collapser_content--level2" role="listbox" id="listbox2">
+                        <li class="ds44-select-list_elem" role="option">{% include forms/inc-checkboxes.html label="Choix" number="01" %}</li>
+                        <li class="ds44-select-list_elem" role="option">{% include forms/inc-checkboxes.html label="Choix" number="02" %}</li>
+                        <li class="ds44-select-list_elem" role="option">{% include forms/inc-checkboxes.html label="Choix" number="03" %}</li>
+                        <li class="ds44-select-list_elem" role="option">{% include forms/inc-checkboxes.html label="Choix" number="04" %}</li>
+                        <li class="ds44-select-list_elem" role="option">{% include forms/inc-checkboxes.html label="Choix" number="05" %}</li>
+                    </ul>
+                </div>
+            </li>
+            <li class="ds44-collapser_element ds44-collapser--select">
+                <div class="ds44-select__categ">
+                    {% include forms/inc-checkboxes.html label="Catégorie" number="2" %}
+                </div>
+                <button aria-controls="collapser-elem-2" class="ds44-collapser_button ds44-collapser_button--select" aria-expanded="false"><span class="visually-hidden">Déplier</span><i class="icon icon-down ds44-noLineH" aria-hidden="true"></i></button>  
+                <div class="ds44-collapser_content" id="collapser-elem-2">
+                    <ul class="ds44-list ds44-collapser_content--level2" role="listbox" id="listbox3">
+                        <li class="ds44-select-list_elem" role="option">{% include forms/inc-checkboxes.html label="Choix" number="06" %}</li>
+                        <li class="ds44-select-list_elem" role="option">{% include forms/inc-checkboxes.html label="Choix" number="07" %}</li>
+                        <li class="ds44-select-list_elem" role="option">{% include forms/inc-checkboxes.html label="Choix" number="08" %}</li>
+                        <li class="ds44-select-list_elem" role="option">{% include forms/inc-checkboxes.html label="Choix" number="09" %}</li>
+                        <li class="ds44-select-list_elem" role="option">{% include forms/inc-checkboxes.html label="Choix" number="10" %}</li>
+                    </ul>
+                </div>
+            </li>
+            <li class="ds44-collapser_element ds44-collapser--select">
+                <div class="ds44-select__categ">
+                    {% include forms/inc-checkboxes.html label="Catégorie" number="3" %}
+                </div>
+                <button aria-controls="collapser-elem-3" class="ds44-collapser_button ds44-collapser_button--select" aria-expanded="false"><span class="visually-hidden">Déplier</span><i class="icon icon-down ds44-noLineH" aria-hidden="true"></i></button>  
+                <div class="ds44-collapser_content" id="collapser-elem-3">
+                    <ul class="ds44-list ds44-collapser_content--level2" role="listbox" id="listbox4">
+                        <li class="ds44-select-list_elem" role="option">{% include forms/inc-checkboxes.html label="Choix" number="11" %}</li>
+                        <li class="ds44-select-list_elem" role="option">{% include forms/inc-checkboxes.html label="Choix" number="12" %}</li>
+                        <li class="ds44-select-list_elem" role="option">{% include forms/inc-checkboxes.html label="Choix" number="13" %}</li>
+                        <li class="ds44-select-list_elem" role="option">{% include forms/inc-checkboxes.html label="Choix" number="14" %}</li>
+                        <li class="ds44-select-list_elem" role="option">{% include forms/inc-checkboxes.html label="Choix" number="15" %}</li>
+                    </ul>
+                </div>
+            </li>
+        </ul>
+        {{ include.errorMsg }}
+        <button type="submit" class="ds44-fullWBtn ds44-btnSelect ds44-theme"><span class="ds44-btnInnerText">Valider</span><i class="icon icon-long-arrow-right ds44-noLineH" aria-hidden="true"></i></button>
+    </div>
+</div>

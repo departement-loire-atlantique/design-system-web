@@ -10,15 +10,23 @@ variations:
 - title: Champs standards
   description:
   pattern: forms/form--input-std.html
+
+- title: Selects
+  description:
+  pattern: forms/form--select.html
+
 - title: Champ autocompletion
   description:
   pattern: forms/form--input-autocomplete.html
+
 - title: Messages d erreur
   description:
   pattern: forms/form--error.html
+
 - title: Recherche à facettes
   description: Ensemble de composants de formulaire dédié aux recherches
   pattern: forms/form--recherche-facettes.html
+
 - title: Champs liés
   description: Quand deux champs sont liés, le sous-thèmes n'est accessible qu'après avoir validé le premier champ.
   pattern: forms/form--champs-lies.html

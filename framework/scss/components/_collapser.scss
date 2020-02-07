@@ -31,6 +31,16 @@
       }
     }
 
+    /* Specific collapser for select multilevel */
+    &.ds44-collapser--select {
+      border: none;
+
+      .ds44-collapser_content,
+      .ds44-collapser_content--level2 {
+        background-color: $ds44-light-color;
+      }
+    }
+
   }
   
   .ds44-collapser_content--level2 {
@@ -40,6 +50,12 @@
   }
   .ds44-collapser_content--level3 {
     padding-left    : $ds44-padding-xlarge*2;
+  }
+  
+
+  /* Specific collapser for select multilevel */
+  &.ds44-listSelect {
+    border: none;
   }
   
 }
