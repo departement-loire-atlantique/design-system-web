@@ -68,7 +68,6 @@ class Menu {
         // Show menu
         document.body.style.overflow = 'hidden';
         mainMenu.classList.add('show');
-        mainMenu.setAttribute('aria-expanded', 'true');
         MiscAccessibility.show(this.menu);
         this.menu
             .querySelectorAll('section.ds44-overlay')
@@ -118,12 +117,10 @@ class Menu {
 
         document.body.style.overflow = null;
         mainMenu.classList.remove('show');
-        mainMenu.removeAttribute('aria-expanded');
         document
             .querySelectorAll('header .ds44-blocMenu .ds44-overlay')
             .forEach((subMenu) => {
                 subMenu.classList.remove('show');
-                subMenu.removeAttribute('aria-expanded');
             });
         MiscAccessibility.hide(this.menu);
 
@@ -167,11 +164,9 @@ class Menu {
 
         this.triggerSubMenuElement = evt.currentTarget;
 
-        mainMenu.removeAttribute('aria-expanded');
         MiscAccessibility.hide(mainMenu);
         MiscAccessibility.removeFocusLoop();
 
-        subMenu.setAttribute('aria-expanded', 'true');
         subMenu.classList.add('show');
         MiscAccessibility.show(subMenu);
 
@@ -191,8 +186,8 @@ class Menu {
             return;
         }
 
-        const subMenu = this.menu.querySelector('.ds44-overlay[aria-expanded="true"]');
-        if (!subMenu) {
+        const subMenu = this.menu.querySelector('.ds44-overlay.show:not(.ds44-overlay--navNiv1)');
+            if (!subMenu) {
             return;
         }
 
@@ -202,12 +197,10 @@ class Menu {
             return;
         }
 
-        subMenu.removeAttribute('aria-expanded');
         subMenu.classList.remove('show');
         MiscAccessibility.hide(subMenu);
         MiscAccessibility.removeFocusLoop();
 
-        mainMenu.setAttribute('aria-expanded', 'true');
         MiscAccessibility.show(mainMenu);
 
         if (this.triggerSubMenuElement) {

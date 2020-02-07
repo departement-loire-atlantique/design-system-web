@@ -4,7 +4,7 @@ class MiscAccessibility {
     }
 
     static getProtectedElementsSelector() {
-        return ['i'];
+        return ['i', 'sup'];
     }
 
     // Fonction qui va forcer le focus à faire une boucle sur un élément
@@ -72,7 +72,7 @@ class MiscAccessibility {
         }
     }
 
-    static show(element, force = false) {
+    static show(element, force = false, bubble = true) {
         if (!element) {
             return;
         }
@@ -90,12 +90,14 @@ class MiscAccessibility {
             }
         }
 
-        Array.from(element.children).map((childElement) => {
-            MiscAccessibility.show(childElement);
-        });
+        if (bubble) {
+            Array.from(element.children).map((childElement) => {
+                MiscAccessibility.show(childElement);
+            });
+        }
     }
 
-    static hide(element, force = false) {
+    static hide(element, force = false, bubble = true) {
         if (!element) {
             return;
         }
@@ -113,9 +115,11 @@ class MiscAccessibility {
             }
         }
 
-        Array.from(element.children).map((childElement) => {
-            MiscAccessibility.hide(childElement);
-        });
+        if (bubble) {
+            Array.from(element.children).map((childElement) => {
+                MiscAccessibility.hide(childElement);
+            });
+        }
     }
 
     static record(element) {

@@ -1,4 +1,4 @@
-class Utils {
+class MiscUtils {
     static getPositionY(element) {
         let yPosition = 0;
 
@@ -14,5 +14,9 @@ class Utils {
         setTimeout(function () {
             element.style[className] = value;
         }, timer);
+    }
+
+    static generateId() {
+        return 'id' + Math.random().toString(36).substring(2, 15);
     }
 }

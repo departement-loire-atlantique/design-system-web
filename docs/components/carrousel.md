@@ -1,7 +1,7 @@
 ---
 layout: component-detail
 group: components
-status: Brouillon
+status: Validé
 permalink: /carrousel/carrousel.html
 
 title: Carrousel

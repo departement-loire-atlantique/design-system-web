@@ -67,14 +67,14 @@ class Tab {
 
                 tabHandle.classList.remove('ds44-tabs__linkSelected');
                 tabPanel.style.opacity = 0;
-                Utils.timerClass(tabPanel, 'display', 'none', 150);
+                MiscUtils.timerClass(tabPanel, 'display', 'none', 150);
                 MiscAccessibility.hide(tabPanel, true);
             });
 
         // Show selected tab
         tabHandle.classList.add('ds44-tabs__linkSelected');
-        Utils.timerClass(tabPanel, 'opacity', '1', 300);
-        Utils.timerClass(tabPanel, 'display', 'block', 150);
+        MiscUtils.timerClass(tabPanel, 'opacity', '1', 300);
+        MiscUtils.timerClass(tabPanel, 'display', 'block', 150);
         MiscAccessibility.show(tabPanel, true);
     }
 
@@ -103,7 +103,7 @@ class Tab {
         }
 
         MiscAccessibility.setFocus(currentTabHandle);
-        window.scrollTo(0, Utils.getPositionY(currentTabHandle) - headerHeight)
+        window.scrollTo(0, MiscUtils.getPositionY(currentTabHandle) - headerHeight)
     }
 
     move(evt) {

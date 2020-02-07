@@ -41,11 +41,11 @@ button, a.ds44-btnStd, a > .ds44-btnStd, .ds44-btnStd > a  {
         padding: $ds44-padding-large;
         min-height: 6rem;
     }
-    
+
 }
 
-a > .ds44-btnStd, 
-.ds44-btnStd > a, 
+a > .ds44-btnStd,
+.ds44-btnStd > a,
 .ds44-btnStd--large > a,
 a > .ds44-btnStd--large { // gestion de l'alignement des icones dans les boutons wysiwyg
 
@@ -79,7 +79,7 @@ a > .ds44-btnStd--large   // pour wysiwyg
 .ds44-btn--contextual,
 a.ds44-btn--contextual,
 .ds44-contextualBtnLink,
-a > .ds44-btn--contextual, 
+a > .ds44-btn--contextual,
 .ds44-btn--contextual > a {
     background-color: $ds44-contextual-color;
     border-color: $ds44-contextual-color;
@@ -237,6 +237,10 @@ a > .ds44-btn--contextual,
         vertical-align: middle;
     }
 
+}
+
+.ds44-choiceYN button {
+  margin: 0 $ds44-margin-base/2 ;
 }
 
 // Popover - help tool

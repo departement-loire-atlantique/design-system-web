@@ -2,13 +2,11 @@
 layout: pattern
 ---
 
-<div class="ds44-form__container">        
-    <label for="name" class="ds44-formLabel"><span class="ds44-labelTypePlaceholder ds44-moveLabel">Nom du champ<sup aria-hidden="true">*</sup></span> <input type="text" id="name" class="ds44-inpStd ds44-error" required aria-required="true" aria-describedby="msgError1" aria-invalid="true" /></label>
-    <div class="ds44-errorMsg-container">
-        <p id="msgError1" class="ds44-msgErrorText"><i class="icon icon-cross icon--sizeM" aria-hidden="true"></i> <span class="ds44-iconInnerText">Veuillez remplir ce champ</span></p>
-    </div>
-</div>
-<div><input type="submit" class="ds44-btnStd" value="Tester le champ" /></div>
+<form>
+    {% include forms/input-std.html label="Champ standard" requiredStar='<sup aria-hidden="true">*</sup>' required='required aria-required="true"' %}
+    <div><input type="submit" class="ds44-btnStd" value="Tester le champ" /></div>
+</form>
+
 
 <hr />
 

@@ -4,7 +4,7 @@ group: components
 
 title: Partages RS
 description: Composants de partage et de réseaux sociaux
-status: A valider
+status: Validé
 
 variations:
 - title: Barre de partage

@@ -2,9 +2,9 @@
 * CD44 Design System - Forms
 */
 
- /**
-  * Input placeholder text base styles
-  */
+/**
+* Input placeholder text base styles
+*/
 ::-webkit-input-placeholder {
     color: $ds44-dark;
     font-family: $ds44-font-family-base;
@@ -222,7 +222,7 @@ input[type=radio],
     }
 }
 
- 
+
 
 /**
  * Moteurs de recherche à facettes
@@ -326,6 +326,26 @@ input[type=radio],
         }
     }
 
+    .ds44-form__container {
+        margin: 0;
+    }
+}
+
+.ds44-utile-list_elem {
+    margin-bottom: $ds44-large-vmargin/2;
+
+    label {
+        display: block;
+        color: $ds44-dark;
+        @include ds44-font-sizes(bodySize);
+
+        &:hover,
+        &:focus,
+        &:active {
+            cursor: pointer;
+            text-decoration: none;
+    }
+      
     .ds44-form__container {
         margin: 0;
     }
