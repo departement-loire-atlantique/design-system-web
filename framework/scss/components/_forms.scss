@@ -340,7 +340,6 @@ input[type=radio],
 .ds44-utile-list_elem {
     margin-bottom: $ds44-large-vmargin/2;
 
-
     label {
         display: block;
         color: $ds44-dark;
@@ -353,7 +352,7 @@ input[type=radio],
             text-decoration: none;
         }
     }
-
+      
     .ds44-form__container {
         margin: 0;
     }
@@ -412,7 +411,6 @@ input[type=radio],
         line-height: 0!important;
     }
 }
-
 
 /**
  * Autocompletion fields

@@ -58,6 +58,7 @@ blockquote {
     font-weight: bold;
     background-color: $ds44-contextual-color;
     padding: .5rem 1rem;
+    display: inline-block;
 }
 
 @media (max-width: 64em) {

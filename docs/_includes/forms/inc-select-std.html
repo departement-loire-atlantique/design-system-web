@@ -1,9 +1,9 @@
 <div class="ds44-form__container">
     <div class="ds44-select__shape {{ include.size }} {{ include.error }}">
-        <p role="heading" aria-level="2" class="ds44-selectLabel">{{ include.label }}{{ include.requiredStar }}</p>
-        <button class="ds44-btnIco ds44-posAbs ds44-posRi ds44-btnOpen" type="button"><i class="icon icon-down" aria-hidden="true"></i><span class="visually-hidden">Choisir une option</span></button>
+        <p class="ds44-selectLabel" id="label{{ include.number }}">{{ include.label }}{{ include.requiredStar }}</p>     
+        <button class="ds44-btnIco ds44-posAbs ds44-posRi ds44-btnOpen" aria-labelledby="label{{ include.number }}" aria-expanded="false" aria-controls="list-select{{ include.number }}"><i class="icon icon-down" aria-hidden="true"></i><span class="visually-hidden">Choisir une option</span></button>
     </div>
-    <div class="ds44-select-container" role="combobox" aria-expanded="true" aria-owns="listbox{{ include.number }}" aria-activedescendant="selected_option" aria-labelledby="{{ include.label }}">
+    <div class="ds44-select-container" role="combobox" id="list-select{{ include.number }}">
         <div class="ds44-listSelect">
             <ul class="ds44-list" role="listbox" id="listbox{{ include.number }}">
                 <li class="ds44-select-list_elem" role="option" id="selected_option">

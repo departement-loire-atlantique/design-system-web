@@ -4,42 +4,45 @@ type: detail
 title: Couleurs
 group: styles
 permalink: /styles/color.html
-description: Les couleurs forment la racine vertébrale de la charte graphique. Elles expriment le ton du site. Chaque couleurs est associé à un thème.
+description: Les couleurs forment la racine vertébrale de la charte graphique. Elles expriment le ton du site. 
 
 ---
 
 
-## Couleurs principales
+## Couleurs génériques
 
-{% include color-preview.html name="$color-primary" hexcode="#aec900" %}
-{% include color-preview.html name="$color-secondary" hexcode="#6c757d" %}
+{% include color-preview.html name ="Noir" variable="$ds44-dark" hexcode="#000000" %}
+{% include color-preview.html name ="Gris foncé" variable="$ds44-grey" hexcode="#666666" %}
+{% include color-preview.html name ="Gris clair" variable="$ds44-lightgray" hexcode="#F5F5F5" %}
+{% include color-preview.html name ="Blanc" variable="$ds44-light" hexcode="#FFFFFF" %}
+{% include color-preview.html name ="Overlay plat" variable="$ds44-flat-overlay " hexcode="rgba(0, 0, 0, 0.4)" %}
 
-## Couleurs secondaires
+## Couleurs identitaires (vives)
 
-{% include color-preview.html name="$color-yellow" hexcode="#ffd300" %}
-{% include color-preview.html name="$color-blue" hexcode="#44bedf" %}
-{% include color-preview.html name="$color-grey" hexcode="#51626c" %}
-{% include color-preview.html name="$color-orange" hexcode="#FF8B33" %}
-{% include color-preview.html name="$color-pink" hexcode="#E2208C" %}
+{% include color-preview.html name ="Turquoise" variable="$ds44-LA" hexcode="#99E6D1" %}
+{% include color-preview.html name ="Jaune" variable="$ds44-Agenda" hexcode="#FFD883" %}
 
-Le jaune est retenu pour les éléments en lien avec les politiques culturelles et sociales
 
-Le bleu est retenu pour les éléments en lie ave la politique d'équilibre territorial
+Le turquoise est la couleur générique retenue pour la plupart des sites de Loire-Atlantique.
 
-L'orange est retenu pour les éléments lié au vivre ensemble
+Le jaune est la couleur du site d'Agenda des sorties.
 
-Le vert est retenu pour les éléments lié à la famille, l'écologie ou l'économie
-
-Le rose est retenu pour les éléments lié à la jeunesse, le sport, l'éducation et le tourisme
 
 ## Couleurs de fond
 
-{% include color-preview.html name="$color-bk-grey" hexcode="#edecec" %}
+{% include color-preview.html name ="Gris clair" variable="$ds44-lightgray" hexcode="#F5F5F5" %}
+{% include color-preview.html name ="Blanc" variable="$ds44-light" hexcode="#FFFFFF" %}
+{% include color-preview.html name ="Turquoise" variable="$ds44-LA" hexcode="#99E6D1" %}
+{% include color-preview.html name ="Jaune" variable="$ds44-Agenda" hexcode="#FFD883" %}
 
-Les fonds de couleurs seront soit blanc soit gris.
+Les fonds de couleurs seront soit blanc, gris clair ou la couleur thématique du site.
 
-## Couleur alerte
+## Couleurs formulaire (validation et erreur)
 
-{% include color-preview.html name="$color-alert" hexcode="#e20009" %}
+{% include color-preview.html name ="Noir Texte" variable="$ds44-dark" hexcode="#000000" %}
+{% include color-preview.html name ="Icône validation" variable="$ds44-valid" hexcode="#24883E" %}
+{% include color-preview.html name ="BG validation" variable="$ds44-valid-bg" hexcode="#F3F9F5" %}
+{% include color-preview.html name ="Icône erreur" variable="$ds44-error" hexcode="#DC3545" %}
+{% include color-preview.html name ="BG erreur" variable="$ds44-error-bg" hexcode="#FEF4F5" %}
 
 Les informations essentielles de type "alerte" seront de couleur rouge

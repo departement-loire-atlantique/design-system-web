@@ -1,9 +1,9 @@
 <div class="ds44-form__container">
     <div class="ds44-select__shape {{ include.size }} {{ include.error }}">
-        <p role="heading" aria-level="2" class="ds44-selectLabel">{{ include.label }}{{ include.requiredStar }}</p>
-        <button class="ds44-btnIco ds44-posAbs ds44-posRi ds44-btnOpen"><i class="icon icon-down" aria-hidden="true"></i><span class="visually-hidden">Choisir une option</span></button>
+        <p class="ds44-selectLabel" id="label{{ include.number }}">{{ include.label }}{{ include.requiredStar }}</p>     
+        <button class="ds44-btnIco ds44-posAbs ds44-posRi ds44-btnOpen" aria-labelledby="label{{ include.number }}" aria-expanded="false" aria-controls="list-select{{ include.number }}"><i class="icon icon-down" aria-hidden="true"></i><span class="visually-hidden">Choisir une ou plusieurs options</span></button>
     </div>
-    <div class="ds44-select-container" role="combobox" aria-expanded="true" aria-owns="listbox1" aria-activedescendant="selected_option" aria-labelledby="{{ include.label }}">
+    <div class="ds44-select-container" role="combobox" id="list-select{{ include.number }}">
         <div class="ds44-flex-container ds44--m-padding">
             <button class="ds44-btnStd ds44-bgGray ds44-btnStd--plat ds44-fg1"><span class="ds44-btnInnerText">Tout cocher</span><i class="icon icon-check icon--medium" aria-hidden="true"></i></button>
             <button class="ds44-btnStd ds44-bgGray ds44-btnStd--plat ds44-fg1 ds44-border-left--light"><span class="ds44-btnInnerText">Tout décocher</span><i class="icon icon-cross icon--medium" aria-hidden="true"></i></button>
