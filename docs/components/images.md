@@ -18,6 +18,10 @@ variations:
 - title: Légende image avec balise picture
   description: Légende utilisée pour ajouter un copyright sous une image.
   pattern: images/legende2.html
+
+- title: Loader
+  description: Image que l'on affiche quand la page charge quand elle est en attente de contenu
+  pattern: images/loader.html
 ---
 
 
