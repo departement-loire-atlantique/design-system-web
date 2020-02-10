@@ -1,4 +1,4 @@
-class InputSimple extends InputAbstract {
+class InputSimple extends FieldAbstract {
     constructor() {
         super('input:not([type="hidden"]):not([aria-autocomplete="list"])');
     }
