@@ -10,14 +10,23 @@ class InputAutoComplete extends InputAbstract {
         this.SELECT_ONLY_MODE = 'select-only';
 
         // Create corresponding hidden input to store the value
-        let hiddenInputElement = document.createElement('input');
-        hiddenInputElement.setAttribute('type', 'hidden');
-        hiddenInputElement.setAttribute('aria-hidden', 'true');
-        element.parentNode.insertBefore(hiddenInputElement, element);
+        let valueInputElement = document.createElement('input');
+        valueInputElement.classList.add('ds44-input-value');
+        valueInputElement.setAttribute('type', 'hidden');
+        valueInputElement.setAttribute('aria-hidden', 'true');
+        element.parentNode.insertBefore(valueInputElement, element);
+
+        // Create corresponding hidden input to store the metadata
+        let metadataInputElement = document.createElement('input');
+        metadataInputElement.classList.add('ds44-input-metadata');
+        metadataInputElement.setAttribute('type', 'hidden');
+        metadataInputElement.setAttribute('aria-hidden', 'true');
+        element.parentNode.insertBefore(metadataInputElement, element);
 
         const objectIndex = (this.objects.length - 1);
         const object = this.objects[objectIndex];
-        object.hiddenInputElement = hiddenInputElement;
+        object.valueInputElement = valueInputElement;
+        object.metadataInputElement = metadataInputElement;
         object.autoCompleterElement = null;
         object.isExpanded = false;
         if (object.containerElement) {
@@ -48,27 +57,33 @@ class InputAutoComplete extends InputAbstract {
 
         if (object.containerElement) {
             MiscEvent.addListener('focusout', this.focusOut.bind(this, objectIndex), object.containerElement);
+
+            object.containerElement
+                .querySelectorAll('.ds44-autocomp-buttons button')
+                .forEach((buttonElement) => {
+                    MiscEvent.addListener('click', this.select.bind(this, objectIndex), buttonElement);
+                });
         }
     }
 
     record(objectIndex) {
         const object = this.objects[objectIndex];
-        if (!object.inputElement) {
+        if (!object.textInputElement) {
             return;
         }
-        if (object.inputElement !== document.activeElement) {
+        if (object.textInputElement !== document.activeElement) {
             return;
         }
 
-        object.currentInputElementValue = object.inputElement.value;
+        object.currentInputElementValue = object.textInputElement.value;
     }
 
     write(objectIndex) {
         const object = this.objects[objectIndex];
-        if (!object.inputElement) {
+        if (!object.textInputElement) {
             return;
         }
-        if (object.inputElement !== document.activeElement) {
+        if (object.textInputElement !== document.activeElement) {
             return;
         }
 
@@ -77,35 +92,39 @@ class InputAutoComplete extends InputAbstract {
 
     autoComplete(objectIndex) {
         const object = this.objects[objectIndex];
-        if (!object.inputElement) {
+        if (!object.textInputElement) {
             return;
         }
-        if (!object.hiddenInputElement) {
+        if (!object.valueInputElement) {
+            return;
+        }
+        if (!object.metadataInputElement) {
             return;
         }
 
-        if (object.currentInputElementValue === object.inputElement.value) {
+        if (object.currentInputElementValue === object.textInputElement.value) {
             return;
         }
 
         if (object.mode === this.FREE_TEXT_MODE) {
             this.setNewValue(
                 objectIndex,
-                object.inputElement.value,
-                object.inputElement.value
+                object.textInputElement.value,
+                object.textInputElement.value
             );
         } else if (object.mode === this.SELECT_ONLY_MODE) {
-            object.hiddenInputElement.value = null;
+            object.valueInputElement.value = null;
+            object.metadataInputElement.value = null;
         }
 
-        if (!object.inputElement.value) {
+        if (!object.textInputElement.value) {
             this.hide(objectIndex);
 
             return;
         }
 
         MiscRequest.send(
-            object.inputElement.getAttribute('data-url') + '?search=' + encodeURIComponent(object.inputElement.value),
+            object.textInputElement.getAttribute('data-url') + '?search=' + encodeURIComponent(object.textInputElement.value),
             this.autoCompleteSuccess.bind(this, objectIndex),
             this.autoCompleteError.bind(this, objectIndex)
         );
@@ -121,7 +140,7 @@ class InputAutoComplete extends InputAbstract {
 
     autoCompleteFill(objectIndex, results) {
         const object = this.objects[objectIndex];
-        if (!object.inputElement) {
+        if (!object.textInputElement) {
             return;
         }
         if (!object.autoCompleterElement) {
@@ -131,7 +150,7 @@ class InputAutoComplete extends InputAbstract {
             return;
         }
 
-        object.inputElement.removeAttribute('aria-activedescendant');
+        object.textInputElement.removeAttribute('aria-activedescendant');
         Array.from(object.autoCompleterListElement.children).map((childElement) => {
             childElement.remove();
         });
@@ -140,9 +159,15 @@ class InputAutoComplete extends InputAbstract {
             let elementAutoCompleterListItem = document.createElement('li');
             elementAutoCompleterListItem.classList.add('ds44-autocomp-list_elem');
             elementAutoCompleterListItem.setAttribute('role', 'option');
-            elementAutoCompleterListItem.setAttribute('data-value', key);
+            elementAutoCompleterListItem.setAttribute('data-text', results.data[key].name);
+            if (object.mode === this.FREE_TEXT_MODE) {
+                elementAutoCompleterListItem.setAttribute('data-value', results.data[key].name);
+            } else {
+                elementAutoCompleterListItem.setAttribute('data-value', key);
+            }
+            elementAutoCompleterListItem.setAttribute('data-metadata', (results.data[key].metadata ? JSON.stringify(results.data[key].metadata) : null));
             elementAutoCompleterListItem.setAttribute('tabindex', '0');
-            elementAutoCompleterListItem.innerHTML = this.highlightSearch(results.data[key].name, object.inputElement.value);
+            elementAutoCompleterListItem.innerHTML = this.highlightSearch(results.data[key].name, object.textInputElement.value);
             object.autoCompleterListElement.appendChild(elementAutoCompleterListItem);
 
             MiscEvent.addListener('focus', this.fakeSelect.bind(this, objectIndex), elementAutoCompleterListItem);
@@ -160,15 +185,15 @@ class InputAutoComplete extends InputAbstract {
 
     focus(objectIndex) {
         const object = this.objects[objectIndex];
-        if (!object.inputElement) {
+        if (!object.textInputElement) {
             return;
         }
 
         if (
             object.currentInputElementValue &&
-            object.currentInputElementValue !== object.inputElement.value
+            object.currentInputElementValue !== object.textInputElement.value
         ) {
-            object.inputElement.value = object.currentInputElementValue;
+            object.textInputElement.value = object.currentInputElementValue;
         }
 
         this.autoComplete(objectIndex);
@@ -178,10 +203,10 @@ class InputAutoComplete extends InputAbstract {
 
     focusOut(objectIndex, evt) {
         const object = this.objects[objectIndex];
-        if (!object.inputElement) {
+        if (!object.textInputElement) {
             return;
         }
-        if (!object.hiddenInputElement) {
+        if (!object.valueInputElement) {
             return;
         }
         if (!object.containerElement) {
@@ -198,9 +223,9 @@ class InputAutoComplete extends InputAbstract {
 
         if (
             object.mode === this.SELECT_ONLY_MODE &&
-            !object.hiddenInputElement.value
+            !object.valueInputElement.value
         ) {
-            object.inputElement.value = null;
+            object.textInputElement.value = null;
             object.currentInputElementValue = null;
             this.blur(objectIndex);
         }
@@ -216,7 +241,7 @@ class InputAutoComplete extends InputAbstract {
 
     show(objectIndex) {
         const object = this.objects[objectIndex];
-        if (!object.inputElement) {
+        if (!object.textInputElement) {
             return;
         }
         if (!object.autoCompleterElement) {
@@ -225,13 +250,13 @@ class InputAutoComplete extends InputAbstract {
 
         object.autoCompleterElement.classList.remove('hidden');
         MiscAccessibility.show(object.autoCompleterElement, true);
-        object.inputElement.setAttribute('aria-expanded', 'true');
+        object.textInputElement.setAttribute('aria-expanded', 'true');
         object.isExpanded = true;
     }
 
     hide(objectIndex) {
         const object = this.objects[objectIndex];
-        if (!object.inputElement) {
+        if (!object.textInputElement) {
             return;
         }
         if (!object.autoCompleterElement) {
@@ -240,14 +265,14 @@ class InputAutoComplete extends InputAbstract {
 
         if (
             object.currentInputElementValue &&
-            object.currentInputElementValue !== object.inputElement.value
+            object.currentInputElementValue !== object.textInputElement.value
         ) {
-            object.inputElement.value = object.currentInputElementValue;
+            object.textInputElement.value = object.currentInputElementValue;
         }
 
         object.autoCompleterElement.classList.add('hidden');
         MiscAccessibility.hide(object.autoCompleterElement, true);
-        object.inputElement.removeAttribute('aria-expanded');
+        object.textInputElement.removeAttribute('aria-expanded');
         object.isExpanded = false;
     }
 
@@ -257,17 +282,6 @@ class InputAutoComplete extends InputAbstract {
         }
 
         return result.replace(new RegExp(search, 'gi'), str => `<strong>${str}</strong>`);
-    }
-
-    fakeSelect(objectIndex, evt) {
-        const object = this.objects[objectIndex];
-        if (!object.inputElement) {
-            return;
-        }
-
-        const currentListItem = evt.currentTarget;
-        object.inputElement.value = currentListItem.innerText;
-        MiscAccessibility.setFocus(currentListItem);
     }
 
     selectOption(objectIndex, evt) {
@@ -335,60 +349,68 @@ class InputAutoComplete extends InputAbstract {
         }
     }
 
+    fakeSelect(objectIndex, evt) {
+        const object = this.objects[objectIndex];
+        if (!object.textInputElement) {
+            return;
+        }
+
+        const currentListItem = evt.currentTarget;
+        object.textInputElement.value = currentListItem.innerText;
+        MiscAccessibility.setFocus(currentListItem);
+    }
+
     select(objectIndex, evt) {
         if (evt) {
             evt.preventDefault();
         }
 
         const object = this.objects[objectIndex];
-        if (!object.inputElement) {
+        if (!object.textInputElement) {
             return;
         }
-        if (!object.autoCompleterElement) {
+        if (!object.autoCompleterListElement) {
             return;
         }
 
-        const currentListItem = evt.currentTarget;
-        const selectedListItem = currentListItem.parentNode.querySelector('.ds44-autocomp-list_elem.selected_option');
+        const currentItem = evt.currentTarget;
+        const selectedListItem = object.autoCompleterListElement.querySelector('.selected_option');
         if (selectedListItem) {
             selectedListItem.classList.remove('selected_option');
             selectedListItem.removeAttribute('id');
         }
-        currentListItem.classList.add('selected_option');
-        currentListItem.setAttribute('id', 'selected_option_' + object.id);
-        object.inputElement.setAttribute('aria-activedescendant', 'selected_option_' + object.id);
+        currentItem.classList.add('selected_option');
+        currentItem.setAttribute('id', 'selected_option_' + object.id);
+        object.textInputElement.setAttribute('aria-activedescendant', 'selected_option_' + object.id);
 
-        if (object.mode === this.FREE_TEXT_MODE) {
-            this.setNewValue(
-                objectIndex,
-                currentListItem.innerText,
-                currentListItem.innerText
-            );
-        } else {
-            this.setNewValue(
-                objectIndex,
-                currentListItem.getAttribute('data-value'),
-                currentListItem.innerText
-            );
-        }
+        this.setNewValue(
+            objectIndex,
+            currentItem.getAttribute('data-text'),
+            currentItem.getAttribute('data-value'),
+            currentItem.getAttribute('data-metadata')
+        );
 
-        MiscAccessibility.setFocus(object.inputElement);
+        MiscAccessibility.setFocus(object.textInputElement);
 
         this.hide(objectIndex);
     }
 
-    setNewValue(objectIndex, newValue, text) {
+    setNewValue(objectIndex, newText, newValue, newMetadata = null) {
         const object = this.objects[objectIndex];
-        if (!object.inputElement) {
+        if (!object.textInputElement) {
             return;
         }
-        if (!object.hiddenInputElement) {
+        if (!object.valueInputElement) {
+            return;
+        }
+        if (!object.metadataInputElement) {
             return;
         }
 
-        object.inputElement.value = text;
-        object.hiddenInputElement.value = newValue;
-        object.currentInputElementValue = text;
+        object.textInputElement.value = newText;
+        object.valueInputElement.value = newValue;
+        object.metadataInputElement.value = newMetadata;
+        object.currentInputElementValue = newText;
     }
 }
 

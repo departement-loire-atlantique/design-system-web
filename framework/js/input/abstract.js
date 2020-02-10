@@ -18,7 +18,7 @@ class InputAbstract {
     create(element) {
         const object = {
             'id': MiscUtils.generateId(),
-            'inputElement': element,
+            'textInputElement': element,
             'labelElement': MiscDom.getPreviousSibling(element, 'span'),
             'containerElement': element.closest('.ds44-form__container'),
         }
@@ -44,16 +44,16 @@ class InputAbstract {
 
     blur(objectIndex) {
         const object = this.objects[objectIndex];
-        if (!object.inputElement) {
+        if (!object.textInputElement) {
             return;
         }
 
-        object.inputElement.removeAttribute('aria-invalid');
-        object.inputElement.removeAttribute('aria-label');
-        object.inputElement.removeAttribute('aria-describedby')
-        object.inputElement.classList.remove('ds44-error');
+        object.textInputElement.removeAttribute('aria-invalid');
+        object.textInputElement.removeAttribute('aria-label');
+        object.textInputElement.removeAttribute('aria-describedby')
+        object.textInputElement.classList.remove('ds44-error');
 
-        if (!object.inputElement.value && object.labelElement) {
+        if (!object.textInputElement.value && object.labelElement) {
             object.labelElement.classList.remove(this.mainClassName);
         }
 
@@ -63,12 +63,12 @@ class InputAbstract {
                 elementError.remove();
             }
         }
-        object.inputElement.checkValidity();
+        object.textInputElement.checkValidity();
     }
 
     invalid(objectIndex) {
         const object = this.objects[objectIndex];
-        if (!object.inputElement) {
+        if (!object.textInputElement) {
             return;
         }
         if (!object.labelElement) {
@@ -84,12 +84,12 @@ class InputAbstract {
         }
 
         let errorMessage = null;
-        for (let key in object.inputElement.validity) {
+        for (let key in object.textInputElement.validity) {
             if (key === 'valid') {
                 continue;
             }
 
-            let isInError = object.inputElement.validity[key];
+            let isInError = object.textInputElement.validity[key];
             if (isInError && this.errorMessages[key]) {
                 errorMessage = this.errorMessages[key];
                 break;
@@ -123,10 +123,10 @@ class InputAbstract {
         errorTextElement.innerHTML = errorMessage;
         errorMessageElement.appendChild(errorTextElement);
 
-        object.inputElement.classList.add('ds44-error');
-        object.inputElement.setAttribute('aria-invalid', 'true');
-        object.inputElement.setAttribute('aria-label', errorMessage);
-        object.inputElement.setAttribute('aria-describedby', errorMessageElementId)
+        object.textInputElement.classList.add('ds44-error');
+        object.textInputElement.setAttribute('aria-invalid', 'true');
+        object.textInputElement.setAttribute('aria-label', errorMessage);
+        object.textInputElement.setAttribute('aria-describedby', errorMessageElementId)
     }
 
     formatErrorMessage(errorMessage, labelElement) {
