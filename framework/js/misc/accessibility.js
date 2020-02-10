@@ -92,7 +92,7 @@ class MiscAccessibility {
 
         if (bubble) {
             Array.from(element.children).map((childElement) => {
-                MiscAccessibility.show(childElement);
+                MiscAccessibility.show(childElement, force, bubble);
             });
         }
     }
@@ -117,7 +117,7 @@ class MiscAccessibility {
 
         if (bubble) {
             Array.from(element.children).map((childElement) => {
-                MiscAccessibility.hide(childElement);
+                MiscAccessibility.hide(childElement, force, bubble);
             });
         }
     }

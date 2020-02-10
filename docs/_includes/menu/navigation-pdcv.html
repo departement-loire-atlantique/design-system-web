@@ -1,4 +1,4 @@
-<section id="nav4" class="ds44-overlay ds44-overlay--navNiv2 ds44-theme ds44-bgCircle ds44-bg-br" role="dialog" aria-label="Menu Près de chez vous" aria-hidden="true" aria-labelledby="titrePDCV">
+<section id="nav4" class="ds44-overlay ds44-overlay--navNiv2 ds44-theme ds44-bgCircle ds44-bg-br" role="dialog" aria-label="Menu Près de chez vous" aria-hidden="true" aria-labelledby="titrePDCV" {{ include.surcharge }}>
 
     <div class="ds44-container-menuBackLink">
         <button title="Retour au menu de navigation" class="ds44-btn-backOverlay"><i class="icon icon-arrow-left icon--xlarge" aria-hidden="true"></i><span class="ds44-btnInnerText--bottom">Retour</span></button>
@@ -13,7 +13,7 @@
         <div class="grid-12-small-1 ds44-grid-valign-center">
 
             <div class="col-5-small-1 txtcenter">
-                <p role="heading" aria-level="2" class="h4-like">Consultez l’actualité ou trouvez des contacts près de chez vous :</p>  
+                <p class="h4-like" aria-describedby="commune-name">Consultez l’actualité ou trouvez des contacts près de chez vous :</p>  
                 <form>
                     <div class="ds44-form__container">
                         <label for="name" class="ds44-formLabel"><span class="ds44-labelTypePlaceholderLarge ds44-moveLabel">Votre commune</span> <input type="text" id="commune-name" class="ds44-inpLarge" required aria-required="true" /></label>

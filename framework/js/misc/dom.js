@@ -36,4 +36,32 @@ class MiscDom {
             'left': rect.left + scrollLeft
         };
     }
+
+    static getPreviousSibling(element, selector) {
+        let sibling = element.previousElementSibling;
+        if (!selector) {
+            return sibling;
+        }
+
+        while (sibling) {
+            if (sibling.matches(selector)) {
+                return sibling;
+            }
+            sibling = sibling.previousElementSibling;
+        }
+    };
+
+    static getNextSibling(element, selector) {
+        let sibling = element.nextElementSibling;
+        if (!selector) {
+            return sibling;
+        }
+
+        while (sibling) {
+            if (sibling.matches(selector)) {
+                return sibling;
+            }
+            sibling = sibling.nextElementSibling;
+        }
+    };
 }

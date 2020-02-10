@@ -10,6 +10,16 @@ layout: pattern
 
 <hr />
 
+
+<form>
+    {% include forms/inc-textarea.html label="Champ textarea" requiredStar='<sup aria-hidden="true">*</sup>' required='required aria-required="true"' %}
+    <div><input type="submit" class="ds44-btnStd" value="Tester le champ" /></div>
+</form>
+
+
+<hr />
+
+
 {% include forms/inc-checkboxes.html label="Choix" number="1" requiredStar='<sup aria-hidden="true">*</sup>' required='required aria-required="true"' error="ds44-boxError" ariaError=' aria-describedby="msgErrorChk" aria-invalid="true"' %}
 {% include forms/inc-checkboxes.html label="Choix" number="2" requiredStar='<sup aria-hidden="true">*</sup>' required='required aria-required="true"' error="ds44-boxError" %}
 <div class="ds44-errorMsg-container">

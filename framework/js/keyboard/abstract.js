@@ -10,6 +10,7 @@ class Keyboard {
             return;
         }
 
+        MiscEvent.dispatch('keyUp:*');
         MiscEvent.dispatch('keyUp:' + (evt.key === ' ' ? 'Spacebar' : evt.key).toLowerCase());
     }
 
@@ -18,6 +19,7 @@ class Keyboard {
             return;
         }
 
+        MiscEvent.dispatch('keyPress:*');
         MiscEvent.dispatch('keyPress:' + (evt.key === ' ' ? 'Spacebar' : evt.key).toLowerCase());
     }
 
@@ -26,6 +28,7 @@ class Keyboard {
             return;
         }
 
+        MiscEvent.dispatch('keyDown:*');
         MiscEvent.dispatch('keyDown:' + (evt.key === ' ' ? 'Spacebar' : evt.key).toLowerCase());
     }
 }

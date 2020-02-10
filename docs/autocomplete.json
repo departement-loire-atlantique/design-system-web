@@ -1,0 +1,75 @@
+{
+    "data": {
+        "10227": {
+            "name": "MAROLLES SOUS LIGNIERES - 10130",
+            "metadata": {
+                "latitude": 48.0520003827,
+                "longitude": 3.93246550297
+            }
+        },
+        "10166": {
+            "name": "LES GRANDES CHAPELLES - 10170",
+            "metadata": {
+                "latitude": 48.4916267047,
+                "longitude": 3.93350100384
+            }
+        },
+        "10232": {
+            "name": "MERREY SUR ARCE - 10110",
+            "metadata": {
+                "latitude": 48.1160220302,
+                "longitude": 4.43093259336
+            }
+        },
+        "10182": {
+            "name": "JUVANCOURT - 10310",
+            "metadata": {
+                "latitude": 48.1567685845,
+                "longitude": 4.79470021531
+            }
+        },
+        "10190": {
+            "name": "LAUBRESSEL - 10270",
+            "metadata": {
+                "latitude": 48.2596266125,
+                "longitude": 4.24959642717
+            }
+        },
+        "10173": {
+            "name": "ISLE AUMONT - 10800",
+            "metadata": {
+                "latitude": 48.2055801821,
+                "longitude": 4.1125140322
+            }
+        },
+        "10196": {
+            "name": "LIGNIERES - 10130",
+            "metadata": {
+                "latitude": 48.0520003827,
+                "longitude": 3.93246550297
+            }
+        },
+        "10230": {
+            "name": "MERGEY - 10600",
+            "metadata": {
+                "latitude": 48.3767482025,
+                "longitude": 3.98875459714
+            }
+        },
+        "10212": {
+            "name": "MACHY - 10320",
+            "metadata": {
+                "latitude": 48.1632184055,
+                "longitude": 4.02059815423
+            }
+        },
+        "11111": {
+            "name": "CRUSCADES - 11200",
+            "metadata": {
+                "latitude": 43.1662010238,
+                "longitude": 2.78892059953
+            }
+        }
+    },
+    "total": 54
+}

@@ -64,6 +64,13 @@
         top: $ds44-padding-large;
         font-size: 1.6rem;
     }
+
+    .ds44-labelTypeInfoComp{
+        position: absolute;
+        top: -$ds44-large-vmargin;
+        right: $ds44-padding-box;
+        color: $ds44-gray;
+    }
 }
 
 .ds44-formLabel--external {
@@ -248,7 +255,6 @@ input[type=radio],
 
 .ds44-labelStd {
      font-size: 1.4rem;
-     line-height: 1rem;
 }
 
 .ds44-labelLarge {
@@ -351,6 +357,7 @@ input[type=radio],
         margin: 0;
     }
 }
+
 
 /* multilevel selects */
 

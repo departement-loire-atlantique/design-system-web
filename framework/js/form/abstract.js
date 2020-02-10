@@ -19,9 +19,16 @@ class Form {
                 isValid = (element.checkValidity() && isValid);
             })
 
-        if(!isValid) {
+        if (!isValid) {
             evt.stopPropagation();
             evt.preventDefault();
+
+            // Focus on first error field
+            const firstErrorField = element.querySelector('[aria-invalid="true"]');
+            if (firstErrorField) {
+                MiscAccessibility.setFocus(firstErrorField);
+            }
+
             return false;
         }
     }

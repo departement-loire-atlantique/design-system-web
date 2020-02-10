@@ -420,6 +420,10 @@
   background-color: $ds44-light-bg;
 }
 
+.ds44-whiteBG{
+  background-color: $ds44-light;
+}
+
 .ds44-img50{
   background: linear-gradient(to bottom, #f5f5f5 50%, #FFFFFF 50%);
 }
@@ -548,6 +552,10 @@
   padding: 1.2rem 1.5rem 1.5rem 1.5rem;
   display: inline-block;
   line-height: 1;
+
+  &.ds44-theme {
+    background-color: $ds44-contextual-color;
+  }
 }
 
 /* === Accessibilité === */
@@ -643,6 +651,10 @@
 
   .ds44-multiCol--3 {
     column-count: 2;
+  }
+
+  .ds44-m-t-xl-noUnderline {
+    text-decoration: none;
   }
 
 }
