@@ -16,7 +16,7 @@ variations:
   pattern: menu/navigation-principale-n2.html
 
 - title: Menu Près de chez vous
-  description: Menu de navigation "Près de chez vous"
+  description: Menu de navigation "Près de chez vous". Afin de simuler l'apparition du menu dans le DS, deux surcharges de style ont été effectuées directement sur la section de l'overlay (opacité et positionnement à droite rectifiés). Ces surcharges ne doivent pas être reproduites dans l'intégration finale.
   pattern: menu/nav-pres-de-chez-vous.html
 
 - title: Menu des applications
