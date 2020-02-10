@@ -73,7 +73,10 @@ class Overlay {
         }
 
         MiscAccessibility.show(this.modal);
-        MiscAccessibility.addFocusLoop(this.modal);
+        MiscAccessibility.addFocusLoop(
+            this.modal,
+            this.modal.querySelector('#' + this.modal.getAttribute('aria-labelledby')).innerText
+        );
         MiscEvent.dispatch('overlay:show', {'element': this.modal});
 
         MiscEvent.addListener('click', this.hideListener, closeButton);

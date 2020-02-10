@@ -10,7 +10,7 @@ class MiscAccessibility {
     // Fonction qui va forcer le focus à faire une boucle sur un élément
     // en ajoutant deux inputs 'hidden' qui peuvent être focus, au début
     // et à la fin
-    static addFocusLoop(element) {
+    static addFocusLoop(element, elementName) {
         MiscAccessibility.removeFocusLoop();
 
         if (!element) {
@@ -30,12 +30,14 @@ class MiscAccessibility {
         const fakeFirstElement = document.createElement('span');
         fakeFirstElement.classList.add('ds44-tmpFocusHidden');
         fakeFirstElement.setAttribute('tabindex', '0');
+        fakeFirstElement.innerText = 'Aller au dernier élément de : "' + elementName + '"';
         element.prepend(fakeFirstElement);
 
         // Create last hidden focus element
         const fakeLastElement = document.createElement('span');
         fakeLastElement.classList.add('ds44-tmpFocusHidden');
         fakeLastElement.setAttribute('tabindex', '0');
+        fakeLastElement.innerText = 'Revenir au premier élément de : "' + elementName + '"';
         element.appendChild(fakeLastElement);
 
         // Add events

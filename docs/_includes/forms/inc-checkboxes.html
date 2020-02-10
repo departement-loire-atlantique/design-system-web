@@ -1,3 +1,15 @@
-<div class="ds44-form__container">        
-    <input type="checkbox" value="{{ include.number }}" id="name-check{{ include.number }}" class="ds44-checkbox {{ include.error }} {{ include.indeterminate }}" {{ include.ariaError }} {{ include.selected }} /><label for="name-check{{ include.number }}" class="ds44-boxLabel">{{ include.label }} {{ include.number }}{{ include.requiredStar }}</label>
+<div class="ds44-form__checkbox_container" {% if include.required == 'true' %}data-required="true"{% endif %} {% if include.name %}data-name="{{ include.name }}"{% endif %}>
+    {% assign choices = (include.choices | split:',') %}
+    {% for choiceData in choices %}
+        {% assign choice = (choiceData | split:':') %}
+        {% assign value = choice[0] %}
+        {% assign label = choice[1] %}
+        {% if include.required == 'true' %}
+            {% assign requiredStar = '<sup aria-hidden="true">*</sup>' %}
+        {% else %}
+            {% assign requiredStar = '' %}
+        {% endif %}
+
+        {% include forms/inc-checkbox.html value=value label=label requiredStar=requiredStar %}
+    {% endfor %}
 </div>

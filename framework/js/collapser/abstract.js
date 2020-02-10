@@ -7,6 +7,8 @@ class Collapser {
         document
             .querySelectorAll('.ds44-collapser_button')
             .forEach((element) => {
+                this.hide(null, element);
+
                 MiscEvent.addListener('click', this.showHide.bind(this), element);
             });
     }
@@ -75,7 +77,7 @@ class Collapser {
 
         const panel = element.nextElementSibling;
         element.classList.remove('show');
-        element.removeAttribute('aria-expanded');
+        element.setAttribute('aria-expanded', 'false');
         panel.style.maxHeight = (panel.style.maxHeight ? null : panel.scrollHeight + 60 + 'px');
         MiscAccessibility.hide(panel, true);
         panel.style.visibility = 'hidden';

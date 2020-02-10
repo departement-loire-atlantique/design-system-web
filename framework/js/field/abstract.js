@@ -1,5 +1,6 @@
 class FieldAbstract {
-    constructor(selector) {
+    constructor(selector, category) {
+        this.category = category;
         this.objects = [];
         this.mainClassName = 'ds44-moveLabel';
         this.errorMessages = {
@@ -13,11 +14,14 @@ class FieldAbstract {
             .forEach((element) => {
                 this.create(element);
             });
+
+        MiscEvent.addListener('form:validate', this.validate.bind(this));
     }
 
     create(element) {
         const object = {
             'id': MiscUtils.generateId(),
+            'name': element.getAttribute('id'),
             'textElement': element,
             'labelElement': MiscDom.getPreviousSibling(element, 'span'),
             'containerElement': element.closest('.ds44-form__container'),
@@ -32,6 +36,54 @@ class FieldAbstract {
         MiscEvent.addListener('focus', this.focus.bind(this, objectIndex), element);
         MiscEvent.addListener('blur', this.blur.bind(this, objectIndex), element);
         MiscEvent.addListener('invalid', this.invalid.bind(this, objectIndex), element);
+        MiscEvent.addListener('form:validate', this.validate.bind(this, objectIndex));
+    }
+
+    validate(evt) {
+        if (
+            !evt ||
+            !evt.detail ||
+            !evt.detail.formElement
+        ) {
+            return;
+        }
+
+        let isValid = true;
+        let data = {};
+        for (let objectIndex = 0; objectIndex < this.objects.length; objectIndex++) {
+            if (!evt.detail.formElement.contains(this.objects[objectIndex].containerElement)) {
+                continue;
+            }
+
+            if (this.checkValidity(objectIndex) === false) {
+                isValid = false;
+                break;
+            }
+
+            data = Object.assign(data, this.getData(objectIndex));
+        }
+
+        MiscEvent.dispatch(
+            'form:validation',
+            {
+                'category': this.category,
+                'isValid': isValid,
+                'data': data
+            },
+            evt.detail.formElement
+        );
+    }
+
+    getData(objectIndex) {
+        const object = this.objects[objectIndex];
+        if (!object.textElement) {
+            return;
+        }
+
+        let data = {};
+        data[object.name] = object.textElement.value;
+
+        return data;
     }
 
     focus(objectIndex) {
@@ -43,7 +95,17 @@ class FieldAbstract {
     }
 
     blur(objectIndex) {
-        this.checkValidity(objectIndex);
+        const object = this.objects[objectIndex];
+        if (!object.textElement) {
+            return;
+        }
+        if (!object.labelElement) {
+            return;
+        }
+
+        if (!object.textElement.value) {
+            object.labelElement.classList.remove(this.mainClassName);
+        }
     }
 
     checkValidity(objectIndex) {
@@ -53,13 +115,8 @@ class FieldAbstract {
         }
 
         object.textElement.removeAttribute('aria-invalid');
-        object.textElement.removeAttribute('aria-label');
         object.textElement.removeAttribute('aria-describedby')
         object.textElement.classList.remove('ds44-error');
-
-        if (!object.textElement.value && object.labelElement) {
-            object.labelElement.classList.remove(this.mainClassName);
-        }
 
         if (object.containerElement) {
             let elementError = object.containerElement.querySelector('.ds44-errorMsg-container');
@@ -67,7 +124,8 @@ class FieldAbstract {
                 elementError.remove();
             }
         }
-        object.textElement.checkValidity();
+
+        return object.textElement.checkValidity();
     }
 
     invalid(objectIndex) {
@@ -129,7 +187,6 @@ class FieldAbstract {
 
         object.textElement.classList.add('ds44-error');
         object.textElement.setAttribute('aria-invalid', 'true');
-        object.textElement.setAttribute('aria-label', errorMessage);
         object.textElement.setAttribute('aria-describedby', errorMessageElementId)
     }
 

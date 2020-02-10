@@ -99,16 +99,12 @@ class Header {
     menuShow() {
         this.isOverlayed = true;
 
-        MiscAccessibility.hide(document.querySelector('header'), false, false);
-        MiscAccessibility.hide(document.querySelector('header .ds44-header'), false, false);
         MiscAccessibility.hide(document.querySelector('header .ds44-header .ds44-container-large'));
     }
 
     menuHide() {
         this.isOverlayed = false;
 
-        MiscAccessibility.show(document.querySelector('header'), false, false);
-        MiscAccessibility.show(document.querySelector('header .ds44-header'), false, false);
         MiscAccessibility.show(document.querySelector('header .ds44-header .ds44-container-large'));
     }
 }

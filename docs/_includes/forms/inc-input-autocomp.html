@@ -1,5 +1,5 @@
 <div class="ds44-form__container">
-    <label for="{{ include.id }}" class="ds44-formLabel"><span class="ds44-labelTypePlaceholderLarge ds44-moveLabel">{{ include.label }}{{ include.requiredStar }}</span> <input type="text" id="{{ include.id }}" class="ds44-inpLarge" {{ include.required }} aria-label="Tag" role="combobox" aria-autocomplete="list" autocomplete="off" data-url="/autocomplete.json" {{include.options}}/></label>
+    <label for="{{ include.id }}" class="ds44-formLabel"><span class="ds44-labelTypePlaceholderLarge ds44-moveLabel">{{ include.label }}{{ include.requiredStar }}</span> <input type="text" id="{{ include.id }}" class="ds44-inpLarge" {{ include.required }} role="combobox" aria-autocomplete="list" autocomplete="off" data-url="/autocomplete.json" {{include.options}}/></label>
     <div class="ds44-autocomp-container hidden">
         <div class="ds44-autocomp-buttons ds44-flex-container">
             <button class="ds44-btnStd ds44-bgGray ds44-btnStd--plat ds44-fg1" type="button" data-value="option1" data-text="Premier bouton">Bouton plat</button>
@@ -7,7 +7,7 @@
         </div>
         <div class="ds44-autocomp-list">
             <ul class="ds44-list" role="listbox"></ul>
-            <p class="ds44-lightLink"></p>
+            <p class="ds44-lightLink" tabindex="-1" aria-live="polite"></p>
         </div>
     </div>
 </div>

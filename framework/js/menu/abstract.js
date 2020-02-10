@@ -78,7 +78,10 @@ class Menu {
         // Set focus in menu
         MiscAccessibility.setFocus(closeButton);
 
-        MiscAccessibility.addFocusLoop(mainMenu);
+        MiscAccessibility.addFocusLoop(
+            mainMenu,
+            mainMenu.getAttribute('aria-label')
+        );
         MiscEvent.dispatch('menu:show', {'element': mainMenu});
 
         MiscEvent.addListener('click', this.hideMainListener, closeButton);
@@ -171,7 +174,10 @@ class Menu {
         MiscAccessibility.show(subMenu);
 
         MiscAccessibility.setFocus(backButton);
-        MiscAccessibility.addFocusLoop(subMenu);
+        MiscAccessibility.addFocusLoop(
+            subMenu,
+            subMenu.getAttribute('aria-label')
+        );
     }
 
     hideSubMenu() {
@@ -209,7 +215,10 @@ class Menu {
         } else {
             MiscAccessibility.setFocus(closeButton);
         }
-        MiscAccessibility.addFocusLoop(mainMenu);
+        MiscAccessibility.addFocusLoop(
+            mainMenu,
+            mainMenu.getAttribute('aria-label')
+        );
     }
 
     focusOut(evt) {

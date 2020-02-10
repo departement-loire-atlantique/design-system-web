@@ -1,6 +1,12 @@
+// TODO : Afficher "Aucun occurence trouvée"
+// TODO : Dans l'autocomplete en séléction seule, la suppression totale pose problème
+
 class InputAutoComplete extends FieldAbstract {
     constructor() {
-        super('input[aria-autocomplete="list"]');
+        super(
+            'input[aria-autocomplete="list"]',
+            'inputAutocomplete'
+        );
     }
 
     create(element) {
@@ -64,6 +70,21 @@ class InputAutoComplete extends FieldAbstract {
                     MiscEvent.addListener('click', this.select.bind(this, objectIndex), buttonElement);
                 });
         }
+    }
+
+    getData(objectIndex) {
+        const object = this.objects[objectIndex];
+        if (!object.valueElement) {
+            return;
+        }
+
+        let data = {};
+        data[object.name] = {
+            'value': object.valueElement.value,
+            'metadata': object.metadataElement.value
+        };
+
+        return data;
     }
 
     record(objectIndex) {
@@ -272,7 +293,7 @@ class InputAutoComplete extends FieldAbstract {
 
         object.autoCompleterElement.classList.add('hidden');
         MiscAccessibility.hide(object.autoCompleterElement, true);
-        object.textElement.removeAttribute('aria-expanded');
+        object.textElement.setAttribute('aria-expanded', 'false');
         object.isExpanded = false;
     }
 
@@ -378,10 +399,13 @@ class InputAutoComplete extends FieldAbstract {
         if (selectedListItem) {
             selectedListItem.classList.remove('selected_option');
             selectedListItem.removeAttribute('id');
+            selectedListItem.removeAttribute('aria-selected');
         }
         currentItem.classList.add('selected_option');
         currentItem.setAttribute('id', 'selected_option_' + object.id);
+        currentItem.setAttribute('aria-selected', 'true');
         object.textElement.setAttribute('aria-activedescendant', 'selected_option_' + object.id);
+
 
         this.setNewValue(
             objectIndex,
