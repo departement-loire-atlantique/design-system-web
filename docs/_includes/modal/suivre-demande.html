@@ -8,14 +8,12 @@
 				<div class="col-6 ds44-modal-column">
 					<h2 class="h3-like">Vous avez un code de suivi :</h2>
 					<p id="desc-pour-input">Saisissez votre code de suivi (transmis à l’enregistrement de votre demande en ligne.</p>
-					<div class="ds44-form__container">
-						<label for="name" class="ds44-formLabel ds44-mb-std"><span class="ds44-labelTypePlaceholder ds44-moveLabel">Code de suivi <em class="ds44-format">(format attendu : XXX-XXXX-XX)</em></span> <input type="text" id="name" class="ds44-inpStd" required aria-required="true" aria-describedby="desc-pour-input" title="[Code de suivi (format attendu : XXX-XXXX-XX)]" /></label>
-						<button class="ds44-btnStd ds44-btn--invert" type="button" aria-label="Valider votre code de suivi"><span class="ds44-btnInnerText">Valider</span><i class="icon icon-long-arrow-right" aria-hidden="true"></i></button>
-					</div>
+					{% include forms/input-std.html label='Code de suivi <em class="ds44-format">(format attendu : XXX-XXXX-XX)</em>' requiredStar='<sup aria-hidden="true">*</sup>' required='required aria-required="true"' title=' title="[Code de suivi (format attendu : XXX-XXXX-XX)]"' aria-desc=' aria-describedby="desc-pour-input"' %}   				
+					<button class="ds44-btnStd ds44-btn--invert" type="button" aria-label="Valider votre code de suivi"><span class="ds44-btnInnerText">Valider</span><i class="icon icon-long-arrow-right" aria-hidden="true"></i></button>
 				</div>
 				<div class="col-6 ds44-modal-column">
 					<h2 class="h3-like">Vous n’avez pas de code de suivi :</h2>
-					<p><button class="ds44-btnStd ds44-btn--invert" type="button" aria-label="Connectez-vous pour obtenir votre code de suivi"><span class="ds44-btnInnerText">Connectez-vous</span><i class="icon icon-computer icon--sizeL" aria-hidden="true"></i></button></p>
+					<p class="ds44-mt-std"><button class="ds44-btnStd ds44-btn--invert" type="button" aria-label="Connectez-vous pour obtenir votre code de suivi"><span class="ds44-btnInnerText">Connectez-vous</span><i class="icon icon-computer icon--sizeL" aria-hidden="true"></i></button></p>
 				</div>
 			</div>
 		</div>
