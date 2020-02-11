@@ -6,6 +6,7 @@ var concat = require('gulp-concat');
 var exec = require('child_process').exec;
 var browserSync = require('browser-sync').create();
 var cssnano = require('cssnano'); // minifies CSS
+var consolidate = require("gulp-consolidate");
 var autoprefixer = require('autoprefixer');
 var unprefix = require("postcss-unprefix"); // deletes old prefixes using browsersList variable
 var flexbugs = require('postcss-flexbugs-fixes'); // flexbox fixes for IE
@@ -105,6 +106,28 @@ gulp.task('build:glyphicons', function () {
         .pipe(gulp.dest(distDest));
 });
 
+gulp.task('build:demoicons', function() {
+    return gulp.src("framework/glyphicons/**/*")
+        .pipe(iconfont({
+            fontName: 'iconfont',
+            formats: ['ttf', 'eot', 'woff', 'woff2'],
+            appendCodepoints: true,
+            appendUnicode: false,
+            normalize: true,
+            fontHeight: 1000,
+            centerHorizontally: true
+        }))
+        .on('glyphs', function (glyphs, options) {
+            gulp.src('iconfont/demo-icons.html')
+                .pipe(consolidate('underscore', {
+                    glyphs: glyphs,
+                    fontName: options.fontName
+                }))
+            .pipe(gulp.dest('docs/_variations/icons/'));
+        })
+    .pipe(gulp.dest('framework/fonts/'));
+});
+
 // cd .docker && docker-compose exec site gulp createComponent --name button
 gulp.task('createComponent', function () {
     var componentName = "ttest";
@@ -118,6 +141,7 @@ gulp.task('build:ds', gulp.parallel(
     'build:css:cd44:dev',
     'build:css:cd44:prod',
     'build:glyphicons',
+    'build:demoicons',
     'build:js',
     function () {
         return gulp.src(assetsFolders, {base: 'framework'})

@@ -1,0 +1,9 @@
+---
+layout: pattern
+---
+
+<div style="column-count: 3; font-size: 1.5em;">
+	<% _.each(glyphs, function(icon){ %>
+	<p><i class="icon icon-<%= icon.name %>" aria-hidden="true"></i><span class="i-name">icon-<%= icon.name %></span></p>
+	<% }) %>
+</div>
