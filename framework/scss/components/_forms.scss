@@ -101,7 +101,7 @@
 }
 
 .ds44-inpLarge {
-    @include ds44-font-sizes(largeButton);
+    @include ds44-font-sizes(input);
     border-radius: $ds44-border-radius;
     padding: $ds44-padding-large;
     border: 1px solid $ds44-gray;
