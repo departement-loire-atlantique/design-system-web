@@ -123,6 +123,10 @@ $ds44-font-sizes: (
   formListElem: (
     mobile  : 1.125em,  // 18px
     desktop : 1.125em   // 18px
+  ),
+  input: (
+    mobile  : 1em,      // 16px
+    desktop : 1em       // 16px
   )
 ) !default;
 
