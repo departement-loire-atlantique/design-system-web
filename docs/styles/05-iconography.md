@@ -1,6 +1,6 @@
 ---
 
-layout: page
+layout: page-icones
 type: detail
 title: Iconographie
 group: styles
