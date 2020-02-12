@@ -4,13 +4,13 @@ layout: pattern
 <form>
     <div class="ds44-facetteContainer ds44-bgDark ds44-flex-container ds44-small-flex-col">
         <div class="ds44-fieldContainer ds44-fg1">
-            <label for="field1" class="ds44-formLabel"><span class="ds44-labelTypePlaceholderLarge ds44-moveLabel">Nom du champ<sup aria-hidden="true">*</sup></span> <input type="text" id="field1" class="ds44-inpLarge" required aria-required="true" /></label>
+            {% include forms/inc-input-city.html id="inc-input-city" label="Champ commune" requiredStar='<sup aria-hidden="true">*</sup>' required='required aria-required="true"' options='data-mode="select-only"' %}
         </div>
         <div class="ds44-fieldContainer ds44-fg1">
-            {% include forms/inc-select-std.html label="Label select" number="1" requiredStar='<sup aria-hidden="true">*</sup>' required='required aria-required="true"' size="ds44-inpLarge" %}
+            {% include forms/inc-checkboxes.html name="checkbox1" choices="m:Homme,f:Femme" required="true" %}
         </div>
         <div class="ds44-fieldContainer ds44-small-fg1">            
-            <button class="ds44-btnStd ds44-btnStd--large ds44-theme" type="button"><span class="ds44-btnInnerText">Rechercher</span><i class="icon icon-long-arrow-right" aria-hidden="true"></i></button>
+            <button class="ds44-btnStd ds44-btnStd--large ds44-theme"><span class="ds44-btnInnerText">Rechercher</span><i class="icon icon-long-arrow-right" aria-hidden="true"></i></button>
         </div>
     </div>
 </form>
