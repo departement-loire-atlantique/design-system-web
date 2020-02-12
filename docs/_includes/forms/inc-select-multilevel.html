@@ -1,12 +1,12 @@
 <div class="ds44-form__container">
     <div class="ds44-select__shape {{ include.size }} {{ include.error }}">
         <p class="ds44-selectLabel" id="label{{ include.number }}">{{ include.label }}{{ include.requiredStar }}</p>     
-        <button class="ds44-btnIco ds44-posAbs ds44-posRi ds44-btnOpen" aria-labelledby="label{{ include.number }}" aria-expanded="false" aria-controls="list-select{{ include.number }}"><i class="icon icon-down" aria-hidden="true"></i><span class="visually-hidden">Choisir une ou plusieurs options</span></button>
+        <button class="ds44-btnIco ds44-posAbs ds44-posRi ds44-btnOpen" aria-labelledby="label{{ include.number }}" aria-expanded="false" aria-controls="list-select{{ include.number }}" type="button"><i class="icon icon-down" aria-hidden="true"></i><span class="visually-hidden">Choisir une ou plusieurs options</span></button>
     </div>
     <div class="ds44-select-container" role="combobox" id="list-select{{ include.number }}">
         <div class="ds44-flex-container ds44--m-padding">
-            <button class="ds44-btnStd ds44-bgGray ds44-btnStd--plat ds44-fg1"><span class="ds44-btnInnerText">Tout cocher</span><i class="icon icon-check icon--medium" aria-hidden="true"></i></button>
-            <button class="ds44-btnStd ds44-bgGray ds44-btnStd--plat ds44-fg1 ds44-border-left--light"><span class="ds44-btnInnerText">Tout décocher</span><i class="icon icon-cross icon--medium" aria-hidden="true"></i></button>
+            <button class="ds44-btnStd ds44-bgGray ds44-btnStd--plat ds44-fg1" type="button"><span class="ds44-btnInnerText">Tout cocher</span><i class="icon icon-check icon--medium" aria-hidden="true"></i></button>
+            <button class="ds44-btnStd ds44-bgGray ds44-btnStd--plat ds44-fg1 ds44-border-left--light" type="button"><span class="ds44-btnInnerText">Tout décocher</span><i class="icon icon-cross icon--medium" aria-hidden="true"></i></button>
         </div>
 
         <ul class="ds44-collapser ds44-listSelect">
@@ -14,7 +14,7 @@
                 <div class="ds44-select__categ">
                     {% include forms/inc-checkbox.html value="1" label="Catégorie" indeterminate="ds44-chkInder" %}
                 </div>
-                <button aria-controls="collapser-elem-1" class="ds44-collapser_button ds44-collapser_button--select" aria-expanded="false"><span class="visually-hidden">Déplier</span><i class="icon icon-down ds44-noLineH" aria-hidden="true"></i></button>                
+                <button type="button" aria-controls="collapser-elem-1" class="ds44-collapser_button ds44-collapser_button--select" aria-expanded="false"><span class="visually-hidden">Déplier</span><i class="icon icon-down ds44-noLineH" aria-hidden="true"></i></button>                
                 <div class="ds44-collapser_content" id="collapser-elem-1">
                     <ul class="ds44-list ds44-collapser_content--level2" role="listbox" id="listbox2">
                         <li class="ds44-select-list_elem" role="option">{% include forms/inc-checkbox.html value="01" label="Choix" %}</li>
@@ -29,7 +29,7 @@
                 <div class="ds44-select__categ">
                     {% include forms/inc-checkbox.html value="2" label="Catégorie" %}
                 </div>
-                <button aria-controls="collapser-elem-2" class="ds44-collapser_button ds44-collapser_button--select" aria-expanded="false"><span class="visually-hidden">Déplier</span><i class="icon icon-down ds44-noLineH" aria-hidden="true"></i></button>  
+                <button type="button" aria-controls="collapser-elem-2" class="ds44-collapser_button ds44-collapser_button--select" aria-expanded="false"><span class="visually-hidden">Déplier</span><i class="icon icon-down ds44-noLineH" aria-hidden="true"></i></button>  
                 <div class="ds44-collapser_content" id="collapser-elem-2">
                     <ul class="ds44-list ds44-collapser_content--level2" role="listbox" id="listbox3">
                         <li class="ds44-select-list_elem" role="option">{% include forms/inc-checkbox.html value="06" label="Choix" %}</li>
@@ -44,7 +44,7 @@
                 <div class="ds44-select__categ">
                     {% include forms/inc-checkbox.html value="3" label="Catégorie" %}
                 </div>
-                <button aria-controls="collapser-elem-3" class="ds44-collapser_button ds44-collapser_button--select" aria-expanded="false"><span class="visually-hidden">Déplier</span><i class="icon icon-down ds44-noLineH" aria-hidden="true"></i></button>  
+                <button type="button" aria-controls="collapser-elem-3" class="ds44-collapser_button ds44-collapser_button--select" aria-expanded="false"><span class="visually-hidden">Déplier</span><i class="icon icon-down ds44-noLineH" aria-hidden="true"></i></button>  
                 <div class="ds44-collapser_content" id="collapser-elem-3">
                     <ul class="ds44-list ds44-collapser_content--level2" role="listbox" id="listbox4">
                         <li class="ds44-select-list_elem" role="option">{% include forms/inc-checkbox.html value="11" label="Choix" %}</li>
