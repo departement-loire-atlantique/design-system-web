@@ -86,6 +86,10 @@
     }
 }
 
+textarea {
+    font-family: $ds44-font-family-base;
+}
+
 .ds44-inpStd {
     @include ds44-font-sizes(input);
     border-radius: $ds44-border-radius;
