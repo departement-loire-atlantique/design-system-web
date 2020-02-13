@@ -19,8 +19,8 @@ class FormBox {
             'name': element.getAttribute('data-name'),
             'inputElements': element.querySelectorAll('input[type="' + this.category + '"]'),
             'containerElement': element,
-            'isRequired': (element.getAttribute('data-required') === 'true' ? true : false),
-        }
+            'isRequired': (element.getAttribute('data-required') === 'true'),
+        };
         this.objects.push(object);
         const objectIndex = (this.objects.length - 1);
 
@@ -29,7 +29,7 @@ class FormBox {
         });
     }
 
-    toggleCheck(objectIndex, evt) {
+    toggleCheck(objectIndex) {
         const object = this.objects[objectIndex];
 
         object.inputElements.forEach((inputElement) => {
@@ -109,7 +109,7 @@ class FormBox {
 
             inputElement.removeAttribute('aria-invalid');
             inputElement.removeAttribute('aria-label');
-            inputElement.removeAttribute('aria-describedby')
+            inputElement.removeAttribute('aria-describedby');
             inputElement.classList.remove('ds44-boxError');
         });
 
@@ -137,7 +137,7 @@ class FormBox {
 
         let errorIconElement = document.createElement('i');
         errorIconElement.classList.add('icon');
-        errorIconElement.classList.add('icon-cross');
+        errorIconElement.classList.add('icon-attention');
         errorIconElement.classList.add('icon--sizeM');
         errorIconElement.setAttribute('aria-hidden', 'true');
         errorMessageElement.appendChild(errorIconElement);

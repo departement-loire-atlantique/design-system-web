@@ -20,7 +20,6 @@
     line-height: 1.4;
 
     .ds44-cardFile {
-        padding-top: $spacer-tiny;
         display: block;
         padding-left: $ds44-padding-ico;
     }
@@ -29,6 +28,10 @@
         display: inline-block;
         vertical-align: top;
         width: calc(100% - 25px); // retrait du lien pour caler l'icone à gauche
+    }
+
+    &:first-child:after {
+      padding-bottom: 0;
     }
 }
 

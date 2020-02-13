@@ -1,20 +1,20 @@
 <div class="ds44-form__container">
-    <div class="ds44-select__shape {{ include.size }} {{ include.error }}">
-        <p class="ds44-selectLabel" id="label{{ include.number }}">{{ include.label }}{{ include.requiredStar }}</p>     
-        <button class="ds44-btnIco ds44-posAbs ds44-posRi ds44-btnOpen" aria-labelledby="label{{ include.number }}" aria-expanded="false" aria-controls="list-select{{ include.number }}"><i class="icon icon-down" aria-hidden="true"></i><span class="visually-hidden">Choisir une option</span></button>
+    <div class="ds44-select__shape {{ include.class }}">
+        <p class="ds44-selectLabel" id="label-{{ include.id }}">{{ include.label }}{{ include.requiredStar }}</p>
+        <p id="{{ include.id }}" class="ds44-selectDisplay" {% if include.required == 'true' %}data-required="true"{% endif %}></p>
+        <button type="button" class="ds44-btnIco ds44-posAbs ds44-posRi ds44-btnOpen" aria-labelledby="label-{{ include.id }}" aria-expanded="false" aria-controls="list-select-{{ include.id }}"><i class="icon icon-down {% if include.class == 'ds44-inpLarge' %}icon--sizeXL{% else %}icon--sizeL{% endif %}" aria-hidden="true"></i><span class="visually-hidden">Ouvrir le menu de choix : {{ include.label }}</span></button>
     </div>
-    <div class="ds44-select-container" role="combobox" id="list-select{{ include.number }}">
+    <div class="ds44-select-container hidden" role="combobox" id="list-select-{{ include.id }}">
         <div class="ds44-listSelect">
-            <ul class="ds44-list" role="listbox" id="listbox{{ include.number }}">
-                <li class="ds44-select-list_elem" role="option" id="selected_option">
-                    {% include forms/inc-radio.html name="inc-select-std" label="Choix 1" value="1" checked="checked" %}
+            <ul class="ds44-list" role="listbox" id="listbox-{{ include.id }}">
+                <li class="ds44-select-list_elem" role="option">
+                    {% include forms/inc-radio.html name="inc-select-std" label="Choix 1" value="1" %}
                 </li>
                 <li class="ds44-select-list_elem" role="option">
                     {% include forms/inc-radio.html name="inc-select-std" label="Choix 2" value="2" %}
                 </li>
-            </ul>            
+            </ul>
         </div>
-        {{ include.errorMsg }}
-        <button type="submit" class="ds44-fullWBtn ds44-btnSelect ds44-theme"><span class="ds44-btnInnerText">Valider</span><i class="icon icon-long-arrow-right ds44-noLineH" aria-hidden="true"></i></button>
+        <button type="button" class="ds44-fullWBtn ds44-btnSelect ds44-theme" aria-label="Valider {{ include.label }}"><span class="ds44-btnInnerText">Valider</span><i class="icon icon-long-arrow-right ds44-noLineH" aria-hidden="true"></i></button>
     </div>
 </div>

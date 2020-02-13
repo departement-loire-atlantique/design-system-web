@@ -1,7 +1,7 @@
 class Tab {
     constructor() {
-        MiscEvent.addListener('keyUp:spacebar', this.move.bind(this));
-        MiscEvent.addListener('keyUp:enter', this.move.bind(this));
+        MiscEvent.addListener('keyPress:spacebar', this.move.bind(this));
+        MiscEvent.addListener('keyPress:enter', this.move.bind(this));
 
         document
             .querySelectorAll('.js-tablist__link')

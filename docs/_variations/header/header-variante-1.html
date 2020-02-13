@@ -2,39 +2,8 @@
 layout: pattern
 ---
 
-<header role="banner" class="ds44-header" id="topPage">
-
-    <div class="ds44-blocBandeau">
-        <ul class="ds44-list ds44-skiplinks">
-            <li><a href="#content" class="ds44-skiplinks--link">Aller au contenu</a></li>
-            <li><a href="#menu" class="ds44-skiplinks--link">Aller au menu</a></li>
-            <li><a href="#search" class="ds44-skiplinks--link">Aller à la recherche</a></li>
-            <li><a href="#" class="ds44-skiplinks--link">Aller à la page d'accessibilité</a></li>
-        </ul>
-        <div class="ds44-flex-container ds44-flex-valign-center">
-            <div class="ds44-colLeft">
-                <a href="#" class="ds44-logoContainer">
-                    <picture class="ds44-logo">
-                        <img src="../../assets/images/logos/logo-cd44-handicap.svg"
-                            alt="Retour à l'accueil - Loire Atlantique - site handicap" />
-                    </picture>
-                </a>
-            </div>
-            <div class="ds44-colRight">
-                <button class="ds44-btnIcoText--maxi ds44--xl-padding-tb" type="button"><span
-                        class="ds44-btnInnerText">Rechercher</span><i class="icon icon-magnifier icon--large"
-                        aria-hidden="true"></i></button>
-                <a class="ds44-btnIcoText--maxi ds44--xl-padding" type="button"
-                    aria-label="Ouvrir le menu de mes démarches"><span class="ds44-btnInnerText">Mes démarches</span><i
-                        class="icon icon-user icon--large" aria-hidden="true"></i></a>
-                <button class="ds44-btn--menu ds44-btnIcoText--maxi ds44-btn--contextual ds44--xl-padding" type="button"
-                    aria-label="Ourvir le menu de navigation" aria-controls="menu" data-open-overlay="true"><span
-                        class="ds44-btnInnerText">Menu</span><i class="icon icon-burger icon--xlarge"
-                        aria-hidden="true"></i></button>
-            </div>
-        </div>
-    </div>
-    <div class="ds44-blocMenu">
-        <section class="ds44-menuBox" id="menu"></section>
-    </div>
-</header>
+{% include header/inc-header.html 
+    logo='<picture class="ds44-logo"><img src="../../assets/images/logos/logo-cd44-handicap.svg" alt="Retour à l&apos;accueil - Loire Atlantique - site handicap" /></picture>'
+    variante1='<button type="button" class="ds44-btnIcoText--maxi ds44--xl-padding" id="open-search"><span class="ds44-btnInnerText">Rechercher</span><i class="icon icon-magnifier icon--large" aria-hidden="true"></i></button>'
+    variante2='<a class="ds44-btnIcoText--maxi ds44--xl-padding" aria-label="Ouvrir le menu de mes démarches"><span class="ds44-btnInnerText">Mes démarches</span><i class="icon icon-user icon--large" aria-hidden="true"></i></a>'
+%}

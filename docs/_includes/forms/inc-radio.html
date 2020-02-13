@@ -1,3 +1,3 @@
-<div class="ds44-form__container">        
+<div class="ds44-form__container ds44-checkBox-radio_list {% if include['list'] == 'true' %} inbl {% endif %}">        
     <input type="radio" name="{{ include.name }}" value="{{ include.value }}" id="name-radio-{{ include.value }}" class="ds44-radio" {{ include.checked }}/><label for="name-radio-{{ include.value }}" class="ds44-radioLabel">{{ include.label }}{{ include.requiredStar }}</label>
 </div>

@@ -8,25 +8,36 @@
 ::-webkit-input-placeholder {
     color: $ds44-dark;
     font-family: $ds44-font-family-base;
+    @include ds44-font-sizes(button);
 }
 
 ::-moz-placeholder {  /* Firefox 19+ */
     color: $ds44-dark;
     font-family: $ds44-font-family-base;
+    @include ds44-font-sizes(button);
 }
 
 :-ms-input-placeholder {
     color: $ds44-dark;
     font-family: $ds44-font-family-base;
+    @include ds44-font-sizes(button);
 }
 
  /**
   * Input basics
   */
 
+input {
+    font-family: $ds44-font-family-base;
+}
+
 .ds44-form__container {
     position: relative;
     margin: $ds44-large-vmargin 0;
+
+    &.ds44-checkBox-radio_list {
+      margin: $ds44-large-vmargin/2 0;
+    }
 }
 .ds44-form__container--external {
     margin: 0 0 $ds44-large-vmargin 0;
@@ -43,10 +54,14 @@
     .ds44-labelTypePlaceholder,
     .ds44-labelTypePlaceholderLarge {
         position: absolute;
-        top: $ds44-padding-medium;
+        top: 1.2rem ;
         left: $ds44-padding-box;
         transition: all $ds44-timing-standard ease-in-out;
         color: $ds44-gray;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        width: calc(100% - 40px);
+        white-space: nowrap;
 
         &.ds44-moveLabel {
             font-size: .8125em; // 13px instead of 14px
@@ -86,11 +101,16 @@
     }
 }
 
+textarea {
+    font-family: $ds44-font-family-base;
+}
+
 .ds44-inpStd {
-    @include ds44-font-sizes(button);
     color: $ds44-color-dark-text;
+    @include ds44-font-sizes(input);
+    font-family: $ds44-font-family-base;
     border-radius: $ds44-border-radius;
-    padding: $ds44-padding-medium $ds44-padding-box;
+    padding: $ds44-padding-medium $ds44-padding-ico $ds44-padding-medium $ds44-padding-box;
     border: 1px solid $ds44-gray;
     min-width: 100%;
     vertical-align: middle;
@@ -102,14 +122,15 @@
 }
 
 .ds44-inpLarge {
-    @include ds44-font-sizes(largeButton);
     color: $ds44-color-dark-text;
+    @include ds44-font-sizes(input);
+    font-family: $ds44-font-family-base;
     border-radius: $ds44-border-radius;
     padding: $ds44-padding-large;
     border: 1px solid $ds44-gray;
     min-width: 100%;
     vertical-align: middle;
-    min-height: $ds44-largeHeight;
+    height: $ds44-largeHeight;
 
     &:disabled {
         background-color: $ds44-light-bg;
@@ -124,13 +145,28 @@
     color: $ds44-color-soft-text;
 }
 
+/* Bouton de reset de champ */
+
+.ds44-reset {
+    position: absolute;
+    right: 0;
+    top: calc(50% - 13px);
+    display: none;
+    padding-right: 1rem;
+    color: $ds44-color-soft-text;
+
+    .ds44-formLabel--external & {
+        top: calc(50% + 3px);
+    }
+}
+
 /**
  * Checkboxes & radiobuttons
  */
 
 .ds44-boxLabel { // label for checkboxes and radiobuttons
     @include ds44-font-sizes(smallText); // 14px
-    margin-right: $ds44-components-margin;
+    margin-right: 2rem;
     padding-left: 3rem;
     display: inline-block;
 
@@ -178,7 +214,7 @@ input[type=checkbox],
 
 .ds44-radioLabel { // label for checkboxes and radiobuttons
     @include ds44-font-sizes(smallText); // 14px
-    margin-right: $ds44-components-margin;
+    margin-right: 2rem;
     padding-left: 3rem;
     display: inline-block;
 
@@ -283,6 +319,17 @@ input[type=radio],
     &.ds44-boxError {
         border-color: $ds44-error;
     }
+
+    &.ds44-error {
+        .ds44-btnIco .icon {
+            color: $ds44-error;
+        }
+    }
+}
+
+.ds44-selectValue {
+    @include ds44-font-sizes(largeButton);
+    position: absolute;
 }
 
 .ds44-selectLabel {
@@ -314,7 +361,7 @@ input[type=radio],
 }
 
 .ds44-select-list_elem {
-    margin-bottom: $ds44-large-vmargin;
+    margin-bottom: $ds44-large-vmargin/2;
 
     &:focus,
     &:hover,
@@ -431,7 +478,7 @@ input[type=radio],
 }
 
 .ds44-autocomp-list {
-    padding: $ds44-padding-xlarge $ds44-padding-large;
+    padding: $ds44-padding-medium $ds44-padding-large;
 }
 
 .ds44-autocomp-list_elem,
@@ -476,6 +523,16 @@ input[type=radio],
     }
 }
 
+// ellipsis
+.ds44-selectDisplay {
+    overflow: hidden;
+    text-overflow: ellipsis;
+    width: calc(100% - 40px);
+    display: block;
+    white-space: nowrap;
+    color: $ds44-color-soft-text;
+}
+
 
 /**
 * Error messages
@@ -491,8 +548,16 @@ input[type=radio],
     background-color: $ds44-error-bg;
     padding: $ds44-padding-small $ds44-padding-box;
 
+    .ds44-msgErrorText {
+      margin: $ds44-paragraph-margin-bottom 0;
+    }
+
     .icon {
         color: $ds44-error;
+    }
+
+    .ds44-iconInnerText{
+      vertical-align: middle;
     }
 }
 

@@ -50,6 +50,13 @@
           .ds44-cardPartner {
               background: $ds44-light ;
           }
+          &:focus,
+          &:hover,
+          &:active {
+            .ds44-cardArrow {
+              color: $ds44-dark;
+            }
+          }
     }
 
     &:focus,
@@ -64,6 +71,13 @@
 
     .ds44-cardTitle {
         font-size: 2.4rem;
+
+        a {
+          text-decoration: none;
+        }
+        a:hover {
+          text-decoration: underline;
+        }
     }
 
     .ds44-imgRatio {
@@ -83,14 +97,20 @@
 
     .ds44-cardArrow {
         position: absolute;
-        right: 1rem;
-        bottom: 1rem;
+        right: 0;
+        bottom: 0;
         opacity: 0;
+        padding: $ds44-padding-medium;
         color: $ds44-contextual-color;
         transition-duration: $ds44-timing-standard;
         transition-property: opacity;
         transition-timing-function: ease;
     }
+}
+
+a.ds44-card {
+  display: block;
+  text-decoration: none;
 }
 
 .ds44-card--verticalPicture {

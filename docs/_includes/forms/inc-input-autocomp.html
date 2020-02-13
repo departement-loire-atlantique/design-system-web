@@ -1,5 +1,5 @@
 <div class="ds44-form__container">
-    <label for="{{ include.id }}" class="ds44-formLabel"><span class="ds44-labelTypePlaceholderLarge ds44-moveLabel">{{ include.label }}{{ include.requiredStar }}</span> <input type="text" id="{{ include.id }}" class="ds44-inpLarge" {{ include.required }} role="combobox" aria-autocomplete="list" autocomplete="off" data-url="/autocomplete.json" {{include.options}}/></label>
+    <label for="{{ include.id }}" class="ds44-formLabel"><span class="ds44-labelTypePlaceholderLarge ds44-moveLabel">{{ include.label }}{{ include.requiredStar }}</span> <input type="text" id="{{ include.id }}" class="ds44-inpLarge" {{ include.required }} role="combobox" aria-autocomplete="list" autocomplete="off" data-url="/autocomplete.json" {{include.options}}/><button class="ds44-reset" type="button"><i class="icon icon-cross icon--large" aria-hidden="true"></i><span class="visually-hidden">effacer le contenu saisi</span></button></label>
     <div class="ds44-autocomp-container hidden">
         <div class="ds44-autocomp-list">
             <ul class="ds44-list" role="listbox"></ul>

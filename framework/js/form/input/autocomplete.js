@@ -41,20 +41,19 @@ class FormInputAutoComplete extends FormField {
         if (object.autoCompleterListElement) {
             object.autoCompleterListElement.setAttribute('id', 'owned_listbox_' + object.id);
         }
-        if (element.getAttribute('data-mode') === this.SELECT_ONLY_MODE) {
+        if (object.textElement.getAttribute('data-mode') === this.SELECT_ONLY_MODE) {
             object.mode = this.SELECT_ONLY_MODE;
         } else {
             object.mode = this.FREE_TEXT_MODE;
         }
-        element.setAttribute('aria-owns', 'owned_listbox_' + object.id);
+        object.textElement.setAttribute('aria-owns', 'owned_listbox_' + object.id);
 
         this.hide(objectIndex);
 
         MiscEvent.addListener('keyDown:*', this.record.bind(this, objectIndex));
-        MiscEvent.addListener('keyUp:*', this.write.bind(this, objectIndex));
         MiscEvent.addListener('keyUp:escape', this.hide.bind(this, objectIndex));
-        MiscEvent.addListener('keyUp:spacebar', this.selectOption.bind(this, objectIndex));
-        MiscEvent.addListener('keyUp:enter', this.selectOption.bind(this, objectIndex));
+        MiscEvent.addListener('keyPress:spacebar', this.selectOption.bind(this, objectIndex));
+        MiscEvent.addListener('keyPress:enter', this.selectOption.bind(this, objectIndex));
         MiscEvent.addListener('keyUp:arrowup', this.previousOption.bind(this, objectIndex));
         MiscEvent.addListener('keyUp:arrowdown', this.nextOption.bind(this, objectIndex));
 
@@ -94,9 +93,16 @@ class FormInputAutoComplete extends FormField {
         }
 
         object.currentElementValue = object.textElement.value;
+        if (object.currentElementValue) {
+            object.textElement.setAttribute('value', object.currentElementValue);
+        } else {
+            object.textElement.removeAttribute('value');
+        }
     }
 
     write(objectIndex) {
+        super.write(objectIndex);
+
         const object = this.objects[objectIndex];
         if (!object.textElement) {
             return;
@@ -106,6 +112,22 @@ class FormInputAutoComplete extends FormField {
         }
 
         this.autoComplete(objectIndex);
+    }
+
+    reset(objectIndex) {
+        const object = this.objects[objectIndex];
+        if (!object.textElement) {
+            return;
+        }
+
+        this.setNewValue(
+            objectIndex,
+            null,
+            null,
+            null
+        );
+        this.showHideResetButton(objectIndex);
+        MiscAccessibility.setFocus(object.textElement);
     }
 
     autoComplete(objectIndex) {
@@ -176,7 +198,7 @@ class FormInputAutoComplete extends FormField {
             childElement.remove();
         });
 
-        if(Object.keys(results).length === 0) {
+        if (Object.keys(results).length === 0) {
             // No result
             let elementAutoCompleterListItem = document.createElement('li');
             elementAutoCompleterListItem.classList.add('ds44-autocomp-list_no_elem');
@@ -251,6 +273,7 @@ class FormInputAutoComplete extends FormField {
         ) {
             object.textElement.value = null;
             object.currentElementValue = null;
+            object.textElement.removeAttribute('value');
             this.blur(objectIndex);
         }
 
@@ -298,6 +321,8 @@ class FormInputAutoComplete extends FormField {
         MiscAccessibility.hide(object.autoCompleterElement, true);
         object.textElement.setAttribute('aria-expanded', 'false');
         object.isExpanded = false;
+
+        this.showHideResetButton(objectIndex);
     }
 
     highlightSearch(result, search) {
@@ -341,7 +366,7 @@ class FormInputAutoComplete extends FormField {
                 selectedListItem === lastListItem
             ) {
                 // Select first
-                MiscAccessibility.setFocus(object.autoCompleterListElement.querySelector('.ds44-autocomp-list_elem'))
+                MiscAccessibility.setFocus(object.autoCompleterListElement.querySelector('.ds44-autocomp-list_elem'));
             } else {
                 // Select next
                 MiscAccessibility.setFocus(MiscDom.getNextSibling(selectedListItem));
@@ -393,20 +418,27 @@ class FormInputAutoComplete extends FormField {
         if (!object.textElement) {
             return;
         }
-        if (!object.autoCompleterListElement) {
+        if (!object.autoCompleterElement) {
             return;
         }
 
         const currentItem = evt.currentTarget;
-        const selectedListItem = object.autoCompleterListElement.querySelector('.selected_option');
+        const selectedListItem = object.autoCompleterElement.querySelector('.selected_option');
         if (selectedListItem) {
             selectedListItem.classList.remove('selected_option');
             selectedListItem.removeAttribute('id');
             selectedListItem.removeAttribute('aria-selected');
+            selectedListItem.removeAttribute('aria-pressed');
         }
         currentItem.classList.add('selected_option');
         currentItem.setAttribute('id', 'selected_option_' + object.id);
         currentItem.setAttribute('aria-selected', 'true');
+        if(
+            evt &&
+            evt.currentTarget.tagName.toLowerCase() === 'button'
+        ) {
+            currentItem.setAttribute('aria-pressed', 'true');
+        }
         object.textElement.setAttribute('aria-activedescendant', 'selected_option_' + object.id);
 
         if (this[currentItem.getAttribute('data-value')]) {
@@ -475,6 +507,11 @@ class FormInputAutoComplete extends FormField {
         object.valueElement.value = newValue;
         object.metadataElement.value = newMetadata;
         object.currentElementValue = newText;
+        if (object.currentElementValue) {
+            object.textElement.setAttribute('value', object.currentElementValue);
+        } else {
+            object.textElement.removeAttribute('value');
+        }
     }
 }
 

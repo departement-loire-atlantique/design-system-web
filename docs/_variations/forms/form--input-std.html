@@ -2,9 +2,9 @@
 layout: pattern
 ---
 
-{% include forms/input-std.html label="Champ standard" requiredStar='<sup aria-hidden="true">*</sup>' required='required aria-required="true"' %}
+{% include forms/input-std.html label="Champ standard" id="inpStd-1" requiredStar='<sup aria-hidden="true">*</sup>' required='required aria-required="true"' %}
 
-{% include forms/inc-input-large.html label="Champ large" requiredStar='<sup aria-hidden="true">*</sup>' required='required aria-required="true"' %}
+{% include forms/inc-input-large.html label="Champ large" id="inpLarge-1" requiredStar='<sup aria-hidden="true">*</sup>' required='required aria-required="true"' %}
 
 {% include forms/inc-input-labelExt.html label="Champ avec label exterieur" requiredStar='<sup aria-hidden="true">*</sup>' required='required aria-required="true"' placeholder='placeholder="Placeholder" title="Placeholder"' %}
 
@@ -14,8 +14,15 @@ layout: pattern
 
 {% include forms/inc-checkboxes.html choices="m:Homme,f:Femme" required="true" %}
 
-{% include forms/inc-radio.html label="Choix" number="1" requiredStar='<sup aria-hidden="true">*</sup>' required='required aria-required="true"' %}
-{% include forms/inc-radio.html label="Choix" number="2" requiredStar='<sup aria-hidden="true">*</sup>' required='required aria-required="true"' %}
+{% include forms/inc-radios.html name="radio1" choices="m:Homme,f:Femme" required="true" %}
+
+<p role="heading" aria-level="2" class="h3-like">Cases à cocher et boutons radio en liste horizontale</p>
+
+{% include forms/inc-checkbox.html label="Choix 1" value="1" list="true" %}
+{% include forms/inc-checkbox.html label="Choix 2" value="2" list="true" %}
+
+{% include forms/inc-radio.html name="radio2" label="Choix 1" value="1" list="true" %}
+{% include forms/inc-radio.html name="radio2" label="Choix 2" value="2" list="true" %}
 
 <hr />
 
@@ -23,4 +30,3 @@ layout: pattern
 <p role="heading" aria-level="2" class="h3-like">Textarea</p>
 
 {% include forms/inc-textarea.html label="Votre message ici" requiredStar='<sup aria-hidden="true">*</sup>' required='required aria-required="true"' %}
-

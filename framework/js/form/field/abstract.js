@@ -4,9 +4,9 @@ class FormField {
         this.objects = [];
         this.mainClassName = 'ds44-moveLabel';
         this.errorMessages = {
-            'default': 'Le champ "{fieldName}" n\'est pas valide',
-            'valueMissing': 'Veuillez renseigner le champ : {fieldName}',
-            'patternMismatch': 'Veuillez renseigner le champ "{fieldName}" avec le bon format',
+            'default': '"{fieldName}" n\'est pas valide',
+            'valueMissing': 'Veuillez renseigner : {fieldName}',
+            'patternMismatch': 'Veuillez renseigner "{fieldName}" avec le bon format',
         };
 
         document
@@ -24,8 +24,9 @@ class FormField {
             'name': element.getAttribute('id'),
             'textElement': element,
             'labelElement': MiscDom.getPreviousSibling(element, 'span'),
+            'resetButton': MiscDom.getNextSibling(element, '.ds44-reset'),
             'containerElement': element.closest('.ds44-form__container'),
-        }
+        };
         this.objects.push(object);
         const objectIndex = (this.objects.length - 1);
 
@@ -37,6 +38,54 @@ class FormField {
         MiscEvent.addListener('blur', this.blur.bind(this, objectIndex), element);
         MiscEvent.addListener('invalid', this.invalid.bind(this, objectIndex), element);
         MiscEvent.addListener('form:validate', this.validate.bind(this, objectIndex));
+        MiscEvent.addListener('keyUp:*', this.write.bind(this, objectIndex));
+        if(object.resetButton) {
+            MiscEvent.addListener('click', this.reset.bind(this, objectIndex), object.resetButton);
+        }
+        if(object.labelElement) {
+            MiscEvent.addListener('click', this.focusOnTextElement.bind(this, objectIndex), object.labelElement);
+        }
+    }
+
+    write(objectIndex) {
+        const object = this.objects[objectIndex];
+        if (!object.textElement) {
+            return;
+        }
+        if (object.textElement !== document.activeElement) {
+            return;
+        }
+
+        this.showHideResetButton(objectIndex);
+    }
+
+    reset(objectIndex) {
+        const object = this.objects[objectIndex];
+        if (!object.textElement) {
+            return;
+        }
+
+        object.textElement.value = null;
+        this.showHideResetButton(objectIndex);
+        MiscAccessibility.setFocus(object.textElement);
+    }
+
+    showHideResetButton(objectIndex) {
+        const object = this.objects[objectIndex];
+        if (!object.textElement) {
+            return;
+        }
+        if (!object.resetButton) {
+            return;
+        }
+
+        if(!object.textElement.value) {
+            // Hide reset button
+            object.resetButton.style.display = 'none';
+        } else {
+            // Hide reset button
+            object.resetButton.style.display = 'block';
+        }
     }
 
     validate(evt) {
@@ -86,6 +135,15 @@ class FormField {
         return data;
     }
 
+    focusOnTextElement(objectIndex) {
+        const object = this.objects[objectIndex];
+        if (!object.textElement) {
+            return;
+        }
+
+        MiscAccessibility.setFocus(object.textElement);
+    }
+
     focus(objectIndex) {
         const object = this.objects[objectIndex];
 
@@ -115,7 +173,7 @@ class FormField {
         }
 
         object.textElement.removeAttribute('aria-invalid');
-        object.textElement.removeAttribute('aria-describedby')
+        object.textElement.removeAttribute('aria-describedby');
         object.textElement.classList.remove('ds44-error');
 
         if (object.containerElement) {
@@ -175,7 +233,7 @@ class FormField {
 
         let errorIconElement = document.createElement('i');
         errorIconElement.classList.add('icon');
-        errorIconElement.classList.add('icon-cross');
+        errorIconElement.classList.add('icon-attention');
         errorIconElement.classList.add('icon--sizeM');
         errorIconElement.setAttribute('aria-hidden', 'true');
         errorMessageElement.appendChild(errorIconElement);
@@ -187,11 +245,11 @@ class FormField {
 
         object.textElement.classList.add('ds44-error');
         object.textElement.setAttribute('aria-invalid', 'true');
-        object.textElement.setAttribute('aria-describedby', errorMessageElementId)
+        object.textElement.setAttribute('aria-describedby', errorMessageElementId);
     }
 
     formatErrorMessage(errorMessage, labelElement) {
         return errorMessage
-            .replace('{fieldName}', labelElement.innerText.replace(/\*$/, ''))
+            .replace('{fieldName}', labelElement.innerText.replace(/\*$/, ''));
     }
 }

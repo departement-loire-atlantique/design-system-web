@@ -1,0 +1,17 @@
+<section class="ds44-card ds44-card--horizontal">
+  <div class="ds44-flex-container ds44-flex-valign-center">
+    <div class="ds44-card__section--horizontal--img">
+      <picture class="ds44-container-imgRatio ds44-container-imgRatio--profil ds44-m-std ">
+       <img src="../../assets/images/sample-img-profil.jpg" alt="" class="ds44-w100 ds44-imgRatio ds44-imgRatio--profil">
+      </picture>
+   </div>
+    <div class="ds44-card__section--horizontal">
+      <p role="heading" {{ include.ariaLevel }} class="ds44-card__title"><a href="#" {{ include.target }} class="ds44-card__globalLink" title="{{ include.title }}">{{ include.title }}</a></p>
+      <p class="ds44-cardFile">{{ include.text }}</p>
+      <p class="ds44-cardLocalisation"><i class="icon icon-marker" aria-hidden="true"></i><span class="ds44-iconInnerText">{{ include.localisation }}</span></p>
+      <p class="ds44-cardLocalisation"><i class="icon icon-phone" aria-hidden="true"></i><span class="ds44-iconInnerText">{{ include.telephone }}</span></p>
+      <p class="ds44-cardLocalisation"><i class="icon icon-mail" aria-hidden="true"></i><a href="mailto:contact@loire-atlantique.fr" class="ds44-iconInnerText" aria-label="Contacter [Prénom NOM] : [Adresse email contact] ">{{ include.email }}</a></p>
+      <i class="icon icon-arrow-right ds44-cardArrow" aria-hidden="true"></i>
+    </div>
+  </div>
+</section>

@@ -37,6 +37,24 @@ layout: pattern
     <div><input type="submit" class="ds44-btnStd" value="Tester le champ adresse" /></div>
 </form>
 <hr />
+<form>
+    {% include forms/inc-select-simple.html id="select1" label="Select simple large" required="true" requiredStar='<sup aria-hidden="true">*</sup>' class="ds44-inpLarge" %}
+    <div><input type="submit" class="ds44-btnStd" value="Tester le select simple" /></div>
+</form>
+<hr />
+<form>
+    {% include forms/inc-select-std.html id="select2" label="Select à radios" required="true" requiredStar='<sup aria-hidden="true">*</sup>' class="ds44-inpStd" %}
+    <div><input type="submit" class="ds44-btnStd" value="Tester le select à radios" /></div>
+</form>
+<hr />
+<form>
+    {% include forms/inc-select-multiple.html id="select3" label="Select à cases" required="true" requiredStar='<sup aria-hidden="true">*</sup>' class="ds44-inpStd" %}
+    <div><input type="submit" class="ds44-btnStd" value="Tester le select à cases" /></div>
+</form>
+<hr />
+
+
+
 <!--
 <hr />
 
@@ -46,7 +64,7 @@ layout: pattern
     requiredStar='<sup aria-hidden="true">*</sup>' 
     required='required aria-required="true"' 
     error="ds44-boxError" 
-    size="ds44-inpLarge"
+    class="ds44-inpLarge"
     errorMsg='<div class="ds44-errorMsg-container"><p id="msgErrorChk3" class="ds44-msgErrorText"><i class="icon icon-cross icon--sizeM" aria-hidden="true"></i> <span class="ds44-iconInnerText">Veuillez sélectionner un élément</span></p></div>'
 %}
 <div><input type="submit" class="ds44-btnStd" value="Tester le select" /></div>
@@ -59,7 +77,7 @@ layout: pattern
     requiredStar='<sup aria-hidden="true">*</sup>'
     required='required aria-required="true"'
     error="ds44-boxError"
-    size="ds44-inpLarge"
+    class="ds44-inpLarge"
     errorMsg='<div class="ds44-errorMsg-container"><p id="msgErrorChk4" class="ds44-msgErrorText"><i class="icon icon-cross icon--sizeM" aria-hidden="true"></i> <span class="ds44-iconInnerText">Veuillez sélectionner un élément</span></p></div>'
 %}
 <div><input type="submit" class="ds44-btnStd" value="Tester le select multiple" /></div>

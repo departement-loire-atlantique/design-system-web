@@ -6,7 +6,8 @@ class Form {
             'inputAutocomplete': null,
             'textarea': null,
             'checkbox': null,
-            'radio': null
+            'radio': null,
+            'selectStandard': null
         };
 
         document
