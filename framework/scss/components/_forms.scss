@@ -27,6 +27,10 @@
   * Input basics
   */
 
+input {
+    font-family: $ds44-font-family-base;
+}
+
 .ds44-form__container {
     position: relative;
     margin: $ds44-large-vmargin 0;
@@ -118,12 +122,13 @@ textarea {
 
 .ds44-inpLarge {
     @include ds44-font-sizes(input);
+    font-family: $ds44-font-family-base;
     border-radius: $ds44-border-radius;
     padding: $ds44-padding-large;
     border: 1px solid $ds44-gray;
     min-width: 100%;
     vertical-align: middle;
-    min-height: $ds44-largeHeight;
+    height: $ds44-largeHeight;
 
     &:disabled {
         background-color: $ds44-light-bg;
@@ -158,7 +163,7 @@ textarea {
 
 .ds44-boxLabel { // label for checkboxes and radiobuttons
     @include ds44-font-sizes(smallText); // 14px
-    margin-right: $ds44-components-margin;
+    margin-right: 2rem;
     padding-left: 3rem;
     display: inline-block;
 
@@ -205,7 +210,7 @@ input[type=checkbox],
 
 .ds44-radioLabel { // label for checkboxes and radiobuttons
     @include ds44-font-sizes(smallText); // 14px
-    margin-right: $ds44-components-margin;
+    margin-right: 2rem;
     padding-left: 3rem;
     display: inline-block;
 

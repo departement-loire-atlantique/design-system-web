@@ -2,7 +2,7 @@
     <div class="ds44-select__shape {{ include.size }}">
         <p class="ds44-selectLabel" id="label-{{ include.id }}">{{ include.label }}{{ include.requiredStar }}</p>
         <p id="{{ include.id }}" class="ds44-selectDisplay" {% if include.required == 'true' %}data-required="true"{% endif %}></p>
-        <button type="button" class="ds44-btnIco ds44-posAbs ds44-posRi ds44-btnOpen" aria-labelledby="label-{{ include.id }}" aria-expanded="false" aria-controls="list-select-{{ include.id }}"><i class="icon icon-down" aria-hidden="true"></i><span class="visually-hidden">Ouvrir le menu de choix : {{ include.label }}</span></button>
+        <button type="button" class="ds44-btnIco ds44-posAbs ds44-posRi ds44-btnOpen" aria-labelledby="label-{{ include.id }}" aria-expanded="false" aria-controls="list-select-{{ include.id }}"><i class="icon icon-down {% if include.size == 'ds44-inpLarge' %}icon--sizeXL{% else %}icon--sizeL{% endif %}" aria-hidden="true"></i><span class="visually-hidden">Ouvrir le menu de choix : {{ include.label }}</span></button>
     </div>
     <div class="ds44-select-container hidden" role="combobox" id="list-select-{{ include.id }}">
         <div class="ds44-listSelect">
