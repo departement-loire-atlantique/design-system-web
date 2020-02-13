@@ -95,7 +95,7 @@
     }
 
     .ds44-logoContainer {
-        flex-wrap: wrap;       
+        flex-wrap: wrap;
     }
 
     .ds44-header .ds44-colRight .ds44-btnIcoText--maxi .icon::before {
@@ -115,19 +115,21 @@
             position: relative;
             margin: 0 0 0 1rem;
             min-width: 0;
+            text-align: center;
 
-            .icon + .ds44-btnInnerText, 
+            .icon + .ds44-btnInnerText,
             .ds44-btnInnerText + .icon {
-                margin-left: 0;           
+                margin-left: 0;
             }
 
             .ds44-btnInnerText {
                 position: relative;
                 white-space: nowrap;
-                margin-top: .5rem; 
+                margin-top: .5rem;
             }
 
         }
+
     }
 }
 
@@ -135,6 +137,19 @@
 
     .ds44-header {
         min-height: 0;
+    }
+
+    .ds44-header .ds44-colRight {
+
+        .ds44-btn--contextual {
+
+            &:focus,
+            &:hover,
+            &:active {
+                background-color: transparent;
+                border-color: transparent;
+            }
+        }
     }
 
 }
@@ -150,20 +165,16 @@
         padding: .5rem 0 0 0;
         left: 0;
     }
-    
+
     .ds44-logoContainer {
-        flex-wrap: wrap;  
+        flex-wrap: wrap;
 
         img {
             height: 35px;
             max-width: none;
-        }      
+        }
     }
 
-    .ds44-logo {
-        padding-left: .5rem;
-    }
-    
     .ds44-headerImg {
         min-height: 245px;
     }
