@@ -529,7 +529,7 @@ input[type=radio],
 .ds44-selectDisplay {
     overflow: hidden;
     text-overflow: ellipsis;
-    width: calc(100% - 40px);
+    width: calc(100% - 30px);
     display: block;
     white-space: nowrap;
     color: $ds44-color-dark-text;
@@ -622,9 +622,13 @@ input[type=radio],
 
 @media (max-width: $ds44-small - .0625) {
 
+    .ds44-facetteContainer {
+         padding: 2.5rem; // on augmente les marges en mobile pour décoller les labels
+    }
+
     .ds44-fieldContainer {
         margin-right: 0;
-        margin-bottom: $ds44-large-vmargin;
+        margin-bottom: 2.5rem; // marge identique au padding du ds44-facetteContainer
 
         &:last-child {
             margin-bottom: 0;
