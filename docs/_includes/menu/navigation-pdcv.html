@@ -13,13 +13,11 @@
         <div class="grid-12-small-1 ds44-grid-valign-center">
 
             <div class="col-5-small-1 txtcenter">
-                <p class="h4-like" aria-describedby="commune-name">Consultez l’actualité ou trouvez des contacts près de chez vous :</p>  
+                <p class="h4-like" aria-describedby="commune-name">Consultez l’actualité ou trouvez des contacts près de chez vous :</p> 
                 <form>
-                    <div class="ds44-form__container">
-                        <label for="name" class="ds44-formLabel"><span class="ds44-labelTypePlaceholderLarge ds44-moveLabel">Votre commune</span> <input type="text" id="commune-name" class="ds44-inpLarge" required aria-required="true" /></label>
-                    </div>
-                    <button type="button" class="ds44-btnStd ds44-btn--invert" aria-label="Valider votre recherche près de chez vous"><span class="ds44-btnInnerText">Valider</span><i class="icon icon-long-arrow-right" aria-hidden="true"></i></button>
-                </form>
+                    {% include forms/inc-input-large.html id="champ-commune" label="Champ standard" requiredStar='<sup aria-hidden="true">*</sup>' required='required aria-required="true"' %}
+                    <button type="submit" class="ds44-btnStd ds44-btn--invert" aria-label="Valider votre recherche près de chez vous"><span class="ds44-btnInnerText">Valider</span><i class="icon icon-long-arrow-right" aria-hidden="true"></i></button>
+                </form> 
             </div>
 
             <div class="col-2-small-1 txtcenter">
