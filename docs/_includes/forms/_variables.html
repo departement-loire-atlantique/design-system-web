@@ -22,10 +22,10 @@
 
 {% if include.required == 'true' %}
     {% assign requiredStar = '<sup aria-hidden="true">*</sup>' %}
-    {% assign requiredOptions = 'required aria-required="true"' %}
+    {% assign requiredAttributes = 'required aria-required="true"' %}
 {% else %}
     {% assign requiredStar = '' %}
-    {% assign requiredOptions = '' %}
+    {% assign requiredAttributes = '' %}
 {% endif %}
 
 {% if include.title %}
@@ -34,8 +34,32 @@
     {% assign title = '' %}
 {% endif %}
 
+{% if include.placeholder %}
+    {% assign placeholder = 'placeholder="' | append: include.placeholder | append: '"' %}
+{% else %}
+    {% assign placeholder = '' %}
+{% endif %}
+
 {% if include.label %}
     {% assign label = include.label %}
 {% else %}
     {% assign label = 'Étiquette non définie' %}
+{% endif %}
+
+{% if include.attributes %}
+    {% assign attributes = include.attributes %}
+{% else %}
+    {% assign attributes = '' %}
+{% endif %}
+
+{% if mainClass == 'ds44-inpLarge' %}
+    {% assign iconClass = 'icon--sizeXL' %}
+{% else %}
+    {% assign iconClass = 'icon--sizeL' %}
+{% endif %}
+
+{% if include.labelClass %}
+    {% assign labelClass = include.labelClass %}
+{% else %}
+    {% assign labelClass = 'ds44-formLabel' %}
 {% endif %}

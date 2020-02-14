@@ -1,15 +1,17 @@
-<div class="ds44-form__radio_container" {% if include.required == 'true' %}data-required="true"{% endif %} data-name="{{ include.name }}">
+{% include forms/_variables.html %}
+
+{% if include.required == 'true' %}
+    {% assign attributes = attributes | append : ' data-required="true" ' %}
+    {% assign requiredAttributes = '' %}
+{% endif %}
+
+<div class="ds44-form__radio_container" data-id="{{ id }}" {{ attributes }}>
     {% assign choices = (include.choices | split:',') %}
     {% for choiceData in choices %}
         {% assign choice = (choiceData | split:':') %}
         {% assign value = choice[0] %}
         {% assign label = choice[1] %}
-        {% if include.required == 'true' %}
-            {% assign requiredStar = '<sup aria-hidden="true">*</sup>' %}
-        {% else %}
-            {% assign requiredStar = '' %}
-        {% endif %}
 
-        {% include forms/inc-radio.html name=include.name value=value label=label requiredStar=requiredStar %}
+        {% include forms/inc-radio.html name=include.name value=value label=label list=include.list %}
     {% endfor %}
 </div>

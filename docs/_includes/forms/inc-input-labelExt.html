@@ -1,5 +1,13 @@
+{% include forms/_variables.html %}
 
-<div class="ds44-form__container">
-    <label for="name3" class="ds44-formLabel--external">{{ include.label }}{{ include.requiredStar }}<button class="ds44-reset" type="button"><i class="icon icon-cross icon--large" aria-hidden="true"></i><span class="visually-hidden">effacer le contenu saisi</span></button></label>
-    <input type="text" id="name3" class="ds44-inpStd" {{ include.required }} {{ include.placeholder }}  />
-</div>
+{% assign labelClass = 'ds44-formLabel--external' %}
+
+{% capture mainContent %}
+<input type="text" id="{{ id }}" class="{{ mainClass }}" {{ requiredAttributes }} {{ title }} {{ attributes }} {{ placeholder }} />{% include forms/parts/reset.html %}
+{% endcapture %}
+
+{% capture labelContent %}
+{% include forms/parts/label.html content=mainContent %}
+{% endcapture %}
+
+{% include forms/parts/container.html content=labelContent %}

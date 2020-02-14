@@ -4,13 +4,13 @@ layout: pattern
 <form data-is-ajax="true">
     <div class="ds44-facetteContainer ds44-bgDark ds44-flex-container ds44-small-flex-col">
         <div class="ds44-fieldContainer ds44-fg1">
-            {% include forms/input-std.html id="input1" label="Champ standard" requiredStar='<sup aria-hidden="true">*</sup>' required='required aria-required="true"' class="ds44-inpLarge" %}
+            {% include forms/input-std.html label="Champ standard" required="true" class="ds44-inpLarge" %}
         </div>
         <div class="ds44-fieldContainer ds44-fg1">
-            {% include forms/inc-select-multiple.html id="select3" label="Select à cases" required="true" requiredStar='<sup aria-hidden="true">*</sup>' class="ds44-inpLarge" %}
+            {% include forms/inc-select-multiple.html label="Select à cases" required="true" class="ds44-inpLarge" %}
         </div>
         <div class="ds44-fieldContainer ds44-fg1">
-            {% include forms/inc-input-autocomp.html id="name10" label="Champ texte libre" requiredStar='<sup aria-hidden="true">*</sup>' required='required aria-required="true"' options='data-mode="free-text"' %}
+            {% include forms/inc-input-autocomp.html label="Champ texte libre" required="true" class="ds44-inpLarge" attributes='data-mode="free-text"' %}
         </div>
         <div class="ds44-fieldContainer ds44-small-fg1">
             <button class="ds44-btnStd ds44-btnStd--large ds44-theme"><span class="ds44-btnInnerText">Rechercher</span><i class="icon icon-long-arrow-right" aria-hidden="true"></i></button>

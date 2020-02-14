@@ -1,7 +1,7 @@
 {% include forms/_variables.html %}
 
 {% capture mainContent %}
-<input type="text" id="{{ id }}" class="{{ mainClass }}" {{ requiredOptions }} {{ title }} {{ include.ariaOptions }} />{% include forms/parts/reset.html %}
+<input type="text" id="{{ id }}" class="{{ mainClass }}" {{ requiredAttributes }} {{ title }} {{ attributes }} />{% include forms/parts/reset.html %}
 {% endcapture %}
 
 {% capture labelContent %}

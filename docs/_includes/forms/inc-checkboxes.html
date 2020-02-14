@@ -1,11 +1,11 @@
 {% include forms/_variables.html %}
 
 {% if include.required == 'true' %}
-    {% assign options = 'data-required="true" ' %}
-    {% assign requiredOptions = '' %}
+    {% assign attributes = attributes | append : ' data-required="true" ' %}
+    {% assign requiredAttributes = '' %}
 {% endif %}
 
-<div class="ds44-form__checkbox_container" data-id="{{ id }}" {{ options }}>
+<div class="ds44-form__checkbox_container" data-id="{{ id }}" {{ attributes }}>
     {% assign choices = (include.choices | split:',') %}
     {% for choiceData in choices %}
         {% assign choice = (choiceData | split:':') %}
