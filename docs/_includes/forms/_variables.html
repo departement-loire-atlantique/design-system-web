@@ -1,0 +1,41 @@
+{% if include.id %}
+    {% assign id = include.id %}
+{% else %}
+    {% assign min = 0 %}
+    {% assign max = 100000 %}
+    {% assign diff = max | minus: min %}
+    {% assign randomNumber = "now" | date: "%N" | modulo: diff | plus: min %}
+    {% assign id = 'form-element-' | append : randomNumber %}
+{% endif %}
+
+{% if include.class %}
+    {% assign mainClass = include.class %}
+{% else %}
+    {% assign mainClass = 'ds44-inpStd' %}
+{% endif %}
+
+{% if mainClass == 'ds44-inpLarge' %}
+    {% assign placeholderClass = 'ds44-labelTypePlaceholderLarge' %}
+{% else %}
+    {% assign placeholderClass = 'ds44-labelTypePlaceholder' %}
+{% endif %}
+
+{% if include.required == 'true' %}
+    {% assign requiredStar = '<sup aria-hidden="true">*</sup>' %}
+    {% assign requiredOptions = 'required aria-required="true"' %}
+{% else %}
+    {% assign requiredStar = '' %}
+    {% assign requiredOptions = '' %}
+{% endif %}
+
+{% if include.title %}
+    {% assign title = 'title="' | append: include.title | append: '"' %}
+{% else %}
+    {% assign title = '' %}
+{% endif %}
+
+{% if include.label %}
+    {% assign label = include.label %}
+{% else %}
+    {% assign label = 'Étiquette non définie' %}
+{% endif %}
