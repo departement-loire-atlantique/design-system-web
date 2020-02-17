@@ -9,6 +9,8 @@ class Header {
         MiscEvent.addListener('overlay:hide', this.overlayHide.bind(this));
         MiscEvent.addListener('menu:show', this.menuShow.bind(this));
         MiscEvent.addListener('menu:hide', this.menuHide.bind(this));
+        MiscEvent.addListener('loader:show', this.overlayShow.bind(this));
+        MiscEvent.addListener('loader:hide', this.overlayHide.bind(this));
         MiscEvent.addListener('keyUp:tab', this.checkFocusPosition.bind(this));
 
         this.menuHide();

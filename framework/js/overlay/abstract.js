@@ -9,6 +9,8 @@ class Overlay {
 
         // Events
         MiscEvent.addListener('keyUp:escape', this.hideListener);
+        MiscEvent.addListener('loader:show', this.showLoader.bind(this));
+        MiscEvent.addListener('loader:hide', this.hideLoader.bind(this));
 
         // Ajouter un event listener sur les boutons qui ouvrent un overlay / modale
         document
@@ -138,6 +140,22 @@ class Overlay {
         }
 
         this.hide();
+    }
+
+    showLoader() {
+        if(!this.modal) {
+            return;
+        }
+
+        MiscAccessibility.hide(this.modal);
+    }
+
+    hideLoader() {
+        if(!this.modal) {
+            return;
+        }
+
+        MiscAccessibility.show(this.modal);
     }
 }
 

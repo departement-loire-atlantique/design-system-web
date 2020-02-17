@@ -4,6 +4,8 @@ class Main {
         MiscEvent.addListener('overlay:hide', this.hide.bind(this));
         MiscEvent.addListener('menu:show', this.show.bind(this));
         MiscEvent.addListener('menu:hide', this.hide.bind(this));
+        MiscEvent.addListener('loader:show', this.show.bind(this));
+        MiscEvent.addListener('loader:hide', this.hide.bind(this));
     }
 
     show() {

@@ -7,6 +7,10 @@ class MiscAccessibility {
         return ['i', 'sup'];
     }
 
+    static getFocusableElementsSelector() {
+        return ['svg'];
+    }
+
     // Fonction qui va forcer le focus à faire une boucle sur un élément
     // en ajoutant deux inputs 'hidden' qui peuvent être focus, au début
     // et à la fin
@@ -89,6 +93,8 @@ class MiscAccessibility {
             element.removeAttribute('aria-hidden');
             if (element.closest(MiscAccessibility.getEnabledElementsSelector()) === element) {
                 element.removeAttribute('tabindex');
+            } else if (element.closest(MiscAccessibility.getFocusableElementsSelector()) === element) {
+                element.removeAttribute('focusable');
             }
         }
 
@@ -114,6 +120,8 @@ class MiscAccessibility {
             element.setAttribute('aria-hidden', true);
             if (element.closest(MiscAccessibility.getEnabledElementsSelector()) === element) {
                 element.setAttribute('tabindex', '-1');
+            } else if (element.closest(MiscAccessibility.getFocusableElementsSelector()) === element) {
+                element.setAttribute('focusable', 'false');
             }
         }
 
@@ -132,8 +140,17 @@ class MiscAccessibility {
         if (!element.hasAttribute('data-bkp-aria-hidden')) {
             element.setAttribute('data-bkp-aria-hidden', (element.getAttribute('aria-hidden') || ''));
         }
-        if (!element.hasAttribute('data-bkp-tabindex')) {
+        if (
+            element.closest(MiscAccessibility.getEnabledElementsSelector()) === element &&
+            !element.hasAttribute('data-bkp-tabindex')
+        ) {
             element.setAttribute('data-bkp-tabindex', (element.getAttribute('tabindex') || ''));
+        }
+        if (
+            element.closest(MiscAccessibility.getFocusableElementsSelector()) === element &&
+            !element.hasAttribute('data-bkp-focusable')
+        ) {
+            element.setAttribute('data-bkp-focusable', (element.getAttribute('focusable') || ''));
         }
     }
 
@@ -147,6 +164,9 @@ class MiscAccessibility {
         }
         if (element.hasAttribute('data-bkp-tabindex')) {
             element.removeAttribute('data-bkp-tabindex');
+        }
+        if (element.hasAttribute('data-bkp-focusable')) {
+            element.removeAttribute('data-bkp-focusable');
         }
     }
 }

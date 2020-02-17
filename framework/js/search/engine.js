@@ -66,7 +66,7 @@ class SearchEngine {
 
     search(evt) {
         // Show loader
-        MiscEvent.dispatch('loader:show', {'parent': this.element});
+        MiscEvent.dispatch('loader:requestShow');
 
         // Manage parameters
         if (
@@ -100,11 +100,11 @@ class SearchEngine {
         this.results = response.results;
 
         this.showResults();
-        MiscEvent.dispatch('loader:hide', {'parent': this.element});
+        MiscEvent.dispatch('loader:requestHide');
     }
 
     searchError() {
-        MiscEvent.dispatch('loader:hide', {'parent': this.element});
+        MiscEvent.dispatch('loader:requestHide');
     }
 
     showResults() {
