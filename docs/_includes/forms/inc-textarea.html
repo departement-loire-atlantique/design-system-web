@@ -1,3 +1,11 @@
-<div class="ds44-form__container">
-    <label for="{{ include.id }}" class="ds44-formLabel"><span class="ds44-labelTypePlaceholder ds44-moveLabel">{{ include.label }}{{ include.requiredStar }}</span> <textarea type="text" id="{{ include.id }}" rows="9" cols="1" class="ds44-inpStd" {{ include.required }}></textarea></label>
-</div>
+{% include forms/_variables.html %}
+
+{% capture mainContent %}
+<textarea rows="9" cols="1" id="{{ id }}" class="{{ mainClass }}" {{ requiredAttributes }} {{ title }} {{ attributes }}></textarea>
+{% endcapture %}
+
+{% capture labelContent %}
+{% include forms/parts/label.html content=mainContent %}
+{% endcapture %}
+
+{% include forms/parts/container.html content=labelContent %}

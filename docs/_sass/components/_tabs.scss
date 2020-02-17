@@ -36,6 +36,15 @@
 
 }
 
+/**
+ * Tabs list item
+ */
+.c-tabs__item {
+    a {
+        display: table-cell;
+    }
+}
+
  /**
  * Tabs list
  * 1) Overlap the tabs bottom border
@@ -129,4 +138,3 @@
 	  overflow-y: inherit; /* 2 */
 	}
   }
-  

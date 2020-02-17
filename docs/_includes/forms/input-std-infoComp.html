@@ -1,3 +1,11 @@
-<div class="ds44-form__container">
-    <label for="{% if include.id %}{{ include.id }}{% else %}name1{% endif %}" class="ds44-formLabel"><span class="{% if include.class == 'ds44-inpLarge' %}ds44-labelTypePlaceholderLarge{% else %}ds44-labelTypePlaceholder{% endif %}">{{ include.label }}{{ include.requiredStar }}</span> <input type="text" id="{% if include.id %}{{ include.id }}{% else %}name1{% endif %}" class="{% if include.class %}{{ include.class }}{% else %}ds44-inpStd{% endif %}" {{ include.required }} {{ include.title }} {{ include.aria-desc }} /><span class="ds44-labelTypeInfoComp">{{ include.infoComp }}</span> <button class="ds44-reset" type="button"><i class="icon icon-cross icon--large" aria-hidden="true"></i><span class="visually-hidden">effacer le contenu saisi</span></button></label>
-</div>
+{% include forms/_variables.html %}
+
+{% capture mainContent %}
+<input type="text" id="{{ id }}" class="{{ mainClass }}" {{ requiredAttributes }} {{ title }} {{ attributes }} /><span class="ds44-labelTypeInfoComp">{{ include.infoComp }}</span>{% include forms/parts/reset.html %}
+{% endcapture %}
+
+{% capture labelContent %}
+{% include forms/parts/label.html content=mainContent %}
+{% endcapture %}
+
+{% include forms/parts/container.html content=labelContent %}

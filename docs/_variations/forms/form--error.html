@@ -3,17 +3,17 @@ layout: pattern
 ---
 
 <form>
-    {% include forms/input-std.html id="input1" label="Champ standard" requiredStar='<sup aria-hidden="true">*</sup>' required='required aria-required="true"' %}
+    {% include forms/input-std.html label="Champ standard" required="true" %}
     <div><input type="submit" class="ds44-btnStd" value="Tester le champ" /></div>
 </form>
 <hr />
 <form>
-    {% include forms/inc-textarea.html id="textarea1" label="Champ textarea" requiredStar='<sup aria-hidden="true">*</sup>' required='required aria-required="true"' %}
+    {% include forms/inc-textarea.html label="Champ textarea" required="true" %}
     <div><input type="submit" class="ds44-btnStd" value="Tester le champ" /></div>
 </form>
 <hr />
 <form>
-    {% include forms/inc-checkboxes.html name="checkbox1" choices="m:Homme,f:Femme" required="true" %}
+    {% include forms/inc-checkboxes.html choices="m:Homme,f:Femme" required="true" %}
     <div><input type="submit" class="ds44-btnStd" value="Tester les cases" /></div>
 </form>
 <hr />
@@ -23,32 +23,32 @@ layout: pattern
 </form>
 <hr />
 <form>
-    {% include forms/inc-input-autocomp.html id="name10" label="Champ texte libre" requiredStar='<sup aria-hidden="true">*</sup>' required='required aria-required="true"' options='data-mode="free-text"' %}
+    {% include forms/inc-input-autocomp.html label="Champ texte libre" required="true" attributes='data-mode="free-text"' %}
     <div><input type="submit" class="ds44-btnStd" value="Tester le champ autocomplétion" /></div>
 </form>
 <hr />
 <form>
-    {% include forms/inc-input-city.html id="inc-input-city" label="Champ commune" requiredStar='<sup aria-hidden="true">*</sup>' required='required aria-required="true"' options='data-mode="select-only"' %}
+    {% include forms/inc-input-city.html label="Champ commune" required="true" attributes='data-mode="select-only"' %}
     <div><input type="submit" class="ds44-btnStd" value="Tester le champ commune" /></div>
 </form>
 <hr />
 <form>
-    {% include forms/inc-input-autocomp.html id="name11" label="Champ adresse" requiredStar='<sup aria-hidden="true">*</sup>' required='required aria-required="true"' options='data-mode="select-only"' %}
+    {% include forms/inc-input-autocomp.html label="Champ adresse" required="true" attributes='data-mode="select-only"' %}
     <div><input type="submit" class="ds44-btnStd" value="Tester le champ adresse" /></div>
 </form>
 <hr />
 <form>
-    {% include forms/inc-select-simple.html id="select1" label="Select simple large" required="true" requiredStar='<sup aria-hidden="true">*</sup>' class="ds44-inpLarge" %}
+    {% include forms/inc-select-simple.html label="Select simple large" required="true" class="ds44-inpLarge" %}
     <div><input type="submit" class="ds44-btnStd" value="Tester le select simple" /></div>
 </form>
 <hr />
 <form>
-    {% include forms/inc-select-std.html id="select2" label="Select à radios" required="true" requiredStar='<sup aria-hidden="true">*</sup>' class="ds44-inpStd" %}
+    {% include forms/inc-select-std.html label="Select à radios" required="true" %}
     <div><input type="submit" class="ds44-btnStd" value="Tester le select à radios" /></div>
 </form>
 <hr />
 <form>
-    {% include forms/inc-select-multiple.html id="select3" label="Select à cases" required="true" requiredStar='<sup aria-hidden="true">*</sup>' class="ds44-inpStd" %}
+    {% include forms/inc-select-multiple.html label="Select à cases" required="true" %}
     <div><input type="submit" class="ds44-btnStd" value="Tester le select à cases" /></div>
 </form>
 <hr />
@@ -56,20 +56,6 @@ layout: pattern
 
 
 <!--
-<hr />
-
-{%  include forms/inc-select-std.html 
-    label="Label select" 
-    number="3" 
-    requiredStar='<sup aria-hidden="true">*</sup>' 
-    required='required aria-required="true"' 
-    error="ds44-boxError" 
-    class="ds44-inpLarge"
-    errorMsg='<div class="ds44-errorMsg-container"><p id="msgErrorChk3" class="ds44-msgErrorText"><i class="icon icon-cross icon--sizeM" aria-hidden="true"></i> <span class="ds44-iconInnerText">Veuillez sélectionner un élément</span></p></div>'
-%}
-<div><input type="submit" class="ds44-btnStd" value="Tester le select" /></div>
-
-<hr style="margin: 100px 0 80px 0;" />
 
 {% include forms/inc-select-multiple.html
     label="Label select"

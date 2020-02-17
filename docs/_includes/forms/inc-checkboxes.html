@@ -1,15 +1,17 @@
-<div class="ds44-form__checkbox_container" {% if include.required == 'true' %}data-required="true"{% endif %} {% if include.name %}data-name="{{ include.name }}"{% endif %}>
+{% include forms/_variables.html %}
+
+{% if include.required == 'true' %}
+    {% assign attributes = attributes | append : ' data-required="true" ' %}
+    {% assign requiredAttributes = '' %}
+{% endif %}
+
+<div class="ds44-form__checkbox_container" data-id="{{ id }}" {{ attributes }}>
     {% assign choices = (include.choices | split:',') %}
     {% for choiceData in choices %}
         {% assign choice = (choiceData | split:':') %}
         {% assign value = choice[0] %}
         {% assign label = choice[1] %}
-        {% if include.required == 'true' %}
-            {% assign requiredStar = '<sup aria-hidden="true">*</sup>' %}
-        {% else %}
-            {% assign requiredStar = '' %}
-        {% endif %}
 
-        {% include forms/inc-checkbox.html value=value label=label requiredStar=requiredStar %}
+        {% include forms/inc-checkbox.html value=value label=label list=include.list %}
     {% endfor %}
 </div>

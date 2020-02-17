@@ -116,10 +116,13 @@ textarea {
     border: 1px solid $ds44-gray;
     min-width: 100%;
     vertical-align: middle;
-    min-height: $ds44-normalHeight;
+    height: $ds44-normalHeight;
 
     &:disabled {
         background-color: $ds44-light-bg;
+    }
+    .ds44-selectLabel {
+        font-size: 0.875em;
     }
 }
 
@@ -582,27 +585,28 @@ input[type=radio],
   * Champs liés : Thèmes sous-thèmes, Lieu rayon, etc...
   */
 
-.ds44-champsLies .ds44-inpStd,
-.ds44-champsLies .ds44-inpLarge {
+.ds44-champsLies .ds44-champs {
+  width: 50%;
     &--first {
-      border-radius: 3px 0 0 3px;
+        input,
+        .ds44-select__shape {
+          border-radius: 3px 0 0 3px;
+        }
     }
-}
-
-.ds44-champsLies .ds44-inpStd,
-.ds44-champsLies .ds44-inpLarge {
     &--last {
-      border-radius: 0 3px 3px 0;
-      margin-left: -1px;
-
-      &.ds44-inputDisabled p{
-        color: #666;
+        input,
+        .ds44-select__shape {
+          border-radius: 0 3px 3px 0;
+          margin-left: -1px;
       }
     }
 }
 
 .ds44-inputDisabled {
-  background: $ds44-lightgray ;
+    input,
+    .ds44-select__shape {
+      background: $ds44-lightgray ;
+  }
 }
 
 .ds44-inpStd  {

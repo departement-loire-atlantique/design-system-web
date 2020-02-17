@@ -12,7 +12,11 @@ layout: default
 		<ul class="c-tabs__list {% if page.variations.size <= 1 %} u-display-none{% endif %}">
 			{% for variation in page.variations %}
 				<li class="c-tabs__item">
+					{% capture pattern_path %}_variations/{{ variation.pattern }}{% endcapture %}
+					{% assign pattern = site.variations | where:"path", pattern_path | first %}
+
 					<a href="#tab-{{ variation.title | downcase | replace: ' ', '-' }}" class="c-tabs__link js-tab" data-code-tabs="tab-{{ variation.title | downcase | replace: ' ', '-' }}">{% if variation.title %}{{ variation.title }}{% endif %}</a>
+					<a href="{{ pattern.url | prepend: site.baseurl }}" target="_blank">&#9974;</a>
 				</li><!-- end c-tabs__item -->
 			{% endfor %}
 		</ul><!-- end c-tabs__list -->

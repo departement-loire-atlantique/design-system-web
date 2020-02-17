@@ -4,42 +4,20 @@ layout: pattern
 
 <form>
     <div class="ds44-flex-container ds44-small-flex-col ds44-fieldContainer ds44-champsLies">
-        <div class="ds44-posRel ds44-fg2">
-            <label for="field1" class="ds44-formLabel"><span class="ds44-labelTypePlaceholderLarge ds44-moveLabel">Nom du thème<sup aria-hidden="true">*</sup></span> <input type="text" id="field1" class="ds44-inpLarge ds44-inpLarge--first" required aria-required="true" /></label>
-        </div>
-        <div class="ds44-posRel ds44-fg1">
-            <div id="field2" class="ds44-inpLarge ds44-inpLarge--last ds44-inputDisabled" role="listbox">
-                <p role="heading" aria-level="2" class="ds44-formLabel ds44-moveLabel" id="titreChamp1"><span class="ds44-labelLarge">Nom du sous-thème</span></p>
-                <button class="ds44-btnIco ds44-posAbs ds44-posRi ds44-btnOpen" type="button"><i class="icon icon-down" aria-hidden="true"></i><span class="visually-hidden">Choisir une option</span></button>
-            </div>
-        </div>
+        <div class="ds44-champs--first">{% include forms/input-std.html class="ds44-inpLarge" label="Nom du thème" required="true" %}</div>
+        <div class="ds44-champs--last ds44-inputDisabled">{% include forms/inc-select-simple.html label="Nom du sous-thème" required="true" class="ds44-inpLarge" %}</div>
     </div>
 </form>
 <hr />
 <form>
     <div class="ds44-flex-container ds44-small-flex-col ds44-fieldContainer ds44-champsLies">
-        <div class="ds44-posRel ds44-fg2">
-            <label for="field3" class="ds44-formLabel"><span class="ds44-labelTypePlaceholder ds44-moveLabel">Nom du thème<sup aria-hidden="true">*</sup></span> <input type="text" id="field3" class="ds44-inpStd ds44-inpStd--first" required aria-required="true" /></label>
-        </div>
-        <div class="ds44-posRel ds44-fg1">
-            <div id="field4" class="ds44-inpStd ds44-inpStd--last ds44-inputDisabled" role="listbox">
-                <p role="heading" aria-level="2" class="ds44-formLabel ds44-moveLabel" id="titreChamp2"><span class="ds44-labelStd">Nom du sous-thème</span></p>
-                <button class="ds44-btnIco ds44-posAbs ds44-posRi ds44-btnOpen" type="button"><i class="icon icon-down" aria-hidden="true"></i><span class="visually-hidden">Choisir une option</span></button>
-            </div>
-        </div>
+        <div class="ds44-champs--first">{% include forms/input-std.html label="Nom du thème" required="true" %}</div>
+        <div class="ds44-champs--last ds44-inputDisabled">{% include forms/inc-select-simple.html label="Nom du sous-thème" required="true" %}</div>
     </div>
 </form>
-<hr />
-<form>
+<hr /><form>
     <div class="ds44-flex-container ds44-small-flex-col ds44-fieldContainer ds44-champsLies">
-        <div class="ds44-posRel ds44-fg2">
-            <label for="field5" class="ds44-formLabel"><span class="ds44-labelTypePlaceholder ds44-moveLabel">Nom du thème<sup aria-hidden="true">*</sup></span> <input type="text" id="field5" class="ds44-inpStd ds44-inpStd--first" required aria-required="true" /></label>
-        </div>
-        <div class="ds44-posRel ds44-fg1">
-            <div id="field6" class="ds44-inpStd ds44-inpStd--last" role="listbox">
-                <p role="heading" aria-level="2" class="ds44-formLabel ds44-moveLabel" id="titreChamp3"><span class="ds44-labelStd">Sous-thème sélectionné</span></p>
-                <button class="ds44-btnIco ds44-posAbs ds44-posRi ds44-btnOpen" type="button"><i class="icon icon-down" aria-hidden="true"></i><span class="visually-hidden">Choisir une option</span></button>
-            </div>
-        </div>
+        <div class="ds44-champs--first ds44-fg2">{% include forms/input-std.html label="Nom du thème" required="true" %}</div>
+        <div class="ds44-champs--last ds44-fg1">{% include forms/inc-select-simple.html label="Nom du sous-thème" required="true" %}</div>
     </div>
 </form>
