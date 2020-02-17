@@ -125,34 +125,44 @@ figure {
 }
 
 /* loader */
-.ds44-loader {
-    position: absolute;
-    width: $ds44-loader-size;
-    height: $ds44-loader-size;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    display: none;
+.ds44-bgLoader {
+  width: 100vw;
+  height: 100vh;
+  background: rgba(255,255,255,0.9);
+  position: relative;
+  z-index: 10000;
+  display: none;
 
-    &.show {
-        display: block;
-    }
+  &.show {
+      display: block;
+  }
 
-    .ds44-loader-circular {
-        animation: rotate 2s linear infinite;
-        height: $ds44-loader-size;
-        position: relative;
-        width: $ds44-loader-size;
+  .ds44-loader {
+      position: absolute;
+      width: $ds44-loader-size;
+      height: $ds44-loader-size;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
 
-        .ds44-loader-path {
-            stroke-dasharray: 1, 200;
-            stroke-dashoffset: 0;
-            stroke: $ds44-dark;
-            animation: dash 1.5s ease-in-out infinite;
-            stroke-linecap: round;
-        }
-    }
+      .ds44-loader-circular {
+          animation: rotate 2s linear infinite;
+          height: $ds44-loader-size;
+          position: relative;
+          width: $ds44-loader-size;
+
+          .ds44-loader-path {
+              stroke-dasharray: 1, 200;
+              stroke-dashoffset: 0;
+              stroke: $ds44-dark;
+              animation: dash 1.5s ease-in-out infinite;
+              stroke-linecap: round;
+          }
+      }
+  }
+
 }
+
 
 @keyframes rotate {
     100% {
@@ -179,10 +189,10 @@ figure {
   MEDIA QUERIES
   === */
 
-@media (max-width: $ds44-large) {
+@media (max-width: $ds44-large - .625) {
 
     .ds44-legendeContainer .ds44-blockAbsolute {
-        width: 50%;
+        width: 50vw;
     }
     .ds44-legendeContainer.ds44-container-imgRatio {
         height: auto;
@@ -196,7 +206,7 @@ figure {
 
 }
 
-@media (min-width: $ds44-large - .625) {
+@media (min-width: $ds44-large) {
 
     .grid-12-small-1 .ds44-legendeContainer {
         padding-top: 85%;
@@ -211,16 +221,6 @@ figure {
 
 }
 
-@media (max-width: $ds44-large - .625) {
-
-    .ds44-legendeContainer .ds44-blockAbsolute {
-        width: 50vw;
-    }
-    .ds44-legendeContainer.ds44-container-imgRatio {
-        height: auto;
-    }
-
-}
 
 @media (max-width: $ds44-medium - .625) {
 
@@ -230,15 +230,6 @@ figure {
 
 }
 
-
-@media (min-width: $ds44-small - .625) {
-    .ds44-container-imgRatio--tuileMiseEnAvant .ds44-card__title {
-        font-size: 2.4rem; // 24px
-    }
-    .col .ds44-container-imgRatio--tuileMiseEnAvant .ds44-card__title {
-        font-size: 1.7rem; // 17px
-    }
-}
 
 @media (max-width: $ds44-small - .625) {
 
@@ -262,4 +253,13 @@ figure {
         display: none;
     }
 
+}
+
+@media (min-width: $ds44-small) {
+    .ds44-container-imgRatio--tuileMiseEnAvant .ds44-card__title {
+        font-size: 2.4rem; // 24px
+    }
+    .col .ds44-container-imgRatio--tuileMiseEnAvant .ds44-card__title {
+        font-size: 1.7rem; // 17px
+    }
 }
