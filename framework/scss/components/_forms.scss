@@ -287,10 +287,19 @@ input[type=radio],
 
      &:last-child {
          margin-right: 0;
+         flex-shrink: 0.1;
+     }
+
+     &:last-child > .ds44-btnStd {
+         white-space: nowrap;
      }
 
      .ds44-form__container {
          margin: 0;
+     }
+
+     &--select {
+         flex-basis: 20%;
      }
 }
 
@@ -340,6 +349,10 @@ input[type=radio],
     color: $ds44-color-soft-text;
     font-weight: normal;
     margin-bottom: 0;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    width: calc(100% - 40px);
+    white-space: nowrap;
 }
 
 .ds44-moveSelectLabel {
@@ -617,6 +630,29 @@ input[type=radio],
 
 @media (max-width: $ds44-medium - .0625) {
 
+    .ds44-medium-flex-col {
+    
+        .ds44-fieldContainer { // les champs de formulaire prennent une marge pour permettre aux labels d'être visibles
+          margin-right: 0;
+          margin-bottom: 2.5rem;
+    
+          &:last-child {
+            margin-bottom: .5rem;
+          }
+          &:first-child {
+            margin-top: .5rem;
+          }
+          
+        }
+        .ds44-btnStd {
+          width: 100%;
+          text-align: left;  
+        }
+        .ds44-btnStd .icon {
+          float: right;
+        }
+    
+    }
 
 }
 

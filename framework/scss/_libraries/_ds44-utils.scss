@@ -250,6 +250,10 @@
 
   }
 
+  .ds44-medium-flex-col { // change l'orientation flex de row à column sur les écrans moyens et petits
+    flex-direction: column;
+  }
+
 }
 
 @media (max-width: $ds44-small - .0625) {
