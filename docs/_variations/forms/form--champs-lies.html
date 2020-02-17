@@ -3,21 +3,26 @@ layout: pattern
 ---
 
 <form>
-    <div class="ds44-flex-container ds44-small-flex-col ds44-fieldContainer ds44-champsLies">
-        <div class="ds44-champs--first">{% include forms/input-std.html class="ds44-inpLarge" label="Nom du thème" required="true" %}</div>
-        <div class="ds44-champs--last ds44-inputDisabled">{% include forms/inc-select-simple.html label="Nom du sous-thème" required="true" class="ds44-inpLarge" %}</div>
+    <div class="ds44-fieldContainer ds44-champsLies">
+        {% include forms/input-std.html class="ds44-inpLarge" label="Nom du thème" required="true" %}
+        {% include forms/inc-select-simple.html label="Nom du sous-thème" required="true" class="ds44-inpLarge ds44-inputDisabled" %}
     </div>
 </form>
+<br>
 <hr />
+<br>
 <form>
-    <div class="ds44-flex-container ds44-small-flex-col ds44-fieldContainer ds44-champsLies">
-        <div class="ds44-champs--first">{% include forms/input-std.html label="Nom du thème" required="true" %}</div>
-        <div class="ds44-champs--last ds44-inputDisabled">{% include forms/inc-select-simple.html label="Nom du sous-thème" required="true" %}</div>
+    <div class="ds44-fieldContainer ds44-champsLies">
+        {% include forms/input-std.html label="Nom du thème" required="true" %}
+        {% include forms/inc-select-simple.html label="Nom du sous-thème" required="true" class="ds44-inpStd ds44-inputDisabled" %}
     </div>
 </form>
-<hr /><form>
-    <div class="ds44-flex-container ds44-small-flex-col ds44-fieldContainer ds44-champsLies">
-        <div class="ds44-champs--first ds44-fg2">{% include forms/input-std.html label="Nom du thème" required="true" %}</div>
-        <div class="ds44-champs--last ds44-fg1">{% include forms/inc-select-simple.html label="Nom du sous-thème" required="true" %}</div>
+<br>
+<hr />
+<br>
+<form>
+    <div class="ds44-fieldContainer ds44-champsLies">
+        {% include forms/input-std.html label="Nom du thème" required="true" %}
+        {% include forms/inc-select-simple.html label="Nom du sous-thème" required="true" %}
     </div>
 </form>

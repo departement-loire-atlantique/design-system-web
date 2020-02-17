@@ -572,29 +572,32 @@ input[type=radio],
   * Champs liés : Thèmes sous-thèmes, Lieu rayon, etc...
   */
 
-.ds44-champsLies .ds44-champs {
-  width: 50%;
-    &--first {
+.ds44-champsLies  {
+
+    .ds44-form__container {
+      width: 50%;
+      float: left;
+    }
+
+    .ds44-form__container:first-of-type {
         input,
         .ds44-select__shape {
           border-radius: 3px 0 0 3px;
         }
     }
-    &--last {
+    .ds44-form__container:last-of-type {
         input,
         .ds44-select__shape {
           border-radius: 0 3px 3px 0;
           margin-left: -1px;
       }
     }
+
+    .ds44-inputDisabled {
+          background: $ds44-lightgray ;
+    }
 }
 
-.ds44-inputDisabled {
-    input,
-    .ds44-select__shape {
-      background: $ds44-lightgray ;
-  }
-}
 
 .ds44-inpStd  {
     & .ds44-btnIco {
@@ -644,21 +647,27 @@ input[type=radio],
         }
     }
 
+    .ds44-champsLies  {
 
-    .ds44-champsLies .ds44-inpStd,
-    .ds44-champsLies .ds44-inpLarge {
-        &--first {
-          border-radius: 3px 3px 0 0;
+        .ds44-form__container {
+          width: 100%;
+          float: none;
+        }
+
+        .ds44-form__container:first-of-type {
+            input,
+            .ds44-select__shape {
+              border-radius: 3px 3px 0 0;
+            }
+        }
+        .ds44-form__container:last-of-type {
+            input,
+            .ds44-select__shape {
+              border-radius: 0 0 3px 3px;
+              margin: -1px 0 0 0;
+          }
         }
     }
 
-    .ds44-champsLies .ds44-inpStd,
-    .ds44-champsLies .ds44-inpLarge {
-        &--last {
-          border-radius: 0 0 3px 3px;
-          margin: -1px 0 0 0;
-
-        }
-    }
 
 }
