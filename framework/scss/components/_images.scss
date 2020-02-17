@@ -125,7 +125,7 @@ figure {
 }
 
 /* loader */
-.ds44-bgLoader {
+.ds44-loader {
   width: 100vw;
   height: 100vh;
   background: rgba(255,255,255,0.9);
@@ -137,7 +137,7 @@ figure {
       display: block;
   }
 
-  .ds44-loader {
+  .ds44-loader-container {
       position: absolute;
       width: $ds44-loader-size;
       height: $ds44-loader-size;
