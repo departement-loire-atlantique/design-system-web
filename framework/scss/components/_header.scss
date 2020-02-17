@@ -125,7 +125,6 @@
             .ds44-btnInnerText {
                 position: relative;
                 white-space: nowrap;
-                margin-top: .5rem;
             }
 
         }
@@ -136,33 +135,8 @@
 @media (max-width: $ds44-medium - .0625) {
 
     .ds44-header {
-        min-height: 0;
-    }
-
-    .ds44-header .ds44-colRight {
-
-        .ds44-btn--contextual {
-
-            &:focus,
-            &:hover,
-            &:active {
-                background-color: transparent;
-                border-color: transparent;
-            }
-        }
-    }
-
-}
-
-/* -------------- */
-/* small screens */
-/* ------------ */
-
-@media (max-width: $ds44-small - .0625) {
-
-    .ds44-header {
         min-height: $header-height-small;
-        padding: .5rem 0 0 0;
+        padding: 0;
         left: 0;
     }
 
@@ -179,7 +153,6 @@
         min-height: 245px;
     }
 
-
     .ds44-rsHeadLink {
         padding-left: 0;
     }
@@ -188,9 +161,33 @@
         margin: 0 1rem;
     }
 
+    .ds44-header .ds44-colRight {
+
+        .ds44-btnIcoText--maxi {
+            margin-left: 0;
+            font-size: .9rem; // 9px
+
+            &.ds44--xl-padding {
+                padding: .5rem 1rem 1rem 1rem;
+            }
+
+            &.ds44-btn--menu {
+                padding: .5rem 1.5rem 1rem 1.5rem;
+            }
+        }
+    }
+
 }
 
-@media (max-width: $ds44-tiny - 1) {
+/* -------------- */
+/* small screens */
+/* ------------ */
+
+@media (max-width: $ds44-small - .0625) {
+
+}
+
+@media (max-width: $ds44-tiny - .0625) {
 
     .ds44-logoContainer {
         flex-direction: column;
@@ -205,16 +202,6 @@
 
     }
 
-    .ds44-header .ds44-colRight {
-
-        .ds44-btnIcoText--maxi {
-
-            &.ds44--xl-padding {
-                padding-left: 0;
-                padding-right: 0;
-            }
-        }
-    }
     .ds44-overlay--navApplis.ds44-wave-grey {
         background: #fff;
     }

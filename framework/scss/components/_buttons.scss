@@ -303,14 +303,13 @@ a.ds44-btnStd--retourPage {
     .ds44-btnIcoText--maxi {
 
         position: relative;
-        background-color: transparent;
         margin: 0 1rem;
         padding: 0 0 .5rem 0;
         text-align: center;
         min-width: 6rem;
 
         .ds44-btnInnerText {
-            font-size: .5625em; // 9px
+            font-size: .9rem;
             position: absolute;
             bottom: 0;
             left: 0;
