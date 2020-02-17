@@ -58,10 +58,12 @@
             <div class="col-4-small-1 ds44-hide-mobile">
               <p class="h4-like" aria-level="3">Posez une question :</p>
               <figcaption>Les champs précédés d’un astérisque * sont obligatoires</figcaption>
-              {% include forms/inc-textarea.html label="Votre question" required="true" %}
-              {% include forms/input-std.html label="Votre commune" %}
-              {% include forms/input-std-infoComp.html label="Votre email" infoComp="Ex : votrenom@email.com" required="true" %}
-              <button class="ds44-btnStd ds44-btn--invert" type="button"><span class="ds44-btnInnerText">Valider</span><i class="icon icon-long-arrow-right" aria-hidden="true"></i></button>
+              <form>
+                {% include forms/inc-textarea.html label="Votre question" required="true" %}
+                {% include forms/input-std.html label="Votre commune" %}
+                {% include forms/input-std-infoComp.html label="Votre email" infoComp="Ex : votrenom@email.com" required="true" %}
+                <button class="ds44-btnStd ds44-btn--invert"><span class="ds44-btnInnerText">Valider</span><i class="icon icon-long-arrow-right" aria-hidden="true"></i></button>
+              </form>
             </div>
       </div>
   </div>
