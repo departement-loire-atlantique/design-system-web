@@ -73,10 +73,8 @@ class Carousel {
                 // si on loop, il faut gerer la navigation des tuiles avec les differents event de swiper
                 // cela implique d'initialiser et mettre a jour l'apparence des boutons de navigation et des tuiles du carousel
                 if (hasLoop) {
-
                     wrapperElement.classList.remove('grid-4-small-1');
                     wrapperElement.classList.remove('grid-3-small-1');
-
                     this.carousels[carouselIndex].swiper.on(
                         'init',
                         this.startSwiper.bind(this, carouselIndex)
