@@ -22,12 +22,12 @@ button, a.ds44-btnStd, a > .ds44-btnStd, .ds44-btnStd > a  {
 
 .ds44-btnStd, a.ds44-btnStd, a > .ds44-btnStd, .ds44-btnStd > a {
     @include ds44-font-sizes(button);
-    padding: $ds44-padding-box;
+    padding: 1rem $ds44-padding-box;
     border-radius: $ds44-border-radius;
     border: 1px solid $ds44-dark;
     font-weight: bold;
     line-height: 1;
-    min-height: $ds44-normalHeight;
+    height: $ds44-normalHeight;
 
     &:focus,
     &:hover,
@@ -62,7 +62,7 @@ a > .ds44-btnStd--large   // pour wysiwyg
 {
     @include ds44-font-sizes(largeButton);  // 16px
     padding: $ds44-padding-large;
-    min-height: $ds44-largeHeight;
+    height: $ds44-largeHeight;
 }
 
 .ds44-btn--invert, a.ds44-btn--invert, a > .ds44-btn--invert, .ds44-btn--invert > a {

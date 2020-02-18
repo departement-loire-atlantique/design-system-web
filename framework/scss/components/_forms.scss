@@ -306,6 +306,50 @@ input[type=radio],
      }
 }
 
+.ds44-facetteContainer {
+    &.ds44-theme {
+        .ds44-fieldContainer {
+
+          .ds44-select__shape {
+            background: $ds44-contextual-color;
+            border-color: $ds44-dark  ;
+
+            .ds44-selectLabel {
+              color: $ds44-dark  ;
+              width: auto;
+            }
+          }
+
+           &--select {
+               flex: none;
+
+               .ds44-select-container {
+                 width: 200%;
+                 max-width: 100vw;
+               }
+           }
+      }
+
+      p.ds44-heading {
+        margin: 0.5em 1em;
+      }
+
+      .ds44-push {
+        margin-left: auto;
+
+            li {
+            display: inline-block;
+            margin : 0.5em $ds44-padding-medium;
+
+              a {
+                text-decoration: none;
+                width: auto;
+              }
+            }
+        }
+    }
+}
+
 .ds44-labelStd {
      font-size: 1.4rem;
 }
@@ -388,7 +432,7 @@ input[type=radio],
     }
 
     label {
-        @include ds44-font-sizes(formListElem);
+        @include ds44-font-sizes(bodySize);
         display: block;
         color: $ds44-color-dark-text;
 
@@ -638,27 +682,41 @@ input[type=radio],
 @media (max-width: $ds44-medium - .0625) {
 
     .ds44-medium-flex-col {
-    
+
         .ds44-fieldContainer { // les champs de formulaire prennent une marge pour permettre aux labels d'être visibles
           margin-right: 0;
           margin-bottom: 2.5rem;
-    
+
           &:last-child {
             margin-bottom: .5rem;
           }
           &:first-child {
             margin-top: .5rem;
           }
-          
+
         }
         .ds44-btnStd {
           width: 100%;
-          text-align: left;  
+          text-align: left;
         }
         .ds44-btnStd .icon {
           float: right;
         }
-    
+
+    }
+
+    .ds44-facetteContainer {
+
+         &.ds44-theme {
+
+             p.ds44-heading {
+               margin: 0 0 1em 0;
+             }
+
+             .ds44-push {
+               margin: 0;
+             }
+         }
     }
 
 }
@@ -667,6 +725,20 @@ input[type=radio],
 
     .ds44-facetteContainer {
          padding: 2.5rem; // on augmente les marges en mobile pour décoller les labels
+
+         &.ds44-theme {
+
+             .ds44-fieldContainer {
+
+                &--select {
+                    flex: none;
+
+                    .ds44-select-container {
+                      width: 100%;
+                    }
+                }
+           }
+         }
     }
 
     .ds44-fieldContainer {
@@ -708,6 +780,7 @@ input[type=radio],
           }
         }
     }
+
 
 
 }
