@@ -1,0 +1,56 @@
+---
+layout: pattern
+---
+
+{% include header/inc-header.html 
+    logo='<picture class="ds44-logo"><img src="../../assets/images/logo-loire-atlantique.svg" alt="Retour à l&apos;accueil du site loire-atlantique.fr"></picture>'
+    variante1='<button type="button" class="ds44-btnIcoText--maxi ds44--xl-padding" id="open-search"><span class="ds44-btnInnerText">Rechercher</span><i class="icon icon-magnifier icon--large" aria-hidden="true"></i></button>'
+%}
+
+<main role="main" id="content">
+
+	<section class="ds44-container-large">
+
+		<div class="ds44-pageHeaderContainer">
+			<picture class="ds44-pageHeaderContainer__pictureContainer">
+				<img src="../../assets/images/header-page-carrefour.jpg" alt="" class="ds44-headerImg" />
+			</picture>
+			<div class="ds44-titleContainer">
+				<div class="ds44-alphaGradient ds44-alphaGradient--header">
+					{% include breadcrumb/breadcrumb--invert.html %}
+					<h1 class="h1-like ds44-text--colorInvert" id="idTitre1">L’agenda du canal de Nantes à Brest</h1>
+				</div>
+			</div>		 
+		</div>
+
+	</section>
+
+	<section class="ds44-container-fluid ds44-mtb3 ds44--xl-padding-tb">
+		<div class="ds44-container-large">
+			<header class="txtcenter">
+				<h2 class="h2-like center" id="idTitre2">14 idées de sorties</h2>
+				<p class="ds44-component-chapo ds44-centeredBlock">Brocantes, balades nature, rencontres sportives ou manifestations culturelles… ça bouge sur le canal ! Retrouvez les sorties loisirs et les événements dans un périmètre d’environ 5 km des abords de la voie navigable.</p>
+			</header>
+			{% include forms/inc-recherche-facettes.html %}
+		</div>
+	</section>
+
+	<section class="ds44-container-fluid ds44-lightBG ds44-wave-white ds44-mtb3 ds44--xl-padding-tb">
+		<div class="ds44-container-large ds44--mobile--m-padding-b">
+			<header class="txtcenter">
+				<h2 class="h2-like center">Les prochains spectacles</h2>
+				<p class="ds44-component-chapo ds44-centeredBlock">Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut</p>
+			</header>
+		</div>
+		<div class="ds44-container-large">
+			{% include card/card--miseEnAvant.html title="Sweet river band" date="15 septembre 2019" localisation="Guenrouët"%}
+		</div>
+		<div>
+			{% include carrousel/carrousel-x3--bgGrey.html %}
+		</div>
+	</section>
+
+</main>
+
+
+{% include footer/footer-LA.html %}
