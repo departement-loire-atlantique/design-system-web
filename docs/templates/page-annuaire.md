@@ -3,19 +3,19 @@ layout: component-detail
 group: templates
 permalink:
 
-title: Page article
+title: Page annuaire
 description: Modèle de page basée sur le template "centré".
 status: A valider
 
 variations:
-- title: Page type "Article"
-  pattern: page/LA__article.html
+- title: Page type "Annuaire"
+  pattern: page/LA__annuaire.html
 - title: Template carrefour
   pattern: templates/template-entryMenu.html
 ---
 ## Utilisation
 
-Page utilisée pour afficher des contenus article.
+Page d'accueil Annuaire.
 
 ### Mailto
 
