@@ -122,7 +122,8 @@ a.ds44-card {
       padding-top : $ds44-padding-large;
       cursor: pointer;
 
-      .ds44-container-imgRatio--profil {
+      .ds44-container-imgRatio--profil,      
+      .ds44-container-imgRatio--profilXL {
         margin: 0 auto;
       }
     }

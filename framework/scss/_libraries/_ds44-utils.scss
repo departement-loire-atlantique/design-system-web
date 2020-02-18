@@ -631,6 +631,13 @@
 
 }
 
+/* === LINKS === */
+
+.ds44-inblLinks {
+  display: inline-block;
+  margin-right: 1rem;
+  white-space: nowrap;
+}
 
 /* === Hidden blocks for focus loops === */
 
@@ -638,7 +645,6 @@
   position: absolute;
   top: -50rem;
 }
-
 
 
 /* === Surcharges === */
