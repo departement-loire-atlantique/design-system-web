@@ -1,0 +1,48 @@
+{% include forms/_variables.html %}
+{% include images/loader.html %}
+<form data-is-ajax="true">
+    <div class="ds44-facetteContainer ds44-bgDark ds44-flex-container ds44-medium-flex-col">
+        <div class="ds44-fieldContainer ds44-fg1">
+            {% include forms/input-std.html label="Champ standard" required="true" %}
+        </div>
+        <div class="ds44-fieldContainer ds44-fg1 ds44-fieldContainer--select">
+            {% include forms/inc-select-multiple.html label="Select à cases" required="true" %}
+        </div>
+        <div class="ds44-fieldContainer ds44-fg1">
+            {% include forms/inc-input-autocomp.html label="Champ texte libre" required="true" attributes='data-mode="free-text"' %}
+        </div>
+        <div class="ds44-fieldContainer ds44-small-fg1">
+            <button class="ds44-btnStd ds44-theme"><span class="ds44-btnInnerText">Rechercher</span><i class="icon icon-long-arrow-right" aria-hidden="true"></i></button>
+        </div>
+    </div>
+    <div class="ds44-facetteContainer ds44-theme ds44-flex-container ds44-medium-flex-col">
+        <div class="ds44-flex-container ds44-medium-flex-col">
+          <p class="ds44-heading ds44-fg1">Filter par</p>
+          <div class="ds44-fieldContainer ds44-fg1 ds44-fieldContainer--select">
+              {% include forms/inc-select-search.html label="Mots-clés" %}
+          </div>
+          <div class="ds44-fieldContainer ds44-fg1 ds44-fieldContainer--select">
+              {% include forms/inc-select-multiple.html label="Choix multiple" %}
+          </div>
+          <div class="ds44-fieldContainer ds44-fg1 ds44-fieldContainer--select">
+              {% include forms/inc-select-std.html label="Choix unique" %}
+          </div>
+        </div>
+        <div class="ds44-push ds44-small-fg1">
+          <ul class="ds44-list">
+            <li class="ds44-docListElem">
+              <i class="icon icon-star-empty ds44-docListIco" aria-hidden="true"></i>
+              <a href="#" aria-label="Ma sélection">Ma sélection (2)</a>
+            </li>
+            <li class="ds44-docListElem">
+              <i class="icon icon-pdf ds44-docListIco" aria-hidden="true"></i>
+              <a href="#" aria-label="PDF">PDF</a>
+            </li>
+            <li class="ds44-docListElem">
+              <i class="icon icon-csv ds44-docListIco" aria-hidden="true"></i>
+              <a href="#" aria-label="CSV">CSV</a>
+            </li>
+          </ul>
+        </div>
+    </div>
+</form>

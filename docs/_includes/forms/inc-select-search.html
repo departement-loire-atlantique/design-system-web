@@ -1,0 +1,22 @@
+{% include forms/_variables.html %}
+
+{% if include.required == 'true' %}
+    {% assign attributes = attributes | append : ' data-required="true" ' %}
+{% endif %}
+{% assign name = id %}
+
+{% capture mainContent %}
+{% include forms/parts/select.html %}
+<div class="ds44-select-container hidden" role="combobox" id="{{ id }}">
+    <div class="ds44-listSelect">
+        <ul class="ds44-list" id="{{ id }}">
+            <li class="ds44-select-list_elem">
+              {% include forms/inc-input-autocomp.html label="Mots-clés, thématiques, lieu…" required="true" attributes='data-mode="free-text"' %}
+            </li>
+        </ul>
+    </div>
+    <button type="button" class="ds44-fullWBtn ds44-btnSelect ds44-theme" aria-label="Valider {{ label }}"><span class="ds44-btnInnerText">Valider</span><i class="icon icon-long-arrow-right ds44-noLineH" aria-hidden="true"></i></button>
+</div>
+{% endcapture %} 
+
+{% include forms/parts/container.html content=mainContent %}
