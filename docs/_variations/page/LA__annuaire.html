@@ -1,0 +1,91 @@
+---
+layout: pattern
+---
+
+{% include header/inc-header.html
+    logo='<picture class="ds44-logo"><img src="../../assets/images/logo-loire-atlantique.svg" alt="Retour à l&apos;accueil du site loire-atlantique.fr"></picture>'
+    variante1='<button type="button" class="ds44-btnIcoText--maxi ds44--xl-padding" id="open-search"><span class="ds44-btnInnerText">Rechercher</span><i class="icon icon-magnifier icon--large" aria-hidden="true"></i></button>'
+%}
+
+<main role="main" id="content">
+
+	<section class="ds44-container-large">
+    <div class="ds44-pageHeaderContainer">
+			<picture class="ds44-pageHeaderContainer__pictureContainer">
+				<img src="../../assets/images/header-page-annuaire.png" alt="" class="ds44-headerImg" />
+			</picture>
+			<div class="ds44-titleContainer">
+				<div class="ds44-alphaGradient ds44-alphaGradient--header">
+					{% include breadcrumb/breadcrumb--invert.html %}
+					<h1 class="h1-like ds44-text--colorInvert">Annuaire des services d’aide et d’accompagnement à domicile (SAAD)</h1>
+				</div>
+			</div>
+		</div>
+  </section>
+
+  <section class="ds44-container-large">
+    <div class="ds44-mtb3 ds44--xl-padding-tb">
+  			<header class="txtcenter ds44--xl-padding-b">
+  				<h2 class="h2-like center">Recherchez un service</h2>
+  			</header>
+        {% include forms/inc-recherche-facettes.html %}
+
+      <div class="ds44-inner-container ds44-mt3 ds44--l-padding-t">
+    		<div class="grid-12-small-1">
+    				<div class="col-7">
+    					<section class="ds44-contenuArticle" id="section1">
+                <h2 id="idTitre2">En bref</h2>
+    						<p class="ds44-introduction">Vous souhaitez continuer à vivre chez vous.
+                  Les nombreux services d’aide à domicile de Loire-Atlantique proposent un accompagnement
+                  pour le lever, la toilette, les transferts, la préparation et la prise des repas, les courses,
+                   le ménage et l’entretien du linge, l’aide au coucher, etc.. Selon vos besoins, il vous faudra choisir le SAAD le mieux adapté.
+    						</p>
+    						<p>Deux types de fonctionnement peuvent vous être proposés :	</p>
+    						<ul>
+    							<li><strong>Le mode prestataire :</strong> l’organisme est l’employeur de l’intervenant à domicile. Il veille à vous fournir un service adapté et émet la facture correspondant à la prestation.</li>
+    							<li><strong>Le mode mandataire :</strong> l’organisme vous met en relation avec un intervenant à domicile. Il assure l’ensemble des formalités administratives, mais vous demeurez l’employeur légal de l’aide à domicile.</li>
+    						</ul>
+    					</section>
+              <section class="ds44-innerBoxContainer ds44-borderContainer">
+                <p role="heading" aria-level="2" class="h2-like">En détails</p>
+                <ul>
+                  <li>Ces organismes peuvent être des associations, des entreprises privées ou des établissements publics (CCAS).</li>
+                  <li>Le département autorise les nouveaux services au regard d’un cahier des charges national, veille au développement d’une offre adaptée aux besoins et assure le contrôle de la qualité des prestations rendues par les services.</li>
+                  <li>Le tarif des prestations est fixé librement par la structure sauf pour certains services associatifs habilités à l’aide sociale pour lesquels le tarif des prestations (APA, PCH, Aide ménagère à titre social) est fixé par le Département.</li>
+                </ul>
+            </section>
+    				</div>
+
+    				<div class="col-1 grid-offset ds44-hide-tinyToLarge"></div>
+
+            <aside class="col-4">
+              <section class="ds44-box ds44-theme ds44-mb3">
+                <div class="ds44-innerBoxContainer">
+                  <p role="heading" aria-level="2" class="ds44-box-heading">Bon à savoir</p>
+                  <p>Le Département vous invite à faire appel à l’un de ses partenaires pour formaliser votre demande.</p>
+                  <p class="mts"><a href="#" class="ds44-btnLink"><span class="ds44-btnInnerText">Découvrir les partenaires</span><i class="icon icon-long-arrow-right" aria-hidden="true"></i></a></p>
+                </div>
+              </section>
+              <section class="ds44-box">
+                <p role="heading" aria-level="2" class="ds44-box-heading">Témoignages</p>
+                <div class="ds44-bgGray">
+                  <picture><img src="../../assets/images/sample-media.jpg" alt="Témoignages : Monique a aménagé son logement" class="ds44-box__img" /><span class="ds44-mediaIndicator" aria-label="Page comportant de la vidéo"><i class="icon icon-play" aria-hidden="true"></i></span></picture>
+                  <div class="ds44--m-padding">
+                    <p role="heading" aria-level="3"><a href="#">Monique a aménagé son logement</a></p>
+                    <p>86 ans - Retraitée - Nantes</p>
+                  </div>
+                </div>
+              </section>
+            </aside>
+    			</div>
+        </div>
+      </div>
+    </section>
+
+
+
+	{% include FAQ/FAQ-basPage.html %}
+
+</main>
+
+{% include footer/footer-LA.html %}
