@@ -1,0 +1,11 @@
+{% include forms/_variables.html %}
+
+{% if include.required == 'true' %}
+    {% assign attributes = attributes | append : ' data-required="true" ' %}
+    {% assign requiredAttributes = '' %}
+{% endif %}
+
+<div class="ds44-form__checkbox_container" data-id="{{ id }}" {{ attributes }}>
+    {% include forms/inc-input-labelExt.html label="Le" placeholder="jj / mm / aaaa" title="jour / mois / année" infoComp="Ex : 20/05/2020"%}
+    {% include forms/inc-input-labelExt.html label="Jusqu'au" placeholder="jj / mm / aaaa" title="jour / mois / année" infoComp="Ex : 20/05/2020"%}
+</div>

@@ -3,7 +3,7 @@
 {% assign labelClass = 'ds44-formLabel--external' %}
 
 {% capture mainContent %}
-<input type="text" id="{{ id }}" class="{{ mainClass }}" {{ requiredAttributes }} {{ title }} {{ attributes }} {{ placeholder }} />{% include forms/parts/reset.html %}
+<input type="text" id="{{ id }}" class="{{ mainClass }}" {{ requiredAttributes }} {{ title }} {{ attributes }} {{ placeholder }} /><span class="ds44-labelTypeInfoComp">{{ include.infoComp }}</span>{% include forms/parts/reset.html %}
 {% endcapture %}
 
 {% capture labelContent %}

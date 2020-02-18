@@ -91,10 +91,18 @@ input {
 }
 
 .ds44-formLabel--external {
-    font-size: .9375em; // 15px
+    @include ds44-font-sizes(button);
     color: $ds44-color-dark-text;
     margin: $ds44-small-vmargin 0;
     display: block;
+
+    .ds44-labelTypeInfoComp{
+        position: absolute;
+        top: 0;
+        right: $ds44-padding-box;
+        color: $ds44-gray;
+    }
+
 }
 
 .ds44-form__container--external {
@@ -161,7 +169,7 @@ textarea {
     color: $ds44-color-dark-text;
 
     .ds44-formLabel--external & {
-        top: calc(50% + 3px);
+        top: calc(50% + -1px);
     }
 }
 
