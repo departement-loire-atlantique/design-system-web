@@ -190,6 +190,12 @@ a > .ds44-btn--contextual,
     &.ds44-bgDark:focus {
         background-color: $ds44-gray;
     }
+
+    &--carre {
+      padding: 0;
+      height: 44px;
+      width: 44px;
+    }
 }
 
 .ds44-btnOpen {

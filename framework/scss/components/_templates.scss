@@ -122,6 +122,22 @@ main {
     flex-direction: column;
     justify-content: flex-end;
     min-height: 460px;
+
+    &--home {
+      min-height: 620px;
+
+      .ds44-btnIco {
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        z-index: 100;
+      }
+
+      .ds44-alphaGradient--header {
+        padding: 10rem 3rem 5rem 3rem
+      }
+
+    }
 }
 
 .ds44-pageHeaderContainer__pictureContainer {
@@ -185,6 +201,10 @@ main {
 
   .ds44-titleContainer {
     min-height: 340px;
+
+    &--home {
+      min-height: 620px;
+    }
   }
 
 }
@@ -221,6 +241,10 @@ main {
 
   .ds44-titleContainer {
     min-height: 250px;
+
+    &--home {
+      min-height: 370px;
+    }
   }
 
   .ds44-alphaGradient--header {
