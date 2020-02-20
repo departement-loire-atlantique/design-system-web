@@ -644,19 +644,26 @@ input[type=radio],
 
 .ds44-champsLies {
 
-    .ds44-form__container {
-        width: 50%;
-        float: left;
+    > .ds44-form__container {
+        display: inline-block;
+        vertical-align: top;
     }
 
-    .ds44-form__container:first-of-type {
+    > .ds44-form__container:first-of-type {
+
+        width: 59.5%;
+
         input,
         .ds44-select__shape {
             border-radius: 3px 0 0 3px;
         }
     }
 
-    .ds44-form__container:last-of-type {
+    > .ds44-form__container:last-of-type {
+
+        width: 40%;
+        margin-left: -4px;
+
         input,
         .ds44-select__shape {
             border-radius: 0 3px 3px 0;
@@ -779,19 +786,24 @@ input[type=radio],
 
     .ds44-champsLies {
 
-        .ds44-form__container {
-            width: 100%;
-            float: none;
+        > .ds44-form__container {
+            display: block;
         }
 
-        .ds44-form__container:first-of-type {
+        > .ds44-form__container:first-of-type {
+          width: 100%;
+          margin: 0;
+
             input,
             .ds44-select__shape {
                 border-radius: 3px 3px 0 0;
             }
         }
 
-        .ds44-form__container:last-of-type {
+        > .ds44-form__container:last-of-type {
+          width: 100%;
+          margin: 0;
+
             input,
             .ds44-select__shape {
                 border-radius: 0 0 3px 3px;
