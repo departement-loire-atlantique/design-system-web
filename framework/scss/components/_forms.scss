@@ -132,7 +132,6 @@ textarea {
     -webkit-box-sizing: border-box;
     -moz-box-sizing: border-box;
     box-sizing: border-box;
-    line-height: 3;
 
     &:disabled {
         background-color: $ds44-light-bg;
@@ -141,6 +140,9 @@ textarea {
     .ds44-selectLabel {
         font-size: 0.875em;
     }
+}    
+input.ds44-inpStd {
+    line-height: 3;
 }
 
 .ds44-inpLarge {
@@ -156,11 +158,13 @@ textarea {
     -webkit-box-sizing: border-box;
     -moz-box-sizing: border-box;
     box-sizing: border-box;
-    line-height: 5;
 
     &:disabled {
         background-color: $ds44-light-bg;
     }
+}
+input.ds44-inpLarge {
+    line-height: 5;
 }
 
 .ds44-bgDark .ds44-moveLabel {
