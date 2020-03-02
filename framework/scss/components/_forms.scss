@@ -131,6 +131,7 @@ textarea {
     -webkit-box-sizing: border-box;
     -moz-box-sizing: border-box;
     box-sizing: border-box;
+    line-height: 3;
 
     &:disabled {
         background-color: $ds44-light-bg;
@@ -154,6 +155,7 @@ textarea {
     -webkit-box-sizing: border-box;
     -moz-box-sizing: border-box;
     box-sizing: border-box;
+    line-height: 5;
 
     &:disabled {
         background-color: $ds44-light-bg;
