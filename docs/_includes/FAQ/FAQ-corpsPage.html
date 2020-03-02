@@ -1,70 +1,8 @@
 <section class="ds44-container-fluid ds44--xxl-padding-tb">
-    <header class="txtcenter ds44--xl-padding-b">
+    <header class="txtcenter ds44--xxl-padding-b">
       <h2 class="h2-like">Vous avez une question ?</h2>
     </header>
     <div class="ds44-inner-container ds44-flex-container ds44-flex-valign-center ds44-flex-align-center ds44--xl-padding-lr">
-          <div class="grid-12-small-1 ds44-grid-valign-center">
-            <div class="col-6-small-1">
-              <p class="h4-like" aria-level="3" role="heading">Consultez les questions les plus fréquentes :</p>
-              <ul class="ds44-collapser">
-                  <li class="ds44-collapser_element">
-                      <button type="button" class="ds44-collapser_button">Où trouver le dossier à remplir pour une demande d’APA à domicile ?<i class="icon icon-down" aria-hidden="true"></i></button>
-                      <div class="ds44-collapser_content">
-                          <ul class="ds44-list ds44-collapser_content--level2">
-                              <li><p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam convallis tincidunt facilisis. Etiam non purus nulla. Vivamus quis sapien at lorem vestibulum tempus sit amet non orci. Fusce tincidunt ligula sit amet justo ultricies, ultrices egestas ante tincidunt. Nullam vulputate finibus turpis, sed congue purus vestibulum eget.</p></li>
-                          </ul>
-                      </div>
-                  </li>
-                  <li class="ds44-collapser_element">
-                      <button type="button" class="ds44-collapser_button">Où retirer le dossier de demande d’aide sociale pour un hébergement en maison de retraite ?<i class="icon icon-down" aria-hidden="true"></i></button>
-                      <div class="ds44-collapser_content">
-                        <ul class="ds44-list ds44-collapser_content--level2">
-                            <li><p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam convallis tincidunt facilisis. Etiam non purus nulla. Vivamus quis sapien at lorem vestibulum tempus sit amet non orci. Fusce tincidunt ligula sit amet justo ultricies, ultrices egestas ante tincidunt. Nullam vulputate finibus turpis, sed congue purus vestibulum eget.</p></li>
-                        </ul>
-                      </div>
-                  </li>
-                  <li class="ds44-collapser_element">
-                      <button type="button" class="ds44-collapser_button">Comment faire une demande d’admission en EHPAD ?<i class="icon icon-down" aria-hidden="true"></i></button>
-                      <div class="ds44-collapser_content">
-                        <ul class="ds44-list ds44-collapser_content--level2">
-                            <li><p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam convallis tincidunt facilisis. Etiam non purus nulla. Vivamus quis sapien at lorem vestibulum tempus sit amet non orci. Fusce tincidunt ligula sit amet justo ultricies, ultrices egestas ante tincidunt. Nullam vulputate finibus turpis, sed congue purus vestibulum eget.</p></li>
-                        </ul>
-                      </div>
-                  </li>
-                  <li class="ds44-collapser_element">
-                      <button type="button" class="ds44-collapser_button">A qui dois-je m’adresser pour l’installation d’un système de téléassistance ?<i class="icon icon-down" aria-hidden="true"></i></button>
-                      <div class="ds44-collapser_content">
-                        <ul class="ds44-list ds44-collapser_content--level2">
-                            <li><p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam convallis tincidunt facilisis. Etiam non purus nulla. Vivamus quis sapien at lorem vestibulum tempus sit amet non orci. Fusce tincidunt ligula sit amet justo ultricies, ultrices egestas ante tincidunt. Nullam vulputate finibus turpis, sed congue purus vestibulum eget.</p></li>
-                        </ul>
-                      </div>
-                  </li>
-                  <li class="ds44-collapser_element">
-                      <button type="button" class="ds44-collapser_button">Mon logement n’est plus adapté, à qui dois-je m’adresser ?<i class="icon icon-down" aria-hidden="true"></i></button>
-                      <div class="ds44-collapser_content">
-                        <ul class="ds44-list ds44-collapser_content--level2">
-                            <li><p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam convallis tincidunt facilisis. Etiam non purus nulla. Vivamus quis sapien at lorem vestibulum tempus sit amet non orci. Fusce tincidunt ligula sit amet justo ultricies, ultrices egestas ante tincidunt. Nullam vulputate finibus turpis, sed congue purus vestibulum eget.</p></li>
-                        </ul>
-                      </div>
-                  </li>
-              </ul>
-              <button class="ds44-btnStd ds44-btnStd--large" type="button" title="Afficher plus de questions"><span class="ds44-btnInnerText">+ de questions</span><i class="icon icon-long-arrow-right" aria-hidden="true"></i></button>
-            </div>
-            <div class="col-2-small-1 txtcenter ds44-hide-mobile">
-                <div class="ds44-separator ds44-flex-valign-center ds44-flex-align-center ds44-flex-container">
-                    <p class="ds44-txtBulle ds44-theme">Ou</p>
-                </div>
-            </div>
-            <div class="col-4-small-1 ds44-hide-mobile">
-              <p class="h4-like" aria-level="3" role="heading">Posez une question :</p>
-              <p class="ds44-textLegend ds44-textLegend--mentions">Les champs marqués d’un astérisque * sont obligatoires</p>
-              <form>
-                {% include form/field/input/textarea.html label="Votre question" required="true" %}
-                {% include form/field/input/standard.html label="Votre commune" %}
-                {% include form/field/input/standard.html label="Votre email" explanation="Ex : votrenom@email.com" required="true" %}
-                <button class="ds44-btnStd ds44-btn--invert" title="Valider l'envoi de votre question"><span class="ds44-btnInnerText">Valider</span><i class="icon icon-long-arrow-right" aria-hidden="true"></i></button>
-              </form>
-            </div>
-      </div>
-  </div>
+          {% include FAQ/FAQ-contenu.html %}
+    </div>
 </section>
