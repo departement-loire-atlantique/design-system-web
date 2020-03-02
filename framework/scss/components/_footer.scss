@@ -7,12 +7,12 @@ footer {
     position: relative;
 }
 
-.footerLink {
+.ds44-footerLink {
     @include ds44-font-sizes(smallText);
     text-decoration: none;
     display: block;
     padding: 0 1rem;
-    margin-bottom: $ds44-small-vmargin;
+    margin: 1rem 0 .5rem 0;
   }
 
 .ds44-rsFootLink {
@@ -34,7 +34,7 @@ footer .ds44-logo {
 /* smaller screens */
 /* ------------- */
 
-@media (max-width: $ds44-large) {
+@media (max-width: $ds44-large - .0625) {
 
     footer {
         text-align: center;
@@ -45,7 +45,16 @@ footer .ds44-logo {
     }
 
     .ds44-rsFootLink {
-        margin-bottom: $ds44-container-vmargin;
+        margin-bottom: $ds44-large-vmargin;
+    }
+
+    .ds44-footerLink {
+        margin: 0 1rem 1.5rem 1rem;
+    }
+
+    .ds44-footerList {
+        margin-bottom: 0;
+        margin-top: .5rem;
     }
 
 }
