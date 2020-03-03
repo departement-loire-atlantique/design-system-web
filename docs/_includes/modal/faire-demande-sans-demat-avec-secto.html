@@ -1,4 +1,4 @@
-<section class="ds44-modal-container" id="overlay-faire-demande-sans-demat" aria-hidden="true" role="dialog" aria-labelledby="titre-modale-faire-demande-sans-demat">
+<section class="ds44-modal-container" id="overlay-faire-demande-sans-demat-avec-secto" aria-hidden="true" role="dialog" aria-labelledby="titre-modale-faire-demande-sans-demat">
 	<div class="ds44-modal-box">
 		<button class="ds44-btnOverlay--modale ds44-btnOverlay--closeOverlay" type="button" title="Fermer la boite de dialogue : faire une demande" data-js="ds44-modal-action-close"><i class="icon icon-cross icon--xlarge" aria-hidden="true"></i><span class="ds44-btnInnerText--bottom">Fermer</span></button>
 		<h1 class="h2-like" id="titre-modale-faire-demande-sans-demat">Faire une demande</h1>
@@ -19,9 +19,8 @@
 				</div>
 				<div class="col-6 ds44-modal-column">
 						<h2 class="h4-like">Adresse d'envoi du dossier :</h2>
-				    <p class="ds44-docListElem mts"><i class="icon icon-marker ds44-docListIco" aria-hidden="true"></i>Service habitat<br />3 quai Ceineray<br /> CS 94109 44041 Nantes</p>
-				    <p class="ds44-docListElem mtm"><i class="icon icon-phone ds44-docListIco" aria-hidden="true"></i>02 40 99 12 82 - 02 40 99 19 10</p>
-				    <p class="ds44-docListElem mtm"><i class="icon icon-mail ds44-docListIco" aria-hidden="true"></i><a href="mailto:contact@loire-atlantique.fr" aria-label="Contacter : Service habitat par mail">contact@loire-atlantique.fr</a></p>
+						{% include form/field/input/autocomplete.html label="Votre commune de résidence" required="false" attributes='data-url="/autocomplete.json" data-mode="select-only"' %}
+						<button class="ds44-btnStd ds44-btn--invert" title="Valider {{ label }}"><span class="ds44-btnInnerText">Valider</span><i class="icon icon-long-arrow-right" aria-hidden="true"></i></button>
 				</div>
 			</div>
 		</div>
