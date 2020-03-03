@@ -19,6 +19,9 @@ variations:
 - title: FAQ
   description: Modale colonnée type "poser une question"
   pattern: overlays/modale-faq.html
+- title: Qui contacter
+  description: Modale colonnée type "Qui contacter"
+  pattern: overlays/modale-qui-contacter.html
 ---
 
 
