@@ -20,7 +20,7 @@ variations:
   description: Modale colonnée type "poser une question"
   pattern: overlays/modale-faq.html
 - title: Qui contacter
-  description: Modale colonnée type "Qui contacter"
+  description: Modales colonnées type "Qui contacter" et "Qui contacter avec champ de recherche"
   pattern: overlays/modale-qui-contacter.html
 ---
 
