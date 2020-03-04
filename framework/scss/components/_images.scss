@@ -139,13 +139,8 @@ figure {
   top: 0;
   left:0;
   z-index: 10000;
-  display: none;
 
-  &.show {
-      display: block;
-  }
-
-  .ds44-loader-container {
+  .ds44-loader-body {
       position: absolute;
       width: $ds44-loader-size;
       height: $ds44-loader-size;

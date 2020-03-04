@@ -54,6 +54,15 @@ class FormFieldSelectAbstract extends FormFieldAbstract {
         this.hide(objectIndex);
     }
 
+    empty(objectIndex) {
+        super.empty(objectIndex);
+
+        const object = this.objects[objectIndex];
+        if (object.labelElement) {
+            object.labelElement.classList.remove(this.labelClassName);
+        }
+    }
+
     setListElementEvents(listElement, objectIndex) {
         MiscEvent.addListener('mousedown', this.select.bind(this, objectIndex), listElement);
     }
@@ -424,8 +433,7 @@ class FormFieldSelectAbstract extends FormFieldAbstract {
             });
         if (values.length === 0) {
             // No value
-            this.setData(objectIndex);
-            object.labelElement.classList.remove(this.labelClassName);
+            this.empty(objectIndex);
         } else {
             this.setData(
                 objectIndex,

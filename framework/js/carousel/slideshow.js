@@ -8,10 +8,14 @@ class CarouselSlideshow extends CarouselAbstract {
 
         const objectIndex = (this.objects.length - 1);
         const object = this.objects[objectIndex];
+        object.isPlaying = true;
 
-        const autoplayButtonElement = object.wrapElement.querySelector('button:last-child');
-        if (autoplayButtonElement) {
-            MiscEvent.addListener('click', this.startStop.bind(this, objectIndex), autoplayButtonElement);
+        MiscEvent.addListener('mouseenter', this.hoverStop.bind(this, objectIndex), object.wrapElement);
+        MiscEvent.addListener('mouseleave', this.hoverStart.bind(this, objectIndex), object.wrapElement);
+
+        object.autoplayButtonElement = object.wrapElement.querySelector('button');
+        if (object.autoplayButtonElement) {
+            MiscEvent.addListener('click', this.startStop.bind(this, objectIndex), object.autoplayButtonElement);
         }
     }
 
@@ -25,34 +29,59 @@ class CarouselSlideshow extends CarouselAbstract {
         return swiperParameters;
     }
 
-    startStop(objectIndex) {
+    hoverStart(objectIndex, evt) {
+        evt.stopPropagation();
+        evt.preventDefault();
+
         const object = this.objects[objectIndex];
-
-        if (object.swiper.autoplay.running) {
-            this.stop(objectIndex);
-
+        if (!object.isPlaying) {
             return;
         }
 
         this.start(objectIndex);
     }
 
+    hoverStop(objectIndex, evt) {
+        evt.stopPropagation();
+        evt.preventDefault();
+
+        const object = this.objects[objectIndex];
+        if (!object.isPlaying) {
+            return;
+        }
+
+        this.stop(objectIndex);
+    }
+
+    startStop(objectIndex) {
+        const object = this.objects[objectIndex];
+
+        if (object.isPlaying) {
+            object.isPlaying = false;
+            this.stop(objectIndex);
+
+            return;
+        }
+
+        object.isPlaying = true;
+        this.start(objectIndex);
+    }
+
     start(objectIndex) {
         const object = this.objects[objectIndex];
-        const autoplayButtonElement = object.wrapElement.querySelector('button:last-child');
-        if (!autoplayButtonElement) {
+        if (!object.autoplayButtonElement) {
             return;
         }
 
         object.swiper.autoplay.start();
 
-        const iconElement = autoplayButtonElement.querySelector('i');
+        const iconElement = object.autoplayButtonElement.querySelector('i');
         if (iconElement) {
             iconElement.classList.add('icon-pause');
             iconElement.classList.remove('icon-play');
         }
 
-        const spanElement = autoplayButtonElement.querySelector('span');
+        const spanElement = object.autoplayButtonElement.querySelector('span');
         if (spanElement) {
             spanElement.innerText = spanElement.innerText.replace('Lancer ', 'Arrêter ');
         }
@@ -60,31 +89,21 @@ class CarouselSlideshow extends CarouselAbstract {
 
     stop(objectIndex) {
         const object = this.objects[objectIndex];
-        const autoplayButtonElement = object.wrapElement.querySelector('button:last-child');
-        if (!autoplayButtonElement) {
+        if (!object.autoplayButtonElement) {
             return;
         }
 
         object.swiper.autoplay.stop();
 
-        const iconElement = autoplayButtonElement.querySelector('i');
+        const iconElement = object.autoplayButtonElement.querySelector('i');
         if (iconElement) {
             iconElement.classList.add('icon-play');
             iconElement.classList.remove('icon-pause');
         }
 
-        const spanElement = autoplayButtonElement.querySelector('span');
+        const spanElement = object.autoplayButtonElement.querySelector('span');
         if (spanElement) {
             spanElement.innerText = spanElement.innerText.replace('Arrêter ', 'Lancer ');
-        }
-    }
-
-    slide(objectIndex, direction) {
-        super.slide(objectIndex, direction);
-
-        const object = this.objects[objectIndex];
-        if (!object.swiper.autoplay.running) {
-            this.start(objectIndex);
         }
     }
 }

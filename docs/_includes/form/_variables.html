@@ -62,6 +62,12 @@
     {% assign containerAttributes = '' %}
 {% endif %}
 
+{% if include.buttonAttributes %}
+    {% assign buttonAttributes = include.buttonAttributes %}
+{% else %}
+    {% assign buttonAttributes = '' %}
+{% endif %}
+
 {% if include.labelClass %}
     {% assign labelClass = include.labelClass %}
 {% else %}
@@ -72,6 +78,7 @@
     {% assign requiredStar = '<sup aria-hidden="true">*</sup>' %}
     {% assign attributes = attributes | append : ' required aria-required="true"' %}
     {% assign containerAttributes = containerAttributes | append : ' data-required="true"' %}
+    {% assign buttonAttributes = buttonAttributes | append : ' aria-required="true"' %}
 {% else %}
     {% assign requiredStar = '' %}
 {% endif %}
@@ -79,10 +86,12 @@
 {% if include.disabled == 'true' %}
     {% assign attributes = attributes | append: ' readonly aria-readonly="true"' %}
     {% assign containerAttributes = containerAttributes | append : ' data-disabled="true"' %}
+    {% assign buttonAttributes = buttonAttributes | append : ' aria-readonly="true" readonly="true"' %}
 {% endif %}
 
 {% if include.explanation %}
     {% capture explanation %}
-        <span class="ds44-labelTypeInfoComp">{{ include.explanation }}</span>
+        <span id="explanation-{{ id }}" class="ds44-labelTypeInfoComp">{{ include.explanation }}</span>
     {% endcapture %}
+    {% assign attributes = attributes | append: ' aria-labelledby="explanation-' | append: id | append: '"' %}
 {% endif %}

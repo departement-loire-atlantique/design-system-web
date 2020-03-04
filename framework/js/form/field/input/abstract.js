@@ -40,10 +40,15 @@ class FormFieldInputAbstract extends FormFieldAbstract {
         this.enableDisableLinkedField(objectIndex);
     }
 
-    reset(objectIndex) {
-        this.setData(objectIndex);
+    empty(objectIndex) {
+        super.empty(objectIndex);
+
         this.showHideResetButton(objectIndex);
-        this.enableDisableLinkedField(objectIndex);
+    }
+
+    reset(objectIndex) {
+        this.empty(objectIndex);
+
         this.focusOnTextElement(objectIndex);
     }
 
@@ -173,9 +178,10 @@ class FormFieldInputAbstract extends FormFieldAbstract {
 
         object.inputElements.forEach((inputElement) => {
             inputElement.removeAttribute('aria-invalid');
+            inputElement.removeAttribute('aria-describedby');
         });
         object.textElement.classList.remove('ds44-error');
-        object.textElement.removeAttribute('aria-describedby');
+
     }
 
     invalid(objectIndex) {
@@ -189,8 +195,8 @@ class FormFieldInputAbstract extends FormFieldAbstract {
 
         object.inputElements.forEach((inputElement) => {
             inputElement.setAttribute('aria-invalid', 'true');
+            inputElement.setAttribute('aria-describedby', errorMessageElementId);
         });
         object.textElement.classList.add('ds44-error');
-        object.textElement.setAttribute('aria-describedby', errorMessageElementId);
     }
 }

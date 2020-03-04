@@ -2,6 +2,9 @@
 
 {% capture mainContent %}
 {% include form/field/partial/select.html %}
+
+{% assign savedId = id %}
+
 <div class="ds44-select-container hidden">
     <div class="ds44-flex-container ds44--m-padding">
         <button class="ds44-btnStd ds44-bgGray ds44-btnStd--plat ds44-fg1" type="button" aria-describedby="button-message-{{ id }}"><span class="ds44-btnInnerText">Tout cocher</span><i class="icon icon-check icon--medium" aria-hidden="true"></i></button>
@@ -54,7 +57,7 @@
             </div>
         </li>
     </ul>
-    <button type="button" class="ds44-fullWBtn ds44-btnSelect ds44-theme" aria-describedby="button-message-{{ id }}"><span class="ds44-btnInnerText">Valider</span><i class="icon icon-long-arrow-right ds44-noLineH" aria-hidden="true"></i></button>
+    <button type="button" class="ds44-fullWBtn ds44-btnSelect ds44-theme" aria-describedby="button-message-{{ savedId }}"><span class="ds44-btnInnerText">Valider</span><i class="icon icon-long-arrow-right ds44-noLineH" aria-hidden="true"></i></button>
 </div>
 {% endcapture %}
 

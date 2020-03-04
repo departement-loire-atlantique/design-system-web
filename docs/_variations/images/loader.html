@@ -2,7 +2,7 @@
 layout: pattern
 ---
 
-{% include images/loader.html class="show" %}
+{% include images/loader.html %}
 
 
 {% include header/inc-header.html
@@ -95,3 +95,9 @@ layout: pattern
 
 
 {% include footer/footer-LA.html %}
+
+<script>
+    window.addEventListener('DOMContentLoaded', () => {
+        MiscEvent.dispatch('loader:requestShow');
+    });
+</script>

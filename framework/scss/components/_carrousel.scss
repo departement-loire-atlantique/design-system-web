@@ -31,6 +31,7 @@
 .swiper-container {
   padding: 1rem 1.6rem 3rem 1.6rem;
   margin: 0 calc(5.5% - 1.6rem);
+  margin: 0 -webkit-calc(5.5% - 1.6rem);
 }
 .swiper-container .ds44-card {
   margin-bottom: 0;
@@ -42,6 +43,7 @@ div .swiper-button-prev {
     height: auto;
     position: absolute;
     top: calc(50% - 15px);
+    top: -webkit-calc(50% - 15px);
     transform: translateY(-50%);
     border-radius: 3px;
     z-index: 800;

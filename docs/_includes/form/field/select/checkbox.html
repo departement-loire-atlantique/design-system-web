@@ -2,6 +2,9 @@
 
 {% capture mainContent %}
 {% include form/field/partial/select.html %}
+
+{% assign savedId = id %}
+
 <div class="ds44-select-container hidden">
     <div class="ds44-listSelect">
         <ul class="ds44-list" id="listbox-{{ id }}">
@@ -19,7 +22,7 @@
             </li>
         </ul>
     </div>
-    <button type="button" class="ds44-fullWBtn ds44-btnSelect ds44-theme" aria-describedby="button-message-{{ id }}"><span class="ds44-btnInnerText">Valider</span><i class="icon icon-long-arrow-right ds44-noLineH" aria-hidden="true"></i></button>
+    <button type="button" class="ds44-fullWBtn ds44-btnSelect ds44-theme" aria-describedby="button-message-{{ savedId }}"><span class="ds44-btnInnerText">Valider</span><i class="icon icon-long-arrow-right ds44-noLineH" aria-hidden="true"></i></button>
 </div>
 {% endcapture %}
 

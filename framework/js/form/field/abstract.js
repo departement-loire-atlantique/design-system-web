@@ -44,6 +44,11 @@ class FormFieldAbstract {
         MiscEvent.addListener('field:disable', this.disable.bind(this, objectIndex), object.containerElement);
     }
 
+    empty(objectIndex) {
+        this.setData(objectIndex);
+        this.enableDisableLinkedField(objectIndex);
+    }
+
     setData(objectIndex, data = null) {
         // Abstract method
     }
@@ -113,6 +118,7 @@ class FormFieldAbstract {
         const object = this.objects[objectIndex];
 
         object.isEnabled = true;
+        this.empty(objectIndex);
         this.enableElements(objectIndex, evt);
     }
 
@@ -168,10 +174,8 @@ class FormFieldAbstract {
         const object = this.objects[objectIndex];
         object.isEnabled = false;
 
-        this.setData(objectIndex);
+        this.empty(objectIndex);
         this.removeInvalid(objectIndex);
-        this.enableDisableLinkedField(objectIndex);
-
         this.disableElements(objectIndex);
     }
 

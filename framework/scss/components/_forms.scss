@@ -63,6 +63,7 @@ input {
         overflow: hidden;
         text-overflow: ellipsis;
         width: calc(100% - 40px);
+        width: -webkit-calc(100% - 40px);
         white-space: nowrap;
         cursor: text;
 
@@ -117,6 +118,7 @@ textarea {
     font-family: $ds44-font-family-base;
     min-height: 120px !important;
     height: auto !important;
+    margin: 0;
 }
 
 .ds44-inpStd {
@@ -132,6 +134,7 @@ textarea {
     -webkit-box-sizing: border-box;
     -moz-box-sizing: border-box;
     box-sizing: border-box;
+    margin: 0;
 
     &:disabled {
         background-color: $ds44-light-bg;
@@ -140,9 +143,6 @@ textarea {
     .ds44-selectLabel {
         font-size: 0.875em;
     }
-}    
-input.ds44-inpStd {
-    line-height: 3;
 }
 
 .ds44-inpLarge {
@@ -158,13 +158,11 @@ input.ds44-inpStd {
     -webkit-box-sizing: border-box;
     -moz-box-sizing: border-box;
     box-sizing: border-box;
+    margin: 0;
 
     &:disabled {
         background-color: $ds44-light-bg;
     }
-}
-input.ds44-inpLarge {
-    line-height: 5;
 }
 
 .ds44-bgDark .ds44-moveLabel {
@@ -188,17 +186,20 @@ input.ds44-inpLarge {
     position: absolute;
     right: 0;
     top: calc(50% - 15px);
+    top: -webkit-calc(50% - 15px);
     padding-right: 1.5rem;
     color: $ds44-color-dark-text;
 
     .ds44-formLabel--external & {
         top: calc(50% + -1px);
+        top: -webkit-calc(50% + -1px);
     }
 }
 
 .ds44-reset {
     display: none;
     top: calc(50% - 13px);
+    top: -webkit-calc(50% - 13px);
 
     .ds44-datepicker & {
         right: 34px;
@@ -440,6 +441,7 @@ input[type=radio],
     overflow: hidden;
     text-overflow: ellipsis;
     width: calc(100% - 40px);
+    width: -webkit-calc(100% - 40px);
     white-space: nowrap;
 
     .ds44-inputDisabled & {
@@ -535,6 +537,7 @@ input[type=radio],
         @include ds44-font-sizes(formListElem);
         color: $ds44-color-dark-text;
         min-width: calc(100% - 4.5rem);
+        min-width: -webkit-calc(100% - 4.5rem);
         cursor: pointer;
     }
 
@@ -643,6 +646,7 @@ input[type=radio],
     overflow: hidden;
     text-overflow: ellipsis;
     width: calc(100% - 30px);
+    width: -webkit-calc(100% - 30px);
     display: block;
     white-space: nowrap;
     color: $ds44-color-dark-text;
@@ -783,7 +787,8 @@ input[type=radio],
     }
 
     .ds44-inputDisabled,
-    .ds44-inputDisabled input {
+    .ds44-inputDisabled input,
+    .ds44-inputDisabled textarea {
         background: $ds44-lightgray;
         cursor: default;
 

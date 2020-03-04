@@ -9,26 +9,31 @@ class LoaderStandard {
 
     show() {
         const loaderElement = document.querySelector('.ds44-loader');
-        if (!loaderElement) {
+        const loaderTextElement = document.querySelector('.ds44-loader-text');
+        if (!loaderElement || !loaderTextElement) {
             return;
         }
 
         this.counter++;
-        loaderElement.classList.add('show');
+        loaderElement.classList.remove('hidden');
         MiscAccessibility.show(loaderElement, true);
+        loaderTextElement.innerHTML = '<p>Chargement en cours</p>';
+        MiscAccessibility.setFocus(loaderTextElement);
         MiscEvent.dispatch('loader:show');
     }
 
     hide() {
         const loaderElement = document.querySelector('.ds44-loader');
-        if (!loaderElement) {
+        const loaderTextElement = document.querySelector('.ds44-loader-text');
+        if (!loaderElement || !loaderTextElement) {
             return;
         }
 
         this.counter = Math.max(0, (this.counter - 1));
         if (this.counter === 0) {
-            loaderElement.classList.remove('show');
+            loaderElement.classList.add('hidden');
             MiscAccessibility.hide(loaderElement, true);
+            loaderTextElement.innerHTML = '';
             MiscEvent.dispatch('loader:hide');
         }
     }

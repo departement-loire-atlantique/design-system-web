@@ -1,12 +1,5 @@
 {% if include.disabled == 'true' %}
-    {% assign buttonAttributes = 'tabindex="-1" readonly="true"' %}
     {% assign mainClass = mainClass | append: ' ds44-inputDisabled' %}
-{% else %}
-    {% assign buttonAttributes = '' %}
-{% endif %}
-
-{% if include.required == 'true' %}
-    {% assign buttonAttributes = ' aria-required="true"' %}
 {% endif %}
 
 <div class="ds44-select__shape {{ mainClass }}">

@@ -68,6 +68,7 @@
 
 .ds44-boxPushContent {
     max-width: calc(55% + 15px);
+    max-width: -webkit-calc(55% + 15px);
     align-self: center;
     padding: $ds44-padding-box;
 
@@ -99,6 +100,7 @@
 
     &--horizontal {
         width: calc(30% - 15px);
+        width: -webkit-calc(30% - 15px);
     }
 
 }
@@ -240,6 +242,7 @@
 
         &--horizontal {
             width: calc(20% - 15px);
+            width: -webkit-calc(20% - 15px);
         }
 
     }

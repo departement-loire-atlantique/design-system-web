@@ -30,6 +30,7 @@
     &.bottom {
       bottom: auto;
       top: calc(100% + 0.45rem);
+      top: -webkit-calc(100% + 0.45rem);
     }
 
     &.left {
@@ -71,5 +72,3 @@
     }
   }
 }
-
-

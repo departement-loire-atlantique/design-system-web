@@ -13,7 +13,7 @@
 {% assign labelClass = labelClass | append: ' ds44-datepicker' %}
 
 {% capture mainContent %}
-<div id="{{ id }}" class="ds44-datepicker__shape {{ mainClass }}" {{ containerAttributes }}>{{ explanation }}<input type="text" inputmode="numeric" pattern="[0-9]*" maxlength="2" {{ dayLabel }} data-is-date="true" {{ attributes }}><span>/</span><input type="text" inputmode="numeric" pattern="[0-9]*" maxlength="2" {{ monthLabel }} data-is-date="true" {{ attributes }}><span>/</span><input type="text" inputmode="numeric" pattern="[0-9]*" maxlength="4" {{ yearLabel }} data-is-date="true" {{ attributes }}></div>{% include form/field/partial/reset.html %}<button class="ds44-calendar" type="button"><i class="icon icon-date icon--large" aria-hidden="true"></i><span class="visually-hidden">Afficher le calendrier pour le champ : {{ label }}</span></button>
+<div id="{{ id }}" class="ds44-datepicker__shape {{ mainClass }}" {{ containerAttributes }}>{{ explanation }}<input type="text" inputmode="numeric" pattern="[0-9]*" maxlength="2" {{ dayLabel }} data-is-date="true" {{ attributes }}><span>/</span><input type="text" inputmode="numeric" pattern="[0-9]*" maxlength="2" {{ monthLabel }} data-is-date="true" {{ attributes }}><span>/</span><input type="text" inputmode="numeric" pattern="[0-9]*" maxlength="4" {{ yearLabel }} data-is-date="true" {{ attributes }}></div>{% include form/field/partial/reset.html %}<button class="ds44-calendar" type="button" aria-expanded="false" data-a11y-exclude="true" tabindex="-1" aria-hidden="true"><i class="icon icon-date icon--large" aria-hidden="true"></i><span class="visually-hidden">Afficher le calendrier pour le champ : {{ label }}</span></button>
 <div class="vanilla-calendar hidden"></div>
 
 {% endcapture %}

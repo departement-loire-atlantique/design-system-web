@@ -6,6 +6,11 @@ class FooterStandard {
         MiscEvent.addListener('menu:hide', this.hide.bind(this));
         MiscEvent.addListener('loader:show', this.show.bind(this));
         MiscEvent.addListener('loader:hide', this.hide.bind(this));
+
+        const backToTopElement = document.querySelector('#backToTop');
+        if (backToTopElement) {
+            MiscEvent.addListener('click', this.backToTop.bind(this), backToTopElement);
+        }
     }
 
     show() {
@@ -14,6 +19,21 @@ class FooterStandard {
 
     hide() {
         MiscAccessibility.show(document.querySelector('footer'));
+    }
+
+    backToTop(evt) {
+        if(evt && evt.stopPropagation) {
+            evt.stopPropagation();
+        }
+        if(evt && evt.preventDefault) {
+            evt.preventDefault();
+        }
+
+        const scrollTop = document.documentElement.scrollTop || document.body.scrollTop;
+        if (scrollTop > 0) {
+            window.requestAnimationFrame(this.backToTop.bind(this));
+            window.scrollTo(0, scrollTop - scrollTop / 8);
+        }
     }
 }
 

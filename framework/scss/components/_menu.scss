@@ -32,7 +32,7 @@
     column-rule: 2px solid #000000;
 }
 
-.ds44-menuBtn {    
+.ds44-menuBtn {
     @include ds44-font-sizes(menuHeaders);
     font-family: $ds44-font-family-headings;
     font-weight: bold;
@@ -84,7 +84,7 @@
     left: 0;
 }
 
-.ds44-menuBackLink {    
+.ds44-menuBackLink {
     @include ds44-font-sizes(menuBackLinks);
     font-weight: bold;
     font-family: $ds44-font-family-headings;
@@ -166,8 +166,9 @@
     .ds44-container-menuBackLink {
         margin: 1rem 1rem 1rem 2rem;
         width: calc(100% - 90px);
+        width: -webkit-calc(100% - 90px);
     }
-    
+
     .ds44-navListApplis {
         margin-left: $ds44-large-margin;
         margin-top: 10rem;
@@ -189,13 +190,14 @@
         margin: $spacer-small-plus; // 1.5rem;
         padding-left: 0;
     }
-    
+
     .ds44-container-menuBackLink {
         margin: 1rem 1rem 1rem 2rem;
         width: calc(100% - 90px);
+        width: -webkit-calc(100% - 90px);
     }
 
-    .ds44-menuApplisTitle {    
+    .ds44-menuApplisTitle {
         &::after {
             padding-bottom: 1rem!important;
         }
@@ -204,13 +206,14 @@
     .ds44-menuBackLink {
         margin-top: .8rem;
         width: calc(100% - 65px);
+        width: -webkit-calc(100% - 65px);
         line-height: 1.1;
     }
 
     .ds44-menuLink {
         margin-bottom: $ds44-medium-vmargin;
     }
-  
+
     .ds44-navList {
         margin-left: 0;
         margin-right: 0;
@@ -218,14 +221,16 @@
 
     .ds44-navSep {
       margin: $ds44-components-vmargin 0;
-    }    
+    }
 
-    li:first-child .ds44-menuBtn { 
+    li:first-child .ds44-menuBtn {
         margin-top: 0;
     }
 
     .ds44-btn-backOverlay {
         vertical-align: top;
+        margin: 0;
+        padding: 0 $ds44-padding-medium;
     }
 
     .ds44-navListApplis {
@@ -250,16 +255,16 @@
     .ds44-navContainer {
 
         padding-top: $ds44-components-vmargin*2.5;
-    
+
         > .ds44-inner-container {
             max-height: 100%;
         }
-    
+
     }
 
-    .ds44-menuBtn {  
+    .ds44-menuBtn {
         padding-right: 4rem;
-    
+
         .icon {
             right: .5rem;
         }
@@ -276,7 +281,7 @@
 @media (min-width: $ds44-large) and (max-width: $ds44-max-size) {
 
     .ds44-navContainer > .ds44-inner-container {
-        max-width: 90%;   
+        max-width: 90%;
     }
 
 }

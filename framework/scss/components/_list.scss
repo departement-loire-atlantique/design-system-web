@@ -28,6 +28,7 @@
         display: inline-block;
         vertical-align: top;
         width: calc(100% - 25px); // retrait du lien pour caler l'icone à gauche
+        width: -webkit-calc(100% - 25px); // retrait du lien pour caler l'icone à gauche
     }
 
     &:first-child:after {
