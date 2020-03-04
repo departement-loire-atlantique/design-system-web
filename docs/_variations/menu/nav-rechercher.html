@@ -1,0 +1,22 @@
+---
+layout: pattern
+---
+
+<div style="height: 700px;">
+    {% include menu/inc-menu-rechercher.html surcharge='style="opacity:1; right:0;"' %}
+</div>
+
+<script>
+    const navRech = document.querySelector("#menuRech");
+    if (navRech) {
+        navRech.style.display = 'block';
+        navRech.style.visibility = 'visible';
+        navRech.classList.add('show');
+    }
+    
+
+    let allHiddenElems = document.querySelectorAll('[aria-hidden="true"]');
+    allHiddenElems.forEach((element) => {
+        element.removeAttribute('aria-hidden');
+    });
+</script>

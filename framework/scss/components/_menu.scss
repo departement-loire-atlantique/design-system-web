@@ -161,7 +161,7 @@
 }
 
 
-@media (min-width: $ds44-medium) and (max-width: $ds44-large)  {
+@media (min-width: $ds44-medium) and (max-width: $ds44-large - .0625)  {
     
     .ds44-container-menuBackLink {
         margin: 1rem 1rem 1rem 2rem;

@@ -15,12 +15,16 @@ variations:
   description: Menu de navigation principal, sous-niveau (affiché suite à un clic sur un élément du premier niveau)
   pattern: menu/navigation-principale-n2.html
 
-- title: Menu Près de chez vous
+- title: Près de chez vous
   description: Menu de navigation "Près de chez vous". Afin de simuler l'apparition du menu dans le DS, deux surcharges de style ont été effectuées directement sur la section de l'overlay (opacité et positionnement à droite rectifiés). Ces surcharges ne doivent pas être reproduites dans l'intégration finale.
   pattern: menu/nav-pres-de-chez-vous.html
 
-- title: Menu des applications
-  description: Ouvert depuis le menu de navigation principal niveau 1 (sous les réseaux sociaux)
+- title: Rechercher
+  description: Menu de recherche. Afin de simuler l'apparition du menu dans le DS, deux surcharges de style ont été effectuées directement sur la section de l'overlay (opacité et positionnement à droite rectifiés). Ces surcharges ne doivent pas être reproduites dans l'intégration finale.
+  pattern: menu/nav-rechercher.html
+
+- title: Applications
+  description: Menu des applis et sites, ouvert depuis le menu de navigation principal niveau 1 (sous les réseaux sociaux)
   pattern: menu/navigation-applis.html
   
 - title: Menu intérieur

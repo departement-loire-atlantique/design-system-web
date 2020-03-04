@@ -1,0 +1,43 @@
+<section id="menuRech" class="ds44-overlay ds44-overlay--navNiv2 ds44-wave-grey ds44-bg-pdr" role="dialog" aria-label="Menu de recherche" aria-hidden="true" aria-labelledby="titreRechercher" {{ include.surcharge }}>
+
+    <div class="ds44-container-menuBackLink">
+        <p role="heading" aria-level="1" class="ds44-menuBackLink" id="titreRechercher">Rechercher</p>
+    </div>
+
+    <button type="button" class="ds44-btnOverlay ds44-btnOverlay--closeOverlay" aria-label="Fermer le menu Rechercher"><i class="icon icon-cross icon--xlarge" aria-hidden="true"></i><span class="ds44-btnInnerText--bottom">Fermer</span></button>
+
+    <p role="heading" aria-level="1" class="visually-hidden">Menu "Rechercher"</p>
+
+    <div class="ds44-flex-container ds44-flex-valign-center ds44-flex-align-center ds44-hv100 ds44-container-large ds44-tiny-to-med-atop ds44-ttl-pt9">
+        <div class="grid-12-small-1 ds44-grid-valign-center ds44-w98">
+
+            <div class="col-5-small-1 txtcenter">
+                <p class="h4-like" aria-describedby="inp-rech">Recherchez par mots-clés :</p>
+                <form>
+                    {% include form/field/input/standard.html id="inp-rech" label="Votre recherche" required="true" class="ds44-inpLarge" %}
+                    <button type="submit" class="ds44-btnStd ds44-btn--invert" aria-label="Votre recherche"><span class="ds44-btnInnerText">Valider</span><i class="icon icon-long-arrow-right" aria-hidden="true"></i></button>
+                </form>
+            </div>
+
+            <div class="col-2-small-1 txtcenter ds44-h100">
+                <div class="ds44-separator ds44-flex-valign-center ds44-flex-align-center ds44-flex-container">
+                    <p class="ds44-txtBulle ds44-theme">Ou</p>
+                </div>
+            </div>
+
+            <div class="col-5-small-1">
+                <h2 class="h4-like">Accédez aux contenus les plus recherchés :</h2>
+                <ul class="ds44-list">
+                    <li><a href="#" class="ds44-arrowLink">Inscription à l’animation sportive<i class="icon icon-arrow-right" aria-hidden="true"></i></a></li>
+                    <li><a href="#" class="ds44-arrowLink">Recherche d’assistante maternelle<i class="icon icon-arrow-right" aria-hidden="true"></i></a></li>
+                    <li><a href="#" class="ds44-arrowLink">Demande d’aide au permis de conduire<i class="icon icon-arrow-right" aria-hidden="true"></i></a></li>
+                    <li><a href="#" class="ds44-arrowLink">Offres d’emplois et stages<i class="icon icon-arrow-right" aria-hidden="true"></i></a></li>
+                    <li><a href="#" class="ds44-arrowLink">Inforoutes<i class="icon icon-arrow-right" aria-hidden="true"></i></a></li>
+                    <li><a href="#" class="ds44-arrowLink">Marchés publics<i class="icon icon-arrow-right" aria-hidden="true"></i></a></li>
+                </ul>
+            </div>
+
+        </div>
+    </div>
+
+</section>
