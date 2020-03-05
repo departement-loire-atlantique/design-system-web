@@ -43,6 +43,10 @@
 .ds44--m-padding {
   padding          : $ds44-padding-medium; // 1rem
 }
+.ds44--m-padding-lr {
+  padding-left     : $ds44-padding-medium;
+  padding-right    : $ds44-padding-medium;
+}
 .ds44--m-padding-tb {
   padding-top      : $ds44-padding-medium; // 1rem
   padding-bottom   : $ds44-padding-medium; // 1rem
@@ -123,6 +127,10 @@
 
 // margins
 
+.ds44-mlr1 {
+  margin-left: $ds44-margin-base;
+  margin-right: $ds44-margin-base;
+}
 .ds44-mb-std {
   margin-bottom: $ds44-medium-vmargin;      // 1.5rem
 }
