@@ -21,9 +21,9 @@ variations:
   pattern: cards/card--AA--magazine.html
 
 
-- title: Communes
-  description: Ce type de tuile de forme verticale présente un titre suivi d'une liste d'informations.
-  pattern: cards/card--AA--commune.html
+- title: Action éducative
+  description:
+  pattern: cards/card--AA--educative.html
 
 - title: Variantes
   description: Liste des différentes variantes de tuile de type photo + contenu ou contenu seul
