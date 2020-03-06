@@ -68,7 +68,7 @@ input {
 
         &.ds44-moveLabel {
             font-size: 1.3rem; // 13px instead of 14px
-            top: -$ds44-padding-medium*2;
+            top: -$ds44-padding-medium*1.8;
             left: 0;
             color: $ds44-dark;
         }
@@ -973,6 +973,10 @@ input[type=radio],
                 border-radius: 0 0 3px 3px;
                 margin: -1px 0 0 0;
             }
+        }
+
+        > .ds44-form__container:last-of-type {
+            margin-top: 2.5rem;
         }
     }
 
