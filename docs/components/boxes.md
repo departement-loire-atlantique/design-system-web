@@ -28,7 +28,7 @@ variations:
   pattern: boxes/box-push.html
 - title: Media
   description: Encadrés video
-  pattern: boxes/box-media.html
+  pattern: cards/card--MeA--temoignages.html
 - title: Encadrés deux colonnes
   description: Différents styles d'encadrés deux colonnes
   pattern: boxes/box-deuxCol.html
