@@ -74,7 +74,7 @@ class MiscAccessibility {
         }
     }
 
-    static show(element, force = false, bubble = true) {
+    static show(element, force = false) {
         if (!element) {
             return;
         }
@@ -94,15 +94,9 @@ class MiscAccessibility {
                 element.removeAttribute('tabindex');
             }
         }
-
-        if (bubble) {
-            Array.from(element.children).map((childElement) => {
-                MiscAccessibility.show(childElement, force, bubble);
-            });
-        }
     }
 
-    static hide(element, force = false, bubble = true) {
+    static hide(element, force = false) {
         if (!element) {
             return;
         }
@@ -121,12 +115,6 @@ class MiscAccessibility {
             if (element.closest(MiscAccessibility.getEnabledElementsSelector()) === element) {
                 element.setAttribute('tabindex', '-1');
             }
-        }
-
-        if (bubble) {
-            Array.from(element.children).map((childElement) => {
-                MiscAccessibility.hide(childElement, force, bubble);
-            });
         }
     }
 

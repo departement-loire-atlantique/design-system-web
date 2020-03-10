@@ -8,7 +8,7 @@ status: A valider
 
 variations:
 - title: Modale simple
-  description: 
+  description:
   pattern: overlays/modale-simple.html
 - title: Faire une demande
   description: Modale colonnée type "faire ma demande"
@@ -22,6 +22,9 @@ variations:
 - title: Qui contacter
   description: Modales colonnées type "Qui contacter" et "Qui contacter avec champ de recherche"
   pattern: overlays/modale-qui-contacter.html
+- title: Sites et applis
+  description: Modale colonnée type "Sites et applis" qui reprend la structure présente dans le menu
+  pattern: overlays/modale-sites-applis.html
 ---
 
 

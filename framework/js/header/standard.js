@@ -51,8 +51,8 @@ class HeaderStandard {
             const currentScroll = window.pageYOffset;
             if (currentScroll === 0) {
                 header.classList.remove('hidden');
-                MiscAccessibility.show(document.querySelector('header'), false, false);
-                MiscAccessibility.show(document.querySelector('header .ds44-header'), false, false);
+                MiscAccessibility.show(document.querySelector('header'), false);
+                MiscAccessibility.show(document.querySelector('header .ds44-header'), false);
                 MiscAccessibility.show(document.querySelector('header .ds44-header .ds44-container-large'));
                 if (document.activeElement === document.querySelector('html')) {
                     MiscAccessibility.setFocus(document.querySelector('header .ds44-btn--menu'));
@@ -68,8 +68,8 @@ class HeaderStandard {
                 // Scroll vers le bas, uniquement si le haut de page est
                 // en dessous de la hauteur du header
                 header.classList.add('hidden');
-                MiscAccessibility.hide(document.querySelector('header'), false, false);
-                MiscAccessibility.hide(document.querySelector('header .ds44-header'), false, false);
+                MiscAccessibility.hide(document.querySelector('header'), false);
+                MiscAccessibility.hide(document.querySelector('header .ds44-header'), false);
                 MiscAccessibility.hide(document.querySelector('header .ds44-header .ds44-container-large'));
             } else if (
                 currentScroll < this.lastScroll &&
@@ -77,8 +77,8 @@ class HeaderStandard {
             ) {
                 // up
                 header.classList.remove('hidden');
-                MiscAccessibility.show(document.querySelector('header'), false, false);
-                MiscAccessibility.show(document.querySelector('header .ds44-header'), false, false);
+                MiscAccessibility.show(document.querySelector('header'), false);
+                MiscAccessibility.show(document.querySelector('header .ds44-header'), false);
                 MiscAccessibility.show(document.querySelector('header .ds44-header .ds44-container-large'));
             }
 

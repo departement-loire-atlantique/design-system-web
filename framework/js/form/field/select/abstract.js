@@ -311,8 +311,15 @@ class FormFieldSelectAbstract extends FormFieldAbstract {
         const url = object.textElement.getAttribute('data-url');
         let urlParameters = null;
         if (parameters) {
-            const formData = MiscForm.jsonToFormData(parameters);
-            urlParameters = (url.includes('?') ? '&' : '?') + new URLSearchParams(formData).toString()
+            if(parameters.value) {
+                urlParameters = object.valueElement.value;
+            } else if(typeof parameters === 'object') {
+                urlParameters = parameters[0];
+            } else {
+                urlParameters = parameters;
+            }
+
+            urlParameters = (url.includes('?') ? '&' : '?') + 'q=' + encodeURIComponent(urlParameters);
         }
 
         MiscRequest.send(
