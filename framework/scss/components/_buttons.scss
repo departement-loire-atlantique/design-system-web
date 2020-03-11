@@ -51,6 +51,21 @@ button, a.ds44-btnStd, a > .ds44-btnStd, .ds44-btnStd > a  {
         }
     }
 
+    &.ds44-bntALeft {
+        text-align: left;
+        position: relative;
+
+        .ds44-btnInnerText {
+            padding-right: 3rem;
+        }
+
+        .icon {
+            position: absolute;
+            right: 1.5rem;
+            top: calc(50% - 9px);
+        }
+    }
+
 }
 
 a > .ds44-btnStd,

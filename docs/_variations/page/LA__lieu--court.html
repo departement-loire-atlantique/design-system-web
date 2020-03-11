@@ -1,0 +1,83 @@
+---
+layout: pattern
+---
+
+{% include header/inc-header.html
+  logo='<picture class="ds44-logo"><img src="../../assets/images/logo-loire-atlantique.svg" alt="Retour à l&apos;accueil du site loire-atlantique.fr"></picture>'
+  variante1='<button type="button" class="ds44-btnIcoText--maxi ds44--xl-padding" id="open-search"><span class="ds44-btnInnerText">Rechercher</span><i class="icon icon-magnifier icon--large" aria-hidden="true"></i></button>'
+%}
+
+<main role="main" id="content">
+
+	<article class="ds44-container-large">
+
+		<div class="ds44-lightBG ds44-posRel">
+      <a class="ds44-btnStd ds44-btnStd--retourPage" type="button" title="Retour à la la liste des lieux"><i class="icon icon-long-arrow-left" aria-hidden="true"></i><span class="ds44-btnInnerText">Retour à la liste</span></a>
+			<div class="ds44-inner-container ds44--xl-padding-t ds44--m-padding-b ds44-tablette-reduced-pt">
+				<div class="ds44-grid12-offset-2">
+					<div class="ds44-tablette-reduced-mt">{% include breadcrumb/breadcrumb.html %}</div>
+          <h1 class="h1-like mbs mts" id="idTitre1">Capvie (Littoner)</h1>
+				</div>
+			</div>
+		</div>
+		<div class="ds44-img50 ds44--l-padding-tb">
+			<div class="ds44-inner-container">
+				<div class="ds44-grid12-offset-1">
+          <section class="ds44-box ds44-theme">
+            <div class="ds44-innerBoxContainer">
+              <div class="grid-2-small-1 ds44-grid12-offset-1">
+                <div class="col">
+                  <p class="ds44-docListElem mts"><i class="icon icon-tag ds44-docListIco" aria-hidden="true"></i>Service à domicile, lorem ipsum dolor</p>
+                  <p class="ds44-docListElem mts"><i class="icon icon-marker ds44-docListIco" aria-hidden="true"></i>90 avenue Albert de Mun<br /> 44600 SAINT NAZAIRE</p>
+                  <p class="ds44-docListElem mts"><i class="icon icon-map ds44-docListIco" aria-hidden="true"></i><a href="#" aria-label="Localiser sur une carte : [Nom du lieu]">Localiser sur une carte</a></p>
+                </div>
+                <div class="col ds44--xl-padding-l">
+                  <p class="ds44-docListElem mts"><i class="icon icon-phone ds44-docListIco" aria-hidden="true"></i>02 41 39 21 13</p>
+                  <p class="ds44-docListElem mts"><i class="icon icon-mail ds44-docListIco" aria-hidden="true"></i><a href="#mailto:contact@capvie.fr" aria-label="Contacter Capvie (Littoner) par mail : contact@capvie.fr">contacter par email</a></p>
+                  <p class="ds44-docListElem mts"><i class="icon icon-link ds44-docListIco" aria-hidden="true"></i><a href="#" aria-label="Visiter le site web de  Capvie (Littoner) - nouvelle fenêtre" target="_blank">Site internet</a></p>
+                </div>
+              </div>
+            </div>
+          </section>
+				</div>
+			</div>
+		</div>
+
+		<section class="ds44-contenuArticle" id="section1">
+			<div class="ds44-inner-container">
+				<div class="ds44-grid12-offset-2">
+          <div class="grid-2-small-1">
+            <div class="col mrs ds44-mtb3">
+              <h3 id="idTitre-list1">Prestations :</h3>
+              <ul class="ds44-list">
+                <li class="ds44-mt-std"><button class="ds44-btnStd ds44-bntALeft"><span class="ds44-btnInnerText">Assistance dans les actes quotidiens de la vie</span><i class="icon icon-long-arrow-right" aria-hidden="true"></i></button></li>
+                <li class="ds44-mt-std"><button class="ds44-btnStd ds44-bntALeft"><span class="ds44-btnInnerText">Accompagnement des personnes dans leurs déplacements en dehors de leur domicile</span><i class="icon icon-long-arrow-right" aria-hidden="true"></i></button></li>
+                <li class="ds44-mt-std"><button class="ds44-btnStd ds44-bntALeft"><span class="ds44-btnInnerText">Aide aux aidants</span><i class="icon icon-long-arrow-right" aria-hidden="true"></i></button></li>
+                <li class="ds44-mt-std"><button class="ds44-btnStd ds44-bntALeft"><span class="ds44-btnInnerText">Entretien du logement</span><i class="icon icon-long-arrow-right" aria-hidden="true"></i></button></li>
+                <li class="ds44-mt-std"><button class="ds44-btnStd ds44-bntALeft"><span class="ds44-btnInnerText">Garde de nuit</span><i class="icon icon-long-arrow-right" aria-hidden="true"></i></button></li>
+                <li class="ds44-mt-std"><button class="ds44-btnStd ds44-bntALeft"><span class="ds44-btnInnerText">Préparation des repas</span><i class="icon icon-long-arrow-right" aria-hidden="true"></i></button></li>
+              </ul>
+            </div>
+            <div class="col mls ds44-mtb3">
+              <h3 id="idTitre-list2">En détail :</h3>
+              <ul class="ds44-uList">
+                <li><strong>Statut :</strong> Privé</li>
+                <li><strong>Plage d’intervention :</strong> 7 jours /7</li>
+                <li><strong>Type d’aide :</strong> APA, PCH</li>
+                <li><strong>Modalités de paiement :</strong> CESU accepté, virement, chèque, prélèvement</li>
+                <li><strong>Modes d’intervention :</strong> Mandataire, Prestataire</li>
+                <li><strong>Mode de tarification :</strong> tarif libre</li>
+              </ul>              
+            </div>
+          </div>
+				</div>
+			</div>
+		</section>
+
+		{% include partage/partage-interne.html %}
+
+	</article>
+
+</main>
+
+{% include footer/footer-LA.html %}

@@ -2,6 +2,8 @@
   <div class="ds44-innerBoxContainer">
     <p role="heading" aria-level="2" class="ds44-box-heading">{{ include.title }}</p>
       <p>{{ include.text }}</p>
+      {% if include.btnText %}
       <p class="mts"><a href="#" class="ds44-btnLink"><span class="ds44-btnInnerText">{{ include.btnText }}</span><i class="icon icon-long-arrow-right" aria-hidden="true"></i></a></p>
+      {% endif %}
   </div>
 </section>
