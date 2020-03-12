@@ -342,12 +342,20 @@
     display: none !important;
   }
 
+  .ds44-mobile-reduced-pad {
+    padding: $ds44-padding-base !important;
+  }
+
   .ds44-mobile-reduced-pt {
     padding-top: $ds44-padding-base !important;
   }
 
   .ds44-mobile-reduced-pb {
     padding-bottom: $ds44-padding-base !important;
+  }
+
+  .ds44-mobile-reduced-mar {
+    margin: $ds44-margin-base !important;
   }
 
   .ds44-mobile-reduced-mb {
