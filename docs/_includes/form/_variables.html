@@ -72,6 +72,12 @@
     {% assign inputAttributes = '' %}
 {% endif %}
 
+{% if include.containerClass %}
+    {% assign containerClass = include.containerClass %}
+{% else %}
+    {% assign containerClass = 'ds44-form__container' %}
+{% endif %}
+
 {% if include.containerAttributes %}
     {% assign containerAttributes = include.containerAttributes %}
 {% else %}
