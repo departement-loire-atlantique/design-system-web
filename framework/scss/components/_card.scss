@@ -21,6 +21,20 @@
         }
     }
 
+    &.ds44-js-card {
+
+        &:focus,
+        &:hover,
+        &:active {
+            cursor: pointer;
+
+            a {
+                text-decoration: underline;
+            }
+        }
+
+    }
+
     &.ds44-card--fiche {
         background: transparent;
 

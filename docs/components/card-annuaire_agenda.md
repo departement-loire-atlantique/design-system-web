@@ -20,7 +20,6 @@ variations:
   description: Ce type de tuile met en avant des magazines avec le visuel sur la droite et le contenu textuel sur la droite.
   pattern: cards/card--AA--magazine.html
 
-
 - title: Action éducative
   description:
   pattern: cards/card--AA--educative.html
@@ -32,6 +31,10 @@ variations:
 - title: Fiches
   description: Tuile déployée - extension de tuile
   pattern: cards/card--fiches.html
+
+- title: Offre emploi
+  description:
+  pattern: cards/card--AA--emploi.html
 ---
 
 ## Usage
