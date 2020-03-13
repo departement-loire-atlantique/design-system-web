@@ -1,6 +1,5 @@
 class FormLayoutSearch {
     constructor() {
-        this.url = '/plugins/ChartePlugin/types/PortletQueryForeach/displayResult.jsp';
         this.objects = [];
 
         document
@@ -15,14 +14,15 @@ class FormLayoutSearch {
             'id': MiscUtils.generateId(),
             'formElement': element,
             'parameters': {},
-            'results': []
+            'searchData': {},
+            'hasSearched': false
         };
         this.objects.push(object);
         const objectIndex = (this.objects.length - 1);
 
         // Bind events
         MiscEvent.addListener('form:submit', this.submit.bind(this, objectIndex), object.formElement);
-        MiscEvent.addListener('search:refresh', this.search.bind(this, objectIndex), object.formElement);
+        MiscEvent.addListener('search:refresh', this.search.bind(this, objectIndex));
 
         // Initialization
         if (!this.loadFromUrl(objectIndex)) {
@@ -40,7 +40,9 @@ class FormLayoutSearch {
         }
         evt.detail.reset = true;
 
-        this.search(evt, objectIndex);
+        const object = this.objects[objectIndex];
+        object.hasSearched = true;
+        this.search(objectIndex, evt);
     }
 
     loadFromUrl(objectIndex) {
@@ -54,6 +56,10 @@ class FormLayoutSearch {
 
             // Ask other modules to set the parameters
             MiscEvent.dispatch('search:set-parameters', object.parameters);
+
+            // Start search
+            object.hasSearched = true;
+            this.search(objectIndex, {'detail': {'parameters': object.parameters}});
 
             return true;
         }
@@ -76,24 +82,33 @@ class FormLayoutSearch {
                 // Set url with the search parameters
                 MiscUrl.setHashParameters(object.parameters);
 
+                // Start search
+                object.hasSearched = true;
+                this.search(objectIndex, {'detail': {'parameters': object.parameters}});
+
                 return true;
             }
 
             // Reset search parameters
             object.parameters = {};
 
-            // Save results
-            object.results = window.searchData.results;
+            // Save response data
+            object.searchData = this.formatSearchData(window.searchData);
 
-            // Show results straight away, without starting a search
-            this.showResults(objectIndex);
+            // Show search data straight away, without starting a search
+            object.hasSearched = true;
+            this.showSearchData(objectIndex);
         }
 
         return false;
     }
 
-    search(evt, objectIndex) {
+    search(objectIndex, evt) {
         const object = this.objects[objectIndex];
+
+        if(!object.hasSearched) {
+            return;
+        }
 
         if (
             !evt ||
@@ -107,9 +122,11 @@ class FormLayoutSearch {
         MiscEvent.dispatch('loader:requestShow');
 
         // Manage parameters
+        const options = {};
         if (evt.detail.reset === true) {
             // New search
             object.parameters = evt.detail.parameters;
+            options.zoom = true;
         } else {
             // Mix current and new search
             object.parameters = Object.assign({}, object.parameters, evt.detail.parameters);
@@ -118,34 +135,42 @@ class FormLayoutSearch {
         // Set url with the search parameters
         MiscUrl.setHashParameters(object.parameters);
 
-        // Get the results from the back office
+        // Get the search data from the back office
         MiscRequest.send(
-            this.url,
-            this.searchSuccess.bind(this, objectIndex),
-            this.searchError.bind(this, objectIndex),
+            object.formElement.getAttribute('action'),
+            this.searchSuccess.bind(this, objectIndex, options),
+            this.searchError.bind(this, objectIndex, options),
             object.parameters,
-            'POST'
+            (MiscUtils.isInDevMode() ? 'GET' : 'POST')
         )
     }
 
-    searchSuccess(objectIndex, response) {
+    searchSuccess(objectIndex, options, response) {
         const object = this.objects[objectIndex];
 
-        // Save results
-        object.results = response.results;
+        // Save search data
+        object.searchData = this.formatSearchData(response);
 
-        this.showResults(objectIndex);
+        this.showSearchData(objectIndex, options);
         MiscEvent.dispatch('loader:requestHide');
     }
 
-    searchError(objectIndex) {
+    searchError(objectIndex, options) {
         MiscEvent.dispatch('loader:requestHide');
     }
 
-    showResults(objectIndex) {
+    showSearchData(objectIndex, options = {}) {
         const object = this.objects[objectIndex];
 
-        MiscEvent.dispatch('search:update', object.results);
+        MiscEvent.dispatch('search:update', Object.assign({}, object.searchData, options));
+    }
+
+    formatSearchData(response) {
+        return {
+            'nbResults': response['nb-result'],
+            'maxResults': response['max-result'],
+            'results': response['result']
+        };
     }
 }
 

@@ -13,4 +13,10 @@ class MiscUtils {
     static generateId() {
         return 'id' + Math.random().toString(36).substring(2, 15);
     }
+
+    static isInDevMode() {
+        return (document.location.hostname === 'localhost');
+    }
+
+
 }

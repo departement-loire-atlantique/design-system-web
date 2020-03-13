@@ -37,7 +37,7 @@
 .ds44-legendeContainer .ds44-blockAbsolute {
     position: absolute;
     z-index: 1;
-    width: 25vw;
+    width: 27.5vw;
 }
 
 .ds44-legendeContainer .ds44-blockAbsolute--br {
@@ -172,12 +172,6 @@ figure {
     }
     .ds44-legendeContainer.ds44-container-imgRatio {
         height: auto;
-    }
-
-    /* Image Map */
-
-    .ds44-imgMap {
-        max-width: none;
     }
 
 }

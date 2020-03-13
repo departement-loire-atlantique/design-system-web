@@ -118,6 +118,7 @@ class FormFieldSelectAbstract extends FormFieldAbstract {
 
         this.empty(objectIndex);
         this.focusOnButtonElement(objectIndex);
+        this.autoSubmit(objectIndex);
     }
 
     focusOnButtonElement(objectIndex) {
@@ -599,7 +600,11 @@ class FormFieldSelectAbstract extends FormFieldAbstract {
         this.checkValidity(objectIndex);
         this.enableDisableLinkedField(objectIndex);
         this.showHideResetButton(objectIndex);
+        this.autoSubmit(objectIndex);
+    }
 
+    autoSubmit(objectIndex) {
+        const object = this.objects[objectIndex];
         if (object.textElement.getAttribute('data-auto-submit')) {
             // Auto submit
             const formElement = object.textElement.closest('form');

@@ -2,7 +2,7 @@
 {% include images/loader.html %}
 
 <div class="ds44-facette">
-    <form data-is-ajax="true">
+    <form data-is-ajax="true" action="/json/recherche.json">
         {% include form/layout/partial/recherche-facette-main.html %}
 
         {% capture buttonAttributes %} aria-describedby="filter-by-{{ id }}"{% endcapture %}

@@ -1,7 +1,7 @@
 {% include form/_variables.html %}
 
 {% capture mainContent %}
-{% include form/field/partial/select.html %}
+{% include form/field/partial/select.html disabled=include.disabled selectContainerClass="ds44-js-select-checkbox" %}
 
 {% assign savedId = id %}
 {% assign savedLabel = label %}

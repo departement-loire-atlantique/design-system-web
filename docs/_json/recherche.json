@@ -1,0 +1,1206 @@
+{
+    "nb-result": 388,
+    "max-result": 100,
+    "result": [
+        {
+            "id": "c_1235827",
+            "value": "test non tout commune 3",
+            "metadata": {
+                "url": "http://localhost:8080/jcms/departement44/test-non-tout-commune-3/c_1235827",
+                "type": "FicheLieu",
+                "lat": "47.169196",
+                "long": "-1.720505",
+                "html_list": "\n\n\n<h3>\n<a href=\"departement44/test-non-tout-commune-3/c_1235827\" class=\"\" data-jalios-id='c_1235827'>\n  test non tout commune 3\n  \n</a>\n</h3>\n\n<div class=\"abstract\" >\n\t\n</div>",
+                "html_marker": "\n\n\n<h3>\n<a href=\"departement44/test-non-tout-commune-3/c_1235827\" class=\"\" data-jalios-id='c_1235827'>\n  test non tout commune 3\n  \n</a>\n</h3>\n\n<div class=\"abstract\" >\n\t\n</div>"
+            }
+        },
+        {
+            "id": "t1_9798",
+            "value": "Brains",
+            "metadata": {
+                "url": "http://localhost:8080/jcms/departement44/brains/t1_9798",
+                "type": "City",
+                "lat": "47.16962909999999",
+                "long": "-1.7219661999999971",
+                "html_list": "\n\n\n<h3>\n<a href=\"departement44/brains/t1_9798\" class=\"\" data-jalios-id='t1_9798'>\n  Brains\n  \n</a>\n</h3>\n\n<div class=\"abstract\" >\n\t\n</div>",
+                "html_marker": "\n\n\n<h3>\n<a href=\"departement44/brains/t1_9798\" class=\"\" data-jalios-id='t1_9798'>\n  Brains\n  \n</a>\n</h3>\n\n<div class=\"abstract\" >\n\t\n</div>"
+            }
+        },
+        {
+            "id": "c_1235804",
+            "value": "Test recherche commune sectorisation id ref inconnu",
+            "metadata": {
+                "url": "http://localhost:8080/jcms/departement44/test-recherche-commune-sectorisation-id-ref-inconnu/c_1235804",
+                "type": "FicheLieu",
+                "lat": null,
+                "long": null,
+                "html_list": "\n\n\n<h3>\n<a href=\"departement44/test-recherche-commune-sectorisation-id-ref-inconnu/c_1235804\" class=\"\" data-jalios-id='c_1235804'>\n  Test recherche commune sectorisation id ref inconnu\n  \n</a>\n</h3>\n\n<div class=\"abstract\" >\n\t\n</div>",
+                "html_marker": "\n\n\n<h3>\n<a href=\"departement44/test-recherche-commune-sectorisation-id-ref-inconnu/c_1235804\" class=\"\" data-jalios-id='c_1235804'>\n  Test recherche commune sectorisation id ref inconnu\n  \n</a>\n</h3>\n\n<div class=\"abstract\" >\n\t\n</div>"
+            }
+        },
+        {
+            "id": "c_1235802",
+            "value": "Test recherche commune sectorisation",
+            "metadata": {
+                "url": "http://localhost:8080/jcms/departement44/test-recherche-commune-sectorisation/c_1235802",
+                "type": "FicheLieu",
+                "lat": null,
+                "long": null,
+                "html_list": "\n\n\n<h3>\n<a href=\"departement44/test-recherche-commune-sectorisation/c_1235802\" class=\"\" data-jalios-id='c_1235802'>\n  Test recherche commune sectorisation\n  \n</a>\n</h3>\n\n<div class=\"abstract\" >\n\t\n</div>",
+                "html_marker": "\n\n\n<h3>\n<a href=\"departement44/test-recherche-commune-sectorisation/c_1235802\" class=\"\" data-jalios-id='c_1235802'>\n  Test recherche commune sectorisation\n  \n</a>\n</h3>\n\n<div class=\"abstract\" >\n\t\n</div>"
+            }
+        },
+        {
+            "id": "c_1235798",
+            "value": "Test recherche commune",
+            "metadata": {
+                "url": "http://localhost:8080/jcms/departement44/test-recherche-commune/c_1235798",
+                "type": "FicheLieu",
+                "lat": null,
+                "long": null,
+                "html_list": "\n\n\n<h3>\n<a href=\"departement44/test-recherche-commune/c_1235798\" class=\"\" data-jalios-id='c_1235798'>\n  Test recherche commune\n  \n</a>\n</h3>\n\n<div class=\"abstract\" >\n\t\n</div>",
+                "html_marker": "\n\n\n<h3>\n<a href=\"departement44/test-recherche-commune/c_1235798\" class=\"\" data-jalios-id='c_1235798'>\n  Test recherche commune\n  \n</a>\n</h3>\n\n<div class=\"abstract\" >\n\t\n</div>"
+            }
+        },
+        {
+            "id": "c_1235006",
+            "value": "Collège Pierre et Marie Curie ,rue",
+            "metadata": {
+                "url": "http://localhost:8080/jcms/departement44/education-et-colleges/college-pierre-et-marie-curie-rue/c_1235006",
+                "type": "FicheLieu",
+                "lat": null,
+                "long": null,
+                "html_list": "\n\n\n<h3>\n<a href=\"departement44/education-et-colleges/college-pierre-et-marie-curie-rue/c_1235006\" class=\"\" data-jalios-id='c_1235006'>\n  Collège Pierre et Marie Curie ,rue\n  \n</a>\n</h3>\n\n<div class=\"abstract\" >\n\t\n</div>",
+                "html_marker": "\n\n\n<h3>\n<a href=\"departement44/education-et-colleges/college-pierre-et-marie-curie-rue/c_1235006\" class=\"\" data-jalios-id='c_1235006'>\n  Collège Pierre et Marie Curie ,rue\n  \n</a>\n</h3>\n\n<div class=\"abstract\" >\n\t\n</div>"
+            }
+        },
+        {
+            "id": "c_1234805",
+            "value": "Bailleur social - Espacil Habitat",
+            "metadata": {
+                "url": "http://localhost:8080/jcms/departement44/bailleur-social-espacil-habitat/c_1234805",
+                "type": "FicheLieu",
+                "lat": null,
+                "long": null,
+                "html_list": "\n\n\n<h3>\n<a href=\"departement44/bailleur-social-espacil-habitat/c_1234805\" class=\"\" data-jalios-id='c_1234805'>\n  Bailleur social - Espacil Habitat\n  \n</a>\n</h3>\n\n<div class=\"abstract\" >\n\t\n</div>",
+                "html_marker": "\n\n\n<h3>\n<a href=\"departement44/bailleur-social-espacil-habitat/c_1234805\" class=\"\" data-jalios-id='c_1234805'>\n  Bailleur social - Espacil Habitat\n  \n</a>\n</h3>\n\n<div class=\"abstract\" >\n\t\n</div>"
+            }
+        },
+        {
+            "id": "c_1234414",
+            "value": "Action Logement - Nord Département 44",
+            "metadata": {
+                "url": "http://localhost:8080/jcms/departement44/action-logement-nord-departement-44/c_1234414",
+                "type": "FicheLieu",
+                "lat": null,
+                "long": null,
+                "html_list": "\n\n\n<h3>\n<a href=\"departement44/action-logement-nord-departement-44/c_1234414\" class=\"\" data-jalios-id='c_1234414'>\n  Action Logement - Nord Département 44\n  \n</a>\n</h3>\n\n<div class=\"abstract\" >\n\t\n</div>",
+                "html_marker": "\n\n\n<h3>\n<a href=\"departement44/action-logement-nord-departement-44/c_1234414\" class=\"\" data-jalios-id='c_1234414'>\n  Action Logement - Nord Département 44\n  \n</a>\n</h3>\n\n<div class=\"abstract\" >\n\t\n</div>"
+            }
+        },
+        {
+            "id": "c_1234646",
+            "value": "Habitat 44",
+            "metadata": {
+                "url": "http://localhost:8080/jcms/departement44/habitat-logement/habitat-44/c_1234646",
+                "type": "FicheLieu",
+                "lat": null,
+                "long": null,
+                "html_list": "\n\n\n<h3>\n<a href=\"departement44/habitat-logement/habitat-44/c_1234646\" class=\"\" data-jalios-id='c_1234646'>\n  Habitat 44\n  \n</a>\n</h3>\n\n<div class=\"abstract\" >\n\t\n</div>",
+                "html_marker": "\n\n\n<h3>\n<a href=\"departement44/habitat-logement/habitat-44/c_1234646\" class=\"\" data-jalios-id='c_1234646'>\n  Habitat 44\n  \n</a>\n</h3>\n\n<div class=\"abstract\" >\n\t\n</div>"
+            }
+        },
+        {
+            "id": "c_1234403",
+            "value": "EIE - permanence de Rezé",
+            "metadata": {
+                "url": "http://localhost:8080/jcms/departement44/habitat-logement/eie-permanence-de-reze/c_1234403",
+                "type": "FicheLieu",
+                "lat": null,
+                "long": null,
+                "html_list": "\n\n\n<h3>\n<a href=\"departement44/habitat-logement/eie-permanence-de-reze/c_1234403\" class=\"\" data-jalios-id='c_1234403'>\n  EIE - permanence de Rezé\n  \n</a>\n</h3>\n\n<div class=\"abstract\" >\n\t\n</div>",
+                "html_marker": "\n\n\n<h3>\n<a href=\"departement44/habitat-logement/eie-permanence-de-reze/c_1234403\" class=\"\" data-jalios-id='c_1234403'>\n  EIE - permanence de Rezé\n  \n</a>\n</h3>\n\n<div class=\"abstract\" >\n\t\n</div>"
+            }
+        },
+        {
+            "id": "c_1234434",
+            "value": "CROUS - Centre Régional des Oeuvres Universitaires et Scolaires - Nantes",
+            "metadata": {
+                "url": "http://localhost:8080/jcms/departement44/crous-centre-regional-des-oeuvres-universitaires-et-scolaires-nantes/c_1234434",
+                "type": "FicheLieu",
+                "lat": null,
+                "long": null,
+                "html_list": "\n\n\n<h3>\n<a href=\"departement44/crous-centre-regional-des-oeuvres-universitaires-et-scolaires-nantes/c_1234434\" class=\"\" data-jalios-id='c_1234434'>\n  CROUS - Centre Régional des Oeuvres Universitaires et Scolaires - Nantes\n  \n</a>\n</h3>\n\n<div class=\"abstract\" >\n\t\n</div>",
+                "html_marker": "\n\n\n<h3>\n<a href=\"departement44/crous-centre-regional-des-oeuvres-universitaires-et-scolaires-nantes/c_1234434\" class=\"\" data-jalios-id='c_1234434'>\n  CROUS - Centre Régional des Oeuvres Universitaires et Scolaires - Nantes\n  \n</a>\n</h3>\n\n<div class=\"abstract\" >\n\t\n</div>"
+            }
+        },
+        {
+            "id": "c_1234696",
+            "value": "Mouvement du nid",
+            "metadata": {
+                "url": "http://localhost:8080/jcms/departement44/mouvement-du-nid/c_1234696",
+                "type": "FicheLieu",
+                "lat": null,
+                "long": null,
+                "html_list": "\n\n\n<h3>\n<a href=\"departement44/mouvement-du-nid/c_1234696\" class=\"\" data-jalios-id='c_1234696'>\n  Mouvement du nid\n  \n</a>\n</h3>\n\n<div class=\"abstract\" >\n\t\n</div>",
+                "html_marker": "\n\n\n<h3>\n<a href=\"departement44/mouvement-du-nid/c_1234696\" class=\"\" data-jalios-id='c_1234696'>\n  Mouvement du nid\n  \n</a>\n</h3>\n\n<div class=\"abstract\" >\n\t\n</div>"
+            }
+        },
+        {
+            "id": "c_1234450",
+            "value": "ADIL – permanence de La Chapelle-sur-Erdre",
+            "metadata": {
+                "url": "http://localhost:8080/jcms/departement44/adil-permanence-de-la-chapelle-sur-erdre/c_1234450",
+                "type": "FicheLieu",
+                "lat": null,
+                "long": null,
+                "html_list": "\n\n\n<h3>\n<a href=\"departement44/adil-permanence-de-la-chapelle-sur-erdre/c_1234450\" class=\"\" data-jalios-id='c_1234450'>\n  ADIL – permanence de La Chapelle-sur-Erdre\n  \n</a>\n</h3>\n\n<div class=\"abstract\" >\n\t\n</div>",
+                "html_marker": "\n\n\n<h3>\n<a href=\"departement44/adil-permanence-de-la-chapelle-sur-erdre/c_1234450\" class=\"\" data-jalios-id='c_1234450'>\n  ADIL – permanence de La Chapelle-sur-Erdre\n  \n</a>\n</h3>\n\n<div class=\"abstract\" >\n\t\n</div>"
+            }
+        },
+        {
+            "id": "c_1234981",
+            "value": "Foyer de Jeunes Travailleurs (FJT) Embarcadère",
+            "metadata": {
+                "url": "http://localhost:8080/jcms/departement44/jeunesse/foyer-de-jeunes-travailleurs-fjt-embarcadere/c_1234981",
+                "type": "FicheLieu",
+                "lat": null,
+                "long": null,
+                "html_list": "\n\n\n<h3>\n<a href=\"departement44/jeunesse/foyer-de-jeunes-travailleurs-fjt-embarcadere/c_1234981\" class=\"\" data-jalios-id='c_1234981'>\n  Foyer de Jeunes Travailleurs (FJT) Embarcadère\n  \n</a>\n</h3>\n\n<div class=\"abstract\" >\n\t\n</div>",
+                "html_marker": "\n\n\n<h3>\n<a href=\"departement44/jeunesse/foyer-de-jeunes-travailleurs-fjt-embarcadere/c_1234981\" class=\"\" data-jalios-id='c_1234981'>\n  Foyer de Jeunes Travailleurs (FJT) Embarcadère\n  \n</a>\n</h3>\n\n<div class=\"abstract\" >\n\t\n</div>"
+            }
+        },
+        {
+            "id": "c_1234768",
+            "value": "France Victimes 44",
+            "metadata": {
+                "url": "http://localhost:8080/jcms/departement44/france-victimes-44/c_1234768",
+                "type": "FicheLieu",
+                "lat": null,
+                "long": null,
+                "html_list": "\n\n\n<h3>\n<a href=\"departement44/france-victimes-44/c_1234768\" class=\"\" data-jalios-id='c_1234768'>\n  France Victimes 44\n  \n</a>\n</h3>\n\n<div class=\"abstract\" >\n\t\n</div>",
+                "html_marker": "\n\n\n<h3>\n<a href=\"departement44/france-victimes-44/c_1234768\" class=\"\" data-jalios-id='c_1234768'>\n  France Victimes 44\n  \n</a>\n</h3>\n\n<div class=\"abstract\" >\n\t\n</div>"
+            }
+        },
+        {
+            "id": "c_1234946",
+            "value": "Résidence Barbusse",
+            "metadata": {
+                "url": "http://localhost:8080/jcms/departement44/jeunesse/residence-barbusse/c_1234946",
+                "type": "FicheLieu",
+                "lat": null,
+                "long": null,
+                "html_list": "\n\n\n<h3>\n<a href=\"departement44/jeunesse/residence-barbusse/c_1234946\" class=\"\" data-jalios-id='c_1234946'>\n  Résidence Barbusse\n  \n</a>\n</h3>\n\n<div class=\"abstract\" >\n\t\n</div>",
+                "html_marker": "\n\n\n<h3>\n<a href=\"departement44/jeunesse/residence-barbusse/c_1234946\" class=\"\" data-jalios-id='c_1234946'>\n  Résidence Barbusse\n  \n</a>\n</h3>\n\n<div class=\"abstract\" >\n\t\n</div>"
+            }
+        },
+        {
+            "id": "c_1234943",
+            "value": "Résidence La Tour d'Auvergne",
+            "metadata": {
+                "url": "http://localhost:8080/jcms/departement44/jeunesse/residence-la-tour-d-auvergne/c_1234943",
+                "type": "FicheLieu",
+                "lat": null,
+                "long": null,
+                "html_list": "\n\n\n<h3>\n<a href=\"departement44/jeunesse/residence-la-tour-d-auvergne/c_1234943\" class=\"\" data-jalios-id='c_1234943'>\n  Résidence La Tour d'Auvergne\n  \n</a>\n</h3>\n\n<div class=\"abstract\" >\n\t\n</div>",
+                "html_marker": "\n\n\n<h3>\n<a href=\"departement44/jeunesse/residence-la-tour-d-auvergne/c_1234943\" class=\"\" data-jalios-id='c_1234943'>\n  Résidence La Tour d'Auvergne\n  \n</a>\n</h3>\n\n<div class=\"abstract\" >\n\t\n</div>"
+            }
+        },
+        {
+            "id": "c_1234944",
+            "value": "Résidence Chénaie",
+            "metadata": {
+                "url": "http://localhost:8080/jcms/departement44/jeunesse/residence-chenaie/c_1234944",
+                "type": "FicheLieu",
+                "lat": null,
+                "long": null,
+                "html_list": "\n\n\n<h3>\n<a href=\"departement44/jeunesse/residence-chenaie/c_1234944\" class=\"\" data-jalios-id='c_1234944'>\n  Résidence Chénaie\n  \n</a>\n</h3>\n\n<div class=\"abstract\" >\n\t\n</div>",
+                "html_marker": "\n\n\n<h3>\n<a href=\"departement44/jeunesse/residence-chenaie/c_1234944\" class=\"\" data-jalios-id='c_1234944'>\n  Résidence Chénaie\n  \n</a>\n</h3>\n\n<div class=\"abstract\" >\n\t\n</div>"
+            }
+        },
+        {
+            "id": "c_1234940",
+            "value": "Résidence Port Beaulieu-Les Forges",
+            "metadata": {
+                "url": "http://localhost:8080/jcms/departement44/jeunesse/residence-port-beaulieu-les-forges/c_1234940",
+                "type": "FicheLieu",
+                "lat": null,
+                "long": null,
+                "html_list": "\n\n\n<h3>\n<a href=\"departement44/jeunesse/residence-port-beaulieu-les-forges/c_1234940\" class=\"\" data-jalios-id='c_1234940'>\n  Résidence Port Beaulieu-Les Forges\n  \n</a>\n</h3>\n\n<div class=\"abstract\" >\n\t\n</div>",
+                "html_marker": "\n\n\n<h3>\n<a href=\"departement44/jeunesse/residence-port-beaulieu-les-forges/c_1234940\" class=\"\" data-jalios-id='c_1234940'>\n  Résidence Port Beaulieu-Les Forges\n  \n</a>\n</h3>\n\n<div class=\"abstract\" >\n\t\n</div>"
+            }
+        },
+        {
+            "id": "c_1234351",
+            "value": "ADELIS",
+            "metadata": {
+                "url": "http://localhost:8080/jcms/departement44/jeunesse/adelis/c_1234351",
+                "type": "FicheLieu",
+                "lat": null,
+                "long": null,
+                "html_list": "\n\n\n<h3>\n<a href=\"departement44/jeunesse/adelis/c_1234351\" class=\"\" data-jalios-id='c_1234351'>\n  ADELIS\n  \n</a>\n</h3>\n\n<div class=\"abstract\" >\n\t\n</div>",
+                "html_marker": "\n\n\n<h3>\n<a href=\"departement44/jeunesse/adelis/c_1234351\" class=\"\" data-jalios-id='c_1234351'>\n  ADELIS\n  \n</a>\n</h3>\n\n<div class=\"abstract\" >\n\t\n</div>"
+            }
+        },
+        {
+            "id": "c_1234347",
+            "value": "Résidence Les Hauts de Saint Aignan",
+            "metadata": {
+                "url": "http://localhost:8080/jcms/departement44/jeunesse/residence-les-hauts-de-saint-aignan/c_1234347",
+                "type": "FicheLieu",
+                "lat": null,
+                "long": null,
+                "html_list": "\n\n\n<h3>\n<a href=\"departement44/jeunesse/residence-les-hauts-de-saint-aignan/c_1234347\" class=\"\" data-jalios-id='c_1234347'>\n  Résidence Les Hauts de Saint Aignan\n  \n</a>\n</h3>\n\n<div class=\"abstract\" >\n\t\n</div>",
+                "html_marker": "\n\n\n<h3>\n<a href=\"departement44/jeunesse/residence-les-hauts-de-saint-aignan/c_1234347\" class=\"\" data-jalios-id='c_1234347'>\n  Résidence Les Hauts de Saint Aignan\n  \n</a>\n</h3>\n\n<div class=\"abstract\" >\n\t\n</div>"
+            }
+        },
+        {
+            "id": "c_1234345",
+            "value": "Résidence Chanteclerc",
+            "metadata": {
+                "url": "http://localhost:8080/jcms/departement44/jeunesse/residence-chanteclerc/c_1234345",
+                "type": "FicheLieu",
+                "lat": null,
+                "long": null,
+                "html_list": "\n\n\n<h3>\n<a href=\"departement44/jeunesse/residence-chanteclerc/c_1234345\" class=\"\" data-jalios-id='c_1234345'>\n  Résidence Chanteclerc\n  \n</a>\n</h3>\n\n<div class=\"abstract\" >\n\t\n</div>",
+                "html_marker": "\n\n\n<h3>\n<a href=\"departement44/jeunesse/residence-chanteclerc/c_1234345\" class=\"\" data-jalios-id='c_1234345'>\n  Résidence Chanteclerc\n  \n</a>\n</h3>\n\n<div class=\"abstract\" >\n\t\n</div>"
+            }
+        },
+        {
+            "id": "c_1234121",
+            "value": "CLIC Nantes Entour'âge",
+            "metadata": {
+                "url": "http://localhost:8080/jcms/departement44/seniors-personnes-agees/clic-nantes-entour-age/c_1234121",
+                "type": "FicheLieu",
+                "lat": null,
+                "long": null,
+                "html_list": "\n\n\n<h3>\n<a href=\"departement44/seniors-personnes-agees/clic-nantes-entour-age/c_1234121\" class=\"\" data-jalios-id='c_1234121'>\n  CLIC Nantes Entour'âge\n  \n</a>\n</h3>\n\n<div class=\"abstract\" >\n\t\n</div>",
+                "html_marker": "\n\n\n<h3>\n<a href=\"departement44/seniors-personnes-agees/clic-nantes-entour-age/c_1234121\" class=\"\" data-jalios-id='c_1234121'>\n  CLIC Nantes Entour'âge\n  \n</a>\n</h3>\n\n<div class=\"abstract\" >\n\t\n</div>"
+            }
+        },
+        {
+            "id": "c_1234194",
+            "value": "L'agence départementale de prévention spécialisée",
+            "metadata": {
+                "url": "http://localhost:8080/jcms/departement44/l-agence-departementale-de-prevention-specialisee/c_1234194",
+                "type": "FicheLieu",
+                "lat": null,
+                "long": null,
+                "html_list": "\n\n\n<h3>\n<a href=\"departement44/l-agence-departementale-de-prevention-specialisee/c_1234194\" class=\"\" data-jalios-id='c_1234194'>\n  L'agence départementale de prévention spécialisée\n  \n</a>\n</h3>\n\n<div class=\"abstract\" >\n\t\n</div>",
+                "html_marker": "\n\n\n<h3>\n<a href=\"departement44/l-agence-departementale-de-prevention-specialisee/c_1234194\" class=\"\" data-jalios-id='c_1234194'>\n  L'agence départementale de prévention spécialisée\n  \n</a>\n</h3>\n\n<div class=\"abstract\" >\n\t\n</div>"
+            }
+        },
+        {
+            "id": "c_1235004",
+            "value": "Edit de Nantes Habitat Jeunes",
+            "metadata": {
+                "url": "http://localhost:8080/jcms/departement44/jeunesse/edit-de-nantes-habitat-jeunes/c_1235004",
+                "type": "FicheLieu",
+                "lat": null,
+                "long": null,
+                "html_list": "\n\n\n<h3>\n<a href=\"departement44/jeunesse/edit-de-nantes-habitat-jeunes/c_1235004\" class=\"\" data-jalios-id='c_1235004'>\n  Edit de Nantes Habitat Jeunes\n  \n</a>\n</h3>\n\n<div class=\"abstract\" >\n\t\n</div>",
+                "html_marker": "\n\n\n<h3>\n<a href=\"departement44/jeunesse/edit-de-nantes-habitat-jeunes/c_1235004\" class=\"\" data-jalios-id='c_1235004'>\n  Edit de Nantes Habitat Jeunes\n  \n</a>\n</h3>\n\n<div class=\"abstract\" >\n\t\n</div>"
+            }
+        },
+        {
+            "id": "c_1234155",
+            "value": "Le grand T",
+            "metadata": {
+                "url": "http://localhost:8080/jcms/departement44/le-grand-t/c_1234155",
+                "type": "FicheLieu",
+                "lat": null,
+                "long": null,
+                "html_list": "\n\n\n<h3>\n<a href=\"departement44/le-grand-t/c_1234155\" class=\"\" data-jalios-id='c_1234155'>\n  Le grand T\n  \n</a>\n</h3>\n\n<div class=\"abstract\" >\n\t\n</div>",
+                "html_marker": "\n\n\n<h3>\n<a href=\"departement44/le-grand-t/c_1234155\" class=\"\" data-jalios-id='c_1234155'>\n  Le grand T\n  \n</a>\n</h3>\n\n<div class=\"abstract\" >\n\t\n</div>"
+            }
+        },
+        {
+            "id": "c_1235002",
+            "value": "A vos services",
+            "metadata": {
+                "url": "http://localhost:8080/jcms/departement44/seniors-personnes-agees/a-vos-services/c_1235002",
+                "type": "FicheLieu",
+                "lat": null,
+                "long": null,
+                "html_list": "\n\n\n<h3>\n<a href=\"departement44/seniors-personnes-agees/a-vos-services/c_1235002\" class=\"\" data-jalios-id='c_1235002'>\n  A vos services\n  \n</a>\n</h3>\n\n<div class=\"abstract\" >\n\t\n</div>",
+                "html_marker": "\n\n\n<h3>\n<a href=\"departement44/seniors-personnes-agees/a-vos-services/c_1235002\" class=\"\" data-jalios-id='c_1235002'>\n  A vos services\n  \n</a>\n</h3>\n\n<div class=\"abstract\" >\n\t\n</div>"
+            }
+        },
+        {
+            "id": "c_1234148",
+            "value": "CLIC Villes Vill’Âges",
+            "metadata": {
+                "url": "http://localhost:8080/jcms/departement44/seniors-personnes-agees/clic-villes-vill-ages/c_1234148",
+                "type": "FicheLieu",
+                "lat": null,
+                "long": null,
+                "html_list": "\n\n\n<h3>\n<a href=\"departement44/seniors-personnes-agees/clic-villes-vill-ages/c_1234148\" class=\"\" data-jalios-id='c_1234148'>\n  CLIC Villes Vill’Âges\n  \n</a>\n</h3>\n\n<div class=\"abstract\" >\n\t\n</div>",
+                "html_marker": "\n\n\n<h3>\n<a href=\"departement44/seniors-personnes-agees/clic-villes-vill-ages/c_1234148\" class=\"\" data-jalios-id='c_1234148'>\n  CLIC Villes Vill’Âges\n  \n</a>\n</h3>\n\n<div class=\"abstract\" >\n\t\n</div>"
+            }
+        },
+        {
+            "id": "c_1235001",
+            "value": "Collège Jean Rostand",
+            "metadata": {
+                "url": "http://localhost:8080/jcms/departement44/education-et-colleges/college-jean-rostand/c_1235001",
+                "type": "FicheLieu",
+                "lat": null,
+                "long": null,
+                "html_list": "\n\n\n<h3>\n<a href=\"departement44/education-et-colleges/college-jean-rostand/c_1235001\" class=\"\" data-jalios-id='c_1235001'>\n  Collège Jean Rostand\n  \n</a>\n</h3>\n\n<div class=\"abstract\" >\n\t\n</div>",
+                "html_marker": "\n\n\n<h3>\n<a href=\"departement44/education-et-colleges/college-jean-rostand/c_1235001\" class=\"\" data-jalios-id='c_1235001'>\n  Collège Jean Rostand\n  \n</a>\n</h3>\n\n<div class=\"abstract\" >\n\t\n</div>"
+            }
+        },
+        {
+            "id": "c_1234999",
+            "value": "Service solidarité - Délégation Nantes",
+            "metadata": {
+                "url": "http://localhost:8080/jcms/departement44/service-solidarite-delegation-nantes/c_1234999",
+                "type": "FicheLieu",
+                "lat": null,
+                "long": null,
+                "html_list": "\n\n\n<h3>\n<a href=\"departement44/service-solidarite-delegation-nantes/c_1234999\" class=\"\" data-jalios-id='c_1234999'>\n  Service solidarité - Délégation Nantes\n  \n</a>\n</h3>\n\n<div class=\"abstract\" >\n\t\n</div>",
+                "html_marker": "\n\n\n<h3>\n<a href=\"departement44/service-solidarite-delegation-nantes/c_1234999\" class=\"\" data-jalios-id='c_1234999'>\n  Service solidarité - Délégation Nantes\n  \n</a>\n</h3>\n\n<div class=\"abstract\" >\n\t\n</div>"
+            }
+        },
+        {
+            "id": "c_1234994",
+            "value": "Service développement local - Délégation Nantes",
+            "metadata": {
+                "url": "http://localhost:8080/jcms/departement44/service-developpement-local-delegation-nantes/c_1234994",
+                "type": "FicheLieu",
+                "lat": null,
+                "long": null,
+                "html_list": "\n\n\n<h3>\n<a href=\"departement44/service-developpement-local-delegation-nantes/c_1234994\" class=\"\" data-jalios-id='c_1234994'>\n  Service développement local - Délégation Nantes\n  \n</a>\n</h3>\n\n<div class=\"abstract\" >\n\t\n</div>",
+                "html_marker": "\n\n\n<h3>\n<a href=\"departement44/service-developpement-local-delegation-nantes/c_1234994\" class=\"\" data-jalios-id='c_1234994'>\n  Service développement local - Délégation Nantes\n  \n</a>\n</h3>\n\n<div class=\"abstract\" >\n\t\n</div>"
+            }
+        },
+        {
+            "id": "c_1234987",
+            "value": "Collège Victor Hugo",
+            "metadata": {
+                "url": "http://localhost:8080/jcms/departement44/education-et-colleges/college-victor-hugo/c_1234987",
+                "type": "FicheLieu",
+                "lat": null,
+                "long": null,
+                "html_list": "\n\n\n<h3>\n<a href=\"departement44/education-et-colleges/college-victor-hugo/c_1234987\" class=\"\" data-jalios-id='c_1234987'>\n  Collège Victor Hugo\n  \n</a>\n</h3>\n\n<div class=\"abstract\" >\n\t\n</div>",
+                "html_marker": "\n\n\n<h3>\n<a href=\"departement44/education-et-colleges/college-victor-hugo/c_1234987\" class=\"\" data-jalios-id='c_1234987'>\n  Collège Victor Hugo\n  \n</a>\n</h3>\n\n<div class=\"abstract\" >\n\t\n</div>"
+            }
+        },
+        {
+            "id": "c_1234985",
+            "value": "Collège Hector Berlioz",
+            "metadata": {
+                "url": "http://localhost:8080/jcms/departement44/education-et-colleges/college-hector-berlioz/c_1234985",
+                "type": "FicheLieu",
+                "lat": null,
+                "long": null,
+                "html_list": "\n\n\n<h3>\n<a href=\"departement44/education-et-colleges/college-hector-berlioz/c_1234985\" class=\"\" data-jalios-id='c_1234985'>\n  Collège Hector Berlioz\n  \n</a>\n</h3>\n\n<div class=\"abstract\" >\n\t\n</div>",
+                "html_marker": "\n\n\n<h3>\n<a href=\"departement44/education-et-colleges/college-hector-berlioz/c_1234985\" class=\"\" data-jalios-id='c_1234985'>\n  Collège Hector Berlioz\n  \n</a>\n</h3>\n\n<div class=\"abstract\" >\n\t\n</div>"
+            }
+        },
+        {
+            "id": "c_1234984",
+            "value": "Edit de Nantes Habitat Jeunes - Passerelle logement",
+            "metadata": {
+                "url": "http://localhost:8080/jcms/departement44/jeunesse/edit-de-nantes-habitat-jeunes-passerelle-logement/c_1234984",
+                "type": "FicheLieu",
+                "lat": null,
+                "long": null,
+                "html_list": "\n\n\n<h3>\n<a href=\"departement44/jeunesse/edit-de-nantes-habitat-jeunes-passerelle-logement/c_1234984\" class=\"\" data-jalios-id='c_1234984'>\n  Edit de Nantes Habitat Jeunes - Passerelle logement\n  \n</a>\n</h3>\n\n<div class=\"abstract\" >\n\t\n</div>",
+                "html_marker": "\n\n\n<h3>\n<a href=\"departement44/jeunesse/edit-de-nantes-habitat-jeunes-passerelle-logement/c_1234984\" class=\"\" data-jalios-id='c_1234984'>\n  Edit de Nantes Habitat Jeunes - Passerelle logement\n  \n</a>\n</h3>\n\n<div class=\"abstract\" >\n\t\n</div>"
+            }
+        },
+        {
+            "id": "c_1234980",
+            "value": "Collège Stendhal",
+            "metadata": {
+                "url": "http://localhost:8080/jcms/departement44/education-et-colleges/college-stendhal/c_1234980",
+                "type": "FicheLieu",
+                "lat": null,
+                "long": null,
+                "html_list": "\n\n\n<h3>\n<a href=\"departement44/education-et-colleges/college-stendhal/c_1234980\" class=\"\" data-jalios-id='c_1234980'>\n  Collège Stendhal\n  \n</a>\n</h3>\n\n<div class=\"abstract\" >\n\t\n</div>",
+                "html_marker": "\n\n\n<h3>\n<a href=\"departement44/education-et-colleges/college-stendhal/c_1234980\" class=\"\" data-jalios-id='c_1234980'>\n  Collège Stendhal\n  \n</a>\n</h3>\n\n<div class=\"abstract\" >\n\t\n</div>"
+            }
+        },
+        {
+            "id": "c_1234976",
+            "value": "Service ressources - Délégation Nantes",
+            "metadata": {
+                "url": "http://localhost:8080/jcms/departement44/service-ressources-delegation-nantes/c_1234976",
+                "type": "FicheLieu",
+                "lat": null,
+                "long": null,
+                "html_list": "\n\n\n<h3>\n<a href=\"departement44/service-ressources-delegation-nantes/c_1234976\" class=\"\" data-jalios-id='c_1234976'>\n  Service ressources - Délégation Nantes\n  \n</a>\n</h3>\n\n<div class=\"abstract\" >\n\t\n</div>",
+                "html_marker": "\n\n\n<h3>\n<a href=\"departement44/service-ressources-delegation-nantes/c_1234976\" class=\"\" data-jalios-id='c_1234976'>\n  Service ressources - Délégation Nantes\n  \n</a>\n</h3>\n\n<div class=\"abstract\" >\n\t\n</div>"
+            }
+        },
+        {
+            "id": "c_1234967",
+            "value": "Relais Assistantes Maternelles (RAM) de Thouaré-sur-Loire",
+            "metadata": {
+                "url": "http://localhost:8080/jcms/departement44/enfance-familles/relais-assistantes-maternelles-ram-de-thouare-sur-loire/c_1234967",
+                "type": "FicheLieu",
+                "lat": null,
+                "long": null,
+                "html_list": "\n\n\n<h3>\n<a href=\"departement44/enfance-familles/relais-assistantes-maternelles-ram-de-thouare-sur-loire/c_1234967\" class=\"\" data-jalios-id='c_1234967'>\n  Relais Assistantes Maternelles (RAM) de Thouaré-sur-Loire\n  \n</a>\n</h3>\n\n<div class=\"abstract\" >\n\t\n</div>",
+                "html_marker": "\n\n\n<h3>\n<a href=\"departement44/enfance-familles/relais-assistantes-maternelles-ram-de-thouare-sur-loire/c_1234967\" class=\"\" data-jalios-id='c_1234967'>\n  Relais Assistantes Maternelles (RAM) de Thouaré-sur-Loire\n  \n</a>\n</h3>\n\n<div class=\"abstract\" >\n\t\n</div>"
+            }
+        },
+        {
+            "id": "c_1234966",
+            "value": "Collège Libertaire Rutigliano",
+            "metadata": {
+                "url": "http://localhost:8080/jcms/departement44/education-et-colleges/college-libertaire-rutigliano/c_1234966",
+                "type": "FicheLieu",
+                "lat": null,
+                "long": null,
+                "html_list": "\n\n\n<h3>\n<a href=\"departement44/education-et-colleges/college-libertaire-rutigliano/c_1234966\" class=\"\" data-jalios-id='c_1234966'>\n  Collège Libertaire Rutigliano\n  \n</a>\n</h3>\n\n<div class=\"abstract\" >\n\t\n</div>",
+                "html_marker": "\n\n\n<h3>\n<a href=\"departement44/education-et-colleges/college-libertaire-rutigliano/c_1234966\" class=\"\" data-jalios-id='c_1234966'>\n  Collège Libertaire Rutigliano\n  \n</a>\n</h3>\n\n<div class=\"abstract\" >\n\t\n</div>"
+            }
+        },
+        {
+            "id": "c_1234949",
+            "value": "Collège Sophie Germain",
+            "metadata": {
+                "url": "http://localhost:8080/jcms/departement44/education-et-colleges/college-sophie-germain/c_1234949",
+                "type": "FicheLieu",
+                "lat": null,
+                "long": null,
+                "html_list": "\n\n\n<h3>\n<a href=\"departement44/education-et-colleges/college-sophie-germain/c_1234949\" class=\"\" data-jalios-id='c_1234949'>\n  Collège Sophie Germain\n  \n</a>\n</h3>\n\n<div class=\"abstract\" >\n\t\n</div>",
+                "html_marker": "\n\n\n<h3>\n<a href=\"departement44/education-et-colleges/college-sophie-germain/c_1234949\" class=\"\" data-jalios-id='c_1234949'>\n  Collège Sophie Germain\n  \n</a>\n</h3>\n\n<div class=\"abstract\" >\n\t\n</div>"
+            }
+        },
+        {
+            "id": "c_1234941",
+            "value": "Résidence Les Liards",
+            "metadata": {
+                "url": "http://localhost:8080/jcms/departement44/jeunesse/residence-les-liards/c_1234941",
+                "type": "FicheLieu",
+                "lat": null,
+                "long": null,
+                "html_list": "\n\n\n<h3>\n<a href=\"departement44/jeunesse/residence-les-liards/c_1234941\" class=\"\" data-jalios-id='c_1234941'>\n  Résidence Les Liards\n  \n</a>\n</h3>\n\n<div class=\"abstract\" >\n\t\n</div>",
+                "html_marker": "\n\n\n<h3>\n<a href=\"departement44/jeunesse/residence-les-liards/c_1234941\" class=\"\" data-jalios-id='c_1234941'>\n  Résidence Les Liards\n  \n</a>\n</h3>\n\n<div class=\"abstract\" >\n\t\n</div>"
+            }
+        },
+        {
+            "id": "c_1234939",
+            "value": "Collège La Noë Lambert",
+            "metadata": {
+                "url": "http://localhost:8080/jcms/departement44/education-et-colleges/college-la-noe-lambert/c_1234939",
+                "type": "FicheLieu",
+                "lat": null,
+                "long": null,
+                "html_list": "\n\n\n<h3>\n<a href=\"departement44/education-et-colleges/college-la-noe-lambert/c_1234939\" class=\"\" data-jalios-id='c_1234939'>\n  Collège La Noë Lambert\n  \n</a>\n</h3>\n\n<div class=\"abstract\" >\n\t\n</div>",
+                "html_marker": "\n\n\n<h3>\n<a href=\"departement44/education-et-colleges/college-la-noe-lambert/c_1234939\" class=\"\" data-jalios-id='c_1234939'>\n  Collège La Noë Lambert\n  \n</a>\n</h3>\n\n<div class=\"abstract\" >\n\t\n</div>"
+            }
+        },
+        {
+            "id": "c_1234937",
+            "value": "ALISEE",
+            "metadata": {
+                "url": "http://localhost:8080/jcms/departement44/environnement-energies/alisee/c_1234937",
+                "type": "FicheLieu",
+                "lat": null,
+                "long": null,
+                "html_list": "\n\n\n<h3>\n<a href=\"departement44/environnement-energies/alisee/c_1234937\" class=\"\" data-jalios-id='c_1234937'>\n  ALISEE\n  \n</a>\n</h3>\n\n<div class=\"abstract\" >\n\t\n</div>",
+                "html_marker": "\n\n\n<h3>\n<a href=\"departement44/environnement-energies/alisee/c_1234937\" class=\"\" data-jalios-id='c_1234937'>\n  ALISEE\n  \n</a>\n</h3>\n\n<div class=\"abstract\" >\n\t\n</div>"
+            }
+        },
+        {
+            "id": "c_1234935",
+            "value": "Bretagne vivante",
+            "metadata": {
+                "url": "http://localhost:8080/jcms/departement44/environnement-energies/bretagne-vivante/c_1234935",
+                "type": "FicheLieu",
+                "lat": null,
+                "long": null,
+                "html_list": "\n\n\n<h3>\n<a href=\"departement44/environnement-energies/bretagne-vivante/c_1234935\" class=\"\" data-jalios-id='c_1234935'>\n  Bretagne vivante\n  \n</a>\n</h3>\n\n<div class=\"abstract\" >\n\t\n</div>",
+                "html_marker": "\n\n\n<h3>\n<a href=\"departement44/environnement-energies/bretagne-vivante/c_1234935\" class=\"\" data-jalios-id='c_1234935'>\n  Bretagne vivante\n  \n</a>\n</h3>\n\n<div class=\"abstract\" >\n\t\n</div>"
+            }
+        },
+        {
+            "id": "c_1234916",
+            "value": "Collège Rosa Parks (Nantes)",
+            "metadata": {
+                "url": "http://localhost:8080/jcms/departement44/education-et-colleges/college-rosa-parks-nantes/c_1234916",
+                "type": "FicheLieu",
+                "lat": null,
+                "long": null,
+                "html_list": "\n\n\n<h3>\n<a href=\"departement44/education-et-colleges/college-rosa-parks-nantes/c_1234916\" class=\"\" data-jalios-id='c_1234916'>\n  Collège Rosa Parks (Nantes)\n  \n</a>\n</h3>\n\n<div class=\"abstract\" >\n\t\n</div>",
+                "html_marker": "\n\n\n<h3>\n<a href=\"departement44/education-et-colleges/college-rosa-parks-nantes/c_1234916\" class=\"\" data-jalios-id='c_1234916'>\n  Collège Rosa Parks (Nantes)\n  \n</a>\n</h3>\n\n<div class=\"abstract\" >\n\t\n</div>"
+            }
+        },
+        {
+            "id": "c_1234913",
+            "value": "Collège La Durantière",
+            "metadata": {
+                "url": "http://localhost:8080/jcms/departement44/education-et-colleges/college-la-durantiere/c_1234913",
+                "type": "FicheLieu",
+                "lat": null,
+                "long": null,
+                "html_list": "\n\n\n<h3>\n<a href=\"departement44/education-et-colleges/college-la-durantiere/c_1234913\" class=\"\" data-jalios-id='c_1234913'>\n  Collège La Durantière\n  \n</a>\n</h3>\n\n<div class=\"abstract\" >\n\t\n</div>",
+                "html_marker": "\n\n\n<h3>\n<a href=\"departement44/education-et-colleges/college-la-durantiere/c_1234913\" class=\"\" data-jalios-id='c_1234913'>\n  Collège La Durantière\n  \n</a>\n</h3>\n\n<div class=\"abstract\" >\n\t\n</div>"
+            }
+        },
+        {
+            "id": "c_1234908",
+            "value": "Collège La Colinière",
+            "metadata": {
+                "url": "http://localhost:8080/jcms/departement44/education-et-colleges/college-la-coliniere/c_1234908",
+                "type": "FicheLieu",
+                "lat": null,
+                "long": null,
+                "html_list": "\n\n\n<h3>\n<a href=\"departement44/education-et-colleges/college-la-coliniere/c_1234908\" class=\"\" data-jalios-id='c_1234908'>\n  Collège La Colinière\n  \n</a>\n</h3>\n\n<div class=\"abstract\" >\n\t\n</div>",
+                "html_marker": "\n\n\n<h3>\n<a href=\"departement44/education-et-colleges/college-la-coliniere/c_1234908\" class=\"\" data-jalios-id='c_1234908'>\n  Collège La Colinière\n  \n</a>\n</h3>\n\n<div class=\"abstract\" >\n\t\n</div>"
+            }
+        },
+        {
+            "id": "c_1234903",
+            "value": "Centre Communal d'Action Sociale (CCAS) de La Montagne",
+            "metadata": {
+                "url": "http://localhost:8080/jcms/departement44/seniors-personnes-agees/centre-communal-d-action-sociale-ccas-de-la-montagne/c_1234903",
+                "type": "FicheLieu",
+                "lat": null,
+                "long": null,
+                "html_list": "\n\n\n<h3>\n<a href=\"departement44/seniors-personnes-agees/centre-communal-d-action-sociale-ccas-de-la-montagne/c_1234903\" class=\"\" data-jalios-id='c_1234903'>\n  Centre Communal d'Action Sociale (CCAS) de La Montagne\n  \n</a>\n</h3>\n\n<div class=\"abstract\" >\n\t\n</div>",
+                "html_marker": "\n\n\n<h3>\n<a href=\"departement44/seniors-personnes-agees/centre-communal-d-action-sociale-ccas-de-la-montagne/c_1234903\" class=\"\" data-jalios-id='c_1234903'>\n  Centre Communal d'Action Sociale (CCAS) de La Montagne\n  \n</a>\n</h3>\n\n<div class=\"abstract\" >\n\t\n</div>"
+            }
+        },
+        {
+            "id": "c_1234894",
+            "value": "Collège Gabriel Guist'hau",
+            "metadata": {
+                "url": "http://localhost:8080/jcms/departement44/education-et-colleges/college-gabriel-guist-hau/c_1234894",
+                "type": "FicheLieu",
+                "lat": null,
+                "long": null,
+                "html_list": "\n\n\n<h3>\n<a href=\"departement44/education-et-colleges/college-gabriel-guist-hau/c_1234894\" class=\"\" data-jalios-id='c_1234894'>\n  Collège Gabriel Guist'hau\n  \n</a>\n</h3>\n\n<div class=\"abstract\" >\n\t\n</div>",
+                "html_marker": "\n\n\n<h3>\n<a href=\"departement44/education-et-colleges/college-gabriel-guist-hau/c_1234894\" class=\"\" data-jalios-id='c_1234894'>\n  Collège Gabriel Guist'hau\n  \n</a>\n</h3>\n\n<div class=\"abstract\" >\n\t\n</div>"
+            }
+        },
+        {
+            "id": "c_1234881",
+            "value": "Collège Jules Verne",
+            "metadata": {
+                "url": "http://localhost:8080/jcms/departement44/education-et-colleges/college-jules-verne/c_1234881",
+                "type": "FicheLieu",
+                "lat": null,
+                "long": null,
+                "html_list": "\n\n\n<h3>\n<a href=\"departement44/education-et-colleges/college-jules-verne/c_1234881\" class=\"\" data-jalios-id='c_1234881'>\n  Collège Jules Verne\n  \n</a>\n</h3>\n\n<div class=\"abstract\" >\n\t\n</div>",
+                "html_marker": "\n\n\n<h3>\n<a href=\"departement44/education-et-colleges/college-jules-verne/c_1234881\" class=\"\" data-jalios-id='c_1234881'>\n  Collège Jules Verne\n  \n</a>\n</h3>\n\n<div class=\"abstract\" >\n\t\n</div>"
+            }
+        },
+        {
+            "id": "c_1234880",
+            "value": "Relais assistantes maternelles (RAM) de Vertou",
+            "metadata": {
+                "url": "http://localhost:8080/jcms/departement44/enfance-familles/relais-assistantes-maternelles-ram-de-vertou/c_1234880",
+                "type": "FicheLieu",
+                "lat": null,
+                "long": null,
+                "html_list": "\n\n\n<h3>\n<a href=\"departement44/enfance-familles/relais-assistantes-maternelles-ram-de-vertou/c_1234880\" class=\"\" data-jalios-id='c_1234880'>\n  Relais assistantes maternelles (RAM) de Vertou\n  \n</a>\n</h3>\n\n<div class=\"abstract\" >\n\t\n</div>",
+                "html_marker": "\n\n\n<h3>\n<a href=\"departement44/enfance-familles/relais-assistantes-maternelles-ram-de-vertou/c_1234880\" class=\"\" data-jalios-id='c_1234880'>\n  Relais assistantes maternelles (RAM) de Vertou\n  \n</a>\n</h3>\n\n<div class=\"abstract\" >\n\t\n</div>"
+            }
+        },
+        {
+            "id": "c_1234879",
+            "value": "Collège Claude Debussy",
+            "metadata": {
+                "url": "http://localhost:8080/jcms/departement44/education-et-colleges/college-claude-debussy/c_1234879",
+                "type": "FicheLieu",
+                "lat": null,
+                "long": null,
+                "html_list": "\n\n\n<h3>\n<a href=\"departement44/education-et-colleges/college-claude-debussy/c_1234879\" class=\"\" data-jalios-id='c_1234879'>\n  Collège Claude Debussy\n  \n</a>\n</h3>\n\n<div class=\"abstract\" >\n\t\n</div>",
+                "html_marker": "\n\n\n<h3>\n<a href=\"departement44/education-et-colleges/college-claude-debussy/c_1234879\" class=\"\" data-jalios-id='c_1234879'>\n  Collège Claude Debussy\n  \n</a>\n</h3>\n\n<div class=\"abstract\" >\n\t\n</div>"
+            }
+        },
+        {
+            "id": "c_1234878",
+            "value": "SSIADPA - Saint-Aignan de Grand-Lieu",
+            "metadata": {
+                "url": "http://localhost:8080/jcms/departement44/seniors-personnes-agees/ssiadpa-saint-aignan-de-grand-lieu/c_1234878",
+                "type": "FicheLieu",
+                "lat": null,
+                "long": null,
+                "html_list": "\n\n\n<h3>\n<a href=\"departement44/seniors-personnes-agees/ssiadpa-saint-aignan-de-grand-lieu/c_1234878\" class=\"\" data-jalios-id='c_1234878'>\n  SSIADPA - Saint-Aignan de Grand-Lieu\n  \n</a>\n</h3>\n\n<div class=\"abstract\" >\n\t\n</div>",
+                "html_marker": "\n\n\n<h3>\n<a href=\"departement44/seniors-personnes-agees/ssiadpa-saint-aignan-de-grand-lieu/c_1234878\" class=\"\" data-jalios-id='c_1234878'>\n  SSIADPA - Saint-Aignan de Grand-Lieu\n  \n</a>\n</h3>\n\n<div class=\"abstract\" >\n\t\n</div>"
+            }
+        },
+        {
+            "id": "c_1234876",
+            "value": "Relais accueil petite enfance (RAPE) - Nantes Sud",
+            "metadata": {
+                "url": "http://localhost:8080/jcms/departement44/enfance-familles/relais-accueil-petite-enfance-rape-nantes-sud/c_1234876",
+                "type": "FicheLieu",
+                "lat": null,
+                "long": null,
+                "html_list": "\n\n\n<h3>\n<a href=\"departement44/enfance-familles/relais-accueil-petite-enfance-rape-nantes-sud/c_1234876\" class=\"\" data-jalios-id='c_1234876'>\n  Relais accueil petite enfance (RAPE) - Nantes Sud\n  \n</a>\n</h3>\n\n<div class=\"abstract\" >\n\t\n</div>",
+                "html_marker": "\n\n\n<h3>\n<a href=\"departement44/enfance-familles/relais-accueil-petite-enfance-rape-nantes-sud/c_1234876\" class=\"\" data-jalios-id='c_1234876'>\n  Relais accueil petite enfance (RAPE) - Nantes Sud\n  \n</a>\n</h3>\n\n<div class=\"abstract\" >\n\t\n</div>"
+            }
+        },
+        {
+            "id": "c_1234870",
+            "value": "Union Départementale des Centres Communaux d'Action Sociale (UDCCAS)",
+            "metadata": {
+                "url": "http://localhost:8080/jcms/departement44/seniors-personnes-agees/union-departementale-des-centres-communaux-d-action-sociale-udccas/c_1234870",
+                "type": "FicheLieu",
+                "lat": null,
+                "long": null,
+                "html_list": "\n\n\n<h3>\n<a href=\"departement44/seniors-personnes-agees/union-departementale-des-centres-communaux-d-action-sociale-udccas/c_1234870\" class=\"\" data-jalios-id='c_1234870'>\n  Union Départementale des Centres Communaux d'Action Sociale (UDCCAS)\n  \n</a>\n</h3>\n\n<div class=\"abstract\" >\n\t\n</div>",
+                "html_marker": "\n\n\n<h3>\n<a href=\"departement44/seniors-personnes-agees/union-departementale-des-centres-communaux-d-action-sociale-udccas/c_1234870\" class=\"\" data-jalios-id='c_1234870'>\n  Union Départementale des Centres Communaux d'Action Sociale (UDCCAS)\n  \n</a>\n</h3>\n\n<div class=\"abstract\" >\n\t\n</div>"
+            }
+        },
+        {
+            "id": "c_1234868",
+            "value": "Relais assistantes maternelles (RAM) de Saint-Sébastien-sur-Loire",
+            "metadata": {
+                "url": "http://localhost:8080/jcms/departement44/enfance-familles/relais-assistantes-maternelles-ram-de-saint-sebastien-sur-loire/c_1234868",
+                "type": "FicheLieu",
+                "lat": null,
+                "long": null,
+                "html_list": "\n\n\n<h3>\n<a href=\"departement44/enfance-familles/relais-assistantes-maternelles-ram-de-saint-sebastien-sur-loire/c_1234868\" class=\"\" data-jalios-id='c_1234868'>\n  Relais assistantes maternelles (RAM) de Saint-Sébastien-sur-Loire\n  \n</a>\n</h3>\n\n<div class=\"abstract\" >\n\t\n</div>",
+                "html_marker": "\n\n\n<h3>\n<a href=\"departement44/enfance-familles/relais-assistantes-maternelles-ram-de-saint-sebastien-sur-loire/c_1234868\" class=\"\" data-jalios-id='c_1234868'>\n  Relais assistantes maternelles (RAM) de Saint-Sébastien-sur-Loire\n  \n</a>\n</h3>\n\n<div class=\"abstract\" >\n\t\n</div>"
+            }
+        },
+        {
+            "id": "c_1234865",
+            "value": "Collège Gaston Serpette",
+            "metadata": {
+                "url": "http://localhost:8080/jcms/departement44/education-et-colleges/college-gaston-serpette/c_1234865",
+                "type": "FicheLieu",
+                "lat": null,
+                "long": null,
+                "html_list": "\n\n\n<h3>\n<a href=\"departement44/education-et-colleges/college-gaston-serpette/c_1234865\" class=\"\" data-jalios-id='c_1234865'>\n  Collège Gaston Serpette\n  \n</a>\n</h3>\n\n<div class=\"abstract\" >\n\t\n</div>",
+                "html_marker": "\n\n\n<h3>\n<a href=\"departement44/education-et-colleges/college-gaston-serpette/c_1234865\" class=\"\" data-jalios-id='c_1234865'>\n  Collège Gaston Serpette\n  \n</a>\n</h3>\n\n<div class=\"abstract\" >\n\t\n</div>"
+            }
+        },
+        {
+            "id": "c_1234862",
+            "value": "Relais assistantes maternelles (RAM) du Pellerin et de Saint-Jean-de-Boiseau - antenne du Pellerin",
+            "metadata": {
+                "url": "http://localhost:8080/jcms/departement44/enfance-familles/relais-assistantes-maternelles-ram-du-pellerin-et-de-saint-jean-de-boiseau-antenne-du-pellerin/c_1234862",
+                "type": "FicheLieu",
+                "lat": null,
+                "long": null,
+                "html_list": "\n\n\n<h3>\n<a href=\"departement44/enfance-familles/relais-assistantes-maternelles-ram-du-pellerin-et-de-saint-jean-de-boiseau-antenne-du-pellerin/c_1234862\" class=\"\" data-jalios-id='c_1234862'>\n  Relais assistantes maternelles (RAM) du Pellerin et de Saint-Jean-de-Boiseau - antenne du Pellerin\n  \n</a>\n</h3>\n\n<div class=\"abstract\" >\n\t\n</div>",
+                "html_marker": "\n\n\n<h3>\n<a href=\"departement44/enfance-familles/relais-assistantes-maternelles-ram-du-pellerin-et-de-saint-jean-de-boiseau-antenne-du-pellerin/c_1234862\" class=\"\" data-jalios-id='c_1234862'>\n  Relais assistantes maternelles (RAM) du Pellerin et de Saint-Jean-de-Boiseau - antenne du Pellerin\n  \n</a>\n</h3>\n\n<div class=\"abstract\" >\n\t\n</div>"
+            }
+        },
+        {
+            "id": "c_1234850",
+            "value": "Relais assistantes maternelles (RAM) de Rezé",
+            "metadata": {
+                "url": "http://localhost:8080/jcms/departement44/enfance-familles/relais-assistantes-maternelles-ram-de-reze/c_1234850",
+                "type": "FicheLieu",
+                "lat": null,
+                "long": null,
+                "html_list": "\n\n\n<h3>\n<a href=\"departement44/enfance-familles/relais-assistantes-maternelles-ram-de-reze/c_1234850\" class=\"\" data-jalios-id='c_1234850'>\n  Relais assistantes maternelles (RAM) de Rezé\n  \n</a>\n</h3>\n\n<div class=\"abstract\" >\n\t\n</div>",
+                "html_marker": "\n\n\n<h3>\n<a href=\"departement44/enfance-familles/relais-assistantes-maternelles-ram-de-reze/c_1234850\" class=\"\" data-jalios-id='c_1234850'>\n  Relais assistantes maternelles (RAM) de Rezé\n  \n</a>\n</h3>\n\n<div class=\"abstract\" >\n\t\n</div>"
+            }
+        },
+        {
+            "id": "c_1234848",
+            "value": "Relais petite enfance des Sorinières",
+            "metadata": {
+                "url": "http://localhost:8080/jcms/departement44/enfance-familles/relais-petite-enfance-des-sorinieres/c_1234848",
+                "type": "FicheLieu",
+                "lat": null,
+                "long": null,
+                "html_list": "\n\n\n<h3>\n<a href=\"departement44/enfance-familles/relais-petite-enfance-des-sorinieres/c_1234848\" class=\"\" data-jalios-id='c_1234848'>\n  Relais petite enfance des Sorinières\n  \n</a>\n</h3>\n\n<div class=\"abstract\" >\n\t\n</div>",
+                "html_marker": "\n\n\n<h3>\n<a href=\"departement44/enfance-familles/relais-petite-enfance-des-sorinieres/c_1234848\" class=\"\" data-jalios-id='c_1234848'>\n  Relais petite enfance des Sorinières\n  \n</a>\n</h3>\n\n<div class=\"abstract\" >\n\t\n</div>"
+            }
+        },
+        {
+            "id": "c_1234847",
+            "value": "Collège Chantenay",
+            "metadata": {
+                "url": "http://localhost:8080/jcms/departement44/education-et-colleges/college-chantenay/c_1234847",
+                "type": "FicheLieu",
+                "lat": null,
+                "long": null,
+                "html_list": "\n\n\n<h3>\n<a href=\"departement44/education-et-colleges/college-chantenay/c_1234847\" class=\"\" data-jalios-id='c_1234847'>\n  Collège Chantenay\n  \n</a>\n</h3>\n\n<div class=\"abstract\" >\n\t\n</div>",
+                "html_marker": "\n\n\n<h3>\n<a href=\"departement44/education-et-colleges/college-chantenay/c_1234847\" class=\"\" data-jalios-id='c_1234847'>\n  Collège Chantenay\n  \n</a>\n</h3>\n\n<div class=\"abstract\" >\n\t\n</div>"
+            }
+        },
+        {
+            "id": "c_1234820",
+            "value": "Espace départemental des solidarités Nantes Cassin-Einstein - site d'Einstein",
+            "metadata": {
+                "url": "http://localhost:8080/jcms/departement44/enfance-familles/espace-departemental-des-solidarites-nantes-cassin-einstein-site-d-einstein/c_1234820",
+                "type": "FicheLieu",
+                "lat": null,
+                "long": null,
+                "html_list": "\n\n\n<h3>\n<a href=\"departement44/enfance-familles/espace-departemental-des-solidarites-nantes-cassin-einstein-site-d-einstein/c_1234820\" class=\"\" data-jalios-id='c_1234820'>\n  Espace départemental des solidarités Nantes Cassin-Einstein - site d'Einstein\n  \n</a>\n</h3>\n\n<div class=\"abstract\" >\n\t\n</div>",
+                "html_marker": "\n\n\n<h3>\n<a href=\"departement44/enfance-familles/espace-departemental-des-solidarites-nantes-cassin-einstein-site-d-einstein/c_1234820\" class=\"\" data-jalios-id='c_1234820'>\n  Espace départemental des solidarités Nantes Cassin-Einstein - site d'Einstein\n  \n</a>\n</h3>\n\n<div class=\"abstract\" >\n\t\n</div>"
+            }
+        },
+        {
+            "id": "c_1234816",
+            "value": "Canoë-Kayak : parc de loisirs du Loiry - Vertou",
+            "metadata": {
+                "url": "http://localhost:8080/jcms/departement44/sport/canoe-kayak-parc-de-loisirs-du-loiry-vertou/c_1234816",
+                "type": "FicheLieu",
+                "lat": null,
+                "long": null,
+                "html_list": "\n\n\n<h3>\n<a href=\"departement44/sport/canoe-kayak-parc-de-loisirs-du-loiry-vertou/c_1234816\" class=\"\" data-jalios-id='c_1234816'>\n  Canoë-Kayak : parc de loisirs du Loiry - Vertou\n  \n</a>\n</h3>\n\n<div class=\"abstract\" >\n\t\n</div>",
+                "html_marker": "\n\n\n<h3>\n<a href=\"departement44/sport/canoe-kayak-parc-de-loisirs-du-loiry-vertou/c_1234816\" class=\"\" data-jalios-id='c_1234816'>\n  Canoë-Kayak : parc de loisirs du Loiry - Vertou\n  \n</a>\n</h3>\n\n<div class=\"abstract\" >\n\t\n</div>"
+            }
+        },
+        {
+            "id": "c_1234811",
+            "value": "ADIL - Agence Départementale d'Information sur le Logement",
+            "metadata": {
+                "url": "http://localhost:8080/jcms/departement44/habitat-logement/adil-agence-departementale-d-information-sur-le-logement/c_1234811",
+                "type": "FicheLieu",
+                "lat": null,
+                "long": null,
+                "html_list": "\n\n\n<h3>\n<a href=\"departement44/habitat-logement/adil-agence-departementale-d-information-sur-le-logement/c_1234811\" class=\"\" data-jalios-id='c_1234811'>\n  ADIL - Agence Départementale d'Information sur le Logement\n  \n</a>\n</h3>\n\n<div class=\"abstract\" >\n\t\n</div>",
+                "html_marker": "\n\n\n<h3>\n<a href=\"departement44/habitat-logement/adil-agence-departementale-d-information-sur-le-logement/c_1234811\" class=\"\" data-jalios-id='c_1234811'>\n  ADIL - Agence Départementale d'Information sur le Logement\n  \n</a>\n</h3>\n\n<div class=\"abstract\" >\n\t\n</div>"
+            }
+        },
+        {
+            "id": "c_1234803",
+            "value": "La Marelle",
+            "metadata": {
+                "url": "http://localhost:8080/jcms/departement44/enfance-familles/la-marelle/c_1234803",
+                "type": "FicheLieu",
+                "lat": null,
+                "long": null,
+                "html_list": "\n\n\n<h3>\n<a href=\"departement44/enfance-familles/la-marelle/c_1234803\" class=\"\" data-jalios-id='c_1234803'>\n  La Marelle\n  \n</a>\n</h3>\n\n<div class=\"abstract\" >\n\t\n</div>",
+                "html_marker": "\n\n\n<h3>\n<a href=\"departement44/enfance-familles/la-marelle/c_1234803\" class=\"\" data-jalios-id='c_1234803'>\n  La Marelle\n  \n</a>\n</h3>\n\n<div class=\"abstract\" >\n\t\n</div>"
+            }
+        },
+        {
+            "id": "c_1234800",
+            "value": "Pap, Mam et moi",
+            "metadata": {
+                "url": "http://localhost:8080/jcms/departement44/enfance-familles/pap-mam-et-moi/c_1234800",
+                "type": "FicheLieu",
+                "lat": null,
+                "long": null,
+                "html_list": "\n\n\n<h3>\n<a href=\"departement44/enfance-familles/pap-mam-et-moi/c_1234800\" class=\"\" data-jalios-id='c_1234800'>\n  Pap, Mam et moi\n  \n</a>\n</h3>\n\n<div class=\"abstract\" >\n\t\n</div>",
+                "html_marker": "\n\n\n<h3>\n<a href=\"departement44/enfance-familles/pap-mam-et-moi/c_1234800\" class=\"\" data-jalios-id='c_1234800'>\n  Pap, Mam et moi\n  \n</a>\n</h3>\n\n<div class=\"abstract\" >\n\t\n</div>"
+            }
+        },
+        {
+            "id": "c_1234779",
+            "value": "SSIADPAH - Loire",
+            "metadata": {
+                "url": "http://localhost:8080/jcms/departement44/seniors-personnes-agees/ssiadpah-loire/c_1234779",
+                "type": "FicheLieu",
+                "lat": null,
+                "long": null,
+                "html_list": "\n\n\n<h3>\n<a href=\"departement44/seniors-personnes-agees/ssiadpah-loire/c_1234779\" class=\"\" data-jalios-id='c_1234779'>\n  SSIADPAH - Loire\n  \n</a>\n</h3>\n\n<div class=\"abstract\" >\n\t\n</div>",
+                "html_marker": "\n\n\n<h3>\n<a href=\"departement44/seniors-personnes-agees/ssiadpah-loire/c_1234779\" class=\"\" data-jalios-id='c_1234779'>\n  SSIADPAH - Loire\n  \n</a>\n</h3>\n\n<div class=\"abstract\" >\n\t\n</div>"
+            }
+        },
+        {
+            "id": "c_1234775",
+            "value": "Centre Communal d'Action Sociale (CCAS) d'Indre",
+            "metadata": {
+                "url": "http://localhost:8080/jcms/departement44/seniors-personnes-agees/centre-communal-d-action-sociale-ccas-d-indre/c_1234775",
+                "type": "FicheLieu",
+                "lat": null,
+                "long": null,
+                "html_list": "\n\n\n<h3>\n<a href=\"departement44/seniors-personnes-agees/centre-communal-d-action-sociale-ccas-d-indre/c_1234775\" class=\"\" data-jalios-id='c_1234775'>\n  Centre Communal d'Action Sociale (CCAS) d'Indre\n  \n</a>\n</h3>\n\n<div class=\"abstract\" >\n\t\n</div>",
+                "html_marker": "\n\n\n<h3>\n<a href=\"departement44/seniors-personnes-agees/centre-communal-d-action-sociale-ccas-d-indre/c_1234775\" class=\"\" data-jalios-id='c_1234775'>\n  Centre Communal d'Action Sociale (CCAS) d'Indre\n  \n</a>\n</h3>\n\n<div class=\"abstract\" >\n\t\n</div>"
+            }
+        },
+        {
+            "id": "c_1234773",
+            "value": "Centre Communal d'Action Sociale (CCAS) d'Orvault",
+            "metadata": {
+                "url": "http://localhost:8080/jcms/departement44/seniors-personnes-agees/centre-communal-d-action-sociale-ccas-d-orvault/c_1234773",
+                "type": "FicheLieu",
+                "lat": null,
+                "long": null,
+                "html_list": "\n\n\n<h3>\n<a href=\"departement44/seniors-personnes-agees/centre-communal-d-action-sociale-ccas-d-orvault/c_1234773\" class=\"\" data-jalios-id='c_1234773'>\n  Centre Communal d'Action Sociale (CCAS) d'Orvault\n  \n</a>\n</h3>\n\n<div class=\"abstract\" >\n\t\n</div>",
+                "html_marker": "\n\n\n<h3>\n<a href=\"departement44/seniors-personnes-agees/centre-communal-d-action-sociale-ccas-d-orvault/c_1234773\" class=\"\" data-jalios-id='c_1234773'>\n  Centre Communal d'Action Sociale (CCAS) d'Orvault\n  \n</a>\n</h3>\n\n<div class=\"abstract\" >\n\t\n</div>"
+            }
+        },
+        {
+            "id": "c_1234757",
+            "value": "SSIAD - Erdre et Sèvre",
+            "metadata": {
+                "url": "http://localhost:8080/jcms/departement44/seniors-personnes-agees/ssiad-erdre-et-sevre/c_1234757",
+                "type": "FicheLieu",
+                "lat": null,
+                "long": null,
+                "html_list": "\n\n\n<h3>\n<a href=\"departement44/seniors-personnes-agees/ssiad-erdre-et-sevre/c_1234757\" class=\"\" data-jalios-id='c_1234757'>\n  SSIAD - Erdre et Sèvre\n  \n</a>\n</h3>\n\n<div class=\"abstract\" >\n\t\n</div>",
+                "html_marker": "\n\n\n<h3>\n<a href=\"departement44/seniors-personnes-agees/ssiad-erdre-et-sevre/c_1234757\" class=\"\" data-jalios-id='c_1234757'>\n  SSIAD - Erdre et Sèvre\n  \n</a>\n</h3>\n\n<div class=\"abstract\" >\n\t\n</div>"
+            }
+        },
+        {
+            "id": "c_1234753",
+            "value": "Mission locale Nantes Métropole - Rezé Pont-Rousseau",
+            "metadata": {
+                "url": "http://localhost:8080/jcms/departement44/jeunesse/mission-locale-nantes-metropole-reze-pont-rousseau/c_1234753",
+                "type": "FicheLieu",
+                "lat": null,
+                "long": null,
+                "html_list": "\n\n\n<h3>\n<a href=\"departement44/jeunesse/mission-locale-nantes-metropole-reze-pont-rousseau/c_1234753\" class=\"\" data-jalios-id='c_1234753'>\n  Mission locale Nantes Métropole - Rezé Pont-Rousseau\n  \n</a>\n</h3>\n\n<div class=\"abstract\" >\n\t\n</div>",
+                "html_marker": "\n\n\n<h3>\n<a href=\"departement44/jeunesse/mission-locale-nantes-metropole-reze-pont-rousseau/c_1234753\" class=\"\" data-jalios-id='c_1234753'>\n  Mission locale Nantes Métropole - Rezé Pont-Rousseau\n  \n</a>\n</h3>\n\n<div class=\"abstract\" >\n\t\n</div>"
+            }
+        },
+        {
+            "id": "c_1234752",
+            "value": "Espace départemental des solidarités Nantes Bottière-Pilotière - site de Bottière",
+            "metadata": {
+                "url": "http://localhost:8080/jcms/departement44/enfance-familles/espace-departemental-des-solidarites-nantes-bottiere-pilotiere-site-de-bottiere/c_1234752",
+                "type": "FicheLieu",
+                "lat": null,
+                "long": null,
+                "html_list": "\n\n\n<h3>\n<a href=\"departement44/enfance-familles/espace-departemental-des-solidarites-nantes-bottiere-pilotiere-site-de-bottiere/c_1234752\" class=\"\" data-jalios-id='c_1234752'>\n  Espace départemental des solidarités Nantes Bottière-Pilotière - site de Bottière\n  \n</a>\n</h3>\n\n<div class=\"abstract\" >\n\t\n</div>",
+                "html_marker": "\n\n\n<h3>\n<a href=\"departement44/enfance-familles/espace-departemental-des-solidarites-nantes-bottiere-pilotiere-site-de-bottiere/c_1234752\" class=\"\" data-jalios-id='c_1234752'>\n  Espace départemental des solidarités Nantes Bottière-Pilotière - site de Bottière\n  \n</a>\n</h3>\n\n<div class=\"abstract\" >\n\t\n</div>"
+            }
+        },
+        {
+            "id": "c_1234750",
+            "value": "Espace départemental des solidarités Nantes Beaujoire-Port-Boyer - site de Port-Boyer",
+            "metadata": {
+                "url": "http://localhost:8080/jcms/departement44/enfance-familles/espace-departemental-des-solidarites-nantes-beaujoire-port-boyer-site-de-port-boyer/c_1234750",
+                "type": "FicheLieu",
+                "lat": null,
+                "long": null,
+                "html_list": "\n\n\n<h3>\n<a href=\"departement44/enfance-familles/espace-departemental-des-solidarites-nantes-beaujoire-port-boyer-site-de-port-boyer/c_1234750\" class=\"\" data-jalios-id='c_1234750'>\n  Espace départemental des solidarités Nantes Beaujoire-Port-Boyer - site de Port-Boyer\n  \n</a>\n</h3>\n\n<div class=\"abstract\" >\n\t\n</div>",
+                "html_marker": "\n\n\n<h3>\n<a href=\"departement44/enfance-familles/espace-departemental-des-solidarites-nantes-beaujoire-port-boyer-site-de-port-boyer/c_1234750\" class=\"\" data-jalios-id='c_1234750'>\n  Espace départemental des solidarités Nantes Beaujoire-Port-Boyer - site de Port-Boyer\n  \n</a>\n</h3>\n\n<div class=\"abstract\" >\n\t\n</div>"
+            }
+        },
+        {
+            "id": "c_1234748",
+            "value": "Espace départemental des solidarités Nantes Bottière-Pilotière - site de Pilotière",
+            "metadata": {
+                "url": "http://localhost:8080/jcms/departement44/enfance-familles/espace-departemental-des-solidarites-nantes-bottiere-pilotiere-site-de-pilotiere/c_1234748",
+                "type": "FicheLieu",
+                "lat": null,
+                "long": null,
+                "html_list": "\n\n\n<h3>\n<a href=\"departement44/enfance-familles/espace-departemental-des-solidarites-nantes-bottiere-pilotiere-site-de-pilotiere/c_1234748\" class=\"\" data-jalios-id='c_1234748'>\n  Espace départemental des solidarités Nantes Bottière-Pilotière - site de Pilotière\n  \n</a>\n</h3>\n\n<div class=\"abstract\" >\n\t\n</div>",
+                "html_marker": "\n\n\n<h3>\n<a href=\"departement44/enfance-familles/espace-departemental-des-solidarites-nantes-bottiere-pilotiere-site-de-pilotiere/c_1234748\" class=\"\" data-jalios-id='c_1234748'>\n  Espace départemental des solidarités Nantes Bottière-Pilotière - site de Pilotière\n  \n</a>\n</h3>\n\n<div class=\"abstract\" >\n\t\n</div>"
+            }
+        },
+        {
+            "id": "c_1234747",
+            "value": "Espace départemental des solidarités Nantes Dervalières",
+            "metadata": {
+                "url": "http://localhost:8080/jcms/departement44/enfance-familles/espace-departemental-des-solidarites-nantes-dervalieres/c_1234747",
+                "type": "FicheLieu",
+                "lat": null,
+                "long": null,
+                "html_list": "\n\n\n<h3>\n<a href=\"departement44/enfance-familles/espace-departemental-des-solidarites-nantes-dervalieres/c_1234747\" class=\"\" data-jalios-id='c_1234747'>\n  Espace départemental des solidarités Nantes Dervalières\n  \n</a>\n</h3>\n\n<div class=\"abstract\" >\n\t\n</div>",
+                "html_marker": "\n\n\n<h3>\n<a href=\"departement44/enfance-familles/espace-departemental-des-solidarites-nantes-dervalieres/c_1234747\" class=\"\" data-jalios-id='c_1234747'>\n  Espace départemental des solidarités Nantes Dervalières\n  \n</a>\n</h3>\n\n<div class=\"abstract\" >\n\t\n</div>"
+            }
+        },
+        {
+            "id": "c_1234745",
+            "value": "Espace départemental des solidarités Nantes Bellevue",
+            "metadata": {
+                "url": "http://localhost:8080/jcms/departement44/enfance-familles/espace-departemental-des-solidarites-nantes-bellevue/c_1234745",
+                "type": "FicheLieu",
+                "lat": null,
+                "long": null,
+                "html_list": "\n\n\n<h3>\n<a href=\"departement44/enfance-familles/espace-departemental-des-solidarites-nantes-bellevue/c_1234745\" class=\"\" data-jalios-id='c_1234745'>\n  Espace départemental des solidarités Nantes Bellevue\n  \n</a>\n</h3>\n\n<div class=\"abstract\" >\n\t\n</div>",
+                "html_marker": "\n\n\n<h3>\n<a href=\"departement44/enfance-familles/espace-departemental-des-solidarites-nantes-bellevue/c_1234745\" class=\"\" data-jalios-id='c_1234745'>\n  Espace départemental des solidarités Nantes Bellevue\n  \n</a>\n</h3>\n\n<div class=\"abstract\" >\n\t\n</div>"
+            }
+        },
+        {
+            "id": "c_1234744",
+            "value": "Unité emploi - délégation Nantes sud",
+            "metadata": {
+                "url": "http://localhost:8080/jcms/departement44/insertion-emploi/unite-emploi-delegation-nantes-sud/c_1234744",
+                "type": "FicheLieu",
+                "lat": null,
+                "long": null,
+                "html_list": "\n\n\n<h3>\n<a href=\"departement44/insertion-emploi/unite-emploi-delegation-nantes-sud/c_1234744\" class=\"\" data-jalios-id='c_1234744'>\n  Unité emploi - délégation Nantes sud\n  \n</a>\n</h3>\n\n<div class=\"abstract\" >\n\t\n</div>",
+                "html_marker": "\n\n\n<h3>\n<a href=\"departement44/insertion-emploi/unite-emploi-delegation-nantes-sud/c_1234744\" class=\"\" data-jalios-id='c_1234744'>\n  Unité emploi - délégation Nantes sud\n  \n</a>\n</h3>\n\n<div class=\"abstract\" >\n\t\n</div>"
+            }
+        },
+        {
+            "id": "c_1234742",
+            "value": "Espace départemental des solidarités Nantes Chantenay",
+            "metadata": {
+                "url": "http://localhost:8080/jcms/departement44/enfance-familles/espace-departemental-des-solidarites-nantes-chantenay/c_1234742",
+                "type": "FicheLieu",
+                "lat": null,
+                "long": null,
+                "html_list": "\n\n\n<h3>\n<a href=\"departement44/enfance-familles/espace-departemental-des-solidarites-nantes-chantenay/c_1234742\" class=\"\" data-jalios-id='c_1234742'>\n  Espace départemental des solidarités Nantes Chantenay\n  \n</a>\n</h3>\n\n<div class=\"abstract\" >\n\t\n</div>",
+                "html_marker": "\n\n\n<h3>\n<a href=\"departement44/enfance-familles/espace-departemental-des-solidarites-nantes-chantenay/c_1234742\" class=\"\" data-jalios-id='c_1234742'>\n  Espace départemental des solidarités Nantes Chantenay\n  \n</a>\n</h3>\n\n<div class=\"abstract\" >\n\t\n</div>"
+            }
+        },
+        {
+            "id": "c_1234740",
+            "value": "Espace départemental des solidarités Couëron-Saint-Herblain - site de Couëron",
+            "metadata": {
+                "url": "http://localhost:8080/jcms/departement44/enfance-familles/espace-departemental-des-solidarites-coueron-saint-herblain-site-de-coueron/c_1234740",
+                "type": "FicheLieu",
+                "lat": null,
+                "long": null,
+                "html_list": "\n\n\n<h3>\n<a href=\"departement44/enfance-familles/espace-departemental-des-solidarites-coueron-saint-herblain-site-de-coueron/c_1234740\" class=\"\" data-jalios-id='c_1234740'>\n  Espace départemental des solidarités Couëron-Saint-Herblain - site de Couëron\n  \n</a>\n</h3>\n\n<div class=\"abstract\" >\n\t\n</div>",
+                "html_marker": "\n\n\n<h3>\n<a href=\"departement44/enfance-familles/espace-departemental-des-solidarites-coueron-saint-herblain-site-de-coueron/c_1234740\" class=\"\" data-jalios-id='c_1234740'>\n  Espace départemental des solidarités Couëron-Saint-Herblain - site de Couëron\n  \n</a>\n</h3>\n\n<div class=\"abstract\" >\n\t\n</div>"
+            }
+        },
+        {
+            "id": "c_1234735",
+            "value": "Espace Info Énergie - Nantes",
+            "metadata": {
+                "url": "http://localhost:8080/jcms/departement44/habitat-logement/espace-info-energie-nantes/c_1234735",
+                "type": "FicheLieu",
+                "lat": null,
+                "long": null,
+                "html_list": "\n\n\n<h3>\n<a href=\"departement44/habitat-logement/espace-info-energie-nantes/c_1234735\" class=\"\" data-jalios-id='c_1234735'>\n  Espace Info Énergie - Nantes\n  \n</a>\n</h3>\n\n<div class=\"abstract\" >\n\t\n</div>",
+                "html_marker": "\n\n\n<h3>\n<a href=\"departement44/habitat-logement/espace-info-energie-nantes/c_1234735\" class=\"\" data-jalios-id='c_1234735'>\n  Espace Info Énergie - Nantes\n  \n</a>\n</h3>\n\n<div class=\"abstract\" >\n\t\n</div>"
+            }
+        },
+        {
+            "id": "c_1234729",
+            "value": "Espace départemental des solidarités Couëron-Saint-Herblain - site de l'Angevinière",
+            "metadata": {
+                "url": "http://localhost:8080/jcms/departement44/enfance-familles/espace-departemental-des-solidarites-coueron-saint-herblain-site-de-l-angeviniere/c_1234729",
+                "type": "FicheLieu",
+                "lat": null,
+                "long": null,
+                "html_list": "\n\n\n<h3>\n<a href=\"departement44/enfance-familles/espace-departemental-des-solidarites-coueron-saint-herblain-site-de-l-angeviniere/c_1234729\" class=\"\" data-jalios-id='c_1234729'>\n  Espace départemental des solidarités Couëron-Saint-Herblain - site de l'Angevinière\n  \n</a>\n</h3>\n\n<div class=\"abstract\" >\n\t\n</div>",
+                "html_marker": "\n\n\n<h3>\n<a href=\"departement44/enfance-familles/espace-departemental-des-solidarites-coueron-saint-herblain-site-de-l-angeviniere/c_1234729\" class=\"\" data-jalios-id='c_1234729'>\n  Espace départemental des solidarités Couëron-Saint-Herblain - site de l'Angevinière\n  \n</a>\n</h3>\n\n<div class=\"abstract\" >\n\t\n</div>"
+            }
+        },
+        {
+            "id": "c_1234725",
+            "value": "Espace départemental des solidarités Couëron-Saint-Herblain - site de Saint-Servan",
+            "metadata": {
+                "url": "http://localhost:8080/jcms/departement44/enfance-familles/espace-departemental-des-solidarites-coueron-saint-herblain-site-de-saint-servan/c_1234725",
+                "type": "FicheLieu",
+                "lat": null,
+                "long": null,
+                "html_list": "\n\n\n<h3>\n<a href=\"departement44/enfance-familles/espace-departemental-des-solidarites-coueron-saint-herblain-site-de-saint-servan/c_1234725\" class=\"\" data-jalios-id='c_1234725'>\n  Espace départemental des solidarités Couëron-Saint-Herblain - site de Saint-Servan\n  \n</a>\n</h3>\n\n<div class=\"abstract\" >\n\t\n</div>",
+                "html_marker": "\n\n\n<h3>\n<a href=\"departement44/enfance-familles/espace-departemental-des-solidarites-coueron-saint-herblain-site-de-saint-servan/c_1234725\" class=\"\" data-jalios-id='c_1234725'>\n  Espace départemental des solidarités Couëron-Saint-Herblain - site de Saint-Servan\n  \n</a>\n</h3>\n\n<div class=\"abstract\" >\n\t\n</div>"
+            }
+        },
+        {
+            "id": "c_1234724",
+            "value": "Unité emploi - Nantes ouest",
+            "metadata": {
+                "url": "http://localhost:8080/jcms/departement44/insertion-emploi/unite-emploi-nantes-ouest/c_1234724",
+                "type": "FicheLieu",
+                "lat": null,
+                "long": null,
+                "html_list": "\n\n\n<h3>\n<a href=\"departement44/insertion-emploi/unite-emploi-nantes-ouest/c_1234724\" class=\"\" data-jalios-id='c_1234724'>\n  Unité emploi - Nantes ouest\n  \n</a>\n</h3>\n\n<div class=\"abstract\" >\n\t\n</div>",
+                "html_marker": "\n\n\n<h3>\n<a href=\"departement44/insertion-emploi/unite-emploi-nantes-ouest/c_1234724\" class=\"\" data-jalios-id='c_1234724'>\n  Unité emploi - Nantes ouest\n  \n</a>\n</h3>\n\n<div class=\"abstract\" >\n\t\n</div>"
+            }
+        },
+        {
+            "id": "c_1234723",
+            "value": "Unité emploi - délégation Nantes Est",
+            "metadata": {
+                "url": "http://localhost:8080/jcms/departement44/insertion-emploi/unite-emploi-delegation-nantes-est/c_1234723",
+                "type": "FicheLieu",
+                "lat": null,
+                "long": null,
+                "html_list": "\n\n\n<h3>\n<a href=\"departement44/insertion-emploi/unite-emploi-delegation-nantes-est/c_1234723\" class=\"\" data-jalios-id='c_1234723'>\n  Unité emploi - délégation Nantes Est\n  \n</a>\n</h3>\n\n<div class=\"abstract\" >\n\t\n</div>",
+                "html_marker": "\n\n\n<h3>\n<a href=\"departement44/insertion-emploi/unite-emploi-delegation-nantes-est/c_1234723\" class=\"\" data-jalios-id='c_1234723'>\n  Unité emploi - délégation Nantes Est\n  \n</a>\n</h3>\n\n<div class=\"abstract\" >\n\t\n</div>"
+            }
+        },
+        {
+            "id": "c_1234722",
+            "value": "Unité emploi - délégation Nantes nord",
+            "metadata": {
+                "url": "http://localhost:8080/jcms/departement44/insertion-emploi/unite-emploi-delegation-nantes-nord/c_1234722",
+                "type": "FicheLieu",
+                "lat": null,
+                "long": null,
+                "html_list": "\n\n\n<h3>\n<a href=\"departement44/insertion-emploi/unite-emploi-delegation-nantes-nord/c_1234722\" class=\"\" data-jalios-id='c_1234722'>\n  Unité emploi - délégation Nantes nord\n  \n</a>\n</h3>\n\n<div class=\"abstract\" >\n\t\n</div>",
+                "html_marker": "\n\n\n<h3>\n<a href=\"departement44/insertion-emploi/unite-emploi-delegation-nantes-nord/c_1234722\" class=\"\" data-jalios-id='c_1234722'>\n  Unité emploi - délégation Nantes nord\n  \n</a>\n</h3>\n\n<div class=\"abstract\" >\n\t\n</div>"
+            }
+        },
+        {
+            "id": "c_1234720",
+            "value": "Espace départemental des solidarités Orvault - site de Plaisance",
+            "metadata": {
+                "url": "http://localhost:8080/jcms/departement44/enfance-familles/espace-departemental-des-solidarites-orvault-site-de-plaisance/c_1234720",
+                "type": "FicheLieu",
+                "lat": null,
+                "long": null,
+                "html_list": "\n\n\n<h3>\n<a href=\"departement44/enfance-familles/espace-departemental-des-solidarites-orvault-site-de-plaisance/c_1234720\" class=\"\" data-jalios-id='c_1234720'>\n  Espace départemental des solidarités Orvault - site de Plaisance\n  \n</a>\n</h3>\n\n<div class=\"abstract\" >\n\t\n</div>",
+                "html_marker": "\n\n\n<h3>\n<a href=\"departement44/enfance-familles/espace-departemental-des-solidarites-orvault-site-de-plaisance/c_1234720\" class=\"\" data-jalios-id='c_1234720'>\n  Espace départemental des solidarités Orvault - site de Plaisance\n  \n</a>\n</h3>\n\n<div class=\"abstract\" >\n\t\n</div>"
+            }
+        },
+        {
+            "id": "c_1234719",
+            "value": "Espace départemental des solidarités Orvault - site de Bugallière",
+            "metadata": {
+                "url": "http://localhost:8080/jcms/departement44/enfance-familles/espace-departemental-des-solidarites-orvault-site-de-bugalliere/c_1234719",
+                "type": "FicheLieu",
+                "lat": null,
+                "long": null,
+                "html_list": "\n\n\n<h3>\n<a href=\"departement44/enfance-familles/espace-departemental-des-solidarites-orvault-site-de-bugalliere/c_1234719\" class=\"\" data-jalios-id='c_1234719'>\n  Espace départemental des solidarités Orvault - site de Bugallière\n  \n</a>\n</h3>\n\n<div class=\"abstract\" >\n\t\n</div>",
+                "html_marker": "\n\n\n<h3>\n<a href=\"departement44/enfance-familles/espace-departemental-des-solidarites-orvault-site-de-bugalliere/c_1234719\" class=\"\" data-jalios-id='c_1234719'>\n  Espace départemental des solidarités Orvault - site de Bugallière\n  \n</a>\n</h3>\n\n<div class=\"abstract\" >\n\t\n</div>"
+            }
+        },
+        {
+            "id": "c_1234718",
+            "value": "Centre Communal d'Action Sociale (CCAS) de Sautron",
+            "metadata": {
+                "url": "http://localhost:8080/jcms/departement44/seniors-personnes-agees/centre-communal-d-action-sociale-ccas-de-sautron/c_1234718",
+                "type": "FicheLieu",
+                "lat": null,
+                "long": null,
+                "html_list": "\n\n\n<h3>\n<a href=\"departement44/seniors-personnes-agees/centre-communal-d-action-sociale-ccas-de-sautron/c_1234718\" class=\"\" data-jalios-id='c_1234718'>\n  Centre Communal d'Action Sociale (CCAS) de Sautron\n  \n</a>\n</h3>\n\n<div class=\"abstract\" >\n\t\n</div>",
+                "html_marker": "\n\n\n<h3>\n<a href=\"departement44/seniors-personnes-agees/centre-communal-d-action-sociale-ccas-de-sautron/c_1234718\" class=\"\" data-jalios-id='c_1234718'>\n  Centre Communal d'Action Sociale (CCAS) de Sautron\n  \n</a>\n</h3>\n\n<div class=\"abstract\" >\n\t\n</div>"
+            }
+        },
+        {
+            "id": "c_1234717",
+            "value": "Espace départemental des solidarités Nantes centre - site de Michelet",
+            "metadata": {
+                "url": "http://localhost:8080/jcms/departement44/enfance-familles/espace-departemental-des-solidarites-nantes-centre-site-de-michelet/c_1234717",
+                "type": "FicheLieu",
+                "lat": null,
+                "long": null,
+                "html_list": "\n\n\n<h3>\n<a href=\"departement44/enfance-familles/espace-departemental-des-solidarites-nantes-centre-site-de-michelet/c_1234717\" class=\"\" data-jalios-id='c_1234717'>\n  Espace départemental des solidarités Nantes centre - site de Michelet\n  \n</a>\n</h3>\n\n<div class=\"abstract\" >\n\t\n</div>",
+                "html_marker": "\n\n\n<h3>\n<a href=\"departement44/enfance-familles/espace-departemental-des-solidarites-nantes-centre-site-de-michelet/c_1234717\" class=\"\" data-jalios-id='c_1234717'>\n  Espace départemental des solidarités Nantes centre - site de Michelet\n  \n</a>\n</h3>\n\n<div class=\"abstract\" >\n\t\n</div>"
+            }
+        },
+        {
+            "id": "c_1234714",
+            "value": "CRIJ - Centre Régional Information Jeunesse des Pays de la Loire – Nantes",
+            "metadata": {
+                "url": "http://localhost:8080/jcms/departement44/habitat-logement/crij-centre-regional-information-jeunesse-des-pays-de-la-loire-nantes/c_1234714",
+                "type": "FicheLieu",
+                "lat": null,
+                "long": null,
+                "html_list": "\n\n\n<h3>\n<a href=\"departement44/habitat-logement/crij-centre-regional-information-jeunesse-des-pays-de-la-loire-nantes/c_1234714\" class=\"\" data-jalios-id='c_1234714'>\n  CRIJ - Centre Régional Information Jeunesse des Pays de la Loire – Nantes\n  \n</a>\n</h3>\n\n<div class=\"abstract\" >\n\t\n</div>",
+                "html_marker": "\n\n\n<h3>\n<a href=\"departement44/habitat-logement/crij-centre-regional-information-jeunesse-des-pays-de-la-loire-nantes/c_1234714\" class=\"\" data-jalios-id='c_1234714'>\n  CRIJ - Centre Régional Information Jeunesse des Pays de la Loire – Nantes\n  \n</a>\n</h3>\n\n<div class=\"abstract\" >\n\t\n</div>"
+            }
+        },
+        {
+            "id": "c_1234709",
+            "value": "Au 104 (LAEP)",
+            "metadata": {
+                "url": "http://localhost:8080/jcms/departement44/enfance-familles/au-104-laep/c_1234709",
+                "type": "FicheLieu",
+                "lat": null,
+                "long": null,
+                "html_list": "\n\n\n<h3>\n<a href=\"departement44/enfance-familles/au-104-laep/c_1234709\" class=\"\" data-jalios-id='c_1234709'>\n  Au 104 (LAEP)\n  \n</a>\n</h3>\n\n<div class=\"abstract\" >\n\t\n</div>",
+                "html_marker": "\n\n\n<h3>\n<a href=\"departement44/enfance-familles/au-104-laep/c_1234709\" class=\"\" data-jalios-id='c_1234709'>\n  Au 104 (LAEP)\n  \n</a>\n</h3>\n\n<div class=\"abstract\" >\n\t\n</div>"
+            }
+        },
+        {
+            "id": "c_1234706",
+            "value": "Espace départemental des solidarités Nantes centre - site des Hauts Pavés",
+            "metadata": {
+                "url": "http://localhost:8080/jcms/departement44/enfance-familles/espace-departemental-des-solidarites-nantes-centre-site-des-hauts-paves/c_1234706",
+                "type": "FicheLieu",
+                "lat": null,
+                "long": null,
+                "html_list": "\n\n\n<h3>\n<a href=\"departement44/enfance-familles/espace-departemental-des-solidarites-nantes-centre-site-des-hauts-paves/c_1234706\" class=\"\" data-jalios-id='c_1234706'>\n  Espace départemental des solidarités Nantes centre - site des Hauts Pavés\n  \n</a>\n</h3>\n\n<div class=\"abstract\" >\n\t\n</div>",
+                "html_marker": "\n\n\n<h3>\n<a href=\"departement44/enfance-familles/espace-departemental-des-solidarites-nantes-centre-site-des-hauts-paves/c_1234706\" class=\"\" data-jalios-id='c_1234706'>\n  Espace départemental des solidarités Nantes centre - site des Hauts Pavés\n  \n</a>\n</h3>\n\n<div class=\"abstract\" >\n\t\n</div>"
+            }
+        },
+        {
+            "id": "c_1234704",
+            "value": "SOLIHA - Solidaires pour l'Habitat",
+            "metadata": {
+                "url": "http://localhost:8080/jcms/departement44/habitat-logement/soliha-solidaires-pour-l-habitat/c_1234704",
+                "type": "FicheLieu",
+                "lat": null,
+                "long": null,
+                "html_list": "\n\n\n<h3>\n<a href=\"departement44/habitat-logement/soliha-solidaires-pour-l-habitat/c_1234704\" class=\"\" data-jalios-id='c_1234704'>\n  SOLIHA - Solidaires pour l'Habitat\n  \n</a>\n</h3>\n\n<div class=\"abstract\" >\n\t\n</div>",
+                "html_marker": "\n\n\n<h3>\n<a href=\"departement44/habitat-logement/soliha-solidaires-pour-l-habitat/c_1234704\" class=\"\" data-jalios-id='c_1234704'>\n  SOLIHA - Solidaires pour l'Habitat\n  \n</a>\n</h3>\n\n<div class=\"abstract\" >\n\t\n</div>"
+            }
+        },
+        {
+            "id": "c_1234701",
+            "value": "Agence nationale de l’habitat - ANAH",
+            "metadata": {
+                "url": "http://localhost:8080/jcms/departement44/habitat-logement/agence-nationale-de-l-habitat-anah/c_1234701",
+                "type": "FicheLieu",
+                "lat": null,
+                "long": null,
+                "html_list": "\n\n\n<h3>\n<a href=\"departement44/habitat-logement/agence-nationale-de-l-habitat-anah/c_1234701\" class=\"\" data-jalios-id='c_1234701'>\n  Agence nationale de l’habitat - ANAH\n  \n</a>\n</h3>\n\n<div class=\"abstract\" >\n\t\n</div>",
+                "html_marker": "\n\n\n<h3>\n<a href=\"departement44/habitat-logement/agence-nationale-de-l-habitat-anah/c_1234701\" class=\"\" data-jalios-id='c_1234701'>\n  Agence nationale de l’habitat - ANAH\n  \n</a>\n</h3>\n\n<div class=\"abstract\" >\n\t\n</div>"
+            }
+        },
+        {
+            "id": "c_1234700",
+            "value": "Espace départemental des solidarités Nantes centre - site de Breil-Malville",
+            "metadata": {
+                "url": "http://localhost:8080/jcms/departement44/enfance-familles/espace-departemental-des-solidarites-nantes-centre-site-de-breil-malville/c_1234700",
+                "type": "FicheLieu",
+                "lat": null,
+                "long": null,
+                "html_list": "\n\n\n<h3>\n<a href=\"departement44/enfance-familles/espace-departemental-des-solidarites-nantes-centre-site-de-breil-malville/c_1234700\" class=\"\" data-jalios-id='c_1234700'>\n  Espace départemental des solidarités Nantes centre - site de Breil-Malville\n  \n</a>\n</h3>\n\n<div class=\"abstract\" >\n\t\n</div>",
+                "html_marker": "\n\n\n<h3>\n<a href=\"departement44/enfance-familles/espace-departemental-des-solidarites-nantes-centre-site-de-breil-malville/c_1234700\" class=\"\" data-jalios-id='c_1234700'>\n  Espace départemental des solidarités Nantes centre - site de Breil-Malville\n  \n</a>\n</h3>\n\n<div class=\"abstract\" >\n\t\n</div>"
+            }
+        },
+        {
+            "id": "c_1234697",
+            "value": "Centre Communal d'Action Sociale (CCAS) de Saint-Sébastien-sur-Loire",
+            "metadata": {
+                "url": "http://localhost:8080/jcms/departement44/seniors-personnes-agees/centre-communal-d-action-sociale-ccas-de-saint-sebastien-sur-loire/c_1234697",
+                "type": "FicheLieu",
+                "lat": null,
+                "long": null,
+                "html_list": "\n\n\n<h3>\n<a href=\"departement44/seniors-personnes-agees/centre-communal-d-action-sociale-ccas-de-saint-sebastien-sur-loire/c_1234697\" class=\"\" data-jalios-id='c_1234697'>\n  Centre Communal d'Action Sociale (CCAS) de Saint-Sébastien-sur-Loire\n  \n</a>\n</h3>\n\n<div class=\"abstract\" >\n\t\n</div>",
+                "html_marker": "\n\n\n<h3>\n<a href=\"departement44/seniors-personnes-agees/centre-communal-d-action-sociale-ccas-de-saint-sebastien-sur-loire/c_1234697\" class=\"\" data-jalios-id='c_1234697'>\n  Centre Communal d'Action Sociale (CCAS) de Saint-Sébastien-sur-Loire\n  \n</a>\n</h3>\n\n<div class=\"abstract\" >\n\t\n</div>"
+            }
+        },
+        {
+            "id": "c_1234693",
+            "value": "SSIAD -  Orvault - Sautron",
+            "metadata": {
+                "url": "http://localhost:8080/jcms/departement44/seniors-personnes-agees/ssiad-orvault-sautron/c_1234693",
+                "type": "FicheLieu",
+                "lat": null,
+                "long": null,
+                "html_list": "\n\n\n<h3>\n<a href=\"departement44/seniors-personnes-agees/ssiad-orvault-sautron/c_1234693\" class=\"\" data-jalios-id='c_1234693'>\n  SSIAD -  Orvault - Sautron\n  \n</a>\n</h3>\n\n<div class=\"abstract\" >\n\t\n</div>",
+                "html_marker": "\n\n\n<h3>\n<a href=\"departement44/seniors-personnes-agees/ssiad-orvault-sautron/c_1234693\" class=\"\" data-jalios-id='c_1234693'>\n  SSIAD -  Orvault - Sautron\n  \n</a>\n</h3>\n\n<div class=\"abstract\" >\n\t\n</div>"
+            }
+        },
+        {
+            "id": "c_1234688",
+            "value": "Espace départemental des solidarités Île de Nantes-Clémence Royer - site de Clémence Royer",
+            "metadata": {
+                "url": "http://localhost:8080/jcms/departement44/enfance-familles/espace-departemental-des-solidarites-ile-de-nantes-clemence-royer-site-de-clemence-royer/c_1234688",
+                "type": "FicheLieu",
+                "lat": null,
+                "long": null,
+                "html_list": "\n\n\n<h3>\n<a href=\"departement44/enfance-familles/espace-departemental-des-solidarites-ile-de-nantes-clemence-royer-site-de-clemence-royer/c_1234688\" class=\"\" data-jalios-id='c_1234688'>\n  Espace départemental des solidarités Île de Nantes-Clémence Royer - site de Clémence Royer\n  \n</a>\n</h3>\n\n<div class=\"abstract\" >\n\t\n</div>",
+                "html_marker": "\n\n\n<h3>\n<a href=\"departement44/enfance-familles/espace-departemental-des-solidarites-ile-de-nantes-clemence-royer-site-de-clemence-royer/c_1234688\" class=\"\" data-jalios-id='c_1234688'>\n  Espace départemental des solidarités Île de Nantes-Clémence Royer - site de Clémence Royer\n  \n</a>\n</h3>\n\n<div class=\"abstract\" >\n\t\n</div>"
+            }
+        },
+        {
+            "id": "c_1234687",
+            "value": "Espace départemental des solidarités Saint-Sébastien-sur-Loire-Vertou - site de Vertou",
+            "metadata": {
+                "url": "http://localhost:8080/jcms/departement44/enfance-familles/espace-departemental-des-solidarites-saint-sebastien-sur-loire-vertou-site-de-vertou/c_1234687",
+                "type": "FicheLieu",
+                "lat": null,
+                "long": null,
+                "html_list": "\n\n\n<h3>\n<a href=\"departement44/enfance-familles/espace-departemental-des-solidarites-saint-sebastien-sur-loire-vertou-site-de-vertou/c_1234687\" class=\"\" data-jalios-id='c_1234687'>\n  Espace départemental des solidarités Saint-Sébastien-sur-Loire-Vertou - site de Vertou\n  \n</a>\n</h3>\n\n<div class=\"abstract\" >\n\t\n</div>",
+                "html_marker": "\n\n\n<h3>\n<a href=\"departement44/enfance-familles/espace-departemental-des-solidarites-saint-sebastien-sur-loire-vertou-site-de-vertou/c_1234687\" class=\"\" data-jalios-id='c_1234687'>\n  Espace départemental des solidarités Saint-Sébastien-sur-Loire-Vertou - site de Vertou\n  \n</a>\n</h3>\n\n<div class=\"abstract\" >\n\t\n</div>"
+            }
+        },
+        {
+            "id": "c_1234684",
+            "value": "Espace départemental des solidarités Saint-Sébastien-sur-Loire-Vertou - site de Saint-Sébastien-sur-Loire",
+            "metadata": {
+                "url": "http://localhost:8080/jcms/departement44/enfance-familles/espace-departemental-des-solidarites-saint-sebastien-sur-loire-vertou-site-de-saint-sebastien-sur-loire/c_1234684",
+                "type": "FicheLieu",
+                "lat": null,
+                "long": null,
+                "html_list": "\n\n\n<h3>\n<a href=\"departement44/enfance-familles/espace-departemental-des-solidarites-saint-sebastien-sur-loire-vertou-site-de-saint-sebastien-sur-loire/c_1234684\" class=\"\" data-jalios-id='c_1234684'>\n  Espace départemental des solidarités Saint-Sébastien-sur-Loire-Vertou - site de Saint-Sébastien-sur-Loire\n  \n</a>\n</h3>\n\n<div class=\"abstract\" >\n\t\n</div>",
+                "html_marker": "\n\n\n<h3>\n<a href=\"departement44/enfance-familles/espace-departemental-des-solidarites-saint-sebastien-sur-loire-vertou-site-de-saint-sebastien-sur-loire/c_1234684\" class=\"\" data-jalios-id='c_1234684'>\n  Espace départemental des solidarités Saint-Sébastien-sur-Loire-Vertou - site de Saint-Sébastien-sur-Loire\n  \n</a>\n</h3>\n\n<div class=\"abstract\" >\n\t\n</div>"
+            }
+        },
+        {
+            "id": "c_1234681",
+            "value": "Espace départemental des solidarités Bouguenais-Saint-Jean-de-Boiseau",
+            "metadata": {
+                "url": "http://localhost:8080/jcms/departement44/enfance-familles/espace-departemental-des-solidarites-bouguenais-saint-jean-de-boiseau/c_1234681",
+                "type": "FicheLieu",
+                "lat": null,
+                "long": null,
+                "html_list": "\n\n\n<h3>\n<a href=\"departement44/enfance-familles/espace-departemental-des-solidarites-bouguenais-saint-jean-de-boiseau/c_1234681\" class=\"\" data-jalios-id='c_1234681'>\n  Espace départemental des solidarités Bouguenais-Saint-Jean-de-Boiseau\n  \n</a>\n</h3>\n\n<div class=\"abstract\" >\n\t\n</div>",
+                "html_marker": "\n\n\n<h3>\n<a href=\"departement44/enfance-familles/espace-departemental-des-solidarites-bouguenais-saint-jean-de-boiseau/c_1234681\" class=\"\" data-jalios-id='c_1234681'>\n  Espace départemental des solidarités Bouguenais-Saint-Jean-de-Boiseau\n  \n</a>\n</h3>\n\n<div class=\"abstract\" >\n\t\n</div>"
+            }
+        }
+    ]
+}

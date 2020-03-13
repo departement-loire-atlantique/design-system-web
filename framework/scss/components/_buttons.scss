@@ -318,6 +318,36 @@ a.ds44-btnStd--retourPage {
     text-align: center;
 }
 
+
+// Bouton Cluster map
+.ds44-btnStd {
+
+  &--cluster {
+    border-radius: 50%;
+    width: 43px;
+    height: 43px;
+    padding: 0;
+    @include ds44-font-sizes(largeButton);  // 16px
+    min-height: inherit;
+    border: 2px solid $ds44-dark;
+
+    &--bigger {
+      width: 63px;
+      height: 63px;
+    }
+
+    &:hover {
+      border: 2px solid $ds44-dark;
+    }
+
+    & .ds44-btnInnerText {
+      line-height: 1;
+    }
+  }
+}
+
+
+
 /* medium screens */
 /* ------------- */
 

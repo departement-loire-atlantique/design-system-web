@@ -1,27 +1,7 @@
 class FormFieldSelectMultilevel extends FormFieldSelectCheckbox {
     constructor() {
-        const selects = [];
-        document
-            .querySelectorAll('.ds44-selectDisplay')
-            .forEach((element) => {
-                let formContainer = element.closest('.ds44-form__container');
-                if (!formContainer) {
-                    return;
-                }
-
-                if (
-                    !formContainer.querySelector('.ds44-select-container .ds44-select-list_elem input[type="checkbox"]') ||
-                    !formContainer.querySelector('.ds44-select-container .ds44-collapser')
-                ) {
-                    return
-                }
-
-                // Has checkbox buttons and collapsers, this is a multilevel select
-                selects.push(element);
-            });
-
         super(
-            selects,
+            '.ds44-selectDisplay.ds44-js-select-multilevel',
             'selectMultilevel'
         );
     }

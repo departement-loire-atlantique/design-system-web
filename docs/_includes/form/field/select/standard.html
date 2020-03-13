@@ -5,7 +5,7 @@
 {% endif %}
 
 {% capture mainContent %}
-{% include form/field/partial/select.html %}
+{% include form/field/partial/select.html disabled=include.disabled selectContainerClass="ds44-js-select-standard" %}
 <div class="ds44-select-container hidden">
     <div class="ds44-listSelect">
         <ul class="ds44-list" role="listbox" id="listbox-{{ id }}" aria-labelledby="button-message-{{ id }}" {{ listAttributes }}>
