@@ -90,13 +90,13 @@ a > .ds44-btnStd--large   // pour wysiwyg
 }
 
 .ds44-btn--invert, a.ds44-btn--invert, a > .ds44-btn--invert, .ds44-btn--invert > a {
-    background-color: $ds44-background-dark;
-    color: $ds44-color-inverse;
+    background-color: $ds44-background-dark!important;
+    color: $ds44-color-inverse!important;
 
     &:focus,
     &:hover,
     &:active {
-        background-color: $ds44-hover-dark;
+        background-color: $ds44-hover-dark!important;
     }
 }
 
@@ -105,17 +105,24 @@ a.ds44-btn--contextual,
 .ds44-contextualBtnLink,
 a > .ds44-btn--contextual,
 .ds44-btn--contextual > a {
-    background-color: $ds44-contextual-color;
+    background-color: $ds44-contextual-color!important;
     border-color: $ds44-contextual-color;
 
     &:focus,
     &:hover,
     &:active {
-        background-color: $ds44-contextual-hover;
+        background-color: $ds44-contextual-hover!important;
         border-color: $ds44-contextual-color;
     }
 }
 
+.ds44-bgGray, .ds44-lightBG {
+
+    .ds44-btnStd, .ds44-btnStd--large {
+        background-color: $ds44-background-base;
+    }
+    
+}
 
 /* == Icon-text buttons == */
 
