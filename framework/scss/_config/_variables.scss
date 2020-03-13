@@ -14,7 +14,7 @@ $ds44-max-inner-size : 70em !default;     // 1120px
 $ds44-max-size       : 100em !default;    // 1600px
 
 // surcharge de la grillade pour réaligner le breakpoint tablette
-$medium: 65em !default;     // 1024px
+$medium: 65em !default;     // 1024px (KNACSS crée ses breakpoints en retirant une unité)
 
 
 // ----------
