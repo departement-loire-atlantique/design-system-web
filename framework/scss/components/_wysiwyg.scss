@@ -2,7 +2,7 @@
 /* == Styles dédiés au rendu wysiwyg         */
 /* ---------------------------------------- */
 
-.ds44-contenuArticle h2 + * {
+.ds44-contenuArticle h2:not(.h3-like) + * {
     margin-top: $ds44-components-vmargin;
 }
 
