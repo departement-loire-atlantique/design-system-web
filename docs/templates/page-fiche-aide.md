@@ -5,7 +5,7 @@ permalink:
 
 title: Fiche aide
 description: Modèle de fiche basé sur le template "carrefour".
-status: A valider
+status: Validé
 
 variations:
 - title: Page type "Fiche aide"

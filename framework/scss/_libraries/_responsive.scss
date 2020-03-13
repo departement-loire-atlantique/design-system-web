@@ -65,6 +65,21 @@
   }
 }
 
+
+
+/* medium screens */
+/* -------------- */
+
+@media (min-width: $ds44-large) and (max-width: ($ds44-extra-large - .0625)) {
+
+  .ds44-large-noOffset {
+    padding-left: 0;
+    padding-right: 0;
+  }
+
+}
+
+
 /* medium screens */
 /* -------------- */
 
@@ -128,6 +143,24 @@
   }
 }
 
+
+/*   Tablettes   */
+/* ------------- */
+
+@media (min-width: $ds44-small) and (max-width: ($ds44-large - .0625)) {
+
+  .ds44-tablette-extra-mt {
+    margin-top: $ds44-components-vmargin !important;
+  }
+
+  .ds44-tablette-noOffset {
+    padding-left: 0;
+    padding-right: 0;
+  }
+
+}
+
+
 /* small screens */
 /* ------------- */
 
@@ -173,7 +206,10 @@
     width: 75% !important;
   }
 
-  .small-w100,
+  .small-w100 { 
+    width:100%;
+  }
+
   .small-wauto {
     display: block !important;
     float: none !important;
@@ -259,7 +295,10 @@
     width: 75% !important;
   }
 
-  .tiny-w100,
+  .tiny-w100 {
+    width: 100%;
+  }
+  
   .tiny-wauto {
     display: block !important;
     float: none !important;
@@ -311,9 +350,22 @@
     text-align: center !important;
   }
 
+  .ds44-large-extra-mb {
+    margin-bottom: $ds44-components-vmargin !important;
+  }
+
+  .ds44-large-extra-mt {
+    margin-top: $ds44-components-vmargin !important;
+  }
+
 }
 
 @media (max-width: $ds44-medium - .0625) {
+
+
+  .ds44-tablette-extra-mb {
+    margin-bottom: $ds44-components-vmargin !important;
+  }
 
   .ds44-tablette-reduced-pt {
     padding-top: $ds44-padding-base !important;
@@ -326,6 +378,7 @@
   .ds44-hide-tiny-to-medium {
     display: none!important;
   }
+
   .ds44-show-tiny-to-medium {
     display: block!important;
   }
@@ -342,12 +395,20 @@
     display: none !important;
   }
 
+  .ds44-mobile-reduced-pad {
+    padding: $ds44-padding-base !important;
+  }
+
   .ds44-mobile-reduced-pt {
     padding-top: $ds44-padding-base !important;
   }
 
   .ds44-mobile-reduced-pb {
     padding-bottom: $ds44-padding-base !important;
+  }
+
+  .ds44-mobile-reduced-mar {
+    margin: $ds44-margin-base !important;
   }
 
   .ds44-mobile-reduced-mb {

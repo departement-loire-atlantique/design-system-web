@@ -5,7 +5,7 @@ permalink:
 
 title: Page article
 description: Modèle de page basée sur le template "centré".
-status: A valider
+status: Validé
 
 variations:
 - title: Page type "Article"

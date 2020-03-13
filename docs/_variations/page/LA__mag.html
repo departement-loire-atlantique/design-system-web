@@ -1,0 +1,91 @@
+---
+layout: pattern
+---
+
+{% include header/inc-header.html
+  logo='<picture class="ds44-logo"><img src="../../assets/images/logo-loire-atlantique.svg" alt="Retour à l&apos;accueil du site loire-atlantique.fr"></picture>'
+  variante1='<button type="button" class="ds44-btnIcoText--maxi ds44--xl-padding" id="open-search"><span class="ds44-btnInnerText">Rechercher</span><i class="icon icon-magnifier icon--large" aria-hidden="true"></i></button>'
+%}
+
+<main role="main" id="content">
+
+	<article class="ds44-container-large">
+
+		<div class="ds44-lightBG ds44-posRel">
+			<div class="ds44-inner-container ds44--xl-padding-t ds44--m-padding-b ds44-tablette-reduced-pt">
+				<div class="ds44-grid12-offset-2">
+					<div class="ds44-tablette-reduced-mt">{% include breadcrumb/breadcrumb.html %}</div>
+          <h1 class="h1-like mbs mts " id="idTitre1">Loire-Atlantique - Juin/juillet 2019</h1>
+				</div>
+			</div>
+		</div>
+		<div class="ds44-img50 ds44--l-padding-tb">
+			<div class="ds44-inner-container ds44-grid12-offset-1 ds44-large-noOffset">
+				<div class="grid-12-small-1 grid-12-medium-1 ds44-theme">
+          <div class="col-5">
+            <picture class="ds44-stl-center ds44-tablette-extra-mt">
+              <img src="../../assets/images/mag.png" alt="" class="tiny-w100" />
+            </picture>
+          </div>
+          <div class="col-7 ds44-mlr4 ds44--xxl-padding-t ds44-mobile-reduced-pad ds44-mobile-reduced-mar">
+            <h2 class="h2-like ds44-theme">La mer, terre d’avenir</h2>
+            <p class="ds44-introduction">La Loire-Atlantique, terre maritime, est particulièrement concernée par les enjeux de la mer : comment profiter des ressources de l’océan sans les épuiser ? Nouvelles pratiques de pêche, science, énergies…, des éléments de réponse à ...</p>
+            <p class="ds44-mt4"><a class="ds44-btnStd ds44-btnStd--large ds44-btn--invert ds44-bntALeft" type="button"><span class="ds44-btnInnerText">Lire le magazine en ligne</span><i class="icon icon-long-arrow-right" aria-hidden="true"></i></a></p>
+              <ul class="ds44-list ds44-flex-container ds44-flex-container--colMed ds44-fsb ds44-mt4 ds44-mb2">
+                <li class="ds44-large-extra-mb"><button class="ds44-btnStd ds44-bntALeft"><span class="ds44-btnInnerText">Télécharger</span><i class="icon icon-long-arrow-right" aria-hidden="true"></i></button></li>
+                <li class="ds44-large-extra-mb"><button class="ds44-btnStd ds44-bntALeft"><span class="ds44-btnInnerText">&Eacute;couter</span><i class="icon icon-long-arrow-right" aria-hidden="true"></i></button></li>
+                <li class="ds44-large-extra-mb"><button class="ds44-btnStd ds44-bntALeft"><span class="ds44-btnInnerText">Version Daisy</span><i class="icon icon-long-arrow-right" aria-hidden="true"></i></button></li>
+              </ul>    
+          </div>
+				</div>
+			</div>
+		</div>
+
+    <section class="ds44-contenuArticle ds44-mt2" id="section1">
+			<div class="ds44-inner-container">
+				<div class="ds44-grid12-offset-2">
+          <h2 class="h2-like ds44-mb4">Au sommaire</h2>
+          <div class="grid-2-small-1">
+            <div class="col mrs ds44-mtb1">
+              <h3 id="idTitre-list1">Dossier</h3>
+              <ul class="ds44-uList">
+                <li><a href="#">La mer, terre d’avenir</a></li>
+              </ul>              
+            </div>
+            <div class="col mls ds44-mtb1">
+              <h3 id="idTitre-list2">Actualités</h3>
+              <ul class="ds44-uList">
+                <li><a href="#">Handicap : faciliter l’accès aux droits</a></li>
+              </ul>              
+            </div>            
+            <div class="col mrs ds44-mtb1">
+              <h3 id="idTitre-list3">Portraits</h3>
+              <ul class="ds44-uList">
+                <li><a href="#">Loïck Peyron, le jeune homme et la mer</a></li>
+                <li><a href="#">Manon Lavainne, climato active</a></li>
+                <li><a href="#">Sullivan Grégoire, l’appel de la terre</a></li>
+              </ul>              
+            </div>
+            <div class="col mls ds44-mtb1">
+              <h3 id="idTitre-list4">La question</h3>
+              <ul class="ds44-uList">
+                <li><a href="#">Que deviennent les terres de Notre-Dame-des Landes ?</a></li>
+              </ul>              
+            </div>
+          </div>
+				</div>
+			</div>
+		</section>
+
+		{% include partage/partage-interne.html %}
+
+	</article>
+
+	<section class="ds44-container-large mbs">
+    {% include boxes/inc-box-pushX3.html %}
+  </section>
+
+
+</main>
+
+{% include footer/footer-LA.html %}
