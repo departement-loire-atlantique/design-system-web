@@ -46,8 +46,12 @@ button, a.ds44-btnStd, a > .ds44-btnStd, .ds44-btnStd > a  {
 
         &:hover,
         &:active,
-        &:focus {
+        &:focus,
+        &:hover > span,
+        &:active > span,
+        &:focus > span {
           box-shadow: none;
+          text-decoration: underline;
         }
     }
 
