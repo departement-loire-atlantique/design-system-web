@@ -206,7 +206,7 @@
     width: 75% !important;
   }
 
-  .small-w100 { 
+  .small-w100 {
     width:100%;
   }
 
@@ -298,7 +298,7 @@
   .tiny-w100 {
     width: 100%;
   }
-  
+
   .tiny-wauto {
     display: block !important;
     float: none !important;
@@ -327,6 +327,13 @@
   SPECIFIC DS44 MEDIA QUERIES
   === */
 
+@media (min-width: $ds44-large) {
+
+  .ds44-hide-large {
+    display: none !important;
+  }
+
+}
 
 @media (min-width: $ds44-medium) {
 
@@ -340,6 +347,10 @@
 
   .ds44-hide-tinyToLarge {
     display: none !important;
+  }
+
+  .ds44-show-tinyToLarge {
+    display: block !important;
   }
 
   .ds44-ttl-pt9 {

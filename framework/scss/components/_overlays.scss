@@ -115,10 +115,10 @@ top: -2500px;
     }
 }
 
-button#btnFAQ {
+.ds44-btn-fixed {
   position: fixed;
   bottom: 0;
-  right: 2rem;
+  right: 0;
   z-index: 100;
   border-bottom-left-radius: 0;
   border-bottom-right-radius: 0;
@@ -128,6 +128,10 @@ button#btnFAQ {
         padding-bottom: $ds44-padding-xxlarge;
       }
   }
+  &#btnFAQ  {
+    right: 2rem;
+  }
+
 }
 
 

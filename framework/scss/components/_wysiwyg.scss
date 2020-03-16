@@ -6,6 +6,18 @@
     margin-top: $ds44-components-vmargin;
 }
 
+.ds44-contenuArticle {
+    p + p {
+      margin-top: $ds44-medium-vmargin ;
+    }
+    p + .h3-like,
+    p + h3,
+    p + .h4-like,
+    p + h4 {
+      margin-top: $ds44-components-vmargin ;
+    }
+}
+
 blockquote {
 
     border-left: 1px solid $ds44-contextual-color;
