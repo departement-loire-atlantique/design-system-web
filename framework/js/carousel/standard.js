@@ -1,5 +1,5 @@
 class CarouselStandard extends CarouselAbstract {
-    constructor() {
+    constructor () {
         super('.swipper-carousel-wrap:not(.swipper-carousel-slideshow)');
     }
 }

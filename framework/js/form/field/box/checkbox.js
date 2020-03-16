@@ -1,5 +1,5 @@
 class FormFieldBoxCheckbox extends FormFieldBoxAbstract {
-    constructor() {
+    constructor () {
         super('checkbox');
     }
 }

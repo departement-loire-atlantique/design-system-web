@@ -1,5 +1,5 @@
 class TooltipStandard {
-    constructor() {
+    constructor () {
         this.TOOLTIP_SIMPLE = 'js-simple-tooltip';
         this.TOOLTIP_SIMPLE_CONTAINER = 'simpletooltip_container';
         this.TOOLTIP_SIMPLE_RAW = 'simpletooltip';
@@ -25,7 +25,7 @@ class TooltipStandard {
         MiscEvent.addListener('keyDown:escape', this.hideAll.bind(this));
     }
 
-    create(element) {
+    create (element) {
         const hashId = Math.random().toString(32).slice(2, 12);
         const prefixClassName = MiscDom.getAttribute(element, this.TOOLTIP_DATA_PREFIX_CLASS);
         const contentId = MiscDom.getAttribute(element, this.TOOLTIP_DATA_CONTENT_ID);
@@ -64,7 +64,7 @@ class TooltipStandard {
         wrapper.appendChild(bubble);
     }
 
-    showHide(evt) {
+    showHide (evt) {
         const element = evt.target;
 
         // Determine the tooltip button and its corresponding event types
@@ -119,7 +119,7 @@ class TooltipStandard {
         }
     }
 
-    hideAll() {
+    hideAll () {
         document
             .querySelectorAll('.' + this.TOOLTIP_SIMPLE + '.' + this.TOOLTIP_SIMPLE_RAW)
             .forEach((tooltipBubble) => {

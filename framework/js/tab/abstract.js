@@ -1,5 +1,5 @@
 class TabAbstract {
-    constructor(selector) {
+    constructor (selector) {
         document
             .querySelectorAll(selector)
             .forEach((containerElement) => {
@@ -7,7 +7,7 @@ class TabAbstract {
             });
     }
 
-    create(containerElement) {
+    create (containerElement) {
         containerElement
             .querySelectorAll('.js-tablist__link')
             .forEach((tabHandleElement) => {
@@ -48,11 +48,11 @@ class TabAbstract {
         }
     }
 
-    getDefaultTabHandle(containerElement) {
+    getDefaultTabHandle (containerElement) {
         return containerElement.querySelector('.js-tablist__link');
     }
 
-    change(evt) {
+    change (evt) {
         if (evt.preventDefault) {
             evt.preventDefault();
         }
@@ -71,7 +71,7 @@ class TabAbstract {
         this.changeTab(tabHandleElement, tabPanel);
     }
 
-    changeTab(tabHandleElement, tabPanel) {
+    changeTab (tabHandleElement, tabPanel) {
         // Hide others
         tabHandleElement
             .closest('.js-tabs')
@@ -96,26 +96,26 @@ class TabAbstract {
         MiscAccessibility.show(tabPanel, true);
     }
 
-    showTab(tabHandleElement, tabPanel) {
+    showTab (tabHandleElement, tabPanel) {
         window.setTimeout(this.showTabCallback.bind(this, tabHandleElement, tabPanel), 300);
     }
 
-    showTabCallback(tabHandleElement, tabPanel) {
+    showTabCallback (tabHandleElement, tabPanel) {
         tabPanel.style.opacity = 1;
         tabPanel.style.display = 'block';
     }
 
-    hideTab(tabHandleElement, tabPanel) {
+    hideTab (tabHandleElement, tabPanel) {
         tabPanel.style.opacity = 0;
 
         window.setTimeout(this.hideTabCallback.bind(this, tabHandleElement, tabPanel), 150);
     }
 
-    hideTabCallback(tabHandleElement, tabPanel) {
+    hideTabCallback (tabHandleElement, tabPanel) {
         tabPanel.style.display = 'none';
     }
 
-    back(evt) {
+    back (evt) {
         if (evt.preventDefault) {
             evt.preventDefault();
         }
@@ -144,7 +144,7 @@ class TabAbstract {
         window.scrollTo(0, MiscUtils.getPositionY(currentTabHandle) - headerHeight)
     }
 
-    move(evt) {
+    move (evt) {
         evt.preventDefault();
 
         const eventKey = (evt.key === ' ' ? 'spacebar' : evt.key).toLowerCase();
@@ -161,7 +161,7 @@ class TabAbstract {
         }
     }
 
-    getTabFromHref(href) {
+    getTabFromHref (href) {
         if (href.indexOf('#') !== -1) {
             return href.slice(href.indexOf('#'));
         }

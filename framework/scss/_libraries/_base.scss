@@ -79,7 +79,7 @@ h2, .h2-like {
   display: inline;
 
   // Any element after the title gains margin top
-  & + *, & + .ds44-introduction {
+  &:not(.h3-like) + *, & + .ds44-introduction {
     margin-top: $ds44-components-vmargin;
   }
 

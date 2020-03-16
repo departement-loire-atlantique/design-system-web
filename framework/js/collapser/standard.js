@@ -1,5 +1,5 @@
 class CollapserStandard {
-    constructor() {
+    constructor () {
         this.objects = [];
 
         document
@@ -9,7 +9,7 @@ class CollapserStandard {
             });
     }
 
-    create(buttonElement) {
+    create (buttonElement) {
         const object = {
             'id': MiscUtils.generateId(),
             'containerElement': buttonElement.closest('.ds44-collapser_element'),
@@ -24,7 +24,7 @@ class CollapserStandard {
         MiscEvent.addListener('click', this.showHide.bind(this, objectIndex), buttonElement);
     }
 
-    showHide(objectIndex) {
+    showHide (objectIndex) {
         const object = this.objects[objectIndex];
         if (!object.buttonElement) {
             return;
@@ -41,7 +41,7 @@ class CollapserStandard {
         this.show(objectIndex);
     }
 
-    show(objectIndex) {
+    show (objectIndex) {
         const object = this.objects[objectIndex];
         if (!object.buttonElement) {
             return;
@@ -59,7 +59,7 @@ class CollapserStandard {
         panel.style.visibility = 'visible';
     }
 
-    hide(objectIndex) {
+    hide (objectIndex) {
         const object = this.objects[objectIndex];
         if (!object.buttonElement) {
             return;
@@ -77,7 +77,7 @@ class CollapserStandard {
         panel.style.visibility = 'hidden';
     }
 
-    escape(objectIndex) {
+    escape (objectIndex) {
         const object = this.objects[objectIndex];
 
         if (

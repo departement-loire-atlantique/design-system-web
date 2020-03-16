@@ -1,5 +1,5 @@
 class LoaderStandard {
-    constructor() {
+    constructor () {
         // Counter that prevents from hiding the loader if it has been requested several times
         this.counter = 0;
 
@@ -7,7 +7,7 @@ class LoaderStandard {
         MiscEvent.addListener('loader:requestHide', this.hide.bind(this));
     }
 
-    show() {
+    show () {
         const loaderElement = document.querySelector('.ds44-loader');
         const loaderTextElement = document.querySelector('.ds44-loader-text');
         if (!loaderElement || !loaderTextElement) {
@@ -22,7 +22,7 @@ class LoaderStandard {
         MiscEvent.dispatch('loader:show');
     }
 
-    hide() {
+    hide () {
         const loaderElement = document.querySelector('.ds44-loader');
         const loaderTextElement = document.querySelector('.ds44-loader-text');
         if (!loaderElement || !loaderTextElement) {

@@ -1,5 +1,5 @@
 class CalendarStandard {
-    constructor(options) {
+    constructor (options) {
         this.options = {
             element: null,
             selector: null,
@@ -51,7 +51,7 @@ class CalendarStandard {
         this.calendarElement.classList.remove('hidden');
     }
 
-    createCalendarLayout() {
+    createCalendarLayout () {
         this.calendarElement.innerHTML = `
             <div class="vanilla-calendar-header">
                 <button type="button" class="vanilla-calendar-btn" data-calendar-toggle="previous"><svg height="24" version="1.1" viewbox="0 0 24 24" width="24" xmlns="http://www.w3.org/2000/svg"><path d="M20,11V13H8L13.5,18.5L12.08,19.92L4.16,12L12.08,4.08L13.5,5.5L8,11H20Z"></path></svg></button>
@@ -63,11 +63,11 @@ class CalendarStandard {
         `;
     }
 
-    getWeekDay(day) {
+    getWeekDay (day) {
         return ['sunday', 'monday', 'tuesday', 'wednesday', 'thursday', 'friday', 'saturday'][day];
     }
 
-    createMonth() {
+    createMonth () {
         this.clearCalendar();
         let currentMonth = this.options.date.getMonth();
         while (this.options.date.getMonth() === currentMonth) {
@@ -86,7 +86,7 @@ class CalendarStandard {
             });
     }
 
-    createDay() {
+    createDay () {
         const newDayElement = document.createElement('div');
         newDayElement.className = 'vanilla-calendar-date';
         newDayElement.setAttribute('data-calendar-date', this.options.date);
@@ -128,7 +128,7 @@ class CalendarStandard {
         this.options.monthElement.appendChild(newDayElement);
     }
 
-    removeActiveClass() {
+    removeActiveClass () {
         document
             .querySelectorAll('.vanilla-calendar-date--selected')
             .forEach((dateElement) => {
@@ -136,7 +136,7 @@ class CalendarStandard {
             });
     }
 
-    selectDate(evt) {
+    selectDate (evt) {
         this.removeActiveClass();
         let datas = evt.currentTarget.dataset;
         let data = {};
@@ -150,21 +150,21 @@ class CalendarStandard {
         evt.currentTarget.classList.add('vanilla-calendar-date--selected');
     }
 
-    goToPreviousMonth() {
+    goToPreviousMonth () {
         this.options.date.setMonth(this.options.date.getMonth() - 1)
         this.createMonth()
     }
 
-    goToNextMonth() {
+    goToNextMonth () {
         this.options.date.setMonth(this.options.date.getMonth() + 1)
         this.createMonth()
     }
 
-    clearCalendar() {
+    clearCalendar () {
         this.options.monthElement.innerHTML = ''
     }
 
-    setWeekDayHeader() {
+    setWeekDayHeader () {
         this.calendarElement.querySelector('.vanilla-calendar-week').innerHTML = `
             <span>${this.options.shortWeekday[0]}</span>
             <span>${this.options.shortWeekday[1]}</span>
@@ -176,7 +176,7 @@ class CalendarStandard {
         `;
     }
 
-    destroy() {
+    destroy () {
         MiscEvent.removeListener('click', this.goToPreviousMonthHandler, this.options.previousButtonElement);
         MiscEvent.removeListener('click', this.goToNextMonthHandler, this.options.nextButtonElement);
         this.clearCalendar();

@@ -1,5 +1,5 @@
 class FormLayoutGlobal {
-    constructor() {
+    constructor () {
         this.objects = [];
 
         document
@@ -9,7 +9,7 @@ class FormLayoutGlobal {
             });
     }
 
-    create(formElement) {
+    create (formElement) {
         const object = {
             'id': MiscUtils.generateId(),
             'formElement': formElement,
@@ -28,7 +28,7 @@ class FormLayoutGlobal {
         formElement.setAttribute('novalidate', 'true');
     }
 
-    validation(objectIndex, evt) {
+    validation (objectIndex, evt) {
         // This function will be fired by each component category so they can tell if they are valid or not
         const object = this.objects[objectIndex];
         object.hasBeenChecked = true;
@@ -65,7 +65,7 @@ class FormLayoutGlobal {
         }
     }
 
-    submit(objectIndex, evt) {
+    submit (objectIndex, evt) {
         const object = this.objects[objectIndex];
 
         // Submission is in two steps :
@@ -156,7 +156,7 @@ class FormLayoutGlobal {
         }
     }
 
-    notification(objectIndex, evt) {
+    notification (objectIndex, evt) {
         if (
             !evt ||
             !evt.target ||

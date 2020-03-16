@@ -1,12 +1,12 @@
 class FormFieldSelectMultilevel extends FormFieldSelectCheckbox {
-    constructor() {
+    constructor () {
         super(
             '.ds44-selectDisplay.ds44-js-select-multilevel',
             'selectMultilevel'
         );
     }
 
-    initialize() {
+    initialize () {
         super.initialize();
 
         for (let objectIndex = 0; objectIndex < this.objects.length; objectIndex++) {
@@ -25,7 +25,7 @@ class FormFieldSelectMultilevel extends FormFieldSelectCheckbox {
         }
     }
 
-    select(objectIndex, evt) {
+    select (objectIndex, evt) {
         super.select(objectIndex, evt);
 
         const selectListElement = evt.currentTarget.closest('.ds44-list');
@@ -69,7 +69,7 @@ class FormFieldSelectMultilevel extends FormFieldSelectCheckbox {
         }
     }
 
-    selectCategory(evt) {
+    selectCategory (evt) {
         const categoryInputElement = evt.currentTarget;
         const collapserElement = categoryInputElement.closest('.ds44-collapser_element');
         if (!collapserElement) {
@@ -94,7 +94,7 @@ class FormFieldSelectMultilevel extends FormFieldSelectCheckbox {
             });
     }
 
-    getCheckboxElements(objectIndex) {
+    getCheckboxElements (objectIndex) {
         const object = this.objects[objectIndex];
         if (!object.selectListElement) {
             return null;

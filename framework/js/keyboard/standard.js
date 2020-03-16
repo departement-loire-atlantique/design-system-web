@@ -1,11 +1,11 @@
 class KeyboardStandard {
-    constructor() {
+    constructor () {
         MiscEvent.addListener('keyup', this.keyUp.bind(this));
         MiscEvent.addListener('keypress', this.keyPress.bind(this));
         MiscEvent.addListener('keydown', this.keyDown.bind(this));
     }
 
-    keyUp(evt) {
+    keyUp (evt) {
         if (!evt.key) {
             return;
         }
@@ -14,7 +14,7 @@ class KeyboardStandard {
         MiscEvent.dispatch('keyUp:' + (evt.key === ' ' ? 'Spacebar' : evt.key).toLowerCase());
     }
 
-    keyPress(evt) {
+    keyPress (evt) {
         if (!evt.key) {
             return;
         }
@@ -23,7 +23,7 @@ class KeyboardStandard {
         MiscEvent.dispatch('keyPress:' + (evt.key === ' ' ? 'Spacebar' : evt.key).toLowerCase());
     }
 
-    keyDown(evt) {
+    keyDown (evt) {
         if (!evt.key) {
             return;
         }

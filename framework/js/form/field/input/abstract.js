@@ -1,5 +1,5 @@
 class FormFieldInputAbstract extends FormFieldAbstract {
-    create(element) {
+    create (element) {
         super.create(element);
 
         const objectIndex = (this.objects.length - 1);
@@ -12,7 +12,7 @@ class FormFieldInputAbstract extends FormFieldAbstract {
         object.resetButtonElement = MiscDom.getNextSibling(element, '.ds44-reset');
     }
 
-    initialize() {
+    initialize () {
         super.initialize();
 
         for (let objectIndex = 0; objectIndex < this.objects.length; objectIndex++) {
@@ -32,7 +32,7 @@ class FormFieldInputAbstract extends FormFieldAbstract {
         }
     }
 
-    write(objectIndex) {
+    write (objectIndex) {
         const object = this.objects[objectIndex];
         if (!object.textElement) {
             return;
@@ -45,19 +45,21 @@ class FormFieldInputAbstract extends FormFieldAbstract {
         this.enableDisableLinkedField(objectIndex);
     }
 
-    empty(objectIndex) {
+    empty (objectIndex) {
         super.empty(objectIndex);
 
         this.showHideResetButton(objectIndex);
     }
 
-    reset(objectIndex) {
+    reset (objectIndex) {
         this.empty(objectIndex);
 
         this.focusOnTextElement(objectIndex);
     }
 
-    enableElements(objectIndex, evt) {
+    enableElements (objectIndex, evt) {
+        super.enableElements(objectIndex, evt);
+
         const object = this.objects[objectIndex];
 
         object.inputElements.forEach((inputElement) => {
@@ -69,7 +71,9 @@ class FormFieldInputAbstract extends FormFieldAbstract {
         }
     }
 
-    disableElements(objectIndex) {
+    disableElements (objectIndex, evt) {
+        super.disableElements(objectIndex, evt);
+
         const object = this.objects[objectIndex];
 
         object.inputElements.forEach((inputElement) => {
@@ -84,7 +88,7 @@ class FormFieldInputAbstract extends FormFieldAbstract {
         this.showHideResetButton(objectIndex);
     }
 
-    showHideResetButton(objectIndex) {
+    showHideResetButton (objectIndex) {
         const object = this.objects[objectIndex];
         if (!object.resetButtonElement) {
             return;
@@ -99,7 +103,7 @@ class FormFieldInputAbstract extends FormFieldAbstract {
         }
     }
 
-    setData(objectIndex, data = null) {
+    setData (objectIndex, data = null) {
         const object = this.objects[objectIndex];
         if (!object.valueElement) {
             return;
@@ -108,7 +112,7 @@ class FormFieldInputAbstract extends FormFieldAbstract {
         object.valueElement.value = ((data && data.value) ? data.value : null);
     }
 
-    getText(objectIndex) {
+    getText (objectIndex) {
         const object = this.objects[objectIndex];
         if (
             !object.textElement ||
@@ -120,7 +124,7 @@ class FormFieldInputAbstract extends FormFieldAbstract {
         return object.textElement.value;
     }
 
-    isValid(inputElement) {
+    isValid (inputElement) {
         let isValid = true;
         const validityStates = inputElement.validity;
         for (let key in validityStates) {
@@ -141,7 +145,7 @@ class FormFieldInputAbstract extends FormFieldAbstract {
         return isValid;
     }
 
-    isEmpty(objectIndex) {
+    isEmpty (objectIndex) {
         const object = this.objects[objectIndex];
 
         let isEmpty = !this.getText(objectIndex);
@@ -151,13 +155,13 @@ class FormFieldInputAbstract extends FormFieldAbstract {
         return isEmpty;
     }
 
-    focusOnTextElement(objectIndex) {
+    focusOnTextElement (objectIndex) {
         const object = this.objects[objectIndex];
 
         MiscAccessibility.setFocus(object.inputElements[0]);
     }
 
-    focus(objectIndex) {
+    focus (objectIndex) {
         const object = this.objects[objectIndex];
 
         if (!object.isEnabled) {
@@ -167,7 +171,7 @@ class FormFieldInputAbstract extends FormFieldAbstract {
         this.enter(objectIndex);
     }
 
-    blur(objectIndex) {
+    blur (objectIndex) {
         if (!this.isEmpty(objectIndex)) {
             return;
         }
@@ -175,7 +179,7 @@ class FormFieldInputAbstract extends FormFieldAbstract {
         this.quit(objectIndex);
     }
 
-    removeInvalid(objectIndex) {
+    removeInvalid (objectIndex) {
         const object = this.objects[objectIndex];
         if (!object.textElement) {
             return;
@@ -199,7 +203,7 @@ class FormFieldInputAbstract extends FormFieldAbstract {
 
     }
 
-    invalid(objectIndex) {
+    invalid (objectIndex) {
         const object = this.objects[objectIndex];
         if (!object.textElement) {
             return;

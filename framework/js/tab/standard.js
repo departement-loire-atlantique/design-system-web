@@ -1,5 +1,5 @@
 class TabStandard extends TabAbstract {
-    constructor() {
+    constructor () {
         super('.js-tabs:not(.ds44-choiceYN)');
     }
 }

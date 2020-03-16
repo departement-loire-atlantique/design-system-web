@@ -1,5 +1,5 @@
 class FormFieldBoxAbstract extends FormFieldAbstract {
-    constructor(category) {
+    constructor (category) {
         super(
             '.ds44-form__' + category + '_container',
             category
@@ -8,7 +8,7 @@ class FormFieldBoxAbstract extends FormFieldAbstract {
         this.errorMessage = 'Veuillez cocher au moins un élément';
     }
 
-    create(element) {
+    create (element) {
         super.create(element);
 
         const objectIndex = (this.objects.length - 1);
@@ -17,7 +17,7 @@ class FormFieldBoxAbstract extends FormFieldAbstract {
         object.inputElements = element.querySelectorAll('input[type="' + this.category + '"]');
     }
 
-    initialize() {
+    initialize () {
         super.initialize();
 
         for (let objectIndex = 0; objectIndex < this.objects.length; objectIndex++) {
@@ -29,7 +29,9 @@ class FormFieldBoxAbstract extends FormFieldAbstract {
         }
     }
 
-    enableElements(objectIndex, evt) {
+    enableElements (objectIndex, evt) {
+        super.enableElements(objectIndex, evt);
+
         const object = this.objects[objectIndex];
 
         object.inputElements.forEach((inputElement) => {
@@ -38,7 +40,9 @@ class FormFieldBoxAbstract extends FormFieldAbstract {
         object.containerElement.classList.remove('ds44-inputDisabled');
     }
 
-    disableElements(objectIndex) {
+    disableElements (objectIndex, evt) {
+        super.disableElements(objectIndex, evt);
+
         const object = this.objects[objectIndex];
 
         object.inputElements.forEach((inputElement) => {
@@ -47,7 +51,7 @@ class FormFieldBoxAbstract extends FormFieldAbstract {
         object.containerElement.classList.add('ds44-inputDisabled');
     }
 
-    toggleCheck(objectIndex, evt) {
+    toggleCheck (objectIndex, evt) {
         const object = this.objects[objectIndex];
         if (!object.isEnabled) {
             evt.stopPropagation();
@@ -59,7 +63,7 @@ class FormFieldBoxAbstract extends FormFieldAbstract {
         this.enableDisableLinkedField(objectIndex);
     }
 
-    setData(objectIndex, data = null) {
+    setData (objectIndex, data = null) {
         const object = this.objects[objectIndex];
 
         object.inputElements.forEach((inputElement) => {
@@ -75,7 +79,7 @@ class FormFieldBoxAbstract extends FormFieldAbstract {
         });
     }
 
-    getData(objectIndex) {
+    getData (objectIndex) {
         const object = this.objects[objectIndex];
 
         const inputElementValues = [];
@@ -94,7 +98,7 @@ class FormFieldBoxAbstract extends FormFieldAbstract {
         return data;
     }
 
-    removeInvalid(objectIndex) {
+    removeInvalid (objectIndex) {
         const object = this.objects[objectIndex];
 
         let errorElement = object.containerElement.querySelector('.ds44-errorMsg-container');
@@ -114,7 +118,7 @@ class FormFieldBoxAbstract extends FormFieldAbstract {
         });
     }
 
-    invalid(objectIndex) {
+    invalid (objectIndex) {
         const object = this.objects[objectIndex];
 
         const errorMessageElementId = MiscUtils.generateId();

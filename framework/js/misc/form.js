@@ -1,5 +1,5 @@
 class MiscForm {
-    static getValidationCategories() {
+    static getValidationCategories () {
         return {
             'inputStandard': null,
             'inputAutocomplete': null,
@@ -14,7 +14,7 @@ class MiscForm {
         };
     }
 
-    static buildFormData(formData, data, parentKey) {
+    static buildFormData (formData, data, parentKey) {
         if (
             data &&
             typeof data === 'object' &&
@@ -32,13 +32,13 @@ class MiscForm {
         formData.append(parentKey, value);
     }
 
-    static jsonToFormData(data) {
+    static jsonToFormData (data) {
         const formData = new FormData();
         MiscForm.buildFormData(formData, data);
         return formData;
     }
 
-    static checkValidity(validationCategories) {
+    static checkValidity (validationCategories) {
         // Check if the components are all valid
         let isValid = true;
         let data = {};

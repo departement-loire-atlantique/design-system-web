@@ -1,5 +1,5 @@
 class FormFieldAbstract {
-    constructor(selector, category) {
+    constructor (selector, category) {
         this.category = category;
         this.objects = [];
         this.labelClassName = 'ds44-moveLabel';
@@ -21,7 +21,7 @@ class FormFieldAbstract {
         this.initialize();
     }
 
-    create(element) {
+    create (element) {
         const object = {
             'id': MiscUtils.generateId(),
             'name': element.getAttribute('name'),
@@ -40,7 +40,7 @@ class FormFieldAbstract {
         this.objects.push(object);
     }
 
-    initialize() {
+    initialize () {
         for (let objectIndex = 0; objectIndex < this.objects.length; objectIndex++) {
             const object = this.objects[objectIndex];
 
@@ -53,7 +53,7 @@ class FormFieldAbstract {
         MiscEvent.addListener('form:validate', this.validate.bind(this));
     }
 
-    addBackupAttributes(objectIndex) {
+    addBackupAttributes (objectIndex) {
         const object = this.objects[objectIndex];
 
         if (object.inputElements) {
@@ -68,16 +68,16 @@ class FormFieldAbstract {
         }
     }
 
-    empty(objectIndex) {
+    empty (objectIndex) {
         this.setData(objectIndex);
         this.enableDisableLinkedField(objectIndex);
     }
 
-    setData(objectIndex, data = null) {
+    setData (objectIndex, data = null) {
         // Abstract method
     }
 
-    getData(objectIndex) {
+    getData (objectIndex) {
         const object = this.objects[objectIndex];
         if (!object.valueElement) {
             return null;
@@ -93,10 +93,10 @@ class FormFieldAbstract {
         return data;
     }
 
-    enableDisableLinkedField(objectIndex) {
+    enableDisableLinkedField (objectIndex) {
         const object = this.objects[objectIndex];
 
-        const linkedFieldsContainerElement = object.containerElement.closest('.ds44-champsLies');
+        const linkedFieldsContainerElement = object.containerElement.closest('.ds44-js-linked-fields');
         if (!linkedFieldsContainerElement) {
             return;
         }
@@ -110,6 +110,7 @@ class FormFieldAbstract {
         }
 
         // Has a linked field
+        const areMaskedLinkedFields = !!object.containerElement.closest('.ds44-js-masked-fields');
         let data = this.getData(objectIndex);
         if (
             !data ||
@@ -120,7 +121,7 @@ class FormFieldAbstract {
             )
         ) {
             // Disable linked field
-            MiscEvent.dispatch('field:disable', null, secondLinkedFieldElement);
+            MiscEvent.dispatch('field:disable', {'areMaskedLinkedFields': areMaskedLinkedFields}, secondLinkedFieldElement);
         } else {
             // Enabled linked field
             try {
@@ -128,13 +129,13 @@ class FormFieldAbstract {
                 data = JSON.parse(data);
             } catch (ex) {
             }
-            MiscEvent.dispatch('field:enable', {'data': data}, secondLinkedFieldElement);
+            MiscEvent.dispatch('field:enable', {'data': data, 'areMaskedLinkedFields': areMaskedLinkedFields}, secondLinkedFieldElement);
         }
     }
 
-    enable(objectIndex, evt) {
+    enable (objectIndex, evt) {
         if (!this.isEnableAllowed(objectIndex, evt)) {
-            this.disable(objectIndex);
+            this.disable(objectIndex, evt);
 
             return;
         }
@@ -146,11 +147,38 @@ class FormFieldAbstract {
         this.enableElements(objectIndex, evt);
     }
 
-    enableElements(objectIndex, evt) {
-        // Abstract method
+    enableElements (objectIndex, evt) {
+        if(
+            evt &&
+            evt.detail &&
+            evt.detail.areMaskedLinkedFields
+        ) {
+            const object = this.objects[objectIndex];
+            object.containerElement.classList.remove('hidden');
+        }
     }
 
-    isEnableAllowed(objectIndex, evt) {
+    disable (objectIndex, evt) {
+        const object = this.objects[objectIndex];
+        object.isEnabled = false;
+
+        this.empty(objectIndex);
+        this.removeInvalid(objectIndex);
+        this.disableElements(objectIndex, evt);
+    }
+
+    disableElements (objectIndex, evt) {
+        if(
+            evt &&
+            evt.detail &&
+            evt.detail.areMaskedLinkedFields
+        ) {
+            const object = this.objects[objectIndex];
+            object.containerElement.classList.add('hidden');
+        }
+    }
+
+    isEnableAllowed (objectIndex, evt) {
         const object = this.objects[objectIndex];
         if (!object.valuesAllowed) {
             return true;
@@ -194,20 +222,7 @@ class FormFieldAbstract {
         return true;
     }
 
-    disable(objectIndex) {
-        const object = this.objects[objectIndex];
-        object.isEnabled = false;
-
-        this.empty(objectIndex);
-        this.removeInvalid(objectIndex);
-        this.disableElements(objectIndex);
-    }
-
-    disableElements(objectIndex) {
-        // Abstract method
-    }
-
-    enter(objectIndex) {
+    enter (objectIndex) {
         const object = this.objects[objectIndex];
         if (!object.labelElement) {
             return;
@@ -216,7 +231,7 @@ class FormFieldAbstract {
         object.labelElement.classList.add(this.labelClassName);
     }
 
-    quit(objectIndex) {
+    quit (objectIndex) {
         const object = this.objects[objectIndex];
         if (!object.labelElement) {
             return;
@@ -225,7 +240,7 @@ class FormFieldAbstract {
         object.labelElement.classList.remove(this.labelClassName);
     }
 
-    validate(evt) {
+    validate (evt) {
         if (
             !evt ||
             !evt.detail ||
@@ -262,11 +277,11 @@ class FormFieldAbstract {
         );
     }
 
-    removeInvalid(objectIndex) {
+    removeInvalid (objectIndex) {
         // Abstract method
     }
 
-    checkValidity(objectIndex) {
+    checkValidity (objectIndex) {
         this.removeInvalid(objectIndex);
 
         const object = this.objects[objectIndex];
@@ -283,11 +298,11 @@ class FormFieldAbstract {
         return true;
     }
 
-    invalid(objectIndex) {
+    invalid (objectIndex) {
         // Abstract method
     }
 
-    showErrorMessage(objectIndex, errorMessageElementId = null) {
+    showErrorMessage (objectIndex, errorMessageElementId = null) {
         const object = this.objects[objectIndex];
 
         let errorElement = object.containerElement.querySelector('.ds44-errorMsg-container');
@@ -321,7 +336,7 @@ class FormFieldAbstract {
         errorMessageElement.appendChild(errorTextElement);
     }
 
-    formatErrorMessage(objectIndex) {
+    formatErrorMessage (objectIndex) {
         const errorMessage = this.getErrorMessage(objectIndex);
 
         const object = this.objects[objectIndex];
@@ -336,7 +351,7 @@ class FormFieldAbstract {
             );
     }
 
-    getErrorMessage(objectIndex) {
+    getErrorMessage (objectIndex) {
         return this.errorMessage;
     }
 }

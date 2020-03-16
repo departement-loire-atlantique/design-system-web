@@ -1,5 +1,5 @@
 class MapAbstract {
-    constructor(selector) {
+    constructor (selector) {
         this.objects = [];
 
         document
@@ -32,7 +32,7 @@ class MapAbstract {
         );
     }
 
-    create(element) {
+    create (element) {
         const object = {
             'id': MiscUtils.generateId(),
             'mapElement': element,
@@ -43,7 +43,7 @@ class MapAbstract {
         this.objects.push(object);
     }
 
-    load(element) {
+    load (element) {
         for (let objectIndex = 0; objectIndex < this.objects.length; objectIndex++) {
             const object = this.objects[objectIndex];
 
@@ -63,7 +63,7 @@ class MapAbstract {
         }
     }
 
-    afterLoad(objectIndex) {
+    afterLoad (objectIndex) {
         // Abstract method
     }
 }

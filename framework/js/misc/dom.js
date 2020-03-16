@@ -1,9 +1,9 @@
 class MiscDom {
-    static getAttribute(element, attributeName, defautValue = null) {
+    static getAttribute (element, attributeName, defautValue = null) {
         return (element.hasAttribute(attributeName) === true ? element.getAttribute(attributeName) : defautValue);
     }
 
-    static addClasses(element, classNames) {
+    static addClasses (element, classNames) {
         if (typeof classNames === 'string') {
             classNames = [classNames];
         }
@@ -17,7 +17,7 @@ class MiscDom {
         }
     }
 
-    static removeClasses(element, classNames) {
+    static removeClasses (element, classNames) {
         if (typeof classNames === 'string') {
             classNames = [classNames];
         }
@@ -31,11 +31,11 @@ class MiscDom {
         }
     }
 
-    static hasClass(element, className) {
+    static hasClass (element, className) {
         return element.classList.contains(className);
     }
 
-    static getOffset(element) {
+    static getOffset (element) {
         let rect = element.getBoundingClientRect();
         let scrollLeft = window.pageXOffset || document.documentElement.scrollLeft;
         let scrollTop = window.pageYOffset || document.documentElement.scrollTop;
@@ -45,7 +45,7 @@ class MiscDom {
         };
     }
 
-    static getPreviousSibling(element, selector) {
+    static getPreviousSibling (element, selector) {
         if (!element) {
             return null;
         }
@@ -63,7 +63,7 @@ class MiscDom {
         }
     };
 
-    static getNextSibling(element, selector) {
+    static getNextSibling (element, selector) {
         if (!element) {
             return null;
         }

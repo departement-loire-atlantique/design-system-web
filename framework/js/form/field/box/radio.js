@@ -1,5 +1,5 @@
 class FormFieldBoxRadio extends FormFieldBoxAbstract {
-    constructor() {
+    constructor () {
         super('radio');
     }
 }

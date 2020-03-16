@@ -1,5 +1,5 @@
 class HeaderStandard {
-    constructor() {
+    constructor () {
         this.lastScroll = 0;
         this.isOverlayed = false;
 
@@ -17,7 +17,7 @@ class HeaderStandard {
     }
 
     // Sur le focus au clavier d'un élément caché sous le header, effectuer un scroll vers le haut pour que l'élément soit affiché
-    checkFocusPosition() {
+    checkFocusPosition () {
         if (!this.isOverlayed) {
             const header = document.querySelector('header .ds44-header');
             const activeElement = document.activeElement;
@@ -41,7 +41,7 @@ class HeaderStandard {
     }
 
     // Gérer le comportement du header en fonction des scrolls
-    scroll() {
+    scroll () {
         if (!this.isOverlayed) {
             const header = document.querySelector('header .ds44-header');
             if (!header) {
@@ -86,25 +86,25 @@ class HeaderStandard {
         }
     }
 
-    overlayShow() {
+    overlayShow () {
         this.isOverlayed = true;
 
         MiscAccessibility.hide(document.querySelector('header'));
     }
 
-    overlayHide() {
+    overlayHide () {
         this.isOverlayed = false;
 
         MiscAccessibility.show(document.querySelector('header'));
     }
 
-    menuShow() {
+    menuShow () {
         this.isOverlayed = true;
 
         MiscAccessibility.hide(document.querySelector('header .ds44-header .ds44-container-large'));
     }
 
-    menuHide() {
+    menuHide () {
         this.isOverlayed = false;
 
         MiscAccessibility.show(document.querySelector('header .ds44-header .ds44-container-large'));

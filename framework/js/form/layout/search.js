@@ -1,5 +1,5 @@
 class FormLayoutSearch {
-    constructor() {
+    constructor () {
         this.objects = [];
 
         document
@@ -9,7 +9,7 @@ class FormLayoutSearch {
             });
     }
 
-    create(element) {
+    create (element) {
         const object = {
             'id': MiscUtils.generateId(),
             'formElement': element,
@@ -30,7 +30,7 @@ class FormLayoutSearch {
         }
     }
 
-    submit(objectIndex, evt) {
+    submit (objectIndex, evt) {
         if (!evt) {
             evt = {};
         }
@@ -45,7 +45,7 @@ class FormLayoutSearch {
         this.search(objectIndex, evt);
     }
 
-    loadFromUrl(objectIndex) {
+    loadFromUrl (objectIndex) {
         const object = this.objects[objectIndex];
 
         // Get the data from the url
@@ -67,7 +67,7 @@ class FormLayoutSearch {
         return false;
     }
 
-    loadFromDom(objectIndex) {
+    loadFromDom (objectIndex) {
         const object = this.objects[objectIndex];
 
         // Get the data from the dom
@@ -103,10 +103,10 @@ class FormLayoutSearch {
         return false;
     }
 
-    search(objectIndex, evt) {
+    search (objectIndex, evt) {
         const object = this.objects[objectIndex];
 
-        if(!object.hasSearched) {
+        if (!object.hasSearched) {
             return;
         }
 
@@ -145,7 +145,7 @@ class FormLayoutSearch {
         )
     }
 
-    searchSuccess(objectIndex, options, response) {
+    searchSuccess (objectIndex, options, response) {
         const object = this.objects[objectIndex];
 
         // Save search data
@@ -155,17 +155,17 @@ class FormLayoutSearch {
         MiscEvent.dispatch('loader:requestHide');
     }
 
-    searchError(objectIndex, options) {
+    searchError (objectIndex, options) {
         MiscEvent.dispatch('loader:requestHide');
     }
 
-    showSearchData(objectIndex, options = {}) {
+    showSearchData (objectIndex, options = {}) {
         const object = this.objects[objectIndex];
 
         MiscEvent.dispatch('search:update', Object.assign({}, object.searchData, options));
     }
 
-    formatSearchData(response) {
+    formatSearchData (response) {
         return {
             'nbResults': response['nb-result'],
             'maxResults': response['max-result'],

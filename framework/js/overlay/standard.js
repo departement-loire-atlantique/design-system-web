@@ -1,5 +1,5 @@
 class OverlayStandard {
-    constructor() {
+    constructor () {
         this.triggerElement = null;
         this.modal = null;
 
@@ -32,12 +32,12 @@ class OverlayStandard {
     }
 
     // Ouvre un overlay
-    show(evt) {
-        if(evt) {
+    show (evt) {
+        if (evt) {
             evt.stopPropagation();
         }
 
-        if(this.modal) {
+        if (this.modal) {
             this.hide();
         }
 
@@ -88,13 +88,13 @@ class OverlayStandard {
     }
 
     // Ferme tous les overlays, et ajoute un focus sur le bouton qui a ouvert le dernier overlay affiché
-    hide(evt) {
-        if(evt) {
+    hide (evt) {
+        if (evt) {
             evt.stopPropagation();
         }
 
         // Get current modal
-        if(!this.modal) {
+        if (!this.modal) {
             return;
         }
 
@@ -125,7 +125,7 @@ class OverlayStandard {
         MiscEvent.dispatch('overlay:hide');
     }
 
-    focusOut(evt) {
+    focusOut (evt) {
         evt.stopPropagation();
 
         if (!evt.target || !this.modal.contains(evt.target)) {
@@ -136,7 +136,7 @@ class OverlayStandard {
         MiscAccessibility.setFocus(this.modal);
     }
 
-    clickOut(evt) {
+    clickOut (evt) {
         if (evt.target && this.modal.contains(evt.target)) {
             return;
         }
@@ -144,16 +144,16 @@ class OverlayStandard {
         this.hide();
     }
 
-    showLoader() {
-        if(!this.modal) {
+    showLoader () {
+        if (!this.modal) {
             return;
         }
 
         MiscAccessibility.hide(this.modal);
     }
 
-    hideLoader() {
-        if(!this.modal) {
+    hideLoader () {
+        if (!this.modal) {
             return;
         }
 

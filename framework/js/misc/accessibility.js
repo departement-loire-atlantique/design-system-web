@@ -1,16 +1,16 @@
 class MiscAccessibility {
-    static getEnabledElementsSelector() {
+    static getEnabledElementsSelector () {
         return ['a[href]', 'link[href]', 'button', 'textarea', 'input:not([type="hidden"])', 'select', 'object', 'area'].map(selector => selector + ':not([disabled])');
     }
 
-    static getProtectedElementsSelector() {
+    static getProtectedElementsSelector () {
         return ['i', 'sup', 'svg'];
     }
 
     // Fonction qui va forcer le focus à faire une boucle sur un élément
     // en ajoutant deux inputs 'hidden' qui peuvent être focus, au début
     // et à la fin
-    static addFocusLoop(element, elementName) {
+    static addFocusLoop (element, elementName) {
         MiscAccessibility.removeFocusLoop();
 
         if (!element) {
@@ -46,7 +46,7 @@ class MiscAccessibility {
     }
 
     // Delete loop elements
-    static removeFocusLoop() {
+    static removeFocusLoop () {
         document
             .querySelectorAll('.ds44-tmpFocusHidden')
             .forEach((element) => {
@@ -65,7 +65,7 @@ class MiscAccessibility {
     }
 
     // Mettre le focus sur un élément précis
-    static setFocus(element, selector) {
+    static setFocus (element, selector) {
         if (!element && selector) {
             element = document.querySelector(selector);
         }
@@ -74,7 +74,7 @@ class MiscAccessibility {
         }
     }
 
-    static show(element, force = false, bubble = true, isChild = false) {
+    static show (element, force = false, bubble = true, isChild = false) {
         if (!element) {
             return;
         }
@@ -104,7 +104,7 @@ class MiscAccessibility {
         }
     }
 
-    static hide(element, force = false, bubble = true, isChild = false) {
+    static hide (element, force = false, bubble = true, isChild = false) {
         if (!element) {
             return;
         }
@@ -134,7 +134,7 @@ class MiscAccessibility {
         }
     }
 
-    static record(element, isChild) {
+    static record (element, isChild) {
         if (!element) {
             return;
         }
@@ -150,7 +150,7 @@ class MiscAccessibility {
         }
     }
 
-    static reinstate(element, isChild) {
+    static reinstate (element, isChild) {
         if (!element) {
             return;
         }
@@ -163,7 +163,7 @@ class MiscAccessibility {
         }
     }
 
-    static flattenText(text) {
+    static flattenText (text) {
         return text.replace(/\n/gi, ' ').replace(/[ ]+/gi, ' ').trim();
     }
 }

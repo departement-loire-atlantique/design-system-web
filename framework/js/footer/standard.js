@@ -1,5 +1,5 @@
 class FooterStandard {
-    constructor() {
+    constructor () {
         MiscEvent.addListener('overlay:show', this.show.bind(this));
         MiscEvent.addListener('overlay:hide', this.hide.bind(this));
         MiscEvent.addListener('menu:show', this.show.bind(this));
@@ -13,19 +13,19 @@ class FooterStandard {
         }
     }
 
-    show() {
+    show () {
         MiscAccessibility.hide(document.querySelector('footer'));
     }
 
-    hide() {
+    hide () {
         MiscAccessibility.show(document.querySelector('footer'));
     }
 
-    backToTop(evt) {
-        if(evt && evt.stopPropagation) {
+    backToTop (evt) {
+        if (evt && evt.stopPropagation) {
             evt.stopPropagation();
         }
-        if(evt && evt.preventDefault) {
+        if (evt && evt.preventDefault) {
             evt.preventDefault();
         }
 

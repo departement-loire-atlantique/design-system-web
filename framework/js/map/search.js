@@ -1,9 +1,9 @@
 class MapSearch extends MapAbstract {
-    constructor() {
+    constructor () {
         super('.ds44-js-map');
     }
 
-    create(element) {
+    create (element) {
         super.create(element);
 
         const objectIndex = (this.objects.length - 1);
@@ -14,28 +14,25 @@ class MapSearch extends MapAbstract {
         MiscEvent.addListener('search:update', this.search.bind(this, objectIndex));
     }
 
-    afterLoad(objectIndex) {
+    afterLoad (objectIndex) {
         const object = this.objects[objectIndex];
 
         object.map.addControl(new window.mapboxgl.NavigationControl(), 'bottom-right');
         object.map.addControl(new window.mapboxgl.FullscreenControl(), 'bottom-left');
         object.map.addControl(new MapControlToggleView(), 'top-right');
 
+        const mapToggleViewElement = document.querySelector('.mapboxgl-ctrl-toggle-view');
+        if (mapToggleViewElement) {
+            MiscEvent.addListener('click', this.toggleView.bind(this, objectIndex), mapToggleViewElement);
+        }
+
         object.map.on('moveend', this.move.bind(this, objectIndex));
-        if(object.results) {
+        if (object.results) {
             this.show(objectIndex);
         }
     }
 
-    search(objectIndex, evt) {
-        if (
-            !evt ||
-            !evt.detail ||
-            !evt.detail.results
-        ) {
-            return;
-        }
-
+    search (objectIndex, evt) {
         const object = this.objects[objectIndex];
         object.results = evt.detail.results;
         object.zoom = evt.detail.zoom;
@@ -45,7 +42,7 @@ class MapSearch extends MapAbstract {
         }
     }
 
-    show(objectIndex) {
+    show (objectIndex) {
         const object = this.objects[objectIndex];
 
         // Remove existing markers
@@ -77,7 +74,10 @@ class MapSearch extends MapAbstract {
                 result.metadata.lat
             ];
             const markerElement = document.createElement('div');
+            markerElement.setAttribute('id', 'search-marker-' + result.id);
             markerElement.className = 'ds44-map-marker';
+            MiscEvent.addListener('mouseenter', this.focus.bind(this), markerElement);
+            MiscEvent.addListener('mouseleave', this.blur.bind(this), markerElement);
             object.markers.push(
                 new window.mapboxgl
                     .Marker(markerElement)
@@ -107,7 +107,7 @@ class MapSearch extends MapAbstract {
         }
     }
 
-    move(objectIndex, evt) {
+    move (objectIndex, evt) {
         if (!evt.originalEvent) {
             return;
         }
@@ -127,6 +127,35 @@ class MapSearch extends MapAbstract {
                     }
                 }
             });
+    }
+
+    toggleView (objectIndex, evt) {
+        const object = this.objects[objectIndex];
+
+        const resultsElement = object.mapElement.closest('.ds44-results')
+        if (resultsElement) {
+            if (resultsElement.classList.contains('ds44-results--mapVisible')) {
+                resultsElement.classList.remove('ds44-results--mapVisible')
+            } else {
+                resultsElement.classList.add('ds44-results--mapVisible')
+            }
+        }
+    }
+
+    focus (evt) {
+        const resultId = evt.currentTarget.getAttribute('id').replace('search-marker-', 'search-result-');
+        const resultElement = document.querySelector('#' + resultId);
+        if(resultElement) {
+            resultElement.classList.add('active');
+        }
+    }
+
+    blur (evt) {
+        const resultId = evt.currentTarget.getAttribute('id').replace('search-marker-', 'search-result-');
+        const resultElement = document.querySelector('#' + resultId);
+        if(resultElement) {
+            resultElement.classList.remove('active');
+        }
     }
 }
 

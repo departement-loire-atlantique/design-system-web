@@ -1,13 +1,13 @@
 class TabUtile extends TabAbstract {
-    constructor() {
+    constructor () {
         super('.js-tabs.ds44-choiceYN');
     }
 
-    getDefaultTabHandle(containerElement) {
+    getDefaultTabHandle (containerElement) {
         return null;
     }
 
-    changeTab(tabHandleElement, tabPanelElement) {
+    changeTab (tabHandleElement, tabPanelElement) {
         super.changeTab(tabHandleElement, tabPanelElement);
 
         tabHandleElement
@@ -22,7 +22,7 @@ class TabUtile extends TabAbstract {
         tabHandleElement.setAttribute('aria-pressed', 'true');
     }
 
-    showTabCallback(tabHandleElement, tabPanel) {
+    showTabCallback (tabHandleElement, tabPanel) {
         super.showTabCallback(tabHandleElement, tabPanel);
 
         if (tabHandleElement.getAttribute('href') === '#ds44-choiceY') {

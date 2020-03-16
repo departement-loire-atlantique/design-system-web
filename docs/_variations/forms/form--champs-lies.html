@@ -4,7 +4,7 @@ layout: pattern
 
 <br>
 <form>
-    <div class="ds44-fieldContainer ds44-champsLies">
+    <div class="ds44-fieldContainer ds44-champsLies ds44-js-linked-fields">
         {% include form/field/select/checkbox.html label="Votre avis" required="true" %}
         {% include form/layout/checkboxes.html choices="1:L’information n’est pas assez complète,2:L’information est trop compliquée" required="true" disabled="true" %}
     </div>
@@ -14,7 +14,7 @@ layout: pattern
 <hr/>
 <br>
 <form>
-    <div class="ds44-fieldContainer ds44-champsLies">
+    <div class="ds44-fieldContainer ds44-champsLies ds44-js-linked-fields">
         {% include form/field/select/standard.html label="Nom thème" required="true" %}
         {% include form/field/select/checkbox.html label="Nom du sous-thème" required="true" disabled="true" containerAttributes='data-url="/json/select-options.json"' %}
     </div>
@@ -24,7 +24,7 @@ layout: pattern
 <hr/>
 <br>
 <form>
-    <div class="ds44-fieldContainer ds44-champsLies">
+    <div class="ds44-fieldContainer ds44-champsLies ds44-js-linked-fields">
         {% include form/field/input/autocomplete.html label="Champ adresse" required="true" attributes='data-url="/json/autocomplete-address.json" data-mode="select-only"' class="ds44-inpLarge" title="Sélectionner Champ adresse - mise à jour automatique des sous-thèmes Rayon triés par ordre alphabétique" %}
         {% include form/field/select/standard.html label="Rayon" required="true" disabled="true" class="ds44-inpLarge" %}
     </div>
@@ -34,9 +34,33 @@ layout: pattern
 <hr/>
 <br>
 <form>
-    <div class="ds44-fieldContainer ds44-champsLies">
+    <div class="ds44-fieldContainer ds44-champsLies ds44-js-linked-fields">
         {% include form/field/input/autocomplete.html label="Champ commune" required="true" attributes='data-url="/json/autocomplete-city.json" data-mode="select-only"' class="ds44-inpLarge" title="Sélectionner Champ commune - mise à jour automatique des sous-thèmes Rayon triés par ordre alphabétique" %}
         {% include form/field/input/autocomplete.html label="Champ adresse" required="true" disabled="true" attributes='data-url="/json/autocomplete-address.json" data-mode="select-only"' class="ds44-inpLarge" %}
     </div>
     <div><input type="submit" class="ds44-btnStd" value="Tester les champs" /></div>
 </form>
+<br>
+<hr/>
+<br>
+<form>
+    <div class="ds44-fieldContainer ds44-champsLies ds44-js-linked-fields">
+        {% include form/field/input/autocomplete.html label="Commune" required="true" attributes='data-url="/json/autocomplete-city.json" data-mode="select-only"' class="ds44-inpLarge" title="Sélectionner Commune - mise à jour automatique des communes limitrophes triées par ordre alphabétique" %}
+        {% include form/field/select/checkbox.html label="Étendre aux communes limitrophes" required="true" disabled="true" containerAttributes='data-url="/json/select-options.json"' class="ds44-inpLarge" %}
+    </div>
+    <div><input type="submit" class="ds44-btnStd" value="Tester les champs" /></div>
+</form>
+<br><br><br>
+<p role="heading" aria-level="2" class="h3-like">Champs masqués</p>
+<br>
+<form>
+    <div class="ds44-js-linked-fields ds44-js-masked-fields">
+        {% include form/field/input/autocomplete.html label="Commune" required="true" attributes='data-url="/json/autocomplete-city.json" data-mode="select-only"' class="ds44-inpLarge" title="Sélectionner Commune - mise à jour automatique des communes limitrophes triées par ordre alphabétique" %}
+        {% include form/field/select/checkbox.html label="Étendre aux communes limitrophes" required="true" disabled="true" hidden="true" containerAttributes='data-url="/json/select-options.json"' class="ds44-inpLarge" %}
+    </div>
+    <div><input type="submit" class="ds44-btnStd" value="Tester les champs" /></div>
+</form>
+
+
+
+<br><br><br><br>

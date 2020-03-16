@@ -1,5 +1,5 @@
 class MiscUrl {
-    static getHashParameters() {
+    static getHashParameters () {
         const url = document.location.href;
         if (
             url.indexOf('#') === -1 ||
@@ -29,7 +29,7 @@ class MiscUrl {
             );
     }
 
-    static setHashParameters(parameters = {}) {
+    static setHashParameters (parameters = {}) {
         let newUrl = document.location.href.split('#')[0] + '#';
 
         const sortedParameters = {};

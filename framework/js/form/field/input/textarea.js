@@ -1,5 +1,5 @@
 class FormFieldInputTextarea extends FormFieldInputAbstract {
-    constructor() {
+    constructor () {
         super('textarea', 'textarea');
     }
 }

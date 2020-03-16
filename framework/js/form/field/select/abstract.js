@@ -1,5 +1,5 @@
 class FormFieldSelectAbstract extends FormFieldAbstract {
-    create(element) {
+    create (element) {
         this.labelClassName = 'ds44-moveSelectLabel';
 
         super.create(element);
@@ -31,7 +31,7 @@ class FormFieldSelectAbstract extends FormFieldAbstract {
         object.validationCategories = MiscForm.getValidationCategories();
     }
 
-    initialize() {
+    initialize () {
         super.initialize();
 
         for (let objectIndex = 0; objectIndex < this.objects.length; objectIndex++) {
@@ -66,7 +66,7 @@ class FormFieldSelectAbstract extends FormFieldAbstract {
         }
     }
 
-    validation(objectIndex, evt) {
+    validation (objectIndex, evt) {
         if (
             !evt ||
             !evt.detail ||
@@ -103,14 +103,14 @@ class FormFieldSelectAbstract extends FormFieldAbstract {
         }
     }
 
-    empty(objectIndex) {
+    empty (objectIndex) {
         super.empty(objectIndex);
 
         this.quit(objectIndex);
         this.showHideResetButton(objectIndex);
     }
 
-    reset(objectIndex, evt) {
+    reset (objectIndex, evt) {
         if (evt) {
             evt.stopPropagation();
             evt.preventDefault();
@@ -121,7 +121,7 @@ class FormFieldSelectAbstract extends FormFieldAbstract {
         this.autoSubmit(objectIndex);
     }
 
-    focusOnButtonElement(objectIndex) {
+    focusOnButtonElement (objectIndex) {
         const object = this.objects[objectIndex];
         if (!object.buttonElement) {
             return;
@@ -130,11 +130,13 @@ class FormFieldSelectAbstract extends FormFieldAbstract {
         MiscAccessibility.setFocus(object.buttonElement);
     }
 
-    setListElementEvents(listElement, objectIndex) {
+    setListElementEvents (listElement, objectIndex) {
         MiscEvent.addListener('mousedown', this.select.bind(this, objectIndex), listElement);
     }
 
-    enableElements(objectIndex, evt) {
+    enableElements (objectIndex, evt) {
+        super.enableElements(objectIndex, evt);
+
         const object = this.objects[objectIndex];
         if (!object.shapeElement) {
             return;
@@ -159,7 +161,9 @@ class FormFieldSelectAbstract extends FormFieldAbstract {
         }
     }
 
-    disableElements(objectIndex) {
+    disableElements (objectIndex, evt) {
+        super.disableElements(objectIndex, evt);
+
         const object = this.objects[objectIndex];
         if (!object.labelElement) {
             return;
@@ -188,7 +192,7 @@ class FormFieldSelectAbstract extends FormFieldAbstract {
         this.showHideResetButton(objectIndex);
     }
 
-    showHideResetButton(objectIndex) {
+    showHideResetButton (objectIndex) {
         const object = this.objects[objectIndex];
         if (!object.resetButtonElement) {
             return;
@@ -203,7 +207,7 @@ class FormFieldSelectAbstract extends FormFieldAbstract {
         }
     }
 
-    setData(objectIndex, data = null) {
+    setData (objectIndex, data = null) {
         const object = this.objects[objectIndex];
         if (!object.valueElement) {
             return;
@@ -225,7 +229,7 @@ class FormFieldSelectAbstract extends FormFieldAbstract {
         }
     }
 
-    showHide(objectIndex) {
+    showHide (objectIndex) {
         const object = this.objects[objectIndex];
 
         if (!object.isExpanded) {
@@ -237,7 +241,7 @@ class FormFieldSelectAbstract extends FormFieldAbstract {
         this.hide(objectIndex);
     }
 
-    focusOut(objectIndex, evt) {
+    focusOut (objectIndex, evt) {
         const object = this.objects[objectIndex];
 
         if (
@@ -261,7 +265,7 @@ class FormFieldSelectAbstract extends FormFieldAbstract {
         this.hide(objectIndex);
     }
 
-    show(objectIndex, evt) {
+    show (objectIndex, evt) {
         const object = this.objects[objectIndex];
         if (!object.shapeElement) {
             return;
@@ -299,7 +303,7 @@ class FormFieldSelectAbstract extends FormFieldAbstract {
         this.nextOption(objectIndex);
     }
 
-    hide(objectIndex) {
+    hide (objectIndex) {
         const object = this.objects[objectIndex];
         if (!object.buttonElement) {
             return;
@@ -322,7 +326,7 @@ class FormFieldSelectAbstract extends FormFieldAbstract {
         object.isExpanded = false;
     }
 
-    escape(objectIndex) {
+    escape (objectIndex) {
         const object = this.objects[objectIndex];
 
         if (
@@ -336,7 +340,7 @@ class FormFieldSelectAbstract extends FormFieldAbstract {
         this.hide(objectIndex);
     }
 
-    autoComplete(objectIndex, parameters) {
+    autoComplete (objectIndex, parameters) {
         const object = this.objects[objectIndex];
         if (!object.textElement) {
             return;
@@ -364,15 +368,15 @@ class FormFieldSelectAbstract extends FormFieldAbstract {
         );
     }
 
-    autoCompleteSuccess(objectIndex, results) {
+    autoCompleteSuccess (objectIndex, results) {
         this.autoCompleteFill(objectIndex, results);
     }
 
-    autoCompleteError(objectIndex) {
+    autoCompleteError (objectIndex) {
         this.autoCompleteFill(objectIndex, {});
     }
 
-    autoCompleteFill(objectIndex, results) {
+    autoCompleteFill (objectIndex, results) {
         const object = this.objects[objectIndex];
         if (!object.textElement) {
             return;
@@ -416,7 +420,7 @@ class FormFieldSelectAbstract extends FormFieldAbstract {
         MiscAccessibility.hide(object.selectContainerElement);
     }
 
-    getListElement(object, key, value) {
+    getListElement (object, key, value) {
         let elementSelectListItem = document.createElement('li');
         elementSelectListItem.classList.add('ds44-select-list_elem');
         elementSelectListItem.setAttribute('role', 'option');
@@ -428,7 +432,7 @@ class FormFieldSelectAbstract extends FormFieldAbstract {
         return elementSelectListItem;
     }
 
-    nextOption(objectIndex, evt) {
+    nextOption (objectIndex, evt) {
         if (evt) {
             evt.preventDefault();
             evt.stopPropagation();
@@ -455,7 +459,7 @@ class FormFieldSelectAbstract extends FormFieldAbstract {
         }
     }
 
-    previousOption(objectIndex, evt) {
+    previousOption (objectIndex, evt) {
         if (evt) {
             evt.preventDefault();
             evt.stopPropagation();
@@ -479,19 +483,19 @@ class FormFieldSelectAbstract extends FormFieldAbstract {
         }
     }
 
-    getListItems(parentElement) {
+    getListItems (parentElement) {
         // Abstract method
     }
 
-    select(objectIndex, evt) {
+    select (objectIndex, evt) {
         // Abstract method
     }
 
-    getDomData(listElement) {
+    getDomData (listElement) {
         // Abstract method
     }
 
-    record(objectIndex, evt) {
+    record (objectIndex, evt) {
         if (evt) {
             evt.preventDefault();
         }
@@ -512,7 +516,7 @@ class FormFieldSelectAbstract extends FormFieldAbstract {
         this.save(objectIndex);
     }
 
-    save(objectIndex, additionalData) {
+    save (objectIndex, additionalData) {
         const object = this.objects[objectIndex];
         if (!object.textElement) {
             return;
@@ -603,7 +607,7 @@ class FormFieldSelectAbstract extends FormFieldAbstract {
         this.autoSubmit(objectIndex);
     }
 
-    autoSubmit(objectIndex) {
+    autoSubmit (objectIndex) {
         const object = this.objects[objectIndex];
         if (object.textElement.getAttribute('data-auto-submit')) {
             // Auto submit
@@ -614,7 +618,7 @@ class FormFieldSelectAbstract extends FormFieldAbstract {
         }
     }
 
-    removeInvalid(objectIndex) {
+    removeInvalid (objectIndex) {
         const object = this.objects[objectIndex];
         if (!object.valueElement) {
             return;
@@ -632,7 +636,7 @@ class FormFieldSelectAbstract extends FormFieldAbstract {
         object.shapeElement.classList.remove('ds44-error');
     }
 
-    invalid(objectIndex) {
+    invalid (objectIndex) {
         const object = this.objects[objectIndex];
         if (!object.textElement) {
             return;

@@ -1,5 +1,5 @@
 class FormLayoutUtileYes extends FormLayoutUtileAbstract {
-    constructor() {
+    constructor () {
         super('#ds44-choiceY form');
 
         this.submitSuccessText = 'Content que cette page vous ait été utile ! Merci.';

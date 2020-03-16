@@ -1,5 +1,5 @@
 class FormLayoutUtileAbstract {
-    constructor(selector) {
+    constructor (selector) {
         this.url = '/plugins/ChartePlugin/types/PortletQueryForeach/displayResult.jsp';
         this.formElement = null;
         this.submitSuccessText = null;
@@ -12,7 +12,7 @@ class FormLayoutUtileAbstract {
         }
     }
 
-    submit(evt) {
+    submit (evt) {
         if (
             !evt ||
             !evt.detail ||
@@ -39,7 +39,7 @@ class FormLayoutUtileAbstract {
         );
     }
 
-    submitSuccess() {
+    submitSuccess () {
         const parentElement = this.formElement.closest('.ds44-inner-container');
         if (!parentElement) {
             MiscEvent.dispatch('loader:requestHide');
@@ -72,7 +72,7 @@ class FormLayoutUtileAbstract {
         MiscEvent.dispatch('loader:requestHide');
     }
 
-    submitError() {
+    submitError () {
         // Show error notification in form
         const errorMessageId = MiscUtils.generateId();
         MiscEvent.dispatch(
@@ -87,7 +87,7 @@ class FormLayoutUtileAbstract {
 
         // Add aria described by to textarea
         const textareaElement = this.formElement.querySelector('textarea');
-        if(textareaElement) {
+        if (textareaElement) {
             textareaElement.setAttribute('aria-describedby', errorMessageId);
         }
 

@@ -1,12 +1,12 @@
 class FormFieldSelectRadio extends FormFieldSelectAbstract {
-    constructor() {
+    constructor () {
         super(
             '.ds44-selectDisplay.ds44-js-select-radio',
             'selectRadio'
         );
     }
 
-    setListElementEvents(listElement, objectIndex) {
+    setListElementEvents (listElement, objectIndex) {
         const listInputElement = listElement.querySelector('input');
         if (!listInputElement) {
             return;
@@ -15,7 +15,7 @@ class FormFieldSelectRadio extends FormFieldSelectAbstract {
         MiscEvent.addListener('change', this.select.bind(this, objectIndex), listInputElement);
     }
 
-    nextOption(objectIndex, evt) {
+    nextOption (objectIndex, evt) {
         if (evt) {
             evt.preventDefault();
             evt.stopPropagation();
@@ -36,7 +36,7 @@ class FormFieldSelectRadio extends FormFieldSelectAbstract {
         }
     }
 
-    previousOption(objectIndex, evt) {
+    previousOption (objectIndex, evt) {
         if (evt) {
             evt.preventDefault();
             evt.stopPropagation();
@@ -57,7 +57,7 @@ class FormFieldSelectRadio extends FormFieldSelectAbstract {
         }
     }
 
-    getListItems(parentElement) {
+    getListItems (parentElement) {
         let previousItem = null;
         let nextItem = null;
         const selectedListItem = parentElement.querySelector('.ds44-select-list_elem input:focus');
@@ -80,7 +80,7 @@ class FormFieldSelectRadio extends FormFieldSelectAbstract {
         };
     }
 
-    getListElement(object, key, value) {
+    getListElement (object, key, value) {
         let elementSelectListItem = super.getListElement(object, key, value);
         elementSelectListItem.removeAttribute('tabindex');
         elementSelectListItem.innerHTML = null;
@@ -108,7 +108,7 @@ class FormFieldSelectRadio extends FormFieldSelectAbstract {
         return elementSelectListItem;
     }
 
-    select(objectIndex, evt) {
+    select (objectIndex, evt) {
         evt.preventDefault();
 
         const object = this.objects[objectIndex];
@@ -148,27 +148,27 @@ class FormFieldSelectRadio extends FormFieldSelectAbstract {
                 ) {
                     // Is checked
                     listElement.classList.add('selected_option');
-                    if(listChildElement) {
+                    if (listChildElement) {
                         listChildElement.classList.remove('hidden');
                     }
                 } else {
                     // Is not checked
                     listElement.classList.remove('selected_option');
-                    if(listChildElement) {
+                    if (listChildElement) {
                         listChildElement.classList.add('hidden');
                     }
                 }
             });
     }
 
-    getDomData(listElement) {
+    getDomData (listElement) {
         return {
             'value': listElement.querySelector('input').getAttribute('value'),
             'text': listElement.querySelector('label').innerText
         };
     }
 
-    setData(objectIndex, data = null) {
+    setData (objectIndex, data = null) {
         super.setData(objectIndex, data);
 
         if (!this.getData(objectIndex)) {

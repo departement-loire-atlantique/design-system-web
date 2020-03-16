@@ -1,5 +1,5 @@
 class CarouselAbstract {
-    constructor(selector) {
+    constructor (selector) {
         this.previousSlideMessage = 'Voir le contenu précédent';
         this.nextSlideMessage = 'Voir le contenu suivant';
         this.queryTitreTuile = '.ds44-card__title a[href]:not([disabled])';
@@ -18,7 +18,7 @@ class CarouselAbstract {
         this.breakpointChecker();
     }
 
-    create(wrapElement) {
+    create (wrapElement) {
         const wrapperElement = wrapElement.querySelector('.swiper-wrapper');
         const swiperElement = wrapElement.querySelector('.swiper-container');
         if (
@@ -61,7 +61,7 @@ class CarouselAbstract {
         this.objects.push(object);
     }
 
-    createSwipper(objectIndex) {
+    createSwipper (objectIndex) {
         const object = this.objects[objectIndex];
         if (object.swiper) {
             return;
@@ -98,7 +98,7 @@ class CarouselAbstract {
         }
     }
 
-    destroySwipper(objectIndex) {
+    destroySwipper (objectIndex) {
         const object = this.objects[objectIndex];
         if (!object.swiper) {
             return;
@@ -118,7 +118,7 @@ class CarouselAbstract {
         }
     }
 
-    getSwiperParameters(object) {
+    getSwiperParameters (object) {
         const swiperParameters = {
             'init': false,
             'direction': 'horizontal',
@@ -147,7 +147,7 @@ class CarouselAbstract {
         return swiperParameters;
     }
 
-    updatePreviousAndNextSlideMessage(objectIndex) {
+    updatePreviousAndNextSlideMessage (objectIndex) {
         const object = this.objects[objectIndex];
         if (!object.previousElement || !object.nextElement) {
             return;
@@ -190,7 +190,7 @@ class CarouselAbstract {
     }
 
     // Met a jour la visibilite des tuiles en fonction du placement et du nombre de tuile visible
-    updateCardAccessibility(objectIndex, direction) {
+    updateCardAccessibility (objectIndex, direction) {
         const object = this.objects[objectIndex];
 
         object.swiperElement
@@ -219,7 +219,7 @@ class CarouselAbstract {
         }
     }
 
-    slide(objectIndex, direction) {
+    slide (objectIndex, direction) {
         const object = this.objects[objectIndex];
 
         if (object.previousElement && object.nextElement) {
@@ -228,7 +228,7 @@ class CarouselAbstract {
         this.updateCardAccessibility(objectIndex, direction);
     }
 
-    resize() {
+    resize () {
         for (let objectIndex in this.objects) {
             if (!this.objects.hasOwnProperty(objectIndex)) {
                 continue;
@@ -241,7 +241,7 @@ class CarouselAbstract {
         }
     }
 
-    breakpointChecker() {
+    breakpointChecker () {
         for (let objectIndex in this.objects) {
             if (!this.objects.hasOwnProperty(objectIndex)) {
                 continue;

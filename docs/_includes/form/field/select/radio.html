@@ -24,4 +24,8 @@
 </div>
 {% endcapture %}
 
-{% include form/field/partial/container.html content=mainContent %}
+{% if include.hidden == 'true' %}
+    {% assign containerClass = containerClass | append : ' hidden' %}
+{% endif %}
+
+{% include form/field/partial/container.html content=mainContent containerClass=containerClass %}

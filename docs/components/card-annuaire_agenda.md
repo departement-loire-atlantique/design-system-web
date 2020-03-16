@@ -35,6 +35,10 @@ variations:
 - title: Offre emploi
   description:
   pattern: cards/card--AA--emploi.html
+
+- title: Autres tuiles
+  description:
+  pattern: cards/card--AA--autres.html
 ---
 
 ## Usage

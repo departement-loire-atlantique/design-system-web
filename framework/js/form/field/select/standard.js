@@ -1,12 +1,12 @@
 class FormFieldSelectStandard extends FormFieldSelectAbstract {
-    constructor() {
+    constructor () {
         super(
             '.ds44-selectDisplay.ds44-js-select-standard',
             'selectStandard'
         );
     }
 
-    initialize() {
+    initialize () {
         super.initialize();
 
         for (let objectIndex = 0; objectIndex < this.objects.length; objectIndex++) {
@@ -15,7 +15,7 @@ class FormFieldSelectStandard extends FormFieldSelectAbstract {
         }
     }
 
-    selectOption(objectIndex, evt) {
+    selectOption (objectIndex, evt) {
         evt.preventDefault();
 
         const object = this.objects[objectIndex];
@@ -32,11 +32,11 @@ class FormFieldSelectStandard extends FormFieldSelectAbstract {
         }
     }
 
-    getListItems(parentElement) {
+    getListItems (parentElement) {
         let previousItem = null;
         let nextItem = null;
         const selectedListItem = parentElement.querySelector('.ds44-select-list_elem:focus');
-        if(selectedListItem) {
+        if (selectedListItem) {
             previousItem = MiscDom.getPreviousSibling(selectedListItem.closest('.ds44-select-list_elem'));
             nextItem = MiscDom.getNextSibling(selectedListItem.closest('.ds44-select-list_elem'));
         }
@@ -49,7 +49,7 @@ class FormFieldSelectStandard extends FormFieldSelectAbstract {
         };
     }
 
-    select(objectIndex, evt) {
+    select (objectIndex, evt) {
         evt.preventDefault();
 
         const object = this.objects[objectIndex];
@@ -74,14 +74,14 @@ class FormFieldSelectStandard extends FormFieldSelectAbstract {
         this.record(objectIndex);
     }
 
-    getDomData(listElement) {
+    getDomData (listElement) {
         return {
             'value': listElement.getAttribute('data-value'),
             'text': listElement.innerText
         };
     }
 
-    setData(objectIndex, data = null) {
+    setData (objectIndex, data = null) {
         super.setData(objectIndex, data);
 
         if (!this.getData(objectIndex)) {

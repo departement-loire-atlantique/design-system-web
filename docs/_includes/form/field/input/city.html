@@ -17,4 +17,8 @@
 {% include form/field/partial/label.html content=mainContent disabled=include.disabled %}
 {% endcapture %}
 
-{% include form/field/partial/container.html content=labelContent %}
+{% if include.hidden == 'true' %}
+    {% assign containerClass = containerClass | append : ' hidden' %}
+{% endif %}
+
+{% include form/field/partial/container.html content=labelContent containerClass=containerClass %}

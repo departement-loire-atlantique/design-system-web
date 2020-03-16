@@ -1,5 +1,5 @@
 class FormFieldSelectCheckbox extends FormFieldSelectAbstract {
-    constructor(selector, category) {
+    constructor (selector, category) {
         if (selector && category) {
             super(
                 selector,
@@ -15,7 +15,7 @@ class FormFieldSelectCheckbox extends FormFieldSelectAbstract {
         );
     }
 
-    initialize() {
+    initialize () {
         super.initialize();
 
         for (let objectIndex = 0; objectIndex < this.objects.length; objectIndex++) {
@@ -33,7 +33,7 @@ class FormFieldSelectCheckbox extends FormFieldSelectAbstract {
         }
     }
 
-    setListElementEvents(listElement, objectIndex) {
+    setListElementEvents (listElement, objectIndex) {
         const listInputElement = listElement.querySelector('input');
         if (!listInputElement) {
             return;
@@ -42,7 +42,7 @@ class FormFieldSelectCheckbox extends FormFieldSelectAbstract {
         MiscEvent.addListener('change', this.select.bind(this, objectIndex), listInputElement);
     }
 
-    getListItems(parentElement) {
+    getListItems (parentElement) {
         let previousItem = null;
         let nextItem = null;
         const selectedListItem = parentElement.querySelector('.ds44-select-list_elem input:focus');
@@ -65,7 +65,7 @@ class FormFieldSelectCheckbox extends FormFieldSelectAbstract {
         };
     }
 
-    getListElement(object, key, value) {
+    getListElement (object, key, value) {
         let elementSelectListItem = super.getListElement(object, key, value);
         elementSelectListItem.removeAttribute('tabindex');
         elementSelectListItem.innerHTML = null;
@@ -92,7 +92,7 @@ class FormFieldSelectCheckbox extends FormFieldSelectAbstract {
         return elementSelectListItem;
     }
 
-    select(objectIndex, evt) {
+    select (objectIndex, evt) {
         evt.preventDefault();
 
         const object = this.objects[objectIndex];
@@ -132,27 +132,27 @@ class FormFieldSelectCheckbox extends FormFieldSelectAbstract {
                 ) {
                     // Is checked
                     listElement.classList.add('selected_option');
-                    if(listChildElement) {
+                    if (listChildElement) {
                         listChildElement.classList.remove('hidden');
                     }
                 } else {
                     // Is not checked
                     listElement.classList.remove('selected_option');
-                    if(listChildElement) {
+                    if (listChildElement) {
                         listChildElement.classList.add('hidden');
                     }
                 }
             });
     }
 
-    getDomData(listElement) {
+    getDomData (listElement) {
         return {
             'value': listElement.querySelector('input').getAttribute('value'),
             'text': listElement.querySelector('label').textContent
         };
     }
 
-    checkAll(objectIndex) {
+    checkAll (objectIndex) {
         const checkboxElements = this.getCheckboxElements(objectIndex);
         if (!checkboxElements) {
             return;
@@ -164,7 +164,7 @@ class FormFieldSelectCheckbox extends FormFieldSelectAbstract {
         });
     }
 
-    uncheckAll(objectIndex) {
+    uncheckAll (objectIndex) {
         const checkboxElements = this.getCheckboxElements(objectIndex);
         if (!checkboxElements) {
             return;
@@ -176,7 +176,7 @@ class FormFieldSelectCheckbox extends FormFieldSelectAbstract {
         });
     }
 
-    getCheckboxElements(objectIndex) {
+    getCheckboxElements (objectIndex) {
         const object = this.objects[objectIndex];
         if (!object.selectListElement) {
             return null;
@@ -185,7 +185,7 @@ class FormFieldSelectCheckbox extends FormFieldSelectAbstract {
         return object.selectListElement.querySelectorAll('input');
     }
 
-    setData(objectIndex, data = null) {
+    setData (objectIndex, data = null) {
         super.setData(objectIndex, data);
 
         if (!this.getData(objectIndex)) {

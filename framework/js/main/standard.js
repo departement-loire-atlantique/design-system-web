@@ -1,5 +1,5 @@
 class MainStandard {
-    constructor() {
+    constructor () {
         MiscEvent.addListener('overlay:show', this.show.bind(this));
         MiscEvent.addListener('overlay:hide', this.hide.bind(this));
         MiscEvent.addListener('menu:show', this.show.bind(this));
@@ -8,11 +8,11 @@ class MainStandard {
         MiscEvent.addListener('loader:hide', this.hide.bind(this));
     }
 
-    show() {
+    show () {
         MiscAccessibility.hide(document.querySelector('main'));
     }
 
-    hide() {
+    hide () {
         MiscAccessibility.show(document.querySelector('main'));
     }
 }

@@ -1,5 +1,5 @@
 class MenuStandard {
-    constructor() {
+    constructor () {
         this.triggerMainMenuElement = null;
         this.triggerSubMenuElement = null;
         this.menu = null;
@@ -34,7 +34,7 @@ class MenuStandard {
         MiscAccessibility.hide(document.querySelector('header .ds44-blocMenu'));
     }
 
-    showMain(evt) {
+    showMain (evt) {
         if (evt) {
             evt.stopPropagation();
         }
@@ -91,7 +91,7 @@ class MenuStandard {
     }
 
     // Ferme tous les menus, et ajoute un focus sur le bouton qui a ouvert le dernier menu affiché
-    hideMain(evt) {
+    hideMain (evt) {
         if (evt) {
             evt.stopPropagation();
         }
@@ -139,7 +139,7 @@ class MenuStandard {
         MiscEvent.dispatch('menu:hide');
     }
 
-    showSubMenu(evt) {
+    showSubMenu (evt) {
         // Get current menu
         if (!this.menu) {
             return;
@@ -182,7 +182,7 @@ class MenuStandard {
         );
     }
 
-    hideSubMenu() {
+    hideSubMenu () {
         // Get current menu
         if (!this.menu) {
             return;
@@ -195,7 +195,7 @@ class MenuStandard {
         }
 
         const subMenu = this.menu.querySelector('.ds44-overlay.show:not(.ds44-overlay--navNiv1)');
-            if (!subMenu) {
+        if (!subMenu) {
             return;
         }
 
@@ -223,7 +223,7 @@ class MenuStandard {
         );
     }
 
-    focusOut(evt) {
+    focusOut (evt) {
         if (evt.target && this.menu.contains(evt.target)) {
             return;
         }
@@ -231,7 +231,7 @@ class MenuStandard {
         MiscAccessibility.setFocus(this.menu);
     }
 
-    clickOut(evt) {
+    clickOut (evt) {
         if (evt.target && this.menu.contains(evt.target)) {
             return;
         }

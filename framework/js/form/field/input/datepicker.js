@@ -1,5 +1,5 @@
 class FormFieldInputDatepicker extends FormFieldInputAbstract {
-    constructor() {
+    constructor () {
         super('.ds44-datepicker__shape', 'datepicker');
 
         this.lastInputValue = null;
@@ -10,7 +10,7 @@ class FormFieldInputDatepicker extends FormFieldInputAbstract {
         MiscEvent.addListener('keyUp:escape', this.escape.bind(this));
     }
 
-    create(element) {
+    create (element) {
         super.create(element);
 
         // Create corresponding hidden input to store the value
@@ -27,7 +27,7 @@ class FormFieldInputDatepicker extends FormFieldInputAbstract {
         object.calendarButtonElement = MiscDom.getNextSibling(element, '.ds44-calendar');
     }
 
-    initialize() {
+    initialize () {
         super.initialize();
 
         for (let objectIndex = 0; objectIndex < this.objects.length; objectIndex++) {
@@ -55,7 +55,7 @@ class FormFieldInputDatepicker extends FormFieldInputAbstract {
         }
     }
 
-    write(objectIndex) {
+    write (objectIndex) {
         const object = this.objects[objectIndex];
         if (!object.textElement) {
             return;
@@ -69,7 +69,7 @@ class FormFieldInputDatepicker extends FormFieldInputAbstract {
         this.enableDisableLinkedField(objectIndex);
     }
 
-    reset(objectIndex) {
+    reset (objectIndex) {
         const object = this.objects[objectIndex];
 
         object.inputElements[0].value = null;
@@ -79,7 +79,7 @@ class FormFieldInputDatepicker extends FormFieldInputAbstract {
         super.reset(objectIndex);
     }
 
-    escape() {
+    escape () {
         if (!this.calendar) {
             return;
         }
@@ -92,17 +92,17 @@ class FormFieldInputDatepicker extends FormFieldInputAbstract {
         }
     }
 
-    disableElements(objectIndex) {
+    disableElements (objectIndex, evt) {
         const object = this.objects[objectIndex];
 
         object.inputElements[0].value = null;
         object.inputElements[1].value = null;
         object.inputElements[2].value = null;
 
-        super.disableElements(objectIndex);
+        super.disableElements(objectIndex, evt);
     }
 
-    focus(objectIndex) {
+    focus (objectIndex) {
         this.lastInputValue = null;
 
         const object = this.objects[objectIndex];
@@ -115,13 +115,13 @@ class FormFieldInputDatepicker extends FormFieldInputAbstract {
         object.textElement.classList.add('show');
     }
 
-    blur(objectIndex) {
+    blur (objectIndex) {
         this.lastInputValue = null;
 
         super.blur(objectIndex);
     }
 
-    quit(objectIndex) {
+    quit (objectIndex) {
         super.quit(objectIndex);
 
         const object = this.objects[objectIndex];
@@ -130,7 +130,7 @@ class FormFieldInputDatepicker extends FormFieldInputAbstract {
         }
     }
 
-    focusOut(objectIndex, evt) {
+    focusOut (objectIndex, evt) {
         if (
             !this.calendar ||
             this.calendar.index !== objectIndex
@@ -149,11 +149,11 @@ class FormFieldInputDatepicker extends FormFieldInputAbstract {
         this.hideCalendar();
     }
 
-    keyDown(objectIndex, evt) {
+    keyDown (objectIndex, evt) {
         this.lastInputValue = evt.currentTarget.value;
     }
 
-    keyPress(objectIndex, evt) {
+    keyPress (objectIndex, evt) {
         // Test if it is a number or a letter
         if (
             evt.code.substr(0, 3) !== 'Key' &&
@@ -178,7 +178,7 @@ class FormFieldInputDatepicker extends FormFieldInputAbstract {
         }
     }
 
-    keyUp(objectIndex, evt) {
+    keyUp (objectIndex, evt) {
         if (
             !this.lastInputValue ||
             this.lastInputValue.length !== 1 ||
@@ -196,7 +196,7 @@ class FormFieldInputDatepicker extends FormFieldInputAbstract {
         }
     }
 
-    getText(objectIndex) {
+    getText (objectIndex) {
         const object = this.objects[objectIndex];
 
         const dateYear = parseInt(object.inputElements[2].value, 10) || '';
@@ -209,7 +209,7 @@ class FormFieldInputDatepicker extends FormFieldInputAbstract {
         return dateYear + '-' + (dateMonth + '').padStart(2, '0') + '-' + (dateDay + '').padStart(2, '0');
     }
 
-    record(objectIndex, evt) {
+    record (objectIndex, evt) {
         if (evt) {
             evt.preventDefault();
         }
@@ -252,7 +252,7 @@ class FormFieldInputDatepicker extends FormFieldInputAbstract {
         )
     }
 
-    checkValidity(objectIndex) {
+    checkValidity (objectIndex) {
         if (!super.checkValidity(objectIndex)) {
             return false;
         }
@@ -276,7 +276,7 @@ class FormFieldInputDatepicker extends FormFieldInputAbstract {
         return true;
     }
 
-    checkChronology(objectIndex) {
+    checkChronology (objectIndex) {
         const object = this.objects[objectIndex];
         const data = this.getData(objectIndex);
 
@@ -301,7 +301,7 @@ class FormFieldInputDatepicker extends FormFieldInputAbstract {
         return true;
     }
 
-    showHideCalendar(objectIndex) {
+    showHideCalendar (objectIndex) {
         const object = this.objects[objectIndex];
 
         let showCalendar = !(this.calendar && this.calendar.id === object.id);
@@ -314,7 +314,7 @@ class FormFieldInputDatepicker extends FormFieldInputAbstract {
         this.showCalendar(objectIndex);
     }
 
-    showCalendar(objectIndex) {
+    showCalendar (objectIndex) {
         const object = this.objects[objectIndex];
 
         this.hideCalendar();
@@ -332,7 +332,7 @@ class FormFieldInputDatepicker extends FormFieldInputAbstract {
         }
     }
 
-    hideCalendar() {
+    hideCalendar () {
         if (this.calendar) {
             const object = this.objects[this.calendar.index];
 
@@ -345,7 +345,7 @@ class FormFieldInputDatepicker extends FormFieldInputAbstract {
         }
     }
 
-    selectDate(objectIndex, data) {
+    selectDate (objectIndex, data) {
         const object = this.objects[objectIndex];
         const selectedData = new Date(data.date);
         object.inputElements[0].value = (selectedData.getDate() + '').padStart(2, '0');
@@ -361,7 +361,7 @@ class FormFieldInputDatepicker extends FormFieldInputAbstract {
         window.setTimeout(this.hideCalendar.bind(this), 200);
     }
 
-    getErrorMessage(objectIndex) {
+    getErrorMessage (objectIndex) {
         if (!this.checkChronology(objectIndex)) {
             return this.invalidChronologyMessage;
         }

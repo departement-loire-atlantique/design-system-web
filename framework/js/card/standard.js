@@ -1,10 +1,10 @@
 class CardStandard {
-    constructor() {
+    constructor () {
         document.addEventListener('click', this.open.bind(this));
     }
 
-    open(evt) {
-        if(
+    open (evt) {
+        if (
             !evt ||
             !evt.target ||
             !evt.target.closest('.ds44-js-card')

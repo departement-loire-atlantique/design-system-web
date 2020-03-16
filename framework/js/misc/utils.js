@@ -1,5 +1,5 @@
 class MiscUtils {
-    static getPositionY(element) {
+    static getPositionY (element) {
         let yPosition = 0;
 
         while (element) {
@@ -10,11 +10,11 @@ class MiscUtils {
         return yPosition;
     }
 
-    static generateId() {
+    static generateId () {
         return 'id' + Math.random().toString(36).substring(2, 15);
     }
 
-    static isInDevMode() {
+    static isInDevMode () {
         return (document.location.hostname === 'localhost');
     }
 

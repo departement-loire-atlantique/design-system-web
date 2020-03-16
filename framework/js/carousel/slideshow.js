@@ -1,9 +1,9 @@
 class CarouselSlideshow extends CarouselAbstract {
-    constructor() {
+    constructor () {
         super('.swipper-carousel-wrap.swipper-carousel-slideshow');
     }
 
-    create(wrapElement) {
+    create (wrapElement) {
         super.create(wrapElement);
 
         const objectIndex = (this.objects.length - 1);
@@ -19,7 +19,7 @@ class CarouselSlideshow extends CarouselAbstract {
         }
     }
 
-    getSwiperParameters(object) {
+    getSwiperParameters (object) {
         const swiperParameters = super.getSwiperParameters(object);
         swiperParameters.effect = 'fade';
         swiperParameters.speed = 3000;
@@ -31,7 +31,7 @@ class CarouselSlideshow extends CarouselAbstract {
         return swiperParameters;
     }
 
-    hoverStart(objectIndex, evt) {
+    hoverStart (objectIndex, evt) {
         evt.stopPropagation();
         evt.preventDefault();
 
@@ -43,7 +43,7 @@ class CarouselSlideshow extends CarouselAbstract {
         this.start(objectIndex);
     }
 
-    hoverStop(objectIndex, evt) {
+    hoverStop (objectIndex, evt) {
         evt.stopPropagation();
         evt.preventDefault();
 
@@ -55,7 +55,7 @@ class CarouselSlideshow extends CarouselAbstract {
         this.stop(objectIndex);
     }
 
-    startStop(objectIndex) {
+    startStop (objectIndex) {
         const object = this.objects[objectIndex];
 
         if (object.isPlaying) {
@@ -79,7 +79,7 @@ class CarouselSlideshow extends CarouselAbstract {
         this.start(objectIndex);
     }
 
-    getSectionObjects(objectIndex) {
+    getSectionObjects (objectIndex) {
         // Get all slideshows in the same section
         const objects = [];
         const parentElement = (this.objects[objectIndex].wrapElement.closest('section') || this.objects[objectIndex].wrapElement.parentElement);
@@ -101,7 +101,7 @@ class CarouselSlideshow extends CarouselAbstract {
         return objects;
     }
 
-    start(objectIndex) {
+    start (objectIndex) {
         // Get all slideshows in the same section
         const objects = this.getSectionObjects(objectIndex);
         for (let i = 0; i < objects.length; i++) {
@@ -124,7 +124,7 @@ class CarouselSlideshow extends CarouselAbstract {
         }
     }
 
-    stop(objectIndex) {
+    stop (objectIndex) {
         // Get all slideshows in the same section
         const objects = this.getSectionObjects(objectIndex);
         for (let i = 0; i < objects.length; i++) {
