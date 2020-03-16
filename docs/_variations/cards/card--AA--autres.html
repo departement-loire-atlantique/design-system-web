@@ -1,0 +1,22 @@
+---
+layout: pattern
+---
+
+<p class="h3-like">Tuile lieu</p>
+<br>
+<p class="h4-like">Tuile lieu sans partenaire</p>
+<br>
+{% include card/card--lieu.html is-partner="false" titreLieu="Numéro d’appel gratuit FAIRE" %}
+<br>
+<p class="h4-like">Tuile lieu avec partenaire</p>
+<br>
+{% include card/card--lieu.html is-partner="true" titreLieu="Agence nationale de l’Habitat (ANAH)" %}
+<br>
+<p class="h4-like">Tuile lieu sans partenaire mise en avant</p>
+<br>
+{% include card/card--lieu.html is-partner="false" titreLieu="CLIC Pilot’âge de la région nazairienne" is-focus="true" %}
+<br>
+<p class="h4-like">Tuile lieu avec partenaire mise en avant</p>
+<br>
+{% include card/card--lieu.html is-partner="true" titreLieu="CLIC Pilot’âge de la région nazairienne" is-focus="true" %}
+
