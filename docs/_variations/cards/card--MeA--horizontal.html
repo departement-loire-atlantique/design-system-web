@@ -9,3 +9,13 @@ layout: pattern
 
 <p class="h4-like">Tuile photo horizontale sur fond sombre</p>
 {% include card/card--horizontal--bgGrey.html title="Ceci est la tuile numéro 2" ariaLevel='"aria-level="2"' %}
+
+<hr />
+
+<p class="h4-like">Tuile photo horizontale avec tag</p>
+{% 
+    include card/card--horizontal.html 
+    title="Titre de la tuile avec tag" 
+    ariaLevel='"aria-level="2"'
+    tag='<p class="ds44-docListElem ds44-mt-std"><i class="icon icon-tag ds44-docListIco" aria-hidden="true"></i>Danse</p>'
+%}
