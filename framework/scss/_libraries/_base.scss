@@ -88,6 +88,13 @@ h2, .h2-like {
     background: linear-gradient(to bottom, #99E6D1 55%, rgba(255, 255, 255, 1) 55% )!important;
   }
 
+  &--light {
+    background: none;
+    padding: 0;
+    display: block;
+    margin-top: $ds44-margin-base !important;
+  }
+
 }
 
 h3, .h3-like {
