@@ -64,6 +64,10 @@
         .ds44-cardTitle {
             padding-top: $ds44-padding-large;
         }
+
+        > picture + .ds44-card__section .ds44-cardTitle {
+            padding-top: 0;
+        }
     }
 
     &.ds44-cardIsFocus {
