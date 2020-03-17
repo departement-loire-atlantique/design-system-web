@@ -1,11 +1,13 @@
 <section class="ds44-card ds44-js-card ds44-card--contact ds44-bgGray {% if include['is-partner'] == 'true' %} ds44-cardIsPartner {% endif %} {% if include['is-focus'] == 'true' %} ds44-cardIsFocus {% endif %}">    
     <div class="ds44-card__section">
+        {% if include['is-partner'] == 'true' %}
         <p class="ds44-cardPartner pal">Partenaire</p>
+        {% endif %}
         <p class="ds44-cardSelect pa0 ma0">
-            <button class="pas" type="button"><i class="icon icon-star-empty" aria-hidden="true"></i><span class="visually-hidden">Sélection</span></button>
+            <button class="pas" type="button" aria-describedby="{{ include.idTuile }}"><i class="icon icon-star-empty" aria-hidden="true"></i><span class="visually-hidden">Sélection</span></button>
         </p>
         <div class="ds44-innerBoxContainer">
-            <h4 class="h4-like ds44-cardTitle"><a href="#">{{ include.titreLieu }}</a></h4>
+            <h4 class="h4-like ds44-cardTitle" id="{{ include.idTuile }}"><a href="#">{{ include.titreTuileLieu }}</a></h4>
             <hr class="mbs" aria-hidden="true"/>
             <p class="ds44-docListElem ds44-mt-std"><i class="icon icon-attention ds44-docListIco" aria-hidden="true"></i>Ouvert uniquement sur prescription</p>
             <p class="ds44-docListElem ds44-mt-std"><i class="icon icon-tag ds44-docListIco" aria-hidden="true"></i>Aide à la rénovation, aide à l’adaptation d’un logement</p>
