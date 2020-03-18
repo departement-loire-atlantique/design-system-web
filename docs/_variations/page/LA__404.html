@@ -23,10 +23,10 @@ layout: pattern
             <div class="grid-12-small-1 ds44-grid-valign-center ds44-w98 ds44-mt3">
 
                 <div class="col-5-small-1 txtcenter">
-                    <p class="h4-like" aria-describedby="inp-rech">Recherchez par mots-clés :</p>
+                    <p class="h4-like" id="inp-rech">Recherchez par mots-clés :</p>
                     <form>
-                        {% include form/field/input/standard.html id="inp-rech" label="Votre recherche" required="true" class="ds44-inpLarge" %}
-                        <button type="submit" class="ds44-btnStd ds44-btn--invert" aria-label="Votre recherche"><span class="ds44-btnInnerText">Valider</span><i class="icon icon-long-arrow-right" aria-hidden="true"></i></button>
+                        {% include form/field/input/standard.html label="Votre recherche" attributes='aria-describedby="inp-rech"' required="true" class="ds44-inpLarge" %}
+                        <button type="submit" class="ds44-btnStd ds44-btn--invert" aria-label="Valider votre recherche par mots-clés"><span class="ds44-btnInnerText">Valider</span><i class="icon icon-long-arrow-right" aria-hidden="true"></i></button>
                     </form>
                 </div>
 
@@ -37,7 +37,7 @@ layout: pattern
                 </div>
 
                 <div class="col-5-small-1">
-                    <h2 class="h4-like" id="titre3">Accédez aux contenus les plus recherchés :</h2>
+                    <h3 class="h4-like">Accédez aux contenus les plus recherchés :</h3>
                     <ul class="ds44-list">
                         <li><a href="#" class="ds44-arrowLink">Inscription à l’animation sportive<i class="icon icon-arrow-right" aria-hidden="true"></i></a></li>
                         <li><a href="#" class="ds44-arrowLink">Recherche d’assistante maternelle<i class="icon icon-arrow-right" aria-hidden="true"></i></a></li>
