@@ -1,0 +1,8 @@
+{% include form/_variables.html %}
+{% include images/loader.html %}
+
+<div class="ds44-facette">
+    <form data-is-ajax="true" action="/json/recherche.json">
+        {% include form/layout/partial/recherche-keyword-main.html fieldStyle="large" %}
+    </form>
+</div>

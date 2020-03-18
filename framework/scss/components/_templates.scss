@@ -254,12 +254,13 @@ main {
         &--results {
             flex-direction: row;
             flex-wrap: wrap;
-            padding-bottom: $ds44-padding-xlarge*2;
+            padding-bottom: $ds44-padding-xlarge;
 
             li {
                 display: grid;
                 margin: $ds44-medium-vmargin;
                 margin-bottom: 0;
+                flex-basis: 30%;
             }
         }
     }
@@ -305,6 +306,7 @@ main {
 
                 li {
                     display: inherit;
+                    flex-basis: auto;
                 }
             }
         }
@@ -558,6 +560,7 @@ main {
         .ds44-list--results li {
             margin: 0;
             display: grid;
+            flex-basis: auto;
         }
 
         &--mapVisible {
