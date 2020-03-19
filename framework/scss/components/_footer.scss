@@ -19,7 +19,7 @@ footer {
     font-size: 1.4em;
     display: block;
     padding-left: $ds44-padding-large;
-    padding-right: $ds44-padding-large; 
+    padding-right: $ds44-padding-large;
 }
 footer .ds44-logo {
     width: 122px;
@@ -36,9 +36,6 @@ footer .ds44-logo {
 
 @media (max-width: $ds44-large - .0625) {
 
-    footer {
-        text-align: center;
-    }
 
     footer .ds44-logo {
         max-width: 122px;
@@ -56,5 +53,20 @@ footer .ds44-logo {
         margin-bottom: 0;
         margin-top: .5rem;
     }
+
+}
+
+@media (max-width: $ds44-medium - .0625) {
+
+    footer {
+        text-align: center;
+
+        .ds44-docListElem {
+          margin-left: auto;
+          margin-right: auto;
+          display: table;
+        }
+    }
+
 
 }

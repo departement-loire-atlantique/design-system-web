@@ -4,12 +4,15 @@ group: components
 status: Validé
 
 title: Footer
-description: 
+description:
 
 variations:
 - title: Pied de page Loire-Atlantique
-  description: 
+  description:
   pattern: footer/footer-LA.html
+- title: Pied de page MDPH
+  description:
+  pattern: footer/footer-MDPH.html
 ---
 
 ## Usage
@@ -22,8 +25,8 @@ Le pied de page (footer) est décomposé en deux lignes :
 - La ligne supérieure est découpée en trois colonnes.
 - La ligne inférieure contient une série de liens.
 
-Pour la ligne principale, on utilise une grille 12 déclarée dans le conteneur interne (`ds44-inner-container`). 
-On crée pour cela un conteneur spécifique auquel on applique les classes de grille (`grid-12-small-1 ds44-hasGutter-xxl`). 
+Pour la ligne principale, on utilise une grille 12 déclarée dans le conteneur interne (`ds44-inner-container`).
+On crée pour cela un conteneur spécifique auquel on applique les classes de grille (`grid-12-small-1 ds44-hasGutter-xxl`).
 La grille 12 se transforme en grille 1 dès le breakpoint "small" atteint.
 La gouttière est spécifique au DS44 (`ds44-hasGutter-xxl`), elle fonctionne en pourcentage de l'écran.
 
@@ -34,4 +37,3 @@ Des modifiers sont utilisés pour caler les différents éléments (`ds44-mb3` -
 La seconde ligne est un flex-container qui répartit les liens et laisse la place à un colonnage double en mode mobile.
 
 ## FAQ
-
