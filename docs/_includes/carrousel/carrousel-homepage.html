@@ -1,5 +1,8 @@
 <div class="mod--hidden ds44-list swipper-carousel-wrap swipper-carousel-wrap--homepage ds44-posRel swipper-carousel-slideshow" data-nb-visible-slides="1">
-    <p role="heading" aria-level="1" class="h1-like ds44-text--colorInvert">Bienvenue <br>sur le site<br> du Département</p>
+    <p role="heading" aria-level="1" class="h1-like ds44-text--colorInvert">
+        {% if include.titreCarrousel %}{{ include.titreCarrousel }}
+        {% else %}Bienvenue <br>sur le site<br> du Département{% endif %}
+    </p>
     <button class="ds44-btnIco ds44-btnIco--carre ds44-bgDark" type="button">
         <i class="icon icon-pause" aria-hidden="true"></i>
         <span class="visually-hidden">Arrêter l'animation</span>

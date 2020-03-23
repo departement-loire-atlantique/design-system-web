@@ -1,12 +1,12 @@
 <section class="ds44-card ds44-js-card ds44-card--horizontal{{ include.context }}">
   <div class="ds44-flex-container ds44-flex-valign-center">
-    <div class="ds44-card__section--horizontal--img">
+    <div class="ds44-card__section--horizontal--img{{ include.imgdim }}">
        <picture class="ds44-container-imgRatio ds44-container-imgRatio--carre">
          <img src="../../assets/images/ds44-card--sampleImg.png" alt="" class=" ds44-imgRatio" />
       </picture>
    </div>
     <div class="ds44-card__section--horizontal">
-      <p role="heading" {{ include.ariaLevel }} class="ds44-card__title"><a href="#" {{ include.target }} class="ds44-card__globalLink"{% if include.target %} title="{{ include.title }} - {{ include.text }} - {{ include.newWindow }}"{% endif %}>{{ include.title }}</a></p>
+      <p role="heading" {{ include.arialevel }} class="ds44-card__title"><a href="#" {{ include.target }} class="ds44-card__globalLink"{% if include.target %} title="{{ include.title }} - {{ include.text }} - {{ include.newWindow }}"{% endif %}>{{ include.title }}</a></p>
       {% if include.text %}<p class="ds44-cardFile">{{ include.text }}</p>{% endif %}
       {% if include.tag %}{{ include.tag }}{% endif %}
       <i class="icon icon-arrow-right ds44-cardArrow" aria-hidden="true"></i>

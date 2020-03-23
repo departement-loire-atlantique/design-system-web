@@ -94,7 +94,7 @@
   padding-left    : $ds44-padding-xlarge;
 }
 .ds44--2xl-padding {
-  padding    : $ds44-padding-xlarge*2;      // 6rem
+  padding         : $ds44-padding-xlarge*2; // 6rem
 }
 .ds44--2xl-padding-l {
   padding-left    : $ds44-padding-xlarge*2; // 6rem
@@ -150,6 +150,9 @@
 .ds44-mt-std {
   margin-top: $ds44-medium-vmargin;                 // 1.5rem
 }
+.ds44-m-std {
+  margin: $ds44-medium-vmargin;                     // 1.5rem
+}
 .ds44-mtb2 {
   margin-top: $ds44-large-vmargin;                  // 2rem
   margin-bottom: $ds44-large-vmargin;               // 2rem
@@ -159,9 +162,6 @@
 }
 .ds44-mb2 {
   margin-bottom: $ds44-large-vmargin!important;     // 2rem
-}
-.ds44-m-std {
-  margin: $ds44-medium-vmargin;                     // 3rem
 }
 .ds44-mb3 {
   margin-bottom: $ds44-components-vmargin;          // 3rem
@@ -182,6 +182,9 @@
 .ds44-mlr3 {
   margin-left: $ds44-components-vmargin;           // 3rem
   margin-right: $ds44-components-vmargin;          // 3rem
+}
+.ds44-m35 {
+  margin: 3.5rem;                                  // 3.5rem
 }
 .ds44-mb35 {
   margin-bottom: 3.5rem;                           // 3.5rem

@@ -104,6 +104,10 @@ div .swiper-slide {
     }
 }
 
+.ds44-ssTitreCarrousel {  
+  font-size: 3.4rem;
+}
+
 @media screen and (max-width: $ds44-medium - .0625) {
 
   .ds44-container-large.swipper-carousel-wrap,
@@ -135,8 +139,11 @@ div .swiper-slide {
     .swipper-carousel-wrap {
         margin-left: -$ds44-mobile-margins;
         margin-right: -$ds44-mobile-margins;
+    }
 
-      }
+    .ds44-ssTitreCarrousel {  
+      font-size: 2.4rem;
+    }
 
 
 }

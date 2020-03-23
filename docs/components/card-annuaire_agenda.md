@@ -55,7 +55,7 @@ Lorem ipsum
 
 Les composants de tuile sont intégrés via des inclusions dans le DS. Certains paramètres sont importants pour l'accessibilité **mais pas codés directement dans le composant**. Ils sont générés via un paramètre passé dans l'include. Par exemple :
 - Ajouter un target="_blank" sur les liens qui téléchargent des documents et un title comportant le libellé du lien, le poids du document et la mention "nouvelle fenêtre". Ce qui se traduit dans le DS par :
-`include card/card--horizontal.html title="Bien vieillir en Loire-Atlantique - PDF - 291,3 Ko - nouvelle fenêtre" text="PDF - 291,3 Ko" target='target="_blank"' ariaLevel='"aria-level="3"'`
+`include card/card--horizontal.html title="Bien vieillir en Loire-Atlantique - PDF - 291,3 Ko - nouvelle fenêtre" text="PDF - 291,3 Ko" target='target="_blank"' arialevel='"aria-level="3"'`
 
 **Ne pas oublier ces paramètres lors de l'intégration du composant dans le CMS**.
 

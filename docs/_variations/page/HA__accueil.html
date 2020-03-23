@@ -1,0 +1,34 @@
+---
+layout: pattern
+---
+
+{% include header/inc-header.html
+    logo='<picture class="ds44-logo mdph-logo"><img src="../../assets/images/logos/logo-cd44-handicap.svg" alt="Retour à l&apos;accueil site handicap Maison départementale de personnnes en situation de handicap Loire-Atlantique" /></picture>
+          <picture class="ds44-logo mdph-logo--tablet"><img src="../../assets/images/logos/logo-mdph44-mobile.svg" alt="Retour à l&apos;accueil site handicap Maison départementale de personnnes en situation de handicap Loire-Atlantique" /></picture>'
+    variante1='<button type="button" class="ds44-btnIcoText--maxi ds44--xl-padding" id="open-search"><span class="ds44-btnInnerText">Rechercher</span><i class="icon icon-magnifier icon--large" aria-hidden="true"></i></button>'
+    variante2='<a class="ds44-btnIcoText--maxi ds44--xl-padding" aria-label="Ouvrir le menu de mes démarches"><span class="ds44-btnInnerText">Mes démarches</span><i class="icon icon-user icon--large" aria-hidden="true"></i></a>'
+%}
+
+<main role="main" id="content">
+
+    <section class="ds44-container-large ds44-homepage-container ds44-homepage-container--ha ds44--xxl-padding-b">
+        <div class="grid-12-small-1">
+            <div class="col-8-small-1 ds44-mb2">
+                {% include carrousel/carrousel-homepage.html titreCarrousel='Bienvenue sur le site handicap<br /><span class="ds44-ssTitreCarrousel">du Département et de la MDPH</span>' %}
+            </div>
+            <div class="col-4-small-1 ds44-bgGray ds44--m-padding-tb">
+                <section id="en1clic" class="ds44-m35 ds44-mobile-reduced-mar">
+                    <h2 class="h2-like" id="titreEn1Clic">En 1 clic</h2>
+                    {% include card/card--horizontal.html title="Où vous renseigner sur vos droits ?" arialevel='"aria-level="2"' context=" ds44-darkContext" imgdim="--dim110" %}
+                    {% include card/card--horizontal.html title="La carte mobilité inclusion (CMI) : invalidité, priorité et stationnement" arialevel='"aria-level="2"' context=" ds44-darkContext" imgdim="--dim110" %}
+                    {% include card/card--horizontal.html title="La prestation de compensation du handicap (PCH)" arialevel='"aria-level="2"' context=" ds44-darkContext" imgdim="--dim110" %}
+                    {% include card/card--horizontal.html title="L'allocation d'éducation de l'enfant handicapé (AEEH)" arialevel='"aria-level="2"' context=" ds44-darkContext" imgdim="--dim110" %}
+                </section>
+            </div>
+        </div>
+    </section>
+
+</main>
+
+
+{% include footer/footer-LA.html %}

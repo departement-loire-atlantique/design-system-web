@@ -625,6 +625,12 @@ main {
         display: none;
     }
 
+    .ds44-homepage-container--ha {
+        &:after {
+            display: none;
+        }
+    }
+
 }
 
 @media (min-width: $ds44-max-size) {

@@ -223,6 +223,10 @@ a.ds44-card {
     @media (min-width: $ds44-small - .0625) and (max-width: ($ds44-large - .0625)) {
         min-width: 20%;
     }
+
+    &--dim110 {
+        min-width: 31%;
+    }
 }
 
 // Calendar card
