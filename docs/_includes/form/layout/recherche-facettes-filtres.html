@@ -5,16 +5,16 @@
     <form data-is-ajax="true" action="/json/recherche.json">
         {% include form/layout/partial/recherche-facette-main.html %}
 
-        {% capture buttonAttributes %} aria-describedby="filter-by-{{ id }}"{% endcapture %}
+        {% assign ariaDescribedBy = ariaDescribedBy | append: ' filter-by-' | append: id %}
 
         <div class="ds44-facetteContainer ds44-theme ds44-flex-container ds44-medium-flex-col">
             <div class="ds44-flex-container ds44-medium-flex-col">
                 <p id="filter-by-{{ id }}" class="ds44-heading ds44-fg1">Filtrer par</p>
                 <div class="ds44-fieldContainer ds44-fg1 ds44-fieldContainer--select">
-                    {% include form/field/select/checkbox.html label="Choix multiple" containerAttributes='data-auto-submit="true"' buttonAttributes=buttonAttributes %}
+                    {% include form/field/select/checkbox.html label="Choix multiple" containerAttributes='data-auto-submit="true"' ariaDescribedBy=ariaDescribedBy %}
                 </div>
                 <div class="ds44-fieldContainer ds44-fg1 ds44-fieldContainer--select">
-                    {% include form/field/select/radio.html label="Choix unique" containerAttributes='data-auto-submit="true"' buttonAttributes=buttonAttributes %}
+                    {% include form/field/select/radio.html label="Choix unique" containerAttributes='data-auto-submit="true"' ariaDescribedBy=ariaDescribedBy %}
                 </div>
             </div>
             <div class="ds44-push ds44-small-fg1">

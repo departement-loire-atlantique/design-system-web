@@ -2,7 +2,7 @@
 
 {% capture mainContent %}
 {{ explanation }}
-<input type="text" id="{{ id }}" name="{{ name }}" class="{{ mainClass }}" {{ title }} {{ attributes }} {{ inputAttributes }} {{ placeholder }} />{% include form/field/partial/reset.html %}
+<input type="text" id="{{ id }}" name="{{ name }}" class="{{ mainClass }}" {{ title }} {{ attributes }} {{ inputAttributes }} {{ placeholder }} aria-describedby="{{ ariaDescribedBy }}" />{% include form/field/partial/reset.html %}
 {% endcapture %}
 
 {% capture labelContent %}

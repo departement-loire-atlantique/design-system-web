@@ -27,13 +27,16 @@
         <div id="ds44-choiceN" class="hidden">
             <form data-is-ajax="true">
                 <div class="grid-2-small-1 ds44-box">
+                    {% assign savedAriaDescribedBy = ariaDescribedBy %}
                     <div class="col">
                         <p id="bloc-utile-informations" class="h4-like" aria-level="3" tabindex="-1">Pourquoi cette page ne vous a pas été utile ?</p>
-                        {% include form/layout/checkboxes.html choices="1:L’information n’est pas assez complète,2:L’information est trop compliquée,3:Il y a trop à lire" required="true" attributes='aria-describedby="bloc-utile-informations"' %}
+                        {% assign ariaDescribedBy1 = savedAriaDescribedBy | append: ' bloc-utile-informations' %}
+                        {% include form/layout/checkboxes.html choices="1:L’information n’est pas assez complète,2:L’information est trop compliquée,3:Il y a trop à lire" required="true" ariaDescribedBy=ariaDescribedBy1 %}
                     </div>
                     <div class="col ds44--xl-padding-l">
                         <p id="form-bloc-utils-N">Aidez-nous à améliorer cette page en nous laissant un commentaire :</p>
-                        {% include form/field/input/textarea.html attributes='aria-describedby="form-bloc-utils-N"' label="Commentaire" %}
+                        {% assign ariaDescribedBy2 = savedAriaDescribedBy | append: ' form-bloc-utils-N' %}
+                        {% include form/field/input/textarea.html label="Commentaire" ariaDescribedBy=ariaDescribedBy2 %}
                     </div>
                 </div>
                 <div class="txtcenter ds44-mt-std">

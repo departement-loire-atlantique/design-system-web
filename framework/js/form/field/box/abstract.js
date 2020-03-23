@@ -60,7 +60,7 @@ class FormFieldBoxAbstract extends FormFieldAbstract {
             return;
         }
 
-        this.enableDisableLinkedField(objectIndex);
+        this.showNotEmpty(objectIndex);
     }
 
     setData (objectIndex, data = null) {

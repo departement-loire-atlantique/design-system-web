@@ -7,12 +7,7 @@
 <div id="{{ id }}" name="{{ name }}" class="ds44-form__checkbox_container {{ containerClass }}" {{ containerAttributes }}>
     {% if include.required == 'true' %}
         <p id="mandatory-message-{{ id }}" class="ds44-mandatory_message">Au moins une de ces cases doit être cochée :</p>
-        {% if attributes contains "aria-describedby=" %}
-            {% assign newAriaDescribedby = 'aria-describedby="mandatory-message-' | append: id | append: ' ' %}
-            {% assign attributes = attributes | replace: 'aria-describedby="', newAriaDescribedby %}
-        {% else %}
-            {% assign attributes = attributes | append: ' aria-describedby="mandatory-message-' | append: id | append: '"' %}
-        {% endif %}
+        {% assign ariaDescribedBy = ariaDescribedBy | append: ' mandatory-message-' | append: id %}
     {% endif %}
 
     {% assign choices = (include.choices | split:',') %}
@@ -21,6 +16,6 @@
         {% assign value = choice[0] %}
         {% assign label = choice[1] %}
 
-        {% include form/field/box/checkbox.html id=id name=name value=value label=label list=include.list attributes=attributes boxAttributes=boxAttributes %}
+        {% include form/field/box/checkbox.html id=id name=name value=value label=label list=include.list attributes=attributes boxAttributes=boxAttributes ariaDescribedBy=ariaDescribedBy %}
     {% endfor %}
 </div>

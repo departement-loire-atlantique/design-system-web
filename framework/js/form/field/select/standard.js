@@ -64,7 +64,6 @@ class FormFieldSelectStandard extends FormFieldSelectAbstract {
         const selectedListItem = object.selectListElement.querySelector('.selected_option');
         if (selectedListItem) {
             selectedListItem.classList.remove('selected_option');
-            selectedListItem.removeAttribute('id');
             selectedListItem.removeAttribute('aria-selected');
         }
         currentItem.classList.add('selected_option');
@@ -74,6 +73,39 @@ class FormFieldSelectStandard extends FormFieldSelectAbstract {
         this.record(objectIndex);
     }
 
+    selectFromValue (objectIndex) {
+        const optionElements = this.getOptionElements(objectIndex);
+        if (!optionElements) {
+            return;
+        }
+
+        const object = this.objects[objectIndex];
+        const data = this.getData(objectIndex);
+        let values = [];
+        if (data && data[object.name].value) {
+            values = data[object.name].value;
+            if (typeof values !== 'object') {
+                values = [values];
+            }
+        }
+
+        optionElements.forEach((optionElement) => {
+            let value = optionElement.getAttribute('data-value');
+            if (value == parseFloat(value, 10)) {
+                value = parseFloat(value, 10);
+            }
+            if (values.includes(value)) {
+                // Selected
+                optionElement.classList.add('selected_option');
+                optionElement.setAttribute('aria-selected', 'true');
+            } else {
+                // Not selected
+                optionElement.classList.remove('selected_option');
+                optionElement.removeAttribute('aria-selected');
+            }
+        });
+    }
+
     getDomData (listElement) {
         return {
             'value': listElement.getAttribute('data-value'),
@@ -81,22 +113,13 @@ class FormFieldSelectStandard extends FormFieldSelectAbstract {
         };
     }
 
-    setData (objectIndex, data = null) {
-        super.setData(objectIndex, data);
-
-        if (!this.getData(objectIndex)) {
-            const object = this.objects[objectIndex];
-            if (!object.selectListElement) {
-                return;
-            }
-
-            const selectedListItem = object.selectListElement.querySelector('.selected_option');
-            if (selectedListItem) {
-                selectedListItem.classList.remove('selected_option');
-                selectedListItem.removeAttribute('id');
-                selectedListItem.removeAttribute('aria-selected');
-            }
+    getOptionElements (objectIndex) {
+        const object = this.objects[objectIndex];
+        if (!object.selectListElement) {
+            return null;
         }
+
+        return object.selectListElement.querySelectorAll('.ds44-select-list_elem');
     }
 }
 

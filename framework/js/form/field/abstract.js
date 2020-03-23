@@ -71,6 +71,10 @@ class FormFieldAbstract {
 
     empty (objectIndex) {
         this.setData(objectIndex);
+        this.showNotEmpty(objectIndex);
+    }
+
+    showNotEmpty (objectIndex) {
         this.enableDisableLinkedField(objectIndex);
     }
 
@@ -84,6 +88,7 @@ class FormFieldAbstract {
 
         this.setData(objectIndex, evt.detail);
         this.enter(objectIndex);
+        this.showNotEmpty(objectIndex);
     }
 
     setData (objectIndex, data = null) {

@@ -6,7 +6,7 @@ class StoreLocation {
                 try {
                     cityValue = JSON.parse(cityValue);
                     document
-                        .querySelectorAll('input[type="text"][name="commune"]')
+                        .querySelectorAll('[name="commune"]')
                         .forEach((cityElement) => {
                             MiscEvent.dispatch('field:set', cityValue, cityElement.closest('.ds44-form__checkbox_container, ds44-form__radio_container, .ds44-form__container'));
                         });
@@ -19,7 +19,7 @@ class StoreLocation {
                 try {
                     addressValue = JSON.parse(addressValue);
                     document
-                        .querySelectorAll('input[type="text"][name="adresse"]')
+                        .querySelectorAll('[name="adresse"]')
                         .forEach((addressElement) => {
                             MiscEvent.dispatch('field:set', addressValue, addressElement.closest('.ds44-form__checkbox_container, ds44-form__radio_container, .ds44-form__container'));
                         });

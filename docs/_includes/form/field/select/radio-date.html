@@ -1,6 +1,7 @@
 {% include form/_variables.html %}
 
 {% assign name = id %}
+{% assign savedAriaDescribedBy = ariaDescribedBy %}
 
 {% capture mainContent %}
 {% include form/field/partial/select.html disabled=include.disabled selectContainerClass="ds44-js-select-radio" %}
@@ -16,13 +17,14 @@
                 {% assign radioValue = '1' %}
                 {% include form/field/box/radio.html name=savedName label="Quand ?" value=radioValue boxAttributes=boxAttributes %}
                 <div class="ds44-select-list_elem_child hidden">
-                    {% capture inputAttributes %}{{ inputAttributes }} aria-describedby="name-radio-{{ id }}-{{ radioValue }}"{% endcapture %}
+                    {% capture ariaDescribedBy1 %}{{ savedAriaDescribedBy }} button-message-{{ savedId }}{% endcapture %}
+                    {% capture ariaDescribedBy2 %}{{ savedAriaDescribedBy }} button-message-{{ savedId }}{% endcapture %}
                     {% capture resetAttributes %}aria-describedby="label-radio-{{ id }}-{{ radioValue }}"{% endcapture %}
 
-                    {% include form/field/input/datepicker.html label="Le" placeholder="jj / mm / aaaa" title="le : jour / mois / année" explanation="Ex : 20/05/2020" required="true" inputAttributes=inputAttributes resetAttributes=resetAttributes %}
+                    {% include form/field/input/datepicker.html label="Le" title="le : jour / mois / année" explanation="Ex : 20/05/2020" required="true" inputAttributes=inputAttributes resetAttributes=resetAttributes ariaDescribedBy=ariaDescribedBy1 %}
                     {% capture containerAttributes %}data-previous-date-id="{{ id }}"{% endcapture %}
                     {% assign datepickerContainerClass = 'ds44-form__container ds44-mt2' %}
-                    {% include form/field/input/datepicker.html label="Jusqu'au" placeholder="jj / mm / aaaa" title="jusqu’au : jour / mois / année" explanation="Ex : 20/05/2020" containerAttributes=containerAttributes containerClass=datepickerContainerClass inputAttributes=inputAttributes resetAttributes=resetAttributes %}
+                    {% include form/field/input/datepicker.html label="Jusqu'au" title="jusqu’au : jour / mois / année" explanation="Ex : 20/05/2020" containerAttributes=containerAttributes containerClass=datepickerContainerClass inputAttributes=inputAttributes resetAttributes=resetAttributes ariaDescribedBy=ariaDescribedBy2 %}
 
                     {% capture resetAttributes %}""{% endcapture %}
                 </div>

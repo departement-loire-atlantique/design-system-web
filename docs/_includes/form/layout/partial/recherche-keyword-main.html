@@ -5,10 +5,11 @@
     {% assign inputClass = class %}
     {% assign buttonClass = class %}
 {% endif %}
+{% assign ariaDescribedBy = ariaDescribedBy | append: ' titre1' %}
 
 <div class="ds44-facetteContainer ds44-bgDark ds44-flex-container ds44-medium-flex-col">
     <div class="ds44-fieldContainer ds44-fg1">
-        {% include form/field/input/standard.html label="Votre recherche" required="false" class=inputClass attributes='aria-describedby="titre1"' title="Zone de saisie de votre recherche" %}
+        {% include form/field/input/standard.html label="Votre recherche" required="false" class=inputClass title="Zone de saisie de votre recherche" ariaDescribedBy=ariaDescribedBy %}
     </div>
     <div class="ds44-fieldContainer ds44-small-fg1">
         <button class="ds44-btnStd ds44-theme {{ buttonClass }}" title="Lancer la recherche"><span class="ds44-btnInnerText">Rechercher</span><i class="icon icon-long-arrow-right" aria-hidden="true"></i>

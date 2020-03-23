@@ -112,6 +112,11 @@ class FormFieldSelectAbstract extends FormFieldAbstract {
         super.empty(objectIndex);
 
         this.quit(objectIndex);
+    }
+
+    showNotEmpty (objectIndex) {
+        super.showNotEmpty(objectIndex);
+
         this.showHideResetButton(objectIndex);
     }
 
@@ -224,14 +229,38 @@ class FormFieldSelectAbstract extends FormFieldAbstract {
             return;
         }
 
-        object.valueElement.value = ((data && data.value) ? data.value : null);
+        let value = ((data && data.value) ? data.value : null);
+        if (
+            value &&
+            typeof value === 'object'
+        ) {
+            value = JSON.stringify(value);
+        }
+        object.valueElement.value = value;
         object.textElement.innerHTML = ((data && data.text) ? '<p>' + data.text + '</p>' : null);
 
-        if (object.valueElement.value) {
+        if (value) {
             object.buttonElement.setAttribute('aria-describedby', object.textElement.getAttribute('id'));
         } else {
             object.buttonElement.removeAttribute('aria-describedby');
         }
+
+        this.selectFromValue(objectIndex);
+    }
+
+    getData (objectIndex) {
+        let data = super.getData(objectIndex);
+        if (!data) {
+            return null;
+        }
+
+        const object = this.objects[objectIndex];
+        const extendedData = {};
+        extendedData[object.name] = {
+            'text': object.textElement.innerText
+        };
+
+        return MiscUtils.merge(data, extendedData);
     }
 
     showHide (objectIndex) {
@@ -422,6 +451,7 @@ class FormFieldSelectAbstract extends FormFieldAbstract {
             }
         }
 
+        this.selectFromValue(objectIndex);
         MiscAccessibility.hide(object.selectContainerElement);
     }
 
@@ -493,6 +523,10 @@ class FormFieldSelectAbstract extends FormFieldAbstract {
     }
 
     select (objectIndex, evt) {
+        // Abstract method
+    }
+
+    selectFromValue (objectIndex) {
         // Abstract method
     }
 
@@ -607,8 +641,7 @@ class FormFieldSelectAbstract extends FormFieldAbstract {
         this.focusOnButtonElement(objectIndex);
         this.hide(objectIndex);
         this.checkValidity(objectIndex);
-        this.enableDisableLinkedField(objectIndex);
-        this.showHideResetButton(objectIndex);
+        this.showNotEmpty(objectIndex);
         this.autoSubmit(objectIndex);
     }
 

@@ -1,6 +1,6 @@
 {% include form/_variables.html %}
 
 <div class="ds44-form__container ds44-checkBox-radio_list {% if include.list == 'true' %}inbl{% endif %}">
-    <input type="radio" name="{{ name }}" value="{{ include.value }}" id="name-radio-{{ id }}-{{ include.value }}" class="ds44-radio" {{ include.checked }} {{ attributes }} {{ boxAttributes }} /><label id="label-radio-{{ id }}-{{ include.value }}" for="name-radio-{{ id }}-{{ include.value }}" class="ds44-radioLabel">{{ include.label }}{{ requiredStar }}</label>
+    <input type="radio" name="{{ name }}" value="{{ include.value }}" id="name-radio-{{ id }}-{{ include.value }}" class="ds44-radio" {{ include.checked }} {{ attributes }} {{ boxAttributes }} aria-describedby="{{ ariaDescribedBy }}" /><label id="label-radio-{{ id }}-{{ include.value }}" for="name-radio-{{ id }}-{{ include.value }}" class="ds44-radioLabel">{{ include.label }}{{ requiredStar }}</label>
     {% include form/field/partial/error.html %}
 </div>

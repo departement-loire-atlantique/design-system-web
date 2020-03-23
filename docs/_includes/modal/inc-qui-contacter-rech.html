@@ -11,7 +11,8 @@
                     <div id="step1">
                         <h2 class="h4-like" id="modal-contact-title">Trouvez le bon contact près de chez vous :</h2>
                         <form>
-                            {% include form/field/input/autocomplete.html label="Votre adresse" required="true" attributes='data-url="/json/autocomplete-address.json" data-mode="select-only" aria-describedby="modal-contact-title"' %}
+                            {% assign ariaDescribedBy = ariaDescribedBy | append: ' modal-contact-title' %}
+                            {% include form/field/input/autocomplete.html label="Votre adresse" required="true" attributes='data-url="/json/autocomplete-address.json" data-mode="select-only"' ariaDescribedBy=ariaDescribedBy %}
                             <button class="ds44-btnStd ds44-btn--invert" aria-label="Valider votre adresse">
                                 <span class="ds44-btnInnerText">Valider</span><i class="icon icon-long-arrow-right" aria-hidden="true"></i>
                             </button>

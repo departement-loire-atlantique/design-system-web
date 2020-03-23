@@ -42,12 +42,6 @@
     {% endif %}
 {% endif %}
 
-{% if include.placeholder %}
-    {% assign placeholder = 'placeholder="' | append: include.placeholder | append: '"' %}
-{% else %}
-    {% assign placeholder = '' %}
-{% endif %}
-
 {% if include.label %}
     {% assign label = include.label %}
 {% else %}
@@ -93,7 +87,17 @@
 {% if include.labelClass %}
     {% assign labelClass = include.labelClass %}
 {% else %}
-    {% assign labelClass = 'ds44-formLabel' %}
+    {% if include.placeholder %}
+        {% assign labelClass = 'ds44-formLabel--external' %}
+    {% else %}
+        {% assign labelClass = 'ds44-formLabel' %}
+    {% endif %}
+{% endif %}
+
+{% if include.placeholder %}
+    {% assign placeholder = 'placeholder="' | append: include.placeholder | append: '"' %}
+{% else %}
+    {% assign placeholder = '' %}
 {% endif %}
 
 {% if include.required == 'true' %}
@@ -113,9 +117,15 @@
     {% assign buttonAttributes = buttonAttributes | append : ' aria-disabled="true"' %}
 {% endif %}
 
+{% if include.ariaDescribedBy %}
+    {% assign ariaDescribedBy = include.ariaDescribedBy %}
+{% else %}
+    {% assign ariaDescribedBy = '' %}
+{% endif %}
+
 {% if include.explanation %}
     {% capture explanation %}
         <span id="explanation-{{ id }}" class="ds44-labelTypeInfoComp">{{ include.explanation }}</span>
     {% endcapture %}
-    {% assign attributes = attributes | append: ' aria-labelledby="explanation-' | append: id | append: '"' %}
+    {% assign ariaDescribedBy = ariaDescribedBy | append: ' explanation-' | append: id %}
 {% endif %}

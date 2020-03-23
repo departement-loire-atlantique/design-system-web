@@ -41,12 +41,11 @@ class FormFieldInputAbstract extends FormFieldAbstract {
             return;
         }
 
-        this.showHideResetButton(objectIndex);
-        this.enableDisableLinkedField(objectIndex);
+        this.showNotEmpty(objectIndex);
     }
 
-    empty (objectIndex) {
-        super.empty(objectIndex);
+    showNotEmpty (objectIndex) {
+        super.showNotEmpty(objectIndex);
 
         this.showHideResetButton(objectIndex);
     }
@@ -109,7 +108,14 @@ class FormFieldInputAbstract extends FormFieldAbstract {
             return;
         }
 
-        object.valueElement.value = ((data && data.value) ? data.value : null);
+        let value = ((data && data.value) ? data.value : null);
+        if (
+            value &&
+            typeof value === 'object'
+        ) {
+            value = JSON.stringify(value);
+        }
+        object.valueElement.value = value;
     }
 
     getText (objectIndex) {

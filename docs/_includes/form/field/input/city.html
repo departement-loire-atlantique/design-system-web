@@ -1,7 +1,7 @@
 {% include form/_variables.html %}
 
 {% capture mainContent %}
-<input type="text" id="{{ id }}" name="{{ name }}" class="{{ mainClass }}" role="combobox" aria-autocomplete="list" autocomplete="off" {{ title }} {{ attributes }} {{ inputAttributes }} />{% include form/field/partial/reset.html %}
+<input type="text" id="{{ id }}" name="{{ name }}" class="{{ mainClass }}" role="combobox" aria-autocomplete="list" autocomplete="off" {{ title }} {{ attributes }} {{ inputAttributes }} aria-describedby="{{ ariaDescribedBy }}" />{% include form/field/partial/reset.html %}
 <div class="ds44-autocomp-container hidden">
     <div class="ds44-autocomp-buttons ds44-flex-container">
         <button class="ds44-btnStd ds44-bgGray ds44-btnStd--plat ds44-fg1" type="button" data-value="allCity" data-text="Toutes les communes" aria-label="Sélectionner toutes les communes">Toutes les communes</button>

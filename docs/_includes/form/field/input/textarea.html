@@ -1,7 +1,7 @@
 {% include form/_variables.html %}
 
 {% capture mainContent %}
-<textarea rows="5" cols="1" id="{{ id }}" name="{{ name }}" class="{{ mainClass }}" {{ title }} {{ attributes }} {{ inputAttributes }}></textarea>
+<textarea rows="5" cols="1" id="{{ id }}" name="{{ name }}" class="{{ mainClass }}" {{ title }} {{ attributes }} {{ inputAttributes }} aria-describedby="{{ ariaDescribedBy }}"></textarea>
 {% endcapture %}
 
 {% capture labelContent %}

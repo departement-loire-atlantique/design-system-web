@@ -15,7 +15,8 @@
             <div class="col-5-small-1 txtcenter">
                 <p class="h4-like" id="pdcv-commune-name">Consultez l’actualité ou trouvez des contacts près de chez vous :</p>
                 <form>
-                    {% include form/field/input/standard.html attributes='aria-describedby="pdcv-commune-name"' label="Champ standard" required="true" class="ds44-inpLarge"  %}
+                    {% assign ariaDescribedBy = ariaDescribedBy | append: ' pdcv-commune-name' %}
+                    {% include form/field/input/standard.html label="Champ standard" required="true" class="ds44-inpLarge" ariaDescribedBy=ariaDescribedBy  %}
                     <button type="submit" class="ds44-btnStd ds44-btn--invert" aria-label="Valider votre recherche près de chez vous"><span class="ds44-btnInnerText">Valider</span><i class="icon icon-long-arrow-right" aria-hidden="true"></i></button>
                 </form>
             </div>

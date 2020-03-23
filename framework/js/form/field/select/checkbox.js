@@ -145,6 +145,28 @@ class FormFieldSelectCheckbox extends FormFieldSelectAbstract {
             });
     }
 
+    selectFromValue (objectIndex) {
+        const checkboxElements = this.getCheckboxElements(objectIndex);
+        if (!checkboxElements) {
+            return;
+        }
+
+        const object = this.objects[objectIndex];
+        const data = this.getData(objectIndex);
+        let values = [];
+        if (data && data[object.name].value) {
+            values = data[object.name].value;
+            if(typeof values !== 'object') {
+                values = [values];
+            }
+        }
+
+        checkboxElements.forEach((checkboxElement) => {
+            checkboxElement.checked = (values.includes(checkboxElement.value));
+            MiscEvent.dispatch('change', null, checkboxElement);
+        });
+    }
+
     getDomData (listElement) {
         return {
             'value': listElement.querySelector('input').getAttribute('value'),
@@ -183,14 +205,6 @@ class FormFieldSelectCheckbox extends FormFieldSelectAbstract {
         }
 
         return object.selectListElement.querySelectorAll('input');
-    }
-
-    setData (objectIndex, data = null) {
-        super.setData(objectIndex, data);
-
-        if (!this.getData(objectIndex)) {
-            this.uncheckAll(objectIndex);
-        }
     }
 }
 

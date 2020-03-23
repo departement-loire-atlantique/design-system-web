@@ -354,8 +354,7 @@ class FormFieldInputAutoComplete extends FormFieldInputAbstract {
         object.textElement.setAttribute('aria-expanded', 'false');
         object.isExpanded = false;
 
-        this.showHideResetButton(objectIndex);
-        this.enableDisableLinkedField(objectIndex);
+        this.showNotEmpty(objectIndex);
     }
 
     escape (objectIndex) {

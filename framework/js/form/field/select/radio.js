@@ -161,6 +161,28 @@ class FormFieldSelectRadio extends FormFieldSelectAbstract {
             });
     }
 
+    selectFromValue (objectIndex) {
+        const radioElements = this.getRadioElements(objectIndex);
+        if (!radioElements) {
+            return;
+        }
+
+        const object = this.objects[objectIndex];
+        const data = this.getData(objectIndex);
+        let values = [];
+        if (data && data[object.name].value) {
+            values = data[object.name].value;
+            if(typeof values !== 'object') {
+                values = [values];
+            }
+        }
+
+        radioElements.forEach((radioElement) => {
+            radioElement.checked = (values.includes(radioElement.value));
+            MiscEvent.dispatch('change', null, radioElement);
+        });
+    }
+
     getDomData (listElement) {
         return {
             'value': listElement.querySelector('input').getAttribute('value'),
@@ -168,22 +190,13 @@ class FormFieldSelectRadio extends FormFieldSelectAbstract {
         };
     }
 
-    setData (objectIndex, data = null) {
-        super.setData(objectIndex, data);
-
-        if (!this.getData(objectIndex)) {
-            const object = this.objects[objectIndex];
-            if (!object.selectListElement) {
-                return;
-            }
-
-            object.selectListElement
-                .querySelectorAll('.ds44-select-list_elem input')
-                .forEach((listInputElement) => {
-                    listInputElement.checked = false;
-                    MiscEvent.dispatch('change', null, listInputElement);
-                });
+    getRadioElements (objectIndex) {
+        const object = this.objects[objectIndex];
+        if (!object.selectListElement) {
+            return null;
         }
+
+        return object.selectListElement.querySelectorAll('input');
     }
 }
 

@@ -65,8 +65,7 @@ class FormFieldInputDatepicker extends FormFieldInputAbstract {
         }
 
         this.record(objectIndex);
-        this.showHideResetButton(objectIndex);
-        this.enableDisableLinkedField(objectIndex);
+        this.showNotEmpty(objectIndex);
     }
 
     reset (objectIndex) {
@@ -327,9 +326,6 @@ class FormFieldInputDatepicker extends FormFieldInputAbstract {
                 'onSelect': this.selectDate.bind(this, objectIndex)
             })
         };
-        if (object.calendarButtonElement) {
-            object.calendarButtonElement.setAttribute('aria-expanded', 'true');
-        }
     }
 
     hideCalendar () {
@@ -338,10 +334,6 @@ class FormFieldInputDatepicker extends FormFieldInputAbstract {
 
             this.calendar.object.destroy();
             this.calendar = null;
-
-            if (object && object.calendarButtonElement) {
-                object.calendarButtonElement.setAttribute('aria-expanded', 'false');
-            }
         }
     }
 
@@ -354,8 +346,7 @@ class FormFieldInputDatepicker extends FormFieldInputAbstract {
 
         this.focusOnTextElement(objectIndex);
         this.record(objectIndex);
-        this.showHideResetButton(objectIndex);
-        this.enableDisableLinkedField(objectIndex);
+        this.showNotEmpty(objectIndex);
 
         // Let's roll some time so we can show with day is chosen
         window.setTimeout(this.hideCalendar.bind(this), 200);
