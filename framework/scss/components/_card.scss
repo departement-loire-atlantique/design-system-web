@@ -220,12 +220,16 @@ a.ds44-card {
     width: auto;
     min-width: 38%;
 
-    @media (min-width: $ds44-small - .0625) and (max-width: ($ds44-large - .0625)) {
+    @media (min-width: $ds44-small) and (max-width: ($ds44-large - .0625)) {
         min-width: 20%;
     }
 
     &--dim110 {
         min-width: 31%;
+        
+        @media (min-width: $ds44-extra-large) {
+            min-width: 110px;
+        }
     }
 }
 
