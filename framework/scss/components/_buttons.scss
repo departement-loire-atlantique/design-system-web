@@ -73,6 +73,7 @@ button, a.ds44-btnStd, a > .ds44-btnStd, .ds44-btnStd > a, .ds44-btnIcoText--max
     &.ds44-btnQuestion {
         @include ds44-font-sizes(largeButton);
         padding: $ds44-padding-large;
+        right: $ds44-container-large-margin;
     }
 
 }
@@ -398,6 +399,12 @@ a.ds44-btnStd--retourPage {
         margin-bottom: 20px;
     }
 
+    .ds44-btnStd, a.ds44-btnStd, a > .ds44-btnStd, .ds44-btnStd > a {
+        &.ds44-btnQuestion {
+            right: $ds44-components-vmargin;
+        }
+    }
+
 }
 
 /* small screens */
@@ -466,6 +473,10 @@ a.ds44-btnStd--retourPage {
 
         &.ds44-btnStd--plat {
             padding: $ds44-padding-medium;
+        }
+
+        &.ds44-btnQuestion {
+            right: $ds44-mobile-margins;
         }
 
     }

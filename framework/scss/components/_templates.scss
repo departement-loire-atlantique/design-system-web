@@ -108,8 +108,7 @@ main {
 @media (max-width: $ds44-small - .0625) {
 
     .ds44-container-large {
-        padding: 0 /*$ds44-mobile-margins*/
-    ;
+        padding: 0; /*$ds44-mobile-margins*/
     }
 
 }
