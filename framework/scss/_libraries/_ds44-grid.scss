@@ -1,10 +1,10 @@
 /* --- Surcharge de la grille KNACSS dédiée au DS44 */
 
 /* intermediate breakpoints */
-// -medium-X suffix means "X columns when < large screen"
-// example : .grid-4-medium-2 will be 1 column (< tiny) then 2 columns (< large) then 4 columns
+// -medium-X suffix means "X columns when medium to large screen"
+
 @media (min-width: $ds44-medium) and (max-width: ($ds44-large - .0625)) {
-    @for $i from 1 through 4{
+    @for $i from 1 through 12{
      [class*="grid-"][class*="-medium-#{$i}"] {
        grid-template-columns: repeat(#{$i}, 1fr);
      }
@@ -18,3 +18,19 @@
      grid-column: 1 / -1;
    }
  }
+
+ @media (min-width: $ds44-large) and (max-width: ($ds44-extra-large - .0625)) {
+  @for $i from 1 through 12{
+   [class*="grid-"][class*="-large-#{$i}"] {
+     grid-template-columns: repeat(#{$i}, 1fr);
+   }
+
+   [class*="col-"][class*="-large-#{$i}"] {
+     grid-column: auto / span #{$i};
+   }
+ }
+
+ [class*="-large-all"] {
+   grid-column: 1 / -1;
+ }
+}
