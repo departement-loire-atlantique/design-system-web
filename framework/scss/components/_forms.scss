@@ -33,7 +33,7 @@ input {
 
 .ds44-form__container {
     position: relative;
-    margin: $ds44-large-vmargin 0;
+    margin: 2.5rem 0;
 
     &.ds44-checkBox-radio_list {
         margin: $ds44-large-vmargin/2 0;
@@ -86,7 +86,7 @@ input {
     .ds44-labelTypeInfoComp {
         font-size: 1.3rem;
         position: absolute;
-        top: -$ds44-large-vmargin;
+        bottom: -$ds44-large-vmargin;
         right: $ds44-padding-box;
         color: $ds44-gray;
     }
