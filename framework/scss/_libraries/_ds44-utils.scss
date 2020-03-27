@@ -93,6 +93,22 @@
 .ds44--xl-padding-l {
   padding-left    : $ds44-padding-xlarge;
 }
+.ds44--p35b {
+  padding-bottom: 3.5rem;
+}
+.ds44--p4b {
+  padding-bottom: 4rem;
+}
+.ds44--xxl-padding-tb {
+  padding-top    : $ds44-padding-xxlarge;   // 5rem
+  padding-bottom : $ds44-padding-xxlarge;   // 5rem
+}
+.ds44--xxl-padding-t {
+  padding-top : $ds44-padding-xxlarge;      // 5rem
+}
+.ds44--xxl-padding-b {
+  padding-bottom : $ds44-padding-xxlarge !important;  // 5rem
+}
 .ds44--2xl-padding {
   padding         : $ds44-padding-xlarge*2; // 6rem
 }
@@ -104,16 +120,6 @@
 }
 .ds44--2xl-padding-b {
   padding-bottom : $ds44-padding-xlarge*2;  // 6rem
-}
-.ds44--xxl-padding-tb {
-  padding-top    : $ds44-padding-xxlarge;   // 5rem
-  padding-bottom : $ds44-padding-xxlarge;   // 5rem
-}
-.ds44--xxl-padding-t {
-  padding-top : $ds44-padding-xxlarge;      // 5rem
-}
-.ds44--xxl-padding-b {
-  padding-bottom : $ds44-padding-xxlarge !important;  // 5rem
 }
 .ds44--3xl-padding {
   padding    : $ds44-padding-xlarge*3;      // 9rem
