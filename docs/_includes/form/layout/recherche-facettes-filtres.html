@@ -19,18 +19,18 @@
             {% capture ariaDescribedBy %}filter-by-{{ id }}{% if ariaDescribedBy != '' %} {{ ariaDescribedBy }}{% endif %}{% endcapture %}
 
             <div class="ds44-facetteContainer ds44-theme ds44-flex-container ds44-medium-flex-col">
-                <div class="ds44-flex-container ds44-medium-flex-col">
-                    <p id="filter-by-{{ id }}" class="ds44-heading ds44-fg1">Filtrer par</p>
-                    <div class="ds44-fieldContainer ds44-fg1 ds44-fieldContainer--select">
-                        {% include form/field/select/checkbox.html label="Choix multiple" containerAttributes='data-auto-submit="true"' ariaDescribedBy=ariaDescribedBy %}
-                    </div>
-                    <div class="ds44-fieldContainer ds44-fg1 ds44-fieldContainer--select">
-                        {% include form/field/select/radio.html label="Choix unique" containerAttributes='data-auto-submit="true"' ariaDescribedBy=ariaDescribedBy %}
-                    </div>
+              <div class="ds44-fg1 ds44-flex-container ds44-medium-flex-col">
+                <p id="filter-by-{{ id }}" class="ds44-heading ds44-small-fg1 ">Filtrer par</p>
+                <div class="ds44-fieldContainer ds44-fg1 ds44-fieldContainer--select">
+                    {% include form/field/select/checkbox.html label="Choix multiple" containerAttributes='data-auto-submit="true"' ariaDescribedBy=ariaDescribedBy %}
                 </div>
-                <div class="ds44-push ds44-small-fg1 ds44-hide-tiny-to-medium ds44-show-medium">
-                    {% include form/layout/partial/recherche-facette-export.html %}
+                <div class="ds44-fieldContainer  ds44-fg1 ds44-fieldContainer--select">
+                    {% include form/field/select/radio.html label="Choix unique" containerAttributes='data-auto-submit="true"' ariaDescribedBy=ariaDescribedBy %}
                 </div>
+              </div>
+              <div class="ds44-push ds44-small-fg1 ds44-hide-tiny-to-medium ds44-show-medium">
+                  {% include form/layout/partial/recherche-facette-export.html %}
+              </div>
             </div>
         </form>
     </div>
@@ -44,4 +44,3 @@
         {% include form/layout/partial/recherche-facette-export.html %}
     </div>
 </div>
-

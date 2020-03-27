@@ -379,6 +379,8 @@ input[type=radio],
 
                     &--select {
                         flex: none;
+                        width: 20%;
+                        max-width: 20%;
 
                         .ds44-select-container {
                             width: 200%;
@@ -951,6 +953,11 @@ input[type=radio],
 
         }
 
+        .ds44-theme .ds44-fieldContainer--select {
+          width: 100%;
+          max-width: 100%;
+        }
+
         .ds44-btnStd {
             width: 100%;
             text-align: left;
@@ -958,6 +965,21 @@ input[type=radio],
 
         .ds44-btnStd .icon {
             float: right;
+        }
+    }
+
+    .ds44-theme  {
+
+        &.ds44-medium-flex-col {
+
+            .ds44-fieldContainer--select {
+              width: 100% !important;
+              max-width: 100% !important;
+
+                .ds44-select-container {
+                  width: 100% !important;
+                }
+            }
         }
     }
 }
