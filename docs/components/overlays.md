@@ -26,7 +26,7 @@ variations:
   description: Modale colonnée type "Sites et applis" qui reprend la structure présente dans le menu
   pattern: overlays/modale-sites-applis.html
 - title: Cookies
-  description: Modale simple qui ne peut se fermer quand sélectionnant un choix parmis les boutons proposés
+  description: Modale simple qui ne peut se fermer qu'en sélectionnant un choix parmi les boutons proposés
   pattern: overlays/modale-cookies.html
 ---
 
