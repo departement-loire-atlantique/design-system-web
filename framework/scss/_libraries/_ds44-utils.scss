@@ -198,6 +198,10 @@
 .ds44-mb35 {
   margin-bottom: 3.5rem;                           // 3.5rem
 }
+.ds44-mlr35 {
+  margin-left: 3.5rem;           
+  margin-right: 3.5rem;          
+}
 .ds44-mlr4 {
   margin-left: 4rem!important;                     // 4rem
   margin-right: 4rem!important;                    // 4rem
@@ -659,25 +663,25 @@
   line-height: .5;
 }
 .icon--medium::before {
-  font-size: 1.8em;
+  font-size: 1.8em !important;
 }
 .icon--large::before {
-  font-size: 2.5em;
+  font-size: 2.5em !important;
 }
 .icon--xlarge::before {
-  font-size: 3.5em;
+  font-size: 3.5em !important;
 }
 .icon--sizeS::before {
-  font-size: 1.5rem;
+  font-size: 1.5rem !important;
 }
 .icon--sizeM::before {
-  font-size: 2.5rem;
+  font-size: 2.5rem !important;
 }
 .icon--sizeL::before {
-  font-size: 3.3rem;
+  font-size: 3.3rem !important;
 }
 .icon--sizeXL::before {
-  font-size: 5rem;
+  font-size: 5rem !important;
   line-height: 0.25;
 }
 
