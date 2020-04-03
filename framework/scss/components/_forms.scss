@@ -46,42 +46,45 @@ input {
 
 .ds44-formLabel {
     @include ds44-font-sizes(button);
-    color: $ds44-graytext-color;
     display: block;
     font-weight: normal;
     margin-bottom: 0;
     text-align: left;
-    position: absolute;
-    top: 1.2rem;
-    left: $ds44-padding-box;
-    transition: all $ds44-timing-standard ease-in-out;
     width: calc(100% - 40px);
     width: -webkit-calc(100% - 40px);
 
-    &.ds44-moveLabel {
-        font-size: 1.3rem; // 13px instead of 14px
-        top: -$ds44-padding-medium*1.8;
-        left: 0;
-        color: $ds44-dark;
-    }
-
-    .ds44-bgDark &.ds44-moveLabel {
-        color: $ds44-light-color;
-    }
-
-    .ds44-labelTypePlaceholder {
-        color: $ds44-gray;
+    .ds44-labelTypePlaceholder,
+    .ds44-labelTypePlaceholderLarge {
+        color: $ds44-forms-color;
+        position: absolute;
+        top: 1.2rem;
+        left: $ds44-padding-box;
         overflow: hidden;
         text-overflow: ellipsis;
         white-space: nowrap;
         cursor: text;
         width: 100%;
         display: block;
+        transition: all $ds44-timing-standard ease-in-out;
     }
 
     .ds44-labelTypePlaceholderLarge {
         top: $ds44-padding-large;
         font-size: 1.6rem;
+    }
+
+    &.ds44-moveLabel .ds44-labelTypePlaceholder,
+    &.ds44-moveLabel .ds44-labelTypePlaceholderLarge {
+        font-size: 1.3rem; // 13px instead of 14px
+        top: -$ds44-padding-medium*1.8;
+        left: 0;
+        color: $ds44-dark;
+    }
+
+    .ds44-bgDark &.ds44-moveLabel,
+    .ds44-bgDark &.ds44-moveLabel .ds44-labelTypePlaceholder,
+    .ds44-bgDark &.ds44-moveLabel .ds44-labelTypePlaceholderLarge {
+        color: $ds44-light-color;
     }
 }
 
@@ -553,9 +556,9 @@ input[type=radio],
 .ds44-moveSelectLabel {
     font-size: 1.3rem; // 13px
     position: absolute;
-    top: -$ds44-padding-medium*2;
+    top: -$ds44-padding-medium*1.8; // same as ds44-labelTypePlaceholder
     left: 0;
-    color: $ds44-dark;
+    color: $ds44-forms-color;
 
     .ds44-bgDark & {
         color: $ds44-color-inverse;
