@@ -108,6 +108,93 @@ div .swiper-slide {
   font-size: 3.4rem;
 }
 
+
+/* Diaporama photo */
+
+.ds44-swiper-diaporama {
+  min-height: 615px;
+  max-width: 930px;
+  margin: 0 auto;
+  padding: 0;
+}
+
+/* Bouton de marche / arrêt */
+.ds44-btn-playpause {
+    position: absolute;
+    z-index: 100;
+    bottom: 62px;
+    left: 0;
+}
+
+.ds44-diapo-swiper { // ul
+  margin: 0;
+  align-items: center;
+  text-align: center;
+
+  .ds44-diapo__item { // li
+    
+  }
+}
+
+.ds44-diapoContainer__img {
+  position: initial;
+  background-color: $ds44-background-dark;
+  min-height: 615px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.ds44-diaporamaCaption {
+  background-color: $ds44-light-bg;
+  width: 100%;
+  text-align: center;
+  padding: 1rem 0;
+  min-height: 4rem;
+}
+
+.ds44-vignette-container {
+  background-color: $ds44-light-bg;
+  max-width: 930px; // same as diaporama container
+  margin: 0 auto;
+  padding: 1rem 0 2rem 0;
+  text-align: center;
+}
+
+.ds44-vignette_item {
+  display: inline-block;
+  margin-right: 1.5rem;
+  width: 78px;
+  height: 78px;
+  vertical-align: middle;
+
+  &:last-child {
+    margin-right: 0;
+  }
+
+}
+
+.ds44-vignetteRatioWrapper {
+  position: relative;
+  width: 100%;
+  height: 0;
+  display: block;
+  padding-top: 100%;
+}
+
+
+.ds44-vignette {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  display: block;
+  object-fit: cover;
+}
+
+
+
 @media screen and (max-width: $ds44-medium - .0625) {
 
   .ds44-container-large.swipper-carousel-wrap,
@@ -116,8 +203,8 @@ div .swiper-slide {
   }
 
   .swiper-container {
-    padding: 1rem 3rem 3rem 3rem ;
-    margin: 0;
+    padding: 1rem 0 0 0 ;
+    margin: 0 auto;
   }
 
   div .swiper-button-next, div .swiper-button-prev {
@@ -128,8 +215,13 @@ div .swiper-slide {
     padding: 15px 20px;
   }
 
-  div .swiper-button-next.ds44-not-edge-42::after, div .swiper-button-prev.ds44-not-edge-42::after {
+  div .swiper-button-next.ds44-not-edge-42::after, 
+  div .swiper-button-prev.ds44-not-edge-42::after {
       font-size: 15px;
+  }
+
+  .ds44-vignette-container {
+    margin: 0 auto;
   }
 
 }
@@ -143,6 +235,28 @@ div .swiper-slide {
 
     .ds44-ssTitreCarrousel {  
       font-size: 2.4rem;
+    }
+
+    /* Bouton marche / arrêt */
+    .ds44-btn-playpause {
+        left: 1rem;
+    }
+
+    .ds44-swiper-diaporama {
+      min-height: 70vh;
+      max-width: 100%;
+    }
+
+    .ds44-diapoContainer__img {
+      min-height: 70vh;
+    }
+
+    .ds44-vignette_item {
+      margin: .5rem;
+    
+      &:last-child {
+        margin-right: .5rem;
+      }
     }
 
 

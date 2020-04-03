@@ -22,6 +22,10 @@ variations:
 
 - title: Slider x10
   pattern: carrousel/carrousel-x10.html
+
+- title: Diaporama photos
+  pattern: carrousel/carrousel-photos.html
+
 ---
 
 

@@ -1,0 +1,12 @@
+{% if include.imageSrc %}
+    {% assign imageSrc = include.imageSrc %}
+{% endif %}
+
+<div class="ds44-diapoContainer">
+    <figure role="figure" aria-label="{{ include.title }} - {{ include.legend }}">
+        <div class="ds44-diapoContainer__img">
+            <img src="{{ imageSrc }}" alt="" class="" />
+        </div>
+        <figcaption class="ds44-diaporamaCaption">{{ include.title }}<br />{{ include.legend }}</figcaption>
+    </figure>
+</div>
