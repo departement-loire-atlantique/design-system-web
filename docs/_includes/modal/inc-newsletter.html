@@ -1,0 +1,86 @@
+{% include form/_variables.html %}
+
+{% capture mainContent %}
+<!-- {% include form/field/partial/select.html disabled=include.disabled selectContainerClass="ds44-js-select-checkbox" %} -->
+
+{% assign savedId = id %}
+{% assign savedLabel = label %}
+
+<section class="ds44-modal-container" id="overlay-newsletter" aria-hidden="true" role="dialog" aria-labelledby="titre-modale-newsletter">
+    <div class="ds44-modal-box">
+        <button class="ds44-btnOverlay--modale ds44-btnOverlay--closeOverlay" type="button" title="Fermer la boîte de dialogue : recevoir l’actualité par mail" data-js="ds44-modal-action-close">
+            <i class="icon icon-cross icon--xlarge" aria-hidden="true"></i><span class="ds44-btnInnerText--bottom">Fermer</span>
+        </button>
+        <h1 class="h2-like" id="titre-modale">Recevoir l’actualité par mail</h1>
+        <div class="ds44-modal-gab">
+
+              <div class="ds44-flex-container">
+                  <button class="ds44-btnStd ds44-bgGray ds44-btnStd--plat ds44-fg1 ds44--l-padding" type="button" aria-describedby="button-message-{{ id }}"><span class="ds44-btnInnerText">Tout cocher</span><i class="icon icon-check icon--medium" aria-hidden="true"></i></button>
+                  <button class="ds44-btnStd ds44-bgGray ds44-btnStd--plat ds44-fg1 ds44-border-left--light ds44--l-padding" type="button" aria-describedby="button-message-{{ id }}"><span class="ds44-btnInnerText">Tout décocher</span><i class="icon icon-cross icon--medium" aria-hidden="true"></i></button>
+              </div>
+              <div class="mtm">
+                  <h2 class="h4-like" id="titre-{% increment my_counter %}">M’alerter des prochaines parutions</h2>
+                  <ul class="ds44-list grid-12-small-1 mtm" id="listbox-{{ id }}">
+                      <li class="ds44-select-list_elem col-6 ds44-noMrg">
+                        <ul class="ds44-list">
+                          <li>{% include form/field/box/checkbox.html value="1" label="Être alerté lors de la parution du magazine" boxAttributes=boxAttributes %}</li>
+                        </ul>
+                      </li>
+                      <li class="ds44-select-list_elem col-6 ds44-noMrg">
+                        <ul class="ds44-list">
+                          <li>{% include form/field/box/checkbox.html value="2" label="Être alerté lors de la parution de Sioox" boxAttributes=boxAttributes %}</li>
+                        </ul>
+                      </li>
+                  </ul>
+              </div>
+              <div class="mtm">
+                  <h2 class="h4-like" id="titre-{% increment my_counter %}">M’abonner aux flash infos thématiques</h2>
+                  <ul class="ds44-list grid-12-small-1 mtm" id="listbox-{{ id }}">
+                      <li class="ds44-select-list_elem col-4 ds44-noMrg">
+                        <ul class="ds44-list">
+                          <li>{% include form/field/box/checkbox.html value="3" label="Enfance famille" boxAttributes=boxAttributes %}</li>
+                          <li>{% include form/field/box/checkbox.html value="4" label="Jeunesse" boxAttributes=boxAttributes %}</li>
+                          <li>{% include form/field/box/checkbox.html value="5" label="Personnes âgées" boxAttributes=boxAttributes %}</li>
+                          <li>{% include form/field/box/checkbox.html value="6" label="Handicap" boxAttributes=boxAttributes %}</li>
+                          <li>{% include form/field/box/checkbox.html value="7" label="Habitat logement" boxAttributes=boxAttributes %}</li>
+                          <li>{% include form/field/box/checkbox.html value="8" label="RSA insertion emploi" boxAttributes=boxAttributes %}</li>
+                        </ul>
+                      </li>
+                      <li class="ds44-select-list_elem col-4 ds44-noMrg">
+                        <ul class="ds44-list">
+                          <li>{% include form/field/box/checkbox.html value="9" label="Education et collèges" boxAttributes=boxAttributes %}</li>
+                          <li>{% include form/field/box/checkbox.html value="10" label="Transports" boxAttributes=boxAttributes %}</li>
+                          <li>{% include form/field/box/checkbox.html value="11" label="Routes" boxAttributes=boxAttributes %}</li>
+                          <li>{% include form/field/box/checkbox.html value="12" label="Environnement et énergies" boxAttributes=boxAttributes %}</li>
+                          <li>{% include form/field/box/checkbox.html value="13" label="Culture et patrimoine" boxAttributes=boxAttributes %}</li>
+                          <li>{% include form/field/box/checkbox.html value="14" label="Sport" boxAttributes=boxAttributes %}</li>
+                        </ul>
+                      </li>
+                      <li class="ds44-select-list_elem col-4 ds44-noMrg">
+                        <ul class="ds44-list">
+                          <li>{% include form/field/box/checkbox.html value="15" label="Economie et développement" boxAttributes=boxAttributes %}</li>
+                          <li>{% include form/field/box/checkbox.html value="16" label="Tourisme" boxAttributes=boxAttributes %}</li>
+                          <li>{% include form/field/box/checkbox.html value="17" label="Aménagement des territoires" boxAttributes=boxAttributes %}</li>
+                          <li>{% include form/field/box/checkbox.html value="18" label="Vie associative" boxAttributes=boxAttributes %}</li>
+                        </ul>
+                      </li>
+                  </ul>
+              </div>
+              {% include form/field/input/standard.html label="Votre email" required="true" containerClass="ds44-mb-std ds44-mt-std" %}
+              <button class="ds44-btnStd ds44-btn--invert ds44-w100 ds44-bntALeft" title="M'inscrire et recevoir l’actualité par mail">
+                <span class="ds44-btnInnerText">M'inscrire</span>
+                <i class="icon icon-long-arrow-right" aria-hidden="true"></i>
+              </button>
+              <p class="ds44-textLegend--mentions mtm">Vous affirmez avoir pris connaissance de notre <a href="#">Politique de confidentialité</a>. Vous pouvez vous désinscrire à tout moment à l’aide des liens de désinscription ou en nous contactant à l’adresse <a href="mailto:contact@loire-atlantique.fr" title="Contacter par mail : désinscription à la newsletter - xxxx@loire-atlantique.fr">xxxx@loire-atlantique.fr</a></p>
+
+        </div>
+    </div>
+</section>
+
+{% endcapture %}
+
+{% if include.hidden == 'true' %}
+    {% assign containerClass = containerClass | append : ' hidden' %}
+{% endif %}
+
+{% include form/field/partial/container.html content=mainContent containerClass=containerClass %}
