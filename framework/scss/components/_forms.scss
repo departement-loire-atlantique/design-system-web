@@ -78,7 +78,7 @@ input {
         font-size: 1.3rem; // 13px instead of 14px
         top: -$ds44-padding-medium*1.8;
         left: 0;
-        color: $ds44-dark;
+        color: $ds44-color-dark-text;
     }
 
     .ds44-bgDark &.ds44-moveLabel,
@@ -558,7 +558,7 @@ input[type=radio],
     position: absolute;
     top: -$ds44-padding-medium*1.8; // same as ds44-labelTypePlaceholder
     left: 0;
-    color: $ds44-forms-color;
+    color: $ds44-color-dark-text;
 
     .ds44-bgDark & {
         color: $ds44-color-inverse;
