@@ -99,10 +99,10 @@
         border-radius: var(--vanilla-calendar-border-radius);
         display: flex;
         flex-direction: column;
-        flex: 0 0 calc(14.28% - 6px);
+        flex: 0 0 calc(14.28% - 6px); //14.28% correspond à 100%/7 jour de la semaine, le 6px correspond aux marges de 3px de chaque côté
         max-width: calc(14.28% - 6px);
         padding: 10px 0;
-        height: 44px;
+        height: 44px; //Le bloc fait 50px de hauteur
         margin: 3px;
 
         &--active {
