@@ -5,6 +5,16 @@ layout: default
 {% include page-header.html %}
 
 <section class="c-section">
+	<h2>La construction des composants a été pensée suivant une approche atomic design.</h2>
+	<p>Chaque composant est associé à un badge d’état :</p>
+	<ul style="margin-bottom: 5rem;">
+		<li><strong>Brouillon</strong> : Le composant est en phase conception</li>
+		<li><strong>Décrit</strong> : Le composant est décrit mais doit être validé</li>
+		<li><strong>A valider</strong> : Le composant est prêt (description, HTML, CSS, JS) mais reste à valider par l'équipe qualité (accessibilité, performance, compatbilité navigateurs, ...)</li>
+		<li><strong>Validé</strong> : Le composant peut être utilisé dans les sites du Département</li>
+		<li><strong>Abandonné</strong> : Le composant est obsolète, il doit être retiré des sites qui l'utilisent</li>
+	</ul>
+
 	<ul class="c-card-list l-grid l-grid--3up ">
 
 		{% for componentPage in site.pages %}

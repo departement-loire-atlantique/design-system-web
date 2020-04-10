@@ -1,8 +1,9 @@
 ---
 layout: component-category
-title: Overview
+title: Introduction
 group: components
 order: 1
 permalink: /components/
-description: Component overview description
+description: 
 ---
+

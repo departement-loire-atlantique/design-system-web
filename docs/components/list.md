@@ -5,7 +5,7 @@ status: Brouillon
 
 title: Listes
 description: Affichage des listes
-status: In progress
+status: Validé
 
 variations:
 - title: Liste à puces
@@ -15,18 +15,3 @@ variations:
   description: Liste à chevrons sans séparateurs. Affiche la date de modification majeure et le titre du contenu.
   pattern: list/list-style2.html  
 ---
-
-## General guidelines
-
-Test
-
-## Usage
-
-
-## Labels
-
-
-## Icon usage
-
-
-## Other rules

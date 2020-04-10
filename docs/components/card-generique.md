@@ -3,7 +3,7 @@ layout: component-detail
 group: components
 status: A valider
 
-title: Tuiles Annuaire Agenda
+title: Tuiles génériques
 alternative_title: Cards Annuaire Agenda
 description: Une tuile propose un groupement de contenus cliquables menant à un contenu détaillé. Il s'agit d'un lien hypertexte graphique et multi-contenu. Les tuiles Annuaire et Agenda représentent la liste des tuiles de type photo + contenu ou contenu seul (contact, élu, aide etc.)
 

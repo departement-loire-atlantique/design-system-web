@@ -5,5 +5,5 @@ group: philosophy
 permalink: /philosophie/
 
 title: Introduction
-description: Découvrez dans cette section les principes ayant gouverné à la construction de ce design system.
+description: Bienvenue sur le site design system du Département de Loire-Atlantique
 ---

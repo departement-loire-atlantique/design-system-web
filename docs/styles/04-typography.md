@@ -4,12 +4,28 @@ type: detail
 title: Typographie
 group: styles
 permalink: /styles/typography.html
-description: Les différents style de texte sont utiles pour organiser et hiérarchiser les informations sur une page.
+description:
 ---
+Le design system du Département de Loire-Atlantique utilise deux familles de typographies pour hiérarchiser ses contenus :
+#### La typographie Blogger :
 
-Cette page décrit les différentes polices et tailles de police utilisées.
+Utilisée pour les titres
 
-La taille de la police s'adapte automatiquement en fonction de la résolution de l'écran.
+Variantes Medium et Bold
+
+Licence CC No Derivatives (pas de modification)
+
+Source : https://www.fontsquirrel.com/fonts/blogger-sans
+
+#### La typographie Muli :
+
+Utilisée pour les textes courants, titres d’encadrés, boutons, …
+
+Variantes Regular, Bold
+
+Licence SIL Open Font
+
+Source : https://www.fontsquirrel.com/fonts/muli
 
 ## Titres
 

@@ -5,7 +5,7 @@ type: detail
 title: Iconographie
 group: styles
 permalink: /styles/iconographie.html
-description: Description des icônes et de leur usage
+description: Un set d’icônes vectorielles sur-mesure est disponible en icon-font.
 
 ---
 

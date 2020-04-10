@@ -4,7 +4,7 @@ group: components
 
 title: Onglets
 description: Un système de navigation interne
-status: A valider
+status: Validé
 
 variations:
 - title: Onglets simples
@@ -31,6 +31,3 @@ La barre de boutons ne peut contenir que trois boutons max. (pour des questions 
 * Dans le cas d'une barre composite, on doit avoir deux conteneur en flex juxtaposés. Le premier contient les onglets, le second (`ds44-blocBtnOnglets`) contient les boutons. Ils sont tous deux englobés dans un conteneur lui aussi en flex avec un fond de couleur (classe `ds44-theme`).
 
 * En mobile, le second conteneur tombe en bas de l'écran en position fixe et ses styles sont surchargés pour écraser les marges, paddings et compresser les boutons dans l'espace réduit.
-
-
-## Usage

@@ -1,14 +1,16 @@
 - title: Introduction
   url: /
 
-- title: Philosophie
-  group: philosophy
+# Category removed following RS-840 ticket
+#- title: Philosophie
+#  group: philosophy
 
-- title: Styles web
+- title: Base visuelle
   group: styles
 
-- title: Modificateurs style web
-  group: utilities
+# Category removed following RS-840 ticket
+#- title: Modificateurs style web
+#  group: utilities
   
 - title: Composants web
   group: components
@@ -16,6 +18,6 @@
 - title: Gabarits de pages
   group: templates
 
-
-- title: Historique
-  url: /historique/
+# Category removed following RS-840 ticket
+#- title: Historique
+#  url: /historique/

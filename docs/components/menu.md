@@ -4,7 +4,7 @@ group: components
 
 title: Menu
 description: Un menu permet d'accéder à une liste de liens
-status: A valider
+status: Validé
 
 variations:
 - title: Menu principal

@@ -4,7 +4,7 @@ group: components
 
 title: Boutons
 description: Boutons d'action
-status: A valider
+status: Validé
 
 variations:
 - title: Boutons standards

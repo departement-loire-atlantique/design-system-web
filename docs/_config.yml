@@ -30,7 +30,7 @@ jekyll-minifier:
 
 # Overriding default colors
 branding:
-  logo_path: 'https://www.loire-atlantique.fr/upload/docs/image/png/2013-11/entete-logo2.png'
+  logo_path: 'assets/images/ds/logo-loire-atlantique-design-system.svg'
   navigation_background_color: '#eee'
   navigation_link_color: '#444'
   navigation_link_color_hover: 'gray'

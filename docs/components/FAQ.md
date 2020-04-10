@@ -4,7 +4,7 @@ group: components
 
 title: FAQ
 description: Foire aux questions (composant bas de page + modale overlay fullscreen)
-status: Brouillon
+status: Validé
 
 variations:
 - title: Bas de page
@@ -18,11 +18,3 @@ variations:
   pattern: FAQ/FAQ-tchat.html
 ---
 
-
-## Principes généraux
-
-
-## Notes d'intégration
-
-
-## Usage
