@@ -1,7 +1,7 @@
 {% include form/_variables.html %}
 
 {% capture mainContent %}
-<input type="text" id="{{ id }}" name="{{ name }}" class="{{ mainClass }}" role="combobox" aria-autocomplete="list" autocomplete="off" aria-expanded="false" {{ title }} {{ attributes }} {{ inputAttributes }} {{ placeholder }} {% if ariaDescribedBy != '' %}aria-describedby="{{ ariaDescribedBy }}"{% endif %} />{% include form/field/partial/reset.html %}
+<input type="text" id="{{ id }}" name="{{ name }}" class="{{ mainClass }}" role="combobox" aria-autocomplete="list" autocomplete="off" aria-expanded="false" {{ title }} {{ attributes }} {{ inputAttributes }} {{ placeholder }} {% if ariaDescribedBy and ariaDescribedBy != '' %}aria-describedby="{{ ariaDescribedBy }}"{% endif %} />{% include form/field/partial/reset.html %}
 <div class="ds44-autocomp-container hidden">
     <div class="ds44-autocomp-list">
         <ul class="ds44-list" role="listbox"></ul>

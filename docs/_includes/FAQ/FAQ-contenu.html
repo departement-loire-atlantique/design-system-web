@@ -126,9 +126,9 @@
   <div class="col-4-small-1">
     <p class="h4-like" aria-level="2" role="heading">Posez une question :</p>
     <p class="ds44-textLegend ds44-textLegend--mentions">Les champs marqués d’un astérisque * sont obligatoires</p>
-    <form>
+    <form data-statistic='{"name": "declenche-evenement","category": "Formulaire","action": "Poser une question","label": "$commune|text"}'>
       {% include form/field/input/textarea.html label="Votre question" required="true" %}
-      {% include form/field/input/standard.html label="Votre commune" %}
+      {% include form/field/input/autocomplete.html name="commune" label="Votre commune" attributes='data-url="/json/autocomplete-city.json" data-mode="select-only"' title="Sélectionner Commune" %}
       {% include form/field/input/standard.html label="Votre email" explanation="Ex : votrenom@email.com" required="true" %}
       <button class="ds44-btnStd ds44-btn--invert" title="Valider l'envoi de votre question"><span class="ds44-btnInnerText">Valider</span><i class="icon icon-long-arrow-right" aria-hidden="true"></i></button>
     </form>

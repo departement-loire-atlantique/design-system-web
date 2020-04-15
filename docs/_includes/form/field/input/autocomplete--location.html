@@ -1,0 +1,25 @@
+{% include form/_variables.html %}
+
+{% capture mainContent %}
+  <input type="text" id="{{ id }}" name="{{ name }}" class="ds44-autocomp--location {{ mainClass }}" role="combobox" aria-autocomplete="list" autocomplete="off" aria-expanded="false" {{ title }} {{ attributes }} {{ inputAttributes }} {{ placeholder }} {% if ariaDescribedBy and ariaDescribedBy != '' %}aria-describedby="{{ ariaDescribedBy }}"{% endif %} />
+  {% include form/field/partial/reset.html %}
+  <span class="ds44-location" aria-hidden="true">
+    <i class="icon icon-position icon--large" aria-hidden="true"></i>
+    <span class="visually-hidden">Autoriser la localisation automatique "autour de moi" pour le champ : {{ label }}</span>
+  </span>
+<div class="ds44-autocomp-container hidden">
+    <div class="ds44-autocomp-list">
+        <ul class="ds44-list" role="listbox"></ul>
+    </div>
+</div>
+{% endcapture %}
+
+{% capture labelContent %}
+{% include form/field/partial/label.html content=mainContent disabled=include.disabled %}
+{% endcapture %}
+
+{% if include.hidden == 'true' %}
+    {% assign containerClass = containerClass | append : ' hidden' %}
+{% endif %}
+
+{% include form/field/partial/container.html content=labelContent containerClass=containerClass %}

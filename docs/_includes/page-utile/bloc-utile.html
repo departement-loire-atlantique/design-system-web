@@ -4,8 +4,8 @@
     </header>
     <div class="ds44-inner-container ds44-grid12-offset-1">
         <div class="ds44-choiceYN txtcenter ds44--m-padding-t ds44--xl-padding-b js-tabs">
-            <button class="ds44-btnStd js-tablist__link" type="button" aria-pressed="false" aria-label="Oui, cette page m'a été utile" data-href="#ds44-choiceY"><span class="ds44-btnInnerText">Oui</span><i class="icon icon-like icon--sizeL" aria-hidden="true"></i></button>
-            <button class="ds44-btnStd js-tablist__link" type="button" aria-pressed="false" aria-label="Non, cette page ne m'a pas été utile" data-href="#ds44-choiceN"><span class="ds44-btnInnerText">Non</span><i class="icon icon-dislike icon--sizeL" aria-hidden="true"></i></button>
+            <button class="ds44-btnStd js-tablist__link" type="button" aria-pressed="false" aria-label="Oui, cette page m'a été utile" data-href="#ds44-choiceY" data-statistic='{"name": "declenche-evenement","category": "Avis page","action": "Oui"}'><span class="ds44-btnInnerText">Oui</span><i class="icon icon-like icon--sizeL" aria-hidden="true"></i></button>
+            <button class="ds44-btnStd js-tablist__link" type="button" aria-pressed="false" aria-label="Non, cette page ne m'a pas été utile" data-href="#ds44-choiceN" data-statistic='{"name": "declenche-evenement","category": "Avis page","action": "Non"}'><span class="ds44-btnInnerText">Non</span><i class="icon icon-dislike icon--sizeL" aria-hidden="true"></i></button>
         </div>
         <div id="ds44-choiceY" class="hidden">
             <form data-is-ajax="true">
@@ -25,17 +25,17 @@
             <p class="ds44-keyboard-show"><a href="#ds44-choiceY">Revenir au bouton Oui</a></p>
         </div>
         <div id="ds44-choiceN" class="hidden">
-            <form data-is-ajax="true">
+            <form data-is-ajax="true" data-statistic='{"name": "declenche-evenement","category": "Formulaire","action": "Avis page négatif","label": "$bloc-utile-informations-questions|text"}'>
                 <div class="grid-2-small-1 ds44-box">
                     {% assign savedAriaDescribedBy = ariaDescribedBy %}
                     <div class="col">
                         <p id="bloc-utile-informations" class="h4-like" aria-level="3" role="heading" tabindex="-1">Pourquoi cette page ne vous a pas été utile ?</p>
-                        {% capture ariaDescribedBy1 %}bloc-utile-informations{% if savedAriaDescribedBy != '' %} {{ savedAriaDescribedBy }}{% endif %}{% endcapture %}
-                        {% include form/layout/checkboxes.html choices="1:L’information n’est pas assez complète,2:L’information est trop compliquée,3:Il y a trop à lire" required="true" ariaDescribedBy=ariaDescribedBy1 %}
+                        {% capture ariaDescribedBy1 %}bloc-utile-informations{% if savedAriaDescribedBy and savedAriaDescribedBy != '' %} {{ savedAriaDescribedBy }}{% endif %}{% endcapture %}
+                        {% include form/layout/checkboxes.html name="bloc-utile-informations-questions" choices="1:L’information n’est pas assez complète,2:L’information est trop compliquée,3:Il y a trop à lire" required="true" ariaDescribedBy=ariaDescribedBy1 %}
                     </div>
                     <div class="col ds44--xl-padding-l">
                         <p id="form-bloc-utils-N">Aidez-nous à améliorer cette page en nous laissant un commentaire :</p>
-                        {% capture ariaDescribedBy2 %}form-bloc-utils-N{% if savedAriaDescribedBy != '' %} {{ savedAriaDescribedBy }}{% endif %}{% endcapture %}
+                        {% capture ariaDescribedBy2 %}form-bloc-utils-N{% if savedAriaDescribedBy and savedAriaDescribedBy != '' %} {{ savedAriaDescribedBy }}{% endif %}{% endcapture %}
                         {% include form/field/input/textarea.html label="Commentaire" ariaDescribedBy=ariaDescribedBy2 %}
                     </div>
                 </div>

@@ -1,0 +1,87 @@
+---
+layout: pattern
+---
+
+{% include header/inc-header.html
+    logo='<picture class="ds44-logo"><img src="../../assets/images/logo-loire-atlantique.svg" alt="Retour à l&apos;accueil du site loire-atlantique.fr"></picture>'
+    variante1='<button type="button" class="ds44-btnIcoText--maxi ds44--xl-padding" id="open-search"><span class="ds44-btnInnerText">Rechercher</span><i class="icon icon-magnifier icon--large" aria-hidden="true"></i></button>'
+%}
+
+<main role="main" id="content">
+
+	<div class="ds44-container-large">
+		{% include titres/main-title-noImage.html titrePage="Nous écrire" %}
+	</div>
+
+	<article class="ds44-container-large ds44-mt4">
+
+		<div class="ds44-inner-container">
+
+			<div class="grid-12-small-1">
+				<div class="col-7">
+					<section class="ds44-contenuArticle" id="section1">
+						<h2 class="h2-like">Comment nous contacter ?</h2>
+						<h3 class="h3-like">Par courrier :</h3>
+						<p class="ds44-docListElem mtm"><i class="icon icon-user ds44-docListIco icon--sizeL" aria-hidden="true"></i><strong>Département de Loire Atlantique</strong></p>
+						<p class="ds44-docListElem mtm"><i class="icon icon-marker ds44-docListIco" aria-hidden="true"></i>3 Quai Ceineray<br />BP 94109<br />44041 Nantes cedex 1</p>
+						<p class="ds44-docListElem mts"><i class="icon icon-map ds44-docListIco" aria-hidden="true"></i><a href="#" aria-label="Télécharger le plan d’accès : Département de Loire Atlantique">Télécharger le plan d’accès</a></p>
+						<h3 class="h3-like">Par téléphone :</h3>
+						<p class="ds44-docListElem mts"><i class="icon icon-phone ds44-docListIco" aria-hidden="true"></i>02 40 99 10 00</p>
+						<h3 class="h3-like">Par fax :</h3>
+						<p class="ds44-docListElem mts"><i class="icon icon-fax ds44-docListIco" aria-hidden="true"></i>02 40 99 10 00</p>
+						<h3 class="h3-like">Par courriel :</h3>
+						<p class="mts">Pour contacter les élu·e·s ou les services du Département, nous vous remercions de remplir le formulaire ci-contre en précisant votre demande.</p>
+						<h3 class="h3-like">Pour contacter et localiser un service précis du Département :</h3>
+						<p class="ds44-mt2"><button class="ds44-btnStd"><span class="ds44-btnInnerText">Consultez nos annuaires</span><i class="icon icon-long-arrow-right" aria-hidden="true"></i></button></p>
+						<h3 class="h3-like">Vous pouvez aussi :</h3>
+						<p class="ds44-mt2"><button class="ds44-btnStd ds44-bntALeft"><span class="ds44-btnInnerText">Faire une demande d'accès aux documents administratifs</span><i class="icon icon-long-arrow-right" aria-hidden="true"></i></button></p>
+						<p class="ds44-mt2"><button class="ds44-btnStd ds44-bntALeft"><span class="ds44-btnInnerText">Contacter le Délégué à la protection des données personnelles</span><i class="icon icon-long-arrow-right" aria-hidden="true"></i></button></p>
+					</section>
+
+					{% include partage/partage-interne.html %}
+
+				</div>
+
+				<div class="col-1 grid-offset ds44-hide-tiny-to-medium"></div>
+
+				<section class="col-4">
+					<div class="ds44-box ds44-theme mbm">
+						<div class="ds44-innerBoxContainer">
+							<p class="ds44-box-heading ds44-mb-std" role="heading" aria-level="2">Formulaire de contact</p>
+							<p>Les champs suivis d’un * sont obligatoires.</p>
+							<ul class="ds44-list">
+								<li class="ds44-mb3">
+									{% include form/field/input/standard.html label="Nom" required="true" attributes='autocomplete="family-name"' %}
+								</li>
+								<li class="ds44-mb3">
+									{% include form/field/input/standard.html label="Prénom" required="true" attributes='autocomplete="given-name"' %}
+								</li>
+								<li class="ds44-mb35">
+									{% include form/field/input/standard.html label="Courriel" explanation="Exemple : monadresse@mail.com" required="true" attributes='autocomplete="email"' %}
+								</li>
+								<li class="ds44-mb35">
+									{% include form/field/input/standard.html label="Téléphone" explanation="Exemple : 0202030405" required="true" attributes='autocomplete="tel"' %}
+								</li>
+								<li class="ds44-mb35">
+									{% include form/field/input/standard.html label="Code postal" explanation="Exemple : 44000" required="true" attributes='autocomplete="postal-code"' %}
+								</li>
+								<li class="ds44-mb35">
+									{% include form/field/select/radio.html label="Sujet" required="true" class="ds44-inpStd" %}
+								</li>
+								<li class="ds44-mb3">
+									{% include form/field/input/textarea.html label="Message" required="true" %}
+								</li>
+							</ul>
+							<button class="ds44-btnStd ds44-btn--invert ds44-bntFullw ds44-bntALeft" title="Valider l'envoi de votre candidature"><span class="ds44-btnInnerText">Valider</span><i class="icon icon-long-arrow-right" aria-hidden="true"></i></button>
+							<p class="ds44-wsg-smallText ds44-mt3">Les informations personnelles vous concernant sont collectées et traitées par le Département de Loire-Atlantique aux fins d’instruction et de réponse aux demandes reçues. En savoir plus sur la protection des données personnelles.</p>
+						</div>
+					</div>
+				</section>
+
+			</div>
+		</div>
+	</article>
+
+</main>
+
+{% include footer/footer-LA.html %}

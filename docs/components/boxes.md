@@ -26,15 +26,15 @@ variations:
 - title: Pushs
   description: Encadrés publicitaires
   pattern: boxes/box-push.html
-- title: Media
-  description: Encadrés video
-  pattern: cards/card--MeA--temoignages.html
 - title: Encadrés deux colonnes
   description: Différents styles d'encadrés deux colonnes
   pattern: boxes/box-deuxCol.html
 - title: Alerte
   description: Encadré d'alerte que l'on retrouvera sous le header principal. Il peut se replier / se réouvrir et conserver l'état sur la durée de la session pour l’alerte en question car il peut y en avoir plusieurs à des endroits différents du site.
   pattern: boxes/box-alert.html
+- title: Navigation
+  description: Encadrés de navigation interne à une page (flottants)
+  pattern: boxes/box-navigation.html
 ---
 
 ## Documentation

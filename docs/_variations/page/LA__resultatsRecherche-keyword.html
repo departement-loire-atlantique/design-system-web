@@ -8,60 +8,20 @@ layout: pattern
 %}
 
 <main role="main" id="content">
-
     <section class="ds44-container-large">
-      <div class="txtcenter ds44-lightBG ds44--l-padding-b ds44--xl-padding-t ">
-          <h1 class="center" id="titre1">Résultats de votre recherche</h1>
-      </div>
-      {% include form/layout/recherche-keyword.html %}
+        <div class="txtcenter ds44-lightBG ds44--l-padding-b ds44--xl-padding-t ">
+            <h1 class="center" id="titre1">Résultats de votre recherche</h1>
+        </div>
+        {% include form/layout/recherche-keyword.html %}
     </section>
-
     <section class="ds44-container-large">
-        <div class="ds44-flex-container ds44-results">
+        <div class="ds44-flex-container ds44-results ds44-results--empty">
             <div class="ds44-listResults ds44-innerBoxContainer ds44-innerBoxContainer--list">
-                <p class="ds44-textLegend mbs hidden">Il y a un trop grand nombre de résultats correspondant à votre recherche. Vous trouverez ci-dessous les 100 plus pertinents. N’hésitez pas à affiner vos critères de recherche.</p>
-                <p role="heading" aria-level="2" class="h3-like mbs">43 résultats</p>
-                <ul class="ds44-list ds44-list--results ds44-flex-container">
-                    <li class="ds44-fg1">
-                        {% include card/card--communique.html titreCom="Ressources, milieux naturels et foncier 2019 - chiffres clés du Département de Loire-Atlantique" marker="tag" text="Document" idTuile="tuile1" %}
-                    </li>
-                    <li class="ds44-fg1">
-                        {% include card/card--communique.html titreCom="Chiffres clés 2019 : le vélo" marker="tag" text="Document" idTuile="tuile2" %}
-                    </li>
-                    <li class="ds44-fg1">
-                        {% include card/card--communique.html titreCom="CITOYENNETE VIE ASSOCIATIVE 2019 - chiffres clés du Département de Loire-Atlantique" marker="tag" text="Document" idTuile="tuile3" %}
-                    </li>
-                    <li class="ds44-fg1">
-                        {% include card/card--communique.html titreCom="AMENAGEMENT DES TERRITOIRES 2019 - chiffres clés du Département de Loire-Atlantique" marker="tag" text="Document" idTuile="tuile4" %}
-                    </li>
-                    <li class="ds44-fg1">
-                        {% include card/card--communique.html titreCom="TOURISME 2019 - chiffres clés du Département de Loire-Atlantique" marker="tag" text="Document" idTuile="tuile5" %}
-                    </li>
-                    <li class="ds44-fg1">
-                        {% include card/card--communique.html titreCom="ECONOMIE DEVELOPPEMENT 2019 - chiffres clés du Département de Loire-Atlantique" marker="tag" text="Document" idTuile="tuile6" %}
-                    </li>
-                    <li class="ds44-fg1">
-                        {% include card/card--communique.html titreCom="SPORT 2019 - chiffres clés du Département de Loire-Atlantique" marker="tag" text="Document" idTuile="tuile7" %}
-                    </li>
-                    <li class="ds44-fg1">
-                        {% include card/card--communique.html titreCom="CULTURE PATRIMOINE 2019 - chiffres clés du Département de Loire-Atlantique" marker="tag" text="Document" idTuile="tuile8" %}
-                    </li>
-                    <li class="ds44-fg1">
-                        {% include card/card--communique.html titreCom="ROUTES TRANSPORTS 2019 - chiffres clés du Département de Loire-Atlantique" marker="tag" text="Document" idTuile="tuile9" %}
-                    </li>
-                    <li class="ds44-fg1">
-                        {% include card/card--communique.html titreCom="Chiffres clés 2019 : le vélo" marker="tag" text="Document" idTuile="tuile10" %}
-                    </li>
-                    <li class="ds44-fg1">
-                        {% include card/card--communique.html titreCom="CITOYENNETE VIE ASSOCIATIVE 2019 - chiffres clés du Département de Loire-Atlantique" marker="tag" text="Document" idTuile="tuile11" %}
-                    </li>
-                    <li class="ds44-fg1">
-                        {% include card/card--communique.html titreCom="AMENAGEMENT DES TERRITOIRES 2019 - chiffres clés du Département de Loire-Atlantique" marker="tag" text="Document" idTuile="tuile12" %}
-                    </li>
-                </ul>
-                <div class="txtcenter center ds44--xl-padding-b">
-                  <p id="idNbResults">12 résultats affichés sur 65</p>
-                  <button class="ds44-btnStd ds44-btn--invert" title="Plus de résultats sur votre recherche sur : " aria-describedby="idNbResults"><span class="ds44-btnInnerText">Plus de résultats</span><i class="icon icon-plus" aria-hidden="true"></i></button>
+                <div class="ds44-js-results-container">
+                    <div class="ds44-js-results-card" data-url="/json/search-card.json" aria-hidden="true"></div>
+                    <div class="ds44-js-results-list">
+                        <p aria-level="2" rôle="heading" id="ds44-results-new-search" class="h3-like mbs txtcenter center ds44--3xl-padding-t ds44--3xl-padding-b">Veuillez faire une recherche ci-dessus pour afficher des résultats.</p>
+                    </div>
                 </div>
             </div>
         </div>

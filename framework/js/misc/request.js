@@ -1,5 +1,10 @@
 class MiscRequest {
     static send (url, successCallback, errorCallback, parameters = null, method = 'GET') {
+        if (parameters && method.toLowerCase() === 'get') {
+            url += (url.includes('?') ? '&' : '?') + MiscUrl.jsonToUrl(parameters).toString();
+            parameters = null;
+        }
+
         const xhr = new XMLHttpRequest();
         xhr.open(method.toUpperCase(), url, true);
         xhr.onreadystatechange = () => {
@@ -19,17 +24,12 @@ class MiscRequest {
                 this.response(xhr, errorCallback);
             }
         };
-        if (
-            parameters &&
-            typeof parameters === 'object'
-        ) {
-            if (method.toLowerCase() === 'get') {
-                console.log('Parameters will not follow through on a GET method request')
-            }
+
+        if (parameters) {
             xhr.setRequestHeader('Content-Type', 'application/json;charset=UTF-8');
             xhr.send(JSON.stringify(parameters));
         } else {
-            xhr.send(parameters);
+            xhr.send();
         }
 
         return xhr;

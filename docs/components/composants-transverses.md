@@ -23,17 +23,21 @@ variations:
 - title: Tous nos sites
   description: Composant "Tous nos sites et applis" que l'on retrouve en bas de page de la page d'accueil.
   pattern: composants-transverses/sites-applis.html
-  
+
 - title: Timeline
   description: gabarit de présentation sous forme de timeline
   pattern: composants-transverses/timeline.html
-  
+
+- title: Tooltips
+  description: Les tooltips sont utilisés pour apporter une information supplémentaire.
+  pattern: composants-transverses/tooltips.html
+
 ---
 
 
 ## Notes d'intégration
 
-Dans les composants, les modales sont codées au sein du <main> pour des raisons pratiques (afin de tester le fonctionnement). 
+Dans les composants, les modales sont codées au sein du <main> pour des raisons pratiques (afin de tester le fonctionnement).
 **Les modales doivent être codées après le footer** dans les pages finales.
 
 

@@ -1,7 +1,7 @@
 {% include form/_variables.html %}
 
 {% capture mainContent %}
-<textarea rows="5" cols="1" id="{{ id }}" name="{{ name }}" class="{{ mainClass }}" {{ title }} {{ attributes }} {{ inputAttributes }} {% if ariaDescribedBy != '' %}aria-describedby="{{ ariaDescribedBy }}"{% endif %}></textarea>
+<textarea rows="5" cols="1" id="{{ id }}" name="{{ name }}" class="{{ mainClass }}" {{ title }} {{ attributes }} {{ inputAttributes }} {% if ariaDescribedBy and ariaDescribedBy != '' %}aria-describedby="{{ ariaDescribedBy }}"{% endif %}></textarea>
 {% endcapture %}
 
 {% capture labelContent %}

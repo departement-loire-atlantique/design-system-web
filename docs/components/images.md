@@ -22,6 +22,11 @@ variations:
 - title: Loader
   description: Image que l'on affiche quand la page charge quand elle est en attente de contenu
   pattern: images/loader.html
+
+
+- title: Mosaïques
+  description: Mosaïques d'images sous différentes formes
+  pattern: images/mosaiques.html
 ---
 
 

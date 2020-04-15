@@ -124,5 +124,5 @@
     {% capture explanation %}
         <span id="explanation-{{ id }}" class="ds44-labelTypeInfoComp">{{ include.explanation }}</span>
     {% endcapture %}
-    {% capture ariaDescribedBy %}explanation-{{ id }}{% if ariaDescribedBy != '' %} {{ ariaDescribedBy }}{% endif %}{% endcapture %}
+    {% capture ariaDescribedBy %}explanation-{{ id }}{% if ariaDescribedBy and ariaDescribedBy != '' %} {{ ariaDescribedBy }}{% endif %}{% endcapture %}
 {% endif %}

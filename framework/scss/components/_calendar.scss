@@ -20,7 +20,7 @@
     right: 0;
     z-index: 10000;
 
-    @media screen and (max-width: 1200px) {
+    @media screen and (max-width: ($ds44-medium - .0625))  {
         width: auto;
     }
 
@@ -71,7 +71,6 @@
     }
 
     .vanilla-calendar-week {
-        background-color: $ds44-contextual-color;
         display: flex;
         flex-wrap: wrap;
 
@@ -89,7 +88,6 @@
     }
 
     .vanilla-calendar-body {
-        background-color: rgba($ds44-contextual-color, 0.3);
         display: flex;
         flex-wrap: wrap;
         padding-bottom: 10px
@@ -101,22 +99,28 @@
         border-radius: var(--vanilla-calendar-border-radius);
         display: flex;
         flex-direction: column;
-        flex: 0 0 14.28%;
-        max-width: 14.28%;
+        flex: 0 0 calc(14.28% - 6px); //14.28% correspond à 100%/7 jour de la semaine, le 6px correspond aux marges de 3px de chaque côté
+        max-width: calc(14.28% - 6px);
         padding: 10px 0;
+        height: 44px; //Le bloc fait 50px de hauteur
+        margin: 3px;
 
         &--active {
             cursor: pointer;
         }
 
         &--today {
-            background-color: var(--vanilla-calendar-today-bg-color);
-            color: var(--vanilla-calendar-today-color);
+            background-color: $ds44-contextual-color;
         }
 
         &--selected {
-            background-color: $ds44-contextual-color;
-            color: $ds44-color-base;
+            background: $ds44-background-dark;
+            color: $ds44-color-inverse;
+        }
+
+        &:hover {
+          background: $ds44-background-dark;
+          color: $ds44-color-inverse;
         }
 
         &--disabled {

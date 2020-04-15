@@ -2,6 +2,7 @@ class MiscForm {
     static getValidationCategories () {
         return {
             'inputStandard': null,
+            'inputFile': null,
             'inputAutocomplete': null,
             'textarea': null,
             'checkbox': null,

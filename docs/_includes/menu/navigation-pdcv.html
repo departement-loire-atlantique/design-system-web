@@ -14,9 +14,9 @@
 
             <div class="col-5-small-1 txtcenter">
                 <p class="h4-like" id="pdcv-commune-name">Consultez l’actualité ou trouvez des contacts près de chez vous :</p>
-                <form>
+                <form data-statistic='{"name": "declenche-evenement","category": "Formulaire","action": "Recherche menu","label": "$commune|text"}'>
                     <div class="ds44-js-linked-fields ds44-js-masked-fields">
-                        {% capture ariaDescribedBy %}pdcv-commune-name{% if ariaDescribedBy != '' %} {{ ariaDescribedBy }}{% endif %}{% endcapture %}
+                        {% capture ariaDescribedBy %}pdcv-commune-name{% if ariaDescribedBy and ariaDescribedBy != '' %} {{ ariaDescribedBy }}{% endif %}{% endcapture %}
                         {% include form/field/input/autocomplete.html name="commune" label="Recherchez un contact" placeholder="Nom de la commune" required="true" attributes='data-url="/json/autocomplete-city.json" data-mode="select-only"' title="Sélectionner Commune - mise à jour automatique des adresses triées par ordre alphabétique" ariaDescribedBy=ariaDescribedBy %}
                         {% include form/field/input/autocomplete.html name="adresse" label="Ajouter une adresse" placeholder="Votre adresse" required="true" disabled="true" hidden="true" attributes='data-url="/json/autocomplete-address.json" data-mode="select-only"' ariaDescribedBy=ariaDescribedBy %}
                     </div>

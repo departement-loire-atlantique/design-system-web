@@ -31,9 +31,7 @@ class FormLayoutSearch {
             });
 
         // Initialization
-        if (!this.loadFromUrl(objectIndex)) {
-            this.loadFromDom(objectIndex);
-        }
+        this.loadFromDom(objectIndex);
     }
 
     submit (objectIndex, evt) {
@@ -51,62 +49,23 @@ class FormLayoutSearch {
         this.search(objectIndex, evt);
     }
 
-    loadFromUrl (objectIndex) {
-        const object = this.objects[objectIndex];
-
-        // Get the data from the url
-        const hashParameters = MiscUrl.getHashParameters();
-        if (hashParameters) {
-            // Save search parameters for further refinements
-            object.parameters = hashParameters;
-
-            // Ask other modules to set the parameters
-            MiscEvent.dispatch('search:set-parameters', object.parameters);
-
-            // Start search
-            object.hasSearched = true;
-            this.search(objectIndex, { 'detail': { 'parameters': object.parameters } });
-
-            return true;
-        }
-
-        return false;
-    }
-
     loadFromDom (objectIndex) {
-        const object = this.objects[objectIndex];
-
         // Get the data from the dom
-        if (window.searchData) {
-            if (window.searchData.parameters) {
-                // Save search parameters for further refinements
-                object.parameters = window.searchData.parameters;
-
-                // Ask other modules to set the parameters
-                MiscEvent.dispatch('search:set-parameters', object.parameters);
-
-                // Set url with the search parameters
-                MiscUrl.setHashParameters(object.parameters);
-
-                // Start search
-                object.hasSearched = true;
-                this.search(objectIndex, { 'detail': { 'parameters': object.parameters } });
-
-                return true;
-            }
-
-            // Reset search parameters
-            object.parameters = {};
-
-            // Save response data
-            object.searchData = this.formatSearchData(window.searchData);
-
-            // Show search data straight away, without starting a search
-            object.hasSearched = true;
-            this.showSearchData(objectIndex);
+        if (!window.searchData) {
+            return;
         }
 
-        return false;
+        const object = this.objects[objectIndex];
+
+        // Reset search parameters
+        object.parameters = (window.searchData.parameters || {});
+
+        // Save response data
+        object.searchData = this.formatSearchData(window.searchData, object.parameters);
+
+        // Show search data straight away, without starting a search
+        object.hasSearched = true;
+        this.showSearchData(objectIndex);
     }
 
     search (objectIndex, evt) {
@@ -119,7 +78,10 @@ class FormLayoutSearch {
         if (
             !evt ||
             !evt.detail ||
-            !evt.detail.parameters
+            (
+                !evt.detail.parameters &&
+                !evt.detail.next
+            )
         ) {
             return;
         }
@@ -129,13 +91,20 @@ class FormLayoutSearch {
 
         // Manage parameters
         const options = {};
-        if (evt.detail.reset === true) {
-            // New search
-            object.parameters = evt.detail.parameters;
-            options.zoom = true;
+        if (evt.detail.next) {
+            // Go to next set of results
+            object.parameters.page = parseInt(object.searchData.pageIndex, 10) + 1;
+            options.addUp = true;
         } else {
-            // Mix current and new search
-            object.parameters = Object.assign({}, object.parameters, evt.detail.parameters);
+            // Refine search
+            if (evt.detail.reset === true) {
+                // New search
+                object.parameters = evt.detail.parameters;
+                options.zoom = true;
+            } else {
+                // Mix current and new search
+                object.parameters = Object.assign({}, object.parameters, evt.detail.parameters);
+            }
         }
 
         // Set url with the search parameters
@@ -146,8 +115,7 @@ class FormLayoutSearch {
             object.formElement.getAttribute('action'),
             this.searchSuccess.bind(this, objectIndex, options),
             this.searchError.bind(this, objectIndex, options),
-            object.parameters,
-            (MiscUtils.isInDevMode() ? 'GET' : 'POST')
+            object.parameters
         )
     }
 
@@ -155,7 +123,11 @@ class FormLayoutSearch {
         const object = this.objects[objectIndex];
 
         // Save search data
-        object.searchData = this.formatSearchData(response);
+        object.searchData = this.formatSearchData(
+            response,
+            object.parameters,
+            (options.addUp ? object.searchData.results : null)
+        );
 
         object.containerElement.classList.remove('ds44-facette-mobile-expanded');
         this.showSearchData(objectIndex, options);
@@ -172,11 +144,35 @@ class FormLayoutSearch {
         MiscEvent.dispatch('search:update', Object.assign({}, object.searchData, options));
     }
 
-    formatSearchData (response) {
+    formatSearchData (response, parameters, oldResults = null) {
+        let results = [];
+        if (oldResults) {
+            results = oldResults;
+        }
+        results = results.concat(response['result']);
+
+        let searchText = [];
+        for (let key in parameters) {
+            if (!parameters.hasOwnProperty(key)) {
+                continue;
+            }
+
+            let data = parameters[key];
+            try {
+                data = JSON.parse(data);
+            } catch (ex) {
+            }
+            searchText.push(data.value);
+        }
+
         return {
+            'pageIndex': response['page-index'] || 0,
+            'nbResultsPerPage': response['nb-result-per-page'] || response['max-result'],
             'nbResults': response['nb-result'],
             'maxResults': response['max-result'],
-            'results': response['result']
+            'results': results,
+            'newResults': response['result'],
+            'searchText': searchText.join(' ')
         };
     }
 

@@ -35,3 +35,9 @@ layout: pattern
 <p role="heading" aria-level="2" class="h3-like">Date picker</p>
 {% include form/field/input/datepicker.html label="Le" title="le : jour / mois / année" explanation="Ex : 20/05/2020" required="true" %}
 {% include form/field/input/datepicker.html label="Jusqu'au" title="jusqu’au : jour / mois / année" explanation="Ex : 20/05/2020" %}
+
+<hr />
+
+<p role="heading" aria-level="2" class="h3-like">Champ de téléchargement de fichier</p>
+
+{% include form/field/input/file.html label="Mon fichier" attributes='data-file-extensions="doc,pdf"' explanation="Formats : PDF ou DOC, taille max. : 10Mo" required="true" %}

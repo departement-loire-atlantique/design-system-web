@@ -5,7 +5,7 @@
     {% assign inputClass = class %}
     {% assign buttonClass = class %}
 {% endif %}
-{% capture ariaDescribedBy %}titre1{% if ariaDescribedBy != '' %} {{ ariaDescribedBy }}{% endif %}{% endcapture %}
+{% capture ariaDescribedBy %}titre1{% if ariaDescribedBy and ariaDescribedBy != '' %} {{ ariaDescribedBy }}{% endif %}{% endcapture %}
 
 <div class="ds44-facetteContainer ds44-bgDark ds44-flex-container ds44-medium-flex-col">
     <div class="ds44-fieldContainer ds44-fg1">

@@ -16,7 +16,7 @@
         <form data-is-ajax="true" action="/json/recherche.json">
             {% include form/layout/partial/recherche-facette-main.html %}
 
-            {% capture ariaDescribedBy %}filter-by-{{ id }}{% if ariaDescribedBy != '' %} {{ ariaDescribedBy }}{% endif %}{% endcapture %}
+            {% capture ariaDescribedBy %}filter-by-{{ id }}{% if ariaDescribedBy and ariaDescribedBy != '' %} {{ ariaDescribedBy }}{% endif %}{% endcapture %}
 
             <div class="ds44-facetteContainer ds44-theme ds44-flex-container ds44-medium-flex-col">
               <div class="ds44-fg1 ds44-flex-container ds44-medium-flex-col">

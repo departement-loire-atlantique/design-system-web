@@ -1,54 +1,81 @@
 class MiscUrl {
     static getHashParameters () {
-        const url = document.location.href;
-        if (
-            url.indexOf('#') === -1 ||
-            url.indexOf('#') === (url.length - 1)
-        ) {
-            // No hash
-            return null;
-        }
+        const urlParameters = window.location.href.split('#')[1];
+        return MiscUrl.urlToJson(urlParameters);
+    }
 
-        // Has a hash
-        return url
-            .slice(url.indexOf('#') + 1)
-            .split('&')
-            .reduce(
-                (params, hash) => {
-                    const split = hash.split('=');
-                    const key = split.shift();
-                    const value = split.join('=');
-                    return Object.assign(
-                        params,
-                        {
-                            [key]: (value ? window.decodeURIComponent(value) : null)
-                        }
-                    );
-                },
-                {}
-            );
+    static getQueryParameters () {
+        const urlParameters = window.location.href.split('#')[0].split('?')[1];
+        return MiscUrl.urlToJson(urlParameters);
     }
 
     static setHashParameters (parameters = {}) {
-        let newUrl = document.location.href.split('#')[0] + '#';
+        document.location.href = document.location.href.split('#')[0] + '#' + MiscUrl.jsonToUrl(parameters);
+    }
 
+    static jsonToUrl (parameters) {
         const sortedParameters = {};
         Object.keys(parameters).sort().forEach(function (key) {
             sortedParameters[key] = parameters[key];
         });
 
-        for (let key in sortedParameters) {
-            if (!sortedParameters.hasOwnProperty(key)) {
+        const urlParameters = new URLSearchParams();
+        MiscUrl.buildUrlParameters(urlParameters, sortedParameters);
+        return urlParameters;
+    }
+
+    static urlToJson (urlParameters) {
+        const json = {};
+        const urlParams = new URLSearchParams(urlParameters);
+        for (const [key, value] of urlParams.entries()) {
+            const matches = key.match(/\[[^\]]*\]/g);
+            if (!matches) {
+                json[key] = value;
+
                 continue;
             }
 
-            let value = sortedParameters[key];
-
-            if (typeof value === 'object') {
-                value = JSON.stringify(value);
+            const fieldName = key.split('[')[0];
+            if (!json[fieldName]) {
+                json[fieldName] = {};
             }
-            newUrl += key.toLowerCase() + (value ? '=' + window.decodeURIComponent(value) : '') + '&';
+            let nestedValue = json[fieldName];
+            for (let i = 0; i < matches.length; i++) {
+                const subKey = matches[i].replace('[', '').replace(']', '');
+                if (i !== (matches.length - 1)) {
+                    if (!nestedValue[subKey]) {
+                        const nextSubKey = matches[(i + 1)].replace('[', '').replace(']', '');
+                        if (nextSubKey == parseInt(nextSubKey, 10)) {
+                            nestedValue[subKey] = [];
+                        } else {
+                            nestedValue[subKey] = {};
+                        }
+                    }
+                    nestedValue = nestedValue[subKey];
+                } else {
+                    nestedValue[subKey] = value;
+                }
+            }
         }
-        document.location.href = newUrl.replace(/&$/, '');
+
+        return json;
+    }
+
+    static buildUrlParameters (urlParameters, parameters, parentKey) {
+        if (
+            parameters &&
+            typeof parameters === 'object' &&
+            !(parameters instanceof Date) &&
+            !(parameters instanceof File)
+        ) {
+            Object.keys(parameters).forEach(key => {
+                MiscUrl.buildUrlParameters(urlParameters, parameters[key], parentKey ? `${parentKey}[${key}]` : key);
+            });
+
+            return;
+        }
+
+        const value = (parameters == null ? '' : parameters);
+        urlParameters.append(parentKey, value);
     }
 }

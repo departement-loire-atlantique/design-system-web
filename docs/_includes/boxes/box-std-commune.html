@@ -1,7 +1,7 @@
 <section class="ds44-box ds44-theme ds44-mb3">
     <div class="ds44-innerBoxContainer">
         <p role="heading" aria-level="2" class="ds44-box-heading">Près de chez vous</p>
-        <form>
+        <form data-statistic='{"name": "declenche-evenement","category": "Formulaire","action": "Recherchez un contact","label": "$commune|text"}'>
             <div class="ds44-js-linked-fields ds44-js-masked-fields">
                 {% include form/field/input/autocomplete.html name="commune" label="Recherchez un contact" placeholder="Nom de la commune" required="true" attributes='data-url="/json/autocomplete-city.json" data-mode="select-only"' title="Sélectionner Commune - mise à jour automatique des adresses triées par ordre alphabétique" %}
                 {% include form/field/input/autocomplete.html name="adresse" label="Ajouter une adresse" placeholder="Votre adresse" required="true" disabled="true" hidden="true" attributes='data-url="/json/autocomplete-address.json" data-mode="select-only"' %}

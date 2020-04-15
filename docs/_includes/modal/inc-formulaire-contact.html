@@ -1,0 +1,37 @@
+<section class="ds44-modal-container" id="overlay-formulaire-contact" aria-hidden="true" role="dialog" aria-labelledby="titre-modale-formulaire-contact">
+	<div class="ds44-modal-box">
+		<button class="ds44-btnOverlay--modale ds44-btnOverlay--closeOverlay" type="button" title="Fermer la boite de dialogue : qui contacter" data-js="ds44-modal-action-close"><i class="icon icon-cross icon--xlarge" aria-hidden="true"></i><span class="ds44-btnInnerText--bottom">Fermer</span></button>
+		<h1 class="h2-like" id="titre-modale-qui-contacter">Envoyer un mail à [nom de la structure ou du contact]</h1>
+		<div class="ds44-modal-gab ds44-xl-fluid-margin">
+				<p>Les champs suivis d’un * sont obligatoires.</p>
+				<ul class="ds44-list grid-12 ds44--xxl-padding-b">
+					<li class="ds44-mb3 col-6 ds44-minTiny-margin">
+						{% include form/field/input/standard.html label="Nom" required="true" attributes='autocomplete="family-name"' %}
+					</li>
+					<li class="ds44-mb3 col-6 ds44-minTiny-margin">
+						{% include form/field/input/standard.html label="Prénom" required="true" attributes='autocomplete="given-name"' %}
+					</li>
+					<li class="ds44-mb35 col-12 ds44-minTiny-margin">
+						{% include form/field/input/standard.html label="Courriel" explanation="Exemple : monadresse@mail.com" required="true" attributes='autocomplete="email"' %}
+					</li>
+					<li class="ds44-mb35 col-6 ds44-minTiny-margin">
+						{% include form/field/input/standard.html label="Téléphone" explanation="Exemple : 0202030405" required="true" attributes='autocomplete="tel"' %}
+					</li>
+					<li class="ds44-mb35 col-6 ds44-minTiny-margin">
+						{% include form/field/input/standard.html label="Code postal" explanation="Exemple : 44000" required="true" attributes='autocomplete="postal-code"' %}
+					</li>
+					<li class="ds44-mb35 col-12 ds44-minTiny-margin">
+						{% include form/field/input/file.html label="Curriculum vitae" explanation="Formats : PDF ou DOC, taille max. : 10Mo" required="true" %}
+					</li>
+					<li class="ds44-mb35 col-12 ds44-minTiny-margin">
+						{% include form/field/input/file.html label="Lettre de motivation" explanation="Formats : PDF ou DOC, taille max. : 10Mo" required="true" %}
+					</li>
+					<li class="ds44-mb35 col-12 ds44-minTiny-margin">
+						{% include form/field/input/file.html label="Pièce complémentaire" explanation="Arrêté de nomination, inscription sur liste d’aptitude, … Formats : PDFou DOC, taille max. : 10Mo" required="true" %}
+					</li>
+				</ul>
+				<button class="ds44-btnStd ds44-btn--invert ds44-bntFullw ds44-bntALeft" title="Valider l'envoi de votre candidature"><span class="ds44-btnInnerText">Valider</span><i class="icon icon-long-arrow-right" aria-hidden="true"></i></button>
+				<p class="ds44-wsg-smallText ds44-mt3">Les informations personnelles vous concernant sont collectées et traitées par le Département de Loire-Atlantique aux fins d’instruction et de réponse aux demandes reçues. En savoir plus sur la protection des données personnelles.</p>
+		</div>
+	</div>
+</section>

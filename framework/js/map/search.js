@@ -8,8 +8,9 @@ class MapSearch extends MapAbstract {
 
         const objectIndex = (this.objects.length - 1);
         const object = this.objects[objectIndex];
-        object.results = null;
+        object.newResults = null;
         object.zoom = false;
+        object.addUp = false;
         object.isVisible = true;
 
         MiscEvent.addListener('search:update', this.search.bind(this, objectIndex));
@@ -42,7 +43,7 @@ class MapSearch extends MapAbstract {
         }
 
         object.map.on('moveend', this.move.bind(this, objectIndex));
-        if (object.results) {
+        if (object.newResults) {
             this.show(objectIndex);
         }
     }
@@ -53,7 +54,7 @@ class MapSearch extends MapAbstract {
         const mapFullScreenElement = object.mapElement.querySelector('.mapboxgl-ctrl-fullscreen');
         if (mapFullScreenElement) {
             mapFullScreenElement.removeAttribute('aria-label');
-            mapFullScreenElement.setAttribute('title', 'Afficher la carte en plein écran');
+            mapFullScreenElement.setAttribute('title', MiscTranslate._('MAP_FULLSCREEN'));
 
             let spanElement = mapFullScreenElement.querySelector('.visually-hidden');
             if (!spanElement) {
@@ -61,13 +62,13 @@ class MapSearch extends MapAbstract {
                 spanElement.classList.add('visually-hidden');
                 mapFullScreenElement.appendChild(spanElement);
             }
-            spanElement.innerText = 'Afficher la carte en plein écran';
+            spanElement.innerText = MiscTranslate._('MAP_FULLSCREEN');
         }
 
         const mapShrinkElement = object.mapElement.querySelector('.mapboxgl-ctrl-shrink');
         if (mapShrinkElement) {
             mapShrinkElement.removeAttribute('aria-label');
-            mapShrinkElement.setAttribute('title', 'Sortir du mode plein écran de la carte');
+            mapShrinkElement.setAttribute('title', MiscTranslate._('MAP_SHRINK'));
 
             let spanElement = mapShrinkElement.querySelector('.visually-hidden');
             if (!spanElement) {
@@ -75,13 +76,13 @@ class MapSearch extends MapAbstract {
                 spanElement.classList.add('visually-hidden');
                 mapShrinkElement.appendChild(spanElement);
             }
-            spanElement.innerText = 'Sortir du mode plein écran de la carte';
+            spanElement.innerText = MiscTranslate._('MAP_SHRINK');
         }
 
         const mapZoomInElement = object.mapElement.querySelector('.mapboxgl-ctrl-zoom-in');
         if (mapZoomInElement) {
             mapZoomInElement.removeAttribute('aria-label');
-            mapZoomInElement.setAttribute('title', 'Augmenter la taille de la carte');
+            mapZoomInElement.setAttribute('title', MiscTranslate._('MAP_ZOOM_IN'));
 
             let spanElement = mapZoomInElement.querySelector('.visually-hidden');
             if (!spanElement) {
@@ -89,13 +90,13 @@ class MapSearch extends MapAbstract {
                 spanElement.classList.add('visually-hidden');
                 mapZoomInElement.appendChild(spanElement);
             }
-            spanElement.innerText = 'Augmenter la taille de la carte';
+            spanElement.innerText = MiscTranslate._('MAP_ZOOM_IN');
         }
 
         const mapZoomOutElement = object.mapElement.querySelector('.mapboxgl-ctrl-zoom-out');
         if (mapZoomOutElement) {
             mapZoomOutElement.removeAttribute('aria-label');
-            mapZoomOutElement.setAttribute('title', 'Diminuer la taille de la carte');
+            mapZoomOutElement.setAttribute('title', MiscTranslate._('MAP_ZOOM_OUT'));
 
             let spanElement = mapZoomOutElement.querySelector('.visually-hidden');
             if (!spanElement) {
@@ -103,13 +104,13 @@ class MapSearch extends MapAbstract {
                 spanElement.classList.add('visually-hidden');
                 mapZoomOutElement.appendChild(spanElement);
             }
-            spanElement.innerText = 'Diminuer la taille de la carte';
+            spanElement.innerText = MiscTranslate._('MAP_ZOOM_OUT');
         }
 
         const mapCompassElement = object.mapElement.querySelector('.mapboxgl-ctrl-compass');
         if (mapCompassElement) {
             mapCompassElement.removeAttribute('aria-label');
-            mapCompassElement.setAttribute('title', 'Repositionner la carte vers le nord');
+            mapCompassElement.setAttribute('title', MiscTranslate._('MAP_REORIENTATE'));
 
             let spanElement = mapCompassElement.querySelector('.visually-hidden');
             if (!spanElement) {
@@ -117,14 +118,15 @@ class MapSearch extends MapAbstract {
                 spanElement.classList.add('visually-hidden');
                 mapCompassElement.appendChild(spanElement);
             }
-            spanElement.innerText = 'Repositionner la carte vers le nord';
+            spanElement.innerText = MiscTranslate._('MAP_REORIENTATE');
         }
     }
 
     search (objectIndex, evt) {
         const object = this.objects[objectIndex];
-        object.results = evt.detail.results;
+        object.newResults = evt.detail.newResults;
         object.zoom = evt.detail.zoom;
+        object.addUp = evt.detail.addUp;
 
         if (object.isMapReady) {
             this.show(objectIndex);
@@ -135,19 +137,21 @@ class MapSearch extends MapAbstract {
         const object = this.objects[objectIndex];
 
         // Remove existing markers
-        for (let i = 0; i < object.markers.length; i++) {
-            object.markers[i].remove();
+        if(!object.addUp) {
+            for (let i = 0; i < object.markers.length; i++) {
+                object.markers[i].remove();
+            }
+            object.markers = [];
         }
-        object.markers = [];
 
         // Add new markers
         const lngLats = [];
-        for (let resultIndex in object.results) {
-            if (!object.results.hasOwnProperty(resultIndex)) {
+        for (let resultIndex in object.newResults) {
+            if (!object.newResults.hasOwnProperty(resultIndex)) {
                 continue;
             }
 
-            const result = object.results[resultIndex];
+            const result = object.newResults[resultIndex];
             if (
                 !result.metadata ||
                 !result.metadata.lat ||
@@ -227,12 +231,17 @@ class MapSearch extends MapAbstract {
         const resultsElement = object.mapElement.closest('.ds44-results')
         if (resultsElement) {
             const mapToggleViewElement = resultsElement.querySelector('.ds44-js-toggle-map-view');
+            const mapContainerElement = resultsElement.querySelector('.ds44-mapResults');
             if (resultsElement.classList.contains('ds44-results--mapVisible')) {
                 resultsElement.classList.remove('ds44-results--mapVisible')
                 object.isVisible = false;
 
+                if(mapContainerElement) {
+                    MiscAccessibility.hide(mapContainerElement);
+                }
+
                 if (mapToggleViewElement) {
-                    const text = mapToggleViewElement.innerText.replace('Masquer ', 'Afficher ');
+                    const text = mapToggleViewElement.innerText.replace(MiscTranslate._('HIDE') + ' ', MiscTranslate._('SHOW') + ' ');
                     mapToggleViewElement.querySelector('span').innerHTML = text;
                     mapToggleViewElement.setAttribute('title', text);
                 }
@@ -241,8 +250,12 @@ class MapSearch extends MapAbstract {
                 object.isVisible = true;
                 this.resize(objectIndex);
 
+                if(mapContainerElement) {
+                    MiscAccessibility.show(mapContainerElement);
+                }
+
                 if (mapToggleViewElement) {
-                    const text = mapToggleViewElement.innerText.replace('Afficher ', 'Masquer ');
+                    const text = mapToggleViewElement.innerText.replace(MiscTranslate._('SHOW') + ' ', MiscTranslate._('HIDE') + ' ');
                     mapToggleViewElement.querySelector('span').innerHTML = text;
                     mapToggleViewElement.setAttribute('title', text);
                 }

@@ -146,7 +146,7 @@ class FormFieldSelectCheckbox extends FormFieldSelectAbstract {
     }
 
     selectFromValue (objectIndex) {
-        const checkboxElements = this.getCheckboxElements(objectIndex);
+        const checkboxElements = this.getValueCheckboxElements(objectIndex);
         if (!checkboxElements) {
             return;
         }
@@ -156,14 +156,27 @@ class FormFieldSelectCheckbox extends FormFieldSelectAbstract {
         let values = [];
         if (data && data[object.name].value) {
             values = data[object.name].value;
-            if(typeof values !== 'object') {
+            if (typeof values !== 'object') {
                 values = [values];
             }
         }
 
         checkboxElements.forEach((checkboxElement) => {
-            checkboxElement.checked = (values.includes(checkboxElement.value));
-            MiscEvent.dispatch('change', null, checkboxElement);
+            if (values.constructor === ({}).constructor) {
+                // Values is JSON
+                const childFieldName = Object.keys(values)[0];
+                const childFieldElement = checkboxElement.closest('.ds44-select-list_elem').querySelector('[name="' + childFieldName + '"], [data-name="' + childFieldName + '"]');
+                if (childFieldElement) {
+                    checkboxElement.checked = true;
+                    MiscEvent.dispatch('change', null, checkboxElement);
+                }
+            } else {
+                checkboxElement.checked = (
+                    values.includes(checkboxElement.value) ||
+                    values.includes(parseInt(checkboxElement.value, 10))
+                );
+                MiscEvent.dispatch('change', null, checkboxElement);
+            }
         });
     }
 
@@ -199,6 +212,15 @@ class FormFieldSelectCheckbox extends FormFieldSelectAbstract {
     }
 
     getCheckboxElements (objectIndex) {
+        const object = this.objects[objectIndex];
+        if (!object.selectListElement) {
+            return null;
+        }
+
+        return object.selectListElement.querySelectorAll('input');
+    }
+
+    getValueCheckboxElements (objectIndex) {
         const object = this.objects[objectIndex];
         if (!object.selectListElement) {
             return null;

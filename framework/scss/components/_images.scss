@@ -140,6 +140,31 @@ figure {
 }
 
 
+/* Mosaiques */
+.ds44-mosaique {
+  margin: 0;
+  padding: 0;
+
+    & + .ds44-mosaique {
+      margin-top: $ds44-medium-vmargin;
+    }
+
+    li {
+      cursor: pointer;
+    }
+    li.row-2 + li  {
+      margin-bottom: $ds44-medium-vmargin;
+    }
+    .ds44-legendeContainer.ds44-container-imgRatio {
+        height: 100%;
+    }
+}
+
+.ds44-gutter {
+  grid-column-gap: $ds44-medium-vmargin;
+}
+
+
 @keyframes rotate {
     100% {
         transform: rotate(360deg);
@@ -168,48 +193,55 @@ figure {
 @media (max-width: $ds44-large - .625) {
 
     .ds44-legendeContainer .ds44-blockAbsolute {
-        width: 50vw;
+        width: 100%;
+        position: relative;
+    }
+    .ds44-legendeContainer.ds44-container-imgRatio,
+    .ds44-legendeContainer.ds44-container-imgRatio .ds44-imgRatio  {
+        position: relative;
+        padding-top: 0%;
     }
     .ds44-legendeContainer.ds44-container-imgRatio {
         height: auto;
     }
-
-}
-
-@media (min-width: $ds44-large) {
-
-    .grid-12-small-1 .ds44-legendeContainer {
-        padding-top: 85%;
-    }
-    .grid-12-small-1 .col-6 {
-        margin-right: $ds44-medium-vmargin/2;
-    }
-    .grid-12-small-1 .col-6:last-of-type {
-        margin-right: 0;
-        margin-left: $ds44-medium-vmargin/2;
+    .ds44-container-imgRatio--tuileMiseEnAvant .ds44-legendeContainer.ds44-container-imgRatio .ds44-imgRatio {
+        height: 400px;
     }
 
 }
 
+@media (min-width: $ds44-large - .625) {
 
-@media (max-width: $ds44-medium - .625) {
+  .grid-12-small-1 .ds44-container-imgRatio--tuileMiseEnAvant {
+      padding-top: 85%;
+  }
 
-    .ds44-legendeContainer .ds44-blockAbsolute {
-        width: 60vw;
-    }
+
+}
+
+@media (min-width: $ds44-medium) {
+
+  .grid-12-small-1 .col-6 {
+      margin-right: $ds44-medium-vmargin/2;
+  }
+  .grid-12-small-1 .col-6:last-of-type {
+      margin-right: 0;
+      margin-left: $ds44-medium-vmargin/2;
+  }
 
 }
 
 
 @media (max-width: $ds44-small - .625) {
 
-    .ds44-legendeContainer.ds44-container-imgRatio .ds44-imgRatio,
-    .ds44-legendeContainer.ds44-container-imgRatio {
-        height: auto;
-        position: relative;
-        padding-top: 0%;
-    }
 
+
+    .ds44-mosaique {
+      .ds44-legendeContainer.ds44-container-imgRatio .ds44-imgRatio,
+      .ds44-legendeContainer.ds44-container-imgRatio {
+          height: 100%;
+      }
+    }
 
     .ds44-legendeContainer .ds44-blockAbsolute {
         position: relative;
@@ -217,6 +249,10 @@ figure {
         width: 100%;
         bottom: 0;
         left: 0;
+    }
+
+    .ds44-container-imgRatio--tuileMiseEnAvant .ds44-legendeContainer.ds44-container-imgRatio .ds44-imgRatio {
+        height: 300px;
     }
 
     .ds44-imgCaption {
@@ -232,4 +268,16 @@ figure {
     .col .ds44-container-imgRatio--tuileMiseEnAvant .ds44-card__title {
         font-size: 1.7rem; // 17px
     }
+}
+
+@media (max-width: $ds44-tiny) {
+
+    /* Mosaiques */
+    .ds44-gutter {
+
+      li {
+        margin-bottom: $ds44-medium-vmargin;
+      }
+    }
+
 }

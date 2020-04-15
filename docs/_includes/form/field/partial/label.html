@@ -2,7 +2,14 @@
     {% assign labelClass = labelClass | append: ' ds44-inputDisabled' %}
 {% endif %}
 
+{% capture label %}<label for="{{ id }}" class="{{ labelClass }}"><div class="{{ placeholderClass }}"><span>{{ label }}{{ requiredStar }}</span></div></label>{% endcapture %}
+
 <div class="ds44-posRel">
-    <label for="{{ id }}" class="{{ labelClass }}"><span class="{{ placeholderClass }}">{{ label }}{{ requiredStar }}</span></label>
+    {% if include.inverted != 'true' %}
+        {{ label }}
+    {% endif %}
     {{ include.content }}
+    {% if include.inverted == 'true' %}
+        {{ label }}
+    {% endif %}
 </div>

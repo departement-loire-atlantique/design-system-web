@@ -3,7 +3,7 @@ class FormFieldAbstract {
         this.category = category;
         this.objects = [];
         this.labelClassName = 'ds44-moveLabel';
-        this.errorMessage = 'Veuillez renseigner : {fieldName}';
+        this.errorMessage = MiscTranslate._('FIELD_MANDATORY_ERROR_MESSAGE');
 
         if (typeof selector === 'object') {
             // Elements passed as parameter, not text selector
@@ -41,12 +41,38 @@ class FormFieldAbstract {
     }
 
     initialize () {
+        // Get data from url and session storage
+        const fieldParameters = window.sessionStorage.getItem('fields');
+        let externalParameters = Object.assign(
+            {},
+            MiscUrl.getQueryParameters(),
+            MiscUrl.getHashParameters(),
+            (fieldParameters ? JSON.parse(fieldParameters) : {})
+        );
+        for (const fieldName in externalParameters) {
+            if (!externalParameters.hasOwnProperty(fieldName)) {
+                continue;
+            }
+
+            const fieldData = externalParameters[fieldName];
+            if (
+                fieldData.value &&
+                fieldData.value.constructor === ({}).constructor
+            ) {
+                // Value is JSON => sub field
+                externalParameters = Object.assign({}, externalParameters, fieldData.value);
+            }
+        }
+
+        // Initialize each object
         for (let objectIndex = 0; objectIndex < this.objects.length; objectIndex++) {
             const object = this.objects[objectIndex];
 
-            MiscEvent.addListener('field:set', this.set.bind(this, objectIndex), object.containerElement);
             MiscEvent.addListener('field:enable', this.enable.bind(this, objectIndex), object.containerElement);
             MiscEvent.addListener('field:disable', this.disable.bind(this, objectIndex), object.containerElement);
+            if (externalParameters[object.name]) {
+                window.addEventListener('load', this.set.bind(this, objectIndex, externalParameters[object.name]));
+            }
 
             this.addBackupAttributes(objectIndex);
         }
@@ -78,15 +104,8 @@ class FormFieldAbstract {
         this.enableDisableLinkedField(objectIndex);
     }
 
-    set (objectIndex, evt) {
-        if (
-            !evt ||
-            !evt.detail
-        ) {
-            return;
-        }
-
-        this.setData(objectIndex, evt.detail);
+    set (objectIndex, data) {
+        this.setData(objectIndex, data);
         this.enter(objectIndex);
         this.showNotEmpty(objectIndex);
     }

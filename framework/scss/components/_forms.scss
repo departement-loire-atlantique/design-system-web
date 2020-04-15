@@ -31,6 +31,15 @@ input {
     font-family: $ds44-font-family-base;
 }
 
+input[type="file"] {
+    width: 0.1px;
+    height: 0.1px;
+    opacity: 0;
+    overflow: hidden;
+    position: absolute;
+    z-index: -1;
+}
+
 .ds44-form__container {
     position: relative;
     margin: 2.5rem 0;
@@ -46,51 +55,73 @@ input {
 
 .ds44-formLabel {
     @include ds44-font-sizes(button);
-    color: $ds44-graytext-color;
     display: block;
     font-weight: normal;
     margin-bottom: 0;
     text-align: left;
-    position: absolute;
-    top: 1.2rem;
-    left: $ds44-padding-box;
-    transition: all $ds44-timing-standard ease-in-out;
     width: calc(100% - 40px);
     width: -webkit-calc(100% - 40px);
 
-    &.ds44-moveLabel {
-        font-size: 1.3rem; // 13px instead of 14px
-        top: -$ds44-padding-medium*1.8;
+    .ds44-labelTypePlaceholder,
+    .ds44-labelTypePlaceholderLarge {
+        position: absolute;
+        top: 0;
         left: 0;
-        color: $ds44-dark;
-    }
-
-    .ds44-bgDark &.ds44-moveLabel {
-        color: $ds44-light-color;
-    }
-
-    .ds44-labelTypePlaceholder {
-        color: $ds44-gray;
-        overflow: hidden;
-        text-overflow: ellipsis;
-        white-space: nowrap;
-        cursor: text;
+        cursor: pointer;
         width: 100%;
-        display: block;
+        height: 100%;
+
+        span {
+            color: $ds44-forms-color;
+            transition: all $ds44-timing-standard ease-in-out;
+            display: block;
+            margin-top: 1.2rem;
+            margin-left: $ds44-padding-box;
+            overflow: hidden;
+            text-overflow: ellipsis;
+            white-space: nowrap;
+        }
     }
 
     .ds44-labelTypePlaceholderLarge {
-        top: $ds44-padding-large;
-        font-size: 1.6rem;
+        span {
+            font-size: 1.6rem;
+            margin-top: $ds44-padding-large;
+        }
+    }
+
+    &.ds44-moveLabel .ds44-labelTypePlaceholder,
+    &.ds44-moveLabel .ds44-labelTypePlaceholderLarge {
+        span {
+            font-size: 1.3rem; // 13px instead of 14px
+            color: $ds44-color-dark-text;
+            margin-top: -$ds44-padding-medium*1.8;
+            margin-left: 0;
+        }
+    }
+
+    .ds44-bgDark &.ds44-moveLabel,
+    .ds44-bgDark &.ds44-moveLabel .ds44-labelTypePlaceholder,
+    .ds44-bgDark &.ds44-moveLabel .ds44-labelTypePlaceholderLarge {
+        color: $ds44-light-color;
     }
 }
 
 .ds44-labelTypeInfoComp {
     font-size: 1.3rem;
     position: absolute;
-    bottom: -$ds44-large-vmargin;
-    right: $ds44-padding-box;
+    bottom: 0;
+    transform-origin: top;
+    transform: translateY($ds44-large-vmargin);
+    right: 1px; // form field border size
     color: $ds44-gray;
+    text-align: right;
+    max-height: 20px;
+    max-width: 85%;
+}
+
+.ds44-theme .ds44-labelTypeInfoComp {
+    color: $ds44-color-dark-text;
 }
 
 .ds44-formLabel--external {
@@ -169,13 +200,16 @@ textarea {
 /* Bouton de reset de champ */
 
 .ds44-reset,
-.ds44-calendar {
+.ds44-calendar,
+.ds44-location,
+.ds44-file {
     position: absolute;
     right: 0;
     top: calc(50% - 15px);
     top: -webkit-calc(50% - 15px);
     padding-right: 1.5rem;
     color: $ds44-color-dark-text;
+    cursor: pointer;
 
     .ds44-formLabel--external & {
         top: calc(50% + -1px);
@@ -189,7 +223,9 @@ textarea {
     top: -webkit-calc(50% - 1.3rem);
     z-index: 2;
 
-    .ds44-datepicker__shape + & {
+    .ds44-datepicker__shape + &,
+    .ds44-autocomp--location + &,
+    .ds44-file__shape + & {
         right: 3.4rem;
     }
 
@@ -338,12 +374,10 @@ input[type=radio],
 
 .ds44-facette {
     .ds44-facette-body {
-        @media (max-width: $ds44-medium - .0625) {
-            display: none;
-        }
 
         .ds44-textLegend--mentions {
-            display: none;padding: 1rem 0 0.5rem 0;
+            display: none;
+            padding: 1rem 0 0.5rem 0;
             padding: 1rem 0 0.5rem 0;
         }
 
@@ -426,7 +460,7 @@ input[type=radio],
     }
 
     .ds44-facette-mobile-export {
-        padding-top: 1rem ;
+        padding-top: 1rem;
 
         .ds44-list {
             font-size: 1.4rem;
@@ -443,6 +477,16 @@ input[type=radio],
                     font-weight: bold;
                 }
             }
+        }
+    }
+
+}
+
+
+.ds44-mainResults .ds44-facette {
+    .ds44-facette-body {
+        @media (max-width: $ds44-medium - .0625) {
+            display: none;
         }
     }
 
@@ -546,9 +590,9 @@ input[type=radio],
 .ds44-moveSelectLabel {
     font-size: 1.3rem; // 13px
     position: absolute;
-    top: -$ds44-padding-medium*2;
+    top: -$ds44-padding-medium*1.8; // same as ds44-labelTypePlaceholder
     left: 0;
-    color: $ds44-dark;
+    color: $ds44-color-dark-text;
 
     .ds44-bgDark & {
         color: $ds44-color-inverse;
@@ -849,6 +893,28 @@ input[type=radio],
     }
 }
 
+/**
+ * File
+ */
+
+.ds44-file__shape {
+    cursor: pointer;
+    background-color: $ds44-light-color;
+
+    .ds44-fileDisplay {
+        
+    }
+}
+
+
+/**
+ * Autocomplete location
+ */
+.ds44-autocomp--location {
+
+
+}
+
 
 /**
  * Champs liés : Thèmes sous-thèmes, Lieu rayon, etc...
@@ -876,7 +942,8 @@ input[type=radio],
 
         input,
         .ds44-select__shape,
-        .ds44-datepicker__shape {
+        .ds44-datepicker__shape,
+        .ds44-file__shape {
             border-radius: 3px 0 0 3px;
         }
     }
@@ -890,7 +957,8 @@ input[type=radio],
 
         input,
         .ds44-select__shape,
-        .ds44-datepicker__shape {
+        .ds44-datepicker__shape,
+        .ds44-file__shape {
             border-radius: 0 3px 3px 0;
             margin-left: -1px;
         }
@@ -948,7 +1016,7 @@ input[type=radio],
         }
 
         .ds44-theme .ds44-fieldContainer--select {
-          width: 100%;
+            width: 100%;
         }
 
         .ds44-btnStd {
@@ -961,15 +1029,15 @@ input[type=radio],
         }
     }
 
-    .ds44-theme  {
+    .ds44-theme {
 
         &.ds44-medium-flex-col {
 
             .ds44-fieldContainer--select {
-              width: 100% !important;
+                width: 100% !important;
 
                 .ds44-select-container {
-                  width: 100% !important;
+                    width: 100% !important;
                 }
             }
         }
@@ -1011,7 +1079,8 @@ input[type=radio],
 
             input,
             .ds44-select__shape,
-            .ds44-datepicker__shape {
+            .ds44-datepicker__shape,
+            .ds44-file__shape {
                 border-radius: 3px 3px 0 0;
             }
         }
@@ -1024,7 +1093,8 @@ input[type=radio],
 
             input,
             .ds44-select__shape,
-            .ds44-datepicker__shape {
+            .ds44-datepicker__shape,
+            .ds44-file__shape {
                 border-radius: 0 0 3px 3px;
                 margin: -1px 0 0 0;
             }
@@ -1033,6 +1103,10 @@ input[type=radio],
         > .ds44-form__container:last-of-type {
             margin-top: 2.5rem;
         }
+    }
+
+    .ds44-labelTypeInfoComp {
+        max-width: 100%;
     }
 
 

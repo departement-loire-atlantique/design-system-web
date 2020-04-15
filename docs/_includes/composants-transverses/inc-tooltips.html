@@ -1,0 +1,7 @@
+<span>{{ include.txt }}</span>
+    <button type="button" class="js-simple-tooltip button" data-simpletooltip-content-id="{{ include.idTooltips }}">
+        <i class="icon icon-help" aria-hidden="true"></i><span class="visually-hidden">Aide : [titre relatif à cette aide]</span>
+    </button>
+<p id="{{ include.idTooltips }}" class="hidden">Super, vous pouvez prendre le contenu d’un bloc caché.<br>Et
+    l'afficher sans soucis.
+</p>

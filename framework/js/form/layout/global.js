@@ -79,7 +79,7 @@ class FormLayoutGlobal {
                 evt.stopPropagation();
                 evt.preventDefault();
 
-                MiscEvent.dispatch('form:validate', {'formElement': object.formElement});
+                MiscEvent.dispatch('form:validate', { 'formElement': object.formElement });
 
                 return false;
             }
@@ -117,12 +117,32 @@ class FormLayoutGlobal {
                 formattedData[dataKey] = dataValue;
             }
 
+            // Add technical hidden fields
+            object.formElement
+                .querySelectorAll('input[type="hidden"][name][data-technical-field]')
+                .forEach((hiddenInputElement) => {
+                    formattedData[hiddenInputElement.getAttribute('name')] = {
+                        'value': hiddenInputElement.value
+                    };
+                });
+
             // Save city and adresse in local storage
-            if(formattedData['commune']) {
-                window.sessionStorage.setItem('city', JSON.stringify(formattedData['commune']));
-            }
-            if(formattedData['adresse']) {
-                window.sessionStorage.setItem('address', JSON.stringify(formattedData['adresse']));
+            const fieldParameters = JSON.parse(window.sessionStorage.getItem('fields') || '{}');
+            ['commune', 'adresse'].forEach((key) => {
+                if (formattedData[key]) {
+                    fieldParameters[key] = formattedData[key];
+                }
+            });
+            window.sessionStorage.setItem('fields', JSON.stringify(fieldParameters));
+
+            // Statistics
+            if (object.formElement.getAttribute('data-statistic')) {
+                MiscEvent.dispatch(
+                    'statistic:gtag:event',
+                    {
+                        'statistic': JSON.parse(object.formElement.getAttribute('data-statistic')),
+                        'data': formattedData
+                    });
             }
 
             if (object.formElement.getAttribute('data-is-ajax') === 'true') {
@@ -138,9 +158,22 @@ class FormLayoutGlobal {
                 return;
             }
 
+            // Regular submission
+            let hasFile = false;
+            object.formElement
+                .querySelectorAll('[name][type="file"]')
+                .forEach((inputFileElement) => {
+                    hasFile = true;
+                    inputFileElement.setAttribute('name', inputFileElement.getAttribute('name') + '[value]');
+                });
+            if (hasFile) {
+                object.formElement.setAttribute('method', 'post');
+                object.formElement.setAttribute('enctype', 'multipart/form-data');
+            }
+
             // Remove name from all elements not to interfere with the next step
             object.formElement
-                .querySelectorAll('[name]')
+                .querySelectorAll('[name]:not([type="file"])')
                 .forEach((element) => {
                     element.removeAttribute('name');
                 });
@@ -156,6 +189,8 @@ class FormLayoutGlobal {
             }
             object.formElement.submit();
         } catch (ex) {
+            console.log(ex);
+
             evt.stopPropagation();
             evt.preventDefault();
 

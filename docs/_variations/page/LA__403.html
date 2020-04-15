@@ -1,0 +1,64 @@
+---
+layout: pattern
+---
+<div class="ds44-littleMain">
+
+  {% include header/inc-header.html
+      logo='<picture class="ds44-logo"><img src="../../assets/images/logo-loire-atlantique.svg" alt="Retour à l&apos;accueil du site loire-atlantique.fr"></picture>'
+      variante1='<button type="button" class="ds44-btnIcoText--maxi ds44--xl-padding" id="open-search"><span class="ds44-btnInnerText">Rechercher</span><i class="icon icon-magnifier icon--large" aria-hidden="true"></i></button>'
+  %}
+
+  <main role="main" id="content">
+
+  	<section class="ds44-container-large">
+      <div class="ds44-wave-grey ds44-bg-pdr ds44--2xl-padding-t ds44--3xl-padding-b">
+
+          <div class="ds44-inner-container">
+              <div class="grid-12-small-1">
+                <div class="col-12">
+                  <h1 class="h2-like" id="titre404">Erreur 403 - Accès refusé</h1>
+                  <h2 class="h3-like mts" id="titre2">Vous n'avez pas les droits pour accéder à la page demandée</h2>
+                </div>
+              </div>
+
+              <div class="grid-12-small-1 ds44-grid-valign-center ds44-w98 ds44-mt3">
+
+                  <div class="col-5-small-1 txtcenter">
+                      <p class="h4-like" id="inp-rech">Recherchez par mots-clés :</p>
+                      <form>
+                          {% capture ariaDescribedBy %}inp-rech{% if ariaDescribedBy and ariaDescribedBy != '' %} {{ ariaDescribedBy }}{% endif %}{% endcapture %}
+                          {% include form/field/input/standard.html label="Votre recherche" required="true" class="ds44-inpLarge" ariaDescribedBy=ariaDescribedBy %}
+                          <button type="submit" class="ds44-btnStd ds44-btn--invert" title="Valider votre recherche par mots-clés"><span class="ds44-btnInnerText">Valider</span><i class="icon icon-long-arrow-right" aria-hidden="true"></i></button>
+                      </form>
+                  </div>
+
+                  <div class="col-2-small-1 txtcenter ds44-h100">
+                      <div class="ds44-separator ds44-flex-valign-center ds44-flex-align-center ds44-flex-container">
+                          <p class="ds44-txtBulle ds44-theme">Ou</p>
+                      </div>
+                  </div>
+
+                  <div class="col-5-small-1">
+                      <h3 class="h4-like" id="titreContenus">Accédez aux contenus les plus recherchés :</h3>
+                      <ul class="ds44-list">
+                          <li><a href="#" class="ds44-arrowLink">Inscription à l’animation sportive<i class="icon icon-arrow-right" aria-hidden="true"></i></a></li>
+                          <li><a href="#" class="ds44-arrowLink">Recherche d’assistante maternelle<i class="icon icon-arrow-right" aria-hidden="true"></i></a></li>
+                          <li><a href="#" class="ds44-arrowLink">Demande d’aide au permis de conduire<i class="icon icon-arrow-right" aria-hidden="true"></i></a></li>
+                          <li><a href="#" class="ds44-arrowLink">Offres d’emplois et stages<i class="icon icon-arrow-right" aria-hidden="true"></i></a></li>
+                          <li><a href="#" class="ds44-arrowLink">Inforoutes<i class="icon icon-arrow-right" aria-hidden="true"></i></a></li>
+                          <li><a href="#" class="ds44-arrowLink">Marchés publics<i class="icon icon-arrow-right" aria-hidden="true"></i></a></li>
+                      </ul>
+                  </div>
+
+              </div>
+          </div>
+
+      </div>
+  	</section>
+
+  </main>
+
+
+  {% include footer/footer-LA.html %}
+
+</div>

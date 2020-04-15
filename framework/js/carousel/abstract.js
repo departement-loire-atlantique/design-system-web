@@ -1,7 +1,7 @@
 class CarouselAbstract {
     constructor (selector) {
-        this.previousSlideMessage = 'Voir le contenu précédent';
-        this.nextSlideMessage = 'Voir le contenu suivant';
+        this.previousSlideMessage = MiscTranslate._('CAROUSEL_WATCH_PREVIOUS_CONTENT');
+        this.nextSlideMessage = MiscTranslate._('CAROUSEL_WATCH_NEXT_CONTENT');
         this.queryTitreTuile = '.ds44-card__title a[href]:not([disabled])';
         this.objects = [];
         this.breakpoint = window.matchMedia('(max-width: 63.375em)');

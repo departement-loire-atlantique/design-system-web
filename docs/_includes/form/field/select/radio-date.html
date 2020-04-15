@@ -17,8 +17,8 @@
                 {% assign radioValue = '1' %}
                 {% include form/field/box/radio.html name=savedName label="Quand ?" value=radioValue boxAttributes=boxAttributes %}
                 <div class="ds44-select-list_elem_child hidden">
-                    {% capture ariaDescribedBy1 %}label-radio-{{ id }}-{{ radioValue }} button-message-{{ savedId }}{% if savedAriaDescribedBy != '' %} {{ savedAriaDescribedBy }}{% endif %}{% endcapture %}
-                    {% capture ariaDescribedBy2 %}label-radio-{{ id }}-{{ radioValue }} button-message-{{ savedId }}{% if savedAriaDescribedBy != '' %} {{ savedAriaDescribedBy }}{% endif %}{% endcapture %}
+                    {% capture ariaDescribedBy1 %}label-radio-{{ id }}-{{ radioValue }} button-message-{{ savedId }}{% if savedAriaDescribedBy and savedAriaDescribedBy != '' %} {{ savedAriaDescribedBy }}{% endif %}{% endcapture %}
+                    {% capture ariaDescribedBy2 %}label-radio-{{ id }}-{{ radioValue }} button-message-{{ savedId }}{% if savedAriaDescribedBy and savedAriaDescribedBy != '' %} {{ savedAriaDescribedBy }}{% endif %}{% endcapture %}
                     {% capture resetAttributes %}aria-describedby="label-radio-{{ id }}-{{ radioValue }}"{% endcapture %}
 
                     {% include form/field/input/datepicker.html label="Le" title="le : jour / mois / année" explanation="Ex : 20/05/2020" required="true" inputAttributes=inputAttributes resetAttributes=resetAttributes ariaDescribedBy=ariaDescribedBy1 %}

@@ -28,6 +28,9 @@ variations:
 - title: Cookies
   description: Modale simple qui ne peut se fermer qu'en sélectionnant un choix parmi les boutons proposés
   pattern: overlays/modale-cookies.html
+- title: Newsletter
+  description: Modale simple qui propose l'abonnement aux magazines et/ou aux newsletters.
+  pattern: overlays/modale-newsletter.html
 ---
 
 
