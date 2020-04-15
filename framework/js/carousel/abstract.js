@@ -178,7 +178,9 @@ class CarouselAbstract {
                 'swiper': (new Swiper(object.galleryElement.querySelector('.swiper-container'), {
                     'spaceBetween': 16,
                     'slidesPerView': 'auto',
-                    'watchSlidesVisibility': true
+                    'freeMode': true,
+                    'watchSlidesVisibility': true,
+                    'watchSlidesProgress': true
                 }))
             };
         }
