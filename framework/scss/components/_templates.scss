@@ -306,13 +306,22 @@ main {
                 li {
                     display: grid;
                     margin: $ds44-medium-vmargin;
-                    margin-bottom: 0;
-                    flex-basis: 30%;
+                    width: calc(33.33% - 3rem);
+                    max-width: calc(33.33% - 3rem);
+
+
+                    @media (max-width: $ds44-large - .0625) {
+                        width: calc(50% - 3rem);
+                        max-width: calc(50% - 3rem);
+                    }
 
                     @media (max-width: $ds44-medium - .0625) {
-                        margin: 0;
-                        flex-basis: auto;
+                        width: 100%;
+                        max-width: 100%;
+                        margin: 0 0 $ds44-medium-vmargin 0;
                     }
+
+
                 }
             }
         }
@@ -391,7 +400,8 @@ main {
 
                     li {
                         display: inherit;
-                        flex-basis: auto;
+                        width: 100%;
+                        max-width: 100%;
                     }
                 }
             }

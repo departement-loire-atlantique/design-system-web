@@ -42,6 +42,23 @@
     padding: $ds44-padding-xlarge;
 }
 
+// Témoignages
+.ds44-box {
+  &--temoignage {
+    padding-bottom: 7rem !important;
+    position: relative;
+
+    .ds44-fullWBtn  {
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      margin:$ds44-padding-large;
+      width: calc(100% - 4rem);
+    }
+  }
+}
+
+
 // Equipements financiers
 
 .ds44-boxPic {
