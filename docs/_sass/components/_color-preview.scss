@@ -1,23 +1,69 @@
 
 .color-preview {
-    box-sizing: content-box;
-    width: 120px;
-    padding-top: 120px;
-    margin: 20px;
-    border: 3px solid $code_background_color;    
+    width: 300px;
     display: inline-block;
+    vertical-align: top;
+    margin-bottom: 40px;
+}
+
+.color-preview__main-square {
+    box-sizing: content-box;
+    width: 80px;
+    height: 80px;
+    border: 1px solid #000;    
+    display: inline-block;
+    vertical-align: middle;
+    position: relative;
+    overflow: hidden;
+}
+
+.color-preview-contrast {
+    width: 39px;
+    height: 39px;
+    position: absolute;
+    left: 20px;
+    top: 20px;
+    z-index: 10;
+}
+
+.color-preview__text {
+    padding: 0 20px;
+    display: inline-block;
+    vertical-align: middle;
+    max-width: calc(100% - 90px)!important;
+
+    p {
+        margin-bottom: 0!important;
+    }
 }
 
 .color-preview__value, .color-preview__name {
     background-color: $main_background_color;
-    padding: 4px 8px;
-    line-height: 1em;
     white-space: normal;
     overflow: hidden;
     text-overflow: ellipsis;
-    font-size: 0.8em;
+    font-size: 1em;
 }
 
 .color-preview__name {
     font-weight: 600;
+}
+
+.bad-contrast {
+    .color-preview__main-square::before {
+        content: "";
+        position: absolute;
+        z-index: 20;
+        height: 2px;
+        width: 150%;
+        background-color: #FF0000;
+        transform: rotate(-45deg);
+        bottom: 0;
+        left: 0;
+        transform-origin: left;
+    }
+
+    .color-preview__value {
+        color: #FF0000;
+    }
 }

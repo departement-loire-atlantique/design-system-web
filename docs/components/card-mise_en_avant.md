@@ -33,10 +33,6 @@ variations:
   pattern: cards/card--MeA--elu.html
 ---
 
-## Usage
-
-Lorem ipsum
-
 ## Documentation
 
 - La classe `ds44-card` donne le contexte de tuile à la section.
@@ -51,6 +47,3 @@ Les composants de tuile sont intégrés via des inclusions dans le DS. Certains 
 
 **Ne pas oublier ces paramètres lors de l'intégration du composant dans le CMS**.
 
-## FAQ
-
-Lorem ipsum

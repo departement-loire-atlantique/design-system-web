@@ -1,6 +1,12 @@
 
-<div class="color-preview" style="background-color: {{ include.hexcode }}">
-    <div class="color-preview__name">{{ include.name }}</div>
-    <div class="color-preview__value">{{ include.variable }}</div>
-    <div class="color-preview__value">{{ include.hexcode }}</div>
+<div class="color-preview">
+    <div class="color-preview__main-square" style="background-color: {{ include.hexcode }}">
+    </div>
+    <div class="color-preview__text">
+        <p class="color-preview__name">{{ include.name }}</p>
+        {% if include.variable %}
+        <p class="color-preview__value">{{ include.variable }}</p>
+        {% endif %}
+        <p class="color-preview__value">{{ include.hexcode }}</p>
+    </div>
 </div>

@@ -8,33 +8,43 @@ description: Un encadré permet la mise en exergue de contenus.
 status: Validé
 
 variations:
+
 - title: Standards
   description: Encadrés contextuels
   pattern: boxes/box-standards.html
+
 - title: Documents
   description: Liste de documents
   pattern: boxes/box-docs.html
+
 - title: Contacts
   description: Différents encadrés pour mettre en valeur des contacts
   pattern: boxes/box-contacts.html
+
 - title: Blocs libres
   description: Encadrés colorés
   pattern: boxes/box-libres.html
+
 - title: En chiffres
   description: Encadrés illustrés
   pattern: boxes/box-chiffres.html
+
 - title: Pushs
   description: Encadrés publicitaires
   pattern: boxes/box-push.html
+
 - title: Encadrés deux colonnes
   description: Différents styles d'encadrés deux colonnes
   pattern: boxes/box-deuxCol.html
+
 - title: Alerte
   description: Encadré d'alerte que l'on retrouvera sous le header principal. Il peut se replier / se réouvrir et conserver l'état sur la durée de la session pour l’alerte en question car il peut y en avoir plusieurs à des endroits différents du site.
   pattern: boxes/box-alert.html
+
 - title: Navigation
   description: Encadrés de navigation interne à une page (flottants)
   pattern: boxes/box-navigation.html
+
 ---
 
 ## Documentation
@@ -61,5 +71,3 @@ variations:
  * Les pushs n'ont pas de conteneur `ds44-innerBoxContainer`, à la place ils ont deux conteneurs colonnés : `ds44-boxPushPic` sur le conteneur d'image et `ds44-boxPushContent` pour les contenus. La classe utilisée pour les titres est `h3-like` au lieu de `ds44-box-heading`.
  * Les pushs comportent deux images : une pour le mobiel et une pour les autres résolutions. L'alternance est gérée dans la balise `<picture>` via une balise `<source>`.
 
-
-## FAQ
