@@ -3,7 +3,7 @@ class FormFieldAbstract {
         this.category = category;
         this.objects = [];
         this.labelClassName = 'ds44-moveLabel';
-        this.errorMessage = 'Veuillez renseigner : {fieldName}';
+        this.errorMessage = MiscTranslate._('FIELD_MANDATORY_ERROR_MESSAGE');
 
         if (typeof selector === 'object') {
             // Elements passed as parameter, not text selector
@@ -335,14 +335,21 @@ class FormFieldAbstract {
         // Abstract method
     }
 
+    checkFormat (objectIndex) {
+        return true;
+    }
+
     checkValidity (objectIndex) {
         this.removeInvalid(objectIndex);
 
         const object = this.objects[objectIndex];
         if (
-            object.isRequired &&
-            object.isEnabled &&
-            !this.getData(objectIndex)
+            (
+                object.isRequired &&
+                object.isEnabled &&
+                !this.getData(objectIndex)
+            ) ||
+            !this.checkFormat(objectIndex)
         ) {
             this.invalid(objectIndex);
 

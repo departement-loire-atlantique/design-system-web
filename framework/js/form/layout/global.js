@@ -158,9 +158,22 @@ class FormLayoutGlobal {
                 return;
             }
 
+            // Regular submission
+            let hasFile = false;
+            object.formElement
+                .querySelectorAll('[name][type="file"]')
+                .forEach((inputFileElement) => {
+                    hasFile = true;
+                    inputFileElement.setAttribute('name', inputFileElement.getAttribute('name') + '[value]');
+                });
+            if (hasFile) {
+                object.formElement.setAttribute('method', 'post');
+                object.formElement.setAttribute('enctype', 'multipart/form-data');
+            }
+
             // Remove name from all elements not to interfere with the next step
             object.formElement
-                .querySelectorAll('[name]')
+                .querySelectorAll('[name]:not([type="file"])')
                 .forEach((element) => {
                     element.removeAttribute('name');
                 });

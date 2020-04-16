@@ -5,7 +5,7 @@ class FormFieldBoxAbstract extends FormFieldAbstract {
             category
         );
 
-        this.errorMessage = 'Veuillez cocher au moins un élément';
+        this.errorMessage = MiscTranslate._('FIELD_BOX_MANDATORY_ERROR_MESSAGE');
     }
 
     create (element) {

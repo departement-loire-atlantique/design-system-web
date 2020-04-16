@@ -1,7 +1,7 @@
 class CarouselAbstract {
     constructor (selector) {
-        this.previousSlideMessage = 'Voir le contenu précédent';
-        this.nextSlideMessage = 'Voir le contenu suivant';
+        this.previousSlideMessage = MiscTranslate._('CAROUSEL_WATCH_PREVIOUS_CONTENT');
+        this.nextSlideMessage = MiscTranslate._('CAROUSEL_WATCH_NEXT_CONTENT');
         this.queryTitreTuile = '.ds44-card__title a[href]:not([disabled])';
         this.objects = [];
         this.breakpoint = window.matchMedia('(max-width: 63.375em)');
@@ -13,17 +13,23 @@ class CarouselAbstract {
             });
 
         MiscEvent.addListener('resize', this.resize.bind(this), window);
+        window.setTimeout(
+            () => {
+                MiscEvent.dispatch('resize', null, window);
+            },
+            1000
+        );
 
         this.breakpoint.addListener(this.breakpointChecker.bind(this));
         this.breakpointChecker();
     }
 
     create (wrapElement) {
-        const wrapperElement = wrapElement.querySelector('.swiper-wrapper');
         const swiperElement = wrapElement.querySelector('.swiper-container');
+        const wrapperElement = wrapElement.querySelector('.swiper-wrapper');
         if (
-            !wrapperElement ||
-            !swiperElement
+            !swiperElement ||
+            !wrapperElement
         ) {
             return;
         }
@@ -48,6 +54,11 @@ class CarouselAbstract {
             'mobileOnly': mobileOnly,
             'isInitialized': false
         };
+
+        const paginationElement = wrapElement.querySelector('.swiper-pagination');
+        if (paginationElement) {
+            object.paginationElement = paginationElement;
+        }
         const previousElement = wrapElement.querySelector('.swiper-button-prev');
         if (previousElement) {
             object.previousElement = previousElement;
@@ -55,6 +66,10 @@ class CarouselAbstract {
         const nextElement = wrapElement.querySelector('.swiper-button-next');
         if (nextElement) {
             object.nextElement = nextElement;
+        }
+        const galleryElement = MiscDom.getNextSibling(swiperElement, '.swiper-thumbs');
+        if (galleryElement) {
+            object.galleryElement = galleryElement;
         }
 
         // Record object
@@ -137,10 +152,36 @@ class CarouselAbstract {
             }
         };
 
+        if (object.paginationElement) {
+            swiperParameters.pagination = {
+                'el': object.paginationElement,
+                'renderBullet': (index, className) => {
+                    const textElements = object.swiperElement.querySelectorAll('.swiper-slide:not(.swiper-slide-duplicate) .ds44-diaporama-vignette-text');
+                    if (!textElements) {
+                        return '';
+                    }
+
+                    return '<span class="' + className + '">' + textElements[index].innerHTML + '</span>';
+                }
+            }
+        }
+
         if (object.previousElement && object.nextElement) {
             swiperParameters.navigation = {
-                prevEl: object.previousElement,
-                nextEl: object.nextElement
+                'prevEl': object.previousElement,
+                'nextEl': object.nextElement
+            };
+        }
+
+        if (object.galleryElement) {
+            swiperParameters.thumbs = {
+                'swiper': (new Swiper(object.galleryElement.querySelector('.swiper-container'), {
+                    'spaceBetween': 16,
+                    'slidesPerView': 'auto',
+                    'freeMode': true,
+                    'watchSlidesVisibility': true,
+                    'watchSlidesProgress': true
+                }))
             };
         }
 

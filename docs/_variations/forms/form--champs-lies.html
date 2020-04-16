@@ -25,7 +25,7 @@ layout: pattern
 <br>
 <form>
     <div class="ds44-fieldContainer ds44-champsLies ds44-js-linked-fields">
-        {% include form/field/input/autocomplete--location.html label="Champ adresse" required="true" attributes='data-url="/json/autocomplete-address.json" data-mode="select-only"' class="ds44-inpLarge" title="Sélectionner Champ adresse - mise à jour automatique des sous-thèmes Rayon triés par ordre alphabétique" %}
+        {% include form/field/input/autocomplete.html label="Champ adresse" required="true" attributes='data-url="/json/autocomplete-address.json" data-mode="select-only"' class="ds44-inpLarge" title="Sélectionner Champ adresse - mise à jour automatique des sous-thèmes Rayon triés par ordre alphabétique" hasLocation="true" %}
         {% include form/field/select/standard.html label="Rayon" required="true" disabled="true" class="ds44-inpLarge" %}
     </div>
     <div><input type="submit" class="ds44-btnStd" value="Tester les champs" /></div>

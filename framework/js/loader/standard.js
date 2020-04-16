@@ -21,7 +21,7 @@ class LoaderStandard {
         this.counter++;
         loaderElement.classList.remove('hidden');
         MiscAccessibility.show(loaderElement, true);
-        loaderTextElement.innerHTML = '<p>Chargement en cours</p>';
+        loaderTextElement.innerHTML = '<p>' + MiscTranslate._('LOADING') + '</p>';
         MiscAccessibility.setFocus(loaderTextElement);
         MiscEvent.dispatch('loader:show');
     }

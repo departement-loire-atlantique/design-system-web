@@ -383,16 +383,10 @@ class FormFieldSelectAbstract extends FormFieldAbstract {
         const url = object.textElement.getAttribute('data-url');
         let urlParameters = null;
         if (parameters) {
-            const parameter = parameters[Object.keys(parameters)[0]];
-            if (parameter.value) {
-                urlParameters = object.valueElement.value;
-            } else if (typeof parameter === 'object') {
-                urlParameters = parameter[0];
-            } else {
-                urlParameters = parameter;
+            const objectData = parameters[Object.keys(parameters)[0]];
+            if(objectData) {
+                urlParameters = (url.includes('?') ? '&' : '?') + 'q=' + encodeURIComponent(objectData.value);
             }
-
-            urlParameters = (url.includes('?') ? '&' : '?') + 'q=' + encodeURIComponent(urlParameters);
         }
 
         MiscRequest.send(
@@ -435,7 +429,7 @@ class FormFieldSelectAbstract extends FormFieldAbstract {
             // No result
             let elementSelectListItem = document.createElement('li');
             elementSelectListItem.classList.add('ds44-select-list_no_elem');
-            elementSelectListItem.innerHTML = 'Aucun résultat trouvé';
+            elementSelectListItem.innerHTML = MiscTranslate._('NO_RESULTS_FOUND');
             subSelectListElement.appendChild(elementSelectListItem);
         } else {
             // Some result

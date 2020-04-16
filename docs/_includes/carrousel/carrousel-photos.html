@@ -1,0 +1,70 @@
+<div class="swipper-carousel-wrap swipper-carousel-slideshow" data-nb-visible-slides="1">
+    <div class="swiper-container">
+        {% if include.titreCarrousel %}
+        <p role="heading" aria-level="1" class="h1-like ds44-text--colorInvert">
+            {{ include.titreCarrousel }}
+        </p>
+        {% endif %}
+        <button class="ds44-btnIco ds44-btnIco--carre ds44-bgDark" type="button">
+            <i class="icon icon-pause" aria-hidden="true"></i>
+            <span class="visually-hidden">Arrêter l'animation</span>
+        </button>
+
+        <ul class="swiper-wrapper ds44-list grid-3-small-1 has-gutter-l ds44-carousel-swiper">
+            <li class="swiper-slide">
+                {% include carrousel/diaporama/diaporama-vignette.html imageSrc="../../assets/images/sample-img-9.jpg"
+                title="2013/29 - Titre vignette 1" legend="Antoine Parra Del Pozo, 2013" %}
+            </li>
+            <li class="swiper-slide">
+                {% include carrousel/diaporama/diaporama-vignette.html imageSrc="../../assets/images/sample-img-8.jpg"
+                title="2013/29 - Tell Me, technique mixte sur papier" legend="Antoine Parra Del Pozo, 2013" %}
+            </li>
+            <li class="swiper-slide">
+                {% include carrousel/diaporama/diaporama-vignette.html
+                imageSrc="../../assets/images/img_article_bigger@2x.jpg" title="2013/29 - Titre vignette 3"
+                legend="Antoine Parra Del Pozo, 2013" %}
+            </li>
+            <li class="swiper-slide">
+                {% include carrousel/diaporama/diaporama-vignette.html imageSrc="../../assets/images/sample-img-4.jpg"
+                title="2013/29 - Titre vignette 4" legend="Antoine Parra Del Pozo, 2013" %}
+            </li>
+        </ul>
+        <button class="swiper-button-prev swiper-button-white swiper-button-disabled" type="button">
+            <i class="icon icon-left" aria-hidden="true"></i>
+            <span class="visually-hidden"></span>
+        </button>
+        <button class="swiper-button-next swiper-button-white swiper-button-disabled" type="button">
+            <i class="icon icon-right" aria-hidden="true"></i>
+            <span class="visually-hidden"></span>
+        </button>
+    </div>
+    <div class="swiper-pagination"></div>
+    <div class="swiper-thumbs">
+        <div class="swiper-thumbs-container">
+            <nav class="swiper-container">
+                <ul class="swiper-wrapper ds44-list">
+                    <li class="swiper-slide">
+                        {% include carrousel/diaporama/diaporama-thumb.html
+                        imageSrc="../../assets/images/sample-img-9.jpg"
+                        title="2013/29 - Titre vignette 1" legend="Antoine Parra Del Pozo, 2013" %}
+                    </li>
+                    <li class="swiper-slide">
+                        {% include carrousel/diaporama/diaporama-thumb.html
+                        imageSrc="../../assets/images/sample-img-8.jpg"
+                        title="2013/29 - Tell Me, technique mixte sur papier" legend="Antoine Parra Del Pozo, 2013" %}
+                    </li>
+                    <li class="swiper-slide">
+                        {% include carrousel/diaporama/diaporama-thumb.html
+                        imageSrc="../../assets/images/img_article_bigger@2x.jpg" title="2013/29 - Titre vignette 3"
+                        legend="Antoine Parra Del Pozo, 2013" %}
+                    </li>
+                    <li class="swiper-slide">
+                        {% include carrousel/diaporama/diaporama-thumb.html
+                        imageSrc="../../assets/images/sample-img-4.jpg"
+                        title="2013/29 - Titre vignette 4" legend="Antoine Parra Del Pozo, 2013" %}
+                    </li>
+                </ul>
+            </nav>
+        </div>
+    </div>
+</div>

@@ -133,7 +133,7 @@
 
     .ds44-cardFile {
         display: block;
-        padding-left: $ds44-padding-ico;
+        padding-left: 0;
     }
 
     i ~ a {
@@ -146,6 +146,10 @@
     &:first-child:after {
       padding-bottom: 0;
     }
+}
+
+.ds44-list .ds44-docListElem .ds44-cardFile {
+    padding-left: $ds44-padding-ico;
 }
 
 .ds44-uList {

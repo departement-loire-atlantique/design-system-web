@@ -4,8 +4,6 @@ class FormFieldInputDatepicker extends FormFieldInputAbstract {
 
         this.lastInputValue = null;
         this.calendar = null;
-        this.invalidFormatMessage = 'Date invalide. Merci de respecter le format d’exemple.';
-        this.invalidChronologyMessage = 'La date ne doit pas être inférieure à celle du champ précédent.';
 
         MiscEvent.addListener('keyUp:escape', this.escape.bind(this));
     }
@@ -364,11 +362,11 @@ class FormFieldInputDatepicker extends FormFieldInputAbstract {
 
     getErrorMessage (objectIndex) {
         if (!this.checkChronology(objectIndex)) {
-            return this.invalidChronologyMessage;
+            return MiscTranslate._('FIELD_VALID_CHRONOLOGY_ERROR_MESSAGE');
         }
 
         if (this.getText(objectIndex)) {
-            return this.invalidFormatMessage;
+            return MiscTranslate._('FIELD_VALID_DATE_FORMAT_ERROR_MESSAGE');
         }
 
         return this.errorMessage;

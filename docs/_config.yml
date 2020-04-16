@@ -30,7 +30,7 @@ jekyll-minifier:
 
 # Overriding default colors
 branding:
-  logo_path: 'assets/images/ds/logo-loire-atlantique-design-system.svg'
+  logo_path: '../assets/images/ds/logo-loire-atlantique-design-system.svg'
   navigation_background_color: '#eee'
   navigation_link_color: '#444'
   navigation_link_color_hover: 'gray'
@@ -38,7 +38,7 @@ branding:
   highlight_color: '#2c8abd'
   code_background_color: '#f9f9f9'
 
-# Do not delete or change any file of the design system 
+# Do not delete or change any file of the design system
 keep_files: [js, fonts, css, images]
 exclude: [js, fonts, css, images]
 include: ['.htaccess']

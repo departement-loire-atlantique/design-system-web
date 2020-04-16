@@ -68,6 +68,12 @@ layout: pattern
 </form>
 <hr />
 <form>
+    {% include form/field/input/file.html label="Mon fichier" attributes='data-file-extensions="doc,pdf"' explanation="Formats : PDF ou DOC, taille max. : 10Mo" required="true" %}
+    <div><input type="submit" class="ds44-btnStd" value="Tester le champ fichier" /></div>
+</form>
+<hr />
+<form>
     {% include form/layout/error-msg.html %}
 </form>
+
 

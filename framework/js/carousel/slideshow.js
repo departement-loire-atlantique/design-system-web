@@ -118,7 +118,7 @@ class CarouselSlideshow extends CarouselAbstract {
 
                 const spanElement = object.autoplayButtonElement.querySelector('span');
                 if (spanElement) {
-                    spanElement.innerText = spanElement.innerText.replace('Lancer ', 'Arrêter ');
+                    spanElement.innerText = spanElement.innerText.replace(MiscTranslate._('START') + ' ', MiscTranslate._('STOP') + ' ');
                 }
             }
         }
@@ -141,7 +141,7 @@ class CarouselSlideshow extends CarouselAbstract {
 
                 const spanElement = object.autoplayButtonElement.querySelector('span');
                 if (spanElement) {
-                    spanElement.innerText = spanElement.innerText.replace('Arrêter ', 'Lancer ');
+                    spanElement.innerText = spanElement.innerText.replace(MiscTranslate._('STOP') + ' ', MiscTranslate._('START') + ' ');
                 }
             }
         }

@@ -64,36 +64,48 @@ input[type="file"] {
 
     .ds44-labelTypePlaceholder,
     .ds44-labelTypePlaceholderLarge {
-        color: $ds44-forms-color;
         position: absolute;
-        top: 1.2rem;
-        left: $ds44-padding-box;
-        overflow: hidden;
-        text-overflow: ellipsis;
-        white-space: nowrap;
-        cursor: text;
+        top: 0;
+        left: 0;
+        cursor: pointer;
         width: 100%;
-        display: block;
-        transition: all $ds44-timing-standard ease-in-out;
+        height: 100%;
+
+        span {
+            color: $ds44-forms-color;
+            transition: all $ds44-timing-standard ease-in-out;
+            display: block;
+            margin-top: 1.2rem;
+            margin-left: $ds44-padding-box;
+            overflow: hidden;
+            text-overflow: ellipsis;
+            white-space: nowrap;
+        }
     }
 
     .ds44-labelTypePlaceholderLarge {
-        top: $ds44-padding-large;
-        font-size: 1.6rem;
+        span {
+            font-size: 1.6rem;
+            margin-top: $ds44-padding-large;
+        }
     }
 
     &.ds44-moveLabel .ds44-labelTypePlaceholder,
     &.ds44-moveLabel .ds44-labelTypePlaceholderLarge {
-        font-size: 1.3rem; // 13px instead of 14px
-        top: -$ds44-padding-medium*1.8;
-        left: 0;
-        color: $ds44-color-dark-text;
+        span {
+            font-size: 1.3rem; // 13px instead of 14px
+            color: $ds44-color-dark-text;
+            margin-top: -$ds44-padding-medium*1.8;
+            margin-left: 0;
+        }
     }
 
     .ds44-bgDark &.ds44-moveLabel,
     .ds44-bgDark &.ds44-moveLabel .ds44-labelTypePlaceholder,
     .ds44-bgDark &.ds44-moveLabel .ds44-labelTypePlaceholderLarge {
-        color: $ds44-light-color;
+      span {
+          color: $ds44-light-color;
+      }
     }
 }
 
@@ -213,9 +225,9 @@ textarea {
     top: -webkit-calc(50% - 1.3rem);
     z-index: 2;
 
-    .ds44-datepicker__shape + & ,
+    .ds44-datepicker__shape + &,
     .ds44-autocomp--location + &,
-    .ds44-file__shape + &{
+    .ds44-file__shape + & {
         right: 3.4rem;
     }
 
@@ -366,7 +378,8 @@ input[type=radio],
     .ds44-facette-body {
 
         .ds44-textLegend--mentions {
-            display: none;padding: 1rem 0 0.5rem 0;
+            display: none;
+            padding: 1rem 0 0.5rem 0;
             padding: 1rem 0 0.5rem 0;
         }
 
@@ -449,7 +462,7 @@ input[type=radio],
     }
 
     .ds44-facette-mobile-export {
-        padding-top: 1rem ;
+        padding-top: 1rem;
 
         .ds44-list {
             font-size: 1.4rem;
@@ -889,6 +902,10 @@ input[type=radio],
 .ds44-file__shape {
     cursor: pointer;
     background-color: $ds44-light-color;
+
+    .ds44-fileDisplay {
+
+    }
 }
 
 
@@ -896,7 +913,6 @@ input[type=radio],
  * Autocomplete location
  */
 .ds44-autocomp--location {
-
 
 
 }
@@ -1002,7 +1018,7 @@ input[type=radio],
         }
 
         .ds44-theme .ds44-fieldContainer--select {
-          width: 100%;
+            width: 100%;
         }
 
         .ds44-btnStd {
@@ -1015,15 +1031,15 @@ input[type=radio],
         }
     }
 
-    .ds44-theme  {
+    .ds44-theme {
 
         &.ds44-medium-flex-col {
 
             .ds44-fieldContainer--select {
-              width: 100% !important;
+                width: 100% !important;
 
                 .ds44-select-container {
-                  width: 100% !important;
+                    width: 100% !important;
                 }
             }
         }

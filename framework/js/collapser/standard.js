@@ -50,7 +50,7 @@ class CollapserStandard {
         const panel = object.buttonElement.nextElementSibling;
         const buttonLabel = object.buttonElement.querySelector('span.visually-hidden');
         if (buttonLabel) {
-            buttonLabel.innerText = 'Replier';
+            buttonLabel.innerText = MiscTranslate._('COLLAPSE');
         }
         object.buttonElement.classList.add('show');
         object.buttonElement.setAttribute('aria-expanded', 'true');
@@ -68,7 +68,7 @@ class CollapserStandard {
         const panel = object.buttonElement.nextElementSibling;
         const buttonLabel = object.buttonElement.querySelector('span.visually-hidden');
         if (buttonLabel) {
-            buttonLabel.innerText = 'Déplier';
+            buttonLabel.innerText = MiscTranslate._('EXPAND');
         }
         object.buttonElement.classList.remove('show');
         object.buttonElement.setAttribute('aria-expanded', 'false');

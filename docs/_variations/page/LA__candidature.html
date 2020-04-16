@@ -9,105 +9,109 @@ layout: pattern
 
 <main role="main" id="content">
 
-	<div class="ds44-container-large">
-		{% include titres/main-title-noImage.html titrePage="Envoi d’une candidature spontanée" %}
-	</div>
+    <div class="ds44-container-large">
+        {% include titres/main-title-noImage.html titrePage="Envoi d’une candidature spontanée" %}
+    </div>
 
-	<article class="ds44-container-large ds44-mt4">
+    <article class="ds44-container-large ds44-mt4">
 
-		<div class="ds44-inner-container">
+        <div class="ds44-inner-container">
 
-			<div class="grid-12-small-1">
-				<div class="col-7">
-					<section class="ds44-contenuArticle" id="section1">
-						<h2 class="h2-like">Comment candidater ?</h2>
-						<h3 class="h3-like">Le recrutement par concours</h3>
-						<p>Les agents du Département relevant du statut de la fonction publique territoriale, le recrutement se fait principalement après réussite à un concours.</p>
-						<p>Prévu par la loi en application d’un principe constitutionnel, le recrutement par voie de concours garantit à tous les citoyens l’égalité d’accès aux emplois publics. Certains concours de catégorie A (Administrateurs et Ingénieurs en chef) sont organisés par le centre National de la Fonction Publique Territoriale : www.cnfpt.fr.</p>
-						<p>Les concours d’Attaché (catégorie A) ainsi que les concours de catégorie B (de bac à bac +2) et C (C.A.P. ou B.E.P. pour les métiers techniques) sont organisés par les centres départementaux de gestion de la fonction publique territoriale.</p>
-						<h3 class="h3-like">Les candidatures spontanées pour l’emploi</h3>
-						<p>Certains emplois de catégorie C sont ouverts à un recrutement sans concours (adjoint technique de 2ème classe ou adjoint administratif de 2ème classe).</p>
-						<p>Vos candidatures spontanées peuvent être étudiées également dans le cas de remplacement à effectuer.</p>
-					</section>
-					<section class="ds44-innerBoxContainer ds44-borderContainer">
-						<h2 id="idTitre3-2" class="h2-like">Comment faire une demande ?</h2>
-						<h3 class="h3-like">Soit en ligne via le formulaire ci-contre</h3>
-						<p>Merci de bien vouloir nous transmettre vos pièces jointes au format doc ou pdf. Nous ne pouvons pas garantir la prise en compte des candidatures adressées sous un autre format.</p>
-						<h3 class="h3-like ds44-mt3">Soit par voie postale en écrivant à :</h3>
-						<p class="ds44-docListElem mtm"><i class="icon icon-marker ds44-docListIco" aria-hidden="true"></i><strong>Département de Loire Atlantique</strong><br />Direction ressources humaines<br />service emploi et compétences<br />3 Quai Ceineray<br />BP 94109<br />44041 Nantes cedex 1</p>
-					</section>
+            <div class="grid-12-small-1">
+                <div class="col-7">
+                    <section class="ds44-contenuArticle" id="section1">
+                        <h2 class="h2-like">Comment candidater ?</h2>
+                        <h3 class="h3-like">Le recrutement par concours</h3>
+                        <p>Les agents du Département relevant du statut de la fonction publique territoriale, le recrutement se fait principalement après réussite à un concours.</p>
+                        <p>Prévu par la loi en application d’un principe constitutionnel, le recrutement par voie de concours garantit à tous les citoyens l’égalité d’accès aux emplois publics. Certains concours de catégorie A (Administrateurs et Ingénieurs en chef) sont organisés par le centre National de la Fonction Publique Territoriale : www.cnfpt.fr.</p>
+                        <p>Les concours d’Attaché (catégorie A) ainsi que les concours de catégorie B (de bac à bac +2) et C (C.A.P. ou B.E.P. pour les métiers techniques) sont organisés par les centres départementaux de gestion de la fonction publique territoriale.</p>
+                        <h3 class="h3-like">Les candidatures spontanées pour l’emploi</h3>
+                        <p>Certains emplois de catégorie C sont ouverts à un recrutement sans concours (adjoint technique de 2ème classe ou adjoint administratif de 2ème classe).</p>
+                        <p>Vos candidatures spontanées peuvent être étudiées également dans le cas de remplacement à effectuer.</p>
+                    </section>
+                    <section class="ds44-innerBoxContainer ds44-borderContainer">
+                        <h2 id="idTitre3-2" class="h2-like">Comment faire une demande ?</h2>
+                        <h3 class="h3-like">Soit en ligne via le formulaire ci-contre</h3>
+                        <p>Merci de bien vouloir nous transmettre vos pièces jointes au format doc ou pdf. Nous ne pouvons pas garantir la prise en compte des candidatures adressées sous un autre format.</p>
+                        <h3 class="h3-like ds44-mt3">Soit par voie postale en écrivant à :</h3>
+                        <p class="ds44-docListElem mtm"><i class="icon icon-marker ds44-docListIco" aria-hidden="true"></i><strong>Département de Loire Atlantique</strong><br />Direction ressources humaines<br />service emploi et compétences<br />3 Quai Ceineray<br />BP 94109<br />44041 Nantes cedex 1</p>
+                    </section>
 
-					{% include partage/partage-interne.html %}
+                    {% include partage/partage-interne.html %}
 
-				</div>
+                </div>
 
-				<div class="col-1 grid-offset ds44-hide-tiny-to-medium"></div>
+                <div class="col-1 grid-offset ds44-hide-tiny-to-medium"></div>
 
-				<section class="col-4">
-					<div class="ds44-box ds44-theme mbm">
-						<div class="ds44-innerBoxContainer">
-							<p class="ds44-box-heading ds44-mb-std" role="heading" aria-level="2">Formulaire de<br /> candidature</p>
-							<p>Les champs suivis d’un * sont obligatoires.</p>
-							<ul class="ds44-list ds44--xxl-padding-b">
-								<li class="ds44-mb3">
-									{% include form/field/input/standard.html label="Nom" required="true" attributes='autocomplete="family-name"' %}
-								</li>
-								<li class="ds44-mb3">
-									{% include form/field/input/standard.html label="Prénom" required="true" attributes='autocomplete="given-name"' %}
-								</li>
-								<li class="ds44-mb35">
-									{% include form/field/input/standard.html label="Courriel" explanation="Exemple : monadresse@mail.com" required="true" attributes='autocomplete="email"' %}
-								</li>
-								<li class="ds44-mb35">
-									{% include form/field/input/standard.html label="Téléphone" explanation="Exemple : 0202030405" required="true" attributes='autocomplete="tel"' %}
-								</li>
-								<li class="ds44-mb35">
-									{% include form/field/input/standard.html label="Code postal" explanation="Exemple : 44000" required="true" attributes='autocomplete="postal-code"' %}
-								</li>
-								<li class="ds44-mb35">
-									{% include form/field/input/standard.html label="Curriculum vitae" explanation="Formats : PDF ou DOC, taille max. : 10Mo" required="true" %}
-								</li>
-								<li class="ds44-mb35">
-									{% include form/field/input/standard.html label="Lettre de motivation" explanation="Formats : PDF ou DOC, taille max. : 10Mo" required="true" %}
-								</li>
-								<li class="ds44-mb35">
-									{% include form/field/input/standard.html label="Pièce complémentaire" explanation="Arrêté de nomination, inscription sur liste d’aptitude, … Formats : PDFou DOC, taille max. : 10Mo" required="true" %}
-								</li>
-							</ul>
-							<button class="ds44-btnStd ds44-btn--invert ds44-bntFullw ds44-bntALeft" title="Valider l'envoi de votre candidature"><span class="ds44-btnInnerText">Valider</span><i class="icon icon-long-arrow-right" aria-hidden="true"></i></button>
-							<p class="ds44-wsg-smallText ds44-mt3">Les informations personnelles vous concernant sont collectées et traitées par le Département de Loire-Atlantique aux fins d’instruction et de réponse aux demandes reçues. En savoir plus sur la protection des données personnelles.</p>
-						</div>
-					</div>
-				</section>
+                <section class="col-4">
+                    <div class="ds44-box ds44-theme mbm">
+                        <div class="ds44-innerBoxContainer">
+                            <p class="ds44-box-heading ds44-mb-std" role="heading" aria-level="2">Formulaire de<br /> candidature</p>
+                            <form>
+                                <p>Les champs suivis d’un * sont obligatoires.</p>
+                                <ul class="ds44-list ds44--xxl-padding-b">
+                                    <li class="ds44-mb3">
+                                        {% include form/field/input/standard.html type="last-name" label="Nom" required="true" %}
+                                    </li>
+                                    <li class="ds44-mb3">
+                                        {% include form/field/input/standard.html type="first-name" label="Prénom" required="true" %}
+                                    </li>
+                                    <li class="ds44-mb35">
+                                        {% include form/field/input/standard.html type="email" label="Courriel" explanation="Exemple : monadresse@mail.com" required="true" %}
+                                    </li>
+                                    <li class="ds44-mb35">
+                                        {% include form/field/input/standard.html type="phone" label="Téléphone" explanation="Exemple : 0202030405" required="true" %}
+                                    </li>
+                                    <li class="ds44-mb35">
+                                        {% include form/field/input/standard.html type="postcode" label="Code postal" explanation="Exemple : 44000" required="true" %}
+                                    </li>
+                                    <li class="ds44-mb35">
+                                        {% include form/field/input/file.html label="Curriculum vitae" explanation="Formats : PDF ou DOC, taille max. : 10Mo" required="true" %}
+                                    </li>
+                                    <li class="ds44-mb35">
+                                        {% include form/field/input/file.html label="Lettre de motivation" explanation="Formats : PDF ou DOC, taille max. : 10Mo" required="true" %}
+                                    </li>
+                                    <li class="ds44-mb35">
+                                        {% include form/field/input/file.html label="Pièce complémentaire" explanation="Arrêté de nomination, inscription sur liste d’aptitude, … Formats : PDF ou DOC, taille max. : 10Mo" required="true" %}
+                                    </li>
+                                </ul>
+                                <button class="ds44-btnStd ds44-btn--invert ds44-bntFullw ds44-bntALeft" title="Valider l'envoi de votre candidature">
+                                    <span class="ds44-btnInnerText">Valider</span><i class="icon icon-long-arrow-right" aria-hidden="true"></i>
+                                </button>
+                                <p class="ds44-wsg-smallText ds44-mt3">Les informations personnelles vous concernant sont collectées et traitées par le Département de Loire-Atlantique aux fins d’instruction et de réponse aux demandes reçues. En savoir plus sur la protection des données personnelles.</p>
+                            </form>
+                        </div>
+                    </div>
+                </section>
 
-			</div>
-		</div>
-	</article>
+            </div>
+        </div>
+    </article>
 
-	<section class="ds44-container-fluid ds44--l-padding">
-		<div class="ds44-box ds44-theme ds44-bgTriangle-left">
-			<div class="ds44-flex-container ds44-flex-container--colMed ds44-flex-container--colMed--colRev">
-				<picture class="ds44-boxPushPic ds44-boxPushPic--horizontal">
-					<img src="../../assets/images/push/desktop/encart-youtube-horizontale.png" alt="" />
-				</picture>
-				<div class="ds44-boxPushContent ds44-boxPushContent--fluid">
-					<div class="ds44-titlePushH">
-						<p role="heading" aria-level="2" class="ds44-pushTitle">Suivez aussi l’actualité en vidéo</p>
-					</div>
-					<div class="ds44-contentPushH">
-						<p class="txtcenter">Abonnez-vous à la chaîne officielle du département de Loire-Atlantique.</p>
-					</div>
-					<div class="ds44-contentPushH">
-						<p>
-							<button class="ds44-btnStd" type="button" title="Visitez la chaîne officielle du département de Loire-Atlantique">
-								<span class="ds44-btnInnerText">Visitez la chaîne</span><i class="icon icon-long-arrow-right" aria-hidden="true"></i>
-							</button>
-						</p>
-					</div>
-				</div>
-			</div>
-		</div>
-	</section>	
+    <section class="ds44-container-fluid ds44--l-padding">
+        <div class="ds44-box ds44-theme ds44-bgTriangle-left">
+            <div class="ds44-flex-container ds44-flex-container--colMed ds44-flex-container--colMed--colRev">
+                <picture class="ds44-boxPushPic ds44-boxPushPic--horizontal">
+                    <img src="../../assets/images/push/desktop/encart-youtube-horizontale.png" alt="" />
+                </picture>
+                <div class="ds44-boxPushContent ds44-boxPushContent--fluid">
+                    <div class="ds44-titlePushH">
+                        <p role="heading" aria-level="2" class="ds44-pushTitle">Suivez aussi l’actualité en vidéo</p>
+                    </div>
+                    <div class="ds44-contentPushH">
+                        <p class="txtcenter">Abonnez-vous à la chaîne officielle du département de Loire-Atlantique.</p>
+                    </div>
+                    <div class="ds44-contentPushH">
+                        <p>
+                            <button class="ds44-btnStd" type="button" title="Visitez la chaîne officielle du département de Loire-Atlantique">
+                                <span class="ds44-btnInnerText">Visitez la chaîne</span><i class="icon icon-long-arrow-right" aria-hidden="true"></i>
+                            </button>
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
 
 </main>
 

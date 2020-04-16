@@ -2,7 +2,7 @@ class FormLayoutUtileAbstract {
     constructor (selector) {
         this.url = '/plugins/ChartePlugin/types/PortletQueryForeach/displayResult.jsp';
         this.formElement = null;
-        this.submitSuccessText = null;
+        this.submitSuccessText = MiscTranslate._('USEFUL_REQUEST_THANK_YOU');
 
         const formElement = document.querySelector(selector);
         if (formElement) {
@@ -79,7 +79,7 @@ class FormLayoutUtileAbstract {
             {
                 'id': errorMessageId,
                 'type': 'error',
-                'message': 'Une erreur est survenue suite à l\'envoi de votre formulaire.'
+                'message': MiscTranslate._('FORM_GENERAL_ERROR')
             },
             this.formElement
         );

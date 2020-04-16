@@ -1,8 +1,24 @@
 {% include form/_variables.html %}
 
+{% assign type = 'text' %}
+{% if include.type %}
+    {% if include.type == 'first-name' %}
+        {% assign attributes = attributes | append : ' autocomplete="given-name"' %}
+    {% elsif include.type == 'last-name' %}
+        {% assign attributes = attributes | append : ' autocomplete="family-name"' %}
+    {% elsif include.type == 'email' %}
+        {% assign type = 'email' %}
+        {% assign attributes = attributes | append : ' autocomplete="email"' %}
+    {% elsif include.type == 'phone' %}
+        {% assign attributes = attributes | append : ' autocomplete="tel"' %}
+    {% elsif include.type == 'postcode' %}
+        {% assign attributes = attributes | append : ' autocomplete="postal-code"' %}
+    {% endif %}
+{% endif %}
+
 {% capture mainContent %}
 {{ explanation }}
-<input type="text" id="{{ id }}" name="{{ name }}" class="{{ mainClass }}" {{ title }} {{ attributes }} {{ inputAttributes }} {{ placeholder }} {% if ariaDescribedBy and ariaDescribedBy != '' %}aria-describedby="{{ ariaDescribedBy }}"{% endif %} />{% include form/field/partial/reset.html %}
+<input type="{{ type }}" id="{{ id }}" name="{{ name }}" class="{{ mainClass }}" {{ title }} {{ attributes }} {{ inputAttributes }} {{ placeholder }} {% if ariaDescribedBy and ariaDescribedBy != '' %}aria-describedby="{{ ariaDescribedBy }}"{% endif %} />{% include form/field/partial/reset.html %}
 {% endcapture %}
 
 {% capture labelContent %}

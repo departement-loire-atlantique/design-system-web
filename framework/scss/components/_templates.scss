@@ -180,8 +180,9 @@ main {
             z-index: 1;
             padding: 0;
         }
+
         .ds44-imgCaption {
-          max-width: calc(100% - 55px);
+            max-width: calc(100% - 55px);
         }
 
     }
@@ -340,6 +341,16 @@ main {
         }
     }
 
+    /* -------Resultats vide */
+
+    &--empty {
+        .ds44-btnStd-showMap {
+            @media (max-width: $ds44-medium - .0625) {
+                display: none;
+            }
+        }
+    }
+
     /* -------Resultats avec carte - tuiles en colonne gauche avec carte à droite */
 
     &--mapVisible {
@@ -467,6 +478,7 @@ main {
         }
     }
 }
+
 .ds44-map-marker {
     background: url('../../../assets/images/cd44-marker-big-black.svg') no-repeat center center transparent;
     background-size: cover;
@@ -566,6 +578,12 @@ main {
         &:after {
             display: none;
         }
+    }
+
+    .ds44-homepage-noCarrousel {
+       .ds44-titleContainer--home .h1-like {
+         padding: 10rem 3rem 3rem 3rem;
+       }
     }
 
 }

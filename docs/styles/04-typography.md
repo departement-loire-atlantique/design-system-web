@@ -15,7 +15,7 @@ Variantes Medium et Bold
 
 Licence CC No Derivatives (pas de modification)
 
-Source : https://www.fontsquirrel.com/fonts/blogger-sans
+<p>Source : <a href="https://www.fontsquirrel.com/fonts/blogger-sans">https://www.fontsquirrel.com/fonts/blogger-sans</a></p>
 
 #### La typographie Muli :
 
@@ -25,7 +25,8 @@ Variantes Regular, Bold
 
 Licence SIL Open Font
 
-Source : https://www.fontsquirrel.com/fonts/muli
+<p>Source : <a href="https://www.fontsquirrel.com/fonts/muli">https://www.fontsquirrel.com/fonts/muli</a></p>
+
 
 ## Titres
 

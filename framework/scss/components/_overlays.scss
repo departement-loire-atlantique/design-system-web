@@ -144,9 +144,18 @@ top: -2500px;
 
     .ds44-modal-box {
         padding: $ds44-padding-box $ds44-padding-medium;
+    }
 
-        .h2-like {
+}
+
+@media (max-width: $ds44-tiny) {
+
+    .ds44-modal-box {
+
+        h1.h2-like {
             max-width: 80%;
+            display: inline-block;
+            background: linear-gradient(to bottom, rgba(255,255,255,0) calc(100% - 16px),$ds44-contextual-color 0px);
         }
     }
 

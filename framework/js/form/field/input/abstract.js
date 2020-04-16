@@ -200,6 +200,74 @@ class FormFieldInputAbstract extends FormFieldAbstract {
         this.quit(objectIndex);
     }
 
+    getErrorMessage (objectIndex) {
+        const object = this.objects[objectIndex];
+        if (!object.textElement) {
+            return super.getErrorMessage(objectIndex);
+        }
+
+        const data = this.getData(objectIndex);
+        const autocomplete = object.textElement.getAttribute('autocomplete');
+        if (!data || !autocomplete) {
+            return super.getErrorMessage(objectIndex);
+        }
+
+        if (
+            autocomplete === 'email' &&
+            !MiscForm.isEmail(data[object.name].value)
+        ) {
+            return MiscTranslate._('FIELD_VALID_EMAIL_MESSAGE');
+        }
+        if (
+            autocomplete === 'tel' &&
+            !MiscForm.isPhone(data[object.name].value)
+        ) {
+            return MiscTranslate._('FIELD_VALID_PHONE_MESSAGE');
+        }
+        if (
+            autocomplete === 'postal-code' &&
+            !MiscForm.isPostcode(data[object.name].value)
+        ) {
+            return MiscTranslate._('FIELD_VALID_POSTCODE_MESSAGE');
+        }
+
+        return super.getErrorMessage(objectIndex);
+    }
+
+    checkFormat (objectIndex) {
+        const object = this.objects[objectIndex];
+        if (!object.textElement) {
+            return true;
+        }
+
+        const data = this.getData(objectIndex);
+        const autocomplete = object.textElement.getAttribute('autocomplete');
+        if (!data || !autocomplete) {
+            return true;
+        }
+
+        if (
+            autocomplete === 'email' &&
+            !MiscForm.isEmail(data[object.name].value)
+        ) {
+            return false;
+        }
+        if (
+            autocomplete === 'tel' &&
+            !MiscForm.isPhone(data[object.name].value)
+        ) {
+            return false;
+        }
+        if (
+            autocomplete === 'postal-code' &&
+            !MiscForm.isPostcode(data[object.name].value)
+        ) {
+            return false;
+        }
+
+        return true;
+    }
+
     removeInvalid (objectIndex) {
         const object = this.objects[objectIndex];
         if (!object.textElement) {
