@@ -234,7 +234,22 @@
 /* Media Queries Print / Impression */
 @media print {
 
+    .swiper-container {
+      overflow: inherit !important;
+      width: inherit;
+    }
 
+    .swiper-wrapper {
+      display: block;
+    }
+
+		.swiper-slide   {
+            display: inline-block !important;
+            height: inherit !important;
+            margin: 0 !important;
+            width: 100% !important;
+            clear: both;
+		}
 
 
 }

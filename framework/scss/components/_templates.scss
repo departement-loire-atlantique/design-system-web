@@ -604,7 +604,7 @@ main {
 
 /* Fiche lieu événements */
 
-.ds44-img50 {
+.ds44-img50--event {
     .ds44-theme {
         flex-wrap: wrap;
 
@@ -740,13 +740,13 @@ main {
     widows: 3; /* pas de ligne seule en haut */
   }
   blockquote, ul, ol {
-    page-break-inside: avoid; /* pas de coupure dans ces élements */
+    break-inside: avoid; /* pas de coupure dans ces élements */
   }
   h1, .h1-like,
   h2, .h2-like,
   h3, .h3-like,
   h4, .h4-like {
-    page-break-after: avoid; /* pas de saut après ces éléments */
+    break-after: avoid; /* pas de saut après ces éléments */
   }
   a {
     color: #000!important;
@@ -765,13 +765,17 @@ main {
   .grid-2-small-1,
   .grid-12-small-1 {
     grid-template-columns : repeat(1, 1fr);
-    page-break-inside: auto !important;
+    break-inside: auto !important;
 
     & > * {
       clear: both !important;
       display: block !important;
       grid-column: inherit !important;
-      page-break-inside: auto !important;
+      break-inside: auto !important;
+
+      & * {
+        break-inside: auto !important;
+      }
     }
   }
 

@@ -380,8 +380,22 @@
 /* Media Queries Print / Impression */
 @media print {
 
+    .ds44-js-aside-summary{
+      position: inherit !important;
+    }
+
   .ds44-js-aside-summary > * {
     position: inherit !important;
+  }
+
+  .ds44-innerBoxContainer {
+      padding: $ds44-padding-xlarge /3;
+  }
+
+  .ds44-boxPushPic {
+      picture, figure, img {
+          display: none;
+      }
   }
 
 }

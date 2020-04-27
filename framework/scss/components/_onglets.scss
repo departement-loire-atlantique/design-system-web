@@ -168,10 +168,11 @@
 /* Media Queries Print / Impression */
 @media print {
 
-  .ds44-tabs__content {
-      opacity: 1 !important;
-      display: block !important;
-      clear: both !important;
-  }
+    .ds44-tabs__content {
+        opacity: 1 !important;
+        display: block !important;
+        clear: both !important;
+        margin: 0;
+    }
 
 }
