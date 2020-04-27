@@ -1008,151 +1008,130 @@ h6.visually-hidden + * {
     // paddings
 
     .ds44--m-padding ,
-    .ds44--l-padding {
-      padding          : $ds44-padding-medium; // 1rem
-    }
-    .ds44--m-padding-lr ,
-    .ds44--l-padding-lr {
-      padding-left     : $ds44-padding-medium; // 1rem
-      padding-right    : $ds44-padding-medium; // 1rem
-    }
-    .ds44--m-padding-tb ,
-    .ds44--l-padding-tb {
-      padding-top      : $ds44-padding-medium; // 1rem
-      padding-bottom   : $ds44-padding-medium; // 1rem
-    }
-    .ds44--m-padding-b ,
-    .ds44--l-padding-b {
-      padding-bottom   : $ds44-padding-medium; // 1rem
-    }
-    .ds44--m-padding-t ,
-    .ds44--l-padding-t {
-      padding-top      : $ds44-padding-medium; // 1rem
-    }
+    .ds44--l-padding,
     .ds44--xl-padding,
     .ds44--2xl-padding ,
     .ds44--3xl-padding {
-      padding         : $ds44-padding-xlarge; // 3rem
+      padding          : 1rem !important;
     }
+    .ds44--m-padding-lr ,
+    .ds44--l-padding-lr,
+    .ds44--xl-padding-lr ,
+    .ds44--xxl-padding-lr ,
+    .ds44--2xl-padding-lr ,
+    .ds44--3xl-padding-lr  {
+      padding-left     : 1rem !important;
+      padding-right    : 1rem !important;
+    }
+    .ds44--m-padding-tb ,
+    .ds44--l-padding-tb,
     .ds44--xl-padding-tb,
     .ds44--xxl-padding-tb ,
     .ds44--2xl-padding-tb ,
     .ds44--3xl-padding-tb {
-      padding-top     : $ds44-padding-xlarge; // 3rem
-      padding-bottom  : $ds44-padding-xlarge; // 3rem
+      padding-top      : 1rem !important;
+      padding-bottom   : 1rem !important;
     }
-    .ds44--xl-padding-t,
-    .ds44--xxl-padding-t ,
-    .ds44--2xl-padding-t ,
-    .ds44--3xl-padding-t {
-      padding-top     : $ds44-padding-xlarge; // 3rem
-    }
+    .ds44--m-padding-b ,
+    .ds44--l-padding-b,
     .ds44--xl-padding-b,
     .ds44--xxl-padding-b,
     .ds44--p35b,
     .ds44--p4b ,
     .ds44--2xl-padding-b ,
     .ds44--3xl-padding-b {
-      padding-bottom  : $ds44-padding-xlarge; // 3rem
+      padding-bottom   : 1rem !important;
     }
-    .ds44--xl-padding-lr ,
-    .ds44--xxl-padding-lr ,
-    .ds44--2xl-padding-lr ,
-    .ds44--3xl-padding-lr {
-      padding-left    : $ds44-padding-xlarge; // 3rem
-      padding-right   : $ds44-padding-xlarge; // 3rem
+    .ds44--m-padding-t ,
+    .ds44--l-padding-t,
+    .ds44--xl-padding-t,
+    .ds44--xxl-padding-t ,
+    .ds44--2xl-padding-t ,
+    .ds44--3xl-padding-t {
+      padding-top      : 1rem !important;
     }
     .ds44--xl-padding-r ,
     .ds44--xxl-padding-r ,
     .ds44--2xl-padding-r ,
     .ds44--3xl-padding-r {
-      padding-right   : $ds44-padding-xlarge; // 3rem
+      padding-right   : 1rem !important;
     }
     .ds44--xl-padding-l ,
     .ds44--xxl-padding-l ,
     .ds44--2xl-padding-l ,
     .ds44--3xl-padding-l {
-      padding-left    : $ds44-padding-xlarge !important; // 3rem
+      padding-left    : 1rem !important;
     }
 
 
     // margins
 
-    .ds44-m-std {
-      margin:  $ds44-margin-base;                       // 1rem
+    .ds44-m-std,
+    .ds44-m3,
+    .ds44-m35,
+    .ds44-m5 {
+      margin:  1rem !important;
     }
     .ds44-mlr1 ,
     .ds44-mlr2,
-    .ds44-m-fluid-margin {
-      margin-left: $ds44-margin-base;                   // 1rem
-      margin-right: $ds44-margin-base;                  // 1rem
-    }
-    .ds44-mtb1 ,
-    .ds44-mtb2 {
-      margin-top: $ds44-margin-base;                    // 1rem
-      margin-bottom: $ds44-margin-base;                 // 1rem
-    }
-    .ds44-mt1,
-    .ds44-mt2,
-    .ds44-mt-std {
-      margin-top: $ds44-margin-base;                    // 1rem
-    }
-    .ds44-mb1,
-    .ds44-mb2,
-    .ds44-mb-std {
-      margin-bottom: $ds44-margin-base;                 // 1rem
-    }
-    .ds44-mr1,
-    .ds44-mr2,
-    .ds44-mr-std {
-      margin-right: $ds44-margin-base;                  // 1rem
-    }
-    .ds44-ml1,
-    .ds44-ml2,
-    .ds44-ml-std {
-      margin-left: $ds44-margin-base;                   // 1rem
-    }
-
-    .ds44-m3,
-    .ds44-m35,
-    .ds44-m5  {
-      margin: $ds44-components-vmargin;                // 3rem
-    }
-    .ds44-mb3,
-    .ds44-mb35,
-    .ds44-mb5 {
-      margin-bottom: $ds44-components-vmargin;          // 3rem
-    }
-    .ds44-mt3,
-    .ds44-mt4,
-    .ds44-mt5 {
-      margin-top: $ds44-components-vmargin!important;  // 3rem
-    }
-    .ds44-mtb3,
-    .ds44-mtb4,
-    .ds44-mtb5,
-    .ds44-xl-margin-tb {
-      margin-bottom: $ds44-components-vmargin;         // 3rem
-      margin-top: $ds44-components-vmargin;            // 3rem
-    }
+    .ds44-m-fluid-margin,
     .ds44-mlr3,
     .ds44-mlr35,
     .ds44-mlr4,
     .ds44-mlr5,
     .ds44-l-fluid-margin,
     .ds44-xl-fluid-margin  {
-      margin-left: $ds44-components-vmargin;           // 3rem
-      margin-right: $ds44-components-vmargin;          // 3rem
+      margin-left: 1rem !important;
+      margin-right: 1rem !important;
+    }
+    .ds44-mtb1 ,
+    .ds44-mtb2,
+    .ds44-mtb3,
+    .ds44-mtb4,
+    .ds44-mtb5,
+    .ds44-xl-margin-tb {
+      margin-top: 1rem !important;
+      margin-bottom: 1rem !important;
+    }
+    .ds44-mt1,
+    .ds44-mt2,
+    .ds44-mt-std,
+    .ds44-mt3,
+    .ds44-mt4,
+    .ds44-mt5,
+    h2:not(h1):not(.h1-like):not(.h3-like):not(.h4-like) + *,
+    h2 + .ds44-introduction,
+    .h2-like:not(h1):not(.h1-like):not(.h3-like):not(.h4-like) + *,
+    .h2-like + .ds44-introduction {
+      margin-top: 1rem !important;
+    }
+    .ds44-mb1,
+    .ds44-mb2,
+    .ds44-mb-std,
+    .ds44-mb3,
+    .ds44-mb35,
+    .ds44-mb5,
+    .ds44-introduction,
+    .ds44-introduction-like,
+    .ds44-component-chapo  {
+      margin-bottom: 1rem !important;
+    }
+    .ds44-mr1,
+    .ds44-mr2,
+    .ds44-mr-std ,
+    .ds44-mr5{
+      margin-right: 1rem !important;
+    }
+    .ds44-ml1,
+    .ds44-ml2,
+    .ds44-ml-std,
+    .ds44-ml5  {
+      margin-left: 1rem !important;
     }
     .ds44-m3c,
     .ds44-m5c {
-      margin: $ds44-components-vmargin auto;           // 3rem
+      margin: 1rem auto !important;
     }
-    .ds44-mr5 {
-      margin-right: $ds44-components-vmargin;          // 3rem
-    }
-    .ds44-ml5 {
-      margin-left: $ds44-components-vmargin;           // 3rem
-    }
+
 
 }

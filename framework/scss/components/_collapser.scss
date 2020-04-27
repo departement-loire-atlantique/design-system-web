@@ -158,3 +158,16 @@
   }
 
 }
+
+
+
+/* Media Queries Print / Impression */
+@media print {
+
+    .ds44-collapser_content {
+        visibility: visible !important;
+        max-height: max-content !important;
+        overflow: visible !important;
+        visibility: visible !important;
+    }
+}

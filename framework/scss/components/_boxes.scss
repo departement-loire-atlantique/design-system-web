@@ -392,10 +392,20 @@
       padding: $ds44-padding-xlarge /3;
   }
 
+  .ds44-box.ds44-theme,
+  .ds44-box--push {
+      min-height: inherit !important;
+      border: 1px solid $ds44-lightgray;
+  }
+
   .ds44-boxPushPic {
       picture, figure, img {
           display: none;
       }
+  }
+
+  .ds44-card__title {
+      font-size: 1.7rem !important;
   }
 
 }

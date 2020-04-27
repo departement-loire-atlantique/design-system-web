@@ -739,7 +739,7 @@ main {
     orphans: 3; /* pas de ligne seule en bas */
     widows: 3; /* pas de ligne seule en haut */
   }
-  blockquote, ul, ol {
+  blockquote, ul, ol, table, tbody {
     break-inside: avoid; /* pas de coupure dans ces élements */
   }
   h1, .h1-like,
@@ -747,6 +747,9 @@ main {
   h3, .h3-like,
   h4, .h4-like {
     break-after: avoid; /* pas de saut après ces éléments */
+  }
+  h2, .h2-like {
+    padding:  0 !important;
   }
   a {
     color: #000!important;
@@ -809,6 +812,22 @@ main {
 
   .grid-offset {
     display: none !important;
+  }
+
+  .txtcenter,
+  .u-txt-center,
+  .center {
+      text-align: left;
+  }
+
+  .ds44-component-chapo {
+      max-width: 100%;
+  }
+
+  tr:nth-child(odd),
+  thead + tbody > tr:nth-child(even) {
+    background-color: $ds44-lightgray !important;
+    border: 1px solid $ds44-lightgray;
   }
 
 }

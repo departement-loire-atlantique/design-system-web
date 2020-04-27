@@ -235,21 +235,26 @@
 @media print {
 
     .swiper-container {
-      overflow: inherit !important;
-      width: inherit;
+      padding: 0 !important;
+      margin: 0 !important;
     }
 
     .swiper-wrapper {
-      display: block;
+      display: inline !important;
     }
 
-		.swiper-slide   {
-            display: inline-block !important;
-            height: inherit !important;
-            margin: 0 !important;
-            width: 100% !important;
-            clear: both;
-		}
+	.swiper-slide   {
+        flex-grow: 1 !important;
+        height: inherit !important;
+        margin: 0 !important;
+        width: 100% !important;
+        break-inside: avoid;
+	}
+
+    .swiper-button-prev,
+    .swiper-button-next {
+        display: none !important;
+    }
 
 
 }

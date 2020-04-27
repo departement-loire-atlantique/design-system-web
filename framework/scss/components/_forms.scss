@@ -1136,3 +1136,15 @@ input[type=radio],
 
 
 }
+
+
+
+/* Media Queries Print / Impression */
+@media print {
+
+    .ds44-facette {
+        display: none !important;
+    }
+
+
+}
