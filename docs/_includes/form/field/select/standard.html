@@ -5,23 +5,23 @@
 {% endif %}
 
 {% capture mainContent %}
-{% include form/field/partial/select.html disabled=include.disabled selectContainerClass="ds44-js-select-standard" %}
-<div class="ds44-select-container hidden">
-    <div class="ds44-listSelect">
-        <ul class="ds44-list" role="listbox" id="listbox-{{ id }}" aria-labelledby="button-message-{{ id }}" {{ listAttributes }}>
-            <li class="ds44-select-list_elem" data-value="1" tabindex="0">
-                Option 1
-            </li>
-            <li class="ds44-select-list_elem" data-value="2" tabindex="0">
-                Option 2
-            </li>
-        </ul>
+    {% include form/field/partial/select.html disabled=include.disabled selectContainerClass="ds44-js-select-standard" %}
+    <div class="ds44-select-container hidden">
+        <div class="ds44-listSelect">
+            <ul class="ds44-list" role="listbox" id="listbox-{{ id }}" aria-labelledby="button-message-{{ id }}" {{ listAttributes }}>
+                <li class="ds44-select-list_elem" data-value="1" tabindex="0">
+                    Option 1
+                </li>
+                <li class="ds44-select-list_elem" data-value="2" tabindex="0">
+                    Option 2
+                </li>
+            </ul>
+        </div>
     </div>
-</div>
 {% endcapture %}
 
 {% if include.hidden == 'true' %}
     {% assign containerClass = containerClass | append : ' hidden' %}
 {% endif %}
 
-{% include form/field/partial/container.html content=mainContent containerClass=containerClass %}
+{% include form/field/partial/container.html id=id content=mainContent containerClass=containerClass explanation=include.explanation %}

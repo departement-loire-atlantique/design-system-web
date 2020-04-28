@@ -269,15 +269,11 @@ class FormFieldInputAbstract extends FormFieldAbstract {
     }
 
     removeInvalid (objectIndex) {
-        const object = this.objects[objectIndex];
-        if (!object.textElement) {
-            return;
-        }
+        super.removeInvalid(objectIndex);
 
-        let errorElement = object.containerElement.querySelector(':scope > .ds44-errorMsg-container');
-        if (errorElement) {
-            errorElement.innerHTML = '';
-            errorElement.classList.add('hidden');
+        const object = this.objects[objectIndex];
+        if (object.textElement) {
+            object.textElement.classList.remove('ds44-error');
         }
 
         object.inputElements.forEach((inputElement) => {
@@ -289,8 +285,6 @@ class FormFieldInputAbstract extends FormFieldAbstract {
             }
             inputElement.removeAttribute('aria-invalid');
         });
-        object.textElement.classList.remove('ds44-error');
-
     }
 
     invalid (objectIndex) {

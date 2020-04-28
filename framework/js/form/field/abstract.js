@@ -332,7 +332,22 @@ class FormFieldAbstract {
     }
 
     removeInvalid (objectIndex) {
-        // Abstract method
+        const object = this.objects[objectIndex];
+
+        const informationElement = object.containerElement.querySelector(':scope > .ds44-field-information');
+        if (!informationElement) {
+            return;
+        }
+
+        informationElement.classList.remove('ds44-error');
+        const informationListElement = informationElement.querySelector('.ds44-field-information-list');
+        if (informationListElement) {
+            informationListElement
+                .querySelectorAll('.ds44-field-information-error')
+                .forEach((errorElement) => {
+                    errorElement.remove();
+                });
+        }
     }
 
     checkFormat (objectIndex) {
@@ -366,25 +381,37 @@ class FormFieldAbstract {
     showErrorMessage (objectIndex, errorMessageElementId = null) {
         const object = this.objects[objectIndex];
 
-        let errorElement = object.containerElement.querySelector(':scope > .ds44-errorMsg-container');
-        if (!errorElement) {
-            errorElement = document.createElement('div');
-            errorElement.classList.add('ds44-errorMsg-container');
-            errorElement.setAttribute('aria-live', 'polite');
-            object.containerElement.appendChild(errorElement);
+        // Recreate information structure
+        let informationElement = object.containerElement.querySelector(':scope > .ds44-field-information');
+        if (!informationElement) {
+            informationElement = document.createElement('div');
+            informationElement.classList.add('ds44-field-information');
+            informationElement.setAttribute('aria-live', 'polite');
+            object.containerElement.appendChild(informationElement);
+        }
+        informationElement.classList.add('ds44-error');
+
+        let informationListElement = informationElement.querySelector('.ds44-field-information-list');
+        if (!informationListElement) {
+            informationListElement = document.createElement('ul');
+            informationListElement.classList.add('ds44-field-information-list');
+            informationListElement.classList.add('ds44-list');
+            informationElement.appendChild(informationListElement);
         } else {
-            errorElement.innerHTML = '';
-            errorElement.classList.remove('hidden');
+            informationListElement
+                .querySelectorAll('.ds44-field-information-error')
+                .forEach((errorElement) => {
+                    errorElement.remove();
+                });
         }
 
-        let errorMessageElement = document.createElement('p');
+        let errorMessageElement = document.createElement('li');
         if (errorMessageElementId) {
             errorMessageElement.setAttribute('id', errorMessageElementId);
         }
-        errorMessageElement.classList.add('ds44-msgErrorText');
-        errorMessageElement.classList.add('ds44-msgErrorInvalid');
+        errorMessageElement.classList.add('ds44-field-information-error');
         errorMessageElement.setAttribute('tabindex', '-1');
-        errorElement.appendChild(errorMessageElement);
+        informationListElement.appendChild(errorMessageElement);
 
         let errorIconElement = document.createElement('i');
         errorIconElement.classList.add('icon');

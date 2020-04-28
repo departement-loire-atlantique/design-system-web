@@ -229,6 +229,9 @@ class FormFieldInputAutoComplete extends FormFieldInputAbstract {
             return;
         }
 
+        // Translate results
+        results = this.translate(objectIndex, results);
+
         object.textElement.removeAttribute('aria-activedescendant');
         Array.from(object.autoCompleterListElement.children).map((childElement) => {
             childElement.remove();
@@ -267,6 +270,36 @@ class FormFieldInputAutoComplete extends FormFieldInputAbstract {
         }
 
         this.show(objectIndex);
+    }
+
+    translate (objectIndex, results) {
+        const object = this.objects[objectIndex];
+        if (!object.textElement) {
+            return results;
+        }
+
+        if (object.textElement.classList.contains('ds44-js-field-address')) {
+            // Address from BAN
+            const formatedResults = {};
+
+            if (results.features) {
+                for (let i = 0; i < results.features.length; i++) {
+                    const feature = results.features[i];
+
+                    formatedResults[feature.properties.citycode] = {
+                        value: feature.properties.label,
+                        metadata: {
+                            latitude: feature.geometry.coordinates[1],
+                            longitude: feature.geometry.coordinates[0]
+                        }
+                    }
+                }
+            }
+
+            results = formatedResults;
+        }
+
+        return results;
     }
 
     focus (objectIndex) {

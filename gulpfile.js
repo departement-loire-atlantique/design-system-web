@@ -18,12 +18,14 @@ var fs = require('fs');
 var jekyllDir = "docs/",
     scssFile = 'framework/scss/cd44.scss',
     scssFileSwiper = 'node_modules/swiper/css/swiper.min.css',
+    scssFileAos = 'node_modules/aos/dist/aos.css',
     cssDest = 'dist/css',
     jsMiscFiles = 'framework/js/misc/*.js',
     jsFieldFile = 'framework/js/**/field/abstract.js',
     jsAbstractFiles = 'framework/js/**/abstract.js',
     jsComponentFiles = 'framework/js/**/*.js',
     jsFileSwiper = 'node_modules/swiper/js/swiper.min.js',
+    jsFileAos = 'node_modules/aos/dist/aos.js',
     jsDest = 'dist/js';
 distDest = 'dist/';
 assetsFolders = ['framework/fonts/**', 'framework/images/**'];
@@ -48,7 +50,7 @@ var postCssPluginsProd = [
 ];
 
 gulp.task('build:css:cd44:dev', function () {
-    return gulp.src([scssFileSwiper, scssFile])
+    return gulp.src([scssFileSwiper, scssFileAos, scssFile])
         .pipe(sass({
             // CSS non minifiée plus lisible ('}' à la ligne)
             outputStyle: 'expanded'
@@ -60,7 +62,7 @@ gulp.task('build:css:cd44:dev', function () {
 });
 
 gulp.task('build:css:cd44:prod', function () {
-    return gulp.src([scssFileSwiper, scssFile])
+    return gulp.src([scssFileSwiper, scssFileAos, scssFile])
         .pipe(sass())
         .pipe(postcss(postCssPluginsProd))
         .pipe(concat('cd44.min.css'))
@@ -68,7 +70,7 @@ gulp.task('build:css:cd44:prod', function () {
 });
 
 gulp.task('build:js', function () {
-    return gulp.src([jsFileSwiper, jsMiscFiles, jsFieldFile, jsAbstractFiles, jsComponentFiles])
+    return gulp.src([jsFileSwiper, jsFileAos, jsMiscFiles, jsFieldFile, jsAbstractFiles, jsComponentFiles])
         .pipe(concat('cd44.js'))
         .pipe(gulp.dest(jsDest));
 });

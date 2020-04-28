@@ -5,11 +5,6 @@
 {% capture label %}<label for="{{ id }}" class="{{ labelClass }}"><span class="{{ placeholderClass }}"><span>{{ label }}{{ requiredStar }}</span></span></label>{% endcapture %}
 
 <div class="ds44-posRel">
-    {% if include.inverted != 'true' %}
-        {{ label }}
-    {% endif %}
+    {{ label }}
     {{ include.content }}
-    {% if include.inverted == 'true' %}
-        {{ label }}
-    {% endif %}
 </div>

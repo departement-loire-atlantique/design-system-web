@@ -104,14 +104,9 @@ class FormFieldBoxAbstract extends FormFieldAbstract {
     }
 
     removeInvalid (objectIndex) {
+        super.removeInvalid(objectIndex);
+
         const object = this.objects[objectIndex];
-
-        let errorElement = object.containerElement.querySelector(':scope > .ds44-errorMsg-container');
-        if (errorElement) {
-            errorElement.innerHTML = '';
-            errorElement.classList.add('hidden');
-        }
-
         object.inputElements.forEach((inputElement) => {
             const defaultAriaDescribedBy = inputElement.getAttribute('data-bkp-aria-describedby');
             if (!defaultAriaDescribedBy) {

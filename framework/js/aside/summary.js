@@ -13,8 +13,11 @@ class AsideSummary {
         this.borderTop = 20;
         this.isMoving = false;
         this.maximumTop = null;
+        this.lastScrollTop = 0;
+        this.scrollDirection = 'down';
 
         this.resize();
+        this.calculateChapter();
 
         MiscEvent.addListener('scroll', this.scroll.bind(this), window);
         MiscEvent.addListener('resize', this.resize.bind(this), window);
@@ -44,6 +47,13 @@ class AsideSummary {
         const scrollTop = this.getScrollTop();
         const top = this.getTop();
 
+        if (this.lastScrollTop > scrollTop) {
+            this.scrollDirection = 'up';
+        } else {
+            this.scrollDirection = 'down';
+        }
+        this.lastScrollTop = scrollTop;
+
         if (scrollTop > MiscUtils.getPositionY(this.containerElement) - top) {
             if (!this.isMoving) {
                 this.summaryElement.style.width = this.containerElement.offsetWidth + 'px';
@@ -68,30 +78,37 @@ class AsideSummary {
         }
 
         if (calculateChapter) {
-            // Highlight sections
-            let activeAElement = null;
-            const headerHeight = MiscDom.getHeaderHeight();
-            this.summaryElement
-                .querySelectorAll('.ds44-list--puces a')
-                .forEach((aElement) => {
-                    aElement.classList.remove('active');
-                    aElement.removeAttribute('aria-location');
+            this.calculateChapter();
+        }
+    }
 
-                    const sectionId = aElement.getAttribute('href').replace(/^#/, '');
-                    const sectionElement = document.querySelector('#' + sectionId);
-                    if (sectionElement) {
-                        const sectionElementStyle = sectionElement.currentStyle || window.getComputedStyle(sectionElement);
-                        const startTop = MiscUtils.getPositionY(sectionElement) + parseInt(sectionElementStyle.marginTop, 10);
-                        const stopTop = startTop + sectionElement.offsetHeight + parseInt(sectionElementStyle.marginBottom, 10);
-                        if ((scrollTop + headerHeight) >= startTop && (scrollTop + headerHeight) <= stopTop) {
-                            activeAElement = aElement
-                        }
+    calculateChapter () {
+        // Highlight sections
+        let activeAElement = null;
+        const cursorPosition = this.getCursorPosition();
+        this.summaryElement
+            .querySelectorAll('.ds44-list--puces a')
+            .forEach((aElement) => {
+                aElement.classList.remove('active');
+                aElement.removeAttribute('aria-location');
+                if (!activeAElement) {
+                    activeAElement = aElement
+                }
+
+                const sectionId = aElement.getAttribute('href').replace(/^#/, '');
+                const sectionElement = document.querySelector('#' + sectionId);
+                if (sectionElement) {
+                    const sectionElementStyle = sectionElement.currentStyle || window.getComputedStyle(sectionElement);
+                    const startTop = MiscUtils.getPositionY(sectionElement) + parseInt(sectionElementStyle.marginTop, 10);
+                    const stopTop = startTop + sectionElement.offsetHeight + parseInt(sectionElementStyle.marginBottom, 10);
+                    if (cursorPosition >= startTop) {
+                        activeAElement = aElement
                     }
-                });
-            if (activeAElement) {
-                activeAElement.classList.add('active');
-                activeAElement.setAttribute('aria-location', 'true');
-            }
+                }
+            });
+        if (activeAElement) {
+            activeAElement.classList.add('active');
+            activeAElement.setAttribute('aria-location', 'true');
         }
     }
 
@@ -106,6 +123,14 @@ class AsideSummary {
 
     getScrollTop () {
         return (document.documentElement.scrollTop || document.body.scrollTop);
+    }
+
+    getCursorPosition () {
+        if (this.scrollDirection === 'up') {
+            return this.getScrollTop();
+        }
+
+        return this.getScrollTop() + window.screen.height;
     }
 
     getTop () {
@@ -162,12 +187,8 @@ class AsideSummary {
         MiscEvent.dispatch('resize', null, window);
         this.menu.classList.add('show');
         MiscAccessibility.show(this.menu);
-
         MiscAccessibility.setFocus(closeButton);
-        MiscAccessibility.addFocusLoop(
-            this.menu,
-            this.menu.getAttribute('aria-label')
-        );
+        MiscAccessibility.addFocusLoop(this.menu);
 
         MiscEvent.dispatch('menu:show', { 'element': this.menu });
     }

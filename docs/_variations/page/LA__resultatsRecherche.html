@@ -17,7 +17,7 @@ layout: pattern
                 {% include form/field/select/checkbox.html label="Select à cases" required="true" %}
             </div>
             <div class="ds44-fieldContainer ds44-fg1">
-                {% include form/field/input/autocomplete.html label="Champ texte libre" required="true" attributes='data-url="/json/autocomplete-address.json" data-mode="free-text"' %}
+                {% include form/field/input/autocomplete.html label="Champ texte libre" required="true" type="address" url="https://api-adresse.data.gouv.fr/search/?lon=-1.8157647&lat=47.2780468" attributes='data-mode="free-text"' %}
             </div>
         {% endcapture %}
 

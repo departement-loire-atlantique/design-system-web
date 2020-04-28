@@ -112,23 +112,6 @@ input[type="file"] {
     }
 }
 
-.ds44-labelTypeInfoComp {
-    font-size: 1.3rem;
-    position: absolute;
-    bottom: 0;
-    transform-origin: top;
-    transform: translateY($ds44-large-vmargin);
-    right: 1px; // form field border size
-    color: $ds44-gray;
-    text-align: right;
-    max-height: 20px;
-    max-width: 85%;
-}
-
-.ds44-theme .ds44-labelTypeInfoComp {
-    color: $ds44-color-dark-text;
-}
-
 .ds44-formLabel--external {
     @include ds44-font-sizes(button);
     color: $ds44-color-dark-text;
@@ -838,6 +821,51 @@ input[type=radio],
     font-size: 1.6rem;
 }
 
+
+/**
+* Information messages
+*/
+
+.ds44-field-information {
+    .ds44-field-information-list {
+        .ds44-field-information-explanation {
+            text-align: right;
+            font-size: 1.3rem;
+            color: $ds44-gray;
+            padding: $ds44-padding-small $ds44-padding-small 0 0;
+
+            .ds44-theme & {
+                color: $ds44-color-dark-text;
+            }
+        }
+
+        .ds44-field-information-error {
+            @include ds44-font-sizes(errMsg);
+            color: $ds44-color-dark-text;
+            padding: $ds44-padding-box;
+            padding-bottom: 0;
+
+            &:last-child {
+                padding-bottom: $ds44-padding-box;
+            }
+
+            .icon {
+                color: $ds44-error;
+            }
+        }
+    }
+
+    &.ds44-error {
+        background-color: $ds44-error-bg;
+
+        .ds44-field-information-explanation {
+            .ds44-theme & {
+                color: $ds44-gray;
+            }
+        }
+    }
+}
+
 /**
 * Valid messages
 */
@@ -932,7 +960,7 @@ input[type=radio],
  * Autocomplete location
  */
 
- .ds44-autocomp--location {
+.ds44-autocomp--location {
     padding-right: 80px;
     overflow: hidden;
     text-overflow: ellipsis;
@@ -1129,12 +1157,6 @@ input[type=radio],
             margin-top: 2.5rem;
         }
     }
-
-    .ds44-labelTypeInfoComp {
-        max-width: 100%;
-    }
-
-
 }
 
 

@@ -2,5 +2,5 @@
 
 <div class="ds44-form__container ds44-checkBox-radio_list {% if include.list == 'true' %}inbl{% endif %}">
     <input type="checkbox" id="name-check-{{ id }}-{{ include.value }}" name="{{ name }}" value="{{ include.value }}" class="ds44-checkbox" {{ include.checked }} {{ attributes }} {{ boxAttributes }} {% if ariaDescribedBy and ariaDescribedBy != '' %}aria-describedby="{{ ariaDescribedBy }}"{% endif %} /><label for="name-check-{{ id }}-{{ include.value }}" class="ds44-boxLabel" id="name-check-label-{{ id }}-{{ include.value }}">{{ include.label }}{{ requiredStar }}</label>
-    {% include form/field/partial/error.html %}
+    {% include form/field/partial/information.html id=id explanation=include.explanation %}
 </div>

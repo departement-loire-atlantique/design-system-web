@@ -2,7 +2,7 @@
 
 // DS 44 icons style
 .i-name {
-	padding-left: 10px;
+    padding-left: 10px;
 }
 
 /* Ratio img générique tuile 62:41 */
@@ -12,6 +12,18 @@
     display: block;
     padding-top: 66.13%;
     position: relative;
+}
+
+.ds44-container-imgZoom {
+    overflow: hidden;
+
+    img {
+        transition: all $ds44-timing-standard ease-in-out;
+
+        &:hover {
+            transform: scale(1.1);
+        }
+    }
 }
 
 .ds44-imgRatio {
@@ -88,7 +100,6 @@
 }
 
 
-
 /* légende d'image */
 figure {
     margin: 0;
@@ -110,63 +121,65 @@ figure {
 
 /* loader */
 .ds44-loader {
-  width: 100vw;
-  height: 100vh;
-  background: rgba(255,255,255,0.9);
-  position: fixed;
-  top: 0;
-  left:0;
-  z-index: 10000;
+    width: 100vw;
+    height: 100vh;
+    background: rgba(255, 255, 255, 0.9);
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 10000;
 
-  .ds44-loader-body {
-      position: absolute;
-      width: $ds44-loader-size;
-      height: $ds44-loader-size;
-      top: 50%;
-      left: 50%;
-      transform: translate(-50%, -50%);
+    .ds44-loader-body {
+        position: absolute;
+        width: $ds44-loader-size;
+        height: $ds44-loader-size;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
 
-      .ds44-loader-circular {
-          animation: rotate 2s linear infinite;
-          height: $ds44-loader-size;
-          position: relative;
-          width: $ds44-loader-size;
+        .ds44-loader-circular {
+            animation: rotate 2s linear infinite;
+            height: $ds44-loader-size;
+            position: relative;
+            width: $ds44-loader-size;
 
-          .ds44-loader-path {
-              stroke-dasharray: 1, 200;
-              stroke-dashoffset: 0;
-              stroke: $ds44-dark;
-              animation: dash 1.5s ease-in-out infinite;
-              stroke-linecap: round;
-          }
-      }
-  }
+            .ds44-loader-path {
+                stroke-dasharray: 1, 200;
+                stroke-dashoffset: 0;
+                stroke: $ds44-dark;
+                animation: dash 1.5s ease-in-out infinite;
+                stroke-linecap: round;
+            }
+        }
+    }
 
 }
 
 
 /* Mosaiques */
 .ds44-mosaique {
-  margin: 0;
-  padding: 0;
+    margin: 0;
+    padding: 0;
 
     & + .ds44-mosaique {
-      margin-top: $ds44-medium-vmargin;
+        margin-top: $ds44-medium-vmargin;
     }
 
     li {
-      cursor: pointer;
+        cursor: pointer;
     }
-    li.row-2 + li  {
-      margin-bottom: $ds44-medium-vmargin;
+
+    li.row-2 + li {
+        margin-bottom: $ds44-medium-vmargin;
     }
+
     .ds44-legendeContainer.ds44-container-imgRatio {
         height: 100%;
     }
 }
 
 .ds44-gutter {
-  grid-column-gap: $ds44-medium-vmargin;
+    grid-column-gap: $ds44-medium-vmargin;
 }
 
 
@@ -202,7 +215,7 @@ figure {
         position: relative;
     }
     .ds44-legendeContainer.ds44-container-imgRatio,
-    .ds44-legendeContainer.ds44-container-imgRatio .ds44-imgRatio  {
+    .ds44-legendeContainer.ds44-container-imgRatio .ds44-imgRatio {
         position: relative;
         padding-top: 0%;
     }
@@ -217,22 +230,22 @@ figure {
 
 @media (min-width: $ds44-large - .625) {
 
-  .grid-12-small-1 .ds44-container-imgRatio--tuileMiseEnAvant {
-      padding-top: 85%;
-  }
+    .grid-12-small-1 .ds44-container-imgRatio--tuileMiseEnAvant {
+        padding-top: 85%;
+    }
 
 
 }
 
 @media (min-width: $ds44-medium) {
 
-  .grid-12-small-1 .col-6 {
-      margin-right: $ds44-medium-vmargin/2;
-  }
-  .grid-12-small-1 .col-6:last-of-type {
-      margin-right: 0;
-      margin-left: $ds44-medium-vmargin/2;
-  }
+    .grid-12-small-1 .col-6 {
+        margin-right: $ds44-medium-vmargin/2;
+    }
+    .grid-12-small-1 .col-6:last-of-type {
+        margin-right: 0;
+        margin-left: $ds44-medium-vmargin/2;
+    }
 
 }
 
@@ -240,12 +253,11 @@ figure {
 @media (max-width: $ds44-small - .625) {
 
 
-
     .ds44-mosaique {
-      .ds44-legendeContainer.ds44-container-imgRatio .ds44-imgRatio,
-      .ds44-legendeContainer.ds44-container-imgRatio {
-          height: 100%;
-      }
+        .ds44-legendeContainer.ds44-container-imgRatio .ds44-imgRatio,
+        .ds44-legendeContainer.ds44-container-imgRatio {
+            height: 100%;
+        }
     }
 
     .ds44-legendeContainer .ds44-blockAbsolute {
@@ -280,9 +292,9 @@ figure {
     /* Mosaiques */
     .ds44-gutter {
 
-      li {
-        margin-bottom: $ds44-medium-vmargin;
-      }
+        li {
+            margin-bottom: $ds44-medium-vmargin;
+        }
     }
 
 }
@@ -321,6 +333,7 @@ figure {
     .swiper-slide picture ,
     .swiper-slide figure  {
     	display: none;
+
     }
 
 

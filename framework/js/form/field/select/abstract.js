@@ -384,7 +384,7 @@ class FormFieldSelectAbstract extends FormFieldAbstract {
         let urlParameters = null;
         if (parameters) {
             const objectData = parameters[Object.keys(parameters)[0]];
-            if(objectData) {
+            if (objectData) {
                 urlParameters = (url.includes('?') ? '&' : '?') + 'q=' + encodeURIComponent(objectData.value);
             }
         }
@@ -581,7 +581,7 @@ class FormFieldSelectAbstract extends FormFieldAbstract {
                             value[additionalDataKey] = additionalData[additionalDataKey];
                             values.push(value);
 
-                            if(text.length > 0) {
+                            if (text.length > 0) {
                                 text.push(value[additionalDataKey].text.toLowerCase() + ' ' + this.formatValue(value[additionalDataKey].value));
                             } else {
                                 text.push(value[additionalDataKey].text + ' ' + this.formatValue(value[additionalDataKey].value));
@@ -658,22 +658,15 @@ class FormFieldSelectAbstract extends FormFieldAbstract {
     }
 
     removeInvalid (objectIndex) {
+        super.removeInvalid(objectIndex);
+
         const object = this.objects[objectIndex];
-        if (!object.valueElement) {
-            return;
+        if (object.buttonElement) {
+            object.buttonElement.removeAttribute('aria-invalid');
         }
         if (!object.shapeElement) {
-            return;
+            object.shapeElement.classList.remove('ds44-error');
         }
-
-        let errorElement = object.containerElement.querySelector(':scope > .ds44-errorMsg-container');
-        if (errorElement) {
-            errorElement.innerHTML = '';
-            errorElement.classList.add('hidden');
-        }
-
-        object.buttonElement.removeAttribute('aria-invalid');
-        object.shapeElement.classList.remove('ds44-error');
     }
 
     invalid (objectIndex) {
@@ -708,7 +701,7 @@ class FormFieldSelectAbstract extends FormFieldAbstract {
         ) {
             // Date
             const dateArray = value.split('-');
-            value = dateArray[2] + '/' +dateArray[1] + '/' +dateArray[0];
+            value = dateArray[2] + '/' + dateArray[1] + '/' + dateArray[0];
         }
 
         return value;

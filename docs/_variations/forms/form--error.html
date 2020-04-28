@@ -23,17 +23,17 @@ layout: pattern
 </form>
 <hr />
 <form>
-    {% include form/field/input/autocomplete.html label="Champ texte libre" required="true" attributes='data-url="/json/autocomplete-address.json" data-mode="free-text"' %}
+    {% include form/field/input/autocomplete.html label="Champ texte libre" required="true" type="address" url="https://api-adresse.data.gouv.fr/search/?lon=-1.8157647&lat=47.2780468" attributes='data-mode="free-text"' %}
     <div><input type="submit" class="ds44-btnStd" value="Tester le champ autocomplétion" /></div>
 </form>
 <hr />
 <form>
-    {% include form/field/input/city.html label="Champ commune" required="true" attributes='data-url="/json/autocomplete-city.json" data-mode="select-only"' %}
+    {% include form/field/input/autocomplete.html label="Champ commune" required="true" type="city" url="/json/autocomplete-city.json" attributes='data-mode="select-only"' %}
     <div><input type="submit" class="ds44-btnStd" value="Tester le champ commune" /></div>
 </form>
 <hr />
 <form>
-    {% include form/field/input/autocomplete.html label="Champ adresse" required="true" attributes='data-url="/json/autocomplete-address.json" data-mode="select-only"' %}
+    {% include form/field/input/autocomplete.html label="Champ adresse" required="true" type="address" url="https://api-adresse.data.gouv.fr/search/?lon=-1.8157647&lat=47.2780468" attributes='data-mode="select-only"' %}
     <div><input type="submit" class="ds44-btnStd" value="Tester le champ adresse" /></div>
 </form>
 <hr />

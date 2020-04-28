@@ -10,7 +10,7 @@ class MiscAccessibility {
     // Fonction qui va forcer le focus à faire une boucle sur un élément
     // en ajoutant deux inputs 'hidden' qui peuvent être focus, au début
     // et à la fin
-    static addFocusLoop (element, elementName) {
+    static addFocusLoop (element) {
         MiscAccessibility.removeFocusLoop();
 
         if (!element) {

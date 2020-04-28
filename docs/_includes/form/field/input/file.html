@@ -1,22 +1,20 @@
 {% include form/_variables.html %}
 
 {% capture mainContent %}
-{{ explanation }}
-<div class="ds44-file__shape {{ mainClass }}">
-    <input type="file" id="{{ id }}" name="{{ name }}" {{ title }} {{ attributes }} {{ inputAttributes }} {{ placeholder }} {% if ariaDescribedBy and ariaDescribedBy !='' %}aria-describedby="{{ ariaDescribedBy }}" {% endif %} />
-    <div id="file-display-{{ id }}" class="ds44-fileDisplay"></div>
-</div>
-{% include form/field/partial/reset.html %}
-<span class="ds44-file" aria-hidden="true"><i class="icon icon-directory icon--medium" aria-hidden="true"></i></span>
-
+    <div class="ds44-file__shape {{ mainClass }}">
+        <input type="file" id="{{ id }}" name="{{ name }}" {{ title }} {{ attributes }} {{ inputAttributes }} {{ placeholder }} {% if ariaDescribedBy and ariaDescribedBy !='' %}aria-describedby="{{ ariaDescribedBy }}" {% endif %} />
+        <div id="file-display-{{ id }}" class="ds44-fileDisplay"></div>
+    </div>
+    {% include form/field/partial/reset.html %}
+    <span class="ds44-file" aria-hidden="true"><i class="icon icon-directory icon--medium" aria-hidden="true"></i></span>
 {% endcapture %}
 
 {% capture labelContent %}
-{% include form/field/partial/label.html content=mainContent disabled=include.disabled inverted="true" %}
+    {% include form/field/partial/label.html content=mainContent disabled=include.disabled %}
 {% endcapture %}
 
 {% if include.hidden == 'true' %}
     {% assign containerClass = containerClass | append : ' hidden' %}
 {% endif %}
 
-{% include form/field/partial/container.html content=labelContent containerClass=containerClass %}
+{% include form/field/partial/container.html id=id content=labelContent containerClass=containerClass explanation=include.explanation %}

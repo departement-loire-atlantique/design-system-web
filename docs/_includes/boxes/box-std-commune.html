@@ -3,8 +3,8 @@
         <p role="heading" aria-level="2" class="ds44-box-heading">Près de chez vous</p>
         <form data-statistic='{"name": "declenche-evenement","category": "Formulaire","action": "Recherchez un contact","label": "$commune|text"}'>
             <div class="ds44-js-linked-fields ds44-js-masked-fields">
-                {% include form/field/input/autocomplete.html name="commune" label="Recherchez un contact" placeholder="Nom de la commune" required="true" attributes='data-url="/json/autocomplete-city.json" data-mode="select-only"' title="Sélectionner Commune - mise à jour automatique des adresses triées par ordre alphabétique" %}
-                {% include form/field/input/autocomplete.html name="adresse" label="Ajouter une adresse" placeholder="Votre adresse" required="true" disabled="true" hidden="true" attributes='data-url="/json/autocomplete-address.json" data-mode="select-only"' %}
+                {% include form/field/input/autocomplete.html name="commune" label="Recherchez un contact" placeholder="Nom de la commune" required="true" type="city" url="/json/autocomplete-city.json" attributes='data-mode="select-only"' title="Sélectionner Commune - mise à jour automatique des adresses triées par ordre alphabétique" %}
+                {% include form/field/input/autocomplete.html name="adresse" label="Ajouter une adresse" placeholder="Votre adresse" required="true" disabled="true" hidden="true" type="address" url="https://api-adresse.data.gouv.fr/search/?lon=-1.8157647&lat=47.2780468" attributes='data-mode="select-only"' %}
             </div>
             <button class="ds44-btnStd ds44-btn--invert" type="submit" aria-label="Valider votre recherche de contact dans une commune">
                 <span class="ds44-btnInnerText">Valider</span><i class="icon icon-long-arrow-right" aria-hidden="true"></i>

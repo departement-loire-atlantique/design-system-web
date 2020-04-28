@@ -1,38 +1,38 @@
 {% include form/_variables.html %}
 
 {% capture mainContent %}
-{% include form/field/partial/select.html disabled=include.disabled selectContainerClass="ds44-js-select-checkbox" %}
+    {% include form/field/partial/select.html disabled=include.disabled selectContainerClass="ds44-js-select-checkbox" %}
 
-{% assign savedId = id %}
-{% assign savedLabel = label %}
+    {% assign savedId = id %}
+    {% assign savedLabel = label %}
 
-<div class="ds44-select-container hidden">
-    <div class="ds44-flex-container ds44--m-padding">
-        <button class="ds44-btnStd ds44-bgGray ds44-btnStd--plat ds44-fg1" type="button" aria-describedby="button-message-{{ id }}"><span class="ds44-btnInnerText">Tout cocher</span><i class="icon icon-check icon--medium" aria-hidden="true"></i></button>
-        <button class="ds44-btnStd ds44-bgGray ds44-btnStd--plat ds44-fg1 ds44-border-left--light" type="button" aria-describedby="button-message-{{ id }}"><span class="ds44-btnInnerText">Tout décocher</span><i class="icon icon-cross icon--medium" aria-hidden="true"></i></button>
+    <div class="ds44-select-container hidden">
+        <div class="ds44-flex-container ds44--m-padding">
+            <button class="ds44-btnStd ds44-bgGray ds44-btnStd--plat ds44-fg1" type="button" aria-describedby="button-message-{{ id }}"><span class="ds44-btnInnerText">Tout cocher</span><i class="icon icon-check icon--medium" aria-hidden="true"></i></button>
+            <button class="ds44-btnStd ds44-bgGray ds44-btnStd--plat ds44-fg1 ds44-border-left--light" type="button" aria-describedby="button-message-{{ id }}"><span class="ds44-btnInnerText">Tout décocher</span><i class="icon icon-cross icon--medium" aria-hidden="true"></i></button>
+        </div>
+        <div class="ds44-listSelect">
+            <ul class="ds44-list" id="listbox-{{ id }}">
+                <li class="ds44-select-list_elem">
+                    {% include form/field/box/checkbox.html value="1" label="Choix 1" boxAttributes=boxAttributes %}
+                </li>
+                <li class="ds44-select-list_elem">
+                    {% include form/field/box/checkbox.html value="2" label="Choix 2" boxAttributes=boxAttributes %}
+                </li>
+                <li class="ds44-select-list_elem">
+                    {% include form/field/box/checkbox.html value="3" label="Choix 3" boxAttributes=boxAttributes %}
+                </li>
+                <li class="ds44-select-list_elem">
+                    {% include form/field/box/checkbox.html value="4" label="Choix 4" boxAttributes=boxAttributes %}
+                </li>
+            </ul>
+        </div>
+        <button type="button" class="ds44-fullWBtn ds44-btnSelect ds44-theme" title="Valider la sélection de : {{ savedLabel }}"><span class="ds44-btnInnerText">Valider</span><i class="icon icon-long-arrow-right ds44-noLineH" aria-hidden="true"></i></button>
     </div>
-    <div class="ds44-listSelect">
-        <ul class="ds44-list" id="listbox-{{ id }}">
-            <li class="ds44-select-list_elem">
-                {% include form/field/box/checkbox.html value="1" label="Choix 1" boxAttributes=boxAttributes %}
-            </li>
-            <li class="ds44-select-list_elem">
-                {% include form/field/box/checkbox.html value="2" label="Choix 2" boxAttributes=boxAttributes %}
-            </li>
-            <li class="ds44-select-list_elem">
-                {% include form/field/box/checkbox.html value="3" label="Choix 3" boxAttributes=boxAttributes %}
-            </li>
-            <li class="ds44-select-list_elem">
-                {% include form/field/box/checkbox.html value="4" label="Choix 4" boxAttributes=boxAttributes %}
-            </li>
-        </ul>
-    </div>
-    <button type="button" class="ds44-fullWBtn ds44-btnSelect ds44-theme" title="Valider la sélection de : {{ savedLabel }}"><span class="ds44-btnInnerText">Valider</span><i class="icon icon-long-arrow-right ds44-noLineH" aria-hidden="true"></i></button>
-</div>
 {% endcapture %}
 
 {% if include.hidden == 'true' %}
     {% assign containerClass = containerClass | append : ' hidden' %}
 {% endif %}
 
-{% include form/field/partial/container.html content=mainContent containerClass=containerClass %}
+{% include form/field/partial/container.html id=savedId content=mainContent containerClass=containerClass explanation=include.explanation %}

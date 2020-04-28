@@ -3,148 +3,131 @@
 */
 
 .ds44-timeline_index {
+    font-size: 2.2rem;
 
-  font-size: 2.2rem;
-
-  p {
-    display: inline-block;
-    font-weight: bolder;
-  }
-
-  ul {
-    display: inline-block;
-
-    li {
-      display: inline-block;
-
-      > a {
-        padding-left: 40px;
-        background: url(../../../assets/images/right.png) no-repeat left 15px center;
-        margin-right: 1rem;
-      }
+    @media (max-width: $ds44-medium - .0625) {
+        text-align: left;
     }
-  }
-
-}
-
-.ds44-timeline_container {
-
-  position: relative;
-
-  &::before {
-    content: "";
-    width: 3px;
-    height: 100%;
-    position: absolute;
-    background-color: $ds44-contextual-color;
-    left: 50%;
-    top: 40px;
-    z-index: 10;
-  }
-
-  .ds44-timeline_elem {
-    width: calc(50% - 5rem); // 50% - taille de la marge à droite
-    margin-right: 5rem;
-    padding-bottom: 4rem;
-    margin-bottom: 4rem;
-    border-bottom: 2px solid $ds44-contextual-color;
-    position: relative;
-
-    p, hr {
-      margin-top: 3rem;
-    }
-
-  }
-
-  .ds44-timeline_elem::after {
-    content: "";
-    position: absolute;
-    width: 25px;
-    height: 25px;
-    border: 5px solid #FFF;
-    background-color: #000;
-    border-radius: 25px;
-    left: calc(100% + 39px); // taille du conteneur + (sa marge - (la moitié de la taille du rond - moitié de la taille de la ligne verticale))
-    top: 25px;
-    z-index: 20;
-  }
-
-  .ds44-timeline_elem:nth-child(even) {
-    margin-right: 0;
-    margin-left: calc(50% + 5rem);
-
-    &::after {
-      left: -61px; // - (marge du conteneur + (la moitié de la taille du rond - moitié de la taille de la ligne verticale))
-      top: 25px;
-    }
-
-  }
-
-}
-
-@media (max-width: $ds44-medium - .0625) {
-
-  .ds44-timeline_index {
-
-      text-align: left;
 
     p {
-      display: block;
+        display: inline-block;
+        font-weight: bolder;
+
+        @media (max-width: $ds44-medium - .0625) {
+            display: block;
+        }
     }
 
     ul {
-      display: block;
+        display: inline-block;
 
-      li {
-        display: block;
-
-        > a {
-          padding-left: 25px;
-          background: url(../../../assets/images/right.png) no-repeat left;
-          margin-right: 0;
+        @media (max-width: $ds44-medium - .0625) {
+            display: block;
         }
-      }
+
+        li {
+            display: inline-block;
+
+            @media (max-width: $ds44-medium - .0625) {
+                display: block;
+            }
+
+            > a {
+                padding-left: 40px;
+                background: url(../../../assets/images/right.png) no-repeat left 15px center;
+                margin-right: 1rem;
+
+                @media (max-width: $ds44-medium - .0625) {
+                    padding-left: 25px;
+                    background: url(../../../assets/images/right.png) no-repeat left;
+                    margin-right: 0;
+                }
+            }
+        }
     }
+}
 
-  }
-
-
-  .ds44-timeline_container {
-
+.ds44-timeline_container {
     position: relative;
 
     &::before {
-      left: 1.5rem;
+        content: "";
+        width: 3px;
+        height: 100%;
+        position: absolute;
+        background-color: $ds44-contextual-color;
+        left: 50%;
+        top: 40px;
+        z-index: 10;
+
+        @media (max-width: $ds44-medium - .0625) {
+            left: 1.5rem;
+        }
     }
 
     .ds44-timeline_elem {
-      width: auto;
-      margin-right: 1.5rem;
-      margin-left: 4rem;
+        width: calc(50% - 5rem); // 50% - taille de la marge à droite
+        margin-right: 5rem;
+        padding-bottom: 4rem;
+        margin-bottom: 4rem;
+        border-bottom: 2px solid $ds44-contextual-color;
+        position: relative;
+        z-index: 20;
+
+        @media (max-width: $ds44-medium - .0625) {
+            width: auto;
+            margin-right: 1.5rem;
+            margin-left: 4rem;
+        }
+
+        &::after {
+            content: "";
+            position: absolute;
+            width: 25px;
+            height: 25px;
+            border: 5px solid #FFF;
+            background-color: #000;
+            border-radius: 25px;
+            left: calc(100% + 39px); // taille du conteneur + (sa marge - (la moitié de la taille du rond - moitié de la taille de la ligne verticale))
+            top: 25px;
+            z-index: 20;
+
+            @media (max-width: $ds44-medium - .0625) {
+                left: -36px; // - (marge du conteneur - position de la ligne + moitié de la taille du rond - moitié de la largeur de la ligne)
+                top: 14px; // championnat de rugby français
+            }
+        }
+
+        &:nth-child(odd) {
+            .h2-like {
+                @media (max-width: $ds44-medium - .0625) {
+                    margin-left: 0;
+                }
+            }
+        }
+
+        &:nth-child(even) {
+            margin-right: 0;
+            margin-left: calc(50% + 5rem);
+
+            @media (max-width: $ds44-medium - .0625) {
+                margin-left: 4rem;
+                margin-right: 2rem;
+            }
+
+            &::after {
+                left: -61px; // - (marge du conteneur + (la moitié de la taille du rond - moitié de la taille de la ligne verticale))
+                top: 25px;
+
+                @media (max-width: $ds44-medium - .0625) {
+                    left: -36px;
+                    top: 14px;
+                }
+            }
+        }
+
+        p, hr {
+            margin-top: 3rem;
+        }
     }
-
-    .ds44-timeline_elem::after {
-      left: -36px; // - (marge du conteneur - position de la ligne + moitié de la taille du rond - moitié de la largeur de la ligne)
-      top: 14px; // championnat de rugby français
-    }
-
-    .ds44-timeline_elem:nth-child(odd) .h2-like {
-
-      margin-left: 0;
-
-    }
-
-    .ds44-timeline_elem:nth-child(even) {
-      margin-left: 4rem;
-      margin-right: 2rem;
-
-      &::after {
-        left: -36px;
-        top: 14px;
-      }
-
-    }
-
-  }
-
 }

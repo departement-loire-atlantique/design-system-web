@@ -29,6 +29,21 @@
     position: relative;
 }
 
+.ds44-video-container {
+    position: relative;
+    width: 100%;
+    padding-bottom: 56.25%;
+
+    .ds44-video-item {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        border: 0;
+    }
+}
+
 .ds44-homepage-container {
 
     .ds44-imgInsta {
@@ -112,6 +127,15 @@ main {
 
 .ds44-contenuArticle, .ds44-contenuMedia {
     margin: 0 auto $ds44-components-vmargin auto;
+}
+
+.ds44-contenuDossier {
+
+    .ds44-negativeOffset-1,
+    .ds44-negativeOffset-2 {
+        margin-left: 0 !important;
+        margin-right: 0 !important;
+    }
 }
 
 @media (max-width: $ds44-medium - .0625) {
@@ -718,7 +742,6 @@ main {
 }
 
 
-
 /* Media Queries Print / Impression */
 @media print {
 
@@ -798,26 +821,80 @@ main {
 
   .ds44-pageHeaderContainer {
 
-    .ds44-titleContainer {
-      min-height: auto;
-      justify-content: flex-start;
 
-      .ds44-alphaGradient {
-        padding: 0 !important
-      }
-      .ds44-text--colorInvert {
-        color: #000;
-      }
+
+    p, blockquote {
+        orphans: 3; /* pas de ligne seule en bas */
+        widows: 3; /* pas de ligne seule en haut */
+    }
+    blockquote, ul, ol {
+        page-break-inside: avoid; /* pas de coupure dans ces élements */
+    }
+    h1, .h1-like,
+    h2, .h2-like,
+    h3, .h3-like,
+    h4, .h4-like {
+        page-break-after: avoid; /* pas de saut après ces éléments */
+    }
+    a {
+        color: #000 !important;
+        text-decoration: underline !important;
     }
 
-    img {
-      display: none !important;
-    }
-  }
 
-  .grid-offset {
-    display: none !important;
-  }
+    .ds44-container-large {
+        margin: 0;
+        padding: 0;
+        clear: both;
+        max-width: inherit;
+        display: block !important;
+    }
+
+    .grid-2-small-1,
+    .grid-12-small-1 {
+        grid-template-columns: repeat(1, 1fr);
+        page-break-inside: auto !important;
+
+        & > * {
+            clear: both !important;
+            display: block !important;
+            grid-column: inherit !important;
+            page-break-inside: auto !important;
+        }
+    }
+
+    .ds44-grid12-offset-2,
+    .ds44-grid12-offset-1 {
+        padding: 0 !important;
+    }
+
+    .ds44-inner-container {
+        max-width: inherit !important;
+    }
+
+    .ds44-pageHeaderContainer {
+
+        .ds44-titleContainer {
+            min-height: auto;
+            justify-content: flex-start;
+
+            .ds44-alphaGradient {
+                padding: 0 !important
+            }
+
+            .ds44-text--colorInvert {
+                color: #000;
+            }
+        }
+
+        img {
+            display: none !important;
+        }
+    }
+
+    .grid-offset {
+        display: none !important;
+    }
 
   .txtcenter,
   .u-txt-center,

@@ -1,15 +1,17 @@
 class MiscTranslate {
-    static getDictionnary () {
-        let language = 'en';
-
+    static getLanguage () {
         const htmlElement = document.querySelector('html');
         if (
             htmlElement &&
             htmlElement.getAttribute('lang') === 'fr'
         ) {
-            language = 'fr';
+            return 'fr';
         }
 
+        return 'en';
+    }
+
+    static getDictionnary () {
         return ({
             'fr': {
                 'AROUND_ME': 'Autour de moi',
@@ -89,7 +91,7 @@ class MiscTranslate {
                 'NB_RESULTS_FOR_SEARCH:': 'for the search on:',
                 'FORM_GENERAL_ERROR': 'An error occurred following the submission of your form'
             }
-        })[language];
+        })[MiscTranslate.getLanguage()];
     }
 
     static _ (input) {
