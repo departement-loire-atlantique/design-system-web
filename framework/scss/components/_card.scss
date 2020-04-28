@@ -317,3 +317,14 @@ a.ds44-card {
     }
 
 }
+
+/* Media Queries Print / Impression */
+@media print {
+
+    .ds44-card__dateContainer {
+        min-height: 5rem;
+        min-width: 5rem;
+    }
+
+
+}

@@ -730,8 +730,9 @@ main {
     color: #000!important;
   }
 
-  p, h1, h2, h3, h4, h5, h6, blockquote, ul, ol {
-    color: #000!important;
+  p, .p-like, h1, .h1-like, h2, .h2-like, h3, .h3-like, h4, .h4-like, h5, .h5-like, h6, .h6-like, blockquote, label, ul, ol {
+      color: #000!important;
+      margin: 0;
   }
 
 
@@ -772,7 +773,7 @@ main {
 
     & > * {
       clear: both !important;
-      display: block !important;
+      display: block ;
       grid-column: inherit !important;
       break-inside: auto !important;
 
@@ -783,11 +784,15 @@ main {
   }
 
   .ds44-grid12-offset-2,
-  .ds44-grid12-offset-1 {
+  .ds44-grid12-offset-1,
+  .ds44-negativeOffset-2,
+  .ds44-negativeOffset-1 {
     padding: 0 !important;
+    margin: 0 !important;
   }
 
-  .ds44-inner-container {
+  .ds44-inner-container,
+  .ds44-inner-container--mag  {
     max-width: inherit !important;
   }
 
@@ -818,6 +823,27 @@ main {
   .u-txt-center,
   .center {
       text-align: left;
+  }
+
+  .ds44-homepage-container > div {
+      height: auto !important;
+      min-height: auto !important;
+
+      .swipper-carousel-wrap--homepage .h1-like,
+      .ds44-titleContainer--home .h1-like {
+          position: relative;
+          padding: 0;
+          color: #000;
+
+          br {
+              display: none;
+          }
+      }
+
+      .ds44-titleContainer--home {
+          height: auto !important;
+          min-height: auto !important;
+      }
   }
 
   .ds44-component-chapo {

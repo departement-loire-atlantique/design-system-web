@@ -396,16 +396,27 @@
   .ds44-box--push {
       min-height: inherit !important;
       border: 1px solid $ds44-lightgray;
+      break-inside: avoid !important;
   }
 
   .ds44-boxPushPic {
       picture, figure, img {
           display: none;
       }
+
+      &.ds44-boxPushPic--horizontal {
+          width: 0 !important;
+      }
   }
 
   .ds44-card__title {
-      font-size: 1.7rem !important;
+      font-size: 1.3rem !important;
   }
+
+  .ds44-legendeContainer .ds44-blockAbsolute {
+    position: relative !important;
+    z-index: 1 !important;
+    width: auto !important;
+    }
 
 }

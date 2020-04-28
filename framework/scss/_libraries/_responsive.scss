@@ -467,3 +467,14 @@
   }
 
 }
+
+
+/* Media Queries Print / Impression */
+@media print {
+
+    .ds44-hide-mobile,
+    .ds44-hide-smallScreens {
+        display: none !important;
+    }
+    
+}

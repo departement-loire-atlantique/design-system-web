@@ -249,6 +249,11 @@
         margin: 0 !important;
         width: 100% !important;
         break-inside: avoid;
+
+        & .ds44-js-card {
+            margin-bottom: 1rem !important;
+            border: 1px solid $ds44-lightgray;
+        }
 	}
 
     .swiper-button-prev,

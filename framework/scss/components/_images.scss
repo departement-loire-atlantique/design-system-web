@@ -291,17 +291,37 @@ figure {
 /* Media Queries Print / Impression */
 @media print {
 
-    img {
-      max-width: 300px !important;
-			max-height: 200px !important;
+    .ds44-container-imgRatio {
+        width: auto !important;
+        height: auto !important;
+        padding-top: 0 !important;
+    }
+    img,
+    iframe {
+        max-width: 300px !important;
+        width: auto !important;
+	    max-height: 200px !important;
+	    height: 100% !important;
+        overflow: hidden;
+        position: relative !important;
     }
 
-		.ds44-card__section--horizontal--img,
-		.swiper-slide img,
-		.swiper-slide picture ,
-		.swiper-slide figure  {
-			display: none;
-		}
+    .ds44-pictoStore {
+        height: 32px !important;
+        width: auto !important;
+    }
+
+    .ds44-logoContainer img {
+        height: 62px !important;
+        margin-bottom: 3rem !important;
+    }
+
+    .ds44-card__section--horizontal--img,
+    .swiper-slide img,
+    .swiper-slide picture ,
+    .swiper-slide figure  {
+    	display: none;
+    }
 
 
 }

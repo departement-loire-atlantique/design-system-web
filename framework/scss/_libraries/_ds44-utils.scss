@@ -1102,7 +1102,8 @@ h6.visually-hidden + * {
     h2:not(h1):not(.h1-like):not(.h3-like):not(.h4-like) + *,
     h2 + .ds44-introduction,
     .h2-like:not(h1):not(.h1-like):not(.h3-like):not(.h4-like) + *,
-    .h2-like + .ds44-introduction {
+    .h2-like + .ds44-introduction,
+    .mts, .mtm, .mtl {
       margin-top: 1rem !important;
     }
     .ds44-mb1,
@@ -1113,19 +1114,22 @@ h6.visually-hidden + * {
     .ds44-mb5,
     .ds44-introduction,
     .ds44-introduction-like,
-    .ds44-component-chapo  {
+    .ds44-component-chapo,
+    .mbs, .mbm, .mbl  {
       margin-bottom: 1rem !important;
     }
     .ds44-mr1,
     .ds44-mr2,
     .ds44-mr-std ,
-    .ds44-mr5{
+    .ds44-mr5,
+    .mrs, .mrm, .mrl {
       margin-right: 1rem !important;
     }
     .ds44-ml1,
     .ds44-ml2,
     .ds44-ml-std,
-    .ds44-ml5  {
+    .ds44-ml5,
+    .mls, .mlm, .mll  {
       margin-left: 1rem !important;
     }
     .ds44-m3c,
