@@ -257,13 +257,14 @@
   }
 
   .ds44-header {
-    position: inherit;
-    margin-top: 0;
-    opacity: 1;
-    visibility: visible;
+    position: inherit !important;
+    margin-top: 0 !important;
+    opacity: 1 !important;
+    visibility: visible !important;
 
     .ds44-colLeft {
       text-align: center;
+      display: block !important ;
     }
     .ds44-colRight {
       display: none !important;

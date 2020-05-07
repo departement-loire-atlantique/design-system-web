@@ -831,7 +831,7 @@ main {
     orphans: 3; /* pas de ligne seule en bas */
     widows: 3; /* pas de ligne seule en haut */
   }
-  blockquote, ul, ol, table, tbody {
+  blockquote, ul, ol, table, tbody, .ds44-wsg-encadreContour {
     break-inside: avoid; /* pas de coupure dans ces élements */
   }
   h1, .h1-like,

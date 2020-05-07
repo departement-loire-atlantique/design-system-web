@@ -332,9 +332,14 @@ figure {
     .ds44-card__section--horizontal--img,
     .swiper-slide img,
     .swiper-slide picture ,
-    .swiper-slide figure  {
-    	display: none;
-
+    .swiper-slide figure,
+    .ds44-container-imgRatio ,
+    .ds44-hiddenPrint,
+    .ds44-box__img,
+    .ds44-mediaIndicator {
+        display: none !important;
+        visibility: hidden;
+        opacity: 0;
     }
 
 
