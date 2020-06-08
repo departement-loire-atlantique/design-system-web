@@ -809,37 +809,7 @@ input[type=radio],
 }
 
 
-/**
-* Error messages
-*/
 
-
-.ds44-error {
-    border-color: $ds44-error;
-}
-
-.ds44-errorMsg-container {
-    @include ds44-font-sizes(errMsg);
-    background-color: $ds44-error-bg;
-    padding: $ds44-padding-box;
-
-    .ds44-msgErrorText {
-        margin: $ds44-paragraph-margin-bottom 0;
-        color: $ds44-color-dark-text;
-    }
-
-    .icon {
-        color: $ds44-error;
-    }
-
-    .ds44-iconInnerText {
-        vertical-align: middle;
-    }
-}
-
-.ds44-errorLabel {
-    font-size: 1.6rem;
-}
 
 
 /**
@@ -886,8 +856,9 @@ input[type=radio],
     }
 }
 
+
 /**
-* Valid messages
+* Valid et Error messages
 */
 
 
@@ -895,24 +866,42 @@ input[type=radio],
     border-color: $ds44-valid;
 }
 
-.ds44-valid-container {
-    @include ds44-font-sizes(errMsg);
-    background-color: $ds44-valid-bg;
+.ds44-error {
+    border-color: $ds44-error;
+}
+
+
+.ds44-msg-container {
+    @include ds44-font-sizes(bodySize);
     padding: $ds44-padding-box;
 
-    .ds44-msgValidText {
+    .ds44-message-text {
         margin: $ds44-paragraph-margin-bottom 0;
         color: $ds44-color-dark-text;
     }
 
-    .icon {
-        color: $ds44-valid;
+    &.success {
+        background-color: $ds44-valid-bg;
+
+        .icon {
+            color: $ds44-valid;
+        }
+    }
+
+    &.error {
+        background-color: $ds44-error-bg;
+
+        .icon {
+            color: $ds44-error;
+        }
     }
 
     .ds44-iconInnerText {
         vertical-align: middle;
     }
 }
+
+
 
 .ds44-message-container {
     @include ds44-font-sizes(errMsg);
