@@ -67,7 +67,7 @@
         left: 50%;
         height: 2em;
         width: 4rem;
-        background: url(../../../assets/icons/long-arrow-down.svg) no-repeat;
+        background: url(../icons/long-arrow-down.svg) no-repeat;
     }
 
 }
@@ -695,7 +695,7 @@ main {
 }
 
 .ds44-map-marker {
-    background: url('../../../assets/images/cd44-marker-big-black.svg') no-repeat center center transparent;
+    background: url('../images/cd44-marker-big-black.svg') no-repeat center center transparent;
     background-size: cover;
     width: 40px;
     height: 40px;
@@ -706,7 +706,7 @@ main {
     &:active,
     &:focus,
     &.active {
-        background-image: url('../../../assets/images/cd44-marker-hover-big-black.svg');
+        background-image: url('../images/cd44-marker-hover-big-black.svg');
     }
 }
 

@@ -3099,7 +3099,7 @@ ul:not(.ds44-list):not(.ds44-collapser) {
 ul:not(.ds44-list):not(.ds44-collapser) > li {
   list-style-position: outside;
   margin-top: 1.5rem;
-  list-style-image: url(../../../assets/images/right.svg);
+  list-style-image: url(../images/right.svg);
 }
 
 ul:not(.ds44-list):not(.ds44-collapser) > li ul:not(.ds44-list) > li {
@@ -4215,33 +4215,33 @@ caption {
 }
 
 .ds44-bgCircle {
-  background-image: url(../../../assets/images/backgrounds/bkgd-circle-white.svg);
+  background-image: url(../images/backgrounds/bkgd-circle-white.svg);
   background-repeat: no-repeat;
   background-size: 470px;
 }
 
 .ds44-bgTriangle-left {
-  background-image: url(../../../assets/images/backgrounds/bkgd-triangle-left-white.svg);
+  background-image: url(../images/backgrounds/bkgd-triangle-left-white.svg);
   background-repeat: no-repeat;
   background-size: 470px;
   background-position: left;
 }
 
 .ds44-bgTriangle-right {
-  background-image: url(../../../assets/images/backgrounds/bkgd-triangle-right-white.svg);
+  background-image: url(../images/backgrounds/bkgd-triangle-right-white.svg);
   background-repeat: no-repeat;
   background-size: 470px;
   background-position: right;
 }
 
 .ds44-wave-white {
-  background-image: url(../../../assets/images/backgrounds/bkgd-wave-white.png);
+  background-image: url(../images/backgrounds/bkgd-wave-white.png);
   background-position-y: bottom;
   background-repeat: repeat-x;
 }
 
 .ds44-wave-grey {
-  background-image: url(../../../assets/images/backgrounds/bkgd-wave-light-grey.png);
+  background-image: url(../images/backgrounds/bkgd-wave-light-grey.png);
   background-position-y: bottom;
   background-repeat: repeat-x;
 }
@@ -6230,7 +6230,7 @@ a.ds44-card {
   left: 50%;
   height: 2em;
   width: 4rem;
-  background: url(../../../assets/icons/long-arrow-down.svg) no-repeat;
+  background: url(../icons/long-arrow-down.svg) no-repeat;
 }
 
 .ds44-littleMain {
@@ -6910,7 +6910,7 @@ main {
 }
 
 .ds44-map-marker {
-  background: url("../../../assets/images/cd44-marker-big-black.svg") no-repeat center center transparent;
+  background: url("../images/cd44-marker-big-black.svg") no-repeat center center transparent;
   background-size: cover;
   width: 40px;
   height: 40px;
@@ -6919,7 +6919,7 @@ main {
 }
 
 .ds44-map-marker:hover, .ds44-map-marker:active, .ds44-map-marker:focus, .ds44-map-marker.active {
-  background-image: url("../../../assets/images/cd44-marker-hover-big-black.svg");
+  background-image: url("../images/cd44-marker-hover-big-black.svg");
 }
 
 /* Fiche lieu événements */
@@ -7685,7 +7685,7 @@ main {
   content: '';
   width: 20px;
   height: 20px;
-  background-image: url(../../../assets/images/cd44-play-black.svg);
+  background-image: url(../images/cd44-play-black.svg);
   display: block;
   position: absolute;
   left: 0;
@@ -7778,7 +7778,7 @@ main {
   margin-top: .2rem !important;
   list-style-image: none !important;
   padding-left: 20px;
-  background: url(../../../assets/images/right.svg) no-repeat left -9px;
+  background: url(../images/right.svg) no-repeat left -9px;
   background-size: 20px;
   font-size: 1.6rem;
 }
@@ -8168,13 +8168,13 @@ input[type=checkbox]:focus + .ds44-boxLabel::before,
 
 input[type=checkbox].ds44-chkInder + .ds44-boxLabel::before,
 .ds44-checkbox.ds44-chkInder + .ds44-boxLabel::before {
-  background: url(../../../assets/images/tiret.png) no-repeat center;
+  background: url(../images/tiret.png) no-repeat center;
   background-size: 1rem;
 }
 
 input[type=checkbox]:checked + .ds44-boxLabel::before,
 .ds44-checkbox:checked + .ds44-boxLabel::before {
-  background: #FFF url(../../../assets/images/cd44-check-black.png) no-repeat center;
+  background: #FFF url(../images/cd44-check-black.png) no-repeat center;
   background-size: 1rem;
 }
 
@@ -11023,8 +11023,8 @@ footer [role="heading"] {
 
 .ds44-imgLoupe img:hover {
   opacity: 0;
-  cursor: url("../../../assets/icons/cd44-search-big-white.svg"), -webkit-zoom-in;
-  cursor: url("../../../assets/icons/cd44-search-big-white.svg"), zoom-in;
+  cursor: url("../icons/cd44-search-big-white.svg"), -webkit-zoom-in;
+  cursor: url("../icons/cd44-search-big-white.svg"), zoom-in;
 }
 
 .ds44-imgRatio {
@@ -11811,14 +11811,14 @@ table.ds44-tableau_5col tr {
 
 .ds44-timeline_index ul li > a {
   padding-left: 40px;
-  background: url(../../../assets/images/right.png) no-repeat left 15px center;
+  background: url(../images/right.png) no-repeat left 15px center;
   margin-right: 1rem;
 }
 
 @media (max-width: 47.9375em) {
   .ds44-timeline_index ul li > a {
     padding-left: 25px;
-    background: url(../../../assets/images/right.png) no-repeat left;
+    background: url(../images/right.png) no-repeat left;
     margin-right: 0;
   }
 }
