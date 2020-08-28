@@ -3,7 +3,6 @@ _site
 .jekyll-metadata
 .docker/cache
 .DS_Store
-dist
 node_modules
 Gemfile.lock
 .idea
