@@ -54,7 +54,9 @@ class FormLayoutUtileAbstract extends FormLayoutAbstract {
             }
         }
 
-        this.clear(objectIndex);
+        if (response.status !== 'error') {
+            this.clear(objectIndex);
+        }
 
         // Hide loader
         MiscEvent.dispatch('loader:requestHide');

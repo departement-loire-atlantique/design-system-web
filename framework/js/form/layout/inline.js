@@ -30,7 +30,9 @@ class FormLayoutInline extends FormLayoutAbstract {
             this.notification(objectIndex, null, response.message, response.message_list, response.status || 'information');
         }
 
-        this.clear(objectIndex);
+        if (response.status !== 'error') {
+            this.clear(objectIndex);
+        }
 
         MiscEvent.dispatch('loader:requestHide');
     }
