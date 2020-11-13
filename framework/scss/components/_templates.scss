@@ -44,6 +44,17 @@
     }
 }
 
+/*RS-1436 reprise de code bootstrap pour l'apparence de video insere dans un wysiwyg*/
+.embed-responsive.embed-responsive-16by9 {
+    position: relative;
+    padding-bottom: 56.25%;
+}
+.embed-responsive iframe.embed-responsive-item {
+    height: 100%;
+    width: 100%;
+    position: absolute;
+}
+
 .ds44-homepage-container {
 
     .ds44-imgInsta {
