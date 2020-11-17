@@ -36,15 +36,6 @@ class MapGeojson extends MapAbstract {
     }
 
     showAreaPopup (objectIndex, evt) {
-        if (
-            evt.originalEvent &&
-            evt.originalEvent.target &&
-            evt.originalEvent.target.classList.contains('ds44-map-marker')
-        ) {
-            // Clicked on a marker
-            return;
-        }
-
         const object = this.objects[objectIndex];
         if (!object) {
             return;

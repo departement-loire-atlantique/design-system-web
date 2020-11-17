@@ -24,14 +24,18 @@ class CartSearch {
                 MiscEvent.addListener('click', this.manageListener, cardSelectElement);
                 cardSelectElement.setAttribute('data-initialized', 'true');
 
-                const resultItemId = cardSelectElement.closest('.ds44-js-results-item').getAttribute('data-id');
-                if (bookmarks.indexOf(resultItemId) !== -1) {
-                    const buttonElement = cardSelectElement.querySelector('button .icon');
-                    if (buttonElement) {
-                        buttonElement.classList.add('icon-star-full');
-                        buttonElement.classList.remove('icon-star-empty');
+                const resultItemElement = cardSelectElement.closest('.ds44-js-results-item');
+                if(resultItemElement) {
+                    const resultItemId = resultItemElement.getAttribute('data-id');
+                    if (bookmarks.indexOf(resultItemId) !== -1) {
+                        const buttonElement = cardSelectElement.querySelector('button .icon');
+                        if (buttonElement) {
+                            buttonElement.classList.add('icon-star-full');
+                            buttonElement.classList.remove('icon-star-empty');
+                        }
                     }
                 }
+
             });
 
         this.refreshTotal();

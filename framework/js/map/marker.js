@@ -12,7 +12,18 @@ class MapMarker extends MapAbstract {
             return;
         }
 
-        object.markers = [];
+        object.geojsonHoveredId = null;
+        object.geojsonModel = {
+            'type': 'geojson',
+            'data': {
+                'type': 'FeatureCollection',
+                'features': []
+            },
+            'cluster': (object.mapElement.getAttribute('data-use-cluster') === 'true'),
+            'clusterMaxZoom': 14,
+            'clusterRadius': 50,
+            'generateId': true
+        };
     }
 
     afterLoad (objectIndex) {
@@ -24,6 +35,13 @@ class MapMarker extends MapAbstract {
         }
 
         object.isMapReady = true;
+        object.map.loadImage(
+            '/assets/images/cd44-marker-black.png',
+            (error, image) => {
+                if (error) throw error;
+                object.map.addImage('cd44-marker', image);
+            }
+        );
         object.map.on('moveend', this.move.bind(this, objectIndex));
         if (object.newResults) {
             this.show(objectIndex);
@@ -61,15 +79,23 @@ class MapMarker extends MapAbstract {
             return;
         }
 
-        // Remove existing markers
+        // Remove existing layers and source
         if (!object.addUp) {
-            for (let i = 0; i < object.markers.length; i++) {
-                object.markers[i].remove();
+            if (object.map.getLayer('cluster-background')) {
+                object.map.removeLayer('cluster-background');
             }
-            object.markers = [];
+            if (object.map.getLayer('cluster-count')) {
+                object.map.removeLayer('cluster-count');
+            }
+            if (object.map.getLayer('marker')) {
+                object.map.removeLayer('marker');
+            }
+            if (object.map.getSource('places')) {
+                object.map.removeSource('places');
+            }
         }
 
-        // Add new markers
+        // Initialize bounding box
         let hasBoundingBox = false;
         const boundingBox = {
             longitude: {
@@ -81,6 +107,9 @@ class MapMarker extends MapAbstract {
                 max: null
             }
         };
+
+        // Create geojson
+        const geojsonFeatures = [];
         for (let resultIndex in object.newResults) {
             if (!object.newResults.hasOwnProperty(resultIndex)) {
                 continue;
@@ -96,33 +125,22 @@ class MapMarker extends MapAbstract {
                 continue;
             }
 
-            // Create a marker
+            // Create a marker in the geojson
             hasBoundingBox = true;
-            const lngLat = [
-                result.metadata.long,
-                result.metadata.lat
-            ];
-            const markerElement = document.createElement('div');
-            markerElement.setAttribute('id', 'search-marker-' + result.id);
-            markerElement.setAttribute('data-id', result.id);
-            markerElement.className = 'ds44-map-marker';
-            MiscEvent.addListener('mouseenter', this.focus.bind(this), markerElement);
-            MiscEvent.addListener('mouseleave', this.blur.bind(this), markerElement);
-            const popup = new window.mapboxgl
-                .Popup({ offset: 25 })
-                .setHTML(result.metadata.html_marker);
-            object.markers.push(new window.mapboxgl
-                .Marker(markerElement)
-                .setLngLat(lngLat)
-                .setPopup(popup)
-                .addTo(object.map));
-            popup.on('open', ((resultId, evt) => {
-                MiscEvent.addListener('click', this.popupClick.bind(this, resultId), evt.target.getElement())
-            }).bind(this, result.id));
-            const mapboxMarkerElement = object.markers[object.markers.length - 1].getElement();
-            if (mapboxMarkerElement) {
-                mapboxMarkerElement.removeAttribute('tabindex');
-            }
+            geojsonFeatures.push({
+                'type': 'Feature',
+                'properties': {
+                    'id': result.id,
+                    'description': result.metadata.html_marker
+                },
+                'geometry': {
+                    'type': 'Point',
+                    'coordinates': [
+                        result.metadata.long,
+                        result.metadata.lat
+                    ]
+                }
+            });
 
             if (boundingBox.longitude.min === null) {
                 boundingBox.longitude.min = result.metadata.long;
@@ -144,6 +162,105 @@ class MapMarker extends MapAbstract {
             } else {
                 boundingBox.latitude.max = Math.max(result.metadata.lat, boundingBox.latitude.max);
             }
+        }
+
+        // Add source
+        if (!object.map.getSource('places')) {
+            object.geojsonModel.data.features = geojsonFeatures;
+            object.map.addSource('places', object.geojsonModel);
+        } else {
+            const features = object.map.querySourceFeatures('places');
+            for (let i = 0; i < geojsonFeatures.length; i++) {
+                features.push(geojsonFeatures[i]);
+            }
+            object.map.getSource('places').setData(features);
+        }
+
+        // Add cluster
+        if (!object.map.getLayer('cluster-background')) {
+            object.map.addLayer({
+                id: 'cluster-background',
+                type: 'circle',
+                source: 'places',
+                filter: ['has', 'point_count'],
+                paint: {
+                    'circle-color': '#99e6d1',
+                    'circle-radius': 20
+                }
+            });
+            object.map.on('click', 'cluster-background', (evt) => {
+                const features = object.map.queryRenderedFeatures(evt.point, {
+                    layers: ['cluster-background']
+                });
+                const clusterId = features[0].properties.cluster_id;
+                object.map.getSource('places').getClusterExpansionZoom(
+                    clusterId,
+                    (err, zoom) => {
+                        if (err) return;
+
+                        object.map.easeTo({
+                            center: features[0].geometry.coordinates,
+                            zoom: zoom
+                        });
+                    }
+                );
+            });
+            object.map.on('mouseenter', 'cluster-background', (evt) => {
+                object.map.getCanvas().style.cursor = 'pointer';
+            });
+            object.map.on('mouseleave', 'cluster-background', (evt) => {
+                object.map.getCanvas().style.cursor = '';
+            });
+        }
+        if (!object.map.getLayer('cluster-count')) {
+            object.map.addLayer({
+                id: 'cluster-count',
+                type: 'symbol',
+                source: 'places',
+                filter: ['has', 'point_count'],
+                layout: {
+                    'text-field': '{point_count_abbreviated}',
+                    'text-font': ['DIN Offc Pro Medium', 'Arial Unicode MS Bold'],
+                    'text-size': 12
+                }
+            });
+        }
+
+        // Add marker
+        if (!object.map.getLayer('marker')) {
+            object.map.addLayer({
+                'id': 'marker',
+                'type': 'symbol',
+                'source': 'places',
+                'filter': ['!', ['has', 'point_count']],
+                'layout': {
+                    'icon-image': 'cd44-marker',
+                    'icon-size': 1,
+                    'icon-allow-overlap': true
+                }
+            });
+            object.map.on('click', 'marker', (evt) => {
+                this.showPopup(objectIndex, evt.features[0], evt);
+            });
+            object.map.on('mouseenter', 'marker', (evt) => {
+                object.map.getCanvas().style.cursor = 'pointer';
+
+                object.geojsonHoveredId = evt.features[0].properties.id;
+                MiscEvent.dispatch('search:focus', {
+                    'id': object.geojsonHoveredId
+                });
+            });
+            object.map.on('mouseleave', 'marker', (evt) => {
+                object.map.getCanvas().style.cursor = '';
+
+                if (object.geojsonHoveredId) {
+                    MiscEvent.dispatch('search:blur', {
+                        'id': object.geojsonHoveredId
+                    });
+
+                    object.geojsonHoveredId = null;
+                }
+            });
         }
 
         if (object.zoom && hasBoundingBox) {
@@ -218,16 +335,6 @@ class MapMarker extends MapAbstract {
         return geojsonIds;
     }
 
-    focus (evt) {
-        const id = evt.currentTarget.getAttribute('data-id');
-        MiscEvent.dispatch('search:focus', { 'id': id });
-    }
-
-    blur (evt) {
-        const id = evt.currentTarget.getAttribute('data-id');
-        MiscEvent.dispatch('search:blur', { 'id': id });
-    }
-
     resultFocus (evt) {
         if (
             !evt ||
@@ -237,25 +344,64 @@ class MapMarker extends MapAbstract {
             return;
         }
 
-        const resultElement = document.querySelector('#search-marker-' + evt.detail.id);
-        if (resultElement) {
-            resultElement.classList.add('active');
+        for (let objectIndex = 0; objectIndex < this.objects.length; objectIndex++) {
+            const object = this.objects[objectIndex];
+            if (!object || !object.map) {
+                continue;
+            }
+
+            const features = object.map.querySourceFeatures('places', {
+                layers: ['marker'],
+                filter: ['==', 'id', evt.detail.id]
+            });
+            if (features && features[0]) {
+                this.showPopup(objectIndex, features[0], null);
+            }
         }
     }
 
-    resultBlur (evt) {
-        if (
-            !evt ||
-            !evt.detail ||
-            !evt.detail.id
-        ) {
+    resultBlur () {
+        for (let objectIndex = 0; objectIndex < this.objects.length; objectIndex++) {
+            this.hidePopup(objectIndex);
+        }
+    }
+
+    showPopup (objectIndex, feature, evt) {
+        const object = this.objects[objectIndex];
+        if (!object) {
             return;
         }
 
-        const resultElement = document.querySelector('#search-marker-' + evt.detail.id);
-        if (resultElement) {
-            resultElement.classList.remove('active');
+        if (object.popup) {
+            this.hidePopup(objectIndex);
         }
+
+        const coordinates = feature.geometry.coordinates.slice();
+        const id = feature.properties.id;
+        const description = feature.properties.description;
+
+        if (evt) {
+            while (Math.abs(evt.lngLat.lng - coordinates[0]) > 180) {
+                coordinates[0] += evt.lngLat.lng > coordinates[0] ? 360 : -360;
+            }
+        }
+
+        object.popup = new window.mapboxgl.Popup({ offset: 25 })
+            .setLngLat(coordinates)
+            .setHTML(description)
+            .addTo(object.map);
+
+        MiscEvent.addListener('click', this.popupClick.bind(this, id), object.popup.getElement())
+    }
+
+    hidePopup (objectIndex) {
+        const object = this.objects[objectIndex];
+        if (!object || !object.popup) {
+            return;
+        }
+
+        object.popup.remove();
+        object.popup = null;
     }
 }
 
