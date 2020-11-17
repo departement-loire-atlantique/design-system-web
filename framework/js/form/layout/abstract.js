@@ -333,7 +333,7 @@ class FormLayoutAbstract {
             textElement.setAttribute('id', messageId);
         }
         textElement.classList.add('ds44-message-text');
-        textElement.setAttribute('tabindex', '-1');
+        textElement.setAttribute('tabindex', '0');
         containerElement.appendChild(textElement);
 
         const iconElement = document.createElement('i');
