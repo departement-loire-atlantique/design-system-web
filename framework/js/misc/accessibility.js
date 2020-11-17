@@ -92,7 +92,9 @@ class MiscAccessibility {
         }
         if (element.closest(MiscAccessibility.getEnabledElementsSelector()) === element) {
             if (element.hasAttribute('data-bkp-tabindex')) {
-                element.setAttribute('tabindex', element.getAttribute('data-bkp-tabindex'));
+                if (element.getAttribute('data-bkp-tabindex') != '') {
+                    element.setAttribute('tabindex', element.getAttribute('data-bkp-tabindex'));
+                }
             } else {
                 element.removeAttribute('tabindex');
             }
