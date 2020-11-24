@@ -1,5 +1,9 @@
 class MiscRequest {
     static send (url, successCallback, errorCallback, parameters = null, method = 'GET') {
+        if (!url) {
+            return null;
+        }
+
         if (parameters && method.toLowerCase() === 'get') {
             url += (url.includes('?') ? '&' : '?') + MiscUrl.jsonToUrl(parameters).toString();
             parameters = null;
