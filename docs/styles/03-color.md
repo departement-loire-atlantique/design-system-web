@@ -12,7 +12,7 @@ description: Les couleurs forment la racine vertébrale de la charte graphique. 
 ## Couleurs génériques
 
 {% include color-preview.html name="Noir" variable="$ds44-dark" hexcode="#000000" %}
-{% include color-preview.html name="Gris foncé" variable="$ds44-gray" hexcode="#666666" %}
+{% include color-preview.html name="Gris foncé" variable="$ds44-gray" hexcode="#5C5C5C" %}
 {% include color-preview.html name="Gris clair" variable="$ds44-lightgray" hexcode="#F5F5F5" %}
 {% include color-preview.html name="Blanc" variable="$ds44-light-color" hexcode="#FFFFFF" %}
 {% include color-preview.html name="Overlay plat" variable="$ds44-flat-overlay " hexcode="rgba(0, 0, 0, 0.4)" %}
@@ -36,11 +36,11 @@ Le jaune est la couleur du site d'Agenda des sorties.
 
 {% include color-contrast-preview.html name="Blanc sur overlay" hexcode="linear-gradient(to bottom, rgba(0,0,0,0) 0%, rgba(0,0,0,.5) 30%, rgba(0,0,0,.6) 40%, rgba(0,0,0,.75) 70%)" contrast-hexcode="#FFF" ratio="8.59:1" %}
 
-{% include color-contrast-preview.html name="Gris foncé sur blanc" hexcode="#FFF" contrast-hexcode="#666" ratio="5.74:1" %}
+{% include color-contrast-preview.html name="Gris foncé sur blanc" hexcode="#FFF" contrast-hexcode="#5C5C5C" ratio="5.74:1" %}
 
-{% include color-contrast-preview.html name="Gris foncé sur turquoise" hexcode="#99E6D1" contrast-hexcode="#666" ratio="3.99:1" bad-contrast="bad-contrast" %}
+{% include color-contrast-preview.html name="Gris foncé sur turquoise" hexcode="#99E6D1" contrast-hexcode="#5C5C5C" ratio="3.99:1" bad-contrast="bad-contrast" %}
 
-{% include color-contrast-preview.html name="Gris foncé sur jaune" hexcode="#FFD883" contrast-hexcode="#666" ratio="4.21:1" bad-contrast="bad-contrast" %}
+{% include color-contrast-preview.html name="Gris foncé sur jaune" hexcode="#FFD883" contrast-hexcode="#5C5C5C" ratio="4.21:1" bad-contrast="bad-contrast" %}
 
 {% include color-contrast-preview.html name="Blanc sur overlay plat" hexcode="rgba(0, 0, 0, 0.4)" contrast-hexcode="#FFF" ratio="2.43:1" %}
 
@@ -50,7 +50,7 @@ Le jaune est la couleur du site d'Agenda des sorties.
 
 {% include color-contrast-preview.html name="Jaune sur noir" hexcode="#000" contrast-hexcode="#FFD883" ratio="15.4:1" %}
 
-{% include color-contrast-preview.html name="Gris foncé sur gris clair" hexcode="#F5F5F5" contrast-hexcode="#666" ratio="4.6:1" %}
+{% include color-contrast-preview.html name="Gris foncé sur gris clair" hexcode="#F5F5F5" contrast-hexcode="#5C5C5C" ratio="4.6:1" %}
 
 {% include color-contrast-preview.html name="Turquoise sur blanc" hexcode="#FFF" contrast-hexcode="#99E6D1" ratio="1.44:1" bad-contrast="bad-contrast" %}
 
@@ -71,11 +71,11 @@ Les fonds de couleurs sont soit blanc, soit gris clair, soit la couleur thémati
 ## Couleurs formulaire (validation et erreur)
 
 ### Input normal
-{% include color-preview.html name="Placeholder" variable="$ds44-color-soft-text" hexcode="#666" %}
+{% include color-preview.html name="Placeholder" variable="$ds44-color-soft-text" hexcode="#5C5C5C" %}
 {% include color-preview.html name="Fond input" variable="$ds44-light-color" hexcode="#FFFFFF" %}
 
 ### Input disabled
-{% include color-preview.html name="Placeholder" variable="$ds44-color-soft-text" hexcode="#666" %}
+{% include color-preview.html name="Placeholder" variable="$ds44-color-soft-text" hexcode="#5C5C5C" %}
 {% include color-preview.html name="Fond input" variable="$ds44-lightgray" hexcode="#F5F5F5" %}
 
 ### Input saisi
