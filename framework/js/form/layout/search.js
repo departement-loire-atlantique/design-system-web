@@ -116,6 +116,10 @@ class FormLayoutSearch extends FormLayoutAbstract {
     }
 
     loadFromUrlSuccess (objectIndex, response) {
+        if (typeof response === 'string') {
+            response = MiscUrl.urlToJson(response);
+        }
+
         for (const objectName in response) {
             if (!response.hasOwnProperty(objectName)) {
                 continue;
