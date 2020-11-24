@@ -89,7 +89,7 @@ class FormLayoutSearch extends FormLayoutAbstract {
             return false;
         }
 
-        if (MiscUtils.isInDevMode) {
+        if (MiscUtils.isInDevMode()) {
             // Get the search data from the local storage
             const searchData = window.sessionStorage.getItem('search_' + searchId);
             if (!searchData) {
@@ -291,7 +291,7 @@ class FormLayoutSearch extends FormLayoutAbstract {
             return;
         }
 
-        if (MiscUtils.isInDevMode) {
+        if (MiscUtils.isInDevMode()) {
             // In dev mode, generate the search id and use the local storage to store the search data
             // as there is no back end
             const parameters = JSON.stringify(object.parameters);
