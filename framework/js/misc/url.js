@@ -26,7 +26,12 @@ class MiscUrl {
         const rawUrlParameters = MiscUrl.jsonToUrl(parameters);
         for (const [key, value] of rawUrlParameters.entries()) {
             if (key.match(/\[text\]$/)) {
-                urlParameters.push(value.trim().replace(/, /gi, ','));
+                urlParameters.push(
+                    value.trim()
+                        .replace(/, /gi, ',')
+                        .replace(/\(/gi, '')
+                        .replace(/\)/gi, '')
+                );
             }
         }
         urlParameters.push(parametersHash);
