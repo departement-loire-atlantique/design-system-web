@@ -23,6 +23,9 @@
     ul:not(.ds44-list):not(.ds44-collapser) > li {
       margin-top: 0;
     }
+    .wysiwyg ol > li > * {
+        display: inline-block;
+    }
 }
 
 blockquote {
