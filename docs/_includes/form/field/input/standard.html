@@ -11,7 +11,7 @@
         {% assign attributes = attributes | append : ' autocomplete="email"' %}
     {% elsif include.type == 'password' %}
         {% assign type = 'password' %}
-        {% assign attributes = attributes | append : ' autocomplete="off"' %}
+        {% assign attributes = attributes | append : ' autocomplete="current-password"' %}
     {% elsif include.type == 'tel-national' %}
         {% assign attributes = attributes | append : ' autocomplete="tel-national"' %}
     {% elsif include.type == 'postcode' %}
