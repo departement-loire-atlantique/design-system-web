@@ -33,6 +33,7 @@ class FormFieldInputAutoComplete extends FormFieldInputAbstract {
         object.valueElement = valueElement;
         object.metadataElement = metadataElement;
         object.autoCompleterElement = object.containerElement.querySelector('.ds44-autocomp-container');
+        object.nbResultsElement = object.autoCompleterElement.querySelector('.ds44-js-nb-results');
         object.autoCompleterListElement = null;
         if (object.autoCompleterElement) {
             object.autoCompleterListElement = object.autoCompleterElement.querySelector('.ds44-list');
@@ -249,12 +250,17 @@ class FormFieldInputAutoComplete extends FormFieldInputAbstract {
             childElement.remove();
         });
 
+
         if (Object.keys(results).length === 0) {
             // No result
             let elementAutoCompleterListItem = document.createElement('li');
             elementAutoCompleterListItem.classList.add('ds44-autocomp-list_no_elem');
             elementAutoCompleterListItem.innerHTML = MiscTranslate._('NO_RESULTS_FOUND');
             object.autoCompleterListElement.appendChild(elementAutoCompleterListItem);
+
+            if (object.nbResultsElement) {
+                object.nbResultsElement.innerHTML = '<p>' + MiscTranslate._('NO_SUGGESTIONS', { search: object.textElement.value }) + '</p>';
+            }
         } else {
             // Some result
             for (let key in results) {
@@ -279,6 +285,10 @@ class FormFieldInputAutoComplete extends FormFieldInputAbstract {
 
                 MiscEvent.addListener('focus', this.fakeSelect.bind(this, objectIndex), elementAutoCompleterListItem);
                 MiscEvent.addListener('mousedown', this.select.bind(this, objectIndex), elementAutoCompleterListItem);
+            }
+
+            if (object.nbResultsElement) {
+                object.nbResultsElement.innerHTML = '<p>' + MiscTranslate._('SUGGESTIONS', { nbResults: Object.keys(results).length }) + '</p>';
             }
         }
 
@@ -391,6 +401,9 @@ class FormFieldInputAutoComplete extends FormFieldInputAbstract {
             object.textElement.value = object.currentElementValue;
         }
 
+        if (object.nbResultsElement) {
+            object.nbResultsElement.innerHTML = '';
+        }
         object.autoCompleterElement.classList.add('hidden');
         MiscAccessibility.hide(object.autoCompleterElement);
         object.textElement.setAttribute('aria-expanded', 'false');
