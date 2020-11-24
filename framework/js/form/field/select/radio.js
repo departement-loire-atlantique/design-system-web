@@ -33,7 +33,7 @@ class FormFieldSelectRadio extends FormFieldSelectAbstract {
         const listItems = this.getListItems(object.selectListElement);
         if (!listItems.selected) {
             // Select first
-            MiscAccessibility.setFocus(listItems.first);
+            this.setFocus(objectIndex, listItems.first);
         }
     }
 
@@ -55,7 +55,7 @@ class FormFieldSelectRadio extends FormFieldSelectAbstract {
         const listItems = this.getListItems(object.selectListElement);
         if (!listItems.selected) {
             // Select last
-            MiscAccessibility.setFocus(listItems.last);
+            this.setFocus(objectIndex, listItems.last);
         }
     }
 

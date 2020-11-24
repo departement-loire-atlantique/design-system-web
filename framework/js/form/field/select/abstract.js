@@ -114,7 +114,7 @@ class FormFieldSelectAbstract extends FormFieldAbstract {
             } else if (object.selectListElement) {
                 const firstErrorField = object.selectListElement.querySelector('[aria-invalid="true"]');
                 if (firstErrorField) {
-                    MiscAccessibility.setFocus(firstErrorField);
+                    this.setFocus(objectIndex, firstErrorField);
                 }
             }
         }
@@ -149,7 +149,7 @@ class FormFieldSelectAbstract extends FormFieldAbstract {
             return;
         }
 
-        MiscAccessibility.setFocus(object.buttonElement);
+        this.setFocus(objectIndex, object.buttonElement);
     }
 
     setListElementEvents (listElement, objectIndex) {
@@ -348,7 +348,7 @@ class FormFieldSelectAbstract extends FormFieldAbstract {
         object.buttonIconElement.classList.add('icon-up');
         object.isExpanded = true;
 
-        this.nextOption(objectIndex);
+        this.selectAfterShow(objectIndex);
     }
 
     hide (objectIndex) {
@@ -369,6 +369,8 @@ class FormFieldSelectAbstract extends FormFieldAbstract {
         object.buttonIconElement.classList.add('icon-down');
         object.buttonIconElement.classList.remove('icon-up');
         object.isExpanded = false;
+
+        this.selectAfterHide(objectIndex);
     }
 
     escape (objectIndex) {
@@ -496,10 +498,10 @@ class FormFieldSelectAbstract extends FormFieldAbstract {
             listItems.selected === listItems.last
         ) {
             // Select first
-            MiscAccessibility.setFocus(listItems.first)
+            this.setFocus(objectIndex, listItems.first)
         } else {
             // Select next
-            MiscAccessibility.setFocus(listItems.next);
+            this.setFocus(objectIndex, listItems.next);
         }
     }
 
@@ -520,10 +522,10 @@ class FormFieldSelectAbstract extends FormFieldAbstract {
             listItems.selected === listItems.first
         ) {
             // Select last
-            MiscAccessibility.setFocus(listItems.last)
+            this.setFocus(objectIndex, listItems.last)
         } else {
             // Select previous
-            MiscAccessibility.setFocus(listItems.previous);
+            this.setFocus(objectIndex, listItems.previous);
         }
     }
 
@@ -539,8 +541,20 @@ class FormFieldSelectAbstract extends FormFieldAbstract {
         // Abstract method
     }
 
+    selectAfterShow (objectIndex) {
+        this.nextOption(objectIndex);
+    }
+
+    selectAfterHide (objectIndex) {
+        // Abstract method
+    }
+
     getDomData (listElement) {
         // Abstract method
+    }
+
+    setFocus (objectIndex, element) {
+        MiscAccessibility.setFocus(element);
     }
 
     record (objectIndex, evt) {

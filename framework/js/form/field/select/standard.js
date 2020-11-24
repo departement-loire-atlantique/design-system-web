@@ -90,7 +90,7 @@ class FormFieldSelectStandard extends FormFieldSelectAbstract {
         }
 
         const object = this.objects[objectIndex];
-        if(!object) {
+        if (!object) {
             return;
         }
 
@@ -118,6 +118,54 @@ class FormFieldSelectStandard extends FormFieldSelectAbstract {
                 optionElement.removeAttribute('aria-selected');
             }
         });
+    }
+
+    selectAfterShow (objectIndex) {
+        const optionElements = this.getOptionElements(objectIndex);
+        if (!optionElements) {
+            return;
+        }
+
+        const object = this.objects[objectIndex];
+        if (!object) {
+            return;
+        }
+
+        const data = this.getData(objectIndex);
+        if (!data || !data[object.name].value) {
+            this.nextOption(objectIndex);
+            return;
+        }
+
+        let values = data[object.name].value;
+        if (typeof values !== 'object') {
+            values = [values];
+        }
+
+        optionElements.forEach((optionElement) => {
+            let value = optionElement.getAttribute('data-value');
+            if (value == parseFloat(value, 10)) {
+                value = parseFloat(value, 10);
+            }
+            if (values.includes(value)) {
+                // Selected
+                this.setFocus(objectIndex, optionElement);
+            }
+        });
+    }
+
+    selectAfterHide (objectIndex) {
+        this.selectFromValue(objectIndex);
+    }
+
+    setFocus (objectIndex, element) {
+        super.setFocus(objectIndex, element);
+
+        const optionElements = this.getOptionElements(objectIndex);
+        optionElements.forEach((optionElement) => {
+            optionElement.removeAttribute('aria-selected');
+        });
+        element.setAttribute('aria-selected', 'true');
     }
 
     getDomData (listElement) {

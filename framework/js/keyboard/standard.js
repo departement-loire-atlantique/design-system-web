@@ -42,6 +42,14 @@ class KeyboardStandard {
 
         MiscEvent.dispatch('keyDown:*');
         MiscEvent.dispatch('keyDown:' + (evt.key === ' ' ? 'Spacebar' : evt.key).toLowerCase());
+
+        // Cancel specific events
+        if (this.needCancel(evt)) {
+            evt.stopPropagation();
+            evt.preventDefault();
+
+            return false;
+        }
     }
 
     keyPress (evt) {
@@ -59,6 +67,14 @@ class KeyboardStandard {
 
         MiscEvent.dispatch('keyPress:*');
         MiscEvent.dispatch('keyPress:' + (evt.key === ' ' ? 'Spacebar' : evt.key).toLowerCase());
+
+        // Cancel specific events
+        if (this.needCancel(evt)) {
+            evt.stopPropagation();
+            evt.preventDefault();
+
+            return false;
+        }
     }
 
     keyUp (evt) {
@@ -76,6 +92,14 @@ class KeyboardStandard {
 
         MiscEvent.dispatch('keyUp:*');
         MiscEvent.dispatch('keyUp:' + (evt.key === ' ' ? 'Spacebar' : evt.key).toLowerCase());
+
+        // Cancel specific events
+        if (this.needCancel(evt)) {
+            evt.stopPropagation();
+            evt.preventDefault();
+
+            return false;
+        }
     }
 
     getClickableElement (evt) {
@@ -114,6 +138,21 @@ class KeyboardStandard {
         }
 
         return true;
+    }
+
+    needCancel (evt) {
+        if (!document.activeElement) {
+            return false;
+        }
+
+        if (evt.key === 'ArrowUp' || evt.key === 'ArrowDown') {
+            const withOptionElement = document.activeElement.closest('.ds44-listSelect,.ds44-autocomp-list');
+            if (withOptionElement) {
+                return true;
+            }
+        }
+
+        return false;
     }
 }
 
