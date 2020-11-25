@@ -156,7 +156,7 @@ textarea {
 
     .ds44-selectLabel {
         font-size: 0.875em;
-    } 
+    }
 }
 
 .ds44-inpLarge {
@@ -561,9 +561,11 @@ input[type=radio],
     padding: $ds44-padding-large/2 $ds44-padding-large 0 $ds44-padding-large;
 }
 
+
 .ds44-select__shape {
     cursor: pointer;
     background-color: $ds44-light-color;
+
 
     &.ds44-boxError {
         border-color: $ds44-error;
@@ -572,6 +574,12 @@ input[type=radio],
     &.ds44-error {
         .ds44-btnIco .icon {
             color: $ds44-error;
+        }
+    }
+
+    .ds44-btnOpen {
+        &:focus{
+            border:2px solid $ds44-color-dark-text;
         }
     }
 }

@@ -199,6 +199,11 @@
 
         .ds44-collapser_button {
           text-align: center;
+          border: 2px solid transparent;
+
+          &:focus {
+              border: 2px solid $ds44-error;
+          }
 
           .icon--sizeXL {
             right: 1.5rem;
@@ -214,6 +219,24 @@
           padding-left: $ds44-padding-xxlarge;
           padding-right: $ds44-padding-xxlarge;
           padding-bottom: $ds44-padding-large;
+
+          h2, h3, h4 {
+              font-size: 1em;
+                font-family: 'Muli', Arial, Helvetica, sans-serif;
+                background: none;
+                font-weight: bold;
+                padding: 0;
+                margin: 0;
+
+                + * {
+                    margin-top: 0.5rem;
+                }
+          }
+          ul li,
+          ol li {
+              display: inline-block;
+              margin: 0 .5rem;
+          }
         }
       }
     }
