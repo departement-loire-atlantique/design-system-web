@@ -348,6 +348,14 @@
 
                     .orejime-AppItem-input[disabled] ~ label {
                         filter: none;
+                        opacity: 1;
+                    }
+
+                    .orejime-AppItem-optOut,
+                    .orejime-AppItem-required,
+                    .orejime-AppItem-purposes,
+                    .orejime-AppItem-switch--disabled .orejime-AppItem-switchLabel {
+                        color: $ds44-gray;
                     }
 
                     .orejime-Button[disabled] {
