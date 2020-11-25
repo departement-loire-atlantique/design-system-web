@@ -4,7 +4,7 @@
         <p class="ds44-textLegend ds44-textLegend--mentions ">Les champs marqués d’un astérisque * sont obligatoires</p>
         <form data-statistic='{"name": "declenche-evenement","category": "Formulaire","action": "Recherchez un contact","label": "$commune|text"}'>
             <div class="ds44-js-linked-fields ds44-js-masked-fields">
-                {% include form/field/input/autocomplete.html name="commune" label="Nom de votre commune" required="true" type="address-level2" url="/json/autocomplete-city.json" attributes='data-mode="select-only"' title="Sélectionner Commune - mise à jour automatique des adresses triées par ordre alphabétique" %}
+                {% include form/field/input/autocomplete.html name="commune" label="Nom de votre commune" required="true" type="address-level2" url="/json/autocomplete-city.json" attributes='data-mode="select-only"' title="Nom de votre commune" %}
                 {% include form/field/input/autocomplete.html name="adresse" label="Merci de préciser votre adresse" required="true" disabled="true" hidden="true" type="address" url="https://api-adresse.data.gouv.fr/search/?limit=5&citycode=$parentValue" attributes='data-mode="select-only"' %}
             </div>
             <button class="ds44-btnStd ds44-btn--invert" type="submit" title="Valider votre recherche de contact dans une commune">

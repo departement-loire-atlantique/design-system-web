@@ -16,7 +16,7 @@
                 <p class="h4-like" id="pdcv-commune-name">Consultez l’actualité ou trouvez des contacts près de chez vous :</p>
                 <form data-statistic='{"name": "declenche-evenement","category": "Formulaire","action": "Recherche menu","label": "$commune|text"}'>
                     <div class="ds44-js-linked-fields ds44-js-masked-fields">
-                        {% include form/field/input/autocomplete.html name="commune" label="Nom de votre commune" required="true" type="address-level2" url="/json/autocomplete-city.json" attributes='data-mode="select-only"' title="Sélectionner Commune - mise à jour automatique des adresses triées par ordre alphabétique" ariaDescribedBy="pdcv-commune-name" %}
+                        {% include form/field/input/autocomplete.html name="commune" label="Nom de votre commune" required="true" type="address-level2" url="/json/autocomplete-city.json" attributes='data-mode="select-only"' title="Nom de votre commune" ariaDescribedBy="pdcv-commune-name" %}
                         {% include form/field/input/autocomplete.html name="adresse" label="Merci de préciser votre adresse" required="true" disabled="true" hidden="true" type="address" url="https://api-adresse.data.gouv.fr/search/?limit=5&citycode=$parentValue" attributes='data-mode="select-only"' ariaDescribedBy="pdcv-commune-name" %}
                     </div>
                     <button type="submit" class="ds44-btnStd ds44-btn--invert" aria-label="Valider votre recherche près de chez vous"><span class="ds44-btnInnerText">Valider</span><i class="icon icon-long-arrow-right" aria-hidden="true"></i></button>
