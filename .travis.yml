@@ -36,6 +36,7 @@ install:
 
 script: 
   - gulp build
+  - gulp build::glyphicons
 
 # Unlock private key
 before_deploy:
