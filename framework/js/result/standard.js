@@ -34,6 +34,10 @@ class ResultStandard {
         if (!cardContainerElement) {
             return;
         }
+        
+        if (evt.currentTarget.getAttribute('data-id') == "-1") {
+            return;
+        }
 
         let scrollTopElement = (document.documentElement || document.body);
         if (cardContainerElement.closest('.ds44-results--mapVisible')) {
@@ -46,13 +50,11 @@ class ResultStandard {
 
         this.currentId = evt.currentTarget.getAttribute('data-id');
         const url = cardContainerElement.getAttribute('data-url');
-        if (this.currentId != "-1") {
-            MiscRequest.send(
-                url + (url.includes('?') ? '&' : '?') + 'q=' + encodeURIComponent(this.currentId),
-                this.fillCardSuccess.bind(this),
-                this.fillCardError.bind(this)
-            );
-        }
+        MiscRequest.send(
+            url + (url.includes('?') ? '&' : '?') + 'q=' + encodeURIComponent(this.currentId),
+            this.fillCardSuccess.bind(this),
+            this.fillCardError.bind(this)
+        );
     }
 
     fillCardSuccess (result) {
