@@ -1,7 +1,7 @@
 # Design System
 
-<a href="https://travis-ci.org/departement-loire-atlantique/design-system-web">
-<img src="https://travis-ci.org/departement-loire-atlantique/design-system-web.svg?branch=master" />
+<a href="https://travis-ci.com/departement-loire-atlantique/design-system-web">
+<img src="https://travis-ci.com/departement-loire-atlantique/design-system-web.svg?branch=master" />
 </a>
 
 Le design system est divisé en deux parties : la documentation et le framework CSS/JS.
