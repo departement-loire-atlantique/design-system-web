@@ -46,11 +46,13 @@ class ResultStandard {
 
         this.currentId = evt.currentTarget.getAttribute('data-id');
         const url = cardContainerElement.getAttribute('data-url');
-        MiscRequest.send(
-            url + (url.includes('?') ? '&' : '?') + 'q=' + encodeURIComponent(this.currentId),
-            this.fillCardSuccess.bind(this),
-            this.fillCardError.bind(this)
-        );
+        if (this.currentId != "-1") {
+            MiscRequest.send(
+                url + (url.includes('?') ? '&' : '?') + 'q=' + encodeURIComponent(this.currentId),
+                this.fillCardSuccess.bind(this),
+                this.fillCardError.bind(this)
+            );
+        }
     }
 
     fillCardSuccess (result) {
