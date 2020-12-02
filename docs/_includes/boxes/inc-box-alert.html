@@ -1,15 +1,17 @@
 <section class="ds44-alertMsg-container txtcenter">
-  <ul class="ds44-collapser center">
-    <li class="ds44-collapser_element">
-        <button type="button" class="ds44-collapser_button">
-          <h1 class="ds44-card__title"><i class="icon icon-attention" aria-hidden="true"></i>{{ include.title }}</h1>
-          <i class="icon icon-down icon--sizeXL" aria-hidden="true"></i>
-        </button>
+  <div class="ds44-collapser center">
+    <div class="ds44-collapser_element">
+        <p role="heading" aria-level="1">
+            <button type="button" class="ds44-collapser_button">
+              <h1 class="ds44-card__title"><i class="icon icon-attention" aria-hidden="true"></i>{{ include.title }}</h1>
+              <i class="icon icon-down icon--sizeXL" aria-hidden="true"></i>
+            </button>
+        </p>
         <div class="ds44-collapser_content">
             <div class="ds44-collapser_content--level2">
               {{ include.content }}
             </div>
         </div>
-    </li>
-  </ul>
+    </div>
+  </div>
 </section>
