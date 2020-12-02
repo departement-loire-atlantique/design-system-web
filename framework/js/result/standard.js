@@ -27,15 +27,12 @@ class ResultStandard {
     }
 
     fillCard (evt) {
+        
         evt.stopPropagation();
         evt.preventDefault();
 
         const cardContainerElement = document.querySelector('.ds44-results .ds44-js-results-container .ds44-js-results-card');
         if (!cardContainerElement) {
-            return;
-        }
-        
-        if (evt.currentTarget.getAttribute('data-id') == "-1") {
             return;
         }
 
@@ -320,8 +317,9 @@ class ResultStandard {
                 hasRedirectDisplayMode === false &&
                 listContainerElement.getAttribute('data-display-mode') === 'inline'
             ) {
-                MiscEvent.addListener('click', this.fillCard.bind(this), listItemElement);
-
+                if (listItemElement.getAttribute('data-id') != "-1") {
+                    MiscEvent.addListener('click', this.fillCard.bind(this), listItemElement);
+                }
                 const aElement = listItemElement.querySelector('a');
                 if (aElement) {
                     aElement.setAttribute('role', 'button');
