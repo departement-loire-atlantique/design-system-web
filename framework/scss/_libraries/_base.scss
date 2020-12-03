@@ -333,16 +333,13 @@ blockquote > footer {
   }
 }
 
-q {
-  font-style: normal;
-}
-
 q,
 .q {
-  quotes: "“" "”" "‘" "’";
+  font-style: italic;
 
-  &:lang(fr) {
-    quotes: "«\00a0" "\00a0»" "“" "”";
+  &:after,
+  &:before {
+    display: none;
   }
 }
 
