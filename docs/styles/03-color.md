@@ -101,14 +101,20 @@ Les informations essentielles de type "alerte" sont de couleur rouge
 #### Couleurs principales
 
 {% include color-preview.html name="Grand Patrimoine" hexcode="#aab4be" %}
-{% include color-preview.html name="Eglise du Vieux-Bourg" hexcode="#fcde6e" %}
-{% include color-preview.html name="Musée Dobrée" hexcode="#ffbed2" %}
-{% include color-preview.html name="Laboratoire Arc’Antique" hexcode="#1496dc" %}
+{% include color-preview.html name="Domaine de la Garenne Lemot" hexcode="#39bda9" %}
+{% include color-preview.html name="Château de Clisson" hexcode="#FF1761" %}
+{% include color-preview.html name="Eglise du Vieux-Bourg" hexcode="#FFC93D" %}
+{% include color-preview.html name="Château de Chateaubriant" hexcode="#FF6929" %}
+{% include color-preview.html name="Jardins des Folies Siffait" hexcode="#31CC5A" %}
+{% include color-preview.html name="Abbaye de blanche Couronne" hexcode="#B47878" %}
 {% include color-preview.html name="Pôle Archéologie de Loire-Atlantique" hexcode="#FF646E" %}
-{% include color-preview.html name="Jardins des Folies Siffait" hexcode="#5AE682" %}
-{% include color-preview.html name="Château de Chateaubriant" hexcode="#f07850" %}
-{% include color-preview.html name="Domaine de la Garenne Lemot" hexcode="#3CC8B4" %}
-{% include color-preview.html name="Abbaye de blanche Couronne" hexcode="#965a6e" %}
+{% include color-preview.html name="Laboratoire Arc’Antique" hexcode="#1496dc" %}
+<!-- {% include color-preview.html name="Musée Dobrée" hexcode="#ffbed2" %} -->
+
+
+
+
+
 
 #### Couleurs complémentaires
 
