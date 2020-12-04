@@ -68,16 +68,21 @@ class MiscAccessibility {
             element = document.querySelector(selector);
         }
         if (element) {
-            let hasTabIndex = element.hasAttribute('tabindex');
-            // Ajouter un tabindex temporaire quand il n'y en a pas
-            if (!hasTabIndex) {
-                element.setAttribute('tabindex', '-1');
-            }
+            element.setAttribute('data-old-tabindex', element.getAttribute('tabindex'));
+            element.setAttribute('tabindex', '-1');
             element.focus();
-            if (!hasTabIndex) {
-                element.removeAttribute('tabindex');
-            }
+            MiscEvent.addListener('blur', MiscAccessibility.restoreFocus.bind(this, element), element);
         }
+    }
+
+    static restoreFocus (element) {
+        const oldTabindex = element.getAttribute('data-old-tabindex');
+        if (oldTabindex === '' || oldTabindex === null) {
+            element.removeAttribute('tabindex');
+        } else {
+            element.setAttribute('tabindex', oldTabindex);
+        }
+        element.removeAttribute('data-old-tabindex');
     }
 
     static show (element, bubble = true, force = true, isChild = false) {

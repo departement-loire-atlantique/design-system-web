@@ -86,7 +86,8 @@ class AsideSummary {
             .querySelectorAll('.ds44-list--puces a')
             .forEach((aElement) => {
                 aElement.classList.remove('active');
-                aElement.removeAttribute('aria-location');
+                aElement.removeAttribute('aria-current');
+                aElement.removeAttribute('tabindex');
                 if (!activeAElement) {
                     activeAElement = aElement
                 }
@@ -103,7 +104,8 @@ class AsideSummary {
             });
         if (activeAElement) {
             activeAElement.classList.add('active');
-            activeAElement.setAttribute('aria-location', 'true');
+            activeAElement.setAttribute('aria-current', 'true');
+            activeAElement.setAttribute('tabindex', '-1');
         }
     }
 
@@ -148,13 +150,15 @@ class AsideSummary {
             .querySelectorAll('.ds44-list--puces a')
             .forEach((aElement) => {
                 aElement.classList.remove('active');
-                aElement.removeAttribute('aria-location');
+                aElement.removeAttribute('aria-current');
+                aElement.removeAttribute('tabindex');
             });
 
         // Select active bullets
         const aElement = evt.currentTarget;
         aElement.classList.add('active');
-        aElement.setAttribute('aria-location', 'true');
+        aElement.setAttribute('aria-current', 'true');
+        aElement.setAttribute('tabindex', '-1');
 
         const sectionId = aElement.getAttribute('href').replace(/^#/, '');
         const sectionElement = document.querySelector('#' + sectionId);

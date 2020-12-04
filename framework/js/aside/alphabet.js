@@ -16,11 +16,13 @@ class AsideAlphabet {
         const activeLetterElement = this.containerElement.querySelector('li a.active')
         if (activeLetterElement) {
             activeLetterElement.classList.remove('active');
-            activeLetterElement.removeAttribute('aria-location');
+            activeLetterElement.removeAttribute('aria-current');
+            activeLetterElement.removeAttribute('tabindex');
         }
 
         evt.currentTarget.classList.add('active');
-        evt.currentTarget.setAttribute('aria-location', 'true');
+        evt.currentTarget.setAttribute('aria-current', 'true');
+        evt.currentTarget.setAttribute('tabindex', '-1');
     }
 }
 

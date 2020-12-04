@@ -242,7 +242,7 @@ class ResultStandard {
         if (!evt.detail.nbResults) {
             let titleElementHtml = MiscTranslate._('NO_RESULTS_FOR_SEARCH:') + ' ' + evt.detail.searchText + '.<br>' + MiscTranslate._('NO_RESULTS_NEW_SEARCH') + '.';
             titleElement.innerHTML = titleElementHtml;
-            document.title = titleElementHtml;
+            document.title = titleElementHtml + ' - Loire-atlantique.fr';
             titleElement.setAttribute('tabindex', '-1');
             focusElement = titleElement;
         } else {
@@ -254,7 +254,7 @@ class ResultStandard {
             }
             let accessibleSentence = MiscTranslate._('NB_RESULTS_FOR_SEARCH:') + ' ' + (evt.detail.searchText === '' ? MiscTranslate._('EMPTY_SEARCH_CRITERIA') : evt.detail.searchText);
             titleElement.innerHTML = titleElementHtml + '<p class="visually-hidden" tabindex="-1">' + accessibleSentence + '</p>';
-            document.title = titleElementHtml + ' ' + accessibleSentence;
+            document.title = titleElementHtml + ' ' + accessibleSentence + ' - Loire-atlantique.fr';
             titleElement.removeAttribute('tabindex');
             focusElement = titleElement.querySelector('.visually-hidden')
         }
