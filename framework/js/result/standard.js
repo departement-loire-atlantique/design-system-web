@@ -27,7 +27,6 @@ class ResultStandard {
     }
 
     fillCard (evt) {
-        
         evt.stopPropagation();
         evt.preventDefault();
 
@@ -317,7 +316,7 @@ class ResultStandard {
                 hasRedirectDisplayMode === false &&
                 listContainerElement.getAttribute('data-display-mode') === 'inline'
             ) {
-                if (listItemElement.getAttribute('data-id') != "-1") {
+                if (listItemElement.getAttribute('data-id') != '-1') {
                     MiscEvent.addListener('click', this.fillCard.bind(this), listItemElement);
                 }
                 const aElement = listItemElement.querySelector('a');

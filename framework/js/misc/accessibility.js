@@ -71,7 +71,7 @@ class MiscAccessibility {
             let hasTabIndex = element.hasAttribute('tabindex');
             // Ajouter un tabindex temporaire quand il n'y en a pas
             if (!hasTabIndex) {
-                element.setAttribute('tabindex','-1');   
+                element.setAttribute('tabindex', '-1');
             }
             element.focus();
             if (!hasTabIndex) {

@@ -1,30 +1,39 @@
 class ButtonOrejime {
     constructor () {
+        this.isInitialized = false;
+        this.nbTrial = 3;
+
         MiscEvent.addListener('load', this.initialize.bind(this), window);
     }
 
     initialize () {
+        if (this.isInitialized) {
+            return;
+        }
+
         if (window.orejime) {
-            document
-                .querySelectorAll('.ds44-js-orejime-show')
-                .forEach((buttonElement) => {
-                    MiscEvent.addListener('click', this.show.bind(this), buttonElement);
-                });
-            document
-                .querySelectorAll('.ds44-js-orejime-reset')
-                .forEach((buttonElement) => {
-                    MiscEvent.addListener('click', this.reset.bind(this), buttonElement);
-                });
+            const learnMoreButtonElement = document.querySelector('.orejime-Notice-learnMoreButton');
+            if (learnMoreButtonElement) {
+                this.isInitialized = true;
+
+                MiscEvent.addListener('click', this.showMore.bind(this), learnMoreButtonElement);
+
+            } else {
+                this.nbTrial--;
+                if (this.nbTrial > 0) {
+                    window.setTimeout(this.initialize.bind(this), 1000);
+                }
+            }
+        } else {
+            this.isInitialized = true;
         }
     }
 
-    show () {
-        window.orejime.show();
-    }
-
-    reset () {
-        window.orejime.internals.manager.resetConsent();
-        document.location.reload();
+    showMore() {
+        const modalWrapperElement = document.querySelector('.orejime-ModalWrapper');
+        if(modalWrapperElement) {
+            modalWrapperElement.setAttribute('aria-modal', 'true');
+        }
     }
 }
 
