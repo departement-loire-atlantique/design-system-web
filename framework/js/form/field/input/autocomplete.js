@@ -34,6 +34,16 @@ class FormFieldInputAutoComplete extends FormFieldInputAbstract {
         object.metadataElement = metadataElement;
         object.autoCompleterElement = object.containerElement.querySelector('.ds44-autocomp-container');
         object.nbResultsElement = object.autoCompleterElement.querySelector('.ds44-js-nb-results');
+        if(!object.nbResultsElement) {
+            let nbResultsElement = document.createElement('div');
+            nbResultsElement.classList.add('visually-hidden');
+            nbResultsElement.classList.add('ds44-js-nb-results');
+            nbResultsElement.setAttribute('aria-live', 'polite');
+
+            const autoCompleterListElement = object.autoCompleterElement.querySelector('.ds44-autocomp-list')
+            autoCompleterListElement.insertBefore(nbResultsElement, autoCompleterListElement.firstChild);
+            object.nbResultsElement = object.autoCompleterElement.querySelector('.ds44-js-nb-results');
+        }
         object.autoCompleterListElement = null;
         if (object.autoCompleterElement) {
             object.autoCompleterListElement = object.autoCompleterElement.querySelector('.ds44-list');
@@ -259,6 +269,7 @@ class FormFieldInputAutoComplete extends FormFieldInputAbstract {
             object.autoCompleterListElement.appendChild(elementAutoCompleterListItem);
 
             if (object.nbResultsElement) {
+                object.nbResultsElement.setAttribute('aria-atomic', 'true');
                 object.nbResultsElement.innerHTML = '<p>' + MiscTranslate._('NO_SUGGESTIONS', { search: object.textElement.value }) + '</p>';
             }
         } else {
@@ -288,6 +299,7 @@ class FormFieldInputAutoComplete extends FormFieldInputAbstract {
             }
 
             if (object.nbResultsElement) {
+                object.nbResultsElement.setAttribute('aria-atomic', 'true');
                 object.nbResultsElement.innerHTML = '<p>' + MiscTranslate._('SUGGESTIONS', { nbResults: Object.keys(results).length }) + '</p>';
             }
         }
@@ -402,6 +414,7 @@ class FormFieldInputAutoComplete extends FormFieldInputAbstract {
         }
 
         if (object.nbResultsElement) {
+            object.nbResultsElement.removeAttribute('aria-atomic');
             object.nbResultsElement.innerHTML = '';
         }
         object.autoCompleterElement.classList.add('hidden');

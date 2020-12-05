@@ -60,7 +60,7 @@ class MiscTranslate {
                 'TOS_OF': 'Conditions d’utilisation de',
                 'FOOD_OBLIGATION_PER_MONTH': '€ par mois pour votre obligé alimentaire n°',
                 'FOOD_OBLIGATION_TOTAL': 'L\'estimation de la capacité contributive mensuelle de l\'ensemble de vos obligés alimentaires s\'élève à {totalFoodObligation} €.',
-                'SUGGESTIONS': '{nbResults} suggestion(s)',
+                'SUGGESTIONS': '{nbResults} suggestion(s) disponible(s) - utiliser les flèches bas et haut ou tabulation pour naviguer dans la liste',
                 'NO_SUGGESTIONS': 'Aucun résultats sur {search}'
             },
             'en': {
@@ -110,7 +110,7 @@ class MiscTranslate {
                 'TOS_OF': 'Terms of service of',
                 'FOOD_OBLIGATION_PER_MONTH': '€ per month for your food obligation no.',
                 'FOOD_OBLIGATION_TOTAL': 'The estimate of the monthly contributory capacity of all your food obligations is {totalFoodObligation} €.',
-                'SUGGESTIONS': '{nbResults} suggestion(s)',
+                'SUGGESTIONS': '{nbResults} suggestion(s) available - use up and down arrows or tab to navigate in the list',
                 'NO_SUGGESTIONS': 'No results for {search}'
             }
         })[MiscTranslate.getLanguage()];
