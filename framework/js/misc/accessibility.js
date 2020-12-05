@@ -72,20 +72,19 @@ class MiscAccessibility {
             element.setAttribute('tabindex', '-1');
             element.focus();
 
-            this.restoreFocusHandler = (function (element) {
-                return function () {
-                    MiscAccessibility.restoreFocus(element);
-                }
-            })(element)
-            MiscEvent.addListener('blur', this.restoreFocusHandler, element);
+            MiscEvent.addListener('blur', MiscAccessibility.restoreFocus, element);
         }
     }
 
-    static restoreFocus (element) {
+    static restoreFocus (evt) {
+        const element = evt.currentTarget;
         const oldTabindex = element.getAttribute('data-old-tabindex');
+        if (oldTabindex === null) {
+            return;
+        }
+
         if (
             oldTabindex === '' ||
-            oldTabindex === null ||
             oldTabindex === 'null'
         ) {
             element.removeAttribute('tabindex');
@@ -93,10 +92,7 @@ class MiscAccessibility {
             element.setAttribute('tabindex', oldTabindex);
         }
         element.removeAttribute('data-old-tabindex');
-        if(this.restoreFocusHandler) {
-            MiscEvent.removeListener('blur', this.restoreFocusHandler, element);
-            this.restoreFocusHandler = null;
-        }
+        MiscEvent.removeListener('blur', MiscAccessibility.restoreFocus, element);
     }
 
     static show (element, bubble = true, force = true, isChild = false) {

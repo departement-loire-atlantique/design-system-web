@@ -3,6 +3,7 @@ class TabAbstract {
         document
             .querySelectorAll(selector)
             .forEach((containerElement) => {
+                MiscEvent.addListener('keyDown:shiftTab', this.goBackToTab.bind(this, selector));
                 this.create(containerElement);
             });
     }
@@ -89,14 +90,16 @@ class TabAbstract {
                 }
 
                 tabHandleElement.classList.remove('ds44-tabs__linkSelected');
-                tabHandleElement.removeAttribute('aria-disabled');
+                tabHandleElement.setAttribute('aria-disabled', 'true');
+                tabHandleElement.removeAttribute('aria-current');
                 this.hideTab(tabHandleElement, tabPanel);
                 MiscAccessibility.hide(tabPanel);
             });
 
         // Show selected tab
         tabHandleElement.classList.add('ds44-tabs__linkSelected');
-        tabHandleElement.setAttribute('aria-disabled', 'true');
+        tabHandleElement.setAttribute('aria-current', 'true');
+        tabHandleElement.removeAttribute('aria-disabled');
         this.showTab(tabHandleElement, tabPanel);
         MiscAccessibility.show(tabPanel);
     }
@@ -111,6 +114,11 @@ class TabAbstract {
 
         const tabsElement = tabPanel.parentElement;
         tabsElement.style.height = null;
+
+        const h2Element = tabPanel.querySelector('h2.visually-hidden');
+        if (h2Element) {
+            MiscAccessibility.setFocus(h2Element);
+        }
     }
 
     hideTab (tabHandleElement, tabPanel) {
@@ -140,6 +148,21 @@ class TabAbstract {
 
         MiscAccessibility.setFocus(currentTabHandle);
         window.scrollTo(0, MiscUtils.getPositionY(currentTabHandle) - MiscDom.getHeaderHeight(true))
+    }
+
+    goBackToTab (selector, evt) {
+        if (
+            !document.activeElement ||
+            !document.activeElement.closest('h2.visually-hidden') ||
+            !document.activeElement.closest('.ds44-tabs').querySelector(selector)
+        ) {
+            return;
+        }
+
+        const linkSelectedElement = document.activeElement.closest('.ds44-tabs').querySelector(selector + ' .ds44-tabs__linkSelected');
+        if (linkSelectedElement) {
+            MiscAccessibility.setFocus(linkSelectedElement);
+        }
     }
 
     getTabFromHref (href) {

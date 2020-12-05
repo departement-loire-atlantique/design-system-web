@@ -40,11 +40,16 @@ class KeyboardStandard {
             return false;
         }
 
+        const initialActiveElement = document.activeElement;
+        const keyName = (evt.key === ' ' ? 'Spacebar' : evt.key);
         MiscEvent.dispatch('keyDown:*');
-        MiscEvent.dispatch('keyDown:' + (evt.key === ' ' ? 'Spacebar' : evt.key).toLowerCase());
+        MiscEvent.dispatch('keyDown:' + keyName.toLowerCase());
+        if (evt.shiftKey) {
+            MiscEvent.dispatch('keyDown:shift' + keyName.substr(0, 1).toUpperCase() + keyName.substr(1).toLowerCase());
+        }
 
         // Cancel specific events
-        if (this.needCancel(evt)) {
+        if (this.needCancel(evt, initialActiveElement)) {
             evt.stopPropagation();
             evt.preventDefault();
 
@@ -65,11 +70,16 @@ class KeyboardStandard {
             return false;
         }
 
+        const initialActiveElement = document.activeElement;
+        const keyName = (evt.key === ' ' ? 'Spacebar' : evt.key);
         MiscEvent.dispatch('keyPress:*');
-        MiscEvent.dispatch('keyPress:' + (evt.key === ' ' ? 'Spacebar' : evt.key).toLowerCase());
+        MiscEvent.dispatch('keyPress:' + keyName.toLowerCase());
+        if (evt.shiftKey) {
+            MiscEvent.dispatch('keyPress:shift' + keyName.substr(0, 1).toUpperCase() + keyName.substr(1).toLowerCase());
+        }
 
         // Cancel specific events
-        if (this.needCancel(evt)) {
+        if (this.needCancel(evt, initialActiveElement)) {
             evt.stopPropagation();
             evt.preventDefault();
 
@@ -90,11 +100,16 @@ class KeyboardStandard {
             return false;
         }
 
+        const initialActiveElement = document.activeElement;
+        const keyName = (evt.key === ' ' ? 'Spacebar' : evt.key);
         MiscEvent.dispatch('keyUp:*');
-        MiscEvent.dispatch('keyUp:' + (evt.key === ' ' ? 'Spacebar' : evt.key).toLowerCase());
+        MiscEvent.dispatch('keyUp:' + keyName.toLowerCase());
+        if (evt.shiftKey) {
+            MiscEvent.dispatch('keyUp:shift' + keyName.substr(0, 1).toUpperCase() + keyName.substr(1).toLowerCase());
+        }
 
         // Cancel specific events
-        if (this.needCancel(evt)) {
+        if (this.needCancel(evt, initialActiveElement)) {
             evt.stopPropagation();
             evt.preventDefault();
 
@@ -140,14 +155,20 @@ class KeyboardStandard {
         return true;
     }
 
-    needCancel (evt) {
-        if (!document.activeElement) {
+    needCancel (evt, initialActiveElement) {
+        if (!initialActiveElement) {
             return false;
         }
 
         if (evt.key === 'ArrowUp' || evt.key === 'ArrowDown') {
-            const withOptionElement = document.activeElement.closest('.ds44-listSelect,.ds44-autocomp-list');
+            const withOptionElement = initialActiveElement.closest('.ds44-listSelect,.ds44-autocomp-list');
             if (withOptionElement) {
+                return true;
+            }
+        }
+
+        if (evt.key === 'Tab' && evt.shiftKey) {
+            if (initialActiveElement.closest('h2.visually-hidden')) {
                 return true;
             }
         }

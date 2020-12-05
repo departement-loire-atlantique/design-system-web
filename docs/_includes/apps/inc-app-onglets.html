@@ -6,22 +6,22 @@
                     <a id="label_id_first" href="#id_first" class="js-tablist__link ds44-tabs__link" aria-current="true">{{ include.titleOngletUn }}</a>
                 </li>
                 <li class="ds44-tabs__item ds44-fg1" id="tabs__2">
-                    <a id="label_id_second" href="#id_second" class="js-tablist__link ds44-tabs__link">{{ include.titleOngletDeux }}</a>
+                    <a id="label_id_second" href="#id_second" class="js-tablist__link ds44-tabs__link" aria-disabled="true">{{ include.titleOngletDeux }}</a>
                 </li>
                 <li class="ds44-tabs__item ds44-fg1" id="tabs__3">
-                    <a id="label_id_third" href="#id_third" class="js-tablist__link ds44-tabs__link">{{ include.titleOngletTrois }}</a>
+                    <a id="label_id_third" href="#id_third" class="js-tablist__link ds44-tabs__link" aria-disabled="true">{{ include.titleOngletTrois }}</a>
                 </li>
                 <li class="ds44-tabs__item ds44-fg1" id="tabs__4">
-                    <a id="label_id_fourth" href="#id_fourth" class="js-tablist__link ds44-tabs__link">{{ include.titleOngletQuatre }}</a>
+                    <a id="label_id_fourth" href="#id_fourth" class="js-tablist__link ds44-tabs__link" aria-disabled="true">{{ include.titleOngletQuatre }}</a>
                 </li>
                 <li class="ds44-tabs__item ds44-fg1" id="tabs__5">
-                    <a id="label_id_fifth" href="#id_fifth" class="js-tablist__link ds44-tabs__link">{{ include.titleOngletCinq }}</a>
+                    <a id="label_id_fifth" href="#id_fifth" class="js-tablist__link ds44-tabs__link" aria-disabled="true">{{ include.titleOngletCinq }}</a>
                 </li>
             </ul>
         </nav>
         <div id="id_first" class="js-tabcontent ds44-tabs__content ds44-inner-container ds44-xl-margin-tb" style='display:none'>
             <a name="onglet-1" id="onglet-1"></a>
-            <h2 class="visually-hidden">1er onglet</h2>
+            <h2 class="visually-hidden" tabindex="-1">1er onglet</h2>
             <div class="ds44--l-padding-lr ds44--l-padding-b">
                 {% include apps/inc-tuile.html
                     code="maree"
@@ -58,7 +58,7 @@
 
         <div id="id_second" class="js-tabcontent ds44-tabs__content ds44-inner-container ds44-xl-margin-tb" style='display:none'>
             <a name="onglet-2" id="onglet-2"></a>
-            <h2 class="visually-hidden">2e onglet</h2>    
+            <h2 class="visually-hidden" tabindex="-1">2e onglet</h2>    
             <div class="ds44--l-padding-lr ds44--l-padding-b">
                 {% include apps/inc-tuile-bacs.html
                     titre="Premier départ"
@@ -92,8 +92,8 @@
 
         <div id="id_third" class="js-tabcontent ds44-tabs__content ds44-inner-container ds44-xl-margin-tb" style='display:none'>
             <a name="onglet-3" id="onglet-3"></a>
+            <h2 class="visually-hidden" tabindex="-1">3e onglet</h2>
             <div class="ds44--l-padding-lr ds44--l-padding-b">
-                <h2 class="visually-hidden">3e onglet</h2>
                 <h3 class="h3-like">Webcams</h3>
                 <p class="ds44-mt2 ds44-smallText"><i class="icon icon-date ds44-valignTop" aria-hidden="true"></i> 02/12/19 <i class="icon icon-time ds44-valignTop ds44--xl-padding-l" aria-hidden="true"></i> 14h32</p>
                 <h4 class="h4-app-bacs">Couëron</h4>
@@ -103,7 +103,7 @@
 
         <div id="id_fourth" class="js-tabcontent ds44-tabs__content ds44-inner-container ds44-xl-margin-tb" style='display:none'>
             <a name="onglet-4" id="onglet-4"></a>
-            <h2 class="visually-hidden">4e onglet</h2>
+            <h2 class="visually-hidden" tabindex="-1">4e onglet</h2>
             <div class="ds44--l-padding-lr ds44--l-padding-b">
                 <h3 class="h3-like">Localisation</h3>
                 <p class="ds44-mt2 ds44-smallText"><i class="icon icon-marker ds44-valignTop" aria-hidden="true"></i> Quai du bac Couëron <span class="ds44-block ds44-ml2">44640 Le Pellerin</span></p>
@@ -114,7 +114,7 @@
 
         <div id="id_fifth" class="js-tabcontent ds44-tabs__content ds44-inner-container ds44-xl-margin-tb" style='display:none'>
             <a name="onglet-5" id="onglet-5"></a>
-            <h2 class="visually-hidden">5e onglet</h2>
+            <h2 class="visually-hidden" tabindex="-1">5e onglet</h2>
             <div class="ds44--l-padding-lr ds44--l-padding-b">
                 {% include apps/inc-tuile.html
                     titre="Bus"
