@@ -7,11 +7,11 @@ layout: pattern
 <main role="main" id="content">
     <section class="ds44-container-large">
         <div class="txtcenter ds44-lightBG ds44--l-padding-b ds44--xl-padding-t ">
-            <h1 class="center" id="titre1">Résultats de votre recherche</h1>
+            <h1 class="center">Résultats de votre recherche</h1>
         </div>
         {% capture fields %}
             <div class="ds44-fieldContainer ds44-fg1">
-                {% include form/field/input/standard.html label="Votre recherche" required="false" class="ds44-inpLarge" title="Zone de saisie de votre recherche" ariaDescribedBy="titre1" %}
+                {% include form/field/input/standard.html label="Votre recherche" required="false" class="ds44-inpLarge" title="Zone de saisie de votre recherche" %}
             </div>
         {% endcapture %}
         {% include form/layout/recherche-facettes.html fields=fields fieldStyle="large" %}
