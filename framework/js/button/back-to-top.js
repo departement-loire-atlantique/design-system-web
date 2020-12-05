@@ -12,7 +12,16 @@ class ButtonBackToTop {
 
         const scrollTop = document.documentElement.scrollTop || document.body.scrollTop;
         if (scrollTop > 0) {
-            MiscUtils.scrollTo(0)
+            MiscUtils.scrollTo(
+                0,
+                400,
+                'linear',
+                (function () {
+                    return function () {
+                        MiscAccessibility.setFocus(document.querySelector('main'));
+                    }
+                })()
+            );
         }
     }
 }

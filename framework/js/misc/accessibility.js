@@ -71,18 +71,28 @@ class MiscAccessibility {
             element.setAttribute('data-old-tabindex', element.getAttribute('tabindex'));
             element.setAttribute('tabindex', '-1');
             element.focus();
-            MiscEvent.addListener('blur', MiscAccessibility.restoreFocus.bind(this, element), element);
+
+            this.restoreFocusHandler = (function (element) {
+                return function () {
+                    MiscAccessibility.restoreFocus(element);
+                }
+            })(element)
+            MiscEvent.addListener('blur', this.restoreFocusHandler, element);
         }
     }
 
     static restoreFocus (element) {
         const oldTabindex = element.getAttribute('data-old-tabindex');
-        if (oldTabindex === '' || oldTabindex === null) {
+        if (oldTabindex === '' || oldTabindex === null || oldTabindex === 'null') {
             element.removeAttribute('tabindex');
         } else {
             element.setAttribute('tabindex', oldTabindex);
         }
         element.removeAttribute('data-old-tabindex');
+        if(this.restoreFocusHandler) {
+            MiscEvent.removeListener('blur', this.restoreFocusHandler, element);
+            this.restoreFocusHandler = null;
+        }
     }
 
     static show (element, bubble = true, force = true, isChild = false) {
