@@ -237,6 +237,8 @@ class ResultStandard {
             titleElement.className = 'h3-like mbs';
             titleElement.setAttribute('role', 'heading');
             titleElement.setAttribute('aria-level', '1');
+            titleElement.setAttribute('aria-live', 'polite');
+            titleElement.setAttribute('aria-atomic', 'true');
             listContainerElement.appendChild(titleElement);
         }
         if (!evt.detail.nbResults) {
