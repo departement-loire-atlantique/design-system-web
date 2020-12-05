@@ -10,10 +10,12 @@ class CollapserStandard {
     }
 
     create (buttonElement) {
+        buttonElement = (buttonElement.getAttribute('role') === 'heading' ? buttonElement : buttonElement.parentElement);
+
         const object = {
             'id': MiscUtils.generateId(),
             'containerElement': buttonElement.closest('.ds44-collapser_element'),
-            'buttonElement': buttonElement,
+            'buttonElement': buttonElement
         };
         this.objects.push(object);
         const objectIndex = (this.objects.length - 1);
