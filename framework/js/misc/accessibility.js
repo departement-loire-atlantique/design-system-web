@@ -83,7 +83,11 @@ class MiscAccessibility {
 
     static restoreFocus (element) {
         const oldTabindex = element.getAttribute('data-old-tabindex');
-        if (oldTabindex === '' || oldTabindex === null || oldTabindex === 'null') {
+        if (
+            oldTabindex === '' ||
+            oldTabindex === null ||
+            oldTabindex === 'null'
+        ) {
             element.removeAttribute('tabindex');
         } else {
             element.setAttribute('tabindex', oldTabindex);
@@ -115,8 +119,13 @@ class MiscAccessibility {
         }
         if (element.closest(MiscAccessibility.getEnabledElementsSelector()) === element) {
             if (element.hasAttribute('data-bkp-tabindex')) {
-                if (element.getAttribute('data-bkp-tabindex') != '') {
-                    element.setAttribute('tabindex', element.getAttribute('data-bkp-tabindex'));
+                const bkpTabindex = element.getAttribute('data-bkp-tabindex');
+                if (
+                    bkpTabindex !== '' &&
+                    bkpTabindex !== 'null' &&
+                    bkpTabindex !== null
+                ) {
+                    element.setAttribute('tabindex', bkpTabindex);
                 }
             } else {
                 element.removeAttribute('tabindex');
