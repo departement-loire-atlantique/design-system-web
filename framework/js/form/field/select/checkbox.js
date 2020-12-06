@@ -46,6 +46,22 @@ class FormFieldSelectCheckbox extends FormFieldSelectAbstract {
         MiscEvent.addListener('change', this.select.bind(this, objectIndex), listInputElement);
     }
 
+    selectAfterShow (objectIndex) {
+        const object = this.objects[objectIndex];
+        if (!object || !object.containerElement) {
+            return;
+        }
+
+        // Select "Check all"
+        const checkAllElement = object.containerElement.querySelector('.ds44-flex-container button:first-child');
+        if (checkAllElement) {
+            MiscAccessibility.setFocus(checkAllElement);
+            return;
+        }
+
+        super.selectAfterShow(objectIndex);
+    }
+
     getListItems (parentElement) {
         let previousItem = null;
         let nextItem = null;
