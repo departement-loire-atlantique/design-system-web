@@ -283,9 +283,15 @@ class FormLayoutSearch extends FormLayoutAbstract {
         }
 
         if (object.containerElement.classList.contains('ds44-facette-mobile-expanded')) {
-            object.containerElement.classList.remove('ds44-facette-mobile-expanded')
+            object.containerElement.classList.remove('ds44-facette-mobile-expanded');
         } else {
-            object.containerElement.classList.add('ds44-facette-mobile-expanded')
+            object.containerElement.classList.add('ds44-facette-mobile-expanded');
+
+            // Focus on first form element
+            const firstFocusableElement = object.formElement.querySelector(MiscAccessibility.getEnabledElementsSelector());
+            if (firstFocusableElement) {
+                MiscAccessibility.setFocus(firstFocusableElement);
+            }
         }
     }
 
