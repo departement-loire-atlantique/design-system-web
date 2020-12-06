@@ -23,6 +23,11 @@ class FormLayoutAbstract {
         formElement.setAttribute('novalidate', 'true');
         formElement.setAttribute('data-is-initialized', 'true');
 
+        const msgContainerElement = formElement.querySelector('.ds44-msg-container');
+        if (msgContainerElement) {
+            this.delayedFocus(msgContainerElement);
+        }
+
         this.objects.push(object);
     }
 
@@ -325,15 +330,14 @@ class FormLayoutAbstract {
         containerElement = document.createElement('div');
         containerElement.classList.add('ds44-msg-container');
         containerElement.classList.add(notificationType);
-        containerElement.setAttribute('aria-live', 'polite');
+        containerElement.setAttribute('tabindex', '-1');
+        if (messageId) {
+            containerElement.setAttribute('id', messageId);
+        }
         object.formElement.insertBefore(containerElement, object.formElement.firstChild);
 
         const textElement = document.createElement('p');
-        if (messageId) {
-            textElement.setAttribute('id', messageId);
-        }
         textElement.classList.add('ds44-message-text');
-        textElement.setAttribute('tabindex', '0');
         containerElement.appendChild(textElement);
 
         const iconElement = document.createElement('i');
@@ -366,6 +370,17 @@ class FormLayoutAbstract {
             }
         }
 
-        MiscAccessibility.setFocus(textElement);
+        this.delayedFocus(containerElement);
+    }
+
+    delayedFocus (element) {
+        window.setTimeout(
+            (function (element) {
+                return function () {
+                    MiscAccessibility.setFocus(element);
+                }
+            })(element),
+            1000
+        );
     }
 }
