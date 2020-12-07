@@ -14,9 +14,8 @@
 
 // CD44 config
 @import "_config/variables";
-@import "_config/contextual-variables-aqua.scss";        // Choose the right contextual file - and only one - site Loire Atlantique vert /!\
-//@import "_config/contextual-variables-bright.scss";  // Switch contextual files according to actual website - Site Agenda jaune sable  /!\
-//@import "_config/contextual-variables-chateauClisson.scss";  // Chateau de Clisson rouge fushia  /!\
+//@import "_config/contextual-variables-aqua.scss";        // Choose the right contextual file - and only one /!\
+@import "_config/contextual-variables-chateauClisson.scss";  // Switch contextual files according to actual website  /!\
 @import "_config/mixins";
 
 /* -------------------------------*/

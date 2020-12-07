@@ -16,6 +16,9 @@ variations:
 - title: Variante type site Archives
   description: Header sans recherche
   pattern: header/header-variante-2.html
+- title: Variante Grand Patrimoine
+  description: Header Grand Patrimoine - Chateau de Clisson
+  pattern: header/header-chateauClisson.html
 ---
 
 ## Notes d'intégration
