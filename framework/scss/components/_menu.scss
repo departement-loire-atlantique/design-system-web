@@ -38,19 +38,19 @@
     font-weight: bold;
     margin-bottom: 2.5rem;
     margin-top: .5rem;
-    position: relative;
-    padding-right: 6rem;
+    position: inherit;
+    padding-right: 0;
     padding-left: 0;
     width: 100%;
     text-align: left;
     text-decoration: none;
 
     .icon {
-        position: absolute;
-        right: 1.5rem;
-        top: -.5rem;
-        transition: right ease-in-out $ds44-timing-standard;
-        will-change: right;
+        float: right;
+        margin: 0 1.5rem;
+        vertical-align: text-top;
+        transition: margin ease-in-out $ds44-timing-standard;
+        will-change: margin;
 
         &::before {
             line-height: .7;
@@ -58,7 +58,7 @@
     }
 
     &:hover .icon, &:focus .icon, &:active .icon {
-        right: 0;
+        margin: 0 0 0 3rem;
     }
 }
 
@@ -92,16 +92,15 @@
 }
 
 .ds44-menuLink, .ds44-menuLink--subLvl {
-    position: relative;
-    padding-right: 4rem;
+    position: inherit;
 
     .icon {
-        position: absolute;
-        right: 1rem;
-        top: 0;
+        margin-left: 1rem;
+        margin-right: 1rem;
+        vertical-align: text-top;
         opacity: 0;
         transition: all ease-in-out $ds44-timing-standard;
-        will-change: right, opacity;
+        will-change: margin-left, opacity;
 
         &::before {
             line-height: .7;
@@ -109,8 +108,9 @@
     }
 
     &:hover .icon, &:focus .icon, &:active .icon {
-        right: 0;
         opacity: 1;
+        margin-left: 2rem;
+        margin-right: 0rem;
     }
 }
 
@@ -162,7 +162,7 @@
 
 
 @media (min-width: $ds44-medium) and (max-width: $ds44-large - .0625)  {
-    
+
     .ds44-container-menuBackLink {
         margin: 1rem 1rem 1rem 2rem;
         width: calc(100% - 90px);
@@ -264,9 +264,13 @@
 
     .ds44-menuBtn {
         padding-right: 4rem;
+        position: relative;
 
         .icon {
             right: .5rem;
+            position: absolute;
+            top: 0;
+            margin: 0;
         }
     }
 
