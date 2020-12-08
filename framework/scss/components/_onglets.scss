@@ -153,6 +153,11 @@
                     right: .4rem;
                     top: 1.5rem;
                 }
+
+                &:focus {
+                  background: $ds44-color-inverse !important;
+                  color: $ds44-color-base !important;
+                }
             }
 
             .ds44-btnStd { // all buttons within the panel
