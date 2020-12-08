@@ -1,0 +1,63 @@
+---
+layout: pattern
+---
+
+{% include header/inc-header.html
+    rawLogo=true
+    logo='<picture class="ds44-logo"><img src="../../assets/images/logos/logo-chateau-de-clisson-noir.svg" alt="Retour à l&apos;accueil - Site internet du Chateau de Clisson" /></picture>'
+    variante3='
+        <a href="#" class="ds44-btnIcoText--maxi ds44--xl-padding" title="Venir aux archives départementales"><span class="ds44-btnInnerText">English</span><i class="icon icon-english icon--large" aria-hidden="true"></i></a>'
+%}
+
+<main role="main" id="content">
+
+    <section class="ds44-container-large ds44-homepage-container ds44-homepage-container--ha ds44--xxl-padding-b">
+        <div class="grid-12-small-1">
+            <div class="col-8-small-1 col-8-large-7 ds44-mb2 ds44-homepage-noCarrousel">
+                {% include titres/main-title-home.html titre='Bienvenue au Château de Clisson<br /><span class="ds44-ssTitreH1_home">Un site patrimonial du Département de Loire-Atlantique</span>' legend="Légende associée 1 © Copyright" %}
+            </div>
+            <div class="col-4-small-1 col-4-large-5 ds44-bgGray ds44--m-padding-tb">
+                <section id="en1clic" class="ds44-mlr35 ds44-mtb2 ds44-mobile-reduced-mar">
+                    <h2 class="h2-like" id="titreEn1Clic">En 1 clic</h2>
+                    {% include card/card--horizontal.html title="Horaires et accès" time="jeudi 16:00-17:30" arialevel='aria-level="3"' context=" ds44-darkContext ds44-tiny-reducedFont" imgdim="--dim110" %}
+                    {% include card/card--horizontal.html title="Informations pratiques" arialevel='aria-level="3"' context=" ds44-darkContext ds44-tiny-reducedFont" imgdim="--dim110" %}
+                    {% include card/card--horizontal.html title="Découvrir le château" arialevel='aria-level="3"' context=" ds44-darkContext ds44-tiny-reducedFont" imgdim="--dim110" %}
+                    {% include card/card--horizontal.html title="L'agenda" arialevel='aria-level="3"' context=" ds44-darkContext ds44-tiny-reducedFont" imgdim="--dim110" %}
+                </section>
+            </div>
+        </div>
+    </section>
+
+    <section class="ds44-container-fluid ds44-mt3 ds44--xl-padding-tb">
+        <div class="ds44-container-large ds44--mobile--m-padding-b">
+            <header class="txtcenter ds44--mobile--m-padding-b">
+                <h2 class="h2-like center">En ce moment</h2>
+                <p class="ds44-component-chapo ds44-centeredBlock">Consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore.</p>
+            </header>
+        </div>
+        <div class="ds44-container-large">
+            {% include card/card--miseEnAvant.html title="Journée du patrimoine 2021 : Demandez le programme !" has-info="false" positionBloc="bl" %}
+        </div>
+        <section class="ds44-container-large ds44-mt2">
+            {% assign formId = 'recherche-facette' %}
+            {% capture ariaDescribedBy %}filter-by-{{ formId }}{% endcapture %}
+            {% capture fields %}
+            <div class="ds44-fieldContainer ds44-fg1 ds44-fieldContainer--select">
+                {% include form/field/select/radio-date.html label="Quand ?" required="false" %}
+            </div>
+            <div class="ds44-fieldContainer ds44-fg1 ds44-fieldContainer--select">
+                {% include form/field/select/checkbox.html label="Quoi ?" required="false" %}
+            </div>
+            <div class="ds44-fieldContainer ds44-fg1 ds44-fieldContainer--select">
+                {% include form/field/select/checkbox.html label="Pour qui ?" required="false" %}
+            </div>
+            {% endcapture %}
+            {% include form/layout/recherche-facettes.html id=formId fields=fields fieldStyle="large" url=include.url %}
+        </section>
+        {% include carrousel/carrousel-x3.html %}
+    </section>
+
+</main>
+
+
+{% include footer/footer-chateauClisson.html %}
