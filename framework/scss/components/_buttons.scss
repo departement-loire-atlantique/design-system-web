@@ -127,12 +127,14 @@ a > .ds44-btn--contextual,
 .ds44-btn--contextual > a {
     background-color: $ds44-contextual-color!important;
     border-color: $ds44-contextual-color;
+    color: $ds44-color-base;
 
     &:focus,
     &:hover,
     &:active {
         background-color: $ds44-contextual-hover!important;
         border-color: $ds44-contextual-color;
+        color: $ds44-color-base;
     }
 }
 
