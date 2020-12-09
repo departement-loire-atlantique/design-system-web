@@ -36,7 +36,7 @@ class MapMarker extends MapAbstract {
 
         object.isMapReady = true;
         object.map.loadImage(
-            '/assets/images/cd44-marker-black.png',
+            'http://design.loire-atlantique.fr/assets/images/cd44-marker-black.png',
             (error, image) => {
                 if (error) throw error;
                 object.map.addImage('cd44-marker', image);
