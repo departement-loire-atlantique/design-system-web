@@ -232,10 +232,13 @@
                     margin-top: 0.5rem;
                 }
           }
-          ul li,
-          ol li {
+          ul , ol {
+            padding:0 ;
+
+              li {
               display: inline-block;
               margin: 0 .5rem;
+            }
           }
         }
       }
@@ -369,6 +372,28 @@
             }
         }
 
+    }
+
+    // Alert
+
+    .ds44-alertMsg-container {
+
+        .ds44-collapser {
+
+          .ds44-card__title {
+            font-size: 2rem;
+            padding: 0 1rem 0 3rem;
+        }
+
+          .ds44-collapser_content {
+
+            .ds44-collapser_content--level2 {
+              padding-left: $ds44-padding-large;
+              padding-right: $ds44-padding-large;
+
+            }
+        }
+      }
     }
 
 }
