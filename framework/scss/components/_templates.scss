@@ -714,6 +714,24 @@ main {
     }
 }
 
+
+/* Sites grand patrimoine */
+
+.ds44-homepage-container--gp {
+    .ds44-titleContainer--home .h1-like {
+        background: #000;
+        width: 100%;
+        padding: 3rem 3rem 5rem 3rem !important;
+        margin: 0;
+    }
+    .ds44-imgCaption {
+      z-index: 115;
+    }
+    .ds44-alphaGradient--header {
+      display: none;
+    }
+}
+
 /* =======
   GENERIC MEDIA QUERIES
   === */
@@ -792,9 +810,13 @@ main {
         display: none;
     }
 
+    .ds44-homepage-container--gp ,
     .ds44-homepage-container--ha {
         &:after {
             display: none;
+        }
+        .ds44-titleContainer--home .h1-like {
+            padding: 3rem !important;
         }
     }
 

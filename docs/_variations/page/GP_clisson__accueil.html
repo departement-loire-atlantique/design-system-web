@@ -11,7 +11,7 @@ layout: pattern
 
 <main role="main" id="content">
 
-    <section class="ds44-container-large ds44-homepage-container ds44-homepage-container--ha ds44--xxl-padding-b">
+    <section class="ds44-container-large ds44-homepage-container ds44-homepage-container--gp ds44--xxl-padding-b">
         <div class="grid-12-small-1">
             <div class="col-8-small-1 col-8-large-7 ds44-mb2 ds44-homepage-noCarrousel">
                 {% include titres/main-title-home.html titre='Bienvenue au Château de Clisson<br /><span class="ds44-ssTitreH1_home">Un site patrimonial du Département de Loire-Atlantique</span>' legend="Légende associée 1 © Copyright" %}
@@ -52,7 +52,7 @@ layout: pattern
                 {% include form/field/select/checkbox.html label="Pour qui ?" required="false" class="ds44-inpLarge" %}
             </div>
             {% endcapture %}
-            {% include form/layout/recherche-facettes.html id=formId fields=fields fieldStyle="large" url=include.url %}
+            {% include form/layout/recherche-facettes.html id=formId fields=fields titleFacette="Planifiez votre visite" fieldStyle="large" url=include.url %}
         </section>
         {% include carrousel/carrousel-x3.html %}
     </section>
