@@ -400,6 +400,11 @@ input[type=radio],
                 padding: 2.5rem; // on augmente les marges en mobile pour décoller les labels
             }
 
+            .ds44-facette__title {
+              font-size: 2.4rem;
+              color: $ds44-color-inverse;
+            }
+
             &.ds44-theme {
                 .ds44-fieldContainer {
 

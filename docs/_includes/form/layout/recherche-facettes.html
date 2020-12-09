@@ -10,7 +10,7 @@
 <div class="ds44-facette">
     <div class="ds44-facette-body">
         <form data-is-ajax="true" data-auto-load="true" action="{{ url }}">
-            {% include form/layout/partial/recherche-facettes-main.html fields=include.fields fieldStyle=include.fieldStyle %}
+            {% include form/layout/partial/recherche-facettes-main.html titleFacette="Planifiez votre visite" fields=include.fields fieldStyle=include.fieldStyle %}
 
             {% if include.subfields and include.subfields != '' %}
                 <div class="ds44-facetteContainer ds44-theme ds44-flex-container ds44-medium-flex-col">

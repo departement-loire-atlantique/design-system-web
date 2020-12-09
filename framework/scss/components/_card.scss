@@ -186,7 +186,8 @@ figure[role=figure]  + .ds44-card__section {
     }
 }
 
-.ds44-card__title {
+.ds44-card__title,
+.ds44-facette__title {
     margin-bottom: $headings-margin-bottom;
     padding: 0;
     font-size: 1.7rem; // 17px

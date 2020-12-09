@@ -38,18 +38,18 @@ layout: pattern
         <div class="ds44-container-large">
             {% include card/card--miseEnAvant.html title="Journée du patrimoine 2021 : Demandez le programme !" has-info="false" positionBloc="bl" %}
         </div>
-        <section class="ds44-container-large ds44-mt2">
+        <section class="ds44-container-large ds44-mt2 ds44-mb-std">
             {% assign formId = 'recherche-facette' %}
             {% capture ariaDescribedBy %}filter-by-{{ formId }}{% endcapture %}
             {% capture fields %}
             <div class="ds44-fieldContainer ds44-fg1 ds44-fieldContainer--select">
-                {% include form/field/select/radio-date.html label="Quand ?" required="false" %}
+                {% include form/field/select/radio-date.html label="Quand ?" required="false" class="ds44-inpLarge" %}
             </div>
             <div class="ds44-fieldContainer ds44-fg1 ds44-fieldContainer--select">
-                {% include form/field/select/checkbox.html label="Quoi ?" required="false" %}
+                {% include form/field/select/checkbox.html label="Quoi ?" required="false" class="ds44-inpLarge" %}
             </div>
             <div class="ds44-fieldContainer ds44-fg1 ds44-fieldContainer--select">
-                {% include form/field/select/checkbox.html label="Pour qui ?" required="false" %}
+                {% include form/field/select/checkbox.html label="Pour qui ?" required="false" class="ds44-inpLarge" %}
             </div>
             {% endcapture %}
             {% include form/layout/recherche-facettes.html id=formId fields=fields fieldStyle="large" url=include.url %}
