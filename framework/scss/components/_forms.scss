@@ -280,12 +280,12 @@ input[type=checkbox],
     }
 
     &.ds44-chkInder + .ds44-boxLabel::before {
-        background: url(../../../assets/images/tiret.png) no-repeat center;
+        background: url(/assets/images/tiret.png) no-repeat center;
         background-size: 1rem;
     }
 
     &:checked + .ds44-boxLabel::before {
-        background: #FFF url(../../../assets/images/cd44-check-black.png) no-repeat center;
+        background: #FFF url(/assets/images/cd44-check-black.png) no-repeat center;
         background-size: 1rem;
     }
 

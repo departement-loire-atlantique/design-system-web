@@ -1,6 +1,6 @@
 {
   "name": "design-system-web",
-  "version": "0.1.0",
+  "version": "0.2.0",
   "description": "Design system for departement de loire atlantique websites",
   "keywords": [
     "css",
@@ -33,7 +33,10 @@
     "postcss-flexbugs-fixes": "^4.2.0",
     "postcss-gap-properties": "^2.0.0",
     "postcss-unprefix": "^2.1.4",
-    "underscore": "^1.8.3"
+    "underscore": "^1.8.3",
+    "gulp-cli": "^2.2.0",
+    "swiper": "^5.3.1",
+    "aos": "^2.3.4"
   },
   "browserslist": [
     "> 1%",
@@ -47,9 +50,11 @@
     "ios_saf >= 12",
     "Android >= 7"
   ],
-  "dependencies": {
-    "gulp-cli": "^2.2.0",
-    "swiper": "^5.3.1",
-    "aos": "^2.3.4"
-  }
+  "dependencies": {},
+  "files": [
+    "dist/assets/images/",
+    "dist/fonts/",
+    "dist/css/",
+    "dist/js/"
+  ]
 }

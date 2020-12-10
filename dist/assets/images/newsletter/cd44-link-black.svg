@@ -1,0 +1,20 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="20" height="20" viewBox="0 0 20 20">
+  <defs>
+    <clipPath id="clip-path">
+      <rect width="20" height="20" fill="none"/>
+    </clipPath>
+  </defs>
+  <g id="cd44-link-black" clip-path="url(#clip-path)">
+    <g id="Groupe_2241" data-name="Groupe 2241" transform="translate(1.2 4.999)">
+      <g id="Groupe_2240" data-name="Groupe 2240">
+        <path id="Tracé_1093" data-name="Tracé 1093" d="M1997.253,1364.267h-2.444a4.583,4.583,0,0,1,0-9.166h2.444" transform="translate(-1990.226 -1355.101)" fill="none" stroke="#000" stroke-linecap="round" stroke-linejoin="round" stroke-miterlimit="10" stroke-width="1.5"/>
+        <g id="Groupe_2239" data-name="Groupe 2239" transform="translate(10.423)">
+          <path id="Tracé_1094" data-name="Tracé 1094" d="M1999.573,1355.1h2.444a4.583,4.583,0,0,1,0,9.166h-2.444" transform="translate(-1999.573 -1355.101)" fill="none" stroke="#000" stroke-linecap="round" stroke-linejoin="round" stroke-miterlimit="10" stroke-width="1.5"/>
+        </g>
+      </g>
+      <path id="Tracé_1095" data-name="Tracé 1095" d="M0,0H8.9" transform="translate(4.5 4.583)" fill="none" stroke="#000" stroke-linecap="round" stroke-width="1.5"/>
+    </g>
+    <rect id="Rectangle_930" data-name="Rectangle 930" width="20" height="20" fill="none"/>
+    <rect id="Rectangle_931" data-name="Rectangle 931" width="20" height="20" fill="none"/>
+  </g>
+</svg>

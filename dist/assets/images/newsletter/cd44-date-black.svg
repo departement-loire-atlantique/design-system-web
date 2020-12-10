@@ -1,0 +1,24 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="20" height="20" viewBox="0 0 20 20">
+  <defs>
+    <clipPath id="clip-path">
+      <rect width="20" height="20" fill="none"/>
+    </clipPath>
+  </defs>
+  <g id="cd44-date-black" clip-path="url(#clip-path)">
+    <g id="Groupe_2232" data-name="Groupe 2232" transform="translate(3 2)">
+      <g id="Rectangle_908" data-name="Rectangle 908" transform="translate(0 1.5)" fill="none" stroke="#000" stroke-width="1.5">
+        <rect width="14" height="14" rx="2" stroke="none"/>
+        <rect x="0.75" y="0.75" width="12.5" height="12.5" rx="1.25" fill="none"/>
+      </g>
+      <line id="Ligne_241" data-name="Ligne 241" x2="13" transform="translate(0.5 6)" fill="none" stroke="#000" stroke-width="1.5"/>
+      <line id="Ligne_242" data-name="Ligne 242" y2="2" transform="translate(3.5)" fill="none" stroke="#000" stroke-linecap="round" stroke-width="1.5"/>
+      <line id="Ligne_243" data-name="Ligne 243" y2="2" transform="translate(10.5)" fill="none" stroke="#000" stroke-linecap="round" stroke-width="1.5"/>
+      <g id="Rectangle_909" data-name="Rectangle 909" transform="translate(7 8.5)" fill="none" stroke="#000" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5">
+        <rect width="4" height="4" stroke="none"/>
+        <rect x="0.75" y="0.75" width="2.5" height="2.5" fill="none"/>
+      </g>
+    </g>
+    <rect id="Rectangle_910" data-name="Rectangle 910" width="20" height="20" fill="none"/>
+    <rect id="Rectangle_911" data-name="Rectangle 911" width="20" height="20" fill="none"/>
+  </g>
+</svg>

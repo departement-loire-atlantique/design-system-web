@@ -3,7 +3,14 @@ _site
 .jekyll-metadata
 .docker/cache
 .DS_Store
-dist
 node_modules
 Gemfile.lock
 .idea
+
+dist/*
+!dist/css
+!dist/js
+!dist/assets
+dist/assets/*
+!dist/assets/images
+!dist/fonts

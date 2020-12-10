@@ -34,12 +34,12 @@
 
             > a {
                 padding-left: 40px;
-                background: url(../../../assets/images/right.png) no-repeat left 15px center;
+                background: url(/assets/images/right.png) no-repeat left 15px center;
                 margin-right: 1rem;
 
                 @media (max-width: $ds44-medium - .0625) {
                     padding-left: 25px;
-                    background: url(../../../assets/images/right.png) no-repeat left;
+                    background: url(/assets/images/right.png) no-repeat left;
                     margin-right: 0;
                 }
             }

@@ -100,7 +100,7 @@ gulp.task('build:glyphicons', function () {
             iconfontCss({
                 fontName: "ds44-icons",
                 targetPath: "css/icons.css",
-                fontPath: "../fonts/",
+                fontPath: "/fonts/",
             }),
         )
         .pipe(

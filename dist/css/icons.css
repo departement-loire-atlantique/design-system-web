@@ -1,0 +1,334 @@
+@font-face {
+	font-family: "ds44-icons";
+	src: url('/fonts/ds44-icons.eot');
+	src: url('/fonts/ds44-icons.eot?#iefix') format('eot'),
+		url('/fonts/ds44-icons.woff2') format('woff2'),
+		url('/fonts/ds44-icons.woff') format('woff'),
+		url('/fonts/ds44-icons.ttf') format('truetype'),
+		url('/fonts/ds44-icons.svg#ds44-icons') format('svg');
+}
+
+.icon:before {
+	font-family: "ds44-icons";
+		-webkit-font-smoothing: antialiased;
+		-moz-osx-font-smoothing: grayscale;
+	font-style: normal;
+	font-variant: normal;
+	font-weight: normal;
+	/* speak: none; only necessary if not using the private unicode range (firstGlyph option) */
+	text-decoration: none;
+	text-transform: none;
+}
+
+
+.icon-accident:before {
+	content: "\E001";
+}
+
+.icon-arrow-down:before {
+	content: "\E002";
+}
+
+.icon-arrow-left:before {
+	content: "\E003";
+}
+
+.icon-arrow-right:before {
+	content: "\E004";
+}
+
+.icon-arrow-up:before {
+	content: "\E005";
+}
+
+.icon-attention:before {
+	content: "\E006";
+}
+
+.icon-burger:before {
+	content: "\E007";
+}
+
+.icon-bus:before {
+	content: "\E008";
+}
+
+.icon-check:before {
+	content: "\E009";
+}
+
+.icon-compass:before {
+	content: "\E00A";
+}
+
+.icon-computer:before {
+	content: "\E00B";
+}
+
+.icon-cost:before {
+	content: "\E00C";
+}
+
+.icon-cross:before {
+	content: "\E00D";
+}
+
+.icon-csv:before {
+	content: "\E00E";
+}
+
+.icon-data:before {
+	content: "\E00F";
+}
+
+.icon-date:before {
+	content: "\E010";
+}
+
+.icon-deviation:before {
+	content: "\E011";
+}
+
+.icon-directions:before {
+	content: "\E012";
+}
+
+.icon-directory:before {
+	content: "\E013";
+}
+
+.icon-discussion:before {
+	content: "\E014";
+}
+
+.icon-dislike:before {
+	content: "\E015";
+}
+
+.icon-down:before {
+	content: "\E016";
+}
+
+.icon-english:before {
+	content: "\E017";
+}
+
+.icon-facebook:before {
+	content: "\E018";
+}
+
+.icon-fax:before {
+	content: "\E019";
+}
+
+.icon-file:before {
+	content: "\E01A";
+}
+
+.icon-french:before {
+	content: "\E01B";
+}
+
+.icon-fullscreen:before {
+	content: "\E01C";
+}
+
+.icon-google:before {
+	content: "\E01D";
+}
+
+.icon-handicap-auditif:before {
+	content: "\E01E";
+}
+
+.icon-handicap-mental:before {
+	content: "\E01F";
+}
+
+.icon-handicap-moteur:before {
+	content: "\E020";
+}
+
+.icon-handicap-visuel:before {
+	content: "\E021";
+}
+
+.icon-help:before {
+	content: "\E022";
+}
+
+.icon-home:before {
+	content: "\E023";
+}
+
+.icon-index:before {
+	content: "\E024";
+}
+
+.icon-instagram:before {
+	content: "\E025";
+}
+
+.icon-invert:before {
+	content: "\E026";
+}
+
+.icon-left:before {
+	content: "\E027";
+}
+
+.icon-like:before {
+	content: "\E028";
+}
+
+.icon-link:before {
+	content: "\E029";
+}
+
+.icon-linkedin:before {
+	content: "\E02A";
+}
+
+.icon-long-arrow-down:before {
+	content: "\E02B";
+}
+
+.icon-long-arrow-left:before {
+	content: "\E02C";
+}
+
+.icon-long-arrow-right:before {
+	content: "\E02D";
+}
+
+.icon-long-arrow-up:before {
+	content: "\E02E";
+}
+
+.icon-magnifier:before {
+	content: "\E02F";
+}
+
+.icon-magweb:before {
+	content: "\E030";
+}
+
+.icon-mail:before {
+	content: "\E031";
+}
+
+.icon-map:before {
+	content: "\E032";
+}
+
+.icon-marker:before {
+	content: "\E033";
+}
+
+.icon-minus:before {
+	content: "\E034";
+}
+
+.icon-option:before {
+	content: "\E035";
+}
+
+.icon-parking:before {
+	content: "\E036";
+}
+
+.icon-pause:before {
+	content: "\E037";
+}
+
+.icon-pdf:before {
+	content: "\E038";
+}
+
+.icon-phone:before {
+	content: "\E039";
+}
+
+.icon-play:before {
+	content: "\E03A";
+}
+
+.icon-plus:before {
+	content: "\E03B";
+}
+
+.icon-position:before {
+	content: "\E03C";
+}
+
+.icon-print:before {
+	content: "\E03D";
+}
+
+.icon-right:before {
+	content: "\E03E";
+}
+
+.icon-soundcloud:before {
+	content: "\E03F";
+}
+
+.icon-star-empty:before {
+	content: "\E040";
+}
+
+.icon-star-full:before {
+	content: "\E041";
+}
+
+.icon-summary:before {
+	content: "\E042";
+}
+
+.icon-tag:before {
+	content: "\E043";
+}
+
+.icon-time:before {
+	content: "\E044";
+}
+
+.icon-travaux:before {
+	content: "\E045";
+}
+
+.icon-tripadvisor:before {
+	content: "\E046";
+}
+
+.icon-twitter:before {
+	content: "\E047";
+}
+
+.icon-up:before {
+	content: "\E048";
+}
+
+.icon-user-group:before {
+	content: "\E049";
+}
+
+.icon-user:before {
+	content: "\E04A";
+}
+
+.icon-vent:before {
+	content: "\E04B";
+}
+
+.icon-video:before {
+	content: "\E04C";
+}
+
+.icon-webcam:before {
+	content: "\E04D";
+}
+
+.icon-youtube:before {
+	content: "\E04E";
+}

@@ -1,0 +1,12 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="20" height="20" viewBox="0 0 20 20">
+  <defs>
+    <clipPath id="clip-path">
+      <rect width="20" height="20" fill="none"/>
+    </clipPath>
+  </defs>
+  <g id="cd44-phone-black" clip-path="url(#clip-path)">
+    <path id="Tracé_1084" data-name="Tracé 1084" d="M-16892.617-11380h-4.133s-.24,14.166,15.379,15.3v-4.521l-4.332-1.033-2,1.593a10.046,10.046,0,0,1-5.123-5.035c-.045-.019,1.506-2.312,1.506-2.312Z" transform="translate(16899.25 11382.5)" fill="none" stroke="#000" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"/>
+    <rect id="Rectangle_912" data-name="Rectangle 912" width="20" height="20" fill="none"/>
+    <rect id="Rectangle_913" data-name="Rectangle 913" width="20" height="20" fill="none"/>
+  </g>
+</svg>
