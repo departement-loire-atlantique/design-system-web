@@ -20,6 +20,10 @@
 
     > p[role="heading"] {
       font-weight: normal;
+
+      &:after {
+          padding-bottom: 0;
+      }
     }
 
     .ds44-collapser_content li {
