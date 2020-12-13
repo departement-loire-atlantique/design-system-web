@@ -10,7 +10,12 @@ class CollapserStandard {
     }
 
     create (buttonElement) {
-        buttonElement = (buttonElement.getAttribute('role') === 'heading' ? buttonElement : buttonElement.parentElement);
+        if(
+            buttonElement.getAttribute('role') !== 'heading' &&
+            buttonElement.parentElement.getAttribute('role') === 'heading'
+        ) {
+            buttonElement = buttonElement.parentElement;
+        }
 
         const object = {
             'id': MiscUtils.generateId(),
