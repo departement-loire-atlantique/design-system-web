@@ -120,7 +120,7 @@ class OverlayAbstract {
         this.modal.classList.remove('show');
 
         if (this.triggerElement) {
-            MiscAccessibility.setFocus(this.triggerElement)
+            MiscAccessibility.setFocus(this.triggerElement);
         }
 
         this.triggerElement = null;
@@ -136,8 +136,6 @@ class OverlayAbstract {
             MiscAccessibility.setFocus(this.modal.querySelector('input, button, textarea, a, select'));
             return;
         }
-
-        MiscAccessibility.setFocus(this.modal);
     }
 
     clickOut (evt) {
