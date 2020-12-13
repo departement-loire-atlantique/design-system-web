@@ -35,14 +35,13 @@ class FormFieldInputAutoComplete extends FormFieldInputAbstract {
         object.autoCompleterElement = object.containerElement.querySelector('.ds44-autocomp-container');
         object.nbResultsElement = object.autoCompleterElement.querySelector('.ds44-js-nb-results');
         if(!object.nbResultsElement) {
-            let nbResultsElement = document.createElement('div');
-            nbResultsElement.classList.add('visually-hidden');
-            nbResultsElement.classList.add('ds44-js-nb-results');
-            nbResultsElement.setAttribute('aria-live', 'polite');
+            object.nbResultsElement = document.createElement('div');
+            object.nbResultsElement.classList.add('visually-hidden');
+            object.nbResultsElement.classList.add('ds44-js-nb-results');
+            object.nbResultsElement.setAttribute('aria-live', 'polite');
 
             const autoCompleterListElement = object.autoCompleterElement.querySelector('.ds44-autocomp-list')
-            autoCompleterListElement.insertBefore(nbResultsElement, autoCompleterListElement.firstChild);
-            object.nbResultsElement = object.autoCompleterElement.querySelector('.ds44-js-nb-results');
+            autoCompleterListElement.insertBefore(object.nbResultsElement, autoCompleterListElement.firstChild);
         }
         object.autoCompleterListElement = null;
         if (object.autoCompleterElement) {
