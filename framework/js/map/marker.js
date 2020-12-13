@@ -250,7 +250,7 @@ class MapMarker extends MapAbstract {
                     'id': object.geojsonHoveredId
                 });
             });
-            object.map.on('mouseleave', 'marker', (evt) => {
+            /*object.map.on('mouseleave', 'marker', (evt) => {
                 object.map.getCanvas().style.cursor = '';
 
                 if (object.geojsonHoveredId) {
@@ -260,7 +260,7 @@ class MapMarker extends MapAbstract {
 
                     object.geojsonHoveredId = null;
                 }
-            });
+            });*/
         }
 
         if (object.zoom && hasBoundingBox) {
