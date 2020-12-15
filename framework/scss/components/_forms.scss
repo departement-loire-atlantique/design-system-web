@@ -458,6 +458,15 @@ input[type=radio],
                 }
             }
         }
+
+        .ds44-facette__title {
+          font-size: 2.4rem;
+          color: $ds44-color-inverse;
+          padding: $ds44-padding-large ;
+          padding-bottom: 0;
+          margin: 0;
+          background: $ds44-dark;
+        }
     }
 
     .ds44-facette-mobile-button {

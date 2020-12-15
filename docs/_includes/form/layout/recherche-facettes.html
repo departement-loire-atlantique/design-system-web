@@ -9,6 +9,7 @@
 
 <div class="ds44-facette">
     <div class="ds44-facette-body">
+        {% if include.titleFacette %}<h3 class="ds44-facette__title">{{ include.titleFacette }}</h3>{% endif %}
         <form data-is-ajax="true" data-auto-load="true" action="{{ url }}">
             {% include form/layout/partial/recherche-facettes-main.html fields=include.fields fieldStyle=include.fieldStyle %}
 

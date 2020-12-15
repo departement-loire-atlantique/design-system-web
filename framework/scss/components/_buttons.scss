@@ -150,6 +150,21 @@ a > .ds44-btn--contextual,
 
 }
 
+.ds44-bgDark {
+
+    .ds44-btnStd--white {
+          color: $ds44-light;
+          border-color: $ds44-light;
+
+          &:hover,
+          &:active,
+          &:focus {
+            background:$ds44-hover-dark;
+          }
+    }
+
+}
+
 /* == Icon-text buttons == */
 
 // Link style buttons
