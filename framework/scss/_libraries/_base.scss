@@ -91,7 +91,11 @@ h2, .h2-like {
   }
 
   &.ds44-theme {
-    background: linear-gradient(to bottom, #99E6D1 55%, rgba(255, 255, 255, 1) 55% )!important;
+    background: linear-gradient(to bottom, $ds44-contextual-color 55%, rgba(255, 255, 255, 1) 55% )!important;
+  }
+
+  &.ds44-dark {
+    background: linear-gradient(to bottom, $ds44-contextual-color 55%, rgba(0, 0, 0, 1) 55% )!important;
   }
 
   &--light {
