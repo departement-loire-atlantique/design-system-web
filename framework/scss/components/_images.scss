@@ -176,6 +176,12 @@ figure {
 
 }
 
+/* Logo tous nos sites page accueil sites patrimoines */
+.ds44-logoCard {
+  max-height: 45px;
+  margin: 10px;
+}
+
 
 /* Mosaiques */
 .ds44-mosaique {
@@ -246,6 +252,10 @@ figure {
     .ds44-container-imgRatio--tuileMiseEnAvant .ds44-legendeContainer.ds44-container-imgRatio .ds44-imgRatio {
         height: 400px;
     }
+    /* Logo tous nos sites page accueil sites patrimoines */
+    .ds44-logoCard {
+      margin: 0px;
+    }
 
 }
 
@@ -255,6 +265,15 @@ figure {
         padding-top: 85%;
     }
 
+
+}
+
+@media (max-width: $ds44-medium) {
+
+  /* Logo tous nos sites page accueil sites patrimoines */
+  .ds44-logoCard {
+    margin: 10px;
+  }
 
 }
 
