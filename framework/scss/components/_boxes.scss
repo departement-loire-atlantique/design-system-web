@@ -97,6 +97,10 @@
 .ds44-borderContainer {
     border: 1px solid $ds44-contextual-color;
     padding: $ds44-padding-xlarge;
+
+    .ds44-innerBoxContainer {
+      padding: 0;
+    }
 }
 
 // Pushs
