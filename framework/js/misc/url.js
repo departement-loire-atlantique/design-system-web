@@ -37,6 +37,17 @@ class MiscUrl {
         urlParameters.push(parametersHash);
         document.location.href = document.location.href.split('#')[0] + '#' + urlParameters.join('/').replace(/ /gi, '-');
     }
+	
+	static parseBoolean(str) {
+    	switch (str.toLowerCase ()) {
+        case "true":
+          return true;
+        case "false":
+          return false;
+        default:
+          return str;
+      }
+    }
 
     static jsonToUrl (parameters) {
         const urlParameters = new URLSearchParams();
@@ -52,7 +63,7 @@ class MiscUrl {
             if (!matches) {
                 // No square brackets
                 json[key] = {
-                    'value': value
+                    'value':  MiscUrl.parseBoolean(value)
                 };
 
                 continue;
@@ -76,7 +87,7 @@ class MiscUrl {
                     }
                     nestedValue = nestedValue[subKey];
                 } else {
-                    nestedValue[subKey] = value;
+                    nestedValue[subKey] =  MiscUrl.parseBoolean(value);
                 }
             }
         }
