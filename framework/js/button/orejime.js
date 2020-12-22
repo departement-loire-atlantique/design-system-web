@@ -14,15 +14,15 @@ class ButtonOrejime {
         if (window.orejime) {
             const learnMoreButtonElement = document.querySelector('.orejime-Notice-learnMoreButton');
             const modifyPrefsButtonElement = document.querySelector('.ds44-js-orejime-show');
-            if (learnMoreButtonElement) {
-                this.isInitialized = true;
 
-                MiscEvent.addListener('click', this.showMore.bind(this), learnMoreButtonElement);
-
-            }
-            else if (modifyPrefsButtonElement) {
+            if (learnMoreButtonElement || modifyPrefsButtonElement) {
                 this.isInitialized = true;
-                MiscEvent.addListener('click', this.show.bind(this), modifyPrefsButtonElement);
+                if (learnMoreButtonElement) {
+                    MiscEvent.addListener('click', this.showMore.bind(this), learnMoreButtonElement);
+                }
+                if (modifyPrefsButtonElement) {
+                    MiscEvent.addListener('click', this.show.bind(this), modifyPrefsButtonElement);
+                }
             }
             else {
                 this.nbTrial--;
