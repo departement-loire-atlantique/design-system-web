@@ -23,6 +23,9 @@ variations:
 - title: Page Fiche Paléo - Archives
   pattern: page/AD__fiche-paleo.html
 
+- title: Page type exposition - SP
+  pattern: page/SP__exposition.html
+
 - title: Template centré
   pattern: templates/template-generique-centre.html
 ---
