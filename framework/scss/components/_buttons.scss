@@ -120,6 +120,17 @@ a > .ds44-btnStd--large   // pour wysiwyg
     }
 }
 
+.ds44-btn--invertWhite, a.ds44-btn--ds44-btn--invertWhite, a > .ds44-btn--ds44-btn--invertWhite, .ds44-btn--ds44-btn--invertWhite > a {
+    background-color: $ds44-background-base!important;
+    color: $ds44-color-base!important;
+
+    &:focus,
+    &:hover,
+    &:active {
+        background-color: $ds44-hover-light!important;
+    }
+}
+
 .ds44-btn--contextual,
 a.ds44-btn--contextual,
 .ds44-contextualBtnLink,

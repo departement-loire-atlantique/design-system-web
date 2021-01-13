@@ -216,6 +216,7 @@ $ds44-background-dark   : $ds44-dark      !default;
 $ds44-light-bg          : $ds44-lightgray !default;  // for CD44 light backgrounds
 
 $ds44-hover-dark        : lighten($ds44-background-dark, 25%) !default;
+$ds44-hover-light       : lighten($ds44-background-dark, 80%) !default;
 $ds44-hover-LA          : lighten($ds44-LA, 25%)              !default;
 $ds44-hover-Agenda      : lighten($ds44-Agenda, 25%)          !default;
 
