@@ -14,17 +14,7 @@
 
 // CD44 config
 @import "_config/variables";
-@import "_config/contextual-variables-loireAtlantique.scss";   // Choose the right contextual file - and only one - site Loire Atlantique vert /!\
-//@import "_config/contextual-variables-agendaLA.scss";  // Switch contextual files according to actual website - Site Agenda jaune sable  /!\
-//@import "_config/contextual-variables-chateauClisson.scss";  // Chateau de Clisson - site Patrimoine rouge fushia  /!\
-//@import "_config/contextual-variables-abbayeBlancheCouronne.scss";  // Abbaye de blanche Couronne - site Patrimoine marron  /!\
-//@import "_config/contextual-variables-grandPatrimoine.scss";  // Grand Patrimoine - site Patrimoine gris  /!\
-//@import "_config/contextual-variables-garenneLemot.scss";  // Domaine de la Garenne Lemot - site Patrimoine vert d'eau  /!\
-//@import "_config/contextual-variables-egliseVieuxBourg.scss";  // Eglise du Vieux-Bourg - site Patrimoine jaune vif  /!\
-//@import "_config/contextual-variables-chateauChateaubriant.scss";  // Château de Chateaubriant - site Patrimoine orange  /!\
-//@import "_config/contextual-variables-jardinsFoliesSiffait.scss";  // Jardins des Folies Siffait - site Patrimoine vert gazon  /!\
-//@import "_config/contextual-variables-poleArcheoLA.scss";  // Pôle Archéologie de Loire-Atlantique - site Patrimoine corail  /!\
-//@import "_config/contextual-variables-laboArcAntique.scss";  // Laboratoire Arc’Antique - site Patrimoine bleu  /!\
+@import "_config/contextual-variables-laboArcAntique.scss";  // Laboratoire Arc’Antique - site Patrimoine bleu  /!\
 @import "_config/mixins";
 
 /* -------------------------------*/
