@@ -159,6 +159,7 @@ gulp.task('createComponent', function () {
 gulp.task('build:ds', gulp.parallel(
     'build:css:cd44:dev',
     'build:css:cd44:prod',
+    'build:css:clisson:dev',
     'build:glyphicons',
     'build:demoicons',
     'build:js',
