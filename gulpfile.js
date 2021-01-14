@@ -17,6 +17,7 @@ var fs = require('fs');
 
 var jekyllDir = "docs/",
     scssFile = 'framework/scss/cd44.scss',
+    scssClissonFile = 'framework/scss/SP-chateauClisson.scss',
     scssFileSwiper = 'node_modules/swiper/css/swiper.min.css',
     scssFileAos = 'node_modules/aos/dist/aos.css',
     cssDest = 'dist/css',
@@ -59,6 +60,18 @@ gulp.task('build:css:cd44:dev', function () {
         }))
         .pipe(postcss(postCssPluginsDev))
         .pipe(concat('cd44.css'))
+        .pipe(browserSync.stream())
+        .pipe(gulp.dest(cssDest));
+});
+
+gulp.task('build:css:clisson:dev', function () {
+    return gulp.src([scssFileSwiper, scssFileAos, scssClissonFile])
+        .pipe(sass({
+            // CSS non minifiée plus lisible ('}' à la ligne)
+            outputStyle: 'expanded'
+        }))
+        .pipe(postcss(postCssPluginsDev))
+        .pipe(concat('clisson.css'))
         .pipe(browserSync.stream())
         .pipe(gulp.dest(cssDest));
 });
@@ -146,6 +159,7 @@ gulp.task('createComponent', function () {
 gulp.task('build:ds', gulp.parallel(
     'build:css:cd44:dev',
     'build:css:cd44:prod',
+    'build:css:clisson:dev',
     'build:glyphicons',
     'build:demoicons',
     'build:js',
