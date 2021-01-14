@@ -118,27 +118,17 @@ Les informations essentielles de type "alerte" sont de couleur rouge
 
 #### Couleurs complémentaires
 
-{% include color-preview.html name="01" hexcode="#965A6E" %}
-{% include color-preview.html name="02" hexcode="#B47878" %}
-{% include color-preview.html name="03" hexcode="#DCA096" %}
-{% include color-preview.html name="04" hexcode="#F0DCD2" %}
-{% include color-preview.html name="05" hexcode="#FFBED2" %}
-{% include color-preview.html name="06" hexcode="#E66496" %}
-{% include color-preview.html name="07" hexcode="#D23C5A" %}
-{% include color-preview.html name="08" hexcode="#FF646E" %}
-{% include color-preview.html name="09" hexcode="#F07850" %}
-{% include color-preview.html name="10" hexcode="#FCDE6E" %}
-{% include color-preview.html name="11" hexcode="#F2FA1C" %}
-{% include color-preview.html name="12" hexcode="#5AE682" %}
-{% include color-preview.html name="13" hexcode="#5AB45A" %}
-{% include color-preview.html name="14" hexcode="#8CB48C" %}
-{% include color-preview.html name="15" hexcode="#aab4be" %}
-{% include color-preview.html name="16" hexcode="#3CC8B4" %}
-{% include color-preview.html name="17" hexcode="#6EB4F0" %}
-{% include color-preview.html name="18" hexcode="#1496DC" %}
+{% include color-preview.html name="10" hexcode="#965A6E" %}
+{% include color-preview.html name="11" hexcode="#dca096" %}
+{% include color-preview.html name="12" hexcode="#F0DCD2" %}
+{% include color-preview.html name="13" hexcode="#E66496" %}
+{% include color-preview.html name="14" hexcode="#F2FA1C" %}
+{% include color-preview.html name="15" hexcode="#5AB45A" %}
+{% include color-preview.html name="16" hexcode="#8CB48C" %}
+{% include color-preview.html name="17" hexcode="#289682" %}
+{% include color-preview.html name="18" hexcode="#6EB4F0" %}
 {% include color-preview.html name="19" hexcode="#005096" %}
 {% include color-preview.html name="20" hexcode="#6E64BE" %}
 {% include color-preview.html name="21" hexcode="#A046A0" %}
 {% include color-preview.html name="22" hexcode="#D296E6" %}
 {% include color-preview.html name="23" hexcode="#C8D2FA" %}
-{% include color-preview.html name="24" hexcode="#aab4be" %}
