@@ -4,7 +4,7 @@ group: components
 status: Validé
 
 title: Footer
-description:
+description: Le Footer désigne le bas d’une page, il s’agit d’un élément qui doit être étudié attentivement car le bas d’une page doit pouvoir permettre au visiteur de retrouver toutes les informations principales afin qu’il n’ait pas besoin de remonter sur la page.
 
 variations:
 - title: Pied de page Loire-Atlantique

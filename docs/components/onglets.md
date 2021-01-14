@@ -3,7 +3,7 @@ layout: component-detail
 group: components
 
 title: Onglets
-description: Un système de navigation interne
+description: Un système de navigation interne, c'est le même système que l'on peut retrouver sur un menu horizontale mais dans le cas présent, la page ne se recharge pas.
 status: Validé
 
 variations:

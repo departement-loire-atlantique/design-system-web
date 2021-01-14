@@ -5,7 +5,7 @@ group: components
 
 title: Composants transverses
 description: Grand composant complet qui peuvent se placer à différent endroit des pages.
-status: Brouillon
+status: Validé
 
 variations:
 - title: FAQ

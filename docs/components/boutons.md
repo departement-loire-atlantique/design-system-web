@@ -3,7 +3,7 @@ layout: component-detail
 group: components
 
 title: Boutons
-description: Boutons d'action
+description: Boutons d'action, les boutons sont utilisés pour déclencher des actions.
 status: Validé
 
 variations:

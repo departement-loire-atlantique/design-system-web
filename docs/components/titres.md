@@ -4,7 +4,7 @@ group: components
 
 title: Titres
 description: Titres de page (titre principal).
-status: A valider
+status: Validé
 
 variations:
 - title: Hiérarchie des titres
@@ -59,4 +59,3 @@ Si le titre ne comporte aucune image, il peut être soit ferré à gauche, soit 
 ## Accessibilité
 
 * Ajouter `aria-current="location"` sur l'élément de liste actif.
-

@@ -1,10 +1,10 @@
 ---
 layout: component-detail
 group: components
-status: A valider
+status: Validé
 
 title: Formulaires
-description:
+description: Un formulaire web est un espace dédié au recueil d'informations saisies par un internaute sur une page web ou un e-mail HTML. Le formulaire composé de boîtes texte, de menus déroulant et de cases à cocher est utilisé pour des inscriptions, des commandes ou des processus de qualification.
 
 variations:
 - title: Champs standards

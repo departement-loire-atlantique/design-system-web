@@ -1,7 +1,7 @@
 ---
 layout: component-detail
 group: components
-status: A valider
+status: Validé
 
 title: Tuiles génériques
 alternative_title: Cards Annuaire Agenda
@@ -27,7 +27,7 @@ variations:
 - title: Variantes
   description: Liste des différentes variantes de tuile de type photo + contenu ou contenu seul
   pattern: cards/card--AA--variantes.html
-  
+
 - title: Fiches
   description: Tuile déployée - extension de tuile
   pattern: cards/card--fiches.html
@@ -54,4 +54,3 @@ Les composants de tuile sont intégrés via des inclusions dans le DS. Certains 
 `include card/card--horizontal.html title="Bien vieillir en Loire-Atlantique - PDF - 291,3 Ko - nouvelle fenêtre" text="PDF - 291,3 Ko" target='target="_blank"' arialevel='"aria-level="3"'`
 
 **Ne pas oublier ces paramètres lors de l'intégration du composant dans le CMS**.
-

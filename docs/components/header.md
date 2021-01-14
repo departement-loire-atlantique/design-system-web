@@ -3,8 +3,8 @@ layout: component-detail
 group: components
 
 title: Header
-description: Header
-status: A valider
+description: Un header désigne le haut d'une page sur un site web. On y retrouve le logo du site ainsi que le menu principal sous forme de munu appelé burger. C'est ce qui va permettre de capter l'attention des visiteurs et leur donner envie de rester sur le site puis de visiter les autres pages de ce même site.
+status: Validé
 
 variations:
 - title: Bandeau standard

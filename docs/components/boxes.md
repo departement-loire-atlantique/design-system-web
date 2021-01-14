@@ -4,7 +4,7 @@ group: components
 
 title: Encadrés
 alternative_title: boxes
-description: Un encadré permet la mise en exergue de contenus.
+description: Un encadré permet la mise en exergue de contenus. Également connu en tant que boxes 
 status: Validé
 
 variations:
@@ -70,4 +70,3 @@ variations:
  * Dans un contexte "flex" aligné verticalement au centre, le retour à un comportement "normal" des contenus doit être forcé. Ajouter, si nécessaire, la classe `ds44-boxContent` pour créer un conteneur dans lequel les éléments reprendront leur flux normal (retours à la ligne des paragraphes, les uns en dessous des autres).
  * Les pushs n'ont pas de conteneur `ds44-innerBoxContainer`, à la place ils ont deux conteneurs colonnés : `ds44-boxPushPic` sur le conteneur d'image et `ds44-boxPushContent` pour les contenus. La classe utilisée pour les titres est `h3-like` au lieu de `ds44-box-heading`.
  * Les pushs comportent deux images : une pour le mobiel et une pour les autres résolutions. L'alternance est gérée dans la balise `<picture>` via une balise `<source>`.
-

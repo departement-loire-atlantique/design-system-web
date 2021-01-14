@@ -3,8 +3,8 @@ layout: component-detail
 group: components
 
 title: Images
-description: Composants et éléments d'images
-status: A valider
+description: Composants et éléments d'images. Les images sont verrouillé dans leur conteneur avec un ratio particulier, elles s'adaptent pour avoir un rendu homogène sur l'ensemble du site.
+status: Validé
 
 variations:
 - title: Images sous différents ratios
