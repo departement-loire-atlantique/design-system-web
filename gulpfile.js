@@ -18,6 +18,11 @@ var fs = require('fs');
 var jekyllDir = "docs/",
     scssFile = 'framework/scss/cd44.scss',
     scssClissonFile = 'framework/scss/SP-chateauClisson.scss',
+    scssGarenneMemotFile = 'framework/scss/SP-garenneLemot.scss',
+    scssChateaubriantFile = 'framework/scss/SP-chateauChateaubriant.scss,
+    scssBlancheCouronneFile = 'framework/scss/SP-abbayeBlancheCouronne.scss',
+    scssFoliesSiffaitFile = 'framework/scss/SP-jardinsFoliesSiffait.scss',
+    scssSaintSulpiceFile = 'framework/scss/SP-egliseVieuxBourg.scss',
     scssFileSwiper = 'node_modules/swiper/css/swiper.min.css',
     scssFileAos = 'node_modules/aos/dist/aos.css',
     cssDest = 'dist/css',
@@ -72,6 +77,66 @@ gulp.task('build:css:clisson:dev', function () {
         }))
         .pipe(postcss(postCssPluginsDev))
         .pipe(concat('clisson.css'))
+        .pipe(browserSync.stream())
+        .pipe(gulp.dest(cssDest));
+});
+
+gulp.task('build:css:garenne-lemot:dev', function () {
+    return gulp.src([scssFileSwiper, scssFileAos, scssGarenneMemotFile])
+        .pipe(sass({
+            // CSS non minifiée plus lisible ('}' à la ligne)
+            outputStyle: 'expanded'
+        }))
+        .pipe(postcss(postCssPluginsDev))
+        .pipe(concat('garenne-lemot.css'))
+        .pipe(browserSync.stream())
+        .pipe(gulp.dest(cssDest));
+});
+
+gulp.task('build:css:chateaubriant:dev', function () {
+    return gulp.src([scssFileSwiper, scssFileAos, scssChateaubriantFile])
+        .pipe(sass({
+            // CSS non minifiée plus lisible ('}' à la ligne)
+            outputStyle: 'expanded'
+        }))
+        .pipe(postcss(postCssPluginsDev))
+        .pipe(concat('chateaubriant.css'))
+        .pipe(browserSync.stream())
+        .pipe(gulp.dest(cssDest));
+});
+
+gulp.task('build:css:blanche-couronne:dev', function () {
+    return gulp.src([scssFileSwiper, scssFileAos, scssBlancheCouronneFile])
+        .pipe(sass({
+            // CSS non minifiée plus lisible ('}' à la ligne)
+            outputStyle: 'expanded'
+        }))
+        .pipe(postcss(postCssPluginsDev))
+        .pipe(concat('blanche-couronne.css'))
+        .pipe(browserSync.stream())
+        .pipe(gulp.dest(cssDest));
+});
+
+gulp.task('build:css:folies-siffait:dev', function () {
+    return gulp.src([scssFileSwiper, scssFileAos, scssFoliesSiffaitFile])
+        .pipe(sass({
+            // CSS non minifiée plus lisible ('}' à la ligne)
+            outputStyle: 'expanded'
+        }))
+        .pipe(postcss(postCssPluginsDev))
+        .pipe(concat('folies-siffait.css'))
+        .pipe(browserSync.stream())
+        .pipe(gulp.dest(cssDest));
+});
+
+gulp.task('build:css:saint-sulpice:dev', function () {
+    return gulp.src([scssFileSwiper, scssFileAos, scssSaintSulpiceFile])
+        .pipe(sass({
+            // CSS non minifiée plus lisible ('}' à la ligne)
+            outputStyle: 'expanded'
+        }))
+        .pipe(postcss(postCssPluginsDev))
+        .pipe(concat('saint-sulpice.css'))
         .pipe(browserSync.stream())
         .pipe(gulp.dest(cssDest));
 });
@@ -160,6 +225,11 @@ gulp.task('build:ds', gulp.parallel(
     'build:css:cd44:dev',
     'build:css:cd44:prod',
     'build:css:clisson:dev',
+    'build:css:garenne-lemot:dev',
+    'build:css:chateaubriant:dev',
+    'build:css:blanche-couronne:dev',
+    'build:css:folies-siffait:dev',
+    'build:css:saint-sulpice:dev',
     'build:glyphicons',
     'build:demoicons',
     'build:js',
