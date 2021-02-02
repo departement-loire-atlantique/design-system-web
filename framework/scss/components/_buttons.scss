@@ -420,6 +420,10 @@ a.ds44-btnStd--retourPage {
   }
 }
 
+.ds44-btnOverlay--language {
+    visibility: hidden;
+    display: none !important;
+}
 
 
 /* medium screens */
@@ -431,6 +435,8 @@ a.ds44-btnStd--retourPage {
         top: $ds44-margin-base;
         right: $ds44-margin-base;
     }
+
+
 
     .ds44-btnStd--retourPage,
     a.ds44-btnStd--retourPage {
@@ -521,6 +527,17 @@ a.ds44-btnStd--retourPage {
             right: $ds44-mobile-margins;
         }
 
+    }
+
+    .ds44-header--patrimoine {
+      .ds44-btnOverlay--language {
+          top: $ds44-margin-base;
+          left: $ds44-margin-base;
+          width: 20%;
+          text-decoration: none;
+          visibility: visible;
+          display: block !important;
+      }
     }
 
 }

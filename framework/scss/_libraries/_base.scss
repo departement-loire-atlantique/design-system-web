@@ -108,7 +108,7 @@ h2, .h2-like {
 }
 
 .ds44-bgDark {
-    h2, .h2-like {
+    .h2-like {
       background: linear-gradient(to bottom, rgba(255,255,255,0) 80%,$ds44-contextual-color 80%) !important;
   }
 }
