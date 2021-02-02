@@ -95,7 +95,7 @@ h2, .h2-like {
   }
 
   &.ds44-dark {
-    background: linear-gradient(to bottom, rgba(0, 0, 0, 1) 55%, $ds44-contextual-color 55% )!important;
+    background: linear-gradient(to bottom, rgba(0, 0, 0, 1) 80%, $ds44-contextual-color 80% )!important;
   }
 
   &--light {
@@ -105,6 +105,12 @@ h2, .h2-like {
     margin-top: $ds44-margin-base !important;
   }
 
+}
+
+.ds44-bgDark {
+    h2, .h2-like {
+      background: linear-gradient(to bottom, rgba(255,255,255,0) 80%,$ds44-contextual-color 80%) !important;
+  }
 }
 
 h3, .h3-like {
