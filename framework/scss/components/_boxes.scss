@@ -51,6 +51,32 @@
     padding: $ds44-padding-xlarge;
 }
 
+// Box Dataviz
+.ds44-innerBoxContainer {
+    &.ds44-theme--dataviz {
+      picture {
+        width: 35%;
+        max-height: 160px;
+        margin-right: 5%;
+        text-align: center;
+
+        img {
+          max-height: 160px;
+        }
+      }
+      .ds44-chiffreDataviz {
+        font-size: 1.5em;
+        background: $ds44-light ;
+        padding: 0px 10px;
+        border-radius: 10px;
+        display: inline-block;
+      }
+      .ds44-flex-container p {
+        font-weight: bold;
+      }
+    }
+}
+
 // Témoignages
 .ds44-box {
   &--temoignage {
