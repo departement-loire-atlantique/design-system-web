@@ -14,7 +14,7 @@ variations:
   description:
   pattern: footer/footer-MDPH.html
 - title: Pied de page Archive
-  description:
+  description: Pied de page site Archive
   pattern: footer/footer-archive.html
 - title: Pied de page Chateau de Clisson
   description: Pied de page Chateau de Clisson site Grand Patrimoine
