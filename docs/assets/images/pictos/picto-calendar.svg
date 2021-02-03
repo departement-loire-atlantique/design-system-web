@@ -3,33 +3,33 @@
 <svg version="1.0" id="Calque_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
 	 viewBox="0 0 150 150" enable-background="new 0 0 150 150" xml:space="preserve">
 <g>
-	<polygon fill="#1D1D1B" points="93.2,87.7 91.6,89.4 96,93.8 111.2,78.6 109.6,77 96,90.5 	"/>
-	<rect x="41" y="67.3" fill="#1D1D1B" width="2.3" height="2.3"/>
-	<rect x="51.7" y="67.3" fill="#1D1D1B" width="2.3" height="2.3"/>
-	<rect x="62.5" y="67.3" fill="#1D1D1B" width="2.3" height="2.3"/>
-	<rect x="73.3" y="67.3" fill="#1D1D1B" width="2.3" height="2.3"/>
-	<rect x="84.1" y="67.3" fill="#1D1D1B" width="2.3" height="2.3"/>
-	<rect x="94.8" y="67.3" fill="#1D1D1B" width="2.3" height="2.3"/>
-	<rect x="105.6" y="67.3" fill="#1D1D1B" width="2.3" height="2.3"/>
-	<rect x="41" y="78.1" fill="#1D1D1B" width="2.3" height="2.3"/>
-	<rect x="51.7" y="78.1" fill="#1D1D1B" width="2.3" height="2.3"/>
-	<rect x="62.5" y="78.1" fill="#1D1D1B" width="2.3" height="2.3"/>
-	<rect x="73.3" y="78.1" fill="#1D1D1B" width="2.3" height="2.3"/>
-	<rect x="41" y="88.8" fill="#1D1D1B" width="2.3" height="2.3"/>
-	<rect x="51.7" y="88.8" fill="#1D1D1B" width="2.3" height="2.3"/>
-	<rect x="62.5" y="88.8" fill="#1D1D1B" width="2.3" height="2.3"/>
-	<rect x="73.3" y="88.8" fill="#1D1D1B" width="2.3" height="2.3"/>
-	<rect x="41" y="99.6" fill="#1D1D1B" width="2.3" height="2.3"/>
-	<rect x="51.7" y="99.6" fill="#1D1D1B" width="2.3" height="2.3"/>
-	<rect x="62.5" y="99.6" fill="#1D1D1B" width="2.3" height="2.3"/>
-	<rect x="41" y="110.4" fill="#1D1D1B" width="2.3" height="2.3"/>
-	<rect x="51.7" y="110.4" fill="#1D1D1B" width="2.3" height="2.3"/>
-	<rect x="62.5" y="110.4" fill="#1D1D1B" width="2.3" height="2.3"/>
-	<rect x="73.3" y="99.6" fill="#1D1D1B" width="2.3" height="2.3"/>
-	<path fill="#1D1D1B" d="M110.1,30.6V22H99.2v8.6H49.7V22H38.8v8.6H21.6v97.1h87.9l17.9-17.9V30.6H110.1z M101.5,24.3h6.3v14.9h-6.3
-		V24.3z M41.1,24.3h6.3v14.9h-6.3V24.3z M110.1,123.8v-13.3h13.3L110.1,123.8z M125,108.2h-17.2v17.2H23.9V52.4H125V108.2z M125,50
-		H23.9V33h14.9v8.6h10.9V33h49.4v8.6h10.9V33H125V50z"/>
-	<polygon fill="#1D1D1B" points="107.9,93.1 105.6,93.1 105.6,99.6 86.4,99.6 86.4,80.4 97.2,80.4 97.2,78.1 84.1,78.1 84.1,101.9 
-		107.9,101.9 	"/>
+	<polygon fill="#1D1D1B" points="92.6,87.1 91.1,88.7 95.2,92.8 109.5,78.5 108,77 95.2,89.7 	"/>
+	<rect x="43.5" y="67.9" fill="#1D1D1B" width="2.2" height="2.2"/>
+	<rect x="53.6" y="67.9" fill="#1D1D1B" width="2.2" height="2.2"/>
+	<rect x="63.7" y="67.9" fill="#1D1D1B" width="2.2" height="2.2"/>
+	<rect x="73.9" y="67.9" fill="#1D1D1B" width="2.2" height="2.2"/>
+	<rect x="84" y="67.9" fill="#1D1D1B" width="2.2" height="2.2"/>
+	<rect x="94.1" y="67.9" fill="#1D1D1B" width="2.2" height="2.2"/>
+	<rect x="104.2" y="67.9" fill="#1D1D1B" width="2.2" height="2.2"/>
+	<rect x="43.5" y="78.1" fill="#1D1D1B" width="2.2" height="2.2"/>
+	<rect x="53.6" y="78.1" fill="#1D1D1B" width="2.2" height="2.2"/>
+	<rect x="63.7" y="78.1" fill="#1D1D1B" width="2.2" height="2.2"/>
+	<rect x="73.9" y="78.1" fill="#1D1D1B" width="2.2" height="2.2"/>
+	<rect x="43.5" y="88.1" fill="#1D1D1B" width="2.2" height="2.2"/>
+	<rect x="53.6" y="88.1" fill="#1D1D1B" width="2.2" height="2.2"/>
+	<rect x="63.7" y="88.1" fill="#1D1D1B" width="2.2" height="2.2"/>
+	<rect x="73.9" y="88.1" fill="#1D1D1B" width="2.2" height="2.2"/>
+	<rect x="43.5" y="98.3" fill="#1D1D1B" width="2.2" height="2.2"/>
+	<rect x="53.6" y="98.3" fill="#1D1D1B" width="2.2" height="2.2"/>
+	<rect x="63.7" y="98.3" fill="#1D1D1B" width="2.2" height="2.2"/>
+	<rect x="43.5" y="108.4" fill="#1D1D1B" width="2.2" height="2.2"/>
+	<rect x="53.6" y="108.4" fill="#1D1D1B" width="2.2" height="2.2"/>
+	<rect x="63.7" y="108.4" fill="#1D1D1B" width="2.2" height="2.2"/>
+	<rect x="73.9" y="98.3" fill="#1D1D1B" width="2.2" height="2.2"/>
+	<path fill="#1D1D1B" d="M108.5,33.4v-8.1H98.2v8.1H51.7v-8.1H41.4v8.1H25.3v91.3h82.6l16.8-16.8V33.4H108.5z M100.4,27.5h5.9v14
+		h-5.9V27.5z M43.6,27.5h5.9v14h-5.9V27.5z M108.5,121v-12.5H121L108.5,121z M122.5,106.3h-16.2v16.2H27.4V53.9h95V106.3z
+		 M122.5,51.6h-95v-16h14v8.1h10.2v-8.1h46.4v8.1h10.2v-8.1h14.1V51.6z"/>
+	<polygon fill="#1D1D1B" points="106.4,92.2 104.2,92.2 104.2,98.3 86.2,98.3 86.2,80.2 96.3,80.2 96.3,78.1 84,78.1 84,100.4 
+		106.4,100.4 	"/>
 </g>
 </svg>

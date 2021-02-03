@@ -3,55 +3,22 @@
 <svg version="1.0" id="Calque_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
 	 viewBox="0 0 150 150" enable-background="new 0 0 150 150" xml:space="preserve">
 <g>
-	<g>
-		<path fill="#1D1D1B" d="M76.6,44.5h10.6v-2.2H76.6V44.5z"/>
-	</g>
-	<g>
-		<path fill="#1D1D1B" d="M76.6,52.9h23.1v-2.2H76.6V52.9z"/>
-	</g>
-	<g>
-		<path fill="#1D1D1B" d="M49.4,69.7h8.5v-2.2h-8.5V69.7z"/>
-	</g>
-	<g>
-		<path fill="#1D1D1B" d="M49.4,78h25.2v-2.2H49.4V78z"/>
-	</g>
-	<g>
-		<path fill="#1D1D1B" d="M49.4,86.4h50.4v-2.2H49.4V86.4z"/>
-	</g>
-	<g>
-		<path fill="#1D1D1B" d="M49.4,120h25.2v-2.2H49.4V120z"/>
-	</g>
-	<g>
-		<path fill="#1D1D1B" d="M64,69.7h19v-2.2H64V69.7z"/>
-	</g>
-	<g>
-		<path fill="#1D1D1B" d="M89.2,69.7h10.6v-2.2H89.2V69.7z"/>
-	</g>
-	<g>
-		<path fill="#1D1D1B" d="M80.8,78h19v-2.2h-19V78z"/>
-	</g>
-	<g>
-		<path fill="#1D1D1B" d="M49.4,94.8h8.5v-2.2h-8.5V94.8z"/>
-	</g>
-	<g>
-		<path fill="#1D1D1B" d="M49.4,103.2h25.2V101H49.4V103.2z"/>
-	</g>
-	<g>
-		<path fill="#1D1D1B" d="M49.4,111.6h50.4v-2.2H49.4V111.6z"/>
-	</g>
-	<g>
-		<path fill="#1D1D1B" d="M64,94.8h19v-2.2H64V94.8z"/>
-	</g>
-	<g>
-		<path fill="#1D1D1B" d="M89.2,94.8h10.6v-2.2H89.2V94.8z"/>
-	</g>
-	<g>
-		<path fill="#1D1D1B" d="M80.8,103.2h19V101h-19V103.2z"/>
-	</g>
-	<g>
-		<path fill="#1D1D1B" d="M32.6,136.7h86V34.6l-17.4-17.4H32.6V136.7z M116.4,134.5H34.8V19.4h64.9v16.8h16.8V134.5z M114.9,33.9
-			h-13v-13L114.9,33.9z"/>
-	</g>
+	<rect x="75.6" y="44.8" width="9.7" height="2.4"/>
+	<rect x="75.6" y="52.1" width="20.4" height="2.4"/>
+	<rect x="52.1" y="66.6" width="7.8" height="2.4"/>
+	<rect x="52.1" y="73.8" width="22.3" height="2.4"/>
+	<rect x="52.1" y="81" width="44" height="2.4"/>
+	<rect x="52.1" y="110" width="22.3" height="2.4"/>
+	<rect x="64.7" y="66.6" width="16.9" height="2.4"/>
+	<rect x="86.5" y="66.6" width="9.7" height="2.4"/>
+	<rect x="79.2" y="73.8" width="16.9" height="2.4"/>
+	<rect x="52.1" y="88.3" width="7.8" height="2.4"/>
+	<rect x="52.1" y="95.5" width="22.3" height="2.4"/>
+	<rect x="52.1" y="102.8" width="44" height="2.4"/>
+	<rect x="64.7" y="88.3" width="16.9" height="2.4"/>
+	<rect x="86.5" y="88.3" width="9.7" height="2.4"/>
+	<rect x="79.2" y="95.5" width="16.9" height="2.4"/>
+	<path d="M97.2,23.2H37.6v103.7h74.8V38.3L97.2,23.2z M98,37.6V27.2l10.4,10.4H98z M110.1,40.1v84.4H40V25.6h55.5v14.5H110.1z"/>
+	<path d="M71.9,31.8H51.3v22.6h20.6V31.8z M53.5,52.2V34h16.2v18.2H53.5z"/>
 </g>
-<path fill="#1D1D1B" d="M48.4,27.2v25.6h23.3V27.2H48.4z M69.6,50.8H50.4V29.2h19.3V50.8z"/>
 </svg>
