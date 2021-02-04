@@ -55,13 +55,12 @@
 .ds44-innerBoxContainer {
     &.ds44-theme--dataviz {
       picture {
-        width: 35%;
-        max-height: 160px;
+        width: 40%;
         margin-right: 5%;
         text-align: center;
 
         img {
-          max-height: 160px;
+          max-height: 180px;
         }
       }
       .ds44-chiffreDataviz {
@@ -73,6 +72,9 @@
       }
       .ds44-flex-container p {
         font-weight: bold;
+      }
+      .ds44-pushDataVizText {
+        width: 55%;
       }
     }
 }
@@ -402,6 +404,18 @@
             }
         }
 
+    }
+
+    // Box Dataviz
+    .ds44-innerBoxContainer {
+        &.ds44-theme--dataviz {
+          picture {
+            width: 30%;
+          }
+          .ds44-pushDataVizText {
+            width: 65%;
+          }
+        }
     }
 
     // Alert

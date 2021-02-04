@@ -1182,6 +1182,11 @@ h6.visually-hidden + * {
         margin-top: 1.5rem;
     }
 
+    .ds44-tablet-padding-tb {
+        padding-top: $ds44-padding-medium; // 1rem
+        padding-bottom: $ds44-padding-medium; // 1rem
+    }
+
 }
 
 @media (max-width: $ds44-large - .0625) {
