@@ -53,7 +53,7 @@
 
 // Box Dataviz
 .ds44-innerBoxContainer {
-    &.ds44-theme--dataviz {
+    &.ds44-box--custom {
       picture {
         width: 40%;
         margin-right: 5%;
@@ -63,7 +63,7 @@
           max-height: 180px;
         }
       }
-      .ds44-chiffreDataviz {
+      .ds44-chiffreCustom {
         font-size: 1.5em;
         background: $ds44-light ;
         padding: 0px 10px;
@@ -78,7 +78,7 @@
       .ds44-flex-container p {
         font-weight: bold;
       }
-      .ds44-pushDataVizText {
+      .ds44-pushCustomText {
         width: 55%;
       }
     }
