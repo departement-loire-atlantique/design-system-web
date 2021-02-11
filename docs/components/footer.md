@@ -19,9 +19,6 @@ variations:
 - title: Pied de page Chateau de Clisson
   description: Pied de page Chateau de Clisson site Grand Patrimoine
   pattern: footer/footer-chateauClisson.html
-- title: Pied de page avec plusieurs logos
-  description: Pied de page générique avec plusieurs logos
-  pattern: footer/footer-multiplesLogos.html
 ---
 
 ## Usage
