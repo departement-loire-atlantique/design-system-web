@@ -1194,6 +1194,9 @@ h6.visually-hidden + * {
     .ds44-xl-gap {
         column-gap: 5rem;
     }
+    .ds44-posTopCont {
+        top: $ds44-margin-base;
+    }
 
 }
 
