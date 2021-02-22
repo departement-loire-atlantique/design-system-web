@@ -242,7 +242,7 @@ class FormFieldInputAbstract extends FormFieldAbstract {
             return this.formatErrorMessage(objectIndex, 'FIELD_VALID_EMAIL_MESSAGE');
         }
         if (
-            (autocomplete === 'tel' || autocomplete === 'tel-national') &&
+            autocomplete === 'tel-national' &&
             !MiscForm.isPhone(data[object.name].value)
         ) {
             return this.formatErrorMessage(objectIndex, 'FIELD_VALID_PHONE_MESSAGE');
@@ -284,7 +284,7 @@ class FormFieldInputAbstract extends FormFieldAbstract {
             return false;
         }
         if (
-            (autocomplete === 'tel' || autocomplete === 'tel-national') &&
+            autocomplete === 'tel-national' &&
             !MiscForm.isPhone(data[object.name].value)
         ) {
             return false;
