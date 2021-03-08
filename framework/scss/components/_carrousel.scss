@@ -57,12 +57,14 @@
                     }
                 }
 
+
                 .ds44-diaporama-thumb {
                     display: block;
                     width: 7.8rem;
                     height: 7.8rem;
                     background-position: center center;
                     background-size: cover;
+
                 }
 
                 .ds44-card {
@@ -88,6 +90,10 @@
         text-align: center;
         padding: 1rem 0;
         min-height: 4rem;
+
+        p {
+          margin: 0;
+        }
 
         .swiper-pagination-bullet {
             background: none;
@@ -126,6 +132,12 @@
 
         &.swiper-button-white {
             color: #fff;
+            border: 2px solid transparent;
+
+            &:focus,
+            &:-moz-focusring {
+              background: $ds44-hover-dark;
+            }
         }
 
         &.ds44-not-edge-42 {
@@ -177,12 +189,34 @@
 
             .swiper-container {
                 .swiper-wrapper {
+                  padding: 5px 16px 16px 16px;
+
                     .swiper-slide {
                         width: auto;
                         cursor: pointer;
 
+                        .ds44-diaporama-thumb {
+                            border: 3px solid transparent;
+
+                            &:hover {
+                                box-shadow: $ds44-smallShadow ;
+                            }
+
+                            &:focus {
+                                border: 3px solid $ds44-background-dark;
+                                box-shadow: $ds44-smallShadow ;
+                            }
+                        }
+
+
                         &.swiper-slide-thumb-active {
-                            border-bottom: 2px solid $ds44-LA;
+                          .ds44-diaporama-thumb {
+                              border: 3px solid $ds44-contextual-color;
+                          }
+                        }
+
+                        &:last-child {
+                          margin-right: 0 !important;
                         }
                     }
                 }
@@ -213,6 +247,7 @@
             bottom: 0;
             left: 0;
             z-index: 100;
+            border: 2px solid transparent;
         }
     }
 

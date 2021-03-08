@@ -167,7 +167,7 @@ class CarouselAbstract {
                         return '';
                     }
 
-                    return '<span class="' + className + '">' + textElements[index].innerHTML + '</span>';
+                    return '<p id="aChangerIdUnique"><span class="' + className + '">' + textElements[index].innerHTML + '</span></p>';
                 }
             }
         }
