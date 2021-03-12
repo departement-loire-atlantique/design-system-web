@@ -17,6 +17,9 @@ variations:
 - title: Accueil Sites Grand Patrimoines
   pattern: page/SP_clisson__accueil.html
 
+- title: Accueil Site Observatoire
+  pattern: page/SO__accueil.html
+
 ---
 ## Utilisation
 

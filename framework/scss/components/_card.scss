@@ -244,6 +244,13 @@ figure[role=figure]  + .ds44-card__section {
             min-width: 110px;
         }
     }
+    &--dim80 {
+        min-width: 25%;
+
+        @media (min-width: $ds44-extra-large) {
+            min-width: 80px;
+        }
+    }
 }
 
 // Calendar card

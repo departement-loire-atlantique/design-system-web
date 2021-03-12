@@ -1,0 +1,30 @@
+---
+layout: pattern
+---
+
+{% include header/inc-header.html
+    rawLogo=true
+    logo='<picture class="ds44-logo mdph-logo"><img src="../../assets/images/logos/logo-cd44-observatoire.svg" alt="Retour à l&apos;accueil site observatoire de Loire-Atlantique" /></picture>'
+%}
+
+<main role="main" id="content">
+
+    <section class="ds44-container-large ds44-homepage-container ds44-homepage-container--ha ds44--xxl-padding-b">
+        <div class="grid-12-small-1">
+            <div class="col-8-small-1 col-8-large-7 ds44-mb2 ds44-homepage-noCarrousel">
+                {% include titres/main-title-home.html titre='Bienvenue sur le site observatoire<br /><span class="ds44-ssTitreH1_home">du Département de Loire-Atlantique</span>' legend="Légende associée 1 © Copyright" %}
+            </div>
+            <div class="col-4-small-1 col-4-large-5 ds44-bgGray ds44--m-padding-tb">
+                <section id="en1clic" class="ds44-mlr35 ds44-mtb2 ds44-mobile-reduced-mar">
+                    <h2 class="h2-like" id="titreEn1Clic">En 1 clic</h2>
+                    {% include card/card--horizontal--observatoire.html title="Des cartes" arialevel='aria-level="3"' context=" ds44-darkContext ds44-tiny-reducedFont" imgdim="--dim80" srcImg="picto-observatoire-map.svg" %}
+                    {% include card/card--horizontal--observatoire.html title="Des stats" arialevel='aria-level="3"' context=" ds44-darkContext ds44-tiny-reducedFont" imgdim="--dim80" srcImg="picto-observatoire-stats.svg" %}
+                    {% include card/card--horizontal--observatoire.html title="Des études et des veilles" arialevel='aria-level="3"' context=" ds44-darkContext ds44-tiny-reducedFont" imgdim="--dim80" srcImg="picto-observatoire-etudes.svg" %}
+                    {% include card/card--horizontal--observatoire.html title="Des vues aériennes" arialevel='aria-level="3"' context=" ds44-darkContext ds44-tiny-reducedFont" imgdim="--dim80" srcImg="picto-observatoire-vueCiel.svg" %}
+                    {% include card/card--horizontal--observatoire.html title="Des données ouvertes" arialevel='aria-level="3"' context=" ds44-darkContext ds44-tiny-reducedFont" imgdim="--dim80" srcImg="picto-observatoire-openData.png" %}
+                </section>
+            </div>
+        </div>
+    </section>
+
+</main>
