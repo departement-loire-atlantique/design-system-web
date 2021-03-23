@@ -105,6 +105,21 @@
     }
 }
 
+.ds44-tabs__content {
+  .grid-12-small-1 {
+    .wysiwyg {
+      .ds44-inner-container + .ds44--xl-padding-lr {
+        padding: 0;
+
+        .grid-12-small-1 {
+          display: block;
+        }
+      }
+
+    }
+  }
+}
+
 blockquote {
 
     border-left: 1px solid $ds44-contextual-color;
