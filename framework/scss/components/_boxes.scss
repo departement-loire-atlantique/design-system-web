@@ -205,6 +205,15 @@
     margin-bottom: 10px;
 }
 
+.PortletCarousel + .PortletPush {
+  padding: 0rem 0 4rem 0;
+  margin-top: -4rem;
+}
+
+.PortletPush {
+  padding: 2rem 2rem 4rem 2rem;
+}
+
 // Alert
 
 .ds44-alertMsg-container {
