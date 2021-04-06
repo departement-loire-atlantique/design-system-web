@@ -31,12 +31,13 @@
                     <div class="col">
                         <p id="bloc-utile-informations" class="h4-like" aria-level="3" role="heading" tabindex="-1">Pourquoi cette page ne vous a pas été utile ?</p>
                         {% capture ariaDescribedBy1 %}bloc-utile-informations{% if savedAriaDescribedBy and savedAriaDescribedBy != '' %} {{ savedAriaDescribedBy }}{% endif %}{% endcapture %}
-                        {% include form/layout/checkboxes.html name="bloc-utile-informations-questions" choices="1:L’information n’est pas assez complète,2:L’information est trop compliquée,3:Il y a trop à lire" required="true" ariaDescribedBy=ariaDescribedBy1 %}
+                          {% include form/layout/checkboxes.html name="bloc-utile-informations-questions" choices="1:L’information n’est pas assez complète,2:L’information est trop compliquée,3:Il y a trop à lire" required="true" ariaDescribedBy=ariaDescribedBy1 %}
                     </div>
                     <div class="col ds44--xl-padding-l">
                         <p id="form-bloc-utils-N">Aidez-nous à améliorer cette page en nous laissant un commentaire :</p>
                         {% capture ariaDescribedBy2 %}form-bloc-utils-N{% if savedAriaDescribedBy and savedAriaDescribedBy != '' %} {{ savedAriaDescribedBy }}{% endif %}{% endcapture %}
-                        {% include form/field/input/textarea.html label="Commentaire" ariaDescribedBy=ariaDescribedBy2 %}
+                        {% include form/field/input/textarea.html label="Commentaire" required="true" ariaDescribedBy=ariaDescribedBy2 %}
+                        {% include form/field/input/standard.html label="Email" explanation="Ex : votrenom@email.com" %}
                     </div>
                 </div>
                 <div class="txtcenter ds44-mt-std">
@@ -46,6 +47,15 @@
                     </button>
                 </div>
             </form>
+            <div class="wysiwyg ds44-wsg-smallText ds44-mt3">
+              <p class="ds44-box-heading" role="heading" aria-level="2">Données personnelles</p>
+              <p>Les informations personnelles vous concernant sont collectées et traitées par le Département de Loire-Atlantique aux fins d’instruction et de réponse aux demandes reçues (courriel, formulaire de contact, courrier postal).</p>
+              <p>Vous pouvez accéder aux données vous concernant et demander leur rectification. Vous disposez également, pour des raisons légitimes, d’un droit d’opposition, d’effacement des données et de limitation du traitement.</p>
+              <p>L’exercice de ces droits se fait auprès du Délégué à la protection des données par courriel ou par courrier adressé au 3 Quai Ceineray, CS 94109, 44041 Nantes Cedex 1.</p>
+              <p><a href="mailto:dpd@loire-atlantique.fr"><i class="icon icon-mail" aria-hidden="true"> </i>Envoyer un mail au délégué à la protection des données</a></p>
+              <p><a href="44/donnees-personnelles/politique-generale-de-protection-des-donnees-personnelles/c_1307338" title="En savoir plus sur ce traitement : Politique générale de protection des données personnelles" class="ID_c_1307338"><i
+                    class="icon icon-tag" aria-hidden="true"> </i>En savoir plus sur ce traitement</a></p>
+            </div>
             <p class="ds44-keyboard-show"><a href="#ds44-choiceN">Revenir au bouton Non</a></p>
         </div>
     </div>
