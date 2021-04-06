@@ -10,6 +10,8 @@ status: Validé
 variations:
 - title: Page type "Article"
   pattern: page/LA__article.html
+- title: Page type "Article" - site 0bservatoire
+  pattern: page/SO__article.html
 - title: Template carrefour
   pattern: templates/template-entryMenu.html
 ---
