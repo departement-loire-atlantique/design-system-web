@@ -18,6 +18,10 @@ variations:
 - title: Boutons avec icône seule
   description: Boutons avec icône et libellé caché pour les aides techniques.
   pattern: boutons/buttons-ico.html
+
+- title: Étiquettes standards
+  description: Étiquettes cliquable en version noir et utilisées comme label /tag non cliquable en version transparente. On l'utilise pour lister des mots clés par exemple.
+  pattern: boutons/tag.html
 ---
 
 

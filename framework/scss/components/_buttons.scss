@@ -87,6 +87,24 @@ button, a.ds44-btnStd, a > .ds44-btnStd, .ds44-btnStd > a, .ds44-btnIcoText--max
 
 }
 
+.ds44-btnStd--tag {
+  padding: .25rem .75rem !important;
+  font-weight: normal !important;
+  min-height: auto !important;
+  display: inline-block !important;
+}
+
+p.ds44-btnStd--tag {
+  &:hover,
+  &:active,
+  &:focus,
+  &:hover > span,
+  &:active > span,
+  &:focus > span {
+    box-shadow: none;
+  }
+}
+
 a > .ds44-btnStd,
 .ds44-btnStd > a,
 .ds44-btnStd--large > a,

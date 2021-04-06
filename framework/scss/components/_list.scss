@@ -119,6 +119,16 @@
             }
         }
     }
+
+    /* Liste de tag étiquettes servant pour les mots clés par exemple  */
+    &--tag {
+
+        > li {
+            display: inline-block;
+            margin-right: .5rem;
+            margin-top: .5rem;
+          }
+      }
 }
 
 .ds44-footerList {
