@@ -22,6 +22,11 @@ class MenuHeader {
                 MiscEvent.addListener('click', this.showSearch.bind(this), element);
             });
         document
+            .querySelectorAll('header #open-search-observatoire')
+            .forEach((element) => {
+                MiscEvent.addListener('click', this.showSearchObservatoire.bind(this), element);
+            });
+        document
             .querySelectorAll('header .ds44-btnOverlay--closeOverlay')
             .forEach((element) => {
                 MiscEvent.addListener('click', this.hideMenuListener, element);
@@ -100,6 +105,11 @@ class MenuHeader {
 
     showSearch (evt) {
         this.menuSelector = '#menuRech .ds44-overlay';
+        this.showMenu(evt);
+    }
+
+    showSearchObservatoire (evt) {
+        this.menuSelector = '#menuRechObservatoire .ds44-overlay';
         this.showMenu(evt);
     }
 
