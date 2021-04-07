@@ -30,7 +30,7 @@
                     {% if include.variante1 %}
                         {{ include.variante1 }}
                     {% else %}
-                        <button type="button" class="ds44-btn--menu ds44-btnIcoText--maxi ds44--xl-padding" id="open-search" aria-label="Ouvrir la zone de recherche"><span class="ds44-btnInnerText">Rechercher</span><i class="icon icon-magnifier icon--large" aria-hidden="true"></i></button>
+                        <button type="button" class="ds44-btn--menu ds44-btnIcoText--maxi ds44--xl-padding" id="open-search{{ include.recherche-patrimoine }}" aria-label="Ouvrir la zone de recherche"><span class="ds44-btnInnerText">Rechercher</span><i class="icon icon-magnifier icon--large" aria-hidden="true"></i></button>
                     {% endif %}
                     {{ include.variante2 }}
                     <button type="button" class="ds44-btn--menu ds44-btnIcoText--maxi ds44-btn--contextual ds44--xl-padding" aria-label="Ouvrir le menu de navigation" aria-controls="menu" data-open-overlay="true" id="open-menu">
