@@ -96,7 +96,7 @@
             {% include menu/navigation-principale-n2.html %}
             {% include menu/inc-navigation-applis.html %}
             {% if include.variante1 == null %}
-                {% include menu/inc-menu-rechercher.html %}
+                {% include menu/inc-menu-rechercher{{ include.recherche-patrimoine }}.html %}
             {% endif %}
         </div>
     </div>
