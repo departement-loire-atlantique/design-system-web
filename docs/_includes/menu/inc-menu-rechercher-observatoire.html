@@ -15,9 +15,19 @@
             <div class="grid-12-small-1 ds44-grid-valign-center ds44-w98">
 
                 <div class="col-5-small-1 txtcenter">
-                    <p class="h4-like" id="inp-rech" role="heading" aria-level="2">Recherchez Observatoire :</p>
+                    <p class="h4-like" id="inp-rech" role="heading" aria-level="2">Recherchez :</p>
                     <form role="search">
-                        {% include form/field/input/standard.html label="Votre recherche" required="true" class="ds44-inpLarge" ariaDescribedBy="inp-rech" %}
+                        <div class="grid-12">
+                            <div class="col-12">
+                              {% include form/field/input/standard.html label="Saisissez un ou plusieurs mots-clé" required="true" class="ds44-inpLarge" ariaDescribedBy="inp-rech" %}
+                            </div>
+                            <div class="col-6 ds44-minTiny-margin-r">
+                                {% include form/field/select/standard.html label="Catégories" class="ds44-inpLarge" %}
+                            </div>
+                            <div class="col-6 ds44-minTiny-margin-l">
+                              {% include form/field/select/standard.html label="Thématiques" class="ds44-inpLarge" %}
+                            </div>
+                        </div>
                         <button type="submit" class="ds44-btnStd ds44-btn--invert" title="Valider votre recherche par mots-clés">
                             <span class="ds44-btnInnerText">Valider</span><i class="icon icon-long-arrow-right" aria-hidden="true"></i>
                         </button>
@@ -33,12 +43,11 @@
                 <div class="col-5-small-1">
                     <h2 class="h4-like" id="titreContenus">Accédez aux contenus les plus recherchés :</h2>
                     <ul class="ds44-list">
-                        <li><a href="#" class="ds44-arrowLink">Inscription à l’animation sportive<i class="icon icon-arrow-right" aria-hidden="true"></i></a></li>
-                        <li><a href="#" class="ds44-arrowLink">Recherche d’assistante maternelle<i class="icon icon-arrow-right" aria-hidden="true"></i></a></li>
-                        <li><a href="#" class="ds44-arrowLink">Demande d’aide au permis de conduire<i class="icon icon-arrow-right" aria-hidden="true"></i></a></li>
-                        <li><a href="#" class="ds44-arrowLink">Offres d’emplois et stages<i class="icon icon-arrow-right" aria-hidden="true"></i></a></li>
-                        <li><a href="#" class="ds44-arrowLink">Inforoutes<i class="icon icon-arrow-right" aria-hidden="true"></i></a></li>
-                        <li><a href="#" class="ds44-arrowLink">Marchés publics<i class="icon icon-arrow-right" aria-hidden="true"></i></a></li>
+                        <li><a href="#" class="ds44-arrowLink">Repères<i class="icon icon-arrow-right" aria-hidden="true"></i></a></li>
+                        <li><a href="#" class="ds44-arrowLink">Cartes intéractives<i class="icon icon-arrow-right" aria-hidden="true"></i></a></li>
+                        <li><a href="#" class="ds44-arrowLink">Communes de Loire-Atlantique au 1er janvier 2020<i class="icon icon-arrow-right" aria-hidden="true"></i></a></li>
+                        <li><a href="#" class="ds44-arrowLink">Repères chiffres-clés - Combien d’habitants  en Loire-Atlantique ?<i class="icon icon-arrow-right" aria-hidden="true"></i></a></li>
+                        <li><a href="#" class="ds44-arrowLink">Etude - Loire-Atlantique : moins de fragilités sociales, mais quelques territoires ou quartiers cumulent les difficultés (novembre 2019)<i class="icon icon-arrow-right" aria-hidden="true"></i></a></li>
                     </ul>
                 </div>
 
