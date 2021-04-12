@@ -1,0 +1,212 @@
+---
+layout: pattern
+---
+
+{% include header/inc-header.html %}
+
+<main role="main" id="content">
+
+    <section class="ds44-container-large">
+        <div class="ds44-pageHeaderContainer">
+            <picture class="ds44-pageHeaderContainer__pictureContainer">
+                <img src="../../assets/images/header-fiche-aide.jpg" alt="" class="ds44-headerImg" />
+            </picture>
+            <div class="ds44-titleContainer">
+                <div class="ds44-alphaGradient ds44-alphaGradient--header">
+                    {% include breadcrumb/breadcrumb--invert.html %}
+                    <h1 class="h1-like ds44-text--colorInvert">L’adaptation de son logement</h1>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="ds44-container-large">
+        <div class="ds44-mt3 ds44--xl-padding-t">
+            <div class="ds44-inner-container">
+                <div class="grid-12-medium-1 grid-12-small-1">
+
+                    <aside class="col-4 ds44-hide-tinyToLarge ds44-js-aside-summary">
+                        <section class="ds44-box ds44-theme">
+                            <div class="ds44-innerBoxContainer">
+                                <p role="heading" aria-level="2" class="ds44-box-heading">Sommaire</p>
+                                <ul class="ds44-list ds44-list--puces">
+                                    <li><a href="#section1">En résumé</a></li>
+                                    <li><a href="#section2">En détails</a></li>
+                                    <li><a href="#section3">Foire aux questions</a></li>
+                                </ul>
+                                <ul class="ds44--l-padding-tb ds44-blocBtnOnglets ds44-list">
+                                  <li class="ds44-ongletsBtnItem ds44-mb1">
+                                      <button class="ds44-btnStd ds44-btn--invert" type="button" data-target="#overlay-qui-contacter" data-js="ds44-modal" data-open-overlay="true"><span class="ds44-btnInnerText">Qui contacter</span><i class="icon icon-phone icon--sizeL" aria-hidden="true"></i></button>
+                                  </li>
+                                  <li class="ds44-ongletsBtnItem ds44-mb1">
+                                      <button class="ds44-btnStd ds44-btn--invert" type="button" data-target="#overlay-faire-demande" data-js="ds44-modal" data-open-overlay="true"><span class="ds44-btnInnerText">Faire une demande</span><i class="icon icon-file icon--sizeL" aria-hidden="true"></i></button>
+                                  </li>
+                                  <li class="ds44-ongletsBtnItem">
+                                      <button class="ds44-btnStd ds44-btn--invert" type="button" data-target="#overlay-suivre-demande" data-js="ds44-modal" data-open-overlay="true"><span class="ds44-btnInnerText">Suivre ma demande</span><i class="icon icon-computer icon--sizeL" aria-hidden="true"></i></button>
+                                  </li>
+                                </ul>
+                            </div>
+                        </section>
+
+                    </aside>
+
+                    <div class="col-1 grid-offset ds44-hide-tinyToLarge"></div>
+
+                    <article class="col-7 ds44-contenuDossier">
+
+                        <section class="ds44-contenuArticle" id="section1">
+                            <section id="section1" class="ds44-contenuArticle">
+                              <h2 class="h2-like mtm">En résumé</h2>
+                              <p class="ds44-introduction">Le Département propose sous conditions de ressources une aide financière pour soutenir les personnes âgées qui souhaitent réaliser des travaux d’adaptation de leur logement. Ascenseurs / monte personne, aménagement intérieur pour adapter votre logement, chemins extérieurs, cours, passages, locaux communs ou extension de logement, le Département peut vous aider à financer des travaux pour vous permettre de mieux vivre chez vous.</p>
+                              <p>Cette aide est destinée aux propriétaires occupants de 60 ans et plus bénéficiaires de l’aide personnalisée à l’autonomie (ou de moins de 60 ans justifiant d’un handicap) et dont les ressources ne dépassent pas les plafonds « très modestes » de l’Agence Nationale de l’Habitat (ANAH).</p>
+                            </section>
+
+                        </section>
+
+                        <section class="ds44-contenuArticle" id="section2">
+                            <div class="ds44-contenuArticle">
+              								<h2 class="h2-like">En détails</h2>
+              								<h3 class="h3-like">Pour qui ?</h3>
+              								<h4 class="h4-like">Je suis éligible quand je réunis 5 critères :</h4>
+
+              								<ol>
+              									<li><strong>Je suis propriétaire ou usufruitier(e) d’un logement construit depuis plus de 15 ans</strong></li>
+              									<li><strong>Je suis bénéficiaire de l’Aide Personnalisée à l’Autonomie (APA)</strong> </li>
+              									<li><strong>Mes ressources ne dépassent pas les montants indiqués ci-dessous :</strong>
+              										<table>
+              											<caption>(Barème de ressources « très modestes » 2019 à vérifier sur l’avis d’imposition N-2)</caption>
+              											<tbody>
+              												<tr>
+              													<th scope="col">Nombre de personnes composant le ménage</th>
+              													<th scope="col">Plafonds de ressources (Revenu fiscal de référence)</th>
+              												</tr>
+              												<tr>
+              													<td>1</td>
+              													<td>14 790 €</td>
+              												</tr>
+              												<tr>
+              													<td>2</td>
+              													<td>21 630 €</td>
+              												</tr>
+              												<tr>
+              													<td>3</td>
+              													<td>26 013 €</td>
+              												</tr>
+              												<tr>
+              													<td>4</td>
+              													<td>30 784 €</td>
+              												</tr>
+              												<tr>
+              													<td>5</td>
+              													<td>34 784 €</td>
+              												</tr>
+              												<tr>
+              													<td>Personne supplémentaire</td>
+              													<td>+ 4 385 €</td>
+              												</tr>
+              											</tbody>
+              										</table>
+              									</li>
+              									<li>
+              										<p><strong>Les travaux que je réalise sont conformes au projet présenté et effectués par des professionnels du bâtiment inscrits soit au registre du commerce, soit au répertoire des métiers.</strong></p>
+              										<p>Seuls les travaux correspondant à la liste consultable ici sont éligibles :</p>
+              										<ul>
+              											<li><strong>Ascenseur / montepersonne :</strong> Installation, adaptation ou travaux de mise aux normes d’un ascenseur ou autres appareils permettant notamment le transport de personnes à mobilité réduite</li>
+              											<li>
+              												<p><strong>Aménagement intérieur dans le cadre d’une adaptation du logement :</strong></p>
+              												<ul>
+              													<li>Création, modification ou remplacement d’équipements sanitaires et robinetterie et les travaux induits (carrelage, réfection de sols, plâtrerie…)</li>
+              													<li>Revêtements de sol, y compris travaux préparatoires (chapes, isolations…) à l’exception des sols souples (moquettes, lino…)</li>
+              													<li>Création, suppression ou modification de cloisons de distribution et cloisons séparatives</li>
+              													<li>Travaux de remplacement ou installation de menuiseries intérieures </li>
+              													<li>Installation de mains-courantes, barres d’appui, poignées de rappel de porte, protection de murs et de portes</li>
+              													<li>Installation ou adaptation des systèmes de commande de fermeture et d’ouverture (portes, fenêtres, volets)</li>
+              													<li>Alerte à distance</li>
+              													<li>Modification ou installation des boîtes aux lettres</li>
+              												</ul>
+              											</li>
+              											<li>
+              												<p><strong>Chemins extérieurs, cours, passages, locaux communs :</strong>
+              												</p>
+              												<ul>
+              													<li>Réfection ou adaptation des cheminements extérieurs, de cour ou de passage dans un projet d’accessibilité ou de restructuration</li>
+              													<li>Aménagement de bateaux pour franchir le trottoir</li>
+              													<li>Élargissement ou aménagement de place de parking (uniquement en cas de travaux pour l’autonomie de la personne)</li>
+              												</ul>
+              											</li>
+              											<li><strong>Extension de logement : </strong>Dans la limite de 45 m² de surface habitable (annexion de parties communes, sur-élévation, création de volume…)
+              											</li>
+              										</ul>
+              									</li>
+              									<li><strong>Je ne bénéficie, pour ce projet de travaux, d’aucune aide de caisse(s) de
+              											retraite</strong></li>
+              								</ol>
+              							</div>
+              							<div class="ds44-contenuArticle">
+              								<h3 class="h23-like">C’est quoi ?</h3>
+              								<p>Si je réunis tous les critères, je pourrai prétendre à une subvention correspondant à
+              									<strong>20 % du montant hors taxe (HT) de mes travaux et qui ne dépassera pas 1 200
+              										€</strong>.</p>
+              								<p class="ds44-exergue">Tout bénéficiaire d’une subvention à l’amélioration de l’habitat
+              									privé dispose d’un délai de 4 ans pour présenter sa demande de versement. La subvention
+              									n’est donc plus valable au 31 décembre de la quatrième année qui suit son attribution.
+              								</p>
+              							</div>
+
+                            <div class="ds44-contenuArticle">
+                							<section class="ds44-box ds44-theme ds44-mb3">
+                								<div class="ds44-innerBoxContainer">
+                									<p role="heading" aria-level="2" class="ds44-box-heading">Bon à savoir</p>
+                									<p>Le Département vous invite à faire appel à l’un de ses partenaires pour formaliser votre demande.</p>
+                									<p class="mts"><a href="#" class="ds44-btnLink"><span class="ds44-btnInnerText">Découvrir les partenaires</span><i class="icon icon-long-arrow-right" aria-hidden="true"></i></a></p>
+                								</div>
+                							</section>
+
+                							<section class="ds44-box">
+                                <p role="heading" aria-level="2" class="ds44-box-heading">Témoignages</p>
+                                  <section class="ds44-box ds44-js-card ds44-card">
+                                    <div class="ds44-bgGray">
+                                      <div class="ds44-posRel"><img src="../../assets/images/sample-media.jpg" alt="" class="ds44-box__img ds44-hiddenPrint" /><span class="ds44-mediaIndicator"><i class="icon icon-play" aria-hidden="true"></i></span></div>
+                                      <div class="ds44--m-padding">
+                                        <h4 class="ds44-card__title" aria-level="3"><a href="#" title="Monique a aménagé son logement - Page comportant de la vidéo" class="ds44-card__globalLink">Monique a aménagé son logement</a></h4>
+                                        <p class="ds44-cardDate">86 ans - Retraitée - Nantes</p>
+                                        <i class="icon icon-arrow-right ds44-cardArrow" aria-hidden="true"></i>
+                                      </div>
+                                    </div>
+                                  </section>
+                							</section>
+                            </div>
+                        </section>
+
+                    </article>
+
+                </div>
+
+                <section class="ds44-mt3" id="section3">
+                  {% include FAQ/FAQ-corpsPage.html %}
+                </section>
+
+                {% include partage/partage-interne.html %}
+
+            </div>
+        </div>
+    </section>
+
+
+    {% include page-utile/bloc-utile.html %}
+
+</main>
+
+<button class="ds44-btnStd ds44-btn--invert ds44-fullWBtn ds44-btn-fixed ds44-show-tinyToLarge ds44-hide-large" id="ds44-summary-button" type="button" data-target="#navSommaire">
+    <span class="ds44-btnInnerText">Sommaire</span><i class="icon icon-summary" aria-hidden="true"></i>
+</button>
+
+{% include menu/inc-menu-sommaire.html %}
+
+{% include modal/contact.html %}
+
+{% include modal/faire-demande.html %}
+
+{% include modal/suivre-demande.html %}
+
+{% include footer/footer-LA.html %}
