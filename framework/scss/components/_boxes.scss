@@ -175,9 +175,14 @@
             max-width: 30%;
         }
 
+        li > p:first-child::after {
+            display: none;
+        }
+
         p {
             margin: 0;
             padding-left: 1.5rem;
+            display: block !important;
         }
 
     }
