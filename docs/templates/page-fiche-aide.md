@@ -10,6 +10,10 @@ status: Validé
 variations:
 - title: Page type "Fiche aide"
   pattern: page/LA__ficheAide.html
+
+- title: Page type "Fiche aide - version Dossier"
+  pattern: page/LA__ficheAide-2.html
+
 - title: Template carrefour
   pattern: templates/template-entryMenu.html
 ---
