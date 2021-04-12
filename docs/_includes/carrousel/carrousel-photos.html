@@ -1,10 +1,17 @@
 <div class="swipper-carousel-wrap swipper-carousel-slideshow" data-nb-visible-slides="1">
     <div class="swiper-container">
-        {% if include.titreCarrousel %}
-        <h4 class="h4-like">
-            {{ include.titreCarrousel }}
-        </h4>
-        {% endif %}
+        <header class="txtcenter ds44--l-padding-tb">
+          {% if include.titreCarrousel %}
+          <h3 class="h3-like">
+              {{ include.titreCarrousel }}
+          </h3>
+          {% endif %}
+          {% if include.soustitreCarrousel %}
+          <h4 class="h4-like">
+              {{ include.soustitreCarrousel }}
+          </h4>
+          {% endif %}
+        </header>
         <button class="ds44-btnIco ds44-btnIco--carre ds44-bgDark" type="button">
             <i class="icon icon-pause" aria-hidden="true"></i>
             <span class="visually-hidden">Arrêter l'animation</span>
