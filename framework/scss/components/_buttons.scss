@@ -94,7 +94,8 @@ button, a.ds44-btnStd, a > .ds44-btnStd, .ds44-btnStd > a, .ds44-btnIcoText--max
   display: inline-block !important;
 }
 
-p.ds44-btnStd--tag {
+p.ds44-btnStd--tag,
+span.ds44-btnStd--tag, {
   background: transparent !important;
 
   &:hover,
@@ -104,6 +105,7 @@ p.ds44-btnStd--tag {
   &:active > span,
   &:focus > span {
     box-shadow: none;
+    cursor: auto;
   }
 
   &:after {
