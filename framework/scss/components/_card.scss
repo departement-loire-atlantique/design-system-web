@@ -269,6 +269,10 @@ figure[role=figure]  + .ds44-card__section {
     }
 }
 
+.ds44-homepage-container .ds44-card {
+    z-index: 10;
+}
+
 // Calendar card
 
 .ds44-card__dateContainer {
