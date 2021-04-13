@@ -253,6 +253,22 @@ figure[role=figure]  + .ds44-card__section {
     }
 }
 
+.ds44-homepage-container .ds44-card__section--horizontal--img {
+
+    &--dim110 {
+        min-width: 31%;
+
+
+        @media (min-width: $ds44-extra-large) {
+            min-width: 90px;
+        }
+        @media (min-width: $ds44-large) and (max-width: ($ds44-extra-large - .0625)) {
+            min-width: 80px;
+        }
+
+    }
+}
+
 // Calendar card
 
 .ds44-card__dateContainer {
