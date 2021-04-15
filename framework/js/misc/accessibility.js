@@ -122,6 +122,8 @@ class MiscAccessibility {
                     bkpTabindex !== null
                 ) {
                     element.setAttribute('tabindex', bkpTabindex);
+                } else {
+                    element.removeAttribute('tabindex');   
                 }
             } else {
                 element.removeAttribute('tabindex');
