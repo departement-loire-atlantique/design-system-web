@@ -22,6 +22,8 @@
         {% assign attributes = attributes | append : ' autocomplete="address-line1"' %}
     {% elsif include.type == 'address-level2' %}
         {% assign attributes = attributes | append : ' autocomplete="address-level2"' %}
+    {% elsif include.type == 'country' %}
+        {% assign attributes = attributes | append : ' autocomplete="country"' %}
     {% endif %}
 {% endif %}
 

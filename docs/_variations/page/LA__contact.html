@@ -63,6 +63,12 @@ layout: pattern
                                     {% include form/field/input/standard.html type="postcode" label="Code postal" explanation="Exemple : 44000" required="true" %}
                                 </div>
                                 <div class="ds44-mb3">
+                                    {% include form/field/input/standard.html type="address-level2" label="Ville" %}
+                                </div>
+                                <div class="ds44-mb3">
+                                    {% include form/field/input/standard.html type="country" label="Pays" required="true" %}
+                                </div>
+                                <div class="ds44-mb3">
                                     {% include form/field/select/radio.html label="Sujet" required="true" class="ds44-inpStd" %}
                                 </div>
                                 <div class="ds44-mb3">
