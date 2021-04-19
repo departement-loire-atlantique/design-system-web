@@ -35,6 +35,7 @@
                     </div>
                     <div class="col ds44--xl-padding-l">
                         <p id="form-bloc-utils-N">Aidez-nous à améliorer cette page en nous laissant un commentaire :</p>
+                        <p class="ds44-textLegend ds44-textLegend--mentions">Les champs marqués d’un astérisque * sont obligatoires</p>
                         {% capture ariaDescribedBy2 %}form-bloc-utils-N{% if savedAriaDescribedBy and savedAriaDescribedBy != '' %} {{ savedAriaDescribedBy }}{% endif %}{% endcapture %}
                         {% include form/field/input/textarea.html label="Commentaire" required="true" ariaDescribedBy=ariaDescribedBy2 %}
                         {% include form/field/input/standard.html label="Email" type="email" explanation="Ex : votrenom@email.com" %}
