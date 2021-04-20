@@ -6,6 +6,14 @@ class MiscAccessibility {
     static getProtectedElementsSelector () {
         return ['i', 'sup', 'svg', 'hr'];
     }
+    
+    // Fonction qui détermine si un élément est affiché dans le DOM (display != none)
+    static isDisplayed(element) {
+        if (!element) {
+            return false;
+        }
+        return !(window.getComputedStyle(element).display === "none");
+    }
 
     // Fonction qui va forcer le focus à faire une boucle sur un élément
     // en ajoutant deux inputs 'hidden' qui peuvent être focus, au début
@@ -23,8 +31,20 @@ class MiscAccessibility {
         }
 
         // Add class to first and last focusable elements
-        focusableElements[0].classList.add('ds44-tmpFirstFocus');
-        focusableElements[focusableElements.length - 1].classList.add('ds44-tmpLastFocus');
+        // For loops to make sure the first and last focusable elements are displayed
+        for (itHtmlElem in focusableElements) {
+            if MistAccessibility.isDisplayed(itHtmlElement) {
+                itHtmlElem.classList.add('ds44-tmpFirstFocus');
+                break;
+            }
+        }
+        // Starting from the end
+        for (itHtmlElem in focusableElements.slice().reverse()) {
+            if MistAccessibility.isDisplayed(itHtmlElement) {
+                itHtmlElem.classList.add('ds44-tmpLastFocus');
+                break;
+            }
+        }
 
         // Create first hidden focus element
         const fakeFirstElement = document.createElement('span');
