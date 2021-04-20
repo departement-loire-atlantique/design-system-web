@@ -32,16 +32,18 @@ class MiscAccessibility {
 
         // Add class to first and last focusable elements
         // For loops to make sure the first and last focusable elements are displayed
-        for (itHtmlElem in focusableElements) {
-            if (MistAccessibility.isDisplayed(itHtmlElement)) {
-                itHtmlElem.classList.add('ds44-tmpFirstFocus');
+        for (let indexElem in Array.prototype.slice.call(focusableElements)) {
+        	let itElem = Array.prototype.slice.call(focusableElements)[indexElem];
+            if (MiscAccessibility.isDisplayed(itElem)) {
+            	itElem.classList.add('ds44-tmpFirstFocus');
                 break;
             }
         }
         // Starting from the end
-        for (itHtmlElem in focusableElements.slice().reverse()) {
-            if (MistAccessibility.isDisplayed(itHtmlElement)) {
-                itHtmlElem.classList.add('ds44-tmpLastFocus');
+        for (let indexElem in Array.prototype.slice.call(focusableElements).reverse()) {
+        	let itElem = Array.prototype.slice.call(focusableElements).reverse()[indexElem];
+            if (MiscAccessibility.isDisplayed(itElem)) {
+            	itElem.classList.add('ds44-tmpLastFocus');
                 break;
             }
         }
