@@ -163,7 +163,7 @@ class CarouselAbstract {
                 'el': object.paginationElement,
                 'renderBullet': (index, className) => {
                     const textElements = object.swiperElement.querySelectorAll('.swiper-slide:not(.swiper-slide-duplicate) .ds44-diaporama-vignette-text');
-                    if (!textElements) {
+                    if (!textElements || !textElements.length) {
                         return '';
                     }
 
