@@ -263,7 +263,7 @@ class CarouselAbstract {
                     this.hideSlide(slideElement);
                 }
                 if(slideElement.classList.contains('swiper-slide-active')) {
-                    slideElement.attr('aria-current', 'true');
+                    slideElement.setAttribute('aria-current', 'true');
                 } else {
                     slideElement.removeAttribute('aria-current');
                 }
