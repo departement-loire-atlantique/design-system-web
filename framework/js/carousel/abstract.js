@@ -167,7 +167,7 @@ class CarouselAbstract {
                         return '';
                     }
 
-                    return '<p id="aChangerIdUnique"><span class="' + className + '">' + textElements[index].innerHTML + '</span></p>';
+                    return '<p id="' + MiscUtils.generateId() + '"><span class="' + className + '">' + textElements[index].innerHTML + '</span></p>';
                 }
             }
         }
@@ -261,6 +261,11 @@ class CarouselAbstract {
                 } else {
                     // Hide slide
                     this.hideSlide(slideElement);
+                }
+                if(slideElement.classList.contains('swiper-slide-active')) {
+                    slideElement.attr('aria-current', 'true');
+                } else {
+                    slideElement.removeAttr('aria-current');
                 }
             });
 
