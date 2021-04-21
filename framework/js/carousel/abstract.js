@@ -265,7 +265,7 @@ class CarouselAbstract {
                 if(slideElement.classList.contains('swiper-slide-active')) {
                     slideElement.attr('aria-current', 'true');
                 } else {
-                    slideElement.removeAttr('aria-current');
+                    slideElement.removeAttribute('aria-current');
                 }
             });
 
