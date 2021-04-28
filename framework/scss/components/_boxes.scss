@@ -71,14 +71,12 @@
         padding: 0px 10px;
         border-radius: 10px;
         display: inline-block;
+        font-weight: bold;
 
         + span {
           display: block;
           margin-top: 10px;
         }
-      }
-      .ds44-flex-container p {
-        font-weight: bold;
       }
       .ds44-pushCustomText {
         width: 55%;
