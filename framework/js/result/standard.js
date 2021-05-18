@@ -250,9 +250,9 @@ class ResultStandard {
 			titleElement.innerHTML = titleElementHtml;
 			if (!elemCancellingRename) {
 				document.title = titleElementHtml + ' - Loire-atlantique.fr';
-			}
-			titleElement.setAttribute('tabindex', '-1');
-			focusElement = titleElement;
+				titleElement.setAttribute('tabindex', '-1');
+				focusElement = titleElement;
+			}			
 		} else {
 			let titleElementHtml = evt.detail.nbResults;
 			if (evt.detail.nbResults > 1) {
@@ -264,9 +264,9 @@ class ResultStandard {
 			titleElement.innerHTML = titleElementHtml + '<p class="visually-hidden" tabindex="-1">' + accessibleSentence + '</p>';
 			if (!elemCancellingRename) {
 				document.title = titleElementHtml + ' ' + accessibleSentence + ' - Loire-atlantique.fr';
-			}
-			titleElement.removeAttribute('tabindex');
-			focusElement = titleElement.querySelector('.visually-hidden');
+				titleElement.removeAttribute('tabindex');
+				focusElement = titleElement.querySelector('.visually-hidden');
+			}			
 		}
         
 
