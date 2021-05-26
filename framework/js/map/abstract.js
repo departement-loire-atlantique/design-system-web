@@ -216,7 +216,14 @@ class MapAbstract {
         }
 
         // Show current geojson
-        const geojsonIds = [...new Set(this.getGeojsonIds(objectIndex))];
+        let geojsonIds = [...new Set(this.getGeojsonIds(objectIndex))];
+		
+		// Select specific zone in geojson
+        const geojsonCode = object.mapElement.getAttribute('data-geojson-code');
+        if(geojsonCode != null) {
+        	geojsonIds = [geojsonCode];
+        }
+		
         let filterParameters = [];
         if (geojsonIds.length === 0) {
             filterParameters = ['!has', 'name'];
