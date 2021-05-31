@@ -108,16 +108,11 @@
       margin-top: 3rem;
     }
     
-    .ds44-wsg-encadreGris {
-        background-color : transparent  !important;
-        .ds44-box.ds44-card.ds44-bgGray  {
-            background-color : transparent  !important;
-            
-            &:hover,
-            &:focus,
-            &:active {
-                box-shadow : none !important;
-            }
+    .ds44-wsg-transparent {
+        &:hover,
+        &:focus,
+        &:active {
+            box-shadow : none !important;
         }
     }
 }
