@@ -66,7 +66,7 @@ class PageElement {
                 400,
                 'linear'
             );
-        });
+        }
     }
 }
 
