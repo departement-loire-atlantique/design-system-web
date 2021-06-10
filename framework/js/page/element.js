@@ -12,10 +12,7 @@ class PageElement {
         document
             .querySelectorAll('a[href^="#"]')
             .forEach((link) => {
-                link.addEventListener("click", function(e) {
-                    e.preventDefault();
-                    MiscUtils.scrollTo(document.getElementById(link.getAttribute('href').replace('#', '')));
-                });
+                link.addEventListener("click", this.scrollToHyperlink);
             });
 
         MiscEvent.addListener('overlay:show', this.hide.bind(this));
@@ -50,6 +47,26 @@ class PageElement {
             }
         }
         this.visibilityCounter--;
+    }
+        
+    scrollToHyperlink(event) {
+        event.preventDefault();
+        const scrollTo = MiscUtils.getPositionY(document.getElementById(event.target.getAttribute('href').replace('#', '')));
+        if (MiscUtils.getScrollTop() > scrollTo) {
+            // Going up, the header will show
+            MiscUtils.scrollTo(
+                scrollTo - MiscDom.getHeaderHeight(true),
+                400,
+                'linear'
+            );
+        } else {
+            // Going down, the header will hide
+            MiscUtils.scrollTo(
+                scrollTo,
+                400,
+                'linear'
+            );
+        });
     }
 }
 
