@@ -8,6 +8,14 @@ class PageElement {
             .forEach((pageElement) => {
                 this.create(pageElement);
             });
+        
+        document
+            .querySelectorAll('a[href^="#"]')
+            .forEach((link) => {
+                link.addEventListener("click", function(e) {
+                    e.preventDefault();   
+                });
+            });
 
         MiscEvent.addListener('overlay:show', this.hide.bind(this));
         MiscEvent.addListener('overlay:hide', this.show.bind(this));
