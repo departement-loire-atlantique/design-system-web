@@ -14,7 +14,7 @@ class PageElement {
             .forEach((link) => {
                 link.addEventListener("click", function(e) {
                     e.preventDefault();
-                    MiscUtils.scrollTo(link.getAttribute('href'));
+                    MiscUtils.scrollTo(document.getElementById(link.getAttribute('href').replace('#', '')));
                 });
             });
 
