@@ -13,7 +13,8 @@ class PageElement {
             .querySelectorAll('a[href^="#"]')
             .forEach((link) => {
                 link.addEventListener("click", function(e) {
-                    e.preventDefault();   
+                    e.preventDefault();
+                    MiscUtils.scrollTo(link.getAttribute('href'));
                 });
             });
 
