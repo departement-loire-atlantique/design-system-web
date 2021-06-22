@@ -241,7 +241,7 @@ class MapAbstract {
         object.map.setFilter(this.geojsonLinesId, filterParameters);
 
         // Zoom the map
-        if (object.zoom && geojsonIds.length !== 0) {
+        if ( (geojsonCode != null || object.zoom) && geojsonIds.length !== 0) {
             let hasBoundingBox = false;
             let boundingBox = null;
 
