@@ -910,6 +910,29 @@
     }
 }
 
+.ds44-modal-container {
+    .ds44-icoInfoRoutes {
+      margin-right: 15px;
+      padding: 4px;
+      border-radius: 50%;
+      font-size: 1.1em;
+      vertical-align: baseline;
+      display: inline-block;
+      width: 30px;
+      height: 30px;
+      text-align: center;
+
+      &.orangeFlag {
+        background: $ds44-app-orangeFlag;
+        color: $ds44-dark;
+      }
+      &.redFlag {
+        background: $ds44-app-redFlag;
+        color: $ds44-light;
+      }
+    }
+}
+
 /* === Text effects === */
 
 .ds44-txtBulle {
