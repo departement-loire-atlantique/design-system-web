@@ -1,0 +1,202 @@
+---
+layout: pattern
+---
+
+{% include header/inc-header.html recherche-patrimoine='-observatoire'
+    rawLogo=true
+    logo='<picture class="ds44-logo"><img src="../../assets/images/logos/logo-cd44-inforoutes.svg" alt="Retour à l&apos;accueil site inforoutes de Loire-Atlantique" /></picture>'
+%}
+
+<main role="main" id="content">
+
+	<article class="ds44-container-large">
+
+      <div class="ds44-lightBG">
+  			<div class="ds44-inner-container ds44--xl-padding-t ds44--m-padding-b ds44-mobile-reduced-pt">
+  				<div class="ds44-grid12-offset-2">
+  					{% include breadcrumb/breadcrumb.html %}
+  					<h1 class="h1-like mbs mts ds44-mobile-reduced-mb ds44-mobile-reduced-mt" id="idTitre1">Info trafic sur le Pont de Saint-Nazaire</h1>
+  				</div>
+  			</div>
+  		</div>
+
+        <div class="ds44-inner-container ds44-mtb3">
+          <div class="grid-12-small-1">
+              <div class="col-2 grid-offset ds44-hide-tiny-to-medium"></div>
+  						<div class="col-8">
+  							<section class="ds44-contenuArticle" id="section1">
+  								<p class="ds44-introduction">Pour vous permettre de connaître en temps réel l’état de la circulation sur le pont de Saint-Nazaire et de préparer au mieux vos déplacements, consultez cette page ou <a href="#">téléchargez l’application mobile Pont de Saint-Nazaire.</a>
+  								</p>
+  							</section>
+              </div>
+            </div>
+        </div>
+        <div class="ds44-inner-container ds44-mtb3">
+          <div class="grid-12-small-1">
+  						<div class="col-3">
+                <h2 class="h2-like">Trafic</h2>
+  							<section class="ds44-mtb3">
+                  <h3 class="h5-like ds44-mb1">Saint-Nazaire > Saint-Brevin</h3>
+                  {%
+                      include card/card--inforoutes--horizontale.html
+                      context="--inforoutes"
+                      title="Fluide"
+                      nameImg="car"
+                      arialevel='"aria-level="2"'
+                      text="5 min"
+                  %}
+  							</section>
+  							<section class="ds44-mtb3">
+                  <h3 class="h5-like ds44-mb1">Saint-Brevin > Saint-Nazaire</h3>
+                  {%
+                      include card/card--inforoutes--horizontale.html
+                      context="--inforoutes"
+                      title="Dense"
+                      nameImg="cars"
+                      arialevel='"aria-level="2"'
+                      text="+ de 20 min"
+                  %}
+  							</section>
+  						</div>
+
+  						<div class="col-1 grid-offset ds44-hide-tiny-to-medium"></div>
+
+  						<div class="col-3">
+                <h2 class="h2-like">Sens de la circulation</h2>
+  							<section class="ds44-mtb3">
+                  <h3 class="h5-like ds44-mb1">En cours</h3>
+                  {%
+                      include card/card--inforoutes--horizontale.html
+                      context="--inforoutes"
+                      title=""
+                      nameImg="m122"
+                      arialevel='"aria-level="2"'
+                      text="2 voies"
+                      text2="St Brevin / St Nazaire"
+                  %}
+  							</section>
+  							<section class="ds44-mtb3">
+                  <h3 class="h5-like ds44-mb1">À venir</h3>
+                  {%
+                      include card/card--inforoutes--horizontale.html
+                      context="--inforoutes"
+                      title="12h30"
+                      nameImg="m112"
+                      arialevel='"aria-level="2"'
+                      text="2 voies"
+                      text2="St Brevin / St Nazaire"
+                  %}
+                  {%
+                      include card/card--inforoutes--horizontale.html
+                      context="--inforoutes"
+                      title="6h30"
+                      nameImg="m012"
+                      arialevel='"aria-level="2"'
+                      text="Voie Mer fermée – accès nord par Gron dévié"
+                  %}
+  							</section>
+  						</div>
+
+  						<div class="col-1 grid-offset ds44-hide-tiny-to-medium"></div>
+
+              <div class="col-4">
+                <h2 class="h2-like">Direct</h2>
+                <div class="iframe_inforoutes">
+                  <img src="../../assets/images/apps/ponts/img/iframe_cam_1.jpg" alt="">
+                </div>
+  						</div>
+
+  					</div>
+        </div>
+        <div class="ds44-inner-container ds44-mtb5">
+          <div class="grid-12-small-1">
+            <div class="col-12">
+              <h2 class="h2-like">Les événements en cours</h2>
+              <table class="inforoutes">
+                <thead>
+                  <tr>
+                    <th>Type</th>
+                    <th>Lieu</th>
+                    <th>Dates(s)</th>
+                    <th>Conditions de circulation</th>
+                    <th>Publication / Mise à jour</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td><img src="../../assets/images/apps/ponts/icones/svg/mu012.svg" alt=""><span>Obstacle sur la chaussée</span></td>
+                    <td>
+                      <p>D213 - Guérande</p>
+                      <p>La Baule-Escoublac vers Guérande</p>
+                    </td>
+                    <td>Du 03/11/2020 au 05/11/2020</td>
+                    <td>Nettoyage de la chaussée</td>
+                    <td>Le 04/11/20 à 14:28</td>
+                  </tr>
+                  <tr>
+                    <td><img src="../../assets/images/apps/ponts/icones/svg/travaux.svg" alt=""><span>Obstacle sur la chaussée</span></td>
+                    <td>
+                      <p>D213 - Guérande</p>
+                      <p>La Baule-Escoublac vers Guérande</p>
+                    </td>
+                    <td>Du 03/11/2020 au 05/11/2020</td>
+                    <td>Nettoyage de la chaussée</td>
+                    <td>Le 04/11/20 à 14:28</td>
+                  </tr>
+                  <tr>
+                    <td><img src="../../assets/images/apps/ponts/icones/svg/me122c.svg" alt=""><span>Obstacle sur la chaussée</span></td>
+                    <td>
+                      <p>D213 - Guérande</p>
+                      <p>La Baule-Escoublac vers Guérande</p>
+                    </td>
+                    <td>Du 03/11/2020 au 05/11/2020</td>
+                    <td>Nettoyage de la chaussée</td>
+                    <td>Le 04/11/20 à 14:28</td>
+                  </tr>
+                  <tr>
+                    <td><img src="../../assets/images/apps/ponts/icones/svg/accident.svg" alt=""><span>Obstacle sur la chaussée</span></td>
+                    <td>
+                      <p>D213 - Guérande</p>
+                      <p>La Baule-Escoublac vers Guérande</p>
+                    </td>
+                    <td>Du 03/11/2020 au 05/11/2020</td>
+                    <td>Nettoyage de la chaussée</td>
+                    <td>Le 04/11/20 à 14:28</td>
+                  </tr>
+                  <tr>
+                    <td><img src="../../assets/images/apps/ponts/icones/svg/cars.svg" alt=""><span>Obstacle sur la chaussée</span></td>
+                    <td>
+                      <p>D213 - Guérande</p>
+                      <p>La Baule-Escoublac vers Guérande</p>
+                    </td>
+                    <td>Du 03/11/2020 au 05/11/2020</td>
+                    <td>Nettoyage de la chaussée</td>
+                    <td>Le 04/11/20 à 14:28</td>
+                  </tr>
+                </tbody>
+                </table>
+              </div>
+            </div>
+        </div>
+
+	</article>
+
+  <section class="ds44-container-fluid PortletPush">
+    <div class="ds44-box ds44-theme ds44-bgTriangle-left">
+      <div class="ds44-flex-container ds44-flex-container--colMed ds44-flex-container--colMed--colRev">
+        <picture class="ds44-boxPushPic ds44-boxPushPic--horizontal">
+          <img src="../../assets/images/push/desktop/push-horiz-app-pont.png" alt="" />
+        </picture>
+        <div class="ds44-boxPushContent ds44-boxPushContent--fluid">
+          <div class="ds44-titlePushH"><p role="heading" aria-level="2" class="ds44-pushTitle">Téléchargez l’appli Pont de Saint-Nazaire</p></div>
+          <div class="ds44-contentPushH"><p class="txtcenter">En téléchargement gratuit :</p></div>
+          <div class="ds44-contentPushH"><p class="mts"><a href="#"><img src="../../assets/images/logo-apple-store.svg" alt="Application sorties et loisirs disponible sur App Store" class="ds44-pictoStore ds44-pictoStore--bigger mrs" /></a><a href="#"><img src="../../assets/images/logo-google-play.svg" alt="Application sorties et loisirs disponible sur Google play" class="ds44-pictoStore ds44-pictoStore--bigger" /></a></p></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+
+</main>
+
+{% include footer/footer-LA.html %}

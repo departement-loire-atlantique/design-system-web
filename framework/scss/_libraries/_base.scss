@@ -398,13 +398,13 @@ th, td {
   padding: 1rem;
 }
 tr:nth-child(odd) {
-  background-color: #f5f5f5;
+  background-color: #fff;
 }
 thead + tbody > tr:nth-child(even) {
-  background-color: #f5f5f5;
+  background-color: #fff;
 }
 thead + tbody > tr:nth-child(odd) {
-  background-color: #fff;
+  background-color: $ds44-lightgray;
 }
 td {
   font-weight: normal;

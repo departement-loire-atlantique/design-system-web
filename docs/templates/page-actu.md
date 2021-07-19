@@ -26,6 +26,9 @@ variations:
 - title: Page type exposition - SP
   pattern: page/SP__exposition.html
 
+- title: Page inforoutes - IR
+  pattern: page/IR_infotrafic.html
+
 - title: Template centré
   pattern: templates/template-generique-centre.html
 ---

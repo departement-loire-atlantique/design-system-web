@@ -107,20 +107,20 @@
     + .ds44-btnStd {
       margin-top: 3rem;
     }
-    
+
     .ds44-wsg-transparent {
-        
+
         background-color: transparent !important;
-        
+
         &:hover,
         &:focus,
         &:active {
             box-shadow : none !important;
         }
     }
-    
+
     .ds44-wsg-noPadding {
-        padding: 0 !important;   
+        padding: 0 !important;
     }
 }
 
@@ -226,11 +226,66 @@ table.ds44-tableau_4col tr {
 table.ds44-tableau_5col tr {
     width: 20%;
 }
+table.inforoutes {
+  text-align: left;
+
+  thead th {
+    font-size: 14px;
+    font-weight: normal;
+  }
+  tbody tr td:first-child {
+    font-weight: bold;
+  }
+  tbody tr td img {
+    width: 50px;
+    height: 50px;
+    object-fit: cover;
+    margin-right: 15px;
+    vertical-align: top;
+  }
+  tbody tr td span {
+    display: inline-block;
+    width: calc(100% - 70px);
+  }
+  td, th {
+    padding: 1rem;
+    vertical-align: top;
+  }
+}
 
 @media (max-width: 64em) {
   .col.mrl ,
   .col.mll {
       margin-left: 0;
       margin-right: 0;
+  }
+}
+@media (max-width: 64em) {
+  table.inforoutes {
+    width: 100%;
+
+    thead th {
+      display: none;
+    }
+    tbody tr td:first-child {
+      font-weight: bold;
+    }
+    tbody tr td img {
+      width: 50px;
+      height: 50px;
+      object-fit: cover;
+      margin-right: 15px;
+      vertical-align: top;
+    }
+    tbody tr td span {
+      display: inline-block;
+      width: calc(100% - 70px);
+    }
+    td, th {
+      padding: 1rem;
+      vertical-align: top;
+      display: block;
+      width: 100%;
+    }
   }
 }
