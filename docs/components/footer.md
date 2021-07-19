@@ -19,6 +19,9 @@ variations:
 - title: Pied de page Chateau de Clisson
   description: Pied de page Chateau de Clisson site Grand Patrimoine
   pattern: footer/footer-chateauClisson.html
+- title: Pied de page Inforoutes
+  description: Pied de page site inforoutes
+  pattern: footer/footer-inforoutes.html
 ---
 
 ## Usage
