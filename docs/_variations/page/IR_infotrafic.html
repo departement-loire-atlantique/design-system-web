@@ -113,13 +113,14 @@ layout: pattern
             <div class="col-12">
               <h2 class="h2-like">Les événements en cours</h2>
               <table class="inforoutes">
+                <caption class="visually-hidden">Titre du tableau</caption>
                 <thead>
                   <tr>
-                    <th>Type</th>
-                    <th>Lieu</th>
-                    <th>Dates(s)</th>
-                    <th>Conditions de circulation</th>
-                    <th>Publication / Mise à jour</th>
+                    <th scope="col">Type</th>
+                    <th scope="col">Lieu</th>
+                    <th scope="col">Dates(s)</th>
+                    <th scope="col">Conditions de circulation</th>
+                    <th scope="col">Publication / Mise à jour</th>
                   </tr>
                 </thead>
                 <tbody>
@@ -190,7 +191,16 @@ layout: pattern
         <div class="ds44-boxPushContent ds44-boxPushContent--fluid">
           <div class="ds44-titlePushH"><p role="heading" aria-level="2" class="ds44-pushTitle">Téléchargez l’appli Pont de Saint-Nazaire</p></div>
           <div class="ds44-contentPushH"><p class="txtcenter">En téléchargement gratuit :</p></div>
-          <div class="ds44-contentPushH"><p class="mts"><a href="#"><img src="../../assets/images/logo-apple-store.svg" alt="Application sorties et loisirs disponible sur App Store" class="ds44-pictoStore ds44-pictoStore--bigger mrs" /></a><a href="#"><img src="../../assets/images/logo-google-play.svg" alt="Application sorties et loisirs disponible sur Google play" class="ds44-pictoStore ds44-pictoStore--bigger" /></a></p></div>
+          <div class="ds44-contentPushH">
+            <ul class="ds44-list mts">
+              <li class="ds44-inlineBlock">
+                <a href="#"><img src="../../assets/images/logo-apple-store.svg" alt="Application sorties et loisirs disponible sur App Store" class="ds44-pictoStore ds44-pictoStore--bigger mrs" /></a>
+              </li>
+              <li class="ds44-inlineBlock">
+                <a href="#"><img src="../../assets/images/logo-google-play.svg" alt="Application sorties et loisirs disponible sur Google play" class="ds44-pictoStore ds44-pictoStore--bigger" /></a>
+              </li>
+            </ul>
+        </div>
         </div>
       </div>
     </div>
