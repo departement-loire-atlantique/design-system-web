@@ -392,6 +392,40 @@ figure[role=figure]  + .ds44-card__section {
           line-height: 1.2em;
         }
       }
+      &--bacs {
+        .h3-like {
+          font-size: 41px;
+        }
+        .ds44-bacs-info {
+          background-color: $ds44-light;
+          background-image: url(../../../assets/images/apps/ponts/img/file-attente.svg);
+          background-position: bottom;
+          background-repeat: no-repeat;
+          border: 1px solid $ds44-lightgray;
+          padding: 10px 0 40px 0;
+
+          &.no-img {
+            background-image: none;
+            padding: 10px 0;
+          }
+
+          > * {
+            padding: 0 10px;
+          }
+
+          ul li {
+            display: inline-block;
+            padding: 10px 20px 10px 0;
+            background: url(../../../assets/images/right.png) no-repeat right 5px center;
+            font-size: 14px;
+
+            &:last-child {
+              padding-right: 0;
+              background: none;
+            }
+          }
+        }
+      }
     }
 }
 
