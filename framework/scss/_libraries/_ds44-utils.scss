@@ -1039,8 +1039,8 @@
 /* === LINKS === */
 
 .ds44-inblLinks {
-    display: inline-block;
-    margin-right: 1rem 0 .5rem 0;
+    display: inline-block !important;
+    margin-right: 1rem ;
     white-space: nowrap;
 }
 

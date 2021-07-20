@@ -20,6 +20,9 @@ variations:
 - title: Accueil Site Observatoire
   pattern: page/SO__accueil.html
 
+- title: Accueil assmat.loire-atlantique.fr
+  pattern: page/AM__accueil.html
+
 ---
 ## Utilisation
 

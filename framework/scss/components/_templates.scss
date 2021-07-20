@@ -255,6 +255,28 @@ main {
 
 }
 
+.ds44-titleContainer--home {
+
+  &.ds44-home-assmat {
+    justify-content: center;
+
+    .h1-like {
+        padding: 3rem 5rem 2rem 5rem;
+        position: relative;
+    }
+
+    .ds44-form-assmat {
+      z-index: 2;
+      padding: 0 5rem 3rem 5rem;
+    }
+
+    .ds44-alphaGradient--header {
+      height: 70%;
+      bottom: 0;
+    }
+  }
+}
+
 
 .ds44-pageHeaderContainer__pictureContainer {
     position: absolute;
@@ -851,7 +873,15 @@ main {
             padding: 10rem 3rem 3rem 3rem;
             margin: 0;
         }
+
+        .ds44-titleContainer--home.ds44-home-assmat {
+          .ds44-form-assmat {
+            z-index: 2;
+            padding:  0 3rem 5rem 3rem;
+          }
+        }
     }
+
 
 }
 
