@@ -1057,6 +1057,16 @@
 
 }
 
+.ds44-linkUnderline {
+    text-decoration: underline;
+    padding: 0;
+
+    &:hover, &:focus, &:active {
+        text-decoration: none;
+    }
+
+}
+
 .ds44-arrowLink {
     @include ds44-font-sizes(menuLinks);
     display: block;
