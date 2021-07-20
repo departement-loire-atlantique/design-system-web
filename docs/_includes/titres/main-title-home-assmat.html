@@ -15,14 +15,14 @@
         {% capture ariaDescribedBy %}filter-by-{{ formId }}{% endcapture %}
         {% capture fields %}
             <div class="ds44-fieldContainer ds44-champsLies ds44-js-linked-fields ds44-fg4">
-                {% include form/field/input/autocomplete.html label="Champ adresse" required="true" type="address" url="https://api-adresse.data.gouv.fr/search/?limit=5&citycode=44109" attributes='data-mode="select-only"' class="ds44-inpLarge" title="Sélectionner Champ adresse - mise à jour automatique des sous-thèmes Rayon triés par ordre alphabétique" hasLocation="true" %}
+                {% include form/field/input/autocomplete.html label="Lieu" required="true" type="address" url="https://api-adresse.data.gouv.fr/search/?limit=5&citycode=44109" attributes='data-mode="select-only"' class="ds44-inpLarge" title="Sélectionner Champ adresse - mise à jour automatique des sous-thèmes Rayon triés par ordre alphabétique" hasLocation="true" %}
                 {% include form/field/select/standard.html label="Rayon" required="true" disabled="true" class="ds44-inpLarge" %}
             </div>
             <div class="ds44-fieldContainer ds44-fg1 ds44-fieldContainer--select">
-                {% include form/field/select/checkbox.html label="Select à cases" required="true" class="ds44-inpLarge" %}
+                {% include form/field/select/checkbox.html label="Âge de l'enfant" required="true" class="ds44-inpLarge" %}
             </div>
             <div class="ds44-fieldContainer ds44-fg1 ds44-fieldContainer--select">
-                {% include form/field/select/checkbox.html label="Select à cases" required="true" class="ds44-inpLarge" %}
+                {% include form/field/select/checkbox.html label="À partir de" required="false" class="ds44-inpLarge" %}
             </div>
         {% endcapture %}
         {% include form/layout/recherche-facettes.html id=formId fields=fields fieldStyle="large" subfields=subfields url="/json/recherche-map.json" %}
