@@ -6,7 +6,7 @@
       </picture>
    </div>
     <div class="ds44-card__section--horizontal">
-      <p role="heading" {{ include.arialevel }} class="h4-like">{{ include.title }}</p>
+      {% if include.title %}<p role="heading" {{ include.arialevel }} class="h4-like">{{ include.title }}</p>{% endif %}
       {% if include.text %}<p class="">{{ include.text }}</p>{% endif %}
       {% if include.text2 %}<p class="">{{ include.text2 }}</p>{% endif %}
     </div>
