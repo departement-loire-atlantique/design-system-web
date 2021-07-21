@@ -32,6 +32,10 @@ variations:
   description: Les tooltips sont utilisés pour apporter une information supplémentaire.
   pattern: composants-transverses/tooltips.html
 
+- title: Calendrier Assmat
+  description: Présentation du calendrier pour les disponibilités des assmats.
+  pattern: composants-transverses/calendrier-assmat.html
+
 
 ---
 

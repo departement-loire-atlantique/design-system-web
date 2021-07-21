@@ -130,3 +130,22 @@
         }
     }
 }
+.tabDispos {
+  tr:first-child th {
+    text-align: center;
+    padding: .5rem;
+  }
+  th {
+    padding: .5rem 2rem .5rem 1rem;
+  }
+  td {
+    padding: .5rem;
+  }
+  th {
+    font-weight: normal;
+    text-align: left;
+  }
+}
+.PictoCreneauPrint {
+    display: none;
+}
