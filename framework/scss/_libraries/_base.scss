@@ -281,7 +281,7 @@ ul:not(.ds44-list):not(.ds44-collapser) {
   // first-level
   > li {
     list-style-position: outside;
-    margin-top: $ds44-padding-box;
+    margin-top: $ds44-padding-base;
     list-style-image: url(../../../assets/images/right.svg);
 
     ul:not(.ds44-list) {

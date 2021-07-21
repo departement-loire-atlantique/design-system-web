@@ -14,6 +14,12 @@ variations:
 - title: Page type "Fiche aide - version Dossier"
   pattern: page/LA__ficheAide-2.html
 
+- title: Page assmat - Espace Personnel
+  pattern: page/AM__espace-perso.html
+
+- title: Page assmat - Déclarer un accueil
+  pattern: page/AM__espace-perso-accueil.html
+
 - title: Template carrefour
   pattern: templates/template-entryMenu.html
 ---

@@ -164,6 +164,25 @@
           }
         }
     }
+    &.ds44-card--noLink {
+      border: 0;
+
+      &:hover,
+      &:focus,
+      &:active {
+        box-shadow: none;
+      }
+    }
+    &.ds44-card--border {
+      background-color: $ds44-light;
+      border: 2px dashed $ds44-lightgray;
+      height: 100%;
+      min-height: 306px;
+      display: flex;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
 }
 
 a.ds44-card {

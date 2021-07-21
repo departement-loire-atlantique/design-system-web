@@ -648,6 +648,10 @@
         break-inside: avoid-column; /* W3C */
     }
 
+    > .ds44-noCut { // prevent break inside the element
+        display: block;
+    }
+
     li > a { // prevent break inside the container ds44-noCut
         -webkit-column-break-inside: avoid; /* Chrome, Safari, Opera */
         page-break-inside: avoid; /* Firefox */
