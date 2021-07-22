@@ -1,0 +1,143 @@
+---
+layout: pattern
+---
+
+{% include header/inc-header.html
+    rawLogo=true
+    logo='<picture class="ds44-logo"><img src="../../assets/images/logos/logo-cd44-assmat.svg" alt="Retour à l&apos;accueil site assitantes maternelles en Loire-Atlantique" /></picture>'
+    variante2='<a class="ds44-btnIcoText--maxi ds44--xl-padding" tabindex="0"><span class="ds44-btnInnerText">Connexion</span><i class="icon icon-user icon--large" aria-hidden="true"></i></a>'
+%}
+
+<main role="main" id="content">
+
+	<section class="ds44-container-large">
+      <div class="ds44-lightBG">
+  			<div class="ds44-inner-container ds44--xl-padding-t ds44--m-padding-b ds44-mobile-reduced-pt">
+  				<div class="ds44-grid12-offset-2">
+  					{% include breadcrumb/breadcrumb.html %}
+  					<h1 class="h1-like mbs mts ds44-mobile-reduced-mb ds44-mobile-reduced-mt" id="idTitre1">Déclarer un accueil</h1>
+  				</div>
+  			</div>
+  		</div>
+	</section>
+
+  <section class="ds44-container-large">
+      <div class="ds44-mt3 ds44--xl-padding-t">
+          <div class="ds44-inner-container">
+              <div class="grid-12-medium-1 grid-12-small-1">
+
+                  <aside class="col-4 ds44-hide-tinyToLarge ds44-js-aside-summary ds44-mb35">
+                      <section class="ds44-box ds44-theme ">
+                          <div class="ds44-innerBoxContainer ">
+                              <!-- <p><a href="#">Accueil espace personnel</a></p>
+                              <p role="heading" aria-level="2" class=" ds44-mt2">Mon compte</p>
+                              <ul class="">
+                                  <li><a href="#">Modifier mon identifiant (login) / mot de passe</a></li>
+                                  <li><a href="#">Changer mes préférences de contact (E-mail / SMS)</a></li>
+                              </ul> -->
+                              <p role="heading" aria-level="2" class="">Mon profil sur le site</p>
+                              <ul class="">
+                                  <li><a href="#">Afficher / masquer mon profil</a></li>
+                                  <li><a href="#">Modifier mes contacts (tél et e-mail) et leur visibilité</a></li>
+                                  <li><a href="#">Modifier mon offre d’accueil</a></li>
+                                  <li><a href="#">Actualiser mes disponibilités</a></li>
+                                  <li><a href="#">Changer mes autorisations de diffusion (Département, CAF, RAM)</a></li>
+                              </ul>
+                              <p role="heading" aria-level="2" class="ds44-mt2">Mes démarches</p>
+                              <ul class="">
+                                  <li><a href="#">Déclarer un accueil</a></li>
+                                  <li><a href="#">Déclarer une fin d’accueil</a></li>
+                                  <li><a href="#">Consulter l’historique de mes déclarations</a></li>
+                                  <li><a href="#">Accueillir un•e stagiaire</a></li>
+                                  <li><a href="#">Prime d’aide à l’installation (CAF) - attestation sur l’honneur</a></li>
+                              </ul>
+                              <!-- <p class="ds44-mt2"><a href="#" >Se déconnecter</a></p> -->
+                          </div>
+                      </section>
+                  </aside>
+
+                  <div class="col-1 grid-offset ds44-hide-tinyToLarge"></div>
+
+                  <article class="col-7 ds44-contenuDossier">
+                      <p>Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet.</p>
+                      <p>Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua.</p>
+                      <section class="ds44-contenuArticle">
+                        <div class="ds44--3xl-padding">
+                          <form>
+                              <p>Les champs suivis d’un * sont obligatoires.</p>
+                              <div class=" ds44-mt3">
+                                <p class="h2-like" role="heading" aria-level="2">Je déclare que l’enfant</p>
+                                <div class="ds44-mt4">
+                                    {% include form/field/input/standard.html type="last-name" label="Nom" required="true" %}
+                                </div>
+                                <div class="ds44-mb3">
+                                    {% include form/field/input/standard.html type="first-name" label="Prénom" required="true" %}
+                                </div>
+                                <div class="ds44-mb3">
+                                  {% include form/layout/radios.html name="radio2" choices="f:Fille,m:Garçon" required="true" list="true" %}
+                                </div>
+                                <div class="ds44-mb3">
+                                  {% include form/field/input/datepicker.html label="Né-e le" title="le : jour / mois / année" explanation="Ex : 20/05/2020" required="true" %}
+                                </div>
+                                <div class="ds44-mb3">
+                                  {% include form/field/input/datepicker.html label="Est accueilli-e depuis" title="le : jour / mois / année" explanation="Ex : 20/05/2020" required="true" %}
+                                </div>
+                              </div>
+                              <div class=" ds44-mt4">
+                                <p class="h2-like" role="heading" aria-level="2">Représentant légal 1</p>
+                                <div class="ds44-mb3">
+                                  {% include form/layout/radios.html name="radio2" choices="f:Mme.,m:M." required="true" list="true" %}
+                                </div>
+                                <div class="ds44-mb3">
+                                    {% include form/field/input/standard.html type="last-name" label="Nom" required="true" %}
+                                </div>
+                                <div class="ds44-mb3">
+                                    {% include form/field/input/standard.html type="first-name" label="Prénom" required="true" %}
+                                </div>
+                                <div class="ds44-mb3">
+                                  {% include form/field/input/standard.html type="tel-national" label="Téléphone" explanation="Exemple : 0202030405" required="true" %}
+                                </div>
+                                <div class="ds44-mb3">
+                                    {% include form/field/input/standard.html type="address-line1" label="Adresse" required="true" %}
+                                </div>
+                                <div class="ds44-mb3">
+                                  {% include form/layout/checkboxes.html choices="noAdress:Je ne trouve pas l’adresse" %}
+                                </div>
+                                <div class="ds44-mb3">
+                                    {% include form/field/input/standard.html label="Complément d'adresse" %}
+                                </div>
+                              </div>
+                              <div class=" ds44-mt4">
+                                <p class="h2-like" role="heading" aria-level="2">Représentant légal 2</p>
+                                <div class="ds44-mb3">
+                                  {% include form/layout/radios.html name="radio2" choices="f:Mme.,m:M." required="true" list="true" %}
+                                </div>
+                                <div class="ds44-mb3">
+                                    {% include form/field/input/standard.html type="last-name" label="Nom" required="true" %}
+                                </div>
+                                <div class="ds44-mb3">
+                                    {% include form/field/input/standard.html type="first-name" label="Prénom" required="true" %}
+                                </div>
+                                <div class="ds44-mb3">
+                                  {% include form/layout/checkboxes.html choices="moreInfo:Saisir une adresse ou un numéro de téléphone différent pour le représentant légal 2." %}
+                                </div>
+                              </div>
+                              <div class="ds44-flex ds44-fsb">
+                                <button class="ds44-btnStd"><span class="ds44-btnInnerText">Enregistrer en brouillon</span></button>
+                                <button class="ds44-btnStd ds44-btn--invert" title="Passer à l'étape suivante"><span class="ds44-btnInnerText">Étape suivante</span><i class="icon icon-long-arrow-right" aria-hidden="true"></i></button>
+                              </div>
+                              <p class="ds44-wsg-smallText ds44-mt3">Les informations personnelles vous concernant sont collectées et traitées par le Département de Loire-Atlantique aux fins d’instruction et de réponse aux demandes reçues. <a href="#">En savoir plus sur la protection des données personnelles</a>.</p>
+                          </form>
+                        </div>
+                      </section>
+
+                  </article>
+              </div>
+          </div>
+      </div>
+  </section>
+
+
+</main>
+
+{% include footer/footer-assmat.html %}
