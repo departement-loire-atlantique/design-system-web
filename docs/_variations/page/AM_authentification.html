@@ -1,0 +1,98 @@
+---
+layout: pattern
+---
+
+{% include header/inc-header.html
+    rawLogo=true
+    logo='<picture class="ds44-logo"><img src="../../assets/images/logos/logo-cd44-assmat.svg" alt="Retour à l&apos;accueil site assitantes maternelles en Loire-Atlantique" /></picture>'
+    variante2='<a class="ds44-btnIcoText--maxi ds44--xl-padding" tabindex="0"><span class="ds44-btnInnerText">Connexion</span><i class="icon icon-user icon--large" aria-hidden="true"></i></a>'
+%}
+
+<main role="main" id="content">
+
+  <div class="ds44-container-large">
+
+		<div class="ds44-lightBG ds44-posRel">
+			<div class="ds44-inner-container ds44--xl-padding-t ds44--m-padding-b ds44-tablette-reduced-pt">
+				<div class="ds44-grid12-offset-2">
+					<div class="ds44-tablette-reduced-mt">{% include breadcrumb/breadcrumb.html %}</div>
+                    <h1 class="h1-like mbs mts" id="idTitre1"> Connectez-vous </h1>
+				</div>
+			</div>
+		</div>
+		<div class="ds44-img50 ds44--xxl-padding-tb">
+			<div class="ds44-inner-container">
+				<div class="ds44-grid12-offset-1">
+          <section class="ds44-box ds44-theme">
+            <div class="ds44-innerBoxContainer">
+              <div class="grid-12-small-1">
+
+                  <div class="col-5-small-1">
+                      <form>
+                          <h2 class="h4-like ds44-mb-std">J’ai déjà un compte</h2>
+                          <p>Cet espace est réservé aux assistantes et assistants maternel agréés par le Département.</p>
+                          <p>Si vous avez oublié votre identifiant (choisi au moment de votre insription), essayez avec votre numéro de dossier d'agrément présent sur votre attestation.</p>
+                          <div class="ds44-mb3">
+                              {% include form/field/input/standard.html type="number" label="Identifiant" %}
+                          </div>
+                          <div class="ds44-mb3">
+                              {% include form/field/input/standard.html type="password" label="Mot de passe"  %}
+                          </div>
+                          <div>
+                              {% include form/layout/checkboxes.html choices="connect:Rester connecté" %}
+                          </div>
+                          <button class="ds44-btnStd ds44-btn--invert ds44-bntALeft ds44-mtb1" title="Valider l'accès à votre compte">
+                              <span class="ds44-btnInnerText">Se connecter</span><i class="icon icon-long-arrow-right" aria-hidden="true"></i>
+                          </button>
+                          <p class="ds44-noMrg"><a href="#">Mot de passe oublié ?</a></p>
+                      </form>
+                  </div>
+
+                  <div class="col-2-small-1 txtcenter ds44-h100">
+                      <div class="ds44-separator ds44-flex-valign-center ds44-flex-align-center ds44-flex-container"></div>
+                  </div>
+
+                  <div class="col-5-small-1">
+                      <h2 class="h4-like ds44-mb-std" id="titreCreerCompte">Je n'ai pas encore de compte</h2>
+                      <section class="ds44-ongletsContainer">
+                          <div class="js-tabs ds44-tabs" data-existing-hx="h2" data-tabs-prefix-class="ds44" id="onglets">
+                              <nav role="navigation" aria-label="xxx" id="yyy" class="ds44-flex-container ds44-fg1 ds44-navOnglets ds44-theme ds44-hiddenPrint">
+                                  <ul class="ds44-fg1 ds44-flex-container ds44-list js-tabs" id="tabs">
+                                      <li class="ds44-tabs__item ds44-fg1" id="tabs__1">
+                                          <a id="label_id_first" href="#id_first" class="js-tablist__link ds44-tabs__link" aria-current="true">Vous êtes assistant•e maternell</a>
+                                      </li>
+                                      <li class="ds44-tabs__item ds44-fg1" id="tabs__2">
+                                          <a id="label_id_second" href="#id_second" class="js-tablist__link ds44-tabs__link" aria-disabled="true">Vous êtes parent</a>
+                                      </li>
+                                  </ul>
+                              </nav>
+                              <div id="id_first" class="js-tabcontent ds44-tabs__content ds44-inner-container ds44-mtb3" style='display:none'>
+                                  <a name="onglet-1" id="onglet-1"></a>
+                                  <h2 class="visually-hidden" tabindex="-1">1er onglet</h2>
+                                  <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc placerat, ex eu pharetra sollicitudin, nibh libero pellentesque urna, sed semper lorem neque ut diam.</p>
+                                  <button class="ds44-btnStd ds44-mt2"><span class="ds44-btnInnerText">Activer votre compte</span><i class="icon icon-long-arrow-right" aria-hidden="true"></i></button>
+                                  <p class="ds44-keyboard-show"><a href="#label_id_first">Revenir au premier onglet</a></p>
+                              </div>
+                              <div id="id_second" class="js-tabcontent ds44-tabs__content ds44-inner-container ds44-mtb3" style='display:none'>
+                                  <a name="onglet-2" id="onglet-2"></a>
+                                  <h2 class="visually-hidden" tabindex="-1">2e onglet</h2>
+                                  <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc placerat, ex eu pharetra sollicitudin, nibh libero pellentesque urna, sed semper lorem neque ut diam.</p>
+                                  <button class="ds44-btnStd ds44-mt2"><span class="ds44-btnInnerText">Activer votre compte</span><i class="icon icon-long-arrow-right" aria-hidden="true"></i></button>
+                                  <p class="ds44-keyboard-show"><a href="#label_id_second">Revenir au deuxième onglet</a></p>
+                              </div>
+                          </div>
+                      </section>
+                  </div>
+
+              </div>
+            </div>
+          </section>
+				</div>
+			</div>
+		</div>
+
+	</div>
+
+</main>
+
+{% include footer/footer-assmat.html %}
