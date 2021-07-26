@@ -102,6 +102,14 @@ class FormLayoutAbstract {
             return false;
         }
 
+        // We need to deactivate the submit button once clicked
+        // If the form is incorrect, it shall be reactivated
+        let submitBtn = object.formElement.querySelector('.ds44-btnStd');
+        if (submitBtn) {
+            submitBtn.setAttribute("disabled", true);
+            submitBtn.setAttribute("aria-disabled", true);
+        }
+
         // Submission is in two steps :
         //  - First we ask the form components if they are valid through event dispatching
         //  - Then, once everyone came back, we make a decision on the form validity
@@ -133,6 +141,12 @@ class FormLayoutAbstract {
                 const firstErrorField = object.formElement.querySelector('[aria-invalid="true"]');
                 if (firstErrorField) {
                     MiscAccessibility.setFocus(firstErrorField);
+                }
+
+                // We need to activate the submit button if the form is incorrect
+                if (submitBtn) {
+                    submitBtn.removeAttribute("disabled");
+                    submitBtn.removeAttribute("aria-disabled");
                 }
 
                 return false;
