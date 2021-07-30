@@ -793,6 +793,9 @@ main {
             min-height: 620px;
         }
     }
+    .ds44-homepage-container--assmat > div {
+        height: auto !important;
+    }
 
 }
 
@@ -823,6 +826,7 @@ main {
             }
         }
     }
+
 }
 
 @media (max-width: $ds44-medium - .0625) {

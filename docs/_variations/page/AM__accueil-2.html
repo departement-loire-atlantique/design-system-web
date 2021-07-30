@@ -10,27 +10,27 @@ layout: pattern
 
 <main role="main" id="content">
 
-  <section class="ds44-container-large ds44-homepage-container ds44--xxl-padding-b">
+  <section class="ds44-container-large ds44-homepage-container ds44-homepage-container--assmat ds44--xxl-padding-b">
       <div class="grid-12-small-1">
-          <div class="col-8-small-1">
+          <div class="col-8-large-12">
               {% include carrousel/carrousel-homepage.html titreCarrousel="Votre assistant•e<br /> maternelle en<br /> Loire-Atlantique" %}
           </div>
-          <div class="col-4-small-1 col-4-large-5 ds44-bgGray ds44--m-padding-tb">
+          <div class="col-4-large-12 ds44-bgGray ds44--m-padding-tb">
               <section id="en1clic" class="ds44-mlr35 ds44-mtb2 ds44-mobile-reduced-mar">
                   <h2 class="h2-like" id="titreEn1Clic">Rechercher un•e assistant•e maternelle</h2>
                   <p class="ds44-mb2">Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna.</p>
                   <form>
                       <div class="ds44-champsLies ds44-js-linked-fields ds44-fieldContainer ds44-noMrg">
-                        {% include form/field/input/autocomplete.html label="Lieu" required="true" type="address" url="https://api-adresse.data.gouv.fr/search/?limit=5&citycode=44109" attributes='data-mode="select-only"' class="ds44-inpLarge" title="Sélectionner Champ adresse - mise à jour automatique des sous-thèmes Rayon triés par ordre alphabétique" hasLocation="true" %}
-                        {% include form/field/select/standard.html label="Rayon" required="true" disabled="true" class="ds44-inpLarge" %}
+                        {% include form/field/input/autocomplete.html label="Lieu" required="true" type="address" url="https://api-adresse.data.gouv.fr/search/?limit=5&citycode=44109" attributes='data-mode="select-only"' title="Sélectionner Champ adresse - mise à jour automatique des sous-thèmes Rayon triés par ordre alphabétique" hasLocation="true" %}
+                        {% include form/field/select/standard.html label="Rayon" required="true" disabled="true" %}
                       </div>
                       <div class="">
-                          {% include form/field/select/checkbox.html label="Âge de l'enfant" required="true" class="ds44-inpLarge" %}
+                          {% include form/field/select/checkbox.html label="Âge de l'enfant" required="true" %}
                       </div>
                       <div class="">
-                          {% include form/field/select/checkbox.html label="À partir de" required="false" class="ds44-inpLarge" %}
+                          {% include form/field/select/checkbox.html label="À partir de" required="false" %}
                       </div>
-                      <button class="ds44-btnStd ds44-btnStd--large ds44-bntFullw ds44-bntALeft ds44-btn--contextual" title="Rechercher votre assistant•e maternelle en Loire-Atlantique"><span class="ds44-btnInnerText">Rechercher</span><i class="icon icon-long-arrow-right" aria-hidden="true"></i></button>
+                      <button class="ds44-btnStd ds44-bntFullw ds44-bntALeft ds44-btn--contextual" title="Rechercher votre assistant•e maternelle en Loire-Atlantique"><span class="ds44-btnInnerText">Rechercher</span><i class="icon icon-long-arrow-right" aria-hidden="true"></i></button>
                   </form>
               </section>
           </div>
