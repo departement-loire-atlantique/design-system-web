@@ -551,6 +551,19 @@ input[type=radio],
     }
 }
 
+.ds44-fieldVertical .ds44-fieldContainer {
+	margin-right: 0;
+	margin-bottom: 2.5rem; // marge identique au padding du ds44-facetteContainer
+
+	&:first-child {
+		margin-top: 2.5rem;
+	}
+
+	&:last-child {
+		margin-bottom: 0;
+	}
+}
+
 .ds44-labelStd {
     font-size: 1.4rem;
 }
@@ -1056,6 +1069,35 @@ input[type=radio],
     }
 
 }
+
+
+.ds44-fieldVertical .ds44-champsLies {
+
+	> .ds44-form__container,
+	> .ds44-form__checkbox_container,
+	> .ds44-form__radio_container {
+		display: block;
+	}
+
+	> .ds44-form__container:first-of-type,
+	> .ds44-form__checkbox_container:first-of-type,
+	> .ds44-form__radio_container:first-of-type {
+		width: 100%;
+		margin: 0;
+	}
+
+	> .ds44-form__container:last-of-type,
+	> .ds44-form__checkbox_container:last-of-type,
+	> .ds44-form__radio_container:last-of-type {
+		width: 100%;
+		margin: 0;
+	}
+
+	> .ds44-form__container:last-of-type {
+		margin-top: 2.5rem;
+	}
+}
+
 
 .ds44-fieldContainer--select {
     .ds44-champsLies.ds44-fieldContainer {
