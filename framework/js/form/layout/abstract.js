@@ -105,8 +105,8 @@ class FormLayoutAbstract {
         // We need to deactivate the submit button once clicked
         // If the form is incorrect, it shall be reactivated
         let submitBtn = object.formElement.querySelector('.ds44-btnStd');
-        let isSearch = object.formElement.hasAttribute("role") && object.formElement.getAttribute("role") == 'search';
-        if (submitBtn && !isSearch) {
+        let isFormWithBlockedSubmit = object.formElement.hasClass("ds44-js-oneSubmit");
+        if (submitBtn && isFormWithBlockedSubmit) {
             submitBtn.setAttribute("disabled", true);
             submitBtn.setAttribute("aria-disabled", true);
         }
@@ -145,8 +145,8 @@ class FormLayoutAbstract {
                 }
 
                 // We need to activate the submit button if the form is incorrect
-                let isSearch = object.formElement.hasAttribute("role") && object.formElement.getAttribute("role") == 'search';
-                if (submitBtn && !isSearch) {
+                let isFormWithBlockedSubmit = object.formElement.hasClass("ds44-js-oneSubmit");
+                if (submitBtn && isFormWithBlockedSubmit) {
                     submitBtn.removeAttribute("disabled");
                     submitBtn.removeAttribute("aria-disabled");
                 }
