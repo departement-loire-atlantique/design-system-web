@@ -37,9 +37,11 @@ footer .ds44-logo {
 }
 
 footer .ds44-logo--label {
-    width: 75px;
-    margin-right: 10px;
-    margin-left: 10px;
+  max-width: 75px;
+  margin-right: 10px;
+  margin-left: 10px;
+  max-height: 80px;
+  height: auto;
 }
 
 .ds44-icoLink--footer {
