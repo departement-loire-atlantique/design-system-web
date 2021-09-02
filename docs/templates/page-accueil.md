@@ -20,10 +20,7 @@ variations:
 - title: Accueil Site Observatoire
   pattern: page/SO__accueil.html
 
-- title: Accueil assmat.loire-atlantique.fr V1
-  pattern: page/AM__accueil.html
-
-- title: Accueil assmat.loire-atlantique.fr V2
+- title: Accueil assmat.loire-atlantique.fr
   pattern: page/AM__accueil-2.html
 
 ---
