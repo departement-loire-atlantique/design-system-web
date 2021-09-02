@@ -109,6 +109,9 @@ h2, .h2-like {
     display: block;
     margin-top: $ds44-margin-base !important;
   }
+  &--mobileSize {
+    font-size: 1.65em;
+  }
 
 }
 
