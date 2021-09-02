@@ -142,6 +142,83 @@
   width: 100%;
 }
 
+// Stepper
+.ds44-nav-stepper {
+  margin: 2rem 0;
+  width: 100%;
+
+  .ds44-nav-step {
+    text-align: center;
+    display: inline-block;
+    width: 100%;
+    a {
+      text-decoration: none;
+      display: inline-block;
+
+      .number {
+        border-radius: 3px;
+        display: block;
+        width: 33px;
+        height: 33px;
+        text-align: center;
+        font-weight: bold;
+        padding: 5px 0;
+        margin: 0 auto;
+
+        .icon {
+          line-height: 1;
+        }
+      }
+      .text {
+        margin-top:5px;
+        font-size: 22px;
+        display: block;
+        font-weight: bold;
+      }
+
+      &.active {
+        .number {
+          background-color: $ds44-background-dark;
+          color: $ds44-color-inverse;
+        }
+        .text {
+          color: $ds44-color-base;
+        }
+      }
+      &.inactive {
+        cursor: not-allowed;
+        .number {
+          background-color: #cccccc;
+          color:  $ds44-color-base;
+        }
+        .text {
+          color: $ds44-gray;
+        }
+      }
+      &.passed {
+        .number {
+          background-color: $ds44-LA;
+          color:  $ds44-color-base;
+        }
+        .text {
+          color: $ds44-gray;
+        }
+      }
+
+    }
+  }
+  .ds44-nav-step-sep {
+    width: 100%;
+    height: 3px;
+    background: $ds44-lightgray;
+    display: inline-block;
+    margin-top: 15px;
+
+    &.passed {
+      background: $ds44-background-dark;
+    }
+  }
+}
 
 
 // -------------
@@ -236,6 +313,36 @@
     .ds44-navListApplis {
         margin-left: $ds44-large-margin;
         margin-top: 8rem;
+    }
+
+    // Stepper
+    .ds44-nav-stepper {
+      margin: 2rem 0;
+      width: 100%;
+      flex-direction: column;
+
+      .ds44-nav-step {
+        text-align: left;
+        margin: 10px 0;
+        a {
+          text-decoration: none;
+          display: inline-block;
+
+          .number {
+            display: inline-block;
+            padding: 5px 0;
+            margin: 0 auto;
+          }
+          .text {
+            display: inline-block;
+            margin: 0 0 0 10px;
+          }
+
+        }
+      }
+      .ds44-nav-step-sep {
+        display: none;
+      }
     }
 
 }

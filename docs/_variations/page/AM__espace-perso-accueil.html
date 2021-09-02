@@ -43,12 +43,12 @@ layout: pattern
                                   <li><a href="#">Actualiser mes disponibilités</a></li>
                                   <li><a href="#">Changer mes autorisations de diffusion (Département, CAF, RAM)</a></li>
                               </ul>
-                              <p role="heading" aria-level="2" class="ds44-mt2">Mes démarches</p>
+                              <p role="heading" aria-level="2" class="ds44-mt3 ds44-box-heading">Mes démarches</p>
                               <ul class="">
                                   <li><a href="#">Déclarer un accueil</a></li>
                                   <li><a href="#">Déclarer une fin d’accueil</a></li>
                                   <li><a href="#">Consulter l’historique de mes déclarations</a></li>
-                                  <li><a href="#">Accueillir un•e stagiaire</a></li>
+                                  <li><a href="#">Accueillir un·e stagiaire</a></li>
                                   <li><a href="#">Prime d’aide à l’installation (CAF) - attestation sur l’honneur</a></li>
                               </ul>
                               <!-- <p class="ds44-mt2"><a href="#" >Se déconnecter</a></p> -->
@@ -74,7 +74,17 @@ layout: pattern
                                     {% include form/field/input/standard.html type="first-name" label="Prénom" required="true" %}
                                 </div>
                                 <div class="ds44-mb3">
-                                  {% include form/layout/radios.html name="radio2" choices="f:Fille,m:Garçon" required="true" list="true" %}
+                                  <div id="form-element-71300" data-name="radio2" class="ds44-form__radio_container ds44-form__container">
+                                    <p id="mandatory-message-form-element-71300" class="">Sexe*</p>
+                                    <div class="ds44-form__container ds44-checkBox-radio_list inbl">
+                                      <input type="radio" name="radio2" value="f" id="name-radio-form-element-71300-f" class="ds44-radio" required="" aria-describedby="mandatory-message-form-element-71300" data-bkp-aria-describedby="mandatory-message-form-element-71300"><label
+                                        id="label-radio-form-element-71300-f" for="name-radio-form-element-71300-f" class="ds44-radioLabel">Fille</label>
+                                    </div>
+                                    <div class="ds44-form__container ds44-checkBox-radio_list inbl">
+                                      <input type="radio" name="radio2" value="m" id="name-radio-form-element-71300-m" class="ds44-radio" required="" aria-describedby="mandatory-message-form-element-71300" data-bkp-aria-describedby="mandatory-message-form-element-71300"><label
+                                        id="label-radio-form-element-71300-m" for="name-radio-form-element-71300-m" class="ds44-radioLabel">Garçon</label>
+                                    </div>
+                                  </div>
                                 </div>
                                 <div class="ds44-mb3">
                                   {% include form/field/input/datepicker.html label="Né-e le" title="le : jour / mois / année" explanation="Ex : 20/05/2020" required="true" %}
@@ -86,7 +96,17 @@ layout: pattern
                               <div class=" ds44-mt4">
                                 <p class="h2-like" role="heading" aria-level="2">Représentant légal 1</p>
                                 <div class="ds44-mb3">
-                                  {% include form/layout/radios.html name="radio2" choices="f:Mme.,m:M." required="true" list="true" %}
+                                    <div id="form-element-13200" data-name="radio2" class="ds44-form__radio_container ds44-form__container">
+                                    <p id="mandatory-message-form-element-13200" class="">Civilité*</p>
+                                    <div class="ds44-form__container ds44-checkBox-radio_list inbl">
+                                      <input type="radio" name="radio2" value="f" id="name-radio-form-element-13200-f" class="ds44-radio" required="" aria-describedby="mandatory-message-form-element-13200" data-bkp-aria-describedby="mandatory-message-form-element-13200"><label
+                                        id="label-radio-form-element-13200-f" for="name-radio-form-element-13200-f" class="ds44-radioLabel">Mme.</label>
+                                    </div>
+                                    <div class="ds44-form__container ds44-checkBox-radio_list inbl">
+                                      <input type="radio" name="radio2" value="m" id="name-radio-form-element-13200-m" class="ds44-radio" required="" aria-describedby="mandatory-message-form-element-13200" data-bkp-aria-describedby="mandatory-message-form-element-13200"><label
+                                        id="label-radio-form-element-13200-m" for="name-radio-form-element-13200-m" class="ds44-radioLabel">M.</label>
+                                    </div>
+                                  </div>
                                 </div>
                                 <div class="ds44-mb3">
                                     {% include form/field/input/standard.html type="last-name" label="Nom" required="true" %}
@@ -110,7 +130,17 @@ layout: pattern
                               <div class=" ds44-mt4">
                                 <p class="h2-like" role="heading" aria-level="2">Représentant légal 2</p>
                                 <div class="ds44-mb3">
-                                  {% include form/layout/radios.html name="radio2" choices="f:Mme.,m:M." required="true" list="true" %}
+                                    <div id="form-element-13200" data-name="radio2" class="ds44-form__radio_container ds44-form__container">
+                                    <p id="mandatory-message-form-element-13200" class="">Civilité*</p>
+                                    <div class="ds44-form__container ds44-checkBox-radio_list inbl">
+                                      <input type="radio" name="radio2" value="f" id="name-radio-form-element-13200-f" class="ds44-radio" required="" aria-describedby="mandatory-message-form-element-13200" data-bkp-aria-describedby="mandatory-message-form-element-13200"><label
+                                        id="label-radio-form-element-13200-f" for="name-radio-form-element-13200-f" class="ds44-radioLabel">Mme.</label>
+                                    </div>
+                                    <div class="ds44-form__container ds44-checkBox-radio_list inbl">
+                                      <input type="radio" name="radio2" value="m" id="name-radio-form-element-13200-m" class="ds44-radio" required="" aria-describedby="mandatory-message-form-element-13200" data-bkp-aria-describedby="mandatory-message-form-element-13200"><label
+                                        id="label-radio-form-element-13200-m" for="name-radio-form-element-13200-m" class="ds44-radioLabel">M.</label>
+                                    </div>
+                                  </div>
                                 </div>
                                 <div class="ds44-mb3">
                                     {% include form/field/input/standard.html type="last-name" label="Nom" required="true" %}
