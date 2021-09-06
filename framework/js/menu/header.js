@@ -155,8 +155,8 @@ class MenuHeader {
         MiscAccessibility.hide(this.menu);
 
         if (this.triggerMenuElement) {
-            MiscAccessibility.setFocus(this.triggerMenuElement);
             MiscAccessibility.show(this.triggerMenuElement); // nécessaire pour empêcher l'apparition d'un tabindex -1 sur l'élément déclencheur 
+            MiscAccessibility.setFocus(this.triggerMenuElement);
         }
 
         this.triggerMenuElement = null;
