@@ -147,13 +147,18 @@
   margin: 2rem 0;
   width: 100%;
 
+  li {
+    margin-bottom: 0;
+  }
+
   .ds44-nav-step {
     text-align: center;
     display: inline-block;
     width: 100%;
-    a {
+    a, p {
       text-decoration: none;
       display: inline-block;
+      margin: 0;
 
       .number {
         border-radius: 3px;
@@ -186,9 +191,9 @@
         }
       }
       &.inactive {
-        cursor: not-allowed;
         .number {
-          background-color: #cccccc;
+          background-color: $ds44-color-inverse;
+          border: 1px solid #cccccc;
           color:  $ds44-color-base;
         }
         .text {
@@ -197,12 +202,28 @@
       }
       &.passed {
         .number {
-          background-color: $ds44-LA;
+          background-color: $ds44-contextual-color;
           color:  $ds44-color-base;
         }
         .text {
           color: $ds44-gray;
         }
+        &:focus,
+        &:hover,
+        &:active {
+          .number {
+            background-color: $ds44-contextual-hover!important;
+            box-shadow: 0px 13px 20px 0px rgba(0,0,0,0.35);
+            color: $ds44-color-base;
+          }
+          .text {
+            color: $ds44-color-base;;
+          }
+        }
+      }
+      &:after {
+        margin: 0;
+        padding: 0;
       }
 
     }
@@ -324,7 +345,7 @@
       .ds44-nav-step {
         text-align: left;
         margin: 10px 0;
-        a {
+        a, p {
           text-decoration: none;
           display: inline-block;
 
