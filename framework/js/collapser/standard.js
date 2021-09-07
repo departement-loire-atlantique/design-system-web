@@ -37,7 +37,7 @@ class CollapserStandard {
             return;
         }
 
-        if (object.buttonElement.classList.contains('show')) {
+        if (object.buttonElement.firstElementChild.classList.contains('show')) {
             // Hide
             this.hide(objectIndex);
 
@@ -59,7 +59,7 @@ class CollapserStandard {
         if (buttonLabel) {
             buttonLabel.innerText = MiscTranslate._('COLLAPSE');
         }
-        object.buttonElement.classList.add('show');
+        object.buttonElement.firstElementChild.classList.add('show');
         object.buttonElement.setAttribute('aria-expanded', 'true');
         panel.style.maxHeight = (panel.style.maxHeight ? null : panel.scrollHeight + 60 + 'px');
         MiscAccessibility.show(panel);
@@ -77,7 +77,7 @@ class CollapserStandard {
         if (buttonLabel) {
             buttonLabel.innerText = MiscTranslate._('EXPAND');
         }
-        object.buttonElement.classList.remove('show');
+        object.buttonElement.firstElementChild.classList.remove('show');
         object.buttonElement.setAttribute('aria-expanded', 'false');
         panel.style.maxHeight = null;
         MiscAccessibility.hide(panel);
