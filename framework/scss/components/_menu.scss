@@ -155,6 +155,8 @@
     text-align: center;
     display: inline-block;
     width: 100%;
+    position: relative;
+
     a, p {
       text-decoration: none;
       display: inline-block;
@@ -225,18 +227,27 @@
         margin: 0;
         padding: 0;
       }
-
     }
-  }
-  .ds44-nav-step-sep {
-    width: 100%;
-    height: 3px;
-    background: $ds44-lightgray;
-    display: inline-block;
-    margin-top: 15px;
-
-    &.passed {
-      background: $ds44-background-dark;
+    &:after  {
+      content: '';
+      width: 65%;
+      height: 2px;
+      background: $ds44-lightgray;
+      display: flex;
+      margin-top: 6px;
+      position: absolute;
+      top: 10px;
+      right: -35%;
+    }
+    &.liPassed {
+      &:after  {
+        background: $ds44-background-dark;
+      }
+    }
+    &:last-of-type {
+      &:after  {
+        display: none;
+      }
     }
   }
 }
@@ -360,9 +371,10 @@
           }
 
         }
-      }
-      .ds44-nav-step-sep {
-        display: none;
+
+        &:after {
+          display: none;
+        }
       }
     }
 
