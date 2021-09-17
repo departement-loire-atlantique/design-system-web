@@ -140,7 +140,7 @@ textarea {
     @include ds44-font-sizes(input);
     font-family: $ds44-font-family-base;
     border-radius: $ds44-border-radius;
-    padding: $ds44-padding-medium 4rem $ds44-padding-medium $ds44-padding-box;
+    padding: 1.1rem 4rem $ds44-padding-medium $ds44-padding-box;
     border: 1px solid $ds44-gray;
     min-width: 100%;
     vertical-align: middle;
