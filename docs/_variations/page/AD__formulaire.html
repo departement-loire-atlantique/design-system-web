@@ -20,7 +20,7 @@ layout: pattern
         <div class="ds44-inner-container ds44-grid12-offset-1">
             <p class="ds44-textLegend ds44-textLegend--mentions">Les champs marqués d’un astérisque * sont obligatoires</p>
             <form>
-                <div class="ds44-mb3">
+                <fieldset class="ds44-mb3">
                     <h2 class="h3-like">Vous êtes :</h2>
                     <ul class="ds44-list grid-12">
                         <li class="col-6 ds44-minTiny-margin-r">
@@ -48,7 +48,7 @@ layout: pattern
                             {% include form/field/input/standard.html type="email" label="Courriel" explanation="Exemple : monadresse@mail.com" required="true" %}
                         </li>
                     </ul>
-                </div>
+                </fieldset>
 
                 {% include page-utile/AD_choix_form.html %}
             </form>
