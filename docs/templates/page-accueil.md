@@ -8,10 +8,10 @@ description: Modèle de page agenda basée sur le template "home".
 status: Validé
 
 variations:
-- title: Accueil Loire-Atlantique.fr
+- title: Accueil Loire-Atlantique
   pattern: page/LA__accueil.html
 
-- title: Accueil handicap.loire-atlantique.fr
+- title: Accueil Handicap
   pattern: page/HA__accueil.html
 
 - title: Accueil Sites Grand Patrimoines
@@ -20,7 +20,7 @@ variations:
 - title: Accueil Site Observatoire
   pattern: page/SO__accueil.html
 
-- title: Accueil assmat.loire-atlantique.fr
+- title: Accueil Assmat
   pattern: page/AM__accueil-2.html
 
 ---
