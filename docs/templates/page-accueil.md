@@ -26,4 +26,4 @@ variations:
 ---
 ## Utilisation
 
-Les pages d'accueil des site Loire-Atlantique.fr, du site Handicap, de la page d'accueil type des sites Grand Patrimoines
+Les pages d'accueil des sites Loire-Atlantique.fr, Handicap, Patrimoniaux, Observatoire et Assmat.
