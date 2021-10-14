@@ -65,7 +65,7 @@ layout: pattern
                         <div class="ds44--3xl-padding">
                           <form>
                               <p>Les champs suivis d’un * sont obligatoires.</p>
-                              <div class=" ds44-mt3">
+                              <fieldset class=" ds44-mt3">
                                 <p class="h2-like" role="heading" aria-level="2">Je déclare que l’enfant</p>
                                 <div class="ds44-mt4">
                                     {% include form/field/input/standard.html type="last-name" label="Nom" required="true" %}
@@ -92,8 +92,8 @@ layout: pattern
                                 <div class="ds44-mb3">
                                   {% include form/field/input/datepicker.html label="Est accueilli-e depuis" title="le : jour / mois / année" explanation="Ex : 20/05/2020" required="true" %}
                                 </div>
-                              </div>
-                              <div class=" ds44-mt4">
+                              </fieldset>
+                              <fieldset class=" ds44-mt4">
                                 <p class="h2-like" role="heading" aria-level="2">Représentant légal 1</p>
                                 <div class="ds44-mb3">
                                     <div id="form-element-13200" data-name="radio2" class="ds44-form__radio_container ds44-form__container">
@@ -126,8 +126,8 @@ layout: pattern
                                 <div class="ds44-mb3">
                                     {% include form/field/input/standard.html label="Complément d'adresse" %}
                                 </div>
-                              </div>
-                              <div class=" ds44-mt4">
+                              </fieldset>
+                              <fieldset class=" ds44-mt4">
                                 <p class="h2-like" role="heading" aria-level="2">Représentant légal 2</p>
                                 <div class="ds44-mb3">
                                     <div id="form-element-13200" data-name="radio2" class="ds44-form__radio_container ds44-form__container">
@@ -151,7 +151,7 @@ layout: pattern
                                 <div class="ds44-mb3">
                                   {% include form/layout/checkboxes.html choices="moreInfo:Saisir une adresse ou un numéro de téléphone différent pour le représentant légal 2." %}
                                 </div>
-                              </div>
+                              </fieldset>
                               <div class="ds44-flex ds44-fsb">
                                 <button class="ds44-btnStd"><span class="ds44-btnInnerText">Enregistrer en brouillon</span></button>
                                 <button class="ds44-btnStd ds44-btn--invert" title="Passer à l'étape suivante"><span class="ds44-btnInnerText">Étape suivante</span><i class="icon icon-long-arrow-right" aria-hidden="true"></i></button>
