@@ -52,6 +52,14 @@ class ButtonOrejime {
             window.orejime.show();
         }
     }
+    consentMedia() {
+        if (window.orejime) {
+        	var app = window.orejime.internals.manager.getApp("streaming-video");
+        	console.log(window.orejime.internals.manager.getConsent(app));
+            window.orejime.internals.manager.updateConsent(app,true);
+            window.orejime.internals.manager.saveAndApplyConsents();
+        }
+    }
 }
 
 // Singleton
