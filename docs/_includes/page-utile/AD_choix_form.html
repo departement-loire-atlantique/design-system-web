@@ -2,102 +2,102 @@
     <header class="txtcenter ds44--xl-padding-b">
         <h2 class="h2-like" id="title_formAD_choices">Votre demande concerne :</h2>
     </header>
-    <div class="ds44-inner-container ds44-grid12-offset-1">
-        <div class="ds44-choiceYN txtcenter ds44--m-padding-t ds44--xl-padding-b js-tabs">
-            <button class="ds44-btnStd js-tablist__link" type="button" aria-describedby="title_formAD_choices" aria-pressed="false" aria-label="Option 1 : un jugement" data-href="#ds44-choice1" data-statistic='{"name": "declenche-evenement","category": "Avis page","action": "Jugement"}'><span class="ds44-btnInnerText">Un jugement</span></button>
-            <button class="ds44-btnStd js-tablist__link" type="button" aria-describedby="title_formAD_choices" aria-pressed="false" aria-label="Option 2 : autres demandes" data-href="#ds44-choice2" data-statistic='{"name": "declenche-evenement","category": "Avis page","action": "Autres"}'><span class="ds44-btnInnerText">Autres</span></button>
-        </div>
-        <div id="ds44-choice1" class="hidden" aria-hidden="true">
-            <form data-is-ajax="true" action="/">
-                <div class="grid-1-small-1 ds44-box">
-                    <fieldset class="ds44-mb3">
-                        <h3 class="h3-like">Caractéristiques du jugement</h3>
-                        <div class="grid-12">
-                            <div class="col-6 ds44-minTiny-margin-r">
-                                {% include form/field/input/standard.html label="Année du jugement" required="true" title="Année du jugement" explanation="Ex : 1939" %}
-                            </div>
-                            <div class="col-6 ds44-minTiny-margin-l">
-                                {% include form/field/input/standard.html label="Jour et mois" title="Jour / mois du jugement" explanation="Ex : 20/05" %}
-                            </div>
-                            <div class="col-12">
-                                <p class="ds44-textLegend ds44-textLegend--mentions">Seules les demandes de jugement de plus de 30 ans seront traitées. Pour les documents de moins de 30 ans, vous êtes invités à contacter le tribunal concerné.</p>
-                            </div>
-                            <div class="col-12">
-                                {% include form/field/input/standard.html label="Lieu du tribunal" required="true" %}
-                            </div>
-                        </div>
-                    </fieldset>
-                    <fieldset class="ds44-mb3">
-                        <h3 class="h3-like">Nom de la ou des personnes concernées par le jugement</h3>
-                        <fieldset class="grid-12">
-                            <legend class="visually-hidden col-12">Pour la personne 1</legend>
-                            <div class="col-6 ds44-minTiny-margin-r">
-                                {% include form/field/input/standard.html type="last-name" label="Nom" required="true" %}
-                            </div>
-                            <div class="col-6 ds44-minTiny-margin-l">
-                                {% include form/field/input/standard.html type="first-name" label="Prénom" required="true" %}
+        <div class="ds44-inner-container ds44-grid12-offset-1">
+            <div class="ds44-choiceYN txtcenter ds44--m-padding-t ds44--xl-padding-b js-tabs">
+                <button class="ds44-btnStd js-tablist__link" type="button" aria-describedby="title_formAD_choices" aria-pressed="false" aria-label="Option 1 : un jugement" data-href="#ds44-choice1" data-statistic='{"name": "declenche-evenement","category": "Avis page","action": "Jugement"}'><span class="ds44-btnInnerText">Un jugement</span></button>
+                <button class="ds44-btnStd js-tablist__link" type="button" aria-describedby="title_formAD_choices" aria-pressed="false" aria-label="Option 2 : autres demandes" data-href="#ds44-choice2" data-statistic='{"name": "declenche-evenement","category": "Avis page","action": "Autres"}'><span class="ds44-btnInnerText">Autres</span></button>
+            </div>
+            <div id="ds44-choice1" class="hidden" aria-hidden="true">
+                <form data-is-ajax="true" action="/">
+                    <div class="grid-1-small-1 ds44-box">
+                        <fieldset class="ds44-mb3">
+                            <legend class="h3-like">Caractéristiques du jugement</legend>
+                            <div class="grid-12">
+                                <div class="col-6 ds44-minTiny-margin-r">
+                                    {% include form/field/input/standard.html label="Année du jugement" required="true" title="Année du jugement" explanation="Ex : 1939" %}
+                                </div>
+                                <div class="col-6 ds44-minTiny-margin-l">
+                                    {% include form/field/input/standard.html label="Jour et mois" title="Jour / mois du jugement" explanation="Ex : 20/05" %}
+                                </div>
+                                <div class="col-12">
+                                    <p class="ds44-textLegend ds44-textLegend--mentions">Seules les demandes de jugement de plus de 30 ans seront traitées. Pour les documents de moins de 30 ans, vous êtes invités à contacter le tribunal concerné.</p>
+                                </div>
+                                <div class="col-12">
+                                    {% include form/field/input/standard.html label="Lieu du tribunal" required="true" %}
+                                </div>
                             </div>
                         </fieldset>
-                        <fieldset class="grid-12">
-                            <legend class="visually-hidden col-12">Pour la personne 2</legend>
-                            <div class="col-6 ds44-minTiny-margin-r">
-                                {% include form/field/input/standard.html type="last-name" label="Nom" title="Nom de la seconde personne" %}
-                            </div>
-                            <div class="col-6 ds44-minTiny-margin-l">
-                                {% include form/field/input/standard.html type="first-name" label="Prénom" title="Prénom de la seconde personne" %}
+                        <fieldset class="ds44-mb3">
+                            <legend class="h3-like">Nom de la ou des personnes concernées par le jugement</legend>
+                            <fieldset class="grid-12">
+                                <legend class="visually-hidden col-12">Pour la personne 1</legend>
+                                <div class="col-6 ds44-minTiny-margin-r">
+                                    {% include form/field/input/standard.html type="last-name" label="Nom" required="true" %}
+                                </div>
+                                <div class="col-6 ds44-minTiny-margin-l">
+                                    {% include form/field/input/standard.html type="first-name" label="Prénom" required="true" %}
+                                </div>
+                            </fieldset>
+                            <fieldset class="grid-12">
+                                <legend class="visually-hidden col-12">Pour la personne 2</legend>
+                                <div class="col-6 ds44-minTiny-margin-r">
+                                    {% include form/field/input/standard.html type="last-name" label="Nom" title="Nom de la seconde personne" %}
+                                </div>
+                                <div class="col-6 ds44-minTiny-margin-l">
+                                    {% include form/field/input/standard.html type="first-name" label="Prénom" title="Prénom de la seconde personne" %}
+                                </div>
+                            </fieldset>
+                        </fieldset>
+                        <fieldset class="ds44-mb3">
+                            <legend class="h3-like">Motif du jugement</legend>
+                            <div class="grid-12">
+                                <div class="col-6 ds44-minTiny-margin-r">
+                                    {% include form/field/select/standard.html label="Motif du jugement" %}
+                                </div>
+                                <div class="col-6 ds44-minTiny-margin-l">
+                                    {% include form/field/input/standard.html label="Autre : précisez" %}
+                                </div>
                             </div>
                         </fieldset>
-                    </fieldset>
-                    <fieldset class="ds44-mb3">
-                        <h3 class="h3-like">Motif du jugement</h3>
-                        <div class="grid-12">
-                            <div class="col-6 ds44-minTiny-margin-r">
-                                {% include form/field/select/standard.html label="Motif du jugement" %}
+                        <fieldset class="ds44-mb3">
+                            <legend class="h3-like">Contexte et motivations de la demande</legend>
+                            <div class="grid-12">
+                                <div class="col-12">
+                                    {% include form/field/input/textarea.html label="Mention texte libre" required="true" %}
+                                </div>
                             </div>
-                            <div class="col-6 ds44-minTiny-margin-l">
-                                {% include form/field/input/standard.html label="Autre : précisez" %}
-                            </div>
+                        </fieldset>
+                        <div class="txtcenter ds44-mt-std">
+                            <button class="ds44-btnStd" title="Envoyer votre demande aux Archives départementales">
+                                <span class="ds44-btnInnerText">Envoyer</span>
+                                <i class="icon icon-long-arrow-right" aria-hidden="true"></i>
+                            </button>
                         </div>
-                    </fieldset>
-                    <fieldset class="ds44-mb3">
-                        <h3 class="h3-like">Contexte et motivations de la demande</h3>
-                        <div class="grid-12">
-                            <div class="col-12">
-                                {% include form/field/input/textarea.html label="Mention texte libre" required="true" %}
-                            </div>
-                        </div>
-                    </fieldset>
-                    <div class="txtcenter ds44-mt-std">
-                        <button class="ds44-btnStd" title="Envoyer votre demande aux Archives départementales">
-                            <span class="ds44-btnInnerText">Envoyer</span>
-                            <i class="icon icon-long-arrow-right" aria-hidden="true"></i>
-                        </button>
                     </div>
-                </div>
-            </form>
-            <p class="ds44-keyboard-show"><a href="#ds44-choice1">Revenir au bouton Jugement</a></p>
-        </div>
-        <div id="ds44-choice2" class="hidden" aria-hidden="true">
-            <form data-is-ajax="true" action="/">
-                <div class="grid-1-small-1 ds44-box">
-                    {% assign savedAriaDescribedBy = ariaDescribedBy %}
-                    <fieldset class="ds44-mb3">
-                        <h3 class="h3-like">Votre demande</h3>
-                        <div class="grid-12">
-                            <div class="col-12">
-                                {% include form/field/input/textarea.html label="Mention texte libre" required="true" %}
+                </form>
+                <p class="ds44-keyboard-show"><a href="#ds44-choice1">Revenir au bouton Jugement</a></p>
+            </div>
+            <div id="ds44-choice2" class="hidden" aria-hidden="true">
+                <form data-is-ajax="true" action="/">
+                    <div class="grid-1-small-1 ds44-box">
+                        {% assign savedAriaDescribedBy = ariaDescribedBy %}
+                        <fieldset class="ds44-mb3">
+                            <legend class="h3-like">Votre demande</legend>
+                            <div class="grid-12">
+                                <div class="col-12">
+                                    {% include form/field/input/textarea.html label="Mention texte libre" required="true" %}
+                                </div>
                             </div>
+                        </fieldset>
+                        <div class="txtcenter ds44-mt-std">
+                            <button class="ds44-btnStd" title="Envoyer votre demande aux Archives départementales">
+                                <span class="ds44-btnInnerText">Envoyer</span>
+                                <i class="icon icon-long-arrow-right" aria-hidden="true"></i>
+                            </button>
                         </div>
-                    </fieldset>
-                    <div class="txtcenter ds44-mt-std">
-                        <button class="ds44-btnStd" title="Envoyer votre demande aux Archives départementales">
-                            <span class="ds44-btnInnerText">Envoyer</span>
-                            <i class="icon icon-long-arrow-right" aria-hidden="true"></i>
-                        </button>
                     </div>
-                </div>
-            </form>
-            <p class="ds44-keyboard-show"><a href="#ds44-choice2">Revenir au bouton Autres</a></p>
+                </form>
+                <p class="ds44-keyboard-show"><a href="#ds44-choice2">Revenir au bouton Autres</a></p>
+            </div>
         </div>
-    </div>
 </section>
