@@ -14,14 +14,20 @@ class ButtonOrejime {
         if (window.orejime) {
             const learnMoreButtonElement = document.querySelector('.orejime-Notice-learnMoreButton');
             const modifyPrefsButtonElement = document.querySelector('.ds44-js-orejime-show');
+            const consentMediaButtonElement = document.querySelectorAll('[data-consent="accept-streaming-cookie"]');
 
-            if (learnMoreButtonElement || modifyPrefsButtonElement) {
+            if (learnMoreButtonElement || modifyPrefsButtonElement || consentMediaButtonElement) {
                 this.isInitialized = true;
                 if (learnMoreButtonElement) {
                     MiscEvent.addListener('click', this.showMore.bind(this), learnMoreButtonElement);
                 }
                 if (modifyPrefsButtonElement) {
                     MiscEvent.addListener('click', this.show.bind(this), modifyPrefsButtonElement);
+                }
+                if (consentMediaButtonElement) {
+                	consentMediaButtonElement.forEach((element) => {
+                		MiscEvent.addListener('click', this.consentMedia.bind(this), element);
+                    });
                 }
             }
             else {
@@ -44,6 +50,14 @@ class ButtonOrejime {
     show () {
         if (window.orejime) {
             window.orejime.show();
+        }
+    }
+    consentMedia() {
+        if (window.orejime) {
+        	var app = window.orejime.internals.manager.getApp("streaming-video");
+        	console.log(window.orejime.internals.manager.getConsent(app));
+            window.orejime.internals.manager.updateConsent(app,true);
+            window.orejime.internals.manager.saveAndApplyConsents();
         }
     }
 }

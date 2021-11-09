@@ -26,10 +26,14 @@ variations:
 - title: Applications
   description: Menu des applis et sites, ouvert depuis le menu de navigation principal niveau 1 (sous les réseaux sociaux)
   pattern: menu/navigation-applis.html
-  
+
 - title: Menu intérieur
   description: Menu de navigation intérieur de type "accordéon"
   pattern: menu/menu-navigation-interieur.html
+
+- title: Menu Étapes
+  description: Menu de navigation étapes par étapes (stepper)
+  pattern: menu/nav-stepper.html
 ---
 
 ## Note d'intégration

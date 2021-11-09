@@ -444,7 +444,37 @@ a.ds44-btnStd--retourPage {
       line-height: 1;
     }
   }
+
 }
+
+.ds44-btnStd {
+  &--inforoutes {
+
+    .ds44-icoInfoRoutes {
+      padding: 3px;
+      border-radius: 50%;
+      font-size: 1.1em;
+      vertical-align: baseline;
+      display: inline-block;
+      width: 33px;
+      height: 33px;
+      text-align: center;
+      border: 2px solid $ds44-light;
+      box-shadow: 0px 2px 9px 0px rgba(0, 0, 0, 0.35);
+
+      &.orangeFlag {
+        background: $ds44-app-orangeFlag;
+        color: $ds44-dark;
+      }
+      &.redFlag {
+        background: $ds44-app-redFlag;
+        color: $ds44-light;
+      }
+    }
+
+  }
+}
+
 
 .ds44-btnOverlay--language {
     visibility: hidden;

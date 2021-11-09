@@ -648,6 +648,10 @@
         break-inside: avoid-column; /* W3C */
     }
 
+    > .ds44-noCut { // prevent break inside the element
+        display: block;
+    }
+
     li > a { // prevent break inside the container ds44-noCut
         -webkit-column-break-inside: avoid; /* Chrome, Safari, Opera */
         page-break-inside: avoid; /* Firefox */
@@ -910,6 +914,29 @@
     }
 }
 
+.ds44-modal-container {
+    .ds44-icoInfoRoutes {
+      margin-right: 15px;
+      padding: 4px;
+      border-radius: 50%;
+      font-size: 1.1em;
+      vertical-align: baseline;
+      display: inline-block;
+      width: 30px;
+      height: 30px;
+      text-align: center;
+
+      &.orangeFlag {
+        background: $ds44-app-orangeFlag;
+        color: $ds44-dark;
+      }
+      &.redFlag {
+        background: $ds44-app-redFlag;
+        color: $ds44-light;
+      }
+    }
+}
+
 /* === Text effects === */
 
 .ds44-txtBulle {
@@ -1016,8 +1043,8 @@
 /* === LINKS === */
 
 .ds44-inblLinks {
-    display: inline-block;
-    margin-right: 1rem 0 .5rem 0;
+    display: inline-block !important;
+    margin-right: 1rem ;
     white-space: nowrap;
 }
 
@@ -1030,6 +1057,16 @@
 
     &:hover, &:focus, &:active {
         text-decoration: underline;
+    }
+
+}
+
+.ds44-linkUnderline {
+    text-decoration: underline;
+    padding: 0;
+
+    &:hover, &:focus, &:active {
+        text-decoration: none;
     }
 
 }

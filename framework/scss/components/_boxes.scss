@@ -210,12 +210,16 @@
 .ds44-pictoStore {
     height: 32px;
     margin-bottom: 10px;
+
+    &--bigger {
+      height: 45px;
+    }
 }
 
-.PortletCarousel + .PortletPush {
-  padding-top: 0;
-  margin-top: -4rem;
-}
+// .PortletCarousel + .PortletPush {
+//   padding-top: 0;
+//   margin-top: -4rem;
+// }
 
 .PortletPush {
   padding: 2rem 2rem 4rem 2rem;

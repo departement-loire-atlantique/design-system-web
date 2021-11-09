@@ -32,7 +32,6 @@
 .ds44-video-container {
     position: relative;
     width: 100%;
-    padding-bottom: 56.25%;
 
     .ds44-video-item {
         position: absolute;
@@ -43,6 +42,33 @@
         border: 0;
     }
 }
+
+.ds44-cookie-overlay-container {
+	position: relative;
+    width: 100%;
+    overflow: hidden;
+
+    .ds44-media-overlay {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        border: 0;
+        background-color: #000;
+    }
+    
+    .ds44-msg-media-desactive {
+        color: #fff;
+        display:table-cell;
+        text-align:center;
+        vertical-align:middle
+    }
+}
+
+
+
+
 
 /*RS-1436 reprise de code bootstrap pour l'apparence de video insere dans un wysiwyg*/
 .embed-responsive.embed-responsive-16by9 {
@@ -253,6 +279,28 @@ main {
         font-weight: normal;
     }
 
+}
+
+.ds44-titleContainer--home {
+
+  &.ds44-home-assmat {
+    justify-content: center;
+
+    .h1-like {
+        padding: 3rem 5rem 2rem 5rem;
+        position: relative;
+    }
+
+    .ds44-form-assmat {
+      z-index: 2;
+      padding: 0 5rem 3rem 5rem;
+    }
+
+    .ds44-alphaGradient--header {
+      height: 70%;
+      bottom: 0;
+    }
+  }
 }
 
 
@@ -771,6 +819,9 @@ main {
             min-height: 620px;
         }
     }
+    .ds44-homepage-container--assmat > div {
+        height: auto !important;
+    }
 
 }
 
@@ -801,6 +852,7 @@ main {
             }
         }
     }
+
 }
 
 @media (max-width: $ds44-medium - .0625) {
@@ -851,7 +903,15 @@ main {
             padding: 10rem 3rem 3rem 3rem;
             margin: 0;
         }
+
+        .ds44-titleContainer--home.ds44-home-assmat {
+          .ds44-form-assmat {
+            z-index: 2;
+            padding:  0 3rem 5rem 3rem;
+          }
+        }
     }
+
 
 }
 

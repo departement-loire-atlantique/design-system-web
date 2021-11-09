@@ -1,0 +1,115 @@
+---
+layout: pattern
+---
+
+{% include header/inc-header.html
+    rawLogo=true
+    logo='<picture class="ds44-logo"><img src="../../assets/images/logos/logo-cd44-assmat.svg" alt="Retour à l&apos;accueil site assitantes maternelles en Loire-Atlantique (ASSMAT)" /></picture>'
+    variante2='<a class="ds44-btnIcoText--maxi ds44--xl-padding" tabindex="0"><span class="ds44-btnInnerText">Connexion</span><i class="icon icon-user icon--large" aria-hidden="true"></i></a>'
+%}
+
+<main role="main" id="content">
+
+	<section class="ds44-container-large">
+      <div class="ds44-lightBG">
+  			<div class="ds44-inner-container ds44--xl-padding-t ds44--l-padding-b ds44-mobile-reduced-pt">
+  				<div class="ds44-grid12-offset-2">
+  					{% include breadcrumb/breadcrumb.html %}
+  					<h1 class="h1-like mbs mts ds44-mobile-reduced-mb ds44-mobile-reduced-mt" id="idTitre1">Bonjour Aude<br/>DURANT MARTIN</h1>
+            <p>Numéro de dossier : 511586</p>
+            <p">Dernière actualisation : 12/09/19</p>
+  				</div>
+  			</div>
+  		</div>
+	</section>
+
+  <section class="ds44-container-large">
+      <div class="ds44-mt3 ds44--xl-padding-t">
+          <div class="ds44-inner-container">
+              <div class="grid-12-medium-1 grid-12-small-1">
+
+                  <aside class="col-4 ds44-hide-tinyToLarge ds44-js-aside-summary ds44-mb35">
+                      <section class="ds44-box ds44-theme ">
+                          <div class="ds44-innerBoxContainer ">
+                              <!-- <p><a href="#">Accueil espace personnel</a></p>
+                              <p role="heading" aria-level="2" class=" ds44-mt2">Mon compte</p>
+                              <ul class="">
+                                  <li><a href="#">Modifier mon identifiant (login) / mot de passe</a></li>
+                                  <li><a href="#">Changer mes préférences de contact (E-mail / SMS)</a></li>
+                              </ul> -->
+                              <p role="heading" aria-level="2" class="ds44-box-heading">Mon profil sur le site</p>
+                              <ul class="">
+                                  <li><a href="#">Afficher / masquer mon profil</a></li>
+                                  <li><a href="#">Modifier mes contacts (tél et e-mail) et leur visibilité</a></li>
+                                  <li><a href="#">Modifier mon offre d’accueil</a></li>
+                                  <li><a href="#">Actualiser mes disponibilités</a></li>
+                                  <li><a href="#">Changer mes autorisations de diffusion (Département, CAF, RAM)</a></li>
+                              </ul>
+                              <p role="heading" aria-level="2" class="ds44-mt3 ds44-box-heading">Mes démarches</p>
+                              <ul class="">
+                                  <li><a href="#">Déclarer un accueil</a></li>
+                                  <li><a href="#">Déclarer une fin d’accueil</a></li>
+                                  <li><a href="#">Consulter l’historique de mes déclarations</a></li>
+                                  <li><a href="#">Accueillir un·e stagiaire</a></li>
+                                  <li><a href="#">Prime d’aide à l’installation (CAF) - attestation sur l’honneur</a></li>
+                              </ul>
+                              <!-- <p class="ds44-mt2"><a href="#" >Se déconnecter</a></p> -->
+                          </div>
+                      </section>
+                  </aside>
+
+                  <div class="col-1 grid-offset ds44-hide-tinyToLarge"></div>
+
+                  <article class="col-7 ds44-contenuDossier">
+                      <p class="ds44-introduction">Vous pouvez dans cet espace gérer les informations personnelles et professionnelles qui seront affiché »es sur le site assmat.</p>
+
+                      <section class="ds44-contenuArticle">
+                          <h2 id="idTitre2">Accueils en cours</h2>
+                          <p>Seules les déclarations saisies via le site internet sont affichées ici. Merci de déclarer tous vos accueils en cours via le site, même si vous avez transmis vos déclarations par courrier.</p>
+                          <ul class="ds44-mtb3 ds44-multiCol ds44-list">
+                            <li class="ds44-noCut">{% include card/card--assmat-accueil.html nom="Maxence DE GIBON" %}</li>
+                            <li class="ds44-noCut">{% include card/card--assmat-accueil.html nom="Camille DE GIBON" %}</li>
+                            <li class="ds44-noCut">{% include card/card--assmat-accueil.html nom="Philéas KERMOGANT" %}</li>
+                            <li class="ds44-noCut">
+                              <section class="ds44-card ds44-card--noLink ds44-card--contact ds44-card--border">
+                                  <div class="ds44-card__section txtleft">
+                                    <button class="ds44-btnStd ds44-btn--invert">
+                                      <span class="ds44-btnInnerText">Déclarer un nouvel accueil</span>
+                                      <i class="icon icon-plus" aria-hidden="true"></i>
+                                    </button>
+                                  </div>
+                              </section>
+                            </li>
+                          </ul>
+                      </section>
+                      <section class="ds44-contenuArticle">
+                        <section class="ds44-innerBoxContainer ds44-borderContainer">
+                          <h2 id="idTitreBox2col-1" class="h2-like">Mes interlocuteurs</h2>
+
+                          <div class="grid-12-small-1">
+                            <div class="col col-6 ds44-mb3">
+                              <p aria-level="3" class="h4-like"><a href="#">Unité agrément des assistantes maternelles Nantes Nord - Nantes Ouest</a></p>
+                              <p class="ds44-docListElem mts"><i class="icon icon-marker ds44-docListIco" aria-hidden="true"></i><span class="visually-hidden">Adresse :</span>6 boulevard René Cassin<br />Pôle médico-social René Cassin<br />44323 Nantes</p>
+                              <p class="ds44-docListElem mts"><i class="icon icon-phone ds44-docListIco" aria-hidden="true"></i><span class="visually-hidden">Téléphone :</span>02 40 96 12 51</p>
+                            </div>
+                            <div class="col col-6 ds44-medToXlarge-pl3">
+                              <p aria-level="3" class="h4-like"><a href="#">Relais accueil petite enfance (RAPE) - Nantes-Nord</a></p>
+                              <p class="ds44-docListElem mts"><i class="icon icon-marker ds44-docListIco" aria-hidden="true"></i><span class="visually-hidden">Adresse :</span>37 route de La Chapelle-sur-Erdre <br />44300 Nantes<</p>
+                              <p class="ds44-docListElem mts"><i class="icon icon-phone ds44-docListIco" aria-hidden="true"></i><span class="visually-hidden">Téléphone :</span>02 40 83 05 17</p>
+                              <p class="ds44-docListElem mts"><i class="icon icon-mail ds44-docListIco" aria-hidden="true"></i><a href="#mailto:contact@loire-atlantique.fr" aria-label="Contacter Relais accueil petite enfance (RAPE) - Nantes-Nord par mail : contact@loire-atlantique.fr" title="Contacter par mail : Relais accueil petite enfance (RAPE) - Nantes-Nord">Contacter par mail</a></p>
+                            </div>
+                          </div>
+
+                        </section>
+                      </section>
+
+                  </article>
+              </div>
+          </div>
+      </div>
+  </section>
+
+
+</main>
+
+{% include footer/footer-assmat.html %}

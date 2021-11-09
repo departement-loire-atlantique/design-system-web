@@ -99,6 +99,7 @@
             .h2-like {
                 margin-left: calc(100% + 10rem);
                 width: 100%;
+                white-space: nowrap; // s'il y a un espace, passait automatiquement à la ligne
                 
                 @media (max-width: $ds44-medium - .0625) {
                     margin-left: 0;

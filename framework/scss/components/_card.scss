@@ -141,6 +141,48 @@
         transition-property: opacity;
         transition-timing-function: ease;
     }
+
+    .ds44-cardTitle {
+        .ds44-icoInfoRoutes {
+          margin-right: 15px;
+          padding: 5px;
+          border-radius: 50%;
+          font-size: 1.2em;
+          vertical-align: baseline;
+          display: inline-block;
+          width: 50px;
+          height: 50px;
+          text-align: center;
+
+          &.orangeFlag {
+            background: $ds44-app-orangeFlag;
+            color: $ds44-dark;
+          }
+          &.redFlag {
+            background: $ds44-app-redFlag;
+            color: $ds44-light;
+          }
+        }
+    }
+    &.ds44-card--noLink {
+      border: 0;
+
+      &:hover,
+      &:focus,
+      &:active {
+        box-shadow: none;
+      }
+    }
+    &.ds44-card--border {
+      background-color: $ds44-light;
+      border: 2px dashed $ds44-lightgray;
+      height: 100%;
+      min-height: 306px;
+      display: flex;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
 }
 
 a.ds44-card {
@@ -346,6 +388,63 @@ figure[role=figure]  + .ds44-card__section {
         @media (max-width: $ds44-small - .0625) {
             min-height: 100%;
         }
+    }
+}
+
+.ds44-card--horizontal {
+    &--inforoutes {
+
+      &:hover,
+      &:focus,
+      &:active,
+      &.active {
+        box-shadow: none;
+      }
+      .ds44-card__section--horizontal {
+        padding: 1rem;
+        display: block;
+        width: 100%;
+        text-align: center;
+
+        p {
+          margin: 0;
+          line-height: 1.2em;
+        }
+      }
+      &--bacs {
+        .h3-like {
+          font-size: 41px;
+        }
+        .ds44-bacs-info {
+          background-color: $ds44-light;
+          background-image: url(../../../assets/images/apps/ponts/img/file-attente.svg);
+          background-position: bottom;
+          background-repeat: no-repeat;
+          border: 1px solid $ds44-lightgray;
+          padding: 10px 0 40px 0;
+
+          &.no-img {
+            background-image: none;
+            padding: 10px 0;
+          }
+
+          > * {
+            padding: 0 10px;
+          }
+
+           li {
+            display: inline-block;
+            padding: 10px 20px 10px 0;
+            background: url(../../../assets/images/right.png) no-repeat right 5px center;
+            font-size: 14px;
+
+            &:last-child {
+              padding-right: 0;
+              background: none;
+            }
+          }
+        }
+      }
     }
 }
 

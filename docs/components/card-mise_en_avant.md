@@ -31,6 +31,10 @@ variations:
 - title: Élu
   description: La classe `ds44-card--verticalPicture` définit une tuile verticale prévue pour recevoir une image en en-tête de forme ronde et par la suite le descriptif de l élu.
   pattern: cards/card--MeA--elu.html
+
+- title: Assmat
+  description: On retrouve ce type de tuile sur la page d'accueil de l'espace personnel assmat.
+  pattern: cards/card--MeA--assmat.html
 ---
 
 ## Documentation
