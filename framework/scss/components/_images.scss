@@ -57,6 +57,14 @@
     object-fit: cover;
 }
 
+/* Spécifique image seule dans modale */
+
+.ds44-modal-container.show {
+    .ds44-imgRatio {
+        object-fit: contain;
+    }
+}
+
 /* Ratio img tuile 1/1 */
 .ds44-container-imgRatio--carre {
     padding-top: 100%;
