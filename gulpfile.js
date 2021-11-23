@@ -17,6 +17,7 @@ var fs = require('fs');
 
 var jekyllDir = "docs/",
     scssFile = 'framework/scss/cd44.scss',
+    scssAidantsFile = 'framework/scss/aidants.scss',
     scssClissonFile = 'framework/scss/SP-chateauClisson.scss',
     scssGarenneMemotFile = 'framework/scss/SP-garenneLemot.scss',
     scssChateaubriantFile = 'framework/scss/SP-chateauChateaubriant.scss',
@@ -77,6 +78,18 @@ gulp.task('build:css:clisson:dev', function () {
         }))
         .pipe(postcss(postCssPluginsDev))
         .pipe(concat('clisson.css'))
+        .pipe(browserSync.stream())
+        .pipe(gulp.dest(cssDest));
+});
+
+gulp.task('build:css:aidants:dev', function () {
+    return gulp.src([scssFileSwiper, scssFileAos, scssAidantsFile])
+        .pipe(sass({
+            // CSS non minifiée plus lisible ('}' à la ligne)
+            outputStyle: 'expanded'
+        }))
+        .pipe(postcss(postCssPluginsDev))
+        .pipe(concat('aidants.css'))
         .pipe(browserSync.stream())
         .pipe(gulp.dest(cssDest));
 });
@@ -224,6 +237,7 @@ gulp.task('createComponent', function () {
 gulp.task('build:ds', gulp.parallel(
     'build:css:cd44:dev',
     'build:css:cd44:prod',
+    'build:css:aidants:dev',
     'build:css:clisson:dev',
     'build:css:garenne-lemot:dev',
     'build:css:chateaubriant:dev',
