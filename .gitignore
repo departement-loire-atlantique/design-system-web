@@ -2,6 +2,7 @@ _site
 .sass-cache
 .jekyll-metadata
 .docker/cache
+.dockerTraefik
 .DS_Store
 dist
 node_modules

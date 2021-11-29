@@ -34,7 +34,10 @@ class MapAbstract {
             'isVisible': true,
             'isMoving': false,
             'maximumTop': null,
-            'geojson': null
+            'geojson': null,
+            "geojsonId": null,
+            'icons': {}
+
         };
         object.mapElement.setAttribute('id', object.id);
         this.objects.push(object);
@@ -137,6 +140,8 @@ class MapAbstract {
             );
         }
 
+
+
         object.map.addControl(new window.mapboxgl.NavigationControl(), 'bottom-right');
         object.map.addControl(new window.mapboxgl.FullscreenControl(), 'bottom-left');
         object.map.addControl(new window.MapboxLanguage({ defaultLanguage: 'fr' }));
@@ -154,6 +159,7 @@ class MapAbstract {
     }
 
     loadGeojson (objectIndex, geojson) {
+
         if (geojson) {
             const object = this.objects[objectIndex];
             if (!object || object.geojson) {
@@ -217,13 +223,17 @@ class MapAbstract {
 
         // Show current geojson
         let geojsonIds = [...new Set(this.getGeojsonIds(objectIndex))];
-		
-		// Select specific zone in geojson
-        const geojsonCode = object.mapElement.getAttribute('data-geojson-code');
+
+		    // Select specific zone in geojson
+        let geojsonCode = object.mapElement.getAttribute('data-geojson-code');
+        if(object.geojsonId)
+        {
+            geojsonCode = object.geojsonId;
+        }
         if(geojsonCode != null) {
         	geojsonIds = [geojsonCode];
         }
-		
+
         let filterParameters = [];
         if (geojsonIds.length === 0) {
             filterParameters = ['!has', 'name'];
@@ -386,12 +396,15 @@ class MapAbstract {
     }
 
     search (objectIndex, evt) {
+
         const object = this.objects[objectIndex];
         if (!object) {
             return;
         }
 
         object.newResults = evt.detail.newResults;
+        object.icons = evt.detail.iconsMarker;
+        object.geojsonId = evt.detail.geojsonId;
         object.zoom = evt.detail.zoom;
         object.addUp = evt.detail.addUp;
 

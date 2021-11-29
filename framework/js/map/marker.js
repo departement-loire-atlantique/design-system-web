@@ -33,15 +33,28 @@ class MapMarker extends MapAbstract {
         if (!object) {
             return;
         }
-
         object.isMapReady = true;
+
         object.map.loadImage(
-            'https://design.loire-atlantique.fr/assets/images/cd44-marker-black.png',
-            (error, image) => {
-                if (error) throw error;
-                object.map.addImage('cd44-marker', image);
-            }
+          "https://design.loire-atlantique.fr/assets/images/cd44-marker-black.png",
+          (error, image) => {
+              if (error) throw error;
+              object.map.addImage("cd44-marker", image);
+          }
         );
+
+        for (const [key, pathImage] of Object.entries(object.icons)) {
+            if(!object.map.hasImage(key)) {
+                object.map.loadImage(
+                  pathImage,
+                  (error, image) => {
+                      if (error) throw error;
+                      object.map.addImage(key, image);
+                  }
+                );
+            }
+        }
+
         object.map.on('moveend', this.move.bind(this, objectIndex));
         if (object.newResults) {
             this.show(objectIndex);
@@ -131,7 +144,8 @@ class MapMarker extends MapAbstract {
                 'type': 'Feature',
                 'properties': {
                     'id': result.id,
-                    'description': result.metadata.html_marker
+                    'description': result.metadata.html_marker,
+                    'icon': result.metadata.icon_marker !== undefined ? (object.icons[result.metadata.icon_marker] !== undefined ? result.metadata.icon_marker : "cd44-marker") : "cd44-marker"
                 },
                 'geometry': {
                     'type': 'Point',
@@ -234,7 +248,7 @@ class MapMarker extends MapAbstract {
                 'source': 'places',
                 'filter': ['!', ['has', 'point_count']],
                 'layout': {
-                    'icon-image': 'cd44-marker',
+                    'icon-image': ["get", "icon"],
                     'icon-size': 1,
                     'icon-allow-overlap': true
                 }
