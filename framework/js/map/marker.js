@@ -230,11 +230,22 @@ class MapMarker extends MapAbstract {
             });
             object.map.on('mouseenter', 'lineString', (evt) => {
                 object.map.getCanvas().style.cursor = 'pointer';
-
                 object.geojsonHoveredId = evt.features[0].properties.id;
+
+                var lineIds = [];
+                for (let featureIndex = 0; featureIndex < evt.features.length; featureIndex++) {
+                    if(!lineIds.includes(evt.features[featureIndex].properties.id)) {
+                        lineIds.push({
+                            "id": evt.features[featureIndex].properties.id,
+                            "description": evt.features[featureIndex].properties.description,
+                        });
+                    }
+                }
+
                 MiscEvent.dispatch('search:focus', {
                     'id': object.geojsonHoveredId,
-                    "lngLat": evt.lngLat
+                    "lngLat": evt.lngLat,
+                    "lineIds": lineIds
                 });
             });
         }
@@ -460,9 +471,20 @@ class MapMarker extends MapAbstract {
         }
 
         const id = feature.properties.id;
-        const description = feature.properties.description;
-
+        let description = feature.properties.description;
         if(feature.properties.type === "line" && evt.detail.lngLat !== undefined) {
+            if(evt.detail.lineIds !== undefined && evt.detail.lineIds.length > 0)
+            {
+                console.log(evt);
+                description = "";
+                for(let lineIndex = 0; lineIndex < evt.detail.lineIds.length; lineIndex++) {
+                    description += evt.detail.lineIds[lineIndex].description;
+                }
+            }
+            else
+            {
+                description = feature.properties.description;
+            }
             object.popup = new window.mapboxgl.Popup({ offset: 25 })
               .setLngLat(evt.detail.lngLat)
               .setHTML(description)
