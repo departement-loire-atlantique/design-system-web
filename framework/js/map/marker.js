@@ -433,8 +433,6 @@ class MapMarker extends MapAbstract {
                 this.showPopup(objectIndex, features[0], null);
             }
 
-            console.log(evt);
-
             const lines = object.map.querySourceFeatures('lines', {
                 layers: ['lineString'],
                 filter: ['==', 'id', evt.detail.id]
