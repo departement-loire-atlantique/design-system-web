@@ -271,7 +271,7 @@ class MapAbstract {
         object.map.setFilter(this.geojsonLinesId, filterParameters);
 
         // Zoom the map
-        if ( (geojsonCode != null || object.zoom) && geojsonIds.length !== 0) {
+        if ( ((geojsonCode != null && geojsonCode !== "0") || object.zoom) && geojsonIds.length !== 0) {
             let hasBoundingBox = false;
             let boundingBox = null;
 
@@ -279,15 +279,17 @@ class MapAbstract {
             for (let i = 0; i < features.length; i++) {
                 if (geojsonIds.includes(features[i].properties.name)) {
                     hasBoundingBox = true;
+                    if(features[i].geometry.coordinates !== undefined)
+                    {
+                        for (let j = 0; j < features[i].geometry.coordinates.length; j++) {
+                            const subCoordinates = features[i].geometry.coordinates[j];
 
-                    for (let j = 0; j < features[i].geometry.coordinates.length; j++) {
-                        const subCoordinates = features[i].geometry.coordinates[j];
-
-                        for (let k = 0; k < subCoordinates.length; k++) {
-                            if (!boundingBox) {
-                                boundingBox = new window.mapboxgl.LngLatBounds(subCoordinates[k], subCoordinates[k]);
-                            } else {
-                                boundingBox = boundingBox.extend(new window.mapboxgl.LngLatBounds(subCoordinates[k], subCoordinates[k]));
+                            for (let k = 0; k < subCoordinates.length; k++) {
+                                if (!boundingBox) {
+                                    boundingBox = new window.mapboxgl.LngLatBounds(subCoordinates[k], subCoordinates[k]);
+                                } else {
+                                    boundingBox = boundingBox.extend(new window.mapboxgl.LngLatBounds(subCoordinates[k], subCoordinates[k]));
+                                }
                             }
                         }
                     }
