@@ -14,8 +14,6 @@ variations:
   pattern: page/LA__accueilAnnuaire_communesCantons.html
 - title: Page type "Resultats annuaire cantons et communes"
   pattern: page/LA__resultsAnnuaire_communesCantons.html
-- title: Page inforoutes "Info Trafic"
-  pattern: page/IR__map.html
 - title: Template carrefour
   pattern: templates/template-entryMenu.html
 ---
