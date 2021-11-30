@@ -36,8 +36,8 @@ class MapAbstract {
             'maximumTop': null,
             'geojson': null,
             "geojsonId": null,
-            'icons': {}
-
+            'iconsMarker': [],
+            "popinIdsByElementIds": {}
         };
         object.mapElement.setAttribute('id', object.id);
         this.objects.push(object);
@@ -118,6 +118,28 @@ class MapAbstract {
                     zoom: 8
                 });
                 object.map.on('load', this.afterLoad.bind(this, objectIndex));
+                // Add Icon Marker
+                let iconsMarker = object.mapElement.getAttribute('data-icons-marker');
+                if(iconsMarker)
+                {
+                    iconsMarker = JSON.parse(iconsMarker);
+                    if(iconsMarker[0] !== undefined)
+                    {
+                        for (const [key, pathImage] of Object.entries(iconsMarker[0])) {
+                            if(!object.map.hasImage(key)) {
+                                object.map.loadImage(
+                                  pathImage,
+                                  (error, image) => {
+                                      if (!error) {
+                                          object.map.addImage(key, image);
+                                          object.iconsMarker.push(key);
+                                      }
+                                  }
+                                );
+                            }
+                        }
+                    }
+                }
             }
         }
     }
@@ -139,8 +161,6 @@ class MapAbstract {
                 }
             );
         }
-
-
 
         object.map.addControl(new window.mapboxgl.NavigationControl(), 'bottom-right');
         object.map.addControl(new window.mapboxgl.FullscreenControl(), 'bottom-left');
@@ -226,9 +246,9 @@ class MapAbstract {
 
 		    // Select specific zone in geojson
         let geojsonCode = object.mapElement.getAttribute('data-geojson-code');
-        if(object.geojsonId)
+        if(object.geojsonId !== undefined)
         {
-            geojsonCode = object.geojsonId;
+            geojsonCode = object.geojsonId ? object.geojsonId : "0";
         }
         if(geojsonCode != null) {
         	geojsonIds = [geojsonCode];
@@ -403,7 +423,6 @@ class MapAbstract {
         }
 
         object.newResults = evt.detail.newResults;
-        object.icons = evt.detail.iconsMarker;
         object.geojsonId = evt.detail.geojsonId;
         object.zoom = evt.detail.zoom;
         object.addUp = evt.detail.addUp;

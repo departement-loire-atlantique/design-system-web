@@ -1,0 +1,12 @@
+[
+  {
+    "accident": "iconAccident.png",
+    "bacs": "iconBacs.png",
+    "vent": "iconVent.png",
+    "verglasneige": "iconGlaces.png",
+    "bouchons": "iconBouchons.png",
+    "deviation": "iconDeviation.png",
+    "chantier": "iconTravaux.png",
+    "autres": "iconAutres.png"
+  }
+]

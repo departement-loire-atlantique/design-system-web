@@ -138,6 +138,14 @@
     box-shadow: 0 1px 2px rgba(0, 0, 0, .1);
     padding: 0;
     pointer-events: auto;
+    max-height: 600px;
+    overflow: auto;
+    .ds44-flex-container {
+        border-bottom: 1px solid $ds44-flat-overlay;
+        &:last-child {
+            border-bottom:0;
+        }
+    }
 
     & .ds44-js-card {
         cursor: pointer;
