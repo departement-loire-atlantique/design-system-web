@@ -34,7 +34,10 @@ class MapAbstract {
             'isVisible': true,
             'isMoving': false,
             'maximumTop': null,
-            'geojson': null
+            'geojson': null,
+            "geojsonId": null,
+            'iconsMarker': [],
+            "popinIdsByElementIds": {}
         };
         object.mapElement.setAttribute('id', object.id);
         this.objects.push(object);
@@ -115,6 +118,28 @@ class MapAbstract {
                     zoom: 8
                 });
                 object.map.on('load', this.afterLoad.bind(this, objectIndex));
+                // Add Icon Marker
+                let iconsMarker = object.mapElement.getAttribute('data-icons-marker');
+                if(iconsMarker)
+                {
+                    iconsMarker = JSON.parse(iconsMarker);
+                    if(iconsMarker[0] !== undefined)
+                    {
+                        for (const [key, pathImage] of Object.entries(iconsMarker[0])) {
+                            if(!object.map.hasImage(key)) {
+                                object.map.loadImage(
+                                  pathImage,
+                                  (error, image) => {
+                                      if (!error) {
+                                          object.map.addImage(key, image);
+                                          object.iconsMarker.push(key);
+                                      }
+                                  }
+                                );
+                            }
+                        }
+                    }
+                }
             }
         }
     }
@@ -154,6 +179,7 @@ class MapAbstract {
     }
 
     loadGeojson (objectIndex, geojson) {
+
         if (geojson) {
             const object = this.objects[objectIndex];
             if (!object || object.geojson) {
@@ -217,13 +243,17 @@ class MapAbstract {
 
         // Show current geojson
         let geojsonIds = [...new Set(this.getGeojsonIds(objectIndex))];
-		
-		// Select specific zone in geojson
-        const geojsonCode = object.mapElement.getAttribute('data-geojson-code');
+
+		    // Select specific zone in geojson
+        let geojsonCode = object.mapElement.getAttribute('data-geojson-code');
+        if(object.geojsonId !== undefined)
+        {
+            geojsonCode = object.geojsonId ? object.geojsonId : "0";
+        }
         if(geojsonCode != null) {
         	geojsonIds = [geojsonCode];
         }
-		
+
         let filterParameters = [];
         if (geojsonIds.length === 0) {
             filterParameters = ['!has', 'name'];
@@ -241,7 +271,7 @@ class MapAbstract {
         object.map.setFilter(this.geojsonLinesId, filterParameters);
 
         // Zoom the map
-        if ( (geojsonCode != null || object.zoom) && geojsonIds.length !== 0) {
+        if ( ((geojsonCode != null && geojsonCode !== "0") || object.zoom) && geojsonIds.length !== 0) {
             let hasBoundingBox = false;
             let boundingBox = null;
 
@@ -249,15 +279,17 @@ class MapAbstract {
             for (let i = 0; i < features.length; i++) {
                 if (geojsonIds.includes(features[i].properties.name)) {
                     hasBoundingBox = true;
+                    if(features[i].geometry.coordinates !== undefined)
+                    {
+                        for (let j = 0; j < features[i].geometry.coordinates.length; j++) {
+                            const subCoordinates = features[i].geometry.coordinates[j];
 
-                    for (let j = 0; j < features[i].geometry.coordinates.length; j++) {
-                        const subCoordinates = features[i].geometry.coordinates[j];
-
-                        for (let k = 0; k < subCoordinates.length; k++) {
-                            if (!boundingBox) {
-                                boundingBox = new window.mapboxgl.LngLatBounds(subCoordinates[k], subCoordinates[k]);
-                            } else {
-                                boundingBox = boundingBox.extend(new window.mapboxgl.LngLatBounds(subCoordinates[k], subCoordinates[k]));
+                            for (let k = 0; k < subCoordinates.length; k++) {
+                                if (!boundingBox) {
+                                    boundingBox = new window.mapboxgl.LngLatBounds(subCoordinates[k], subCoordinates[k]);
+                                } else {
+                                    boundingBox = boundingBox.extend(new window.mapboxgl.LngLatBounds(subCoordinates[k], subCoordinates[k]));
+                                }
                             }
                         }
                     }
@@ -386,12 +418,14 @@ class MapAbstract {
     }
 
     search (objectIndex, evt) {
+
         const object = this.objects[objectIndex];
         if (!object) {
             return;
         }
 
         object.newResults = evt.detail.newResults;
+        object.geojsonId = evt.detail.geojsonId;
         object.zoom = evt.detail.zoom;
         object.addUp = evt.detail.addUp;
 

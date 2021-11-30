@@ -1,0 +1,16 @@
+<main role="main" id="mainResults__cantons" class="ds44-mainResults {% if include['no-padding'] == 'true' %} ds44-noPdg {% endif %}">
+  <section class="ds44-container-large">
+    {% assign formId = 'recherche-facette' %}
+    {% capture ariaDescribedBy %}filter-by-{{ formId }}{% endcapture %}
+    {% capture fields %}
+    <div class="ds44-fieldContainer ds44-fg1">
+      {% include form/field/input/autocomplete.html label="Commune" required="false" type="address-level2" url="/json/autocomplete-city.json" attributes='data-mode="select-only"' title="Zone de saisie de votre recherche de commune" %}
+    </div>
+    <div class="ds44-fieldContainer ds44-fg1 ds44-fieldContainer--select">
+      {% include form/field/select/standard.html label="Select à cases" %}
+    </div>
+    {% endcapture %}
+    {% include form/layout/recherche-facettes.html id=formId fields=fields url=include.url %}
+  </section>
+  {% include page/partial/recherche-resultats-infotrafic.html iconsMarker=include.iconsMarker geoJsonAttributes=include.geoJsonAttributes %}
+</main>

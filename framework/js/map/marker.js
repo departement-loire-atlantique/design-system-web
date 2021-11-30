@@ -33,15 +33,16 @@ class MapMarker extends MapAbstract {
         if (!object) {
             return;
         }
-
         object.isMapReady = true;
+
         object.map.loadImage(
-            'https://design.loire-atlantique.fr/assets/images/cd44-marker-black.png',
-            (error, image) => {
-                if (error) throw error;
-                object.map.addImage('cd44-marker', image);
-            }
+          "https://design.loire-atlantique.fr/assets/images/cd44-marker-black.png",
+          (error, image) => {
+              if (error) throw error;
+              object.map.addImage("cd44-marker", image);
+          }
         );
+
         object.map.on('moveend', this.move.bind(this, objectIndex));
         if (object.newResults) {
             this.show(objectIndex);
@@ -110,57 +111,31 @@ class MapMarker extends MapAbstract {
 
         // Create geojson
         const geojsonFeatures = [];
+        const placesFeaturesAdd = {};
+        const geojsonLineStrings = [];
         for (let resultIndex in object.newResults) {
             if (!object.newResults.hasOwnProperty(resultIndex)) {
                 continue;
             }
 
             const result = object.newResults[resultIndex];
+
             if (
-                !result.metadata ||
-                !result.metadata.lat ||
-                !result.metadata.long ||
-                !result.metadata.html_marker
+              !result.metadata ||
+              !result.metadata.html_marker
             ) {
                 continue;
             }
 
-            // Create a marker in the geojson
-            hasBoundingBox = true;
-            geojsonFeatures.push({
-                'type': 'Feature',
-                'properties': {
-                    'id': result.id,
-                    'description': result.metadata.html_marker
-                },
-                'geometry': {
-                    'type': 'Point',
-                    'coordinates': [
-                        result.metadata.long,
-                        result.metadata.lat
-                    ]
-                }
-            });
-
-            if (boundingBox.longitude.min === null) {
-                boundingBox.longitude.min = result.metadata.long;
-            } else {
-                boundingBox.longitude.min = Math.min(result.metadata.long, boundingBox.longitude.min);
+            if(result.metadata.lat && result.metadata.long) {
+                hasBoundingBox = true;
+                // Create a marker in the geojson
+                this.createPlaceMarker(object, geojsonFeatures, placesFeaturesAdd, result, boundingBox);
             }
-            if (boundingBox.longitude.max === null) {
-                boundingBox.longitude.max = result.metadata.long;
-            } else {
-                boundingBox.longitude.max = Math.max(result.metadata.long, boundingBox.longitude.max);
-            }
-            if (boundingBox.latitude.min === null) {
-                boundingBox.latitude.min = result.metadata.lat;
-            } else {
-                boundingBox.latitude.min = Math.min(result.metadata.lat, boundingBox.latitude.min);
-            }
-            if (boundingBox.latitude.max === null) {
-                boundingBox.latitude.max = result.metadata.lat;
-            } else {
-                boundingBox.latitude.max = Math.max(result.metadata.lat, boundingBox.latitude.max);
+            else if(result.metadata.coordinates) {
+                hasBoundingBox = true;
+                // Create a lineString in the geojson
+                this.createLineMarker(geojsonLineStrings, result);
             }
         }
 
@@ -175,6 +150,17 @@ class MapMarker extends MapAbstract {
             }
             object.map.getSource('places').setData(features);
         }
+
+        if(!object.map.getSource("lines")) {
+            object.map.addSource('lines', {
+                'type': 'geojson',
+                'data': {
+                    'type': 'FeatureCollection',
+                    'features': geojsonLineStrings
+                }
+            });
+        }
+
 
         // Add cluster
         if (!object.map.getLayer('cluster-background')) {
@@ -226,6 +212,45 @@ class MapMarker extends MapAbstract {
             });
         }
 
+        // Add LineString
+        if(!object.map.getLayer("lineString")) {
+            object.map.addLayer({
+                'id': 'lineString',
+                'type': 'line',
+                'source': 'lines',
+                'layout': {
+                    'line-join': 'round',
+                    'line-cap': 'round'
+                },
+                'paint': {
+                    'line-color': '#BF93E4',
+                    //'line-color': ['get', 'color'],
+                    'line-width': 5
+                }
+            });
+            object.map.on('mouseenter', 'lineString', (evt) => {
+                object.map.getCanvas().style.cursor = 'pointer';
+                object.geojsonHoveredId = evt.features[0].properties.id;
+
+                var lineIds = [];
+                for (let featureIndex = 0; featureIndex < evt.features.length; featureIndex++) {
+                    if(!lineIds.includes(evt.features[featureIndex].properties.id)) {
+                        lineIds.push({
+                            "id": evt.features[featureIndex].properties.id,
+                            "description": evt.features[featureIndex].properties.description,
+                        });
+                    }
+                }
+
+                MiscEvent.dispatch('search:focus', {
+                    'id': object.geojsonHoveredId,
+                    "lngLat": evt.lngLat,
+                    "lineIds": lineIds
+                });
+            });
+        }
+
+
         // Add marker
         if (!object.map.getLayer('marker')) {
             object.map.addLayer({
@@ -234,7 +259,7 @@ class MapMarker extends MapAbstract {
                 'source': 'places',
                 'filter': ['!', ['has', 'point_count']],
                 'layout': {
-                    'icon-image': 'cd44-marker',
+                    'icon-image': ["get", "icon"],
                     'icon-size': 1,
                     'icon-allow-overlap': true
                 }
@@ -250,17 +275,6 @@ class MapMarker extends MapAbstract {
                     'id': object.geojsonHoveredId
                 });
             });
-            /*object.map.on('mouseleave', 'marker', (evt) => {
-                object.map.getCanvas().style.cursor = '';
-
-                if (object.geojsonHoveredId) {
-                    MiscEvent.dispatch('search:blur', {
-                        'id': object.geojsonHoveredId
-                    });
-
-                    object.geojsonHoveredId = null;
-                }
-            });*/
         }
 
         if (object.zoom && hasBoundingBox) {
@@ -291,6 +305,78 @@ class MapMarker extends MapAbstract {
             this.showGeojson(objectIndex);
         }
     }
+
+    createPlaceMarker(object, geojsonFeatures, placesFeaturesAdd, result, boundingBox) {
+        let placeKey = result.metadata.long+"_"+result.metadata.lat;
+        if(placesFeaturesAdd[placeKey] !== undefined)
+        {
+            geojsonFeatures[placesFeaturesAdd[placeKey]].properties.description = geojsonFeatures[placesFeaturesAdd[placeKey]].properties.description+result.metadata.html_marker;
+            const conatinerSearch = document.querySelector("#search-result-"+result.id);
+            if(conatinerSearch)
+            {
+                object.popinIdsByElementIds[result.id] = geojsonFeatures[placesFeaturesAdd[placeKey]].properties.id;
+            }
+        }
+        else
+        {
+            object.popinIdsByElementIds[result.id] = result.id;
+            placesFeaturesAdd[placeKey] = geojsonFeatures.length;
+            geojsonFeatures.push({
+                'type': 'Feature',
+                'properties': {
+                    'id': result.id,
+                    'description': result.metadata.html_marker,
+                    "type":  "marker",
+                    'icon': result.metadata.icon_marker !== undefined ? (object.iconsMarker.includes(result.metadata.icon_marker) ? result.metadata.icon_marker : "cd44-marker") : "cd44-marker"
+                },
+                'geometry': {
+                    'type': 'Point',
+                    'coordinates': [
+                        result.metadata.long,
+                        result.metadata.lat
+                    ]
+                }
+            });
+        }
+
+        if (boundingBox.longitude.min === null) {
+            boundingBox.longitude.min = result.metadata.long;
+        } else {
+            boundingBox.longitude.min = Math.min(result.metadata.long, boundingBox.longitude.min);
+        }
+        if (boundingBox.longitude.max === null) {
+            boundingBox.longitude.max = result.metadata.long;
+        } else {
+            boundingBox.longitude.max = Math.max(result.metadata.long, boundingBox.longitude.max);
+        }
+        if (boundingBox.latitude.min === null) {
+            boundingBox.latitude.min = result.metadata.lat;
+        } else {
+            boundingBox.latitude.min = Math.min(result.metadata.lat, boundingBox.latitude.min);
+        }
+        if (boundingBox.latitude.max === null) {
+            boundingBox.latitude.max = result.metadata.lat;
+        } else {
+            boundingBox.latitude.max = Math.max(result.metadata.lat, boundingBox.latitude.max);
+        }
+    }
+
+    createLineMarker(geojsonLineStrings, result) {
+        geojsonLineStrings.push({
+            'type': 'Feature',
+            'properties': {
+                'id':           result.id+"_line",
+                'description':  result.metadata.html_marker,
+                "type":         "line"
+            },
+            'geometry': {
+                'type': 'LineString',
+                'properties': {},
+                'coordinates': result.metadata.coordinates
+            }
+        });
+    }
+
 
     afterLoadGeojson (objectIndex) {
         const object = this.objects[objectIndex];
@@ -352,10 +438,18 @@ class MapMarker extends MapAbstract {
 
             const features = object.map.querySourceFeatures('places', {
                 layers: ['marker'],
-                filter: ['==', 'id', evt.detail.id]
+                filter: ['==', 'id', object.popinIdsByElementIds[evt.detail.id] ?? evt.detail.id]
             });
             if (features && features[0]) {
                 this.showPopup(objectIndex, features[0], null);
+            }
+
+            const lines = object.map.querySourceFeatures('lines', {
+                layers: ['lineString'],
+                filter: ['==', 'id', evt.detail.id]
+            });
+            if (lines && lines[0]) {
+                this.showPopup(objectIndex, lines[0], evt);
             }
         }
     }
@@ -376,20 +470,39 @@ class MapMarker extends MapAbstract {
             this.hidePopup(objectIndex);
         }
 
-        const coordinates = feature.geometry.coordinates.slice();
         const id = feature.properties.id;
-        const description = feature.properties.description;
-
-        if (evt) {
-            while (Math.abs(evt.lngLat.lng - coordinates[0]) > 180) {
-                coordinates[0] += evt.lngLat.lng > coordinates[0] ? 360 : -360;
+        let description = feature.properties.description;
+        if(feature.properties.type === "line" && evt.detail.lngLat !== undefined) {
+            if(evt.detail.lineIds !== undefined && evt.detail.lineIds.length > 0)
+            {
+                console.log(evt);
+                description = "";
+                for(let lineIndex = 0; lineIndex < evt.detail.lineIds.length; lineIndex++) {
+                    description += evt.detail.lineIds[lineIndex].description;
+                }
             }
+            else
+            {
+                description = feature.properties.description;
+            }
+            object.popup = new window.mapboxgl.Popup({ offset: 25 })
+              .setLngLat(evt.detail.lngLat)
+              .setHTML(description)
+              .addTo(object.map);
+        }
+        else {
+            const coordinates = feature.geometry.coordinates.slice();
+            if (evt) {
+                while (Math.abs(evt.lngLat.lng - coordinates[0]) > 180) {
+                    coordinates[0] += evt.lngLat.lng > coordinates[0] ? 360 : -360;
+                }
+            }
+            object.popup = new window.mapboxgl.Popup({ offset: 25 })
+              .setLngLat(coordinates)
+              .setHTML(description)
+              .addTo(object.map);
         }
 
-        object.popup = new window.mapboxgl.Popup({ offset: 25 })
-            .setLngLat(coordinates)
-            .setHTML(description)
-            .addTo(object.map);
 
         MiscEvent.addListener('click', this.popupClick.bind(this, id), object.popup.getElement())
     }

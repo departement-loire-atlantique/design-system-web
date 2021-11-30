@@ -271,6 +271,7 @@ class FormLayoutSearch extends FormLayoutAbstract {
             'nbResults': response['nb-result'],
             'maxNbResults': response['max-result'],
             'results': results,
+            'geojsonId' : response['geojsonId'] ?? {},
             'newResults': response['result'],
             'searchText': searchText.join(', ')
         };

@@ -1,0 +1,21 @@
+<section class="ds44-container-large">
+    <div class="ds44-flex-container ds44-results ds44-results--mapVisible ds44-results--empty">
+        <div class="ds44-listResults ds44-innerBoxContainer ds44-innerBoxContainer--list">
+            <div class="ds44-js-results-container">
+                <div class="ds44-js-results-card" data-url="/json/search-card.json" aria-hidden="true"></div>
+                <div class="ds44-js-results-list" data-display-mode="inline">
+                    <p id="ds44-results-new-search" class="h3-like mbs txtcenter center ds44--3xl-padding-t ds44--3xl-padding-b">
+                        <span aria-level="2" role="heading">Veuillez faire une recherche ci-dessus pour afficher des résultats.</span>
+                    </p>
+                </div>
+            </div>
+        </div>
+        <button class="ds44-btnIco ds44-btnIco--carre ds44-bgDark ds44-btnStd-showMap" type="button" data-target="#overlay-legendMap" data-js="ds44-modal"><i class="icon icon-help" aria-hidden="true"></i><span class="visually-hidden">Aide</span></button>
+        <div class="ds44-mapResults">
+            <div class="ds44-mapResults-container">
+                <button class="ds44-btnIco ds44-btnIco--carre ds44-bgDark ds44-btnStd-showMap" type="button" data-target="#overlay-legendMap" data-js="ds44-modal"><i class="icon icon-help" aria-hidden="true"></i><span class="visually-hidden">Aide</span></button>
+                <div class="ds44-js-map" {{ include.geoJsonAttributes }} {% if include.iconsMarker %}data-icons-marker='{% include json/{{ include.iconsMarker }}%}'{% endif %}></div>
+            </div>
+        </div>
+    </div>
+</section>

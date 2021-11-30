@@ -18,6 +18,9 @@ variations:
 - title: Recherche Geojson
   pattern: page/LA__resultatsRecherche-geojson.html
 
+- title: Page inforoutes "Info Trafic"
+  pattern: page/IR__map.html
+
 - title: Template home
   pattern: templates/template-home.html
 

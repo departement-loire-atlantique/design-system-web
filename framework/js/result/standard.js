@@ -294,8 +294,8 @@ class ResultStandard {
 
             const result = results[resultIndex];
             if (
-                !result.metadata ||
-                !result.metadata.html_list
+              !result.metadata ||
+              !result.metadata.html_list
             ) {
                 continue;
             }
@@ -304,9 +304,14 @@ class ResultStandard {
             const listItemElement = document.createElement('li');
             listItemElement.setAttribute('id', 'search-result-' + result.id);
             listItemElement.setAttribute('data-id', result.id);
+
+            let elementClickEnabled = true;
+            if (result.metadata.click !== undefined && result.metadata.click === false) {
+                elementClickEnabled = false;
+            }
             if (
-                result.redirectUrl === true &&
-                result.metadata.url
+              result.redirectUrl === true &&
+              result.metadata.url
             ) {
                 hasRedirectDisplayMode = true;
                 listItemElement.setAttribute('data-redirect-url', result.metadata.url);
@@ -323,20 +328,22 @@ class ResultStandard {
                 MiscEvent.addListener('focus', this.focus.bind(this), listLinkItemElement);
                 MiscEvent.addListener('blur', this.blur.bind(this), listLinkItemElement);
             }
-            if (
-                hasRedirectDisplayMode === false &&
-                listContainerElement.getAttribute('data-display-mode') === 'inline'
-            ) {
-                if (listItemElement.getAttribute('data-id') != '-1') {
-                    MiscEvent.addListener('click', this.fillCard.bind(this), listItemElement);
+            if (elementClickEnabled) {
+                if (
+                  hasRedirectDisplayMode === false &&
+                  listContainerElement.getAttribute('data-display-mode') === 'inline'
+                ) {
+                    if (listItemElement.getAttribute('data-id') != '-1') {
+                        MiscEvent.addListener('click', this.fillCard.bind(this), listItemElement);
+                    }
+                    const aElement = listItemElement.querySelector('a');
+                    if (aElement) {
+                        aElement.setAttribute('role', 'button');
+                        aElement.setAttribute('tabindex', '0');
+                    }
+                } else {
+                    MiscEvent.addListener('click', this.redirectCard.bind(this), listItemElement);
                 }
-                const aElement = listItemElement.querySelector('a');
-                if (aElement) {
-                    aElement.setAttribute('role', 'button');
-                    aElement.setAttribute('tabindex', '0');
-                }
-            } else {
-                MiscEvent.addListener('click', this.redirectCard.bind(this), listItemElement);
             }
             listElement.appendChild(listItemElement);
 
