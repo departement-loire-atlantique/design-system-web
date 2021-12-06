@@ -271,7 +271,7 @@ class ResultStandard {
             titleElementHtml += ' ' + MiscTranslate._('RESULT');
           }
           let accessibleSentence = MiscTranslate._('NB_RESULTS_FOR_SEARCH:') + ' ' + (evt.detail.searchText === '' ? MiscTranslate._('EMPTY_SEARCH_CRITERIA') : evt.detail.searchText);
-          titleElement.innerHTML = titleElementHtml + '<p class="visually-hidden" tabindex="-1">' + accessibleSentence + '</p>';
+          titleElement.innerHTML = titleElementHtml + ' <p class="visually-hidden" tabindex="-1">' + accessibleSentence + '</p>';
           if (!elemCancellingRename) {
             document.title = titleElementHtml + ' ' + accessibleSentence + ' - Loire-atlantique.fr';
             titleElement.removeAttribute('tabindex');
