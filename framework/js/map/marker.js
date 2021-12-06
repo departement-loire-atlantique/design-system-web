@@ -61,17 +61,17 @@ class MapMarker extends MapAbstract {
 
         const mapBounds = object.map.getBounds();
         MiscEvent.dispatch(
-        'search:refresh',
-        {
-            'parameters': {
-                'map': {
-                    'nw': mapBounds.getNorthWest().toArray(),
-                    'sw': mapBounds.getSouthWest().toArray(),
-                    'ne': mapBounds.getNorthEast().toArray(),
-                    'se': mapBounds.getSouthEast().toArray()
+            'search:refresh',
+            {
+                'parameters': {
+                    'map': {
+                        'nw': mapBounds.getNorthWest().toArray(),
+                        'sw': mapBounds.getSouthWest().toArray(),
+                        'ne': mapBounds.getNorthEast().toArray(),
+                        'se': mapBounds.getSouthEast().toArray()
+                    }
                 }
-            }
-        });
+            });
     }
 
     show (objectIndex) {
