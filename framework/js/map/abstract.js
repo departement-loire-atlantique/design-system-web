@@ -19,6 +19,14 @@ class MapAbstract {
                 this.create(element);
             });
         this.initialize();
+
+        this.submit = false;
+        [].forEach.call(document.querySelectorAll("form"), (el)=>{
+            MiscEvent.addListener("submit", () => {
+                this.submit = true;
+            }, el);
+        });
+
     }
 
     create (element) {
@@ -246,12 +254,19 @@ class MapAbstract {
 
 		    // Select specific zone in geojson
         let geojsonCode = object.mapElement.getAttribute('data-geojson-code');
+
         if(object.geojsonId !== undefined)
         {
             geojsonCode = object.geojsonId ? object.geojsonId : "0";
+            geojsonIds = [geojsonCode];
+            if(this.submit)
+            {
+                object.zoom = true;
+            }
         }
-        if(geojsonCode != null) {
+        else if(geojsonCode != null) {
         	geojsonIds = [geojsonCode];
+          object.zoom = true;
         }
 
         let filterParameters = [];
@@ -270,8 +285,9 @@ class MapAbstract {
         object.map.setFilter(this.geojsonFillsId, filterParameters);
         object.map.setFilter(this.geojsonLinesId, filterParameters);
 
+
         // Zoom the map
-        if ( ((geojsonCode != null && geojsonCode !== "0") || object.zoom) && geojsonIds.length !== 0) {
+        if (((geojsonCode != null && geojsonCode !== "0") && object.zoom) && geojsonIds.length !== 0) {
             let hasBoundingBox = false;
             let boundingBox = null;
 
@@ -303,8 +319,11 @@ class MapAbstract {
                     {
                         padding: 50,
                         maxZoom: 15
+                    }, {
+                        refresh:     (this.submit && object.geojsonId !== undefined)
                     }
                 );
+                this.submit = false;
             }
         }
     }

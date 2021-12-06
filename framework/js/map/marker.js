@@ -50,7 +50,7 @@ class MapMarker extends MapAbstract {
     }
 
     move (objectIndex, evt) {
-        if (!evt.originalEvent) {
+        if (!evt.originalEvent && !evt.refresh) {
             return;
         }
 
@@ -438,7 +438,7 @@ class MapMarker extends MapAbstract {
 
             const features = object.map.querySourceFeatures('places', {
                 layers: ['marker'],
-                filter: ['==', 'id', object.popinIdsByElementIds[evt.detail.id] ?? evt.detail.id]
+                filter: ['==', 'id', object.popinIdsByElementIds[evt.detail.id] !== undefined ? object.popinIdsByElementIds[evt.detail.id] : evt.detail.id]
             });
             if (features && features[0]) {
                 this.showPopup(objectIndex, features[0], null);
