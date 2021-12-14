@@ -14,7 +14,7 @@
         <div class="ds44-mapResults">
             <div class="ds44-mapResults-container">
                 <button class="ds44-btnIco ds44-btnIco--carre ds44-bgDark ds44-btnStd-showMap" type="button" data-target="#overlay-legendMap" data-js="ds44-modal"><i class="icon icon-help" aria-hidden="true"></i><span class="visually-hidden">Aide</span></button>
-                <div class="ds44-js-map" {{ include.geoJsonAttributes }} {% if include.iconsMarker %}data-icons-marker='{% include json/{{ include.iconsMarker }}%}'{% endif %}></div>
+                <div class="ds44-js-map info-traffic" {{ include.geoJsonAttributes }} {% if include.iconsMarker %}data-icons-marker='{% include json/{{ include.iconsMarker }}%}'{% endif %}></div>
             </div>
         </div>
     </div>
