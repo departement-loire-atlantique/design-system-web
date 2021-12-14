@@ -17,6 +17,11 @@
 .ds44-container-imgZoom {
     overflow: hidden;
 
+    &.focus {
+        img {
+            transform: scale(1.1);
+        }
+    }
     img {
         transition: all $ds44-timing-standard ease-in-out;
 

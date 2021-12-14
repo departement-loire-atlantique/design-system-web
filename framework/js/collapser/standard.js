@@ -60,7 +60,7 @@ class CollapserStandard {
             buttonLabel.innerText = MiscTranslate._('COLLAPSE');
         }
         object.buttonElement.firstElementChild.classList.add('show');
-        object.buttonElement.setAttribute('aria-expanded', 'true');
+        object.buttonElement.firstElementChild.setAttribute('aria-expanded', 'true');
         panel.style.maxHeight = (panel.style.maxHeight ? null : panel.scrollHeight + 60 + 'px');
         MiscAccessibility.show(panel);
         panel.style.visibility = 'visible';
@@ -78,7 +78,7 @@ class CollapserStandard {
             buttonLabel.innerText = MiscTranslate._('EXPAND');
         }
         object.buttonElement.firstElementChild.classList.remove('show');
-        object.buttonElement.setAttribute('aria-expanded', 'false');
+        object.buttonElement.firstElementChild.setAttribute('aria-expanded', 'false');
         panel.style.maxHeight = null;
         MiscAccessibility.hide(panel);
         panel.style.visibility = 'hidden';

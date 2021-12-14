@@ -121,6 +121,9 @@ class OverlayAbstract {
 
         if (this.triggerElement) {
             MiscAccessibility.setFocus(this.triggerElement);
+            if(this.triggerElement.querySelector("button")) {
+                MiscAccessibility.setFocus(this.triggerElement.querySelector("button"));
+            }
         }
 
         this.triggerElement = null;

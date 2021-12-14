@@ -140,6 +140,16 @@ class ResultStandard {
             return;
         }
 
+        const listContainerElement = containerElement.querySelector('.ds44-js-results-list');
+        let titleElement = listContainerElement.querySelector('.h3-like');
+        if(titleElement.getAttribute("role") === "heading" && titleElement.getAttribute("aria-level") === "2")
+        {
+            [].forEach.call(containerElement.querySelectorAll(".ds44-js-results-item [aria-level]"), (el) => {
+                let currentLevel = parseInt(el.getAttribute("aria-level"))
+                el.setAttribute("aria-level", currentLevel+1);
+            });
+        }
+
         const cardContainerElement = containerElement.querySelector('.ds44-js-results-card');
         if (cardContainerElement) {
             MiscAccessibility.hide(cardContainerElement);
@@ -236,7 +246,7 @@ class ResultStandard {
             titleElement = document.createElement('div');
             titleElement.className = 'h3-like mbs';
             titleElement.setAttribute('role', 'heading');
-            titleElement.setAttribute('aria-level', '1');
+            titleElement.setAttribute('aria-level', '2');
             titleElement.setAttribute('aria-live', 'polite');
             titleElement.setAttribute('aria-atomic', 'true');
             listContainerElement.appendChild(titleElement);
@@ -244,30 +254,30 @@ class ResultStandard {
         // Ne pas changer le titre de la page avec un paramètre précis
         let elemCancellingRename = document.querySelector('[data-keep-tab-name="true"]');
 
-		// Sinon, changer le nom de page pour afficher le nb de résultats
-		if (!evt.detail.nbResults) {
-			let titleElementHtml = MiscTranslate._('NO_RESULTS_FOR_SEARCH:') + ' ' + evt.detail.searchText + '.<br>' + MiscTranslate._('NO_RESULTS_NEW_SEARCH') + '.';
-			titleElement.innerHTML = titleElementHtml;
-			if (!elemCancellingRename) {
-				document.title = titleElementHtml + ' - Loire-atlantique.fr';
-				titleElement.setAttribute('tabindex', '-1');
-				focusElement = titleElement;
-			}			
-		} else {
-			let titleElementHtml = evt.detail.nbResults;
-			if (evt.detail.nbResults > 1) {
-				titleElementHtml += ' ' + MiscTranslate._('RESULTS');
-			} else {
-				titleElementHtml += ' ' + MiscTranslate._('RESULT');
-			}
-			let accessibleSentence = MiscTranslate._('NB_RESULTS_FOR_SEARCH:') + ' ' + (evt.detail.searchText === '' ? MiscTranslate._('EMPTY_SEARCH_CRITERIA') : evt.detail.searchText);
-			titleElement.innerHTML = titleElementHtml + '<p class="visually-hidden" tabindex="-1">' + accessibleSentence + '</p>';
-			if (!elemCancellingRename) {
-				document.title = titleElementHtml + ' ' + accessibleSentence + ' - Loire-atlantique.fr';
-				titleElement.removeAttribute('tabindex');
-				focusElement = titleElement.querySelector('.visually-hidden');
-			}			
-		}
+        // Sinon, changer le nom de page pour afficher le nb de résultats
+        if (!evt.detail.nbResults) {
+          let titleElementHtml = MiscTranslate._('NO_RESULTS_FOR_SEARCH:') + ' ' + evt.detail.searchText + '.<br>' + MiscTranslate._('NO_RESULTS_NEW_SEARCH') + '.';
+          titleElement.innerHTML = titleElementHtml;
+          if (!elemCancellingRename) {
+            document.title = titleElementHtml + ' - Loire-atlantique.fr';
+            titleElement.setAttribute('tabindex', '-1');
+            focusElement = titleElement;
+          }
+        } else {
+          let titleElementHtml = evt.detail.nbResults;
+          if (evt.detail.nbResults > 1) {
+            titleElementHtml += ' ' + MiscTranslate._('RESULTS');
+          } else {
+            titleElementHtml += ' ' + MiscTranslate._('RESULT');
+          }
+          let accessibleSentence = MiscTranslate._('NB_RESULTS_FOR_SEARCH:') + ' ' + (evt.detail.searchText === '' ? MiscTranslate._('EMPTY_SEARCH_CRITERIA') : evt.detail.searchText);
+          titleElement.innerHTML = titleElementHtml + ' <p class="visually-hidden" tabindex="-1">' + accessibleSentence + '</p>';
+          if (!elemCancellingRename) {
+            document.title = titleElementHtml + ' ' + accessibleSentence + ' - Loire-atlantique.fr';
+            titleElement.removeAttribute('tabindex');
+            focusElement = titleElement.querySelector('.visually-hidden');
+          }
+        }
         
 
         // Remove existing results

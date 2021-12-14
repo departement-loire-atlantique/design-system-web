@@ -16,6 +16,7 @@ class LoaderStandard {
             return;
         }
 
+        document.body.classList.add('is-loader');
         this.previousFocusedElement = document.activeElement;
 
         this.counter++;
@@ -32,6 +33,8 @@ class LoaderStandard {
         if (!loaderElement || !loaderTextElement) {
             return;
         }
+
+        document.body.classList.remove('is-loader');
 
         this.counter = Math.max(0, (this.counter - 1));
         if (this.counter === 0) {
