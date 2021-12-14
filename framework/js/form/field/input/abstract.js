@@ -11,6 +11,7 @@ class FormFieldInputAbstract extends FormFieldAbstract {
         object.textElement = element;
         object.valueElement = element;
         object.inputElements = [element];
+        object.iconButton = null;
         object.labelElement = MiscDom.getPreviousSibling(element, 'label');
         object.resetButtonElement = MiscDom.getNextSibling(element, '.ds44-reset');
     }
@@ -34,6 +35,11 @@ class FormFieldInputAbstract extends FormFieldAbstract {
             }
             if (object.labelElement) {
                 MiscEvent.addListener('click', this.focusOnTextElement.bind(this, objectIndex), object.labelElement);
+            }
+            if(object.iconButton) {
+                MiscEvent.addListener('click', () => {
+                    object.valueElement.click();
+                }, object.iconButton);
             }
             this.quit(objectIndex);
         }
