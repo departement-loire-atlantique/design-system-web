@@ -86,6 +86,7 @@ class FormFieldInputFile extends FormFieldInputAbstract {
         object.textElement = MiscDom.getNextSibling(element, '.ds44-fileDisplay');
         object.labelElement = MiscDom.getPreviousSibling(element.parentNode, 'label');
         object.resetButtonElement = MiscDom.getNextSibling(element.parentNode, '.ds44-reset');
+        object.iconButton = MiscDom.getNextSibling(element.parentNode, '.ds44-file');
         object.fileExtensions = element.getAttribute('data-file-extensions');
     }
 

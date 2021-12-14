@@ -254,12 +254,14 @@ class ResultStandard {
         // Ne pas changer le titre de la page avec un paramètre précis
         let elemCancellingRename = document.querySelector('[data-keep-tab-name="true"]');
 
+
+        let siteName = document.body.dataset.sitename !== undefined ? document.body.dataset.sitename : "Loire-atlantique.fr"
         // Sinon, changer le nom de page pour afficher le nb de résultats
         if (!evt.detail.nbResults) {
           let titleElementHtml = MiscTranslate._('NO_RESULTS_FOR_SEARCH:') + ' ' + evt.detail.searchText + '.<br>' + MiscTranslate._('NO_RESULTS_NEW_SEARCH') + '.';
           titleElement.innerHTML = titleElementHtml;
           if (!elemCancellingRename) {
-            document.title = titleElementHtml + ' - Loire-atlantique.fr';
+            document.title = titleElementHtml + ' - '+siteName;
             titleElement.setAttribute('tabindex', '-1');
             focusElement = titleElement;
           }
@@ -273,7 +275,7 @@ class ResultStandard {
           let accessibleSentence = MiscTranslate._('NB_RESULTS_FOR_SEARCH:') + ' ' + (evt.detail.searchText === '' ? MiscTranslate._('EMPTY_SEARCH_CRITERIA') : evt.detail.searchText);
           titleElement.innerHTML = titleElementHtml + ' <p class="visually-hidden" tabindex="-1">' + accessibleSentence + '</p>';
           if (!elemCancellingRename) {
-            document.title = titleElementHtml + ' ' + accessibleSentence + ' - Loire-atlantique.fr';
+            document.title = titleElementHtml + ' ' + accessibleSentence + ' - '+siteName;
             titleElement.removeAttribute('tabindex');
             focusElement = titleElement.querySelector('.visually-hidden');
           }

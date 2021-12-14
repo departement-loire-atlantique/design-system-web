@@ -11,8 +11,10 @@ class FormFieldInputAbstract extends FormFieldAbstract {
         object.textElement = element;
         object.valueElement = element;
         object.inputElements = [element];
+        object.iconButton = null;
         object.labelElement = MiscDom.getPreviousSibling(element, 'label');
         object.resetButtonElement = MiscDom.getNextSibling(element, '.ds44-reset');
+        object.showPasswordButton = MiscDom.getNextSibling(element, ".ds44-showPassword");
     }
 
     initialize () {
@@ -34,6 +36,14 @@ class FormFieldInputAbstract extends FormFieldAbstract {
             }
             if (object.labelElement) {
                 MiscEvent.addListener('click', this.focusOnTextElement.bind(this, objectIndex), object.labelElement);
+            }
+            if(object.iconButton) {
+                MiscEvent.addListener('click', () => {
+                    object.valueElement.click();
+                }, object.iconButton);
+            }
+            if(object.showPasswordButton) {
+                MiscEvent.addListener('click', this.tooglePasswordField.bind(this, objectIndex), object.showPasswordButton);
             }
             this.quit(objectIndex);
         }
@@ -349,5 +359,42 @@ class FormFieldInputAbstract extends FormFieldAbstract {
             inputElement.setAttribute('aria-invalid', 'true');
         });
         object.textElement.classList.add('ds44-error');
+    }
+
+    tooglePasswordField(objectIndex) {
+        const object = this.objects[objectIndex];
+        if (!object || !object.textElement) {
+            return;
+        }
+        let icon = object.showPasswordButton.querySelector(".icon");
+        let iconShow = "icon-visuel";
+        let iconHide = "icon-handicap-visuel";
+
+        let entitled = object.showPasswordButton.querySelector(".visually-hidden");
+        let entitledShow = MiscTranslate._('FIELD_PASSWORD_VIEW');
+        let entitledHide = MiscTranslate._('FIELD_PASSWORD_NOT_VIEW');
+
+        if(object.showPasswordButton.classList.contains("show")) {
+            object.showPasswordButton.classList.remove("show");
+            object.inputElements[0].type = "password";
+            if(icon) {
+                icon.classList.remove(iconHide);
+                icon.classList.add(iconShow);
+            }
+            if(entitled) {
+                entitled.innerText = entitledHide;
+            }
+        }
+        else {
+            object.showPasswordButton.classList.add("show");
+            object.inputElements[0].type = "text";
+            if(icon) {
+                icon.classList.add(iconHide);
+                icon.classList.remove(iconShow);
+            }
+            if(entitled) {
+                entitled.innerText = entitledShow;
+            }
+        }
     }
 }
