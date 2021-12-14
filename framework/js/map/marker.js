@@ -94,6 +94,12 @@ class MapMarker extends MapAbstract {
             if (object.map.getSource('places')) {
                 object.map.removeSource('places');
             }
+            if (object.map.getLayer('lineString')) {
+                object.map.removeLayer('lineString');
+            }
+            if (object.map.getSource('lines')) {
+                object.map.removeSource('lines');
+            }
         }
 
         // Initialize bounding box
@@ -475,7 +481,6 @@ class MapMarker extends MapAbstract {
         if(feature.properties.type === "line" && evt.detail.lngLat !== undefined) {
             if(evt.detail.lineIds !== undefined && evt.detail.lineIds.length > 0)
             {
-                console.log(evt);
                 description = "";
                 for(let lineIndex = 0; lineIndex < evt.detail.lineIds.length; lineIndex++) {
                     description += evt.detail.lineIds[lineIndex].description;
