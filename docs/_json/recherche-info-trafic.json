@@ -1,575 +1,856 @@
 {
-  "nb-result": 39,
+  "nb-result": 23,
   "nb-result-per-page": 500,
   "max-result": 500,
   "geojsonId": "t1_9889",
   "result": [
     {
-      "value": "Accident ",
-      "id": "E15937843259305294_144-pcroute315937843259305928",
-      "snm": "",
+      "value": "Passage d'un convoi exceptionnel",
+      "id": "E162643569436734764_144-pcroute3162643569435134569",
+      "snm": "44-pcroute3162643569435134569",
       "metadata": {
+        "type": "EvenementDTO",
         "click": false,
-        "type": "EvenementDTO",
-        "icon_marker": "accident",
-        "lat": "47.12549328704158",
-        "long": "-1.525561049678613",
-        "html_list": "\n\n\n\n<section class='ds44-card ds44-card--horizontal '>\n   <div class=\"ds44-card__section\">\n        <div class=\"ds44-innerBoxContainer\">\n            <p role=\"heading\" aria-level=\"2\" class=\"h4-like ds44-cardTitle\"><i class=\"icon icon-attention ds44-icoInfoRoutes orangeFlag\" aria-hidden=\"true\"></i>Bouchon</p>\n            <p class=\"ds44-docListElem ds44-mt-std\"><i class=\"icon icon-marker ds44-docListIco\" aria-hidden=\"true\"></i><span class=\"visually-hidden\">Position :</span>\n            D178 - Les Sorinières<br>Les Sorinières vers Pont-St-Martin\n            </p>\n            <p class=\"ds44-docListElem ds44-mt-std\"><i class=\"icon icon-date ds44-docListIco\" aria-hidden=\"true\"></i><span class=\"visually-hidden\">Durée :</span>\n            Durée indéterminée\n            </p>\n            <p class=\"ds44-docListElem ds44-mt-std\"><i class=\"icon icon-tag ds44-docListIco\" aria-hidden=\"true\"></i><span class=\"visually-hidden\">Type d'intervention :</span> Bouchon</p>\n        </div>\n        <i class=\"icon icon-arrow-right ds44-cardArrow\" aria-hidden=\"true\"></i>\n    </div>\n</section>",
-        "html_marker": "\n\n\n\n\n\n   <div class=\"ds44-flex-container\">\n        <div class=\"ds44-card__section--horizontal ds44-flex-valign-center ds44-flex-align-center\">\n            <p role=\"heading\" aria-level=\"2\" class=\"ds44-card__title\">Bouchon </p>\n            <p class=\"ds44-docListElem ds44-mt-std\"><i class=\"icon icon-marker ds44-docListIco\" aria-hidden=\"true\"></i><span class=\"visually-hidden\">Position :</span>\n            D178 - Les Sorinières<br>Les Sorinières vers Pont-St-Martin\n            </p>\n            <p class=\"ds44-docListElem ds44-mt-std\"><i class=\"icon icon-date ds44-docListIco\" aria-hidden=\"true\"></i><span class=\"visually-hidden\">Durée :</span>\n            Durée indéterminée\n            </p>\n            <p class=\"ds44-docListElem ds44-mt-std\"><i class=\"icon icon-tag ds44-docListIco\" aria-hidden=\"true\"></i><span class=\"visually-hidden\">Type d'intervention :</span> Bouchon</p>\n        </div>\n    </div>\n"
+        "icon_marker": "autres",
+        "lat": "47.324249281145576",
+        "long": "-2.1635357527797643",
+        "html_list": "\n\n\n\n\n<section class='ds44-card ds44-card--horizontal '>\n   <div class=\"ds44-card__section\">\n        <div class=\"ds44-innerBoxContainer\">\n            <p role=\"heading\" aria-level=\"2\" class=\"h4-like ds44-cardTitle\"><i class=\"icon ds44-icoInfoRoutes icon-attention orangeFlag\" aria-hidden=\"true\"></i><a href=\"#\" class=\"ds44-card__globalLink\">Passage d'un convoi exceptionnel</a></p>\n            <p class=\"ds44-docListElem ds44-mt-std\"><i class=\"icon icon-marker ds44-docListIco\" aria-hidden=\"true\"></i><span class=\"visually-hidden\">Position :</span>\n            N171 - Montoir-de-Bretagne<br>int-Nazaire vers Laval\n            </p>\n            <p class=\"ds44-docListElem ds44-mt-std\"><i class=\"icon icon-date ds44-docListIco\" aria-hidden=\"true\"></i><span class=\"visually-hidden\">Durée :</span>\n            du 09/08/2021 au 10/08/2021<br>de 22h00 à 06h00\n            </p>\n            \n            <p class=\"ds44-docListElem ds44-mt-std\"><i class=\"icon icon-tag ds44-docListIco\" aria-hidden=\"true\"></i><span class=\"visually-hidden\">Type d'intervention :</span> Fermeture de route / dévaition</p>\n            \n        </div>\n        <i class=\"icon icon-arrow-right ds44-cardArrow\" aria-hidden=\"true\"></i>\n    </div>\n</section>",
+        "html_marker": "\n\n\n\n\n\n   <div class=\"ds44-flex-container\">\n        <div class=\"ds44-card__section--horizontal ds44-flex-valign-center ds44-flex-align-center\">\n            <p role=\"heading\" aria-level=\"2\" class=\"ds44-card__title\">Passage d'un convoi exceptionnel</p>\n            <p class=\"ds44-docListElem ds44-mt-std\"><i class=\"icon icon-marker ds44-docListIco\" aria-hidden=\"true\"></i><span class=\"visually-hidden\">Position :</span>\n            N171 - Montoir-de-Bretagne<br>int-Nazaire vers Laval\n            </p>\n            <p class=\"ds44-docListElem ds44-mt-std\"><i class=\"icon icon-date ds44-docListIco\" aria-hidden=\"true\"></i><span class=\"visually-hidden\">Durée :</span>\n            du 09/08/2021 au 10/08/2021<br>de 22h00 à 06h00\n            </p>\n            \n            <p class=\"ds44-docListElem ds44-mt-std\"><i class=\"icon icon-tag ds44-docListIco\" aria-hidden=\"true\"></i><span class=\"visually-hidden\">Type d'intervention :</span> Fermeture de route / dévaition</p>\n            \n        </div>\n    </div>\n"
       }
     },
     {
-      "id": "E15937843259305294_144-pcroute315937843259305928_trace",
-      "metadata": {
-        "type": "TraceDTO",
-        "html_marker": "\n\n\n\n\n\n   <div class=\"ds44-flex-container\">\n        <div class=\"ds44-card__section--horizontal ds44-flex-valign-center ds44-flex-align-center\">\n            <p role=\"heading\" aria-level=\"2\" class=\"ds44-card__title\">Trace 1</p>\n            <p class=\"ds44-docListElem ds44-mt-std\"><i class=\"icon icon-marker ds44-docListIco\" aria-hidden=\"true\"></i><span class=\"visually-hidden\">Position :</span>\n            D178 - Les Sorinières<br>Les Sorinières vers Pont-St-Martin\n            </p>\n            <p class=\"ds44-docListElem ds44-mt-std\"><i class=\"icon icon-date ds44-docListIco\" aria-hidden=\"true\"></i><span class=\"visually-hidden\">Durée :</span>\n            Durée indéterminée\n            </p>\n            <p class=\"ds44-docListElem ds44-mt-std\"><i class=\"icon icon-tag ds44-docListIco\" aria-hidden=\"true\"></i><span class=\"visually-hidden\">Type d'intervention :</span> Bouchon</p>\n        </div>\n    </div>\n",
-        "coordinates": [
-          [-1.5691882917239282,47.50419017578768],
-          [-1.5660738899298787,47.50496110661509],
-          [-1.5647789338745106,47.505363320668046],
-          [-1.5628247628510477,47.50601820692191],
-          [-1.5592861318767013,47.50757997653952],
-          [-1.556136680756827,47.50889458874648],
-          [-1.5554180285711676,47.50919147550749],
-          [-1.5541247070451945,47.509638580902525],
-          [-1.549302661088441,47.51192170349759],
-          [-1.5488776356142,47.512235761324376],
-          [-1.5479260511981874,47.51295706754537],
-          [-1.5475990309349934,47.51301591294471],
-          [-1.5452901283889993,47.5124602468776],
-          [-1.5389380148519622,47.511007251066665],
-          [-1.536477339382147,47.51040448170373],
-          [-1.5355526895963874,47.51017671813967],
-          [-1.5315322327017669,47.50999932082916],
-          [-1.5290880103114808,47.50989600414248],
-          [-1.5279596380292815,47.50993551194228],
-          [-1.5206457707305463,47.51076369391846],
-          [-1.5187209839575413,47.510824325924844],
-          [-1.5144067433925013,47.51063803285096],
-          [-1.507647677820833,47.510343296397615],
-          [-1.5067782801456662,47.51013851513925],
-          [-1.5041794095656231,47.50915082696411],
-          [-1.5017179330857857,47.50819186971776],
-          [-1.4936369761510275,47.50498609216678],
-          [-1.4914630933614437,47.50412517292964],
-          [-1.4905108658075688,47.503878685773714],
-          [-1.489364229137126,47.50368811787094],
-          [-1.4859596385387728,47.50306282216821],
-          [-1.484784355588875,47.50285833268729],
-          [-1.48311687784388,47.502822785926746],
-          [-1.4827195995464741,47.50283102641849]
-        ]
-      }
-    },
-    {
-      "id": "E15937843259305294_144-pcroute315937843259305929_trace",
-      "metadata": {
-        "type": "TraceDTO",
-        "html_marker": "\n\n\n\n\n\n   <div class=\"ds44-flex-container\">\n        <div class=\"ds44-card__section--horizontal ds44-flex-valign-center ds44-flex-align-center\">\n            <p role=\"heading\" aria-level=\"2\" class=\"ds44-card__title\">Trace 2 </p>\n            <p class=\"ds44-docListElem ds44-mt-std\"><i class=\"icon icon-marker ds44-docListIco\" aria-hidden=\"true\"></i><span class=\"visually-hidden\">Position :</span>\n            D178 - Les Sorinières<br>Les Sorinières vers Pont-St-Martin\n            </p>\n            <p class=\"ds44-docListElem ds44-mt-std\"><i class=\"icon icon-date ds44-docListIco\" aria-hidden=\"true\"></i><span class=\"visually-hidden\">Durée :</span>\n            Durée indéterminée\n            </p>\n            <p class=\"ds44-docListElem ds44-mt-std\"><i class=\"icon icon-tag ds44-docListIco\" aria-hidden=\"true\"></i><span class=\"visually-hidden\">Type d'intervention :</span> Bouchon</p>\n        </div>\n    </div>\n",
-        "coordinates": [
-          [-1.5691882917239282,47.50419017578768],
-          [-1.5660738899298787,47.50496110661509],
-          [-1.5647789338745106,47.505363320668046],
-          [-1.5628247628510477,47.50601820692191],
-          [-1.5592861318767013,47.50757997653952],
-          [-1.556136680756827,47.50889458874648],
-          [-1.5554180285711676,47.50919147550749],
-          [-1.5541247070451945,47.509638580902525],
-          [-1.549302661088441,47.51192170349759],
-          [-1.5488776356142,47.512235761324376],
-          [-1.5479260511981874,47.51295706754537],
-          [-1.5475990309349934,47.51301591294471],
-          [-1.5452901283889993,47.5124602468776],
-          [-1.5389380148519622,47.511007251066665],
-          [-1.536477339382147,47.51040448170373],
-          [-1.5355526895963874,47.51017671813967],
-          [-1.5315322327017669,47.50999932082916],
-          [-1.5290880103114808,47.50989600414248],
-          [-1.5279596380292815,47.50993551194228],
-          [-1.5206457707305463,47.51076369391846],
-          [-1.5187209839575413,47.510824325924844],
-          [-1.5144067433925013,47.51063803285096],
-          [-1.507647677820833,47.510343296397615],
-          [-1.5067782801456662,47.51013851513925],
-          [-1.5041794095656231,47.50915082696411],
-          [-1.5017179330857857,47.50819186971776],
-          [-1.4936369761510275,47.50498609216678],
-          [-1.4914630933614437,47.50412517292964],
-          [-1.4905108658075688,47.503878685773714],
-          [-1.489364229137126,47.50368811787094],
-          [-1.4859596385387728,47.50306282216821],
-          [-1.484784355588875,47.50285833268729],
-          [-1.48311687784388,47.502822785926746],
-          [-1.4827195995464741,47.50283102641865]
-        ]
-      }
-    },
-    {
-      "value": "Autres",
-      "id": "E163671409704617378_1Goupilleau16367140970461798",
+      "value": "Bac de réserve",
+      "id": "1bac162548619823438668",
+      "snm": "bac162548619823438668",
       "metadata": {
         "type": "EvenementDTO",
+        "click": false,
+        "icon_marker": "bacs",
+        "lat": "47.19644470749437",
+        "long": "-1.6743617405076974",
+        "html_list": "\n\n\n\n\n<section class='ds44-card ds44-card--horizontal '>\n   <div class=\"ds44-card__section\">\n        <div class=\"ds44-innerBoxContainer\">\n            <p role=\"heading\" aria-level=\"2\" class=\"h4-like ds44-cardTitle\"><i class=\"icon ds44-icoInfoRoutes icon-bacs orangeFlag\" aria-hidden=\"true\"></i><a href=\"#\" class=\"ds44-card__globalLink\">Bac de réserve</a></p>\n            <p class=\"ds44-docListElem ds44-mt-std\"><i class=\"icon icon-marker ds44-docListIco\" aria-hidden=\"true\"></i><span class=\"visually-hidden\">Position :</span>\n            Bacs de Loire<br>Liaison : Basse-Indre / Indret\n            </p>\n            <p class=\"ds44-docListElem ds44-mt-std\"><i class=\"icon icon-date ds44-docListIco\" aria-hidden=\"true\"></i><span class=\"visually-hidden\">Durée :</span>\n            Fin prévisible : 23/07/2021 à 19h00<br>Attente plus longue possible\n            </p>\n            \n            <p class=\"ds44-docListElem ds44-mt-std\"><i class=\"icon icon-tag ds44-docListIco\" aria-hidden=\"true\"></i><span class=\"visually-hidden\">Type d'intervention :</span> (plus faible capacité)</p>\n            \n        </div>\n        <i class=\"icon icon-arrow-right ds44-cardArrow\" aria-hidden=\"true\"></i>\n    </div>\n</section>",
+        "html_marker": "\n\n\n\n\n\n   <div class=\"ds44-flex-container\">\n        <div class=\"ds44-card__section--horizontal ds44-flex-valign-center ds44-flex-align-center\">\n            <p role=\"heading\" aria-level=\"2\" class=\"ds44-card__title\">Bac de réserve</p>\n            <p class=\"ds44-docListElem ds44-mt-std\"><i class=\"icon icon-marker ds44-docListIco\" aria-hidden=\"true\"></i><span class=\"visually-hidden\">Position :</span>\n            Bacs de Loire<br>Liaison : Basse-Indre / Indret\n            </p>\n            <p class=\"ds44-docListElem ds44-mt-std\"><i class=\"icon icon-date ds44-docListIco\" aria-hidden=\"true\"></i><span class=\"visually-hidden\">Durée :</span>\n            Fin prévisible : 23/07/2021 à 19h00<br>Attente plus longue possible\n            </p>\n            \n            <p class=\"ds44-docListElem ds44-mt-std\"><i class=\"icon icon-tag ds44-docListIco\" aria-hidden=\"true\"></i><span class=\"visually-hidden\">Type d'intervention :</span> (plus faible capacité)</p>\n            \n        </div>\n    </div>\n"
+      }
+    },
+    {
+      "value": "Travaux sur ouvrage d'art",
+      "id": "E16236825089288568_1sech316236825089088404",
+      "snm": "sech316236825089088404",
+      "metadata": {
+        "type": "EvenementDTO",
+        "click": false,
         "icon_marker": "chantier",
-        "lat": "47.06945403734012",
-        "long": "-1.9031678889142216",
-        "html_list": "\n\n\n\n<section class='ds44-card ds44-card--horizontal '>\n   <div class=\"ds44-card__section\">\n        <div class=\"ds44-innerBoxContainer\">\n            <p role=\"heading\" aria-level=\"2\" class=\"h4-like ds44-cardTitle\"><i class=\"icon icon-attention ds44-icoInfoRoutes orangeFlag\" aria-hidden=\"true\"></i><a href=\"#\" class=\"ds44-card__globalLink\">Autres</a></p>\n            <p class=\"ds44-docListElem ds44-mt-std\"><i class=\"icon icon-marker ds44-docListIco\" aria-hidden=\"true\"></i><span class=\"visually-hidden\">Position :</span>\n            D758 - Villeneuve-en-Retz<br>Saint-Hilaire / Villeneuve-en-Retz\n            </p>\n            <p class=\"ds44-docListElem ds44-mt-std\"><i class=\"icon icon-date ds44-docListIco\" aria-hidden=\"true\"></i><span class=\"visually-hidden\">Durée :</span>\n            Du 29/11/2021 au 17/12/2021<br>Du lundi au vendredi de 9h à 17h\n            </p>\n            <p class=\"ds44-docListElem ds44-mt-std\"><i class=\"icon icon-tag ds44-docListIco\" aria-hidden=\"true\"></i><span class=\"visually-hidden\">Type d'intervention :</span> Autres</p>\n        </div>\n        <i class=\"icon icon-arrow-right ds44-cardArrow\" aria-hidden=\"true\"></i>\n    </div>\n</section>",
-        "html_marker": "\n\n\n\n\n\n   <div class=\"ds44-flex-container\">\n        <div class=\"ds44-card__section--horizontal ds44-flex-valign-center ds44-flex-align-center\">\n            <p role=\"heading\" aria-level=\"2\" class=\"ds44-card__title\">Autres</p>\n            <p class=\"ds44-docListElem ds44-mt-std\"><i class=\"icon icon-marker ds44-docListIco\" aria-hidden=\"true\"></i><span class=\"visually-hidden\">Position :</span>\n            D758 - Villeneuve-en-Retz<br>Saint-Hilaire / Villeneuve-en-Retz\n            </p>\n            <p class=\"ds44-docListElem ds44-mt-std\"><i class=\"icon icon-date ds44-docListIco\" aria-hidden=\"true\"></i><span class=\"visually-hidden\">Durée :</span>\n            Du 29/11/2021 au 17/12/2021<br>Du lundi au vendredi de 9h à 17h\n            </p>\n            <p class=\"ds44-docListElem ds44-mt-std\"><i class=\"icon icon-tag ds44-docListIco\" aria-hidden=\"true\"></i><span class=\"visually-hidden\">Type d'intervention :</span> Autres</p>\n        </div>\n    </div>\n"
-      }
-    },
-    {
-      "value": "Autres 2",
-      "id": "E163671409704617378_1Goupilleau16367140970461798_2",
-      "metadata": {
-        "type": "EvenementDTO",
-        "icon_marker": "chantier",
-        "lat": "47.06945403734012",
-        "long": "-1.9031678889142216",
-        "html_list": "\n\n\n\n<section class='ds44-card ds44-card--horizontal '>\n   <div class=\"ds44-card__section\">\n        <div class=\"ds44-innerBoxContainer\">\n            <p role=\"heading\" aria-level=\"2\" class=\"h4-like ds44-cardTitle\"><i class=\"icon icon-attention ds44-icoInfoRoutes orangeFlag\" aria-hidden=\"true\"></i><a href=\"#\" class=\"ds44-card__globalLink\">Autres 2</a></p>\n            <p class=\"ds44-docListElem ds44-mt-std\"><i class=\"icon icon-marker ds44-docListIco\" aria-hidden=\"true\"></i><span class=\"visually-hidden\">Position :</span>\n            D758 - Villeneuve-en-Retz<br>Saint-Hilaire / Villeneuve-en-Retz\n            </p>\n            <p class=\"ds44-docListElem ds44-mt-std\"><i class=\"icon icon-date ds44-docListIco\" aria-hidden=\"true\"></i><span class=\"visually-hidden\">Durée :</span>\n            Du 29/11/2021 au 17/12/2021<br>Du lundi au vendredi de 9h à 17h\n            </p>\n            <p class=\"ds44-docListElem ds44-mt-std\"><i class=\"icon icon-tag ds44-docListIco\" aria-hidden=\"true\"></i><span class=\"visually-hidden\">Type d'intervention :</span> Autres</p>\n        </div>\n        <i class=\"icon icon-arrow-right ds44-cardArrow\" aria-hidden=\"true\"></i>\n    </div>\n</section>",
-        "html_marker": "\n\n\n\n\n\n   <div class=\"ds44-flex-container\">\n        <div class=\"ds44-card__section--horizontal ds44-flex-valign-center ds44-flex-align-center\">\n            <p role=\"heading\" aria-level=\"2\" class=\"ds44-card__title\">Autres 2</p>\n            <p class=\"ds44-docListElem ds44-mt-std\"><i class=\"icon icon-marker ds44-docListIco\" aria-hidden=\"true\"></i><span class=\"visually-hidden\">Position :</span>\n            D758 - Villeneuve-en-Retz<br>Saint-Hilaire / Villeneuve-en-Retz\n            </p>\n            <p class=\"ds44-docListElem ds44-mt-std\"><i class=\"icon icon-date ds44-docListIco\" aria-hidden=\"true\"></i><span class=\"visually-hidden\">Durée :</span>\n            Du 29/11/2021 au 17/12/2021<br>Du lundi au vendredi de 9h à 17h\n            </p>\n            <p class=\"ds44-docListElem ds44-mt-std\"><i class=\"icon icon-tag ds44-docListIco\" aria-hidden=\"true\"></i><span class=\"visually-hidden\">Type d'intervention :</span> Autres</p>\n        </div>\n    </div>\n"
-      }
-    },
-    {
-      "value": "Autres",
-      "id": "E163672346468124779_1Goupilleau163672346468124644",
-      "metadata": {
-        "type": "EvenementDTO",
-        "icon_marker": "chantier",
-        "lat": "47.06583859116866",
-        "long": "-1.9095084270080087",
-        "html_list": "\n\n\n\n<section class='ds44-card ds44-card--horizontal '>\n   <div class=\"ds44-card__section\">\n        <div class=\"ds44-innerBoxContainer\">\n            <p role=\"heading\" aria-level=\"2\" class=\"h4-like ds44-cardTitle\"><i class=\"icon icon-attention ds44-icoInfoRoutes orangeFlag\" aria-hidden=\"true\"></i><a href=\"#\" class=\"ds44-card__globalLink\">Autres</a></p>\n            <p class=\"ds44-docListElem ds44-mt-std\"><i class=\"icon icon-marker ds44-docListIco\" aria-hidden=\"true\"></i><span class=\"visually-hidden\">Position :</span>\n            D758 - Villeneuve-en-Retz<br>Saint-Hilaire / Villeneuve-en-Retz\n            </p>\n            <p class=\"ds44-docListElem ds44-mt-std\"><i class=\"icon icon-date ds44-docListIco\" aria-hidden=\"true\"></i><span class=\"visually-hidden\">Durée :</span>\n            Du 29/11/2021 au 17/12/2021<br>Du lundi au vendredi de 9h à 17h\n            </p>\n            <p class=\"ds44-docListElem ds44-mt-std\"><i class=\"icon icon-tag ds44-docListIco\" aria-hidden=\"true\"></i><span class=\"visually-hidden\">Type d'intervention :</span> Autres</p>\n        </div>\n        <i class=\"icon icon-arrow-right ds44-cardArrow\" aria-hidden=\"true\"></i>\n    </div>\n</section>",
-        "html_marker": "\n\n\n\n\n\n   <div class=\"ds44-flex-container\">\n        <div class=\"ds44-card__section--horizontal ds44-flex-valign-center ds44-flex-align-center\">\n            <p role=\"heading\" aria-level=\"2\" class=\"ds44-card__title\">Autres</p>\n            <p class=\"ds44-docListElem ds44-mt-std\"><i class=\"icon icon-marker ds44-docListIco\" aria-hidden=\"true\"></i><span class=\"visually-hidden\">Position :</span>\n            D758 - Villeneuve-en-Retz<br>Saint-Hilaire / Villeneuve-en-Retz\n            </p>\n            <p class=\"ds44-docListElem ds44-mt-std\"><i class=\"icon icon-date ds44-docListIco\" aria-hidden=\"true\"></i><span class=\"visually-hidden\">Durée :</span>\n            Du 29/11/2021 au 17/12/2021<br>Du lundi au vendredi de 9h à 17h\n            </p>\n            <p class=\"ds44-docListElem ds44-mt-std\"><i class=\"icon icon-tag ds44-docListIco\" aria-hidden=\"true\"></i><span class=\"visually-hidden\">Type d'intervention :</span> Autres</p>\n        </div>\n    </div>\n"
-      }
-    },
-    {
-      "value": "Aménagement de chaussée",
-      "id": "E163731869380553448_1houssais163731869380453788",
-      "metadata": {
-        "type": "EvenementDTO",
-        "icon_marker": "chantier",
-        "lat": "47.404085266748055",
-        "long": "-1.447904458910753",
-        "html_list": "\n\n\n\n<section class='ds44-card ds44-card--horizontal '>\n   <div class=\"ds44-card__section\">\n        <div class=\"ds44-innerBoxContainer\">\n            <p role=\"heading\" aria-level=\"2\" class=\"h4-like ds44-cardTitle\"><i class=\"icon icon-attention ds44-icoInfoRoutes orangeFlag\" aria-hidden=\"true\"></i><a href=\"#\" class=\"ds44-card__globalLink\">Aménagement de chaussée</a></p>\n            <p class=\"ds44-docListElem ds44-mt-std\"><i class=\"icon icon-marker ds44-docListIco\" aria-hidden=\"true\"></i><span class=\"visually-hidden\">Position :</span>\n            D31 - Petit-Mars<br>Les Touches / Petit-Mars\n            </p>\n            <p class=\"ds44-docListElem ds44-mt-std\"><i class=\"icon icon-date ds44-docListIco\" aria-hidden=\"true\"></i><span class=\"visually-hidden\">Durée :</span>\n            Du 22/11/2021 au 03/12/2021<br>24h / 24 et 7 jours/ 7\n            </p>\n            <p class=\"ds44-docListElem ds44-mt-std\"><i class=\"icon icon-tag ds44-docListIco\" aria-hidden=\"true\"></i><span class=\"visually-hidden\">Type d'intervention :</span> Aménagement de chaussée</p>\n        </div>\n        <i class=\"icon icon-arrow-right ds44-cardArrow\" aria-hidden=\"true\"></i>\n    </div>\n</section>",
-        "html_marker": "\n\n\n\n\n\n   <div class=\"ds44-flex-container\">\n        <div class=\"ds44-card__section--horizontal ds44-flex-valign-center ds44-flex-align-center\">\n            <p role=\"heading\" aria-level=\"2\" class=\"ds44-card__title\">Aménagement de chaussée</p>\n            <p class=\"ds44-docListElem ds44-mt-std\"><i class=\"icon icon-marker ds44-docListIco\" aria-hidden=\"true\"></i><span class=\"visually-hidden\">Position :</span>\n            D31 - Petit-Mars<br>Les Touches / Petit-Mars\n            </p>\n            <p class=\"ds44-docListElem ds44-mt-std\"><i class=\"icon icon-date ds44-docListIco\" aria-hidden=\"true\"></i><span class=\"visually-hidden\">Durée :</span>\n            Du 22/11/2021 au 03/12/2021<br>24h / 24 et 7 jours/ 7\n            </p>\n            <p class=\"ds44-docListElem ds44-mt-std\"><i class=\"icon icon-tag ds44-docListIco\" aria-hidden=\"true\"></i><span class=\"visually-hidden\">Type d'intervention :</span> Aménagement de chaussée</p>\n        </div>\n    </div>\n"
-      }
-    },
-    {
-      "value": "Déviation",
-      "id": "E163118192983629702gentils163118141302253569",
-      "metadata": {
-        "type": "EvenementDTO",
-        "icon_marker": "deviation",
-        "lat": "47.419683091706595",
-        "long": "-1.2918822610710983",
-        "html_list": "\n\n\n\n<section class='ds44-card ds44-card--horizontal '>\n   <div class=\"ds44-card__section\">\n        <div class=\"ds44-innerBoxContainer\">\n            <p role=\"heading\" aria-level=\"2\" class=\"h4-like ds44-cardTitle\"><i class=\"icon icon-attention ds44-icoInfoRoutes orangeFlag\" aria-hidden=\"true\"></i><a href=\"#\" class=\"ds44-card__globalLink\">Déviation</a></p>\n            <p class=\"ds44-docListElem ds44-mt-std\"><i class=\"icon icon-marker ds44-docListIco\" aria-hidden=\"true\"></i><span class=\"visually-hidden\">Position :</span>\n            D14 - Mésanger\n            </p>\n            <p class=\"ds44-docListElem ds44-mt-std\"><i class=\"icon icon-date ds44-docListIco\" aria-hidden=\"true\"></i><span class=\"visually-hidden\">Durée :</span>\n            Du 22/11/2021 au 10/12/2021<br>Véhicules déviés : tous véhicules\n            </p>\n            <p class=\"ds44-docListElem ds44-mt-std\"><i class=\"icon icon-tag ds44-docListIco\" aria-hidden=\"true\"></i><span class=\"visually-hidden\">Type d'intervention :</span> Tous les véhicules</p>\n        </div>\n        <i class=\"icon icon-arrow-right ds44-cardArrow\" aria-hidden=\"true\"></i>\n    </div>\n</section>",
-        "html_marker": "\n\n\n\n\n\n   <div class=\"ds44-flex-container\">\n        <div class=\"ds44-card__section--horizontal ds44-flex-valign-center ds44-flex-align-center\">\n            <p role=\"heading\" aria-level=\"2\" class=\"ds44-card__title\">Déviation</p>\n            <p class=\"ds44-docListElem ds44-mt-std\"><i class=\"icon icon-marker ds44-docListIco\" aria-hidden=\"true\"></i><span class=\"visually-hidden\">Position :</span>\n            D14 - Mésanger\n            </p>\n            <p class=\"ds44-docListElem ds44-mt-std\"><i class=\"icon icon-date ds44-docListIco\" aria-hidden=\"true\"></i><span class=\"visually-hidden\">Durée :</span>\n            Du 22/11/2021 au 10/12/2021<br>Véhicules déviés : tous véhicules\n            </p>\n            <p class=\"ds44-docListElem ds44-mt-std\"><i class=\"icon icon-tag ds44-docListIco\" aria-hidden=\"true\"></i><span class=\"visually-hidden\">Type d'intervention :</span> Tous les véhicules</p>\n        </div>\n    </div>\n"
+        "lat": "47.25881301828669",
+        "long": "-1.4303737240868926",
+        "html_list": "\n\n\n\n\n<section class='ds44-card ds44-card--horizontal '>\n   <div class=\"ds44-card__section\">\n        <div class=\"ds44-innerBoxContainer\">\n            <p role=\"heading\" aria-level=\"2\" class=\"h4-like ds44-cardTitle\"><i class=\"icon ds44-icoInfoRoutes icon-travaux orangeFlag\" aria-hidden=\"true\"></i><a href=\"#\" class=\"ds44-card__globalLink\">Travaux sur ouvrage d'art</a></p>\n            <p class=\"ds44-docListElem ds44-mt-std\"><i class=\"icon icon-marker ds44-docListIco\" aria-hidden=\"true\"></i><span class=\"visually-hidden\">Position :</span>\n            D37 - Saint-Julien-de-Concelles<br>Thouaré-sur-Loire / St-Julien-de-C.\n            </p>\n            <p class=\"ds44-docListElem ds44-mt-std\"><i class=\"icon icon-date ds44-docListIco\" aria-hidden=\"true\"></i><span class=\"visually-hidden\">Durée :</span>\n            Du 19/07/2021 au 23/07/2021<br>24h / 24 et 7 jours/ 7\n            </p>\n            \n            <p class=\"ds44-docListElem ds44-mt-std\"><i class=\"icon icon-tag ds44-docListIco\" aria-hidden=\"true\"></i><span class=\"visually-hidden\">Type d'intervention :</span> Route fermée / déviation</p>\n            \n        </div>\n        <i class=\"icon icon-arrow-right ds44-cardArrow\" aria-hidden=\"true\"></i>\n    </div>\n</section>",
+        "html_marker": "\n\n\n\n\n\n   <div class=\"ds44-flex-container\">\n        <div class=\"ds44-card__section--horizontal ds44-flex-valign-center ds44-flex-align-center\">\n            <p role=\"heading\" aria-level=\"2\" class=\"ds44-card__title\">Travaux sur ouvrage d'art</p>\n            <p class=\"ds44-docListElem ds44-mt-std\"><i class=\"icon icon-marker ds44-docListIco\" aria-hidden=\"true\"></i><span class=\"visually-hidden\">Position :</span>\n            D37 - Saint-Julien-de-Concelles<br>Thouaré-sur-Loire / St-Julien-de-C.\n            </p>\n            <p class=\"ds44-docListElem ds44-mt-std\"><i class=\"icon icon-date ds44-docListIco\" aria-hidden=\"true\"></i><span class=\"visually-hidden\">Durée :</span>\n            Du 19/07/2021 au 23/07/2021<br>24h / 24 et 7 jours/ 7\n            </p>\n            \n            <p class=\"ds44-docListElem ds44-mt-std\"><i class=\"icon icon-tag ds44-docListIco\" aria-hidden=\"true\"></i><span class=\"visually-hidden\">Type d'intervention :</span> Route fermée / déviation</p>\n            \n        </div>\n    </div>\n"
       }
     },
     {
       "value": "Travaux sur réseaux",
-      "id": "E163473431568355309_1templier163473431568355528",
+      "id": "E162428953957119292_1bertet1162428953957119443",
+      "snm": "bertet1162428953957119443",
       "metadata": {
         "type": "EvenementDTO",
+        "click": false,
         "icon_marker": "chantier",
-        "lat": "47.15511718697972",
-        "long": "-2.1670271691261074",
-        "html_list": "\n\n\n\n<section class='ds44-card ds44-card--horizontal '>\n   <div class=\"ds44-card__section\">\n        <div class=\"ds44-innerBoxContainer\">\n            <p role=\"heading\" aria-level=\"2\" class=\"h4-like ds44-cardTitle\"><i class=\"icon icon-attention ds44-icoInfoRoutes orangeFlag\" aria-hidden=\"true\"></i><a href=\"#\" class=\"ds44-card__globalLink\">Travaux sur réseaux</a></p>\n            <p class=\"ds44-docListElem ds44-mt-std\"><i class=\"icon icon-marker ds44-docListIco\" aria-hidden=\"true\"></i><span class=\"visually-hidden\">Position :</span>\n            D96 - La Plaine-sur-Mer<br>Saint-Michel / La Plaine-sur-Mer\n            </p>\n            <p class=\"ds44-docListElem ds44-mt-std\"><i class=\"icon icon-date ds44-docListIco\" aria-hidden=\"true\"></i><span class=\"visually-hidden\">Durée :</span>\n            Du 22/11/2021 au 03/12/2021<br>Du lundi au vendredi de 9h à 17h\n            </p>\n            <p class=\"ds44-docListElem ds44-mt-std\"><i class=\"icon icon-tag ds44-docListIco\" aria-hidden=\"true\"></i><span class=\"visually-hidden\">Type d'intervention :</span> Tranchée / raccordement</p>\n        </div>\n        <i class=\"icon icon-arrow-right ds44-cardArrow\" aria-hidden=\"true\"></i>\n    </div>\n</section>",
-        "html_marker": "\n\n\n\n\n\n   <div class=\"ds44-flex-container\">\n        <div class=\"ds44-card__section--horizontal ds44-flex-valign-center ds44-flex-align-center\">\n            <p role=\"heading\" aria-level=\"2\" class=\"ds44-card__title\">Travaux sur réseaux</p>\n            <p class=\"ds44-docListElem ds44-mt-std\"><i class=\"icon icon-marker ds44-docListIco\" aria-hidden=\"true\"></i><span class=\"visually-hidden\">Position :</span>\n            D96 - La Plaine-sur-Mer<br>Saint-Michel / La Plaine-sur-Mer\n            </p>\n            <p class=\"ds44-docListElem ds44-mt-std\"><i class=\"icon icon-date ds44-docListIco\" aria-hidden=\"true\"></i><span class=\"visually-hidden\">Durée :</span>\n            Du 22/11/2021 au 03/12/2021<br>Du lundi au vendredi de 9h à 17h\n            </p>\n            <p class=\"ds44-docListElem ds44-mt-std\"><i class=\"icon icon-tag ds44-docListIco\" aria-hidden=\"true\"></i><span class=\"visually-hidden\">Type d'intervention :</span> Tranchée / raccordement</p>\n        </div>\n    </div>\n"
+        "lat": "47.2278758439895",
+        "long": "-1.4452315856294051",
+        "html_list": "\n\n\n\n\n<section class='ds44-card ds44-card--horizontal '>\n   <div class=\"ds44-card__section\">\n        <div class=\"ds44-innerBoxContainer\">\n            <p role=\"heading\" aria-level=\"2\" class=\"h4-like ds44-cardTitle\"><i class=\"icon ds44-icoInfoRoutes icon-travaux orangeFlag\" aria-hidden=\"true\"></i><a href=\"#\" class=\"ds44-card__globalLink\">Travaux sur réseaux</a></p>\n            <p class=\"ds44-docListElem ds44-mt-std\"><i class=\"icon icon-marker ds44-docListIco\" aria-hidden=\"true\"></i><span class=\"visually-hidden\">Position :</span>\n            D215 - Saint-Julien-de-Concelles<br>Basse-Goulaine \n            </p>\n            <p class=\"ds44-docListElem ds44-mt-std\"><i class=\"icon icon-date ds44-docListIco\" aria-hidden=\"true\"></i><span class=\"visually-hidden\">Durée :</span>\n            Du 12/07/2021 au 06/08/2021<br>Du lundi au vendredi de 9h à 17h\n            </p>\n            \n            <p class=\"ds44-docListElem ds44-mt-std\"><i class=\"icon icon-tag ds44-docListIco\" aria-hidden=\"true\"></i><span class=\"visually-hidden\">Type d'intervention :</span> Circulation alternée</p>\n            \n        </div>\n        <i class=\"icon icon-arrow-right ds44-cardArrow\" aria-hidden=\"true\"></i>\n    </div>\n</section>",
+        "html_marker": "\n\n\n\n\n\n   <div class=\"ds44-flex-container\">\n        <div class=\"ds44-card__section--horizontal ds44-flex-valign-center ds44-flex-align-center\">\n            <p role=\"heading\" aria-level=\"2\" class=\"ds44-card__title\">Travaux sur réseaux</p>\n            <p class=\"ds44-docListElem ds44-mt-std\"><i class=\"icon icon-marker ds44-docListIco\" aria-hidden=\"true\"></i><span class=\"visually-hidden\">Position :</span>\n            D215 - Saint-Julien-de-Concelles<br>Basse-Goulaine \n            </p>\n            <p class=\"ds44-docListElem ds44-mt-std\"><i class=\"icon icon-date ds44-docListIco\" aria-hidden=\"true\"></i><span class=\"visually-hidden\">Durée :</span>\n            Du 12/07/2021 au 06/08/2021<br>Du lundi au vendredi de 9h à 17h\n            </p>\n            \n            <p class=\"ds44-docListElem ds44-mt-std\"><i class=\"icon icon-tag ds44-docListIco\" aria-hidden=\"true\"></i><span class=\"visually-hidden\">Type d'intervention :</span> Circulation alternée</p>\n            \n        </div>\n    </div>\n"
       }
     },
     {
-      "value": "Travaux sur réseaux",
-      "id": "E163480873552015174_1dallavia163480873551915238",
+      "value": "Travaux sur ouvrage d'art",
+      "id": "E162324794409924455_1dallavia162324794409924284",
+      "snm": "dallavia162324794409924284",
       "metadata": {
         "type": "EvenementDTO",
+        "click": false,
         "icon_marker": "chantier",
-        "lat": "47.36477183733632",
-        "long": "-2.509093795509217",
-        "html_list": "\n\n\n\n<section class='ds44-card ds44-card--horizontal '>\n   <div class=\"ds44-card__section\">\n        <div class=\"ds44-innerBoxContainer\">\n            <p role=\"heading\" aria-level=\"2\" class=\"h4-like ds44-cardTitle\"><i class=\"icon icon-attention ds44-icoInfoRoutes orangeFlag\" aria-hidden=\"true\"></i><a href=\"#\" class=\"ds44-card__globalLink\">Travaux sur réseaux</a></p>\n            <p class=\"ds44-docListElem ds44-mt-std\"><i class=\"icon icon-marker ds44-docListIco\" aria-hidden=\"true\"></i><span class=\"visually-hidden\">Position :</span>\n            D333 - La Turballe<br>La Turballe / Piriac-sur-Mer\n            </p>\n            <p class=\"ds44-docListElem ds44-mt-std\"><i class=\"icon icon-date ds44-docListIco\" aria-hidden=\"true\"></i><span class=\"visually-hidden\">Durée :</span>\n            Du 22/11/2021 au 03/12/2021<br>Du lundi au vendredi de 9h à 17h\n            </p>\n            <p class=\"ds44-docListElem ds44-mt-std\"><i class=\"icon icon-tag ds44-docListIco\" aria-hidden=\"true\"></i><span class=\"visually-hidden\">Type d'intervention :</span> Tranchée / raccordement</p>\n        </div>\n        <i class=\"icon icon-arrow-right ds44-cardArrow\" aria-hidden=\"true\"></i>\n    </div>\n</section>",
-        "html_marker": "\n\n\n\n\n\n   <div class=\"ds44-flex-container\">\n        <div class=\"ds44-card__section--horizontal ds44-flex-valign-center ds44-flex-align-center\">\n            <p role=\"heading\" aria-level=\"2\" class=\"ds44-card__title\">Travaux sur réseaux</p>\n            <p class=\"ds44-docListElem ds44-mt-std\"><i class=\"icon icon-marker ds44-docListIco\" aria-hidden=\"true\"></i><span class=\"visually-hidden\">Position :</span>\n            D333 - La Turballe<br>La Turballe / Piriac-sur-Mer\n            </p>\n            <p class=\"ds44-docListElem ds44-mt-std\"><i class=\"icon icon-date ds44-docListIco\" aria-hidden=\"true\"></i><span class=\"visually-hidden\">Durée :</span>\n            Du 22/11/2021 au 03/12/2021<br>Du lundi au vendredi de 9h à 17h\n            </p>\n            <p class=\"ds44-docListElem ds44-mt-std\"><i class=\"icon icon-tag ds44-docListIco\" aria-hidden=\"true\"></i><span class=\"visually-hidden\">Type d'intervention :</span> Tranchée / raccordement</p>\n        </div>\n    </div>\n"
-      }
-    },
-    {
-      "value": "Autres",
-      "id": "E163517565525135362_1bertet1163517565525135856",
-      "metadata": {
-        "type": "EvenementDTO",
-        "icon_marker": "chantier",
-        "lat": "47.25638820303414",
-        "long": "-1.4195965451083523",
-        "html_list": "\n\n\n\n<section class='ds44-card ds44-card--horizontal '>\n   <div class=\"ds44-card__section\">\n        <div class=\"ds44-innerBoxContainer\">\n            <p role=\"heading\" aria-level=\"2\" class=\"h4-like ds44-cardTitle\"><i class=\"icon icon-attention ds44-icoInfoRoutes orangeFlag\" aria-hidden=\"true\"></i><a href=\"#\" class=\"ds44-card__globalLink\">Autres</a></p>\n            <p class=\"ds44-docListElem ds44-mt-std\"><i class=\"icon icon-marker ds44-docListIco\" aria-hidden=\"true\"></i><span class=\"visually-hidden\">Position :</span>\n            D37 - Saint-Julien-de-Concelles<br>Thouaré / Saint-Julien-de-Concelles\n            </p>\n            <p class=\"ds44-docListElem ds44-mt-std\"><i class=\"icon icon-date ds44-docListIco\" aria-hidden=\"true\"></i><span class=\"visually-hidden\">Durée :</span>\n            Du 15/11/2021 au 24/12/2021<br>Du lundi au vendredi de 9h à 17h\n            </p>\n            <p class=\"ds44-docListElem ds44-mt-std\"><i class=\"icon icon-tag ds44-docListIco\" aria-hidden=\"true\"></i><span class=\"visually-hidden\">Type d'intervention :</span> Autres</p>\n        </div>\n        <i class=\"icon icon-arrow-right ds44-cardArrow\" aria-hidden=\"true\"></i>\n    </div>\n</section>",
-        "html_marker": "\n\n\n\n\n\n   <div class=\"ds44-flex-container\">\n        <div class=\"ds44-card__section--horizontal ds44-flex-valign-center ds44-flex-align-center\">\n            <p role=\"heading\" aria-level=\"2\" class=\"ds44-card__title\">Autres</p>\n            <p class=\"ds44-docListElem ds44-mt-std\"><i class=\"icon icon-marker ds44-docListIco\" aria-hidden=\"true\"></i><span class=\"visually-hidden\">Position :</span>\n            D37 - Saint-Julien-de-Concelles<br>Thouaré / Saint-Julien-de-Concelles\n            </p>\n            <p class=\"ds44-docListElem ds44-mt-std\"><i class=\"icon icon-date ds44-docListIco\" aria-hidden=\"true\"></i><span class=\"visually-hidden\">Durée :</span>\n            Du 15/11/2021 au 24/12/2021<br>Du lundi au vendredi de 9h à 17h\n            </p>\n            <p class=\"ds44-docListElem ds44-mt-std\"><i class=\"icon icon-tag ds44-docListIco\" aria-hidden=\"true\"></i><span class=\"visually-hidden\">Type d'intervention :</span> Autres</p>\n        </div>\n    </div>\n"
-      }
-    },
-    {
-      "value": "Autres",
-      "id": "E163402937426054899_1bertet1163402937426054621",
-      "metadata": {
-        "type": "EvenementDTO",
-        "icon_marker": "chantier",
-        "lat": "47.231861097653166",
-        "long": "-1.4032795518982935",
-        "html_list": "\n\n\n\n<section class='ds44-card ds44-card--horizontal '>\n   <div class=\"ds44-card__section\">\n        <div class=\"ds44-innerBoxContainer\">\n            <p role=\"heading\" aria-level=\"2\" class=\"h4-like ds44-cardTitle\"><i class=\"icon icon-attention ds44-icoInfoRoutes orangeFlag\" aria-hidden=\"true\"></i><a href=\"#\" class=\"ds44-card__globalLink\">Autres</a></p>\n            <p class=\"ds44-docListElem ds44-mt-std\"><i class=\"icon icon-marker ds44-docListIco\" aria-hidden=\"true\"></i><span class=\"visually-hidden\">Position :</span>\n            D115 - Saint-Julien-de-Concelles<br>St-Julien/ Haute-Goulaine\n            </p>\n            <p class=\"ds44-docListElem ds44-mt-std\"><i class=\"icon icon-date ds44-docListIco\" aria-hidden=\"true\"></i><span class=\"visually-hidden\">Durée :</span>\n            Du 02/11/2021 au 10/12/2021<br>Du lundi au vendredi de 9h à 17h\n            </p>\n            <p class=\"ds44-docListElem ds44-mt-std\"><i class=\"icon icon-tag ds44-docListIco\" aria-hidden=\"true\"></i><span class=\"visually-hidden\">Type d'intervention :</span> Autres</p>\n        </div>\n        <i class=\"icon icon-arrow-right ds44-cardArrow\" aria-hidden=\"true\"></i>\n    </div>\n</section>",
-        "html_marker": "\n\n\n\n\n\n   <div class=\"ds44-flex-container\">\n        <div class=\"ds44-card__section--horizontal ds44-flex-valign-center ds44-flex-align-center\">\n            <p role=\"heading\" aria-level=\"2\" class=\"ds44-card__title\">Autres</p>\n            <p class=\"ds44-docListElem ds44-mt-std\"><i class=\"icon icon-marker ds44-docListIco\" aria-hidden=\"true\"></i><span class=\"visually-hidden\">Position :</span>\n            D115 - Saint-Julien-de-Concelles<br>St-Julien/ Haute-Goulaine\n            </p>\n            <p class=\"ds44-docListElem ds44-mt-std\"><i class=\"icon icon-date ds44-docListIco\" aria-hidden=\"true\"></i><span class=\"visually-hidden\">Durée :</span>\n            Du 02/11/2021 au 10/12/2021<br>Du lundi au vendredi de 9h à 17h\n            </p>\n            <p class=\"ds44-docListElem ds44-mt-std\"><i class=\"icon icon-tag ds44-docListIco\" aria-hidden=\"true\"></i><span class=\"visually-hidden\">Type d'intervention :</span> Autres</p>\n        </div>\n    </div>\n"
-      }
-    },
-    {
-      "value": "Travaux sur réseaux",
-      "id": "E163636245299632514_1viavant163636245299432267",
-      "metadata": {
-        "type": "EvenementDTO",
-        "icon_marker": "chantier",
-        "lat": "47.39543928302553",
-        "long": "-1.0719630397889377",
-        "html_list": "\n\n\n\n<section class='ds44-card ds44-card--horizontal '>\n   <div class=\"ds44-card__section\">\n        <div class=\"ds44-innerBoxContainer\">\n            <p role=\"heading\" aria-level=\"2\" class=\"h4-like ds44-cardTitle\"><i class=\"icon icon-attention ds44-icoInfoRoutes orangeFlag\" aria-hidden=\"true\"></i><a href=\"#\" class=\"ds44-card__globalLink\">Travaux sur réseaux</a></p>\n            <p class=\"ds44-docListElem ds44-mt-std\"><i class=\"icon icon-marker ds44-docListIco\" aria-hidden=\"true\"></i><span class=\"visually-hidden\">Position :</span>\n            D723 - Vair-sur-Loire<br>Vair-sur-Loire / Loireauxence\n            </p>\n            <p class=\"ds44-docListElem ds44-mt-std\"><i class=\"icon icon-date ds44-docListIco\" aria-hidden=\"true\"></i><span class=\"visually-hidden\">Durée :</span>\n            Du 15/11/2021 au 03/12/2021<br>24h / 24 et 7 jours/ 7\n            </p>\n            <p class=\"ds44-docListElem ds44-mt-std\"><i class=\"icon icon-tag ds44-docListIco\" aria-hidden=\"true\"></i><span class=\"visually-hidden\">Type d'intervention :</span> Tranchée / raccordement</p>\n        </div>\n        <i class=\"icon icon-arrow-right ds44-cardArrow\" aria-hidden=\"true\"></i>\n    </div>\n</section>",
-        "html_marker": "\n\n\n\n\n\n   <div class=\"ds44-flex-container\">\n        <div class=\"ds44-card__section--horizontal ds44-flex-valign-center ds44-flex-align-center\">\n            <p role=\"heading\" aria-level=\"2\" class=\"ds44-card__title\">Travaux sur réseaux</p>\n            <p class=\"ds44-docListElem ds44-mt-std\"><i class=\"icon icon-marker ds44-docListIco\" aria-hidden=\"true\"></i><span class=\"visually-hidden\">Position :</span>\n            D723 - Vair-sur-Loire<br>Vair-sur-Loire / Loireauxence\n            </p>\n            <p class=\"ds44-docListElem ds44-mt-std\"><i class=\"icon icon-date ds44-docListIco\" aria-hidden=\"true\"></i><span class=\"visually-hidden\">Durée :</span>\n            Du 15/11/2021 au 03/12/2021<br>24h / 24 et 7 jours/ 7\n            </p>\n            <p class=\"ds44-docListElem ds44-mt-std\"><i class=\"icon icon-tag ds44-docListIco\" aria-hidden=\"true\"></i><span class=\"visually-hidden\">Type d'intervention :</span> Tranchée / raccordement</p>\n        </div>\n    </div>\n"
-      }
-    },
-    {
-      "value": "Déviation",
-      "id": "E163646644880848490bertet116364655989773857",
-      "metadata": {
-        "type": "EvenementDTO",
-        "icon_marker": "deviation",
-        "lat": "47.16404229647276",
-        "long": "-1.274237657719776",
-        "html_list": "\n\n\n\n<section class='ds44-card ds44-card--horizontal '>\n   <div class=\"ds44-card__section\">\n        <div class=\"ds44-innerBoxContainer\">\n            <p role=\"heading\" aria-level=\"2\" class=\"h4-like ds44-cardTitle\"><i class=\"icon icon-attention ds44-icoInfoRoutes orangeFlag\" aria-hidden=\"true\"></i><a href=\"#\" class=\"ds44-card__globalLink\">Déviation</a></p>\n            <p class=\"ds44-docListElem ds44-mt-std\"><i class=\"icon icon-marker ds44-docListIco\" aria-hidden=\"true\"></i><span class=\"visually-hidden\">Position :</span>\n            Travaux - D7 - Le Landreau\n            </p>\n            <p class=\"ds44-docListElem ds44-mt-std\"><i class=\"icon icon-date ds44-docListIco\" aria-hidden=\"true\"></i><span class=\"visually-hidden\">Durée :</span>\n            Du 16/11/2021 au 03/12/2021<br>Véhicules déviés : tous véhicules\n            </p>\n            <p class=\"ds44-docListElem ds44-mt-std\"><i class=\"icon icon-tag ds44-docListIco\" aria-hidden=\"true\"></i><span class=\"visually-hidden\">Type d'intervention :</span> Tous les véhicules</p>\n        </div>\n        <i class=\"icon icon-arrow-right ds44-cardArrow\" aria-hidden=\"true\"></i>\n    </div>\n</section>",
-        "html_marker": "\n\n\n\n\n\n   <div class=\"ds44-flex-container\">\n        <div class=\"ds44-card__section--horizontal ds44-flex-valign-center ds44-flex-align-center\">\n            <p role=\"heading\" aria-level=\"2\" class=\"ds44-card__title\">Déviation</p>\n            <p class=\"ds44-docListElem ds44-mt-std\"><i class=\"icon icon-marker ds44-docListIco\" aria-hidden=\"true\"></i><span class=\"visually-hidden\">Position :</span>\n            Travaux - D7 - Le Landreau\n            </p>\n            <p class=\"ds44-docListElem ds44-mt-std\"><i class=\"icon icon-date ds44-docListIco\" aria-hidden=\"true\"></i><span class=\"visually-hidden\">Durée :</span>\n            Du 16/11/2021 au 03/12/2021<br>Véhicules déviés : tous véhicules\n            </p>\n            <p class=\"ds44-docListElem ds44-mt-std\"><i class=\"icon icon-tag ds44-docListIco\" aria-hidden=\"true\"></i><span class=\"visually-hidden\">Type d'intervention :</span> Tous les véhicules</p>\n        </div>\n    </div>\n"
+        "lat": "47.354107050283666",
+        "long": "-2.3402094068281962",
+        "html_list": "\n\n\n\n\n<section class='ds44-card ds44-card--horizontal '>\n   <div class=\"ds44-card__section\">\n        <div class=\"ds44-innerBoxContainer\">\n            <p role=\"heading\" aria-level=\"2\" class=\"h4-like ds44-cardTitle\"><i class=\"icon ds44-icoInfoRoutes icon-travaux orangeFlag\" aria-hidden=\"true\"></i><a href=\"#\" class=\"ds44-card__globalLink\">Travaux sur ouvrage d'art</a></p>\n            <p class=\"ds44-docListElem ds44-mt-std\"><i class=\"icon icon-marker ds44-docListIco\" aria-hidden=\"true\"></i><span class=\"visually-hidden\">Position :</span>\n            D47 - Guérande<br>Saint-Lyphard / Guérande\n            </p>\n            <p class=\"ds44-docListElem ds44-mt-std\"><i class=\"icon icon-date ds44-docListIco\" aria-hidden=\"true\"></i><span class=\"visually-hidden\">Durée :</span>\n            Du 05/07/2021 au 31/08/2021<br>24h / 24 et 7 jours/ 7\n            </p>\n            \n            <p class=\"ds44-docListElem ds44-mt-std\"><i class=\"icon icon-tag ds44-docListIco\" aria-hidden=\"true\"></i><span class=\"visually-hidden\">Type d'intervention :</span> Route fermée / déviation</p>\n            \n        </div>\n        <i class=\"icon icon-arrow-right ds44-cardArrow\" aria-hidden=\"true\"></i>\n    </div>\n</section>",
+        "html_marker": "\n\n\n\n\n\n   <div class=\"ds44-flex-container\">\n        <div class=\"ds44-card__section--horizontal ds44-flex-valign-center ds44-flex-align-center\">\n            <p role=\"heading\" aria-level=\"2\" class=\"ds44-card__title\">Travaux sur ouvrage d'art</p>\n            <p class=\"ds44-docListElem ds44-mt-std\"><i class=\"icon icon-marker ds44-docListIco\" aria-hidden=\"true\"></i><span class=\"visually-hidden\">Position :</span>\n            D47 - Guérande<br>Saint-Lyphard / Guérande\n            </p>\n            <p class=\"ds44-docListElem ds44-mt-std\"><i class=\"icon icon-date ds44-docListIco\" aria-hidden=\"true\"></i><span class=\"visually-hidden\">Durée :</span>\n            Du 05/07/2021 au 31/08/2021<br>24h / 24 et 7 jours/ 7\n            </p>\n            \n            <p class=\"ds44-docListElem ds44-mt-std\"><i class=\"icon icon-tag ds44-docListIco\" aria-hidden=\"true\"></i><span class=\"visually-hidden\">Type d'intervention :</span> Route fermée / déviation</p>\n            \n        </div>\n    </div>\n"
       }
     },
     {
       "value": "Aménagement de chaussée",
-      "id": "E163646559897738444_1bertet116364655989773857",
+      "id": "E162514648310643582_1Pcroutefix162514648310643631",
+      "snm": "Pcroutefix162514648310643631",
       "metadata": {
         "type": "EvenementDTO",
+        "click": false,
         "icon_marker": "chantier",
-        "lat": "47.16489595721282",
-        "long": "-1.2756498592497294",
-        "html_list": "\n\n\n\n<section class='ds44-card ds44-card--horizontal '>\n   <div class=\"ds44-card__section\">\n        <div class=\"ds44-innerBoxContainer\">\n            <p role=\"heading\" aria-level=\"2\" class=\"h4-like ds44-cardTitle\"><i class=\"icon icon-attention ds44-icoInfoRoutes orangeFlag\" aria-hidden=\"true\"></i><a href=\"#\" class=\"ds44-card__globalLink\">Aménagement de chaussée</a></p>\n            <p class=\"ds44-docListElem ds44-mt-std\"><i class=\"icon icon-marker ds44-docListIco\" aria-hidden=\"true\"></i><span class=\"visually-hidden\">Position :</span>\n            D756 - Vallet<br>Vallet / La Chapelle-Heulin\n            </p>\n            <p class=\"ds44-docListElem ds44-mt-std\"><i class=\"icon icon-date ds44-docListIco\" aria-hidden=\"true\"></i><span class=\"visually-hidden\">Durée :</span>\n            Du 16/11/2021 au 03/12/2021<br>24h / 24 et 7 jours/ 7\n            </p>\n            <p class=\"ds44-docListElem ds44-mt-std\"><i class=\"icon icon-tag ds44-docListIco\" aria-hidden=\"true\"></i><span class=\"visually-hidden\">Type d'intervention :</span> Aménagement de chaussée</p>\n        </div>\n        <i class=\"icon icon-arrow-right ds44-cardArrow\" aria-hidden=\"true\"></i>\n    </div>\n</section>",
-        "html_marker": "\n\n\n\n\n\n   <div class=\"ds44-flex-container\">\n        <div class=\"ds44-card__section--horizontal ds44-flex-valign-center ds44-flex-align-center\">\n            <p role=\"heading\" aria-level=\"2\" class=\"ds44-card__title\">Aménagement de chaussée</p>\n            <p class=\"ds44-docListElem ds44-mt-std\"><i class=\"icon icon-marker ds44-docListIco\" aria-hidden=\"true\"></i><span class=\"visually-hidden\">Position :</span>\n            D756 - Vallet<br>Vallet / La Chapelle-Heulin\n            </p>\n            <p class=\"ds44-docListElem ds44-mt-std\"><i class=\"icon icon-date ds44-docListIco\" aria-hidden=\"true\"></i><span class=\"visually-hidden\">Durée :</span>\n            Du 16/11/2021 au 03/12/2021<br>24h / 24 et 7 jours/ 7\n            </p>\n            <p class=\"ds44-docListElem ds44-mt-std\"><i class=\"icon icon-tag ds44-docListIco\" aria-hidden=\"true\"></i><span class=\"visually-hidden\">Type d'intervention :</span> Aménagement de chaussée</p>\n        </div>\n    </div>\n"
+        "lat": "47.11176652358686",
+        "long": "-1.539324238583791",
+        "html_list": "\n\n\n\n\n<section class='ds44-card ds44-card--horizontal '>\n   <div class=\"ds44-card__section\">\n        <div class=\"ds44-innerBoxContainer\">\n            <p role=\"heading\" aria-level=\"2\" class=\"h4-like ds44-cardTitle\"><i class=\"icon ds44-icoInfoRoutes icon-travaux orangeFlag\" aria-hidden=\"true\"></i><a href=\"#\" class=\"ds44-card__globalLink\">Aménagement de chaussée</a></p>\n            <p class=\"ds44-docListElem ds44-mt-std\"><i class=\"icon icon-marker ds44-docListIco\" aria-hidden=\"true\"></i><span class=\"visually-hidden\">Position :</span>\n            D178 - Pont-Saint-Martin<br>Les Sorinières / Pont-Saint-Martin\n            </p>\n            <p class=\"ds44-docListElem ds44-mt-std\"><i class=\"icon icon-date ds44-docListIco\" aria-hidden=\"true\"></i><span class=\"visually-hidden\">Durée :</span>\n            Du 01/07/2021 au 30/07/2021<br>Du lundi au vendredi\n            </p>\n            \n            <p class=\"ds44-docListElem ds44-mt-std\"><i class=\"icon icon-tag ds44-docListIco\" aria-hidden=\"true\"></i><span class=\"visually-hidden\">Type d'intervention :</span> Route fermée / déviation</p>\n            \n        </div>\n        <i class=\"icon icon-arrow-right ds44-cardArrow\" aria-hidden=\"true\"></i>\n    </div>\n</section>",
+        "html_marker": "\n\n\n\n\n\n   <div class=\"ds44-flex-container\">\n        <div class=\"ds44-card__section--horizontal ds44-flex-valign-center ds44-flex-align-center\">\n            <p role=\"heading\" aria-level=\"2\" class=\"ds44-card__title\">Aménagement de chaussée</p>\n            <p class=\"ds44-docListElem ds44-mt-std\"><i class=\"icon icon-marker ds44-docListIco\" aria-hidden=\"true\"></i><span class=\"visually-hidden\">Position :</span>\n            D178 - Pont-Saint-Martin<br>Les Sorinières / Pont-Saint-Martin\n            </p>\n            <p class=\"ds44-docListElem ds44-mt-std\"><i class=\"icon icon-date ds44-docListIco\" aria-hidden=\"true\"></i><span class=\"visually-hidden\">Durée :</span>\n            Du 01/07/2021 au 30/07/2021<br>Du lundi au vendredi\n            </p>\n            \n            <p class=\"ds44-docListElem ds44-mt-std\"><i class=\"icon icon-tag ds44-docListIco\" aria-hidden=\"true\"></i><span class=\"visually-hidden\">Type d'intervention :</span> Route fermée / déviation</p>\n            \n        </div>\n    </div>\n"
       }
     },
     {
       "value": "Déviation",
-      "id": "E16364663293614967bertet116364655989773857",
+      "id": "E162514658229622678Pcroutefix162514648310643631",
+      "snm": "Pcroutefix162514648310643631",
       "metadata": {
         "type": "EvenementDTO",
+        "click": false,
         "icon_marker": "deviation",
-        "lat": "47.16489595721282",
-        "long": "-1.2756498592497294",
-        "html_list": "\n\n\n\n<section class='ds44-card ds44-card--horizontal '>\n   <div class=\"ds44-card__section\">\n        <div class=\"ds44-innerBoxContainer\">\n            <p role=\"heading\" aria-level=\"2\" class=\"h4-like ds44-cardTitle\"><i class=\"icon icon-attention ds44-icoInfoRoutes orangeFlag\" aria-hidden=\"true\"></i><a href=\"#\" class=\"ds44-card__globalLink\">Déviation</a></p>\n            <p class=\"ds44-docListElem ds44-mt-std\"><i class=\"icon icon-marker ds44-docListIco\" aria-hidden=\"true\"></i><span class=\"visually-hidden\">Position :</span>\n            Travaux - D7 - La Chapelle-Heulin\n            </p>\n            <p class=\"ds44-docListElem ds44-mt-std\"><i class=\"icon icon-date ds44-docListIco\" aria-hidden=\"true\"></i><span class=\"visually-hidden\">Durée :</span>\n            Du 16/11/2021 au 03/12/2021<br>Véhicules déviés : tous véhicules\n            </p>\n            <p class=\"ds44-docListElem ds44-mt-std\"><i class=\"icon icon-tag ds44-docListIco\" aria-hidden=\"true\"></i><span class=\"visually-hidden\">Type d'intervention :</span> Tous les véhicules</p>\n        </div>\n        <i class=\"icon icon-arrow-right ds44-cardArrow\" aria-hidden=\"true\"></i>\n    </div>\n</section>",
-        "html_marker": "\n\n\n\n\n\n   <div class=\"ds44-flex-container\">\n        <div class=\"ds44-card__section--horizontal ds44-flex-valign-center ds44-flex-align-center\">\n            <p role=\"heading\" aria-level=\"2\" class=\"ds44-card__title\">Déviation</p>\n            <p class=\"ds44-docListElem ds44-mt-std\"><i class=\"icon icon-marker ds44-docListIco\" aria-hidden=\"true\"></i><span class=\"visually-hidden\">Position :</span>\n            Travaux - D7 - La Chapelle-Heulin\n            </p>\n            <p class=\"ds44-docListElem ds44-mt-std\"><i class=\"icon icon-date ds44-docListIco\" aria-hidden=\"true\"></i><span class=\"visually-hidden\">Durée :</span>\n            Du 16/11/2021 au 03/12/2021<br>Véhicules déviés : tous véhicules\n            </p>\n            <p class=\"ds44-docListElem ds44-mt-std\"><i class=\"icon icon-tag ds44-docListIco\" aria-hidden=\"true\"></i><span class=\"visually-hidden\">Type d'intervention :</span> Tous les véhicules</p>\n        </div>\n    </div>\n"
-      }
-    },
-    {
-      "value": "Travaux",
-      "id": "E163652773828518905_1bachelier163652773828518596",
-      "metadata": {
-        "type": "EvenementDTO",
-        "icon_marker": "chantier",
-        "lat": "47.06114723640254",
-        "long": "-1.5927934695513342",
-        "html_list": "\n\n\n\n<section class='ds44-card ds44-card--horizontal '>\n   <div class=\"ds44-card__section\">\n        <div class=\"ds44-innerBoxContainer\">\n            <p role=\"heading\" aria-level=\"2\" class=\"h4-like ds44-cardTitle\"><i class=\"icon icon-attention ds44-icoInfoRoutes orangeFlag\" aria-hidden=\"true\"></i><a href=\"#\" class=\"ds44-card__globalLink\">Travaux</a></p>\n            <p class=\"ds44-docListElem ds44-mt-std\"><i class=\"icon icon-marker ds44-docListIco\" aria-hidden=\"true\"></i><span class=\"visually-hidden\">Position :</span>\n            D117A - St-Philbert-de-Gd-Lieu<br>Geneston / St-Philbert-de-Gd-Lieu\n            </p>\n            <p class=\"ds44-docListElem ds44-mt-std\"><i class=\"icon icon-date ds44-docListIco\" aria-hidden=\"true\"></i><span class=\"visually-hidden\">Durée :</span>\n            Du 15/11/2021 au 03/12/2021<br>Du lundi au vendredi de 9h à 17h\n            </p>\n            <p class=\"ds44-docListElem ds44-mt-std\"><i class=\"icon icon-tag ds44-docListIco\" aria-hidden=\"true\"></i><span class=\"visually-hidden\">Type d'intervention :</span> Autres</p>\n        </div>\n        <i class=\"icon icon-arrow-right ds44-cardArrow\" aria-hidden=\"true\"></i>\n    </div>\n</section>",
-        "html_marker": "\n\n\n\n\n\n   <div class=\"ds44-flex-container\">\n        <div class=\"ds44-card__section--horizontal ds44-flex-valign-center ds44-flex-align-center\">\n            <p role=\"heading\" aria-level=\"2\" class=\"ds44-card__title\">Travaux</p>\n            <p class=\"ds44-docListElem ds44-mt-std\"><i class=\"icon icon-marker ds44-docListIco\" aria-hidden=\"true\"></i><span class=\"visually-hidden\">Position :</span>\n            D117A - St-Philbert-de-Gd-Lieu<br>Geneston / St-Philbert-de-Gd-Lieu\n            </p>\n            <p class=\"ds44-docListElem ds44-mt-std\"><i class=\"icon icon-date ds44-docListIco\" aria-hidden=\"true\"></i><span class=\"visually-hidden\">Durée :</span>\n            Du 15/11/2021 au 03/12/2021<br>Du lundi au vendredi de 9h à 17h\n            </p>\n            <p class=\"ds44-docListElem ds44-mt-std\"><i class=\"icon icon-tag ds44-docListIco\" aria-hidden=\"true\"></i><span class=\"visually-hidden\">Type d'intervention :</span> Autres</p>\n        </div>\n    </div>\n"
+        "lat": "47.13180681011906",
+        "long": "-1.518307985296734",
+        "html_list": "\n\n\n\n\n<section class='ds44-card ds44-card--horizontal '>\n   <div class=\"ds44-card__section\">\n        <div class=\"ds44-innerBoxContainer\">\n            <p role=\"heading\" aria-level=\"2\" class=\"h4-like ds44-cardTitle\"><i class=\"icon ds44-icoInfoRoutes icon-deviation orangeFlag\" aria-hidden=\"true\"></i><a href=\"#\" class=\"ds44-card__globalLink\">Déviation</a></p>\n            <p class=\"ds44-docListElem ds44-mt-std\"><i class=\"icon icon-marker ds44-docListIco\" aria-hidden=\"true\"></i><span class=\"visually-hidden\">Position :</span>\n            D57 - Les Sorinières\n            </p>\n            <p class=\"ds44-docListElem ds44-mt-std\"><i class=\"icon icon-date ds44-docListIco\" aria-hidden=\"true\"></i><span class=\"visually-hidden\">Durée :</span>\n            Du 01/07/2021 au 30/07/2021<br>Véhicules déviés : tous véhicules\n            </p>\n            \n        </div>\n        <i class=\"icon icon-arrow-right ds44-cardArrow\" aria-hidden=\"true\"></i>\n    </div>\n</section>",
+        "html_marker": "\n\n\n\n\n\n   <div class=\"ds44-flex-container\">\n        <div class=\"ds44-card__section--horizontal ds44-flex-valign-center ds44-flex-align-center\">\n            <p role=\"heading\" aria-level=\"2\" class=\"ds44-card__title\">Déviation</p>\n            <p class=\"ds44-docListElem ds44-mt-std\"><i class=\"icon icon-marker ds44-docListIco\" aria-hidden=\"true\"></i><span class=\"visually-hidden\">Position :</span>\n            D57 - Les Sorinières\n            </p>\n            <p class=\"ds44-docListElem ds44-mt-std\"><i class=\"icon icon-date ds44-docListIco\" aria-hidden=\"true\"></i><span class=\"visually-hidden\">Durée :</span>\n            Du 01/07/2021 au 30/07/2021<br>Véhicules déviés : tous véhicules\n            </p>\n            \n        </div>\n    </div>\n"
       }
     },
     {
       "value": "Aménagement de chaussée",
-      "id": "E163636919441354504_1vaillant16363691944135427",
+      "id": "E162373793691456649_1houssais162373793689856485",
+      "snm": "houssais162373793689856485",
       "metadata": {
         "type": "EvenementDTO",
+        "click": false,
         "icon_marker": "chantier",
-        "lat": "47.17809883117528",
-        "long": "-2.145549337062616",
-        "html_list": "\n\n\n\n<section class='ds44-card ds44-card--horizontal '>\n   <div class=\"ds44-card__section\">\n        <div class=\"ds44-innerBoxContainer\">\n            <p role=\"heading\" aria-level=\"2\" class=\"h4-like ds44-cardTitle\"><i class=\"icon icon-attention ds44-icoInfoRoutes orangeFlag\" aria-hidden=\"true\"></i><a href=\"#\" class=\"ds44-card__globalLink\">Aménagement de chaussée</a></p>\n            <p class=\"ds44-docListElem ds44-mt-std\"><i class=\"icon icon-marker ds44-docListIco\" aria-hidden=\"true\"></i><span class=\"visually-hidden\">Position :</span>\n            D213 - Saint-Michel-Chef-Chef<br>Saint-Michel-Chef-Chef vers Pornic\n            </p>\n            <p class=\"ds44-docListElem ds44-mt-std\"><i class=\"icon icon-date ds44-docListIco\" aria-hidden=\"true\"></i><span class=\"visually-hidden\">Durée :</span>\n            Le 08/11/2021<br>Du lundi au vendredi\n            </p>\n            <p class=\"ds44-docListElem ds44-mt-std\"><i class=\"icon icon-tag ds44-docListIco\" aria-hidden=\"true\"></i><span class=\"visually-hidden\">Type d'intervention :</span> Aménagement de chaussée</p>\n        </div>\n        <i class=\"icon icon-arrow-right ds44-cardArrow\" aria-hidden=\"true\"></i>\n    </div>\n</section>",
-        "html_marker": "\n\n\n\n\n\n   <div class=\"ds44-flex-container\">\n        <div class=\"ds44-card__section--horizontal ds44-flex-valign-center ds44-flex-align-center\">\n            <p role=\"heading\" aria-level=\"2\" class=\"ds44-card__title\">Aménagement de chaussée</p>\n            <p class=\"ds44-docListElem ds44-mt-std\"><i class=\"icon icon-marker ds44-docListIco\" aria-hidden=\"true\"></i><span class=\"visually-hidden\">Position :</span>\n            D213 - Saint-Michel-Chef-Chef<br>Saint-Michel-Chef-Chef vers Pornic\n            </p>\n            <p class=\"ds44-docListElem ds44-mt-std\"><i class=\"icon icon-date ds44-docListIco\" aria-hidden=\"true\"></i><span class=\"visually-hidden\">Durée :</span>\n            Le 08/11/2021<br>Du lundi au vendredi\n            </p>\n            <p class=\"ds44-docListElem ds44-mt-std\"><i class=\"icon icon-tag ds44-docListIco\" aria-hidden=\"true\"></i><span class=\"visually-hidden\">Type d'intervention :</span> Aménagement de chaussée</p>\n        </div>\n    </div>\n"
-      }
-    },
-    {
-      "value": "Déviation",
-      "id": "E162996721817618651gentils16299663655575408",
-      "metadata": {
-        "type": "EvenementDTO",
-        "icon_marker": "deviation",
-        "lat": "47.44919039700649",
-        "long": "-1.3227566869414118",
-        "html_list": "\n\n\n\n<section class='ds44-card ds44-card--horizontal '>\n   <div class=\"ds44-card__section\">\n        <div class=\"ds44-innerBoxContainer\">\n            <p role=\"heading\" aria-level=\"2\" class=\"h4-like ds44-cardTitle\"><i class=\"icon icon-attention ds44-icoInfoRoutes orangeFlag\" aria-hidden=\"true\"></i><a href=\"#\" class=\"ds44-card__globalLink\">Déviation</a></p>\n            <p class=\"ds44-docListElem ds44-mt-std\"><i class=\"icon icon-marker ds44-docListIco\" aria-hidden=\"true\"></i><span class=\"visually-hidden\">Position :</span>\n            Travaux sur réseaux - D16 - Mouzeil\n            </p>\n            <p class=\"ds44-docListElem ds44-mt-std\"><i class=\"icon icon-date ds44-docListIco\" aria-hidden=\"true\"></i><span class=\"visually-hidden\">Durée :</span>\n            Du 08/11/2021 au 17/12/2021<br>Véhicules déviés : tous véhicules\n            </p>\n            <p class=\"ds44-docListElem ds44-mt-std\"><i class=\"icon icon-tag ds44-docListIco\" aria-hidden=\"true\"></i><span class=\"visually-hidden\">Type d'intervention :</span> Tous les véhicules</p>\n        </div>\n        <i class=\"icon icon-arrow-right ds44-cardArrow\" aria-hidden=\"true\"></i>\n    </div>\n</section>",
-        "html_marker": "\n\n\n\n\n\n   <div class=\"ds44-flex-container\">\n        <div class=\"ds44-card__section--horizontal ds44-flex-valign-center ds44-flex-align-center\">\n            <p role=\"heading\" aria-level=\"2\" class=\"ds44-card__title\">Déviation</p>\n            <p class=\"ds44-docListElem ds44-mt-std\"><i class=\"icon icon-marker ds44-docListIco\" aria-hidden=\"true\"></i><span class=\"visually-hidden\">Position :</span>\n            Travaux sur réseaux - D16 - Mouzeil\n            </p>\n            <p class=\"ds44-docListElem ds44-mt-std\"><i class=\"icon icon-date ds44-docListIco\" aria-hidden=\"true\"></i><span class=\"visually-hidden\">Durée :</span>\n            Du 08/11/2021 au 17/12/2021<br>Véhicules déviés : tous véhicules\n            </p>\n            <p class=\"ds44-docListElem ds44-mt-std\"><i class=\"icon icon-tag ds44-docListIco\" aria-hidden=\"true\"></i><span class=\"visually-hidden\">Type d'intervention :</span> Tous les véhicules</p>\n        </div>\n    </div>\n"
-      }
-    },
-    {
-      "value": "Travaux sur réseaux",
-      "id": "E16348015832873107_1dallavia16348015832873767",
-      "metadata": {
-        "type": "EvenementDTO",
-        "icon_marker": "chantier",
-        "lat": "47.42874449078512",
-        "long": "-2.3909629280682396",
-        "html_list": "\n\n\n\n<section class='ds44-card ds44-card--horizontal '>\n   <div class=\"ds44-card__section\">\n        <div class=\"ds44-innerBoxContainer\">\n            <p role=\"heading\" aria-level=\"2\" class=\"h4-like ds44-cardTitle\"><i class=\"icon icon-attention ds44-icoInfoRoutes orangeFlag\" aria-hidden=\"true\"></i><a href=\"#\" class=\"ds44-card__globalLink\">Travaux sur réseaux</a></p>\n            <p class=\"ds44-docListElem ds44-mt-std\"><i class=\"icon icon-marker ds44-docListIco\" aria-hidden=\"true\"></i><span class=\"visually-hidden\">Position :</span>\n            D33 - Assérac<br>Assérac / Saint-Molf\n            </p>\n            <p class=\"ds44-docListElem ds44-mt-std\"><i class=\"icon icon-date ds44-docListIco\" aria-hidden=\"true\"></i><span class=\"visually-hidden\">Durée :</span>\n            Du 02/11/2021 au 10/12/2021<br>24h / 24 et 7 jours/ 7\n            </p>\n            <p class=\"ds44-docListElem ds44-mt-std\"><i class=\"icon icon-tag ds44-docListIco\" aria-hidden=\"true\"></i><span class=\"visually-hidden\">Type d'intervention :</span> Tranchée / raccordement</p>\n        </div>\n        <i class=\"icon icon-arrow-right ds44-cardArrow\" aria-hidden=\"true\"></i>\n    </div>\n</section>",
-        "html_marker": "\n\n\n\n\n\n   <div class=\"ds44-flex-container\">\n        <div class=\"ds44-card__section--horizontal ds44-flex-valign-center ds44-flex-align-center\">\n            <p role=\"heading\" aria-level=\"2\" class=\"ds44-card__title\">Travaux sur réseaux</p>\n            <p class=\"ds44-docListElem ds44-mt-std\"><i class=\"icon icon-marker ds44-docListIco\" aria-hidden=\"true\"></i><span class=\"visually-hidden\">Position :</span>\n            D33 - Assérac<br>Assérac / Saint-Molf\n            </p>\n            <p class=\"ds44-docListElem ds44-mt-std\"><i class=\"icon icon-date ds44-docListIco\" aria-hidden=\"true\"></i><span class=\"visually-hidden\">Durée :</span>\n            Du 02/11/2021 au 10/12/2021<br>24h / 24 et 7 jours/ 7\n            </p>\n            <p class=\"ds44-docListElem ds44-mt-std\"><i class=\"icon icon-tag ds44-docListIco\" aria-hidden=\"true\"></i><span class=\"visually-hidden\">Type d'intervention :</span> Tranchée / raccordement</p>\n        </div>\n    </div>\n"
-      }
-    },
-    {
-      "value": "Travaux sur réseaux",
-      "id": "E163341979450114439_1dallavia163341979450114216",
-      "metadata": {
-        "type": "EvenementDTO",
-        "icon_marker": "chantier",
-        "lat": "47.44915496099837",
-        "long": "-2.31116484167038",
-        "html_list": "\n\n\n\n<section class='ds44-card ds44-card--horizontal '>\n   <div class=\"ds44-card__section\">\n        <div class=\"ds44-innerBoxContainer\">\n            <p role=\"heading\" aria-level=\"2\" class=\"h4-like ds44-cardTitle\"><i class=\"icon icon-attention ds44-icoInfoRoutes orangeFlag\" aria-hidden=\"true\"></i><a href=\"#\" class=\"ds44-card__globalLink\">Travaux sur réseaux</a></p>\n            <p class=\"ds44-docListElem ds44-mt-std\"><i class=\"icon icon-marker ds44-docListIco\" aria-hidden=\"true\"></i><span class=\"visually-hidden\">Position :</span>\n            D33 - Herbignac<br>La Chapelle-des-Marais / Herbignac\n            </p>\n            <p class=\"ds44-docListElem ds44-mt-std\"><i class=\"icon icon-date ds44-docListIco\" aria-hidden=\"true\"></i><span class=\"visually-hidden\">Durée :</span>\n            Du 25/10/2021 au 01/12/2021<br>24h / 24 et 7 jours/ 7\n            </p>\n            <p class=\"ds44-docListElem ds44-mt-std\"><i class=\"icon icon-tag ds44-docListIco\" aria-hidden=\"true\"></i><span class=\"visually-hidden\">Type d'intervention :</span> Tranchée / raccordement</p>\n        </div>\n        <i class=\"icon icon-arrow-right ds44-cardArrow\" aria-hidden=\"true\"></i>\n    </div>\n</section>",
-        "html_marker": "\n\n\n\n\n\n   <div class=\"ds44-flex-container\">\n        <div class=\"ds44-card__section--horizontal ds44-flex-valign-center ds44-flex-align-center\">\n            <p role=\"heading\" aria-level=\"2\" class=\"ds44-card__title\">Travaux sur réseaux</p>\n            <p class=\"ds44-docListElem ds44-mt-std\"><i class=\"icon icon-marker ds44-docListIco\" aria-hidden=\"true\"></i><span class=\"visually-hidden\">Position :</span>\n            D33 - Herbignac<br>La Chapelle-des-Marais / Herbignac\n            </p>\n            <p class=\"ds44-docListElem ds44-mt-std\"><i class=\"icon icon-date ds44-docListIco\" aria-hidden=\"true\"></i><span class=\"visually-hidden\">Durée :</span>\n            Du 25/10/2021 au 01/12/2021<br>24h / 24 et 7 jours/ 7\n            </p>\n            <p class=\"ds44-docListElem ds44-mt-std\"><i class=\"icon icon-tag ds44-docListIco\" aria-hidden=\"true\"></i><span class=\"visually-hidden\">Type d'intervention :</span> Tranchée / raccordement</p>\n        </div>\n    </div>\n"
+        "lat": "47.662134024341604",
+        "long": "-1.5012140581396056",
+        "html_list": "\n\n\n\n\n<section class='ds44-card ds44-card--horizontal '>\n   <div class=\"ds44-card__section\">\n        <div class=\"ds44-innerBoxContainer\">\n            <p role=\"heading\" aria-level=\"2\" class=\"h4-like ds44-cardTitle\"><i class=\"icon ds44-icoInfoRoutes icon-travaux orangeFlag\" aria-hidden=\"true\"></i><a href=\"#\" class=\"ds44-card__globalLink\">Aménagement de chaussée</a></p>\n            <p class=\"ds44-docListElem ds44-mt-std\"><i class=\"icon icon-marker ds44-docListIco\" aria-hidden=\"true\"></i><span class=\"visually-hidden\">Position :</span>\n            D771 - Saint-Vincent-des-Landes<br>Saint-Vincent / Saint-Aubin\n            </p>\n            <p class=\"ds44-docListElem ds44-mt-std\"><i class=\"icon icon-date ds44-docListIco\" aria-hidden=\"true\"></i><span class=\"visually-hidden\">Durée :</span>\n            Du 14/06/2021 au 18/06/2021<br>24h / 24 et 7 jours/ 7\n            </p>\n            \n            <p class=\"ds44-docListElem ds44-mt-std\"><i class=\"icon icon-tag ds44-docListIco\" aria-hidden=\"true\"></i><span class=\"visually-hidden\">Type d'intervention :</span> Route fermée / déviation</p>\n            \n        </div>\n        <i class=\"icon icon-arrow-right ds44-cardArrow\" aria-hidden=\"true\"></i>\n    </div>\n</section>",
+        "html_marker": "\n\n\n\n\n\n   <div class=\"ds44-flex-container\">\n        <div class=\"ds44-card__section--horizontal ds44-flex-valign-center ds44-flex-align-center\">\n            <p role=\"heading\" aria-level=\"2\" class=\"ds44-card__title\">Aménagement de chaussée</p>\n            <p class=\"ds44-docListElem ds44-mt-std\"><i class=\"icon icon-marker ds44-docListIco\" aria-hidden=\"true\"></i><span class=\"visually-hidden\">Position :</span>\n            D771 - Saint-Vincent-des-Landes<br>Saint-Vincent / Saint-Aubin\n            </p>\n            <p class=\"ds44-docListElem ds44-mt-std\"><i class=\"icon icon-date ds44-docListIco\" aria-hidden=\"true\"></i><span class=\"visually-hidden\">Durée :</span>\n            Du 14/06/2021 au 18/06/2021<br>24h / 24 et 7 jours/ 7\n            </p>\n            \n            <p class=\"ds44-docListElem ds44-mt-std\"><i class=\"icon icon-tag ds44-docListIco\" aria-hidden=\"true\"></i><span class=\"visually-hidden\">Type d'intervention :</span> Route fermée / déviation</p>\n            \n        </div>\n    </div>\n"
       }
     },
     {
       "value": "Aménagement de chaussée",
-      "id": "E163465575114831372_1pcroute163465575114831895",
+      "id": "E162028543228812271_1Goupilleau162028543227812555",
+      "snm": "Goupilleau162028543227812555",
       "metadata": {
         "type": "EvenementDTO",
+        "click": false,
         "icon_marker": "chantier",
-        "lat": "47.1547931638043",
-        "long": "-1.696602371298866",
-        "html_list": "\n\n\n\n<section class='ds44-card ds44-card--horizontal '>\n   <div class=\"ds44-card__section\">\n        <div class=\"ds44-innerBoxContainer\">\n            <p role=\"heading\" aria-level=\"2\" class=\"h4-like ds44-cardTitle\"><i class=\"icon icon-attention ds44-icoInfoRoutes orangeFlag\" aria-hidden=\"true\"></i><a href=\"#\" class=\"ds44-card__globalLink\">Aménagement de chaussée</a></p>\n            <p class=\"ds44-docListElem ds44-mt-std\"><i class=\"icon icon-marker ds44-docListIco\" aria-hidden=\"true\"></i><span class=\"visually-hidden\">Position :</span>\n            D751 - Saint-Léger-les-Vignes<br>Bouaye vers Saint-Léger-les-Vignes\n            </p>\n            <p class=\"ds44-docListElem ds44-mt-std\"><i class=\"icon icon-date ds44-docListIco\" aria-hidden=\"true\"></i><span class=\"visually-hidden\">Durée :</span>\n            Du 19/10/2021 au 19/10/2022<br>Tous les jours\n            </p>\n            <p class=\"ds44-docListElem ds44-mt-std\"><i class=\"icon icon-tag ds44-docListIco\" aria-hidden=\"true\"></i><span class=\"visually-hidden\">Type d'intervention :</span> Aménagement de chaussée</p>\n        </div>\n        <i class=\"icon icon-arrow-right ds44-cardArrow\" aria-hidden=\"true\"></i>\n    </div>\n</section>",
-        "html_marker": "\n\n\n\n\n\n   <div class=\"ds44-flex-container\">\n        <div class=\"ds44-card__section--horizontal ds44-flex-valign-center ds44-flex-align-center\">\n            <p role=\"heading\" aria-level=\"2\" class=\"ds44-card__title\">Aménagement de chaussée</p>\n            <p class=\"ds44-docListElem ds44-mt-std\"><i class=\"icon icon-marker ds44-docListIco\" aria-hidden=\"true\"></i><span class=\"visually-hidden\">Position :</span>\n            D751 - Saint-Léger-les-Vignes<br>Bouaye vers Saint-Léger-les-Vignes\n            </p>\n            <p class=\"ds44-docListElem ds44-mt-std\"><i class=\"icon icon-date ds44-docListIco\" aria-hidden=\"true\"></i><span class=\"visually-hidden\">Durée :</span>\n            Du 19/10/2021 au 19/10/2022<br>Tous les jours\n            </p>\n            <p class=\"ds44-docListElem ds44-mt-std\"><i class=\"icon icon-tag ds44-docListIco\" aria-hidden=\"true\"></i><span class=\"visually-hidden\">Type d'intervention :</span> Aménagement de chaussée</p>\n        </div>\n    </div>\n"
-      }
-    },
-    {
-      "value": "Déviation",
-      "id": "E16311826245654281gentils163118141302253569",
-      "metadata": {
-        "type": "EvenementDTO",
-        "icon_marker": "deviation",
-        "lat": "47.43018336110343",
-        "long": "-1.334314188612179",
-        "html_list": "\n\n\n\n<section class='ds44-card ds44-card--horizontal '>\n   <div class=\"ds44-card__section\">\n        <div class=\"ds44-innerBoxContainer\">\n            <p role=\"heading\" aria-level=\"2\" class=\"h4-like ds44-cardTitle\"><i class=\"icon icon-attention ds44-icoInfoRoutes orangeFlag\" aria-hidden=\"true\"></i><a href=\"#\" class=\"ds44-card__globalLink\">Déviation</a></p>\n            <p class=\"ds44-docListElem ds44-mt-std\"><i class=\"icon icon-marker ds44-docListIco\" aria-hidden=\"true\"></i><span class=\"visually-hidden\">Position :</span>\n            Travaux sur réseaux - D23 - Ligné\n            </p>\n            <p class=\"ds44-docListElem ds44-mt-std\"><i class=\"icon icon-date ds44-docListIco\" aria-hidden=\"true\"></i><span class=\"visually-hidden\">Durée :</span>\n            Du 04/10/2021 au 10/12/2021<br>Véhicules déviés : tous véhicules\n            </p>\n            <p class=\"ds44-docListElem ds44-mt-std\"><i class=\"icon icon-tag ds44-docListIco\" aria-hidden=\"true\"></i><span class=\"visually-hidden\">Type d'intervention :</span> Tous les véhicules</p>\n        </div>\n        <i class=\"icon icon-arrow-right ds44-cardArrow\" aria-hidden=\"true\"></i>\n    </div>\n</section>",
-        "html_marker": "\n\n\n\n\n\n   <div class=\"ds44-flex-container\">\n        <div class=\"ds44-card__section--horizontal ds44-flex-valign-center ds44-flex-align-center\">\n            <p role=\"heading\" aria-level=\"2\" class=\"ds44-card__title\">Déviation</p>\n            <p class=\"ds44-docListElem ds44-mt-std\"><i class=\"icon icon-marker ds44-docListIco\" aria-hidden=\"true\"></i><span class=\"visually-hidden\">Position :</span>\n            Travaux sur réseaux - D23 - Ligné\n            </p>\n            <p class=\"ds44-docListElem ds44-mt-std\"><i class=\"icon icon-date ds44-docListIco\" aria-hidden=\"true\"></i><span class=\"visually-hidden\">Durée :</span>\n            Du 04/10/2021 au 10/12/2021<br>Véhicules déviés : tous véhicules\n            </p>\n            <p class=\"ds44-docListElem ds44-mt-std\"><i class=\"icon icon-tag ds44-docListIco\" aria-hidden=\"true\"></i><span class=\"visually-hidden\">Type d'intervention :</span> Tous les véhicules</p>\n        </div>\n    </div>\n"
-      }
-    },
-    {
-      "value": "Déviation",
-      "id": "E163118237663456213gentils163118141302253569",
-      "metadata": {
-        "type": "EvenementDTO",
-        "icon_marker": "deviation",
-        "lat": "47.41094865289247",
-        "long": "-1.3756513319272592",
-        "html_list": "\n\n\n\n<section class='ds44-card ds44-card--horizontal '>\n   <div class=\"ds44-card__section\">\n        <div class=\"ds44-innerBoxContainer\">\n            <p role=\"heading\" aria-level=\"2\" class=\"h4-like ds44-cardTitle\"><i class=\"icon icon-attention ds44-icoInfoRoutes orangeFlag\" aria-hidden=\"true\"></i><a href=\"#\" class=\"ds44-card__globalLink\">Déviation</a></p>\n            <p class=\"ds44-docListElem ds44-mt-std\"><i class=\"icon icon-marker ds44-docListIco\" aria-hidden=\"true\"></i><span class=\"visually-hidden\">Position :</span>\n            D164 - Mésanger\n            </p>\n            <p class=\"ds44-docListElem ds44-mt-std\"><i class=\"icon icon-date ds44-docListIco\" aria-hidden=\"true\"></i><span class=\"visually-hidden\">Durée :</span>\n            Du 04/10/2021 au 10/12/2021<br>Véhicules déviés : tous véhicules\n            </p>\n            <p class=\"ds44-docListElem ds44-mt-std\"><i class=\"icon icon-tag ds44-docListIco\" aria-hidden=\"true\"></i><span class=\"visually-hidden\">Type d'intervention :</span> Tous les véhicules</p>\n        </div>\n        <i class=\"icon icon-arrow-right ds44-cardArrow\" aria-hidden=\"true\"></i>\n    </div>\n</section>",
-        "html_marker": "\n\n\n\n\n\n   <div class=\"ds44-flex-container\">\n        <div class=\"ds44-card__section--horizontal ds44-flex-valign-center ds44-flex-align-center\">\n            <p role=\"heading\" aria-level=\"2\" class=\"ds44-card__title\">Déviation</p>\n            <p class=\"ds44-docListElem ds44-mt-std\"><i class=\"icon icon-marker ds44-docListIco\" aria-hidden=\"true\"></i><span class=\"visually-hidden\">Position :</span>\n            D164 - Mésanger\n            </p>\n            <p class=\"ds44-docListElem ds44-mt-std\"><i class=\"icon icon-date ds44-docListIco\" aria-hidden=\"true\"></i><span class=\"visually-hidden\">Durée :</span>\n            Du 04/10/2021 au 10/12/2021<br>Véhicules déviés : tous véhicules\n            </p>\n            <p class=\"ds44-docListElem ds44-mt-std\"><i class=\"icon icon-tag ds44-docListIco\" aria-hidden=\"true\"></i><span class=\"visually-hidden\">Type d'intervention :</span> Tous les véhicules</p>\n        </div>\n    </div>\n"
-      }
-    },
-    {
-      "value": "Travaux sur réseaux",
-      "id": "E163118141302253158_1gentils163118141302253569",
-      "metadata": {
-        "type": "EvenementDTO",
-        "icon_marker": "chantier",
-        "lat": "47.44429061277214",
-        "long": "-1.2907656069384477",
-        "html_list": "\n\n\n\n<section class='ds44-card ds44-card--horizontal '>\n   <div class=\"ds44-card__section\">\n        <div class=\"ds44-innerBoxContainer\">\n            <p role=\"heading\" aria-level=\"2\" class=\"h4-like ds44-cardTitle\"><i class=\"icon icon-attention ds44-icoInfoRoutes orangeFlag\" aria-hidden=\"true\"></i><a href=\"#\" class=\"ds44-card__globalLink\">Travaux sur réseaux</a></p>\n            <p class=\"ds44-docListElem ds44-mt-std\"><i class=\"icon icon-marker ds44-docListIco\" aria-hidden=\"true\"></i><span class=\"visually-hidden\">Position :</span>\n            D164 - Mouzeil<br>Mésanger / Mouzeil\n            </p>\n            <p class=\"ds44-docListElem ds44-mt-std\"><i class=\"icon icon-date ds44-docListIco\" aria-hidden=\"true\"></i><span class=\"visually-hidden\">Durée :</span>\n            Du 13/09/2021 au 10/12/2021<br>Du lundi au vendredi\n            </p>\n            <p class=\"ds44-docListElem ds44-mt-std\"><i class=\"icon icon-tag ds44-docListIco\" aria-hidden=\"true\"></i><span class=\"visually-hidden\">Type d'intervention :</span> Tranchée / raccordement</p>\n        </div>\n        <i class=\"icon icon-arrow-right ds44-cardArrow\" aria-hidden=\"true\"></i>\n    </div>\n</section>",
-        "html_marker": "\n\n\n\n\n\n   <div class=\"ds44-flex-container\">\n        <div class=\"ds44-card__section--horizontal ds44-flex-valign-center ds44-flex-align-center\">\n            <p role=\"heading\" aria-level=\"2\" class=\"ds44-card__title\">Travaux sur réseaux</p>\n            <p class=\"ds44-docListElem ds44-mt-std\"><i class=\"icon icon-marker ds44-docListIco\" aria-hidden=\"true\"></i><span class=\"visually-hidden\">Position :</span>\n            D164 - Mouzeil<br>Mésanger / Mouzeil\n            </p>\n            <p class=\"ds44-docListElem ds44-mt-std\"><i class=\"icon icon-date ds44-docListIco\" aria-hidden=\"true\"></i><span class=\"visually-hidden\">Durée :</span>\n            Du 13/09/2021 au 10/12/2021<br>Du lundi au vendredi\n            </p>\n            <p class=\"ds44-docListElem ds44-mt-std\"><i class=\"icon icon-tag ds44-docListIco\" aria-hidden=\"true\"></i><span class=\"visually-hidden\">Type d'intervention :</span> Tranchée / raccordement</p>\n        </div>\n    </div>\n"
-      }
-    },
-    {
-      "value": "Déviation",
-      "id": "E1632391383804361leve8163239098987529441",
-      "metadata": {
-        "type": "EvenementDTO",
-        "icon_marker": "deviation",
-        "lat": "47.372692044879834",
-        "long": "-1.450067017892603",
-        "html_list": "\n\n\n\n<section class='ds44-card ds44-card--horizontal '>\n   <div class=\"ds44-card__section\">\n        <div class=\"ds44-innerBoxContainer\">\n            <p role=\"heading\" aria-level=\"2\" class=\"h4-like ds44-cardTitle\"><i class=\"icon icon-attention ds44-icoInfoRoutes orangeFlag\" aria-hidden=\"true\"></i><a href=\"#\" class=\"ds44-card__globalLink\">Déviation</a></p>\n            <p class=\"ds44-docListElem ds44-mt-std\"><i class=\"icon icon-marker ds44-docListIco\" aria-hidden=\"true\"></i><span class=\"visually-hidden\">Position :</span>\n            D9 - Carquefou\n            </p>\n            <p class=\"ds44-docListElem ds44-mt-std\"><i class=\"icon icon-date ds44-docListIco\" aria-hidden=\"true\"></i><span class=\"visually-hidden\">Durée :</span>\n            Du 27/09/2021 au 22/12/2021<br>Véhicules déviés : tous véhicules\n            </p>\n            <p class=\"ds44-docListElem ds44-mt-std\"><i class=\"icon icon-tag ds44-docListIco\" aria-hidden=\"true\"></i><span class=\"visually-hidden\">Type d'intervention :</span> Tous les véhicules</p>\n        </div>\n        <i class=\"icon icon-arrow-right ds44-cardArrow\" aria-hidden=\"true\"></i>\n    </div>\n</section>",
-        "html_marker": "\n\n\n\n\n\n   <div class=\"ds44-flex-container\">\n        <div class=\"ds44-card__section--horizontal ds44-flex-valign-center ds44-flex-align-center\">\n            <p role=\"heading\" aria-level=\"2\" class=\"ds44-card__title\">Déviation</p>\n            <p class=\"ds44-docListElem ds44-mt-std\"><i class=\"icon icon-marker ds44-docListIco\" aria-hidden=\"true\"></i><span class=\"visually-hidden\">Position :</span>\n            D9 - Carquefou\n            </p>\n            <p class=\"ds44-docListElem ds44-mt-std\"><i class=\"icon icon-date ds44-docListIco\" aria-hidden=\"true\"></i><span class=\"visually-hidden\">Durée :</span>\n            Du 27/09/2021 au 22/12/2021<br>Véhicules déviés : tous véhicules\n            </p>\n            <p class=\"ds44-docListElem ds44-mt-std\"><i class=\"icon icon-tag ds44-docListIco\" aria-hidden=\"true\"></i><span class=\"visually-hidden\">Type d'intervention :</span> Tous les véhicules</p>\n        </div>\n    </div>\n"
+        "lat": "47.13250023197074",
+        "long": "-1.8736147879855942",
+        "html_list": "\n\n\n\n\n<section class='ds44-card ds44-card--horizontal '>\n   <div class=\"ds44-card__section\">\n        <div class=\"ds44-innerBoxContainer\">\n            <p role=\"heading\" aria-level=\"2\" class=\"h4-like ds44-cardTitle\"><i class=\"icon ds44-icoInfoRoutes icon-travaux orangeFlag\" aria-hidden=\"true\"></i><a href=\"#\" class=\"ds44-card__globalLink\">Aménagement de chaussée</a></p>\n            <p class=\"ds44-docListElem ds44-mt-std\"><i class=\"icon icon-marker ds44-docListIco\" aria-hidden=\"true\"></i><span class=\"visually-hidden\">Position :</span>\n            D751 - Chaumes-en-Retz<br>Saint-Hilaire / Chaumes-en-Retz\n            </p>\n            <p class=\"ds44-docListElem ds44-mt-std\"><i class=\"icon icon-date ds44-docListIco\" aria-hidden=\"true\"></i><span class=\"visually-hidden\">Durée :</span>\n            Du 14/06/2021 au 23/07/2021<br>Du lundi au vendredi\n            </p>\n            \n            <p class=\"ds44-docListElem ds44-mt-std\"><i class=\"icon icon-tag ds44-docListIco\" aria-hidden=\"true\"></i><span class=\"visually-hidden\">Type d'intervention :</span> Route fermée / déviation</p>\n            \n        </div>\n        <i class=\"icon icon-arrow-right ds44-cardArrow\" aria-hidden=\"true\"></i>\n    </div>\n</section>",
+        "html_marker": "\n\n\n\n\n\n   <div class=\"ds44-flex-container\">\n        <div class=\"ds44-card__section--horizontal ds44-flex-valign-center ds44-flex-align-center\">\n            <p role=\"heading\" aria-level=\"2\" class=\"ds44-card__title\">Aménagement de chaussée</p>\n            <p class=\"ds44-docListElem ds44-mt-std\"><i class=\"icon icon-marker ds44-docListIco\" aria-hidden=\"true\"></i><span class=\"visually-hidden\">Position :</span>\n            D751 - Chaumes-en-Retz<br>Saint-Hilaire / Chaumes-en-Retz\n            </p>\n            <p class=\"ds44-docListElem ds44-mt-std\"><i class=\"icon icon-date ds44-docListIco\" aria-hidden=\"true\"></i><span class=\"visually-hidden\">Durée :</span>\n            Du 14/06/2021 au 23/07/2021<br>Du lundi au vendredi\n            </p>\n            \n            <p class=\"ds44-docListElem ds44-mt-std\"><i class=\"icon icon-tag ds44-docListIco\" aria-hidden=\"true\"></i><span class=\"visually-hidden\">Type d'intervention :</span> Route fermée / déviation</p>\n            \n        </div>\n    </div>\n"
       }
     },
     {
       "value": "Aménagement de chaussée",
-      "id": "E163239098987529958_1leve8163239098987529441",
+      "id": "E16214268064816968_1houssais16214268064666836",
+      "snm": "houssais16214268064666836",
       "metadata": {
         "type": "EvenementDTO",
+        "click": false,
         "icon_marker": "chantier",
-        "lat": "47.3744228807715",
-        "long": "-1.449300969389183",
-        "html_list": "\n\n\n\n<section class='ds44-card ds44-card--horizontal '>\n   <div class=\"ds44-card__section\">\n        <div class=\"ds44-innerBoxContainer\">\n            <p role=\"heading\" aria-level=\"2\" class=\"h4-like ds44-cardTitle\"><i class=\"icon icon-attention ds44-icoInfoRoutes orangeFlag\" aria-hidden=\"true\"></i><a href=\"#\" class=\"ds44-card__globalLink\">Aménagement de chaussée</a></p>\n            <p class=\"ds44-docListElem ds44-mt-std\"><i class=\"icon icon-marker ds44-docListIco\" aria-hidden=\"true\"></i><span class=\"visually-hidden\">Position :</span>\n            D31 - Saint-Mars-du-Désert<br>Sucé-sur-Erdre / Saint-Mars\n            </p>\n            <p class=\"ds44-docListElem ds44-mt-std\"><i class=\"icon icon-date ds44-docListIco\" aria-hidden=\"true\"></i><span class=\"visually-hidden\">Durée :</span>\n            Du 27/09/2021 au 22/12/2021<br>24h / 24 et 7 jours/ 7\n            </p>\n            <p class=\"ds44-docListElem ds44-mt-std\"><i class=\"icon icon-tag ds44-docListIco\" aria-hidden=\"true\"></i><span class=\"visually-hidden\">Type d'intervention :</span> Aménagement de chaussée</p>\n        </div>\n        <i class=\"icon icon-arrow-right ds44-cardArrow\" aria-hidden=\"true\"></i>\n    </div>\n</section>",
-        "html_marker": "\n\n\n\n\n\n   <div class=\"ds44-flex-container\">\n        <div class=\"ds44-card__section--horizontal ds44-flex-valign-center ds44-flex-align-center\">\n            <p role=\"heading\" aria-level=\"2\" class=\"ds44-card__title\">Aménagement de chaussée</p>\n            <p class=\"ds44-docListElem ds44-mt-std\"><i class=\"icon icon-marker ds44-docListIco\" aria-hidden=\"true\"></i><span class=\"visually-hidden\">Position :</span>\n            D31 - Saint-Mars-du-Désert<br>Sucé-sur-Erdre / Saint-Mars\n            </p>\n            <p class=\"ds44-docListElem ds44-mt-std\"><i class=\"icon icon-date ds44-docListIco\" aria-hidden=\"true\"></i><span class=\"visually-hidden\">Durée :</span>\n            Du 27/09/2021 au 22/12/2021<br>24h / 24 et 7 jours/ 7\n            </p>\n            <p class=\"ds44-docListElem ds44-mt-std\"><i class=\"icon icon-tag ds44-docListIco\" aria-hidden=\"true\"></i><span class=\"visually-hidden\">Type d'intervention :</span> Aménagement de chaussée</p>\n        </div>\n    </div>\n"
+        "lat": "47.518628011446744",
+        "long": "-1.7488629855057511",
+        "html_list": "\n\n\n\n\n<section class='ds44-card ds44-card--horizontal '>\n   <div class=\"ds44-card__section\">\n        <div class=\"ds44-innerBoxContainer\">\n            <p role=\"heading\" aria-level=\"2\" class=\"h4-like ds44-cardTitle\"><i class=\"icon ds44-icoInfoRoutes icon-travaux orangeFlag\" aria-hidden=\"true\"></i><a href=\"#\" class=\"ds44-card__globalLink\">Aménagement de chaussée</a></p>\n            <p class=\"ds44-docListElem ds44-mt-std\"><i class=\"icon icon-marker ds44-docListIco\" aria-hidden=\"true\"></i><span class=\"visually-hidden\">Position :</span>\n            D42 - Le Gâvre<br>Le Gâvre / Vay\n            </p>\n            <p class=\"ds44-docListElem ds44-mt-std\"><i class=\"icon icon-date ds44-docListIco\" aria-hidden=\"true\"></i><span class=\"visually-hidden\">Durée :</span>\n            Du 25/05/2021 au 30/07/2021<br>24h / 24 et 7 jours/ 7\n            </p>\n            \n            <p class=\"ds44-docListElem ds44-mt-std\"><i class=\"icon icon-tag ds44-docListIco\" aria-hidden=\"true\"></i><span class=\"visually-hidden\">Type d'intervention :</span> Route fermée / déviation</p>\n            \n        </div>\n        <i class=\"icon icon-arrow-right ds44-cardArrow\" aria-hidden=\"true\"></i>\n    </div>\n</section>",
+        "html_marker": "\n\n\n\n\n\n   <div class=\"ds44-flex-container\">\n        <div class=\"ds44-card__section--horizontal ds44-flex-valign-center ds44-flex-align-center\">\n            <p role=\"heading\" aria-level=\"2\" class=\"ds44-card__title\">Aménagement de chaussée</p>\n            <p class=\"ds44-docListElem ds44-mt-std\"><i class=\"icon icon-marker ds44-docListIco\" aria-hidden=\"true\"></i><span class=\"visually-hidden\">Position :</span>\n            D42 - Le Gâvre<br>Le Gâvre / Vay\n            </p>\n            <p class=\"ds44-docListElem ds44-mt-std\"><i class=\"icon icon-date ds44-docListIco\" aria-hidden=\"true\"></i><span class=\"visually-hidden\">Durée :</span>\n            Du 25/05/2021 au 30/07/2021<br>24h / 24 et 7 jours/ 7\n            </p>\n            \n            <p class=\"ds44-docListElem ds44-mt-std\"><i class=\"icon icon-tag ds44-docListIco\" aria-hidden=\"true\"></i><span class=\"visually-hidden\">Type d'intervention :</span> Route fermée / déviation</p>\n            \n        </div>\n    </div>\n"
       }
     },
     {
       "value": "Déviation",
-      "id": "E163212341422354216gentils16321230026442254",
+      "id": "E162142706506725977houssais16214268064666836",
+      "snm": "houssais16214268064666836",
       "metadata": {
         "type": "EvenementDTO",
+        "click": false,
         "icon_marker": "deviation",
-        "lat": "47.43018444457572",
-        "long": "-1.3343887460986776",
-        "html_list": "\n\n\n\n<section class='ds44-card ds44-card--horizontal '>\n   <div class=\"ds44-card__section\">\n        <div class=\"ds44-innerBoxContainer\">\n            <p role=\"heading\" aria-level=\"2\" class=\"h4-like ds44-cardTitle\"><i class=\"icon icon-attention ds44-icoInfoRoutes orangeFlag\" aria-hidden=\"true\"></i><a href=\"#\" class=\"ds44-card__globalLink\">Déviation</a></p>\n            <p class=\"ds44-docListElem ds44-mt-std\"><i class=\"icon icon-marker ds44-docListIco\" aria-hidden=\"true\"></i><span class=\"visually-hidden\">Position :</span>\n            D23 - Ligné\n            </p>\n            <p class=\"ds44-docListElem ds44-mt-std\"><i class=\"icon icon-date ds44-docListIco\" aria-hidden=\"true\"></i><span class=\"visually-hidden\">Durée :</span>\n            Du 04/10/2021 au 03/12/2021<br>Véhicules déviés : tous véhicules\n            </p>\n            <p class=\"ds44-docListElem ds44-mt-std\"><i class=\"icon icon-tag ds44-docListIco\" aria-hidden=\"true\"></i><span class=\"visually-hidden\">Type d'intervention :</span> Tous les véhicules</p>\n        </div>\n        <i class=\"icon icon-arrow-right ds44-cardArrow\" aria-hidden=\"true\"></i>\n    </div>\n</section>",
-        "html_marker": "\n\n\n\n\n\n   <div class=\"ds44-flex-container\">\n        <div class=\"ds44-card__section--horizontal ds44-flex-valign-center ds44-flex-align-center\">\n            <p role=\"heading\" aria-level=\"2\" class=\"ds44-card__title\">Déviation</p>\n            <p class=\"ds44-docListElem ds44-mt-std\"><i class=\"icon icon-marker ds44-docListIco\" aria-hidden=\"true\"></i><span class=\"visually-hidden\">Position :</span>\n            D23 - Ligné\n            </p>\n            <p class=\"ds44-docListElem ds44-mt-std\"><i class=\"icon icon-date ds44-docListIco\" aria-hidden=\"true\"></i><span class=\"visually-hidden\">Durée :</span>\n            Du 04/10/2021 au 03/12/2021<br>Véhicules déviés : tous véhicules\n            </p>\n            <p class=\"ds44-docListElem ds44-mt-std\"><i class=\"icon icon-tag ds44-docListIco\" aria-hidden=\"true\"></i><span class=\"visually-hidden\">Type d'intervention :</span> Tous les véhicules</p>\n        </div>\n    </div>\n"
-      }
-    },
-    {
-      "value": "Déviation",
-      "id": "E163212321220232570gentils16321230026442254",
-      "metadata": {
-        "type": "EvenementDTO",
-        "icon_marker": "deviation",
-        "lat": "47.41094865289247",
-        "long": "-1.3756513319272592",
-        "html_list": "\n\n\n\n<section class='ds44-card ds44-card--horizontal '>\n   <div class=\"ds44-card__section\">\n        <div class=\"ds44-innerBoxContainer\">\n            <p role=\"heading\" aria-level=\"2\" class=\"h4-like ds44-cardTitle\"><i class=\"icon icon-attention ds44-icoInfoRoutes orangeFlag\" aria-hidden=\"true\"></i><a href=\"#\" class=\"ds44-card__globalLink\">Déviation</a></p>\n            <p class=\"ds44-docListElem ds44-mt-std\"><i class=\"icon icon-marker ds44-docListIco\" aria-hidden=\"true\"></i><span class=\"visually-hidden\">Position :</span>\n            D164 - Mésanger\n            </p>\n            <p class=\"ds44-docListElem ds44-mt-std\"><i class=\"icon icon-date ds44-docListIco\" aria-hidden=\"true\"></i><span class=\"visually-hidden\">Durée :</span>\n            Du 04/10/2021 au 03/12/2021<br>Véhicules déviés : tous véhicules\n            </p>\n            <p class=\"ds44-docListElem ds44-mt-std\"><i class=\"icon icon-tag ds44-docListIco\" aria-hidden=\"true\"></i><span class=\"visually-hidden\">Type d'intervention :</span> Tous les véhicules</p>\n        </div>\n        <i class=\"icon icon-arrow-right ds44-cardArrow\" aria-hidden=\"true\"></i>\n    </div>\n</section>",
-        "html_marker": "\n\n\n\n\n\n   <div class=\"ds44-flex-container\">\n        <div class=\"ds44-card__section--horizontal ds44-flex-valign-center ds44-flex-align-center\">\n            <p role=\"heading\" aria-level=\"2\" class=\"ds44-card__title\">Déviation</p>\n            <p class=\"ds44-docListElem ds44-mt-std\"><i class=\"icon icon-marker ds44-docListIco\" aria-hidden=\"true\"></i><span class=\"visually-hidden\">Position :</span>\n            D164 - Mésanger\n            </p>\n            <p class=\"ds44-docListElem ds44-mt-std\"><i class=\"icon icon-date ds44-docListIco\" aria-hidden=\"true\"></i><span class=\"visually-hidden\">Durée :</span>\n            Du 04/10/2021 au 03/12/2021<br>Véhicules déviés : tous véhicules\n            </p>\n            <p class=\"ds44-docListElem ds44-mt-std\"><i class=\"icon icon-tag ds44-docListIco\" aria-hidden=\"true\"></i><span class=\"visually-hidden\">Type d'intervention :</span> Tous les véhicules</p>\n        </div>\n    </div>\n"
+        "lat": "47.476233062234826",
+        "long": "-1.762116687314107",
+        "html_list": "\n\n\n\n\n<section class='ds44-card ds44-card--horizontal '>\n   <div class=\"ds44-card__section\">\n        <div class=\"ds44-innerBoxContainer\">\n            <p role=\"heading\" aria-level=\"2\" class=\"h4-like ds44-cardTitle\"><i class=\"icon ds44-icoInfoRoutes icon-deviation orangeFlag\" aria-hidden=\"true\"></i><a href=\"#\" class=\"ds44-card__globalLink\">Déviation</a></p>\n            <p class=\"ds44-docListElem ds44-mt-std\"><i class=\"icon icon-marker ds44-docListIco\" aria-hidden=\"true\"></i><span class=\"visually-hidden\">Position :</span>\n            D35 - Le Gâvre\n            </p>\n            <p class=\"ds44-docListElem ds44-mt-std\"><i class=\"icon icon-date ds44-docListIco\" aria-hidden=\"true\"></i><span class=\"visually-hidden\">Durée :</span>\n            Du 25/05/2021 au 30/07/2021<br>Véhicules déviés : tous véhicules\n            </p>\n            \n        </div>\n        <i class=\"icon icon-arrow-right ds44-cardArrow\" aria-hidden=\"true\"></i>\n    </div>\n</section>",
+        "html_marker": "\n\n\n\n\n\n   <div class=\"ds44-flex-container\">\n        <div class=\"ds44-card__section--horizontal ds44-flex-valign-center ds44-flex-align-center\">\n            <p role=\"heading\" aria-level=\"2\" class=\"ds44-card__title\">Déviation</p>\n            <p class=\"ds44-docListElem ds44-mt-std\"><i class=\"icon icon-marker ds44-docListIco\" aria-hidden=\"true\"></i><span class=\"visually-hidden\">Position :</span>\n            D35 - Le Gâvre\n            </p>\n            <p class=\"ds44-docListElem ds44-mt-std\"><i class=\"icon icon-date ds44-docListIco\" aria-hidden=\"true\"></i><span class=\"visually-hidden\">Durée :</span>\n            Du 25/05/2021 au 30/07/2021<br>Véhicules déviés : tous véhicules\n            </p>\n            \n        </div>\n    </div>\n"
       }
     },
     {
       "value": "Aménagement de chaussée",
-      "id": "E16321230026442298_1gentils16321230026442254",
+      "id": "E162022726251042830_1Goupilleau162022726251042479",
+      "snm": "Goupilleau162022726251042479",
       "metadata": {
         "type": "EvenementDTO",
+        "click": false,
         "icon_marker": "chantier",
-        "lat": "47.414294773851864",
-        "long": "-1.3689076167778222",
-        "html_list": "\n\n\n\n<section class='ds44-card ds44-card--horizontal '>\n   <div class=\"ds44-card__section\">\n        <div class=\"ds44-innerBoxContainer\">\n            <p role=\"heading\" aria-level=\"2\" class=\"h4-like ds44-cardTitle\"><i class=\"icon icon-attention ds44-icoInfoRoutes orangeFlag\" aria-hidden=\"true\"></i><a href=\"#\" class=\"ds44-card__globalLink\">Aménagement de chaussée</a></p>\n            <p class=\"ds44-docListElem ds44-mt-std\"><i class=\"icon icon-marker ds44-docListIco\" aria-hidden=\"true\"></i><span class=\"visually-hidden\">Position :</span>\n            D9 - Ligné<br>Mouzeil / Ligné\n            </p>\n            <p class=\"ds44-docListElem ds44-mt-std\"><i class=\"icon icon-date ds44-docListIco\" aria-hidden=\"true\"></i><span class=\"visually-hidden\">Durée :</span>\n            Du 04/10/2021 au 03/12/2021<br>24h / 24 et 7 jours/ 7\n            </p>\n            <p class=\"ds44-docListElem ds44-mt-std\"><i class=\"icon icon-tag ds44-docListIco\" aria-hidden=\"true\"></i><span class=\"visually-hidden\">Type d'intervention :</span> Aménagement de chaussée</p>\n        </div>\n        <i class=\"icon icon-arrow-right ds44-cardArrow\" aria-hidden=\"true\"></i>\n    </div>\n</section>",
-        "html_marker": "\n\n\n\n\n\n   <div class=\"ds44-flex-container\">\n        <div class=\"ds44-card__section--horizontal ds44-flex-valign-center ds44-flex-align-center\">\n            <p role=\"heading\" aria-level=\"2\" class=\"ds44-card__title\">Aménagement de chaussée</p>\n            <p class=\"ds44-docListElem ds44-mt-std\"><i class=\"icon icon-marker ds44-docListIco\" aria-hidden=\"true\"></i><span class=\"visually-hidden\">Position :</span>\n            D9 - Ligné<br>Mouzeil / Ligné\n            </p>\n            <p class=\"ds44-docListElem ds44-mt-std\"><i class=\"icon icon-date ds44-docListIco\" aria-hidden=\"true\"></i><span class=\"visually-hidden\">Durée :</span>\n            Du 04/10/2021 au 03/12/2021<br>24h / 24 et 7 jours/ 7\n            </p>\n            <p class=\"ds44-docListElem ds44-mt-std\"><i class=\"icon icon-tag ds44-docListIco\" aria-hidden=\"true\"></i><span class=\"visually-hidden\">Type d'intervention :</span> Aménagement de chaussée</p>\n        </div>\n    </div>\n"
+        "lat": "47.135502641102796",
+        "long": "-1.8755838329348344",
+        "html_list": "\n\n\n\n\n<section class='ds44-card ds44-card--horizontal '>\n   <div class=\"ds44-card__section\">\n        <div class=\"ds44-innerBoxContainer\">\n            <p role=\"heading\" aria-level=\"2\" class=\"h4-like ds44-cardTitle\"><i class=\"icon ds44-icoInfoRoutes icon-travaux orangeFlag\" aria-hidden=\"true\"></i><a href=\"#\" class=\"ds44-card__globalLink\">Aménagement de chaussée</a></p>\n            <p class=\"ds44-docListElem ds44-mt-std\"><i class=\"icon icon-marker ds44-docListIco\" aria-hidden=\"true\"></i><span class=\"visually-hidden\">Position :</span>\n            D279 - Chaumes-en-Retz<br>Rouans / Chaumes-en-Retz\n            </p>\n            <p class=\"ds44-docListElem ds44-mt-std\"><i class=\"icon icon-date ds44-docListIco\" aria-hidden=\"true\"></i><span class=\"visually-hidden\">Durée :</span>\n            Du 17/05/2021 au 23/07/2021<br>24h / 24 et 7 jours/ 7\n            </p>\n            \n            <p class=\"ds44-docListElem ds44-mt-std\"><i class=\"icon icon-tag ds44-docListIco\" aria-hidden=\"true\"></i><span class=\"visually-hidden\">Type d'intervention :</span> Route fermée / déviation</p>\n            \n        </div>\n        <i class=\"icon icon-arrow-right ds44-cardArrow\" aria-hidden=\"true\"></i>\n    </div>\n</section>",
+        "html_marker": "\n\n\n\n\n\n   <div class=\"ds44-flex-container\">\n        <div class=\"ds44-card__section--horizontal ds44-flex-valign-center ds44-flex-align-center\">\n            <p role=\"heading\" aria-level=\"2\" class=\"ds44-card__title\">Aménagement de chaussée</p>\n            <p class=\"ds44-docListElem ds44-mt-std\"><i class=\"icon icon-marker ds44-docListIco\" aria-hidden=\"true\"></i><span class=\"visually-hidden\">Position :</span>\n            D279 - Chaumes-en-Retz<br>Rouans / Chaumes-en-Retz\n            </p>\n            <p class=\"ds44-docListElem ds44-mt-std\"><i class=\"icon icon-date ds44-docListIco\" aria-hidden=\"true\"></i><span class=\"visually-hidden\">Durée :</span>\n            Du 17/05/2021 au 23/07/2021<br>24h / 24 et 7 jours/ 7\n            </p>\n            \n            <p class=\"ds44-docListElem ds44-mt-std\"><i class=\"icon icon-tag ds44-docListIco\" aria-hidden=\"true\"></i><span class=\"visually-hidden\">Type d'intervention :</span> Route fermée / déviation</p>\n            \n        </div>\n    </div>\n"
       }
     },
     {
       "value": "Déviation",
-      "id": "E162996685164711923gentils16299663655575408",
+      "id": "E162022741726417557Goupilleau162022726251042479",
+      "snm": "Goupilleau162022726251042479",
       "metadata": {
         "type": "EvenementDTO",
+        "click": false,
         "icon_marker": "deviation",
-        "lat": "47.46664843874032",
-        "long": "-1.336424944681925",
-        "html_list": "\n\n\n\n<section class='ds44-card ds44-card--horizontal '>\n   <div class=\"ds44-card__section\">\n        <div class=\"ds44-innerBoxContainer\">\n            <p role=\"heading\" aria-level=\"2\" class=\"h4-like ds44-cardTitle\"><i class=\"icon icon-attention ds44-icoInfoRoutes orangeFlag\" aria-hidden=\"true\"></i><a href=\"#\" class=\"ds44-card__globalLink\">Déviation</a></p>\n            <p class=\"ds44-docListElem ds44-mt-std\"><i class=\"icon icon-marker ds44-docListIco\" aria-hidden=\"true\"></i><span class=\"visually-hidden\">Position :</span>\n            Travaux sur réseaux - D38 - Mouzeil\n            </p>\n            <p class=\"ds44-docListElem ds44-mt-std\"><i class=\"icon icon-date ds44-docListIco\" aria-hidden=\"true\"></i><span class=\"visually-hidden\">Durée :</span>\n            Du 04/10/2021 au 17/12/2021<br>Véhicules déviés : tous véhicules\n            </p>\n            <p class=\"ds44-docListElem ds44-mt-std\"><i class=\"icon icon-tag ds44-docListIco\" aria-hidden=\"true\"></i><span class=\"visually-hidden\">Type d'intervention :</span> Tous les véhicules</p>\n        </div>\n        <i class=\"icon icon-arrow-right ds44-cardArrow\" aria-hidden=\"true\"></i>\n    </div>\n</section>",
-        "html_marker": "\n\n\n\n\n\n   <div class=\"ds44-flex-container\">\n        <div class=\"ds44-card__section--horizontal ds44-flex-valign-center ds44-flex-align-center\">\n            <p role=\"heading\" aria-level=\"2\" class=\"ds44-card__title\">Déviation</p>\n            <p class=\"ds44-docListElem ds44-mt-std\"><i class=\"icon icon-marker ds44-docListIco\" aria-hidden=\"true\"></i><span class=\"visually-hidden\">Position :</span>\n            Travaux sur réseaux - D38 - Mouzeil\n            </p>\n            <p class=\"ds44-docListElem ds44-mt-std\"><i class=\"icon icon-date ds44-docListIco\" aria-hidden=\"true\"></i><span class=\"visually-hidden\">Durée :</span>\n            Du 04/10/2021 au 17/12/2021<br>Véhicules déviés : tous véhicules\n            </p>\n            <p class=\"ds44-docListElem ds44-mt-std\"><i class=\"icon icon-tag ds44-docListIco\" aria-hidden=\"true\"></i><span class=\"visually-hidden\">Type d'intervention :</span> Tous les véhicules</p>\n        </div>\n    </div>\n"
-      }
-    },
-    {
-      "value": "Travaux sur réseaux",
-      "id": "E16299663655575293_1gentils16299663655575408",
-      "metadata": {
-        "type": "EvenementDTO",
-        "icon_marker": "chantier",
-        "lat": "47.46664902823004",
-        "long": "-1.3364655651999986",
-        "html_list": "\n\n\n\n<section class='ds44-card ds44-card--horizontal '>\n   <div class=\"ds44-card__section\">\n        <div class=\"ds44-innerBoxContainer\">\n            <p role=\"heading\" aria-level=\"2\" class=\"h4-like ds44-cardTitle\"><i class=\"icon icon-attention ds44-icoInfoRoutes orangeFlag\" aria-hidden=\"true\"></i><a href=\"#\" class=\"ds44-card__globalLink\">Travaux sur réseaux</a></p>\n            <p class=\"ds44-docListElem ds44-mt-std\"><i class=\"icon icon-marker ds44-docListIco\" aria-hidden=\"true\"></i><span class=\"visually-hidden\">Position :</span>\n            D16 - Mouzeil<br>Teillé / Mouzeil\n            </p>\n            <p class=\"ds44-docListElem ds44-mt-std\"><i class=\"icon icon-date ds44-docListIco\" aria-hidden=\"true\"></i><span class=\"visually-hidden\">Durée :</span>\n            Du 06/09/2021 au 17/12/2021<br>Du lundi au vendredi de 8h à 17h30 \n            </p>\n            <p class=\"ds44-docListElem ds44-mt-std\"><i class=\"icon icon-tag ds44-docListIco\" aria-hidden=\"true\"></i><span class=\"visually-hidden\">Type d'intervention :</span> Tranchée / raccordement</p>\n        </div>\n        <i class=\"icon icon-arrow-right ds44-cardArrow\" aria-hidden=\"true\"></i>\n    </div>\n</section>",
-        "html_marker": "\n\n\n\n\n\n   <div class=\"ds44-flex-container\">\n        <div class=\"ds44-card__section--horizontal ds44-flex-valign-center ds44-flex-align-center\">\n            <p role=\"heading\" aria-level=\"2\" class=\"ds44-card__title\">Travaux sur réseaux</p>\n            <p class=\"ds44-docListElem ds44-mt-std\"><i class=\"icon icon-marker ds44-docListIco\" aria-hidden=\"true\"></i><span class=\"visually-hidden\">Position :</span>\n            D16 - Mouzeil<br>Teillé / Mouzeil\n            </p>\n            <p class=\"ds44-docListElem ds44-mt-std\"><i class=\"icon icon-date ds44-docListIco\" aria-hidden=\"true\"></i><span class=\"visually-hidden\">Durée :</span>\n            Du 06/09/2021 au 17/12/2021<br>Du lundi au vendredi de 8h à 17h30 \n            </p>\n            <p class=\"ds44-docListElem ds44-mt-std\"><i class=\"icon icon-tag ds44-docListIco\" aria-hidden=\"true\"></i><span class=\"visually-hidden\">Type d'intervention :</span> Tranchée / raccordement</p>\n        </div>\n    </div>\n"
-      }
-    },
-    {
-      "value": "Aménagement de chaussée",
-      "id": "E1625473923038398_1vrig316254739230383243",
-      "metadata": {
-        "type": "EvenementDTO",
-        "icon_marker": "chantier",
-        "lat": "47.12701480185111",
-        "long": "-2.1142890168936983",
-        "html_list": "\n\n\n\n<section class='ds44-card ds44-card--horizontal '>\n   <div class=\"ds44-card__section\">\n        <div class=\"ds44-innerBoxContainer\">\n            <p role=\"heading\" aria-level=\"2\" class=\"h4-like ds44-cardTitle\"><i class=\"icon icon-attention ds44-icoInfoRoutes orangeFlag\" aria-hidden=\"true\"></i><a href=\"#\" class=\"ds44-card__globalLink\">Aménagement de chaussée</a></p>\n            <p class=\"ds44-docListElem ds44-mt-std\"><i class=\"icon icon-marker ds44-docListIco\" aria-hidden=\"true\"></i><span class=\"visually-hidden\">Position :</span>\n            D213 - Pornic<br>Saint-Michel-Chef-Chef vers Pornic\n            </p>\n            <p class=\"ds44-docListElem ds44-mt-std\"><i class=\"icon icon-date ds44-docListIco\" aria-hidden=\"true\"></i><span class=\"visually-hidden\">Durée :</span>\n            Du 06/09/2021 au 31/12/2021<br>24h / 24 et 7 jours/ 7\n            </p>\n            <p class=\"ds44-docListElem ds44-mt-std\"><i class=\"icon icon-tag ds44-docListIco\" aria-hidden=\"true\"></i><span class=\"visually-hidden\">Type d'intervention :</span> Aménagement de chaussée</p>\n        </div>\n        <i class=\"icon icon-arrow-right ds44-cardArrow\" aria-hidden=\"true\"></i>\n    </div>\n</section>",
-        "html_marker": "\n\n\n\n\n\n   <div class=\"ds44-flex-container\">\n        <div class=\"ds44-card__section--horizontal ds44-flex-valign-center ds44-flex-align-center\">\n            <p role=\"heading\" aria-level=\"2\" class=\"ds44-card__title\">Aménagement de chaussée</p>\n            <p class=\"ds44-docListElem ds44-mt-std\"><i class=\"icon icon-marker ds44-docListIco\" aria-hidden=\"true\"></i><span class=\"visually-hidden\">Position :</span>\n            D213 - Pornic<br>Saint-Michel-Chef-Chef vers Pornic\n            </p>\n            <p class=\"ds44-docListElem ds44-mt-std\"><i class=\"icon icon-date ds44-docListIco\" aria-hidden=\"true\"></i><span class=\"visually-hidden\">Durée :</span>\n            Du 06/09/2021 au 31/12/2021<br>24h / 24 et 7 jours/ 7\n            </p>\n            <p class=\"ds44-docListElem ds44-mt-std\"><i class=\"icon icon-tag ds44-docListIco\" aria-hidden=\"true\"></i><span class=\"visually-hidden\">Type d'intervention :</span> Aménagement de chaussée</p>\n        </div>\n    </div>\n"
-      }
-    },
-    {
-      "value": "Aménagement de chaussée",
-      "id": "E1605869166230614_1pcroute1605869166189638",
-      "metadata": {
-        "type": "EvenementDTO",
-        "icon_marker": "chantier",
-        "lat": "47.11534516613216",
-        "long": "-1.5352238572250838",
-        "html_list": "\n\n\n\n<section class='ds44-card ds44-card--horizontal '>\n   <div class=\"ds44-card__section\">\n        <div class=\"ds44-innerBoxContainer\">\n            <p role=\"heading\" aria-level=\"2\" class=\"h4-like ds44-cardTitle\"><i class=\"icon icon-attention ds44-icoInfoRoutes orangeFlag\" aria-hidden=\"true\"></i><a href=\"#\" class=\"ds44-card__globalLink\">Aménagement de chaussée</a></p>\n            <p class=\"ds44-docListElem ds44-mt-std\"><i class=\"icon icon-marker ds44-docListIco\" aria-hidden=\"true\"></i><span class=\"visually-hidden\">Position :</span>\n            D178 - Pont-Saint-Martin<br>Nantes / Machecoul\n            </p>\n            <p class=\"ds44-docListElem ds44-mt-std\"><i class=\"icon icon-date ds44-docListIco\" aria-hidden=\"true\"></i><span class=\"visually-hidden\">Durée :</span>\n            Du 05/11/2020 au 30/12/2021<br>Du lundi au vendredi\n            </p>\n            <p class=\"ds44-docListElem ds44-mt-std\"><i class=\"icon icon-tag ds44-docListIco\" aria-hidden=\"true\"></i><span class=\"visually-hidden\">Type d'intervention :</span> Aménagement de chaussée</p>\n        </div>\n        <i class=\"icon icon-arrow-right ds44-cardArrow\" aria-hidden=\"true\"></i>\n    </div>\n</section>",
-        "html_marker": "\n\n\n\n\n\n   <div class=\"ds44-flex-container\">\n        <div class=\"ds44-card__section--horizontal ds44-flex-valign-center ds44-flex-align-center\">\n            <p role=\"heading\" aria-level=\"2\" class=\"ds44-card__title\">Aménagement de chaussée</p>\n            <p class=\"ds44-docListElem ds44-mt-std\"><i class=\"icon icon-marker ds44-docListIco\" aria-hidden=\"true\"></i><span class=\"visually-hidden\">Position :</span>\n            D178 - Pont-Saint-Martin<br>Nantes / Machecoul\n            </p>\n            <p class=\"ds44-docListElem ds44-mt-std\"><i class=\"icon icon-date ds44-docListIco\" aria-hidden=\"true\"></i><span class=\"visually-hidden\">Durée :</span>\n            Du 05/11/2020 au 30/12/2021<br>Du lundi au vendredi\n            </p>\n            <p class=\"ds44-docListElem ds44-mt-std\"><i class=\"icon icon-tag ds44-docListIco\" aria-hidden=\"true\"></i><span class=\"visually-hidden\">Type d'intervention :</span> Aménagement de chaussée</p>\n        </div>\n    </div>\n"
-      }
-    },
-    {
-      "value": "Déviation",
-      "id": "E162073892172321746bachelier16207383274272754",
-      "metadata": {
-        "type": "EvenementDTO",
-        "icon_marker": "deviation",
-        "lat": "47.02581102257158",
-        "long": "-1.6342366481120079",
-        "html_list": "\n\n\n\n<section class='ds44-card ds44-card--horizontal '>\n   <div class=\"ds44-card__section\">\n        <div class=\"ds44-innerBoxContainer\">\n            <p role=\"heading\" aria-level=\"2\" class=\"h4-like ds44-cardTitle\"><i class=\"icon icon-attention ds44-icoInfoRoutes orangeFlag\" aria-hidden=\"true\"></i><a href=\"#\" class=\"ds44-card__globalLink\">Déviation</a></p>\n            <p class=\"ds44-docListElem ds44-mt-std\"><i class=\"icon icon-marker ds44-docListIco\" aria-hidden=\"true\"></i><span class=\"visually-hidden\">Position :</span>\n            Autres - D61 - La Limouzinière\n            </p>\n            <p class=\"ds44-docListElem ds44-mt-std\"><i class=\"icon icon-date ds44-docListIco\" aria-hidden=\"true\"></i><span class=\"visually-hidden\">Durée :</span>\n            Du 17/05/2021 au 17/12/2021<br>Véhicules déviés : tous véhicules\n            </p>\n            <p class=\"ds44-docListElem ds44-mt-std\"><i class=\"icon icon-tag ds44-docListIco\" aria-hidden=\"true\"></i><span class=\"visually-hidden\">Type d'intervention :</span> Tous les véhicules</p>\n        </div>\n        <i class=\"icon icon-arrow-right ds44-cardArrow\" aria-hidden=\"true\"></i>\n    </div>\n</section>",
-        "html_marker": "\n\n\n\n\n\n   <div class=\"ds44-flex-container\">\n        <div class=\"ds44-card__section--horizontal ds44-flex-valign-center ds44-flex-align-center\">\n            <p role=\"heading\" aria-level=\"2\" class=\"ds44-card__title\">Déviation</p>\n            <p class=\"ds44-docListElem ds44-mt-std\"><i class=\"icon icon-marker ds44-docListIco\" aria-hidden=\"true\"></i><span class=\"visually-hidden\">Position :</span>\n            Autres - D61 - La Limouzinière\n            </p>\n            <p class=\"ds44-docListElem ds44-mt-std\"><i class=\"icon icon-date ds44-docListIco\" aria-hidden=\"true\"></i><span class=\"visually-hidden\">Durée :</span>\n            Du 17/05/2021 au 17/12/2021<br>Véhicules déviés : tous véhicules\n            </p>\n            <p class=\"ds44-docListElem ds44-mt-std\"><i class=\"icon icon-tag ds44-docListIco\" aria-hidden=\"true\"></i><span class=\"visually-hidden\">Type d'intervention :</span> Tous les véhicules</p>\n        </div>\n    </div>\n"
-      }
-    },
-    {
-      "value": "Autres",
-      "id": "E162073832742727720_1bachelier16207383274272754",
-      "metadata": {
-        "type": "EvenementDTO",
-        "icon_marker": "chantier",
-        "lat": "47.02361098963341",
-        "long": "-1.6334990841903059",
-        "html_list": "\n\n\n\n<section class='ds44-card ds44-card--horizontal '>\n   <div class=\"ds44-card__section\">\n        <div class=\"ds44-innerBoxContainer\">\n            <p role=\"heading\" aria-level=\"2\" class=\"h4-like ds44-cardTitle\"><i class=\"icon icon-attention ds44-icoInfoRoutes orangeFlag\" aria-hidden=\"true\"></i><a href=\"#\" class=\"ds44-card__globalLink\">Autres</a></p>\n            <p class=\"ds44-docListElem ds44-mt-std\"><i class=\"icon icon-marker ds44-docListIco\" aria-hidden=\"true\"></i><span class=\"visually-hidden\">Position :</span>\n            D61 - Saint-Philbert-de-Grand-Lieu<br>La Limouzinière / Saint-Philbert\n            </p>\n            <p class=\"ds44-docListElem ds44-mt-std\"><i class=\"icon icon-date ds44-docListIco\" aria-hidden=\"true\"></i><span class=\"visually-hidden\">Durée :</span>\n            Du 17/05/2021 au 17/12/2021<br>24h / 24 et 7 jours/ 7\n            </p>\n            <p class=\"ds44-docListElem ds44-mt-std\"><i class=\"icon icon-tag ds44-docListIco\" aria-hidden=\"true\"></i><span class=\"visually-hidden\">Type d'intervention :</span> Autres</p>\n        </div>\n        <i class=\"icon icon-arrow-right ds44-cardArrow\" aria-hidden=\"true\"></i>\n    </div>\n</section>",
-        "html_marker": "\n\n\n\n\n\n   <div class=\"ds44-flex-container\">\n        <div class=\"ds44-card__section--horizontal ds44-flex-valign-center ds44-flex-align-center\">\n            <p role=\"heading\" aria-level=\"2\" class=\"ds44-card__title\">Autres</p>\n            <p class=\"ds44-docListElem ds44-mt-std\"><i class=\"icon icon-marker ds44-docListIco\" aria-hidden=\"true\"></i><span class=\"visually-hidden\">Position :</span>\n            D61 - Saint-Philbert-de-Grand-Lieu<br>La Limouzinière / Saint-Philbert\n            </p>\n            <p class=\"ds44-docListElem ds44-mt-std\"><i class=\"icon icon-date ds44-docListIco\" aria-hidden=\"true\"></i><span class=\"visually-hidden\">Durée :</span>\n            Du 17/05/2021 au 17/12/2021<br>24h / 24 et 7 jours/ 7\n            </p>\n            <p class=\"ds44-docListElem ds44-mt-std\"><i class=\"icon icon-tag ds44-docListIco\" aria-hidden=\"true\"></i><span class=\"visually-hidden\">Type d'intervention :</span> Autres</p>\n        </div>\n    </div>\n"
-      }
-    },
-    {
-      "value": "Autres",
-      "id": "E162211795094610180_1blan11162211795093010165",
-      "metadata": {
-        "type": "EvenementDTO",
-        "icon_marker": "chantier",
-        "lat": "47.321963117707895",
-        "long": "-2.0421893846284926",
-        "html_list": "\n\n\n\n<section class='ds44-card ds44-card--horizontal '>\n   <div class=\"ds44-card__section\">\n        <div class=\"ds44-innerBoxContainer\">\n            <p role=\"heading\" aria-level=\"2\" class=\"h4-like ds44-cardTitle\"><i class=\"icon icon-attention ds44-icoInfoRoutes orangeFlag\" aria-hidden=\"true\"></i><a href=\"#\" class=\"ds44-card__globalLink\">Autres</a></p>\n            <p class=\"ds44-docListElem ds44-mt-std\"><i class=\"icon icon-marker ds44-docListIco\" aria-hidden=\"true\"></i><span class=\"visually-hidden\">Position :</span>\n            D100 - Donges<br>Prinquiau / Donges\n            </p>\n            <p class=\"ds44-docListElem ds44-mt-std\"><i class=\"icon icon-date ds44-docListIco\" aria-hidden=\"true\"></i><span class=\"visually-hidden\">Durée :</span>\n            Du 01/06/2021 au 01/12/2021<br>Du lundi au vendredi\n            </p>\n            <p class=\"ds44-docListElem ds44-mt-std\"><i class=\"icon icon-tag ds44-docListIco\" aria-hidden=\"true\"></i><span class=\"visually-hidden\">Type d'intervention :</span> Autres</p>\n        </div>\n        <i class=\"icon icon-arrow-right ds44-cardArrow\" aria-hidden=\"true\"></i>\n    </div>\n</section>",
-        "html_marker": "\n\n\n\n\n\n   <div class=\"ds44-flex-container\">\n        <div class=\"ds44-card__section--horizontal ds44-flex-valign-center ds44-flex-align-center\">\n            <p role=\"heading\" aria-level=\"2\" class=\"ds44-card__title\">Autres</p>\n            <p class=\"ds44-docListElem ds44-mt-std\"><i class=\"icon icon-marker ds44-docListIco\" aria-hidden=\"true\"></i><span class=\"visually-hidden\">Position :</span>\n            D100 - Donges<br>Prinquiau / Donges\n            </p>\n            <p class=\"ds44-docListElem ds44-mt-std\"><i class=\"icon icon-date ds44-docListIco\" aria-hidden=\"true\"></i><span class=\"visually-hidden\">Durée :</span>\n            Du 01/06/2021 au 01/12/2021<br>Du lundi au vendredi\n            </p>\n            <p class=\"ds44-docListElem ds44-mt-std\"><i class=\"icon icon-tag ds44-docListIco\" aria-hidden=\"true\"></i><span class=\"visually-hidden\">Type d'intervention :</span> Autres</p>\n        </div>\n    </div>\n"
-      }
-    },
-    {
-      "value": "Déviation",
-      "id": "E161487363679236144dupa216148733674267390",
-      "metadata": {
-        "type": "EvenementDTO",
-        "icon_marker": "deviation",
-        "lat": "47.47088684660794",
-        "long": "-1.1749983451350885",
-        "html_list": "\n\n\n\n<section class='ds44-card ds44-card--horizontal '>\n   <div class=\"ds44-card__section\">\n        <div class=\"ds44-innerBoxContainer\">\n            <p role=\"heading\" aria-level=\"2\" class=\"h4-like ds44-cardTitle\"><i class=\"icon icon-attention ds44-icoInfoRoutes orangeFlag\" aria-hidden=\"true\"></i><a href=\"#\" class=\"ds44-card__globalLink\">Déviation</a></p>\n            <p class=\"ds44-docListElem ds44-mt-std\"><i class=\"icon icon-marker ds44-docListIco\" aria-hidden=\"true\"></i><span class=\"visually-hidden\">Position :</span>\n            Aménagement  - D163 - Vritz\n            </p>\n            <p class=\"ds44-docListElem ds44-mt-std\"><i class=\"icon icon-date ds44-docListIco\" aria-hidden=\"true\"></i><span class=\"visually-hidden\">Durée :</span>\n            Du 15/03/2021 au 17/12/2021<br>Véhicules déviés : tous véhicules\n            </p>\n            <p class=\"ds44-docListElem ds44-mt-std\"><i class=\"icon icon-tag ds44-docListIco\" aria-hidden=\"true\"></i><span class=\"visually-hidden\">Type d'intervention :</span> Tous les véhicules</p>\n        </div>\n        <i class=\"icon icon-arrow-right ds44-cardArrow\" aria-hidden=\"true\"></i>\n    </div>\n</section>",
-        "html_marker": "\n\n\n\n\n\n   <div class=\"ds44-flex-container\">\n        <div class=\"ds44-card__section--horizontal ds44-flex-valign-center ds44-flex-align-center\">\n            <p role=\"heading\" aria-level=\"2\" class=\"ds44-card__title\">Déviation</p>\n            <p class=\"ds44-docListElem ds44-mt-std\"><i class=\"icon icon-marker ds44-docListIco\" aria-hidden=\"true\"></i><span class=\"visually-hidden\">Position :</span>\n            Aménagement  - D163 - Vritz\n            </p>\n            <p class=\"ds44-docListElem ds44-mt-std\"><i class=\"icon icon-date ds44-docListIco\" aria-hidden=\"true\"></i><span class=\"visually-hidden\">Durée :</span>\n            Du 15/03/2021 au 17/12/2021<br>Véhicules déviés : tous véhicules\n            </p>\n            <p class=\"ds44-docListElem ds44-mt-std\"><i class=\"icon icon-tag ds44-docListIco\" aria-hidden=\"true\"></i><span class=\"visually-hidden\">Type d'intervention :</span> Tous les véhicules</p>\n        </div>\n    </div>\n"
-      }
-    },
-    {
-      "value": "Déviation",
-      "id": "E161487415186911616dupa216148733674267390",
-      "metadata": {
-        "type": "EvenementDTO",
-        "icon_marker": "deviation",
-        "lat": "47.47095681436953",
-        "long": "-1.1748715055585521",
-        "html_list": "\n\n\n\n<section class='ds44-card ds44-card--horizontal '>\n   <div class=\"ds44-card__section\">\n        <div class=\"ds44-innerBoxContainer\">\n            <p role=\"heading\" aria-level=\"2\" class=\"h4-like ds44-cardTitle\"><i class=\"icon icon-attention ds44-icoInfoRoutes orangeFlag\" aria-hidden=\"true\"></i><a href=\"#\" class=\"ds44-card__globalLink\">Déviation</a></p>\n            <p class=\"ds44-docListElem ds44-mt-std\"><i class=\"icon icon-marker ds44-docListIco\" aria-hidden=\"true\"></i><span class=\"visually-hidden\">Position :</span>\n            Aménagement - D22 - Pannecé\n            </p>\n            <p class=\"ds44-docListElem ds44-mt-std\"><i class=\"icon icon-date ds44-docListIco\" aria-hidden=\"true\"></i><span class=\"visually-hidden\">Durée :</span>\n            Du 15/03/2021 au 17/12/2021<br>Véhicules déviés : tous véhicules\n            </p>\n            <p class=\"ds44-docListElem ds44-mt-std\"><i class=\"icon icon-tag ds44-docListIco\" aria-hidden=\"true\"></i><span class=\"visually-hidden\">Type d'intervention :</span> Tous les véhicules</p>\n        </div>\n        <i class=\"icon icon-arrow-right ds44-cardArrow\" aria-hidden=\"true\"></i>\n    </div>\n</section>",
-        "html_marker": "\n\n\n\n\n\n   <div class=\"ds44-flex-container\">\n        <div class=\"ds44-card__section--horizontal ds44-flex-valign-center ds44-flex-align-center\">\n            <p role=\"heading\" aria-level=\"2\" class=\"ds44-card__title\">Déviation</p>\n            <p class=\"ds44-docListElem ds44-mt-std\"><i class=\"icon icon-marker ds44-docListIco\" aria-hidden=\"true\"></i><span class=\"visually-hidden\">Position :</span>\n            Aménagement - D22 - Pannecé\n            </p>\n            <p class=\"ds44-docListElem ds44-mt-std\"><i class=\"icon icon-date ds44-docListIco\" aria-hidden=\"true\"></i><span class=\"visually-hidden\">Durée :</span>\n            Du 15/03/2021 au 17/12/2021<br>Véhicules déviés : tous véhicules\n            </p>\n            <p class=\"ds44-docListElem ds44-mt-std\"><i class=\"icon icon-tag ds44-docListIco\" aria-hidden=\"true\"></i><span class=\"visually-hidden\">Type d'intervention :</span> Tous les véhicules</p>\n        </div>\n    </div>\n"
+        "lat": "47.13736941710643",
+        "long": "-1.8727915866061908",
+        "html_list": "\n\n\n\n\n<section class='ds44-card ds44-card--horizontal '>\n   <div class=\"ds44-card__section\">\n        <div class=\"ds44-innerBoxContainer\">\n            <p role=\"heading\" aria-level=\"2\" class=\"h4-like ds44-cardTitle\"><i class=\"icon ds44-icoInfoRoutes icon-deviation orangeFlag\" aria-hidden=\"true\"></i><a href=\"#\" class=\"ds44-card__globalLink\">Déviation</a></p>\n            <p class=\"ds44-docListElem ds44-mt-std\"><i class=\"icon icon-marker ds44-docListIco\" aria-hidden=\"true\"></i><span class=\"visually-hidden\">Position :</span>\n            Aménagement-D279-St-Hilaire\n            </p>\n            <p class=\"ds44-docListElem ds44-mt-std\"><i class=\"icon icon-date ds44-docListIco\" aria-hidden=\"true\"></i><span class=\"visually-hidden\">Durée :</span>\n            Du 17/05/2021 au 23/07/2021<br>Véhicules déviés : tous véhicules\n            </p>\n            \n        </div>\n        <i class=\"icon icon-arrow-right ds44-cardArrow\" aria-hidden=\"true\"></i>\n    </div>\n</section>",
+        "html_marker": "\n\n\n\n\n\n   <div class=\"ds44-flex-container\">\n        <div class=\"ds44-card__section--horizontal ds44-flex-valign-center ds44-flex-align-center\">\n            <p role=\"heading\" aria-level=\"2\" class=\"ds44-card__title\">Déviation</p>\n            <p class=\"ds44-docListElem ds44-mt-std\"><i class=\"icon icon-marker ds44-docListIco\" aria-hidden=\"true\"></i><span class=\"visually-hidden\">Position :</span>\n            Aménagement-D279-St-Hilaire\n            </p>\n            <p class=\"ds44-docListElem ds44-mt-std\"><i class=\"icon icon-date ds44-docListIco\" aria-hidden=\"true\"></i><span class=\"visually-hidden\">Durée :</span>\n            Du 17/05/2021 au 23/07/2021<br>Véhicules déviés : tous véhicules\n            </p>\n            \n        </div>\n    </div>\n"
       }
     },
     {
       "value": "Aménagement de chaussée",
       "id": "E16148733674427704_1dupa216148733674267390",
+      "snm": "dupa216148733674267390",
       "metadata": {
         "type": "EvenementDTO",
+        "click": false,
         "icon_marker": "chantier",
         "lat": "47.52028741672815",
         "long": "-1.183749405895157",
-        "html_list": "\n\n\n\n<section class='ds44-card ds44-card--horizontal '>\n   <div class=\"ds44-card__section\">\n        <div class=\"ds44-innerBoxContainer\">\n            <p role=\"heading\" aria-level=\"2\" class=\"h4-like ds44-cardTitle\"><i class=\"icon icon-attention ds44-icoInfoRoutes orangeFlag\" aria-hidden=\"true\"></i><a href=\"#\" class=\"ds44-card__globalLink\">Aménagement de chaussée</a></p>\n            <p class=\"ds44-docListElem ds44-mt-std\"><i class=\"icon icon-marker ds44-docListIco\" aria-hidden=\"true\"></i><span class=\"visually-hidden\">Position :</span>\n            D878 - Saint-Mars-la-Jaille<br>Saint-Mars-la-Jaille / Bonnoeuvre\n            </p>\n            <p class=\"ds44-docListElem ds44-mt-std\"><i class=\"icon icon-date ds44-docListIco\" aria-hidden=\"true\"></i><span class=\"visually-hidden\">Durée :</span>\n            Du 15/03/2021 au 17/12/2021<br>24h / 24 et 7 jours/ 7\n            </p>\n            <p class=\"ds44-docListElem ds44-mt-std\"><i class=\"icon icon-tag ds44-docListIco\" aria-hidden=\"true\"></i><span class=\"visually-hidden\">Type d'intervention :</span> Aménagement de chaussée</p>\n        </div>\n        <i class=\"icon icon-arrow-right ds44-cardArrow\" aria-hidden=\"true\"></i>\n    </div>\n</section>",
-        "html_marker": "\n\n\n\n\n\n   <div class=\"ds44-flex-container\">\n        <div class=\"ds44-card__section--horizontal ds44-flex-valign-center ds44-flex-align-center\">\n            <p role=\"heading\" aria-level=\"2\" class=\"ds44-card__title\">Aménagement de chaussée</p>\n            <p class=\"ds44-docListElem ds44-mt-std\"><i class=\"icon icon-marker ds44-docListIco\" aria-hidden=\"true\"></i><span class=\"visually-hidden\">Position :</span>\n            D878 - Saint-Mars-la-Jaille<br>Saint-Mars-la-Jaille / Bonnoeuvre\n            </p>\n            <p class=\"ds44-docListElem ds44-mt-std\"><i class=\"icon icon-date ds44-docListIco\" aria-hidden=\"true\"></i><span class=\"visually-hidden\">Durée :</span>\n            Du 15/03/2021 au 17/12/2021<br>24h / 24 et 7 jours/ 7\n            </p>\n            <p class=\"ds44-docListElem ds44-mt-std\"><i class=\"icon icon-tag ds44-docListIco\" aria-hidden=\"true\"></i><span class=\"visually-hidden\">Type d'intervention :</span> Aménagement de chaussée</p>\n        </div>\n    </div>\n"
+        "html_list": "\n\n\n\n\n<section class='ds44-card ds44-card--horizontal '>\n   <div class=\"ds44-card__section\">\n        <div class=\"ds44-innerBoxContainer\">\n            <p role=\"heading\" aria-level=\"2\" class=\"h4-like ds44-cardTitle\"><i class=\"icon ds44-icoInfoRoutes icon-travaux orangeFlag\" aria-hidden=\"true\"></i><a href=\"#\" class=\"ds44-card__globalLink\">Aménagement de chaussée</a></p>\n            <p class=\"ds44-docListElem ds44-mt-std\"><i class=\"icon icon-marker ds44-docListIco\" aria-hidden=\"true\"></i><span class=\"visually-hidden\">Position :</span>\n            D878 - Saint-Mars-la-Jaille<br>Saint-Mars-la-Jaille / Bonnoeuvre\n            </p>\n            <p class=\"ds44-docListElem ds44-mt-std\"><i class=\"icon icon-date ds44-docListIco\" aria-hidden=\"true\"></i><span class=\"visually-hidden\">Durée :</span>\n            Du 15/03/2021 au 17/12/2021<br>24h / 24 et 7 jours/ 7\n            </p>\n            \n            <p class=\"ds44-docListElem ds44-mt-std\"><i class=\"icon icon-tag ds44-docListIco\" aria-hidden=\"true\"></i><span class=\"visually-hidden\">Type d'intervention :</span>  Route fermée / déviation</p>\n            \n        </div>\n        <i class=\"icon icon-arrow-right ds44-cardArrow\" aria-hidden=\"true\"></i>\n    </div>\n</section>",
+        "html_marker": "\n\n\n\n\n\n   <div class=\"ds44-flex-container\">\n        <div class=\"ds44-card__section--horizontal ds44-flex-valign-center ds44-flex-align-center\">\n            <p role=\"heading\" aria-level=\"2\" class=\"ds44-card__title\">Aménagement de chaussée</p>\n            <p class=\"ds44-docListElem ds44-mt-std\"><i class=\"icon icon-marker ds44-docListIco\" aria-hidden=\"true\"></i><span class=\"visually-hidden\">Position :</span>\n            D878 - Saint-Mars-la-Jaille<br>Saint-Mars-la-Jaille / Bonnoeuvre\n            </p>\n            <p class=\"ds44-docListElem ds44-mt-std\"><i class=\"icon icon-date ds44-docListIco\" aria-hidden=\"true\"></i><span class=\"visually-hidden\">Durée :</span>\n            Du 15/03/2021 au 17/12/2021<br>24h / 24 et 7 jours/ 7\n            </p>\n            \n            <p class=\"ds44-docListElem ds44-mt-std\"><i class=\"icon icon-tag ds44-docListIco\" aria-hidden=\"true\"></i><span class=\"visually-hidden\">Type d'intervention :</span>  Route fermée / déviation</p>\n            \n        </div>\n    </div>\n"
       }
     },
     {
       "value": "Déviation",
-      "id": "E157677092543325138leve8157677077392653368",
+      "id": "E161487363679236144dupa216148733674267390",
+      "snm": "dupa216148733674267390",
       "metadata": {
         "type": "EvenementDTO",
+        "click": false,
         "icon_marker": "deviation",
-        "lat": "47.50419017371695",
-        "long": "-1.569188125789494",
-        "html_list": "\n\n\n\n<section class='ds44-card ds44-card--horizontal '>\n   <div class=\"ds44-card__section\">\n        <div class=\"ds44-innerBoxContainer\">\n            <p role=\"heading\" aria-level=\"2\" class=\"h4-like ds44-cardTitle\"><i class=\"icon icon-attention ds44-icoInfoRoutes orangeFlag\" aria-hidden=\"true\"></i><a href=\"#\" class=\"ds44-card__globalLink\">Déviation</a></p>\n            <p class=\"ds44-docListElem ds44-mt-std\"><i class=\"icon icon-marker ds44-docListIco\" aria-hidden=\"true\"></i><span class=\"visually-hidden\">Position :</span>\n             D69 - Nort-sur-Erdre\n            </p>\n            <p class=\"ds44-docListElem ds44-mt-std\"><i class=\"icon icon-date ds44-docListIco\" aria-hidden=\"true\"></i><span class=\"visually-hidden\">Durée :</span>\n            Du 07/01/2020 au 07/01/2022<br>Véhicules déviés : tous véhicules\n            </p>\n            <p class=\"ds44-docListElem ds44-mt-std\"><i class=\"icon icon-tag ds44-docListIco\" aria-hidden=\"true\"></i><span class=\"visually-hidden\">Type d'intervention :</span> Tous les véhicules</p>\n        </div>\n        <i class=\"icon icon-arrow-right ds44-cardArrow\" aria-hidden=\"true\"></i>\n    </div>\n</section>",
-        "html_marker": "\n\n\n\n\n\n   <div class=\"ds44-flex-container\">\n        <div class=\"ds44-card__section--horizontal ds44-flex-valign-center ds44-flex-align-center\">\n            <p role=\"heading\" aria-level=\"2\" class=\"ds44-card__title\">Déviation</p>\n            <p class=\"ds44-docListElem ds44-mt-std\"><i class=\"icon icon-marker ds44-docListIco\" aria-hidden=\"true\"></i><span class=\"visually-hidden\">Position :</span>\n             D69 - Nort-sur-Erdre\n            </p>\n            <p class=\"ds44-docListElem ds44-mt-std\"><i class=\"icon icon-date ds44-docListIco\" aria-hidden=\"true\"></i><span class=\"visually-hidden\">Durée :</span>\n            Du 07/01/2020 au 07/01/2022<br>Véhicules déviés : tous véhicules\n            </p>\n            <p class=\"ds44-docListElem ds44-mt-std\"><i class=\"icon icon-tag ds44-docListIco\" aria-hidden=\"true\"></i><span class=\"visually-hidden\">Type d'intervention :</span> Tous les véhicules</p>\n        </div>\n    </div>\n"
+        "lat": "47.47088684660794",
+        "long": "-1.1749983451350885",
+        "html_list": "\n\n\n\n\n<section class='ds44-card ds44-card--horizontal '>\n   <div class=\"ds44-card__section\">\n        <div class=\"ds44-innerBoxContainer\">\n            <p role=\"heading\" aria-level=\"2\" class=\"h4-like ds44-cardTitle\"><i class=\"icon ds44-icoInfoRoutes icon-deviation orangeFlag\" aria-hidden=\"true\"></i><a href=\"#\" class=\"ds44-card__globalLink\">Déviation</a></p>\n            <p class=\"ds44-docListElem ds44-mt-std\"><i class=\"icon icon-marker ds44-docListIco\" aria-hidden=\"true\"></i><span class=\"visually-hidden\">Position :</span>\n            Aménagement  - D163 - Vritz\n            </p>\n            <p class=\"ds44-docListElem ds44-mt-std\"><i class=\"icon icon-date ds44-docListIco\" aria-hidden=\"true\"></i><span class=\"visually-hidden\">Durée :</span>\n            Du 15/03/2021 au 17/12/2021<br>Véhicules déviés : tous véhicules\n            </p>\n            \n        </div>\n        <i class=\"icon icon-arrow-right ds44-cardArrow\" aria-hidden=\"true\"></i>\n    </div>\n</section>",
+        "html_marker": "\n\n\n\n\n\n   <div class=\"ds44-flex-container\">\n        <div class=\"ds44-card__section--horizontal ds44-flex-valign-center ds44-flex-align-center\">\n            <p role=\"heading\" aria-level=\"2\" class=\"ds44-card__title\">Déviation</p>\n            <p class=\"ds44-docListElem ds44-mt-std\"><i class=\"icon icon-marker ds44-docListIco\" aria-hidden=\"true\"></i><span class=\"visually-hidden\">Position :</span>\n            Aménagement  - D163 - Vritz\n            </p>\n            <p class=\"ds44-docListElem ds44-mt-std\"><i class=\"icon icon-date ds44-docListIco\" aria-hidden=\"true\"></i><span class=\"visually-hidden\">Durée :</span>\n            Du 15/03/2021 au 17/12/2021<br>Véhicules déviés : tous véhicules\n            </p>\n            \n        </div>\n    </div>\n"
+      }
+    },
+    {
+      "value": "Déviation",
+      "id": "E161487415186911616dupa216148733674267390",
+      "snm": "dupa216148733674267390",
+      "metadata": {
+        "type": "EvenementDTO",
+        "click": false,
+        "icon_marker": "deviation",
+        "lat": "47.47095681436953",
+        "long": "-1.1748715055585521",
+        "html_list": "\n\n\n\n\n<section class='ds44-card ds44-card--horizontal '>\n   <div class=\"ds44-card__section\">\n        <div class=\"ds44-innerBoxContainer\">\n            <p role=\"heading\" aria-level=\"2\" class=\"h4-like ds44-cardTitle\"><i class=\"icon ds44-icoInfoRoutes icon-deviation orangeFlag\" aria-hidden=\"true\"></i><a href=\"#\" class=\"ds44-card__globalLink\">Déviation</a></p>\n            <p class=\"ds44-docListElem ds44-mt-std\"><i class=\"icon icon-marker ds44-docListIco\" aria-hidden=\"true\"></i><span class=\"visually-hidden\">Position :</span>\n            Aménagement - D22 - Pannecé\n            </p>\n            <p class=\"ds44-docListElem ds44-mt-std\"><i class=\"icon icon-date ds44-docListIco\" aria-hidden=\"true\"></i><span class=\"visually-hidden\">Durée :</span>\n            Du 15/03/2021 au 17/12/2021<br>Véhicules déviés : tous véhicules\n            </p>\n            \n        </div>\n        <i class=\"icon icon-arrow-right ds44-cardArrow\" aria-hidden=\"true\"></i>\n    </div>\n</section>",
+        "html_marker": "\n\n\n\n\n\n   <div class=\"ds44-flex-container\">\n        <div class=\"ds44-card__section--horizontal ds44-flex-valign-center ds44-flex-align-center\">\n            <p role=\"heading\" aria-level=\"2\" class=\"ds44-card__title\">Déviation</p>\n            <p class=\"ds44-docListElem ds44-mt-std\"><i class=\"icon icon-marker ds44-docListIco\" aria-hidden=\"true\"></i><span class=\"visually-hidden\">Position :</span>\n            Aménagement - D22 - Pannecé\n            </p>\n            <p class=\"ds44-docListElem ds44-mt-std\"><i class=\"icon icon-date ds44-docListIco\" aria-hidden=\"true\"></i><span class=\"visually-hidden\">Durée :</span>\n            Du 15/03/2021 au 17/12/2021<br>Véhicules déviés : tous véhicules\n            </p>\n            \n        </div>\n    </div>\n"
+      }
+    },
+    {
+      "value": "Aménagement de chaussée",
+      "id": "E161121777819738555_1leve8161121777816638145",
+      "snm": "leve8161121777816638145",
+      "metadata": {
+        "type": "EvenementDTO",
+        "click": false,
+        "icon_marker": "chantier",
+        "lat": "47.63513465198657",
+        "long": "-1.9064564613981196",
+        "html_list": "\n\n\n\n\n<section class='ds44-card ds44-card--horizontal '>\n   <div class=\"ds44-card__section\">\n        <div class=\"ds44-innerBoxContainer\">\n            <p role=\"heading\" aria-level=\"2\" class=\"h4-like ds44-cardTitle\"><i class=\"icon ds44-icoInfoRoutes icon-travaux orangeFlag\" aria-hidden=\"true\"></i><a href=\"#\" class=\"ds44-card__globalLink\">Aménagement de chaussée</a></p>\n            <p class=\"ds44-docListElem ds44-mt-std\"><i class=\"icon icon-marker ds44-docListIco\" aria-hidden=\"true\"></i><span class=\"visually-hidden\">Position :</span>\n            D775 - Avessac<br>Guémené-Penfao / Avessac\n            </p>\n            <p class=\"ds44-docListElem ds44-mt-std\"><i class=\"icon icon-date ds44-docListIco\" aria-hidden=\"true\"></i><span class=\"visually-hidden\">Durée :</span>\n            Du 15/02/2021 au 06/08/2021<br>24h / 24 et 7 jours/ 7\n            </p>\n            \n            <p class=\"ds44-docListElem ds44-mt-std\"><i class=\"icon icon-tag ds44-docListIco\" aria-hidden=\"true\"></i><span class=\"visually-hidden\">Type d'intervention :</span> Route fermée / déviation</p>\n            \n        </div>\n        <i class=\"icon icon-arrow-right ds44-cardArrow\" aria-hidden=\"true\"></i>\n    </div>\n</section>",
+        "html_marker": "\n\n\n\n\n\n   <div class=\"ds44-flex-container\">\n        <div class=\"ds44-card__section--horizontal ds44-flex-valign-center ds44-flex-align-center\">\n            <p role=\"heading\" aria-level=\"2\" class=\"ds44-card__title\">Aménagement de chaussée</p>\n            <p class=\"ds44-docListElem ds44-mt-std\"><i class=\"icon icon-marker ds44-docListIco\" aria-hidden=\"true\"></i><span class=\"visually-hidden\">Position :</span>\n            D775 - Avessac<br>Guémené-Penfao / Avessac\n            </p>\n            <p class=\"ds44-docListElem ds44-mt-std\"><i class=\"icon icon-date ds44-docListIco\" aria-hidden=\"true\"></i><span class=\"visually-hidden\">Durée :</span>\n            Du 15/02/2021 au 06/08/2021<br>24h / 24 et 7 jours/ 7\n            </p>\n            \n            <p class=\"ds44-docListElem ds44-mt-std\"><i class=\"icon icon-tag ds44-docListIco\" aria-hidden=\"true\"></i><span class=\"visually-hidden\">Type d'intervention :</span> Route fermée / déviation</p>\n            \n        </div>\n    </div>\n"
+      }
+    },
+    {
+      "value": "Déviation",
+      "id": "E161121803926659566leve8161121777816638145",
+      "snm": "leve8161121777816638145",
+      "metadata": {
+        "type": "EvenementDTO",
+        "click": false,
+        "icon_marker": "deviation",
+        "lat": "47.63563737928203",
+        "long": "-1.9590415100224696",
+        "html_list": "\n\n\n\n\n<section class='ds44-card ds44-card--horizontal '>\n   <div class=\"ds44-card__section\">\n        <div class=\"ds44-innerBoxContainer\">\n            <p role=\"heading\" aria-level=\"2\" class=\"h4-like ds44-cardTitle\"><i class=\"icon ds44-icoInfoRoutes icon-deviation orangeFlag\" aria-hidden=\"true\"></i><a href=\"#\" class=\"ds44-card__globalLink\">Déviation</a></p>\n            <p class=\"ds44-docListElem ds44-mt-std\"><i class=\"icon icon-marker ds44-docListIco\" aria-hidden=\"true\"></i><span class=\"visually-hidden\">Position :</span>\n            Aménagement - D3 - Guémené-Penfao\n            </p>\n            <p class=\"ds44-docListElem ds44-mt-std\"><i class=\"icon icon-date ds44-docListIco\" aria-hidden=\"true\"></i><span class=\"visually-hidden\">Durée :</span>\n            Du 15/02/2021 au 06/08/2021<br>Véhicules déviés : tous véhicules\n            </p>\n            \n        </div>\n        <i class=\"icon icon-arrow-right ds44-cardArrow\" aria-hidden=\"true\"></i>\n    </div>\n</section>",
+        "html_marker": "\n\n\n\n\n\n   <div class=\"ds44-flex-container\">\n        <div class=\"ds44-card__section--horizontal ds44-flex-valign-center ds44-flex-align-center\">\n            <p role=\"heading\" aria-level=\"2\" class=\"ds44-card__title\">Déviation</p>\n            <p class=\"ds44-docListElem ds44-mt-std\"><i class=\"icon icon-marker ds44-docListIco\" aria-hidden=\"true\"></i><span class=\"visually-hidden\">Position :</span>\n            Aménagement - D3 - Guémené-Penfao\n            </p>\n            <p class=\"ds44-docListElem ds44-mt-std\"><i class=\"icon icon-date ds44-docListIco\" aria-hidden=\"true\"></i><span class=\"visually-hidden\">Durée :</span>\n            Du 15/02/2021 au 06/08/2021<br>Véhicules déviés : tous véhicules\n            </p>\n            \n        </div>\n    </div>\n"
+      }
+    },
+    {
+      "value": "Déviation",
+      "id": "E16112181685598735leve8161121777816638145",
+      "snm": "leve8161121777816638145",
+      "metadata": {
+        "type": "EvenementDTO",
+        "click": false,
+        "icon_marker": "deviation",
+        "lat": "47.63113863495696",
+        "long": "-1.8363961538116453",
+        "html_list": "\n\n\n\n\n<section class='ds44-card ds44-card--horizontal '>\n   <div class=\"ds44-card__section\">\n        <div class=\"ds44-innerBoxContainer\">\n            <p role=\"heading\" aria-level=\"2\" class=\"h4-like ds44-cardTitle\"><i class=\"icon ds44-icoInfoRoutes icon-deviation orangeFlag\" aria-hidden=\"true\"></i><a href=\"#\" class=\"ds44-card__globalLink\">Déviation</a></p>\n            <p class=\"ds44-docListElem ds44-mt-std\"><i class=\"icon icon-marker ds44-docListIco\" aria-hidden=\"true\"></i><span class=\"visually-hidden\">Position :</span>\n            Aménagement - D46 - Massérac\n            </p>\n            <p class=\"ds44-docListElem ds44-mt-std\"><i class=\"icon icon-date ds44-docListIco\" aria-hidden=\"true\"></i><span class=\"visually-hidden\">Durée :</span>\n            Du 15/02/2021 au 06/08/2021<br>Véhicules déviés : tous véhicules\n            </p>\n            \n        </div>\n        <i class=\"icon icon-arrow-right ds44-cardArrow\" aria-hidden=\"true\"></i>\n    </div>\n</section>",
+        "html_marker": "\n\n\n\n\n\n   <div class=\"ds44-flex-container\">\n        <div class=\"ds44-card__section--horizontal ds44-flex-valign-center ds44-flex-align-center\">\n            <p role=\"heading\" aria-level=\"2\" class=\"ds44-card__title\">Déviation</p>\n            <p class=\"ds44-docListElem ds44-mt-std\"><i class=\"icon icon-marker ds44-docListIco\" aria-hidden=\"true\"></i><span class=\"visually-hidden\">Position :</span>\n            Aménagement - D46 - Massérac\n            </p>\n            <p class=\"ds44-docListElem ds44-mt-std\"><i class=\"icon icon-date ds44-docListIco\" aria-hidden=\"true\"></i><span class=\"visually-hidden\">Durée :</span>\n            Du 15/02/2021 au 06/08/2021<br>Véhicules déviés : tous véhicules\n            </p>\n            \n        </div>\n    </div>\n"
+      }
+    },
+    {
+      "value": "Aménagement de chaussée",
+      "id": "E1605869166230614_1pcroute1605869166189638",
+      "snm": "pcroute1605869166189638",
+      "metadata": {
+        "type": "EvenementDTO",
+        "click": false,
+        "icon_marker": "chantier",
+        "lat": "47.11534516613216",
+        "long": "-1.5352238572250838",
+        "html_list": "\n\n\n\n\n<section class='ds44-card ds44-card--horizontal '>\n   <div class=\"ds44-card__section\">\n        <div class=\"ds44-innerBoxContainer\">\n            <p role=\"heading\" aria-level=\"2\" class=\"h4-like ds44-cardTitle\"><i class=\"icon ds44-icoInfoRoutes icon-travaux orangeFlag\" aria-hidden=\"true\"></i><a href=\"#\" class=\"ds44-card__globalLink\">Aménagement de chaussée</a></p>\n            <p class=\"ds44-docListElem ds44-mt-std\"><i class=\"icon icon-marker ds44-docListIco\" aria-hidden=\"true\"></i><span class=\"visually-hidden\">Position :</span>\n            D178 - Pont-Saint-Martin<br>Nantes / Machecoul\n            </p>\n            <p class=\"ds44-docListElem ds44-mt-std\"><i class=\"icon icon-date ds44-docListIco\" aria-hidden=\"true\"></i><span class=\"visually-hidden\">Durée :</span>\n            Du 05/11/2020 au 30/09/2021<br>7/7jours\n            </p>\n            \n            <p class=\"ds44-docListElem ds44-mt-std\"><i class=\"icon icon-tag ds44-docListIco\" aria-hidden=\"true\"></i><span class=\"visually-hidden\">Type d'intervention :</span> Chaussée rétrecie</p>\n            \n        </div>\n        <i class=\"icon icon-arrow-right ds44-cardArrow\" aria-hidden=\"true\"></i>\n    </div>\n</section>",
+        "html_marker": "\n\n\n\n\n\n   <div class=\"ds44-flex-container\">\n        <div class=\"ds44-card__section--horizontal ds44-flex-valign-center ds44-flex-align-center\">\n            <p role=\"heading\" aria-level=\"2\" class=\"ds44-card__title\">Aménagement de chaussée</p>\n            <p class=\"ds44-docListElem ds44-mt-std\"><i class=\"icon icon-marker ds44-docListIco\" aria-hidden=\"true\"></i><span class=\"visually-hidden\">Position :</span>\n            D178 - Pont-Saint-Martin<br>Nantes / Machecoul\n            </p>\n            <p class=\"ds44-docListElem ds44-mt-std\"><i class=\"icon icon-date ds44-docListIco\" aria-hidden=\"true\"></i><span class=\"visually-hidden\">Durée :</span>\n            Du 05/11/2020 au 30/09/2021<br>7/7jours\n            </p>\n            \n            <p class=\"ds44-docListElem ds44-mt-std\"><i class=\"icon icon-tag ds44-docListIco\" aria-hidden=\"true\"></i><span class=\"visually-hidden\">Type d'intervention :</span> Chaussée rétrecie</p>\n            \n        </div>\n    </div>\n"
       }
     },
     {
       "value": "Aménagement de chaussée",
       "id": "E157677077392653207_1leve8157677077392653368",
+      "snm": "leve8157677077392653368",
       "metadata": {
         "type": "EvenementDTO",
+        "click": false,
         "icon_marker": "chantier",
         "lat": "47.449963084694346",
         "long": "-1.502676020218615",
-        "html_list": "\n\n\n\n<section class='ds44-card ds44-card--horizontal '>\n   <div class=\"ds44-card__section\">\n        <div class=\"ds44-innerBoxContainer\">\n            <p role=\"heading\" aria-level=\"2\" class=\"h4-like ds44-cardTitle\"><i class=\"icon icon-attention ds44-icoInfoRoutes orangeFlag\" aria-hidden=\"true\"></i><a href=\"#\" class=\"ds44-card__globalLink\">Aménagement de chaussée</a></p>\n            <p class=\"ds44-docListElem ds44-mt-std\"><i class=\"icon icon-marker ds44-docListIco\" aria-hidden=\"true\"></i><span class=\"visually-hidden\">Position :</span>\n            D121 - Nort-sur-Erdre<br>Saffré / Nort-sur-Erdre\n            </p>\n            <p class=\"ds44-docListElem ds44-mt-std\"><i class=\"icon icon-date ds44-docListIco\" aria-hidden=\"true\"></i><span class=\"visually-hidden\">Durée :</span>\n            Du 07/01/2020 au 07/01/2022<br>24h / 24 et 7 jours/ 7\n            </p>\n            <p class=\"ds44-docListElem ds44-mt-std\"><i class=\"icon icon-tag ds44-docListIco\" aria-hidden=\"true\"></i><span class=\"visually-hidden\">Type d'intervention :</span> Aménagement de chaussée</p>\n        </div>\n        <i class=\"icon icon-arrow-right ds44-cardArrow\" aria-hidden=\"true\"></i>\n    </div>\n</section>",
-        "html_marker": "\n\n\n\n\n\n   <div class=\"ds44-flex-container\">\n        <div class=\"ds44-card__section--horizontal ds44-flex-valign-center ds44-flex-align-center\">\n            <p role=\"heading\" aria-level=\"2\" class=\"ds44-card__title\">Aménagement de chaussée</p>\n            <p class=\"ds44-docListElem ds44-mt-std\"><i class=\"icon icon-marker ds44-docListIco\" aria-hidden=\"true\"></i><span class=\"visually-hidden\">Position :</span>\n            D121 - Nort-sur-Erdre<br>Saffré / Nort-sur-Erdre\n            </p>\n            <p class=\"ds44-docListElem ds44-mt-std\"><i class=\"icon icon-date ds44-docListIco\" aria-hidden=\"true\"></i><span class=\"visually-hidden\">Durée :</span>\n            Du 07/01/2020 au 07/01/2022<br>24h / 24 et 7 jours/ 7\n            </p>\n            <p class=\"ds44-docListElem ds44-mt-std\"><i class=\"icon icon-tag ds44-docListIco\" aria-hidden=\"true\"></i><span class=\"visually-hidden\">Type d'intervention :</span> Aménagement de chaussée</p>\n        </div>\n    </div>\n"
+        "html_list": "\n\n\n\n\n<section class='ds44-card ds44-card--horizontal '>\n   <div class=\"ds44-card__section\">\n        <div class=\"ds44-innerBoxContainer\">\n            <p role=\"heading\" aria-level=\"2\" class=\"h4-like ds44-cardTitle\"><i class=\"icon ds44-icoInfoRoutes icon-travaux orangeFlag\" aria-hidden=\"true\"></i><a href=\"#\" class=\"ds44-card__globalLink\">Aménagement de chaussée</a></p>\n            <p class=\"ds44-docListElem ds44-mt-std\"><i class=\"icon icon-marker ds44-docListIco\" aria-hidden=\"true\"></i><span class=\"visually-hidden\">Position :</span>\n            D121 - Nort-sur-Erdre<br>Saffré / Nort-sur-Erdre\n            </p>\n            <p class=\"ds44-docListElem ds44-mt-std\"><i class=\"icon icon-date ds44-docListIco\" aria-hidden=\"true\"></i><span class=\"visually-hidden\">Durée :</span>\n            Du 07/01/2020 au 07/01/2022<br>24h / 24 et 7 jours/ 7\n            </p>\n            \n            <p class=\"ds44-docListElem ds44-mt-std\"><i class=\"icon icon-tag ds44-docListIco\" aria-hidden=\"true\"></i><span class=\"visually-hidden\">Type d'intervention :</span> Route fermée / déviation</p>\n            \n        </div>\n        <i class=\"icon icon-arrow-right ds44-cardArrow\" aria-hidden=\"true\"></i>\n    </div>\n</section>",
+        "html_marker": "\n\n\n\n\n\n   <div class=\"ds44-flex-container\">\n        <div class=\"ds44-card__section--horizontal ds44-flex-valign-center ds44-flex-align-center\">\n            <p role=\"heading\" aria-level=\"2\" class=\"ds44-card__title\">Aménagement de chaussée</p>\n            <p class=\"ds44-docListElem ds44-mt-std\"><i class=\"icon icon-marker ds44-docListIco\" aria-hidden=\"true\"></i><span class=\"visually-hidden\">Position :</span>\n            D121 - Nort-sur-Erdre<br>Saffré / Nort-sur-Erdre\n            </p>\n            <p class=\"ds44-docListElem ds44-mt-std\"><i class=\"icon icon-date ds44-docListIco\" aria-hidden=\"true\"></i><span class=\"visually-hidden\">Durée :</span>\n            Du 07/01/2020 au 07/01/2022<br>24h / 24 et 7 jours/ 7\n            </p>\n            \n            <p class=\"ds44-docListElem ds44-mt-std\"><i class=\"icon icon-tag ds44-docListIco\" aria-hidden=\"true\"></i><span class=\"visually-hidden\">Type d'intervention :</span> Route fermée / déviation</p>\n            \n        </div>\n    </div>\n"
+      }
+    },
+    {
+      "value": "Déviation",
+      "id": "E157677092543325138leve8157677077392653368",
+      "snm": "leve8157677077392653368",
+      "metadata": {
+        "type": "EvenementDTO",
+        "click": false,
+        "icon_marker": "deviation",
+        "lat": "47.50419017371695",
+        "long": "-1.569188125789494",
+        "html_list": "\n\n\n\n\n<section class='ds44-card ds44-card--horizontal '>\n   <div class=\"ds44-card__section\">\n        <div class=\"ds44-innerBoxContainer\">\n            <p role=\"heading\" aria-level=\"2\" class=\"h4-like ds44-cardTitle\"><i class=\"icon ds44-icoInfoRoutes icon-deviation orangeFlag\" aria-hidden=\"true\"></i><a href=\"#\" class=\"ds44-card__globalLink\">Déviation</a></p>\n            <p class=\"ds44-docListElem ds44-mt-std\"><i class=\"icon icon-marker ds44-docListIco\" aria-hidden=\"true\"></i><span class=\"visually-hidden\">Position :</span>\n             D69 - Nort-sur-Erdre\n            </p>\n            <p class=\"ds44-docListElem ds44-mt-std\"><i class=\"icon icon-date ds44-docListIco\" aria-hidden=\"true\"></i><span class=\"visually-hidden\">Durée :</span>\n            Du 07/01/2020 au 07/01/2022<br>Véhicules déviés : tous véhicules\n            </p>\n            \n        </div>\n        <i class=\"icon icon-arrow-right ds44-cardArrow\" aria-hidden=\"true\"></i>\n    </div>\n</section>",
+        "html_marker": "\n\n\n\n\n\n   <div class=\"ds44-flex-container\">\n        <div class=\"ds44-card__section--horizontal ds44-flex-valign-center ds44-flex-align-center\">\n            <p role=\"heading\" aria-level=\"2\" class=\"ds44-card__title\">Déviation</p>\n            <p class=\"ds44-docListElem ds44-mt-std\"><i class=\"icon icon-marker ds44-docListIco\" aria-hidden=\"true\"></i><span class=\"visually-hidden\">Position :</span>\n             D69 - Nort-sur-Erdre\n            </p>\n            <p class=\"ds44-docListElem ds44-mt-std\"><i class=\"icon icon-date ds44-docListIco\" aria-hidden=\"true\"></i><span class=\"visually-hidden\">Durée :</span>\n            Du 07/01/2020 au 07/01/2022<br>Véhicules déviés : tous véhicules\n            </p>\n            \n        </div>\n    </div>\n"
+      }
+    },
+    {
+      "value": "Déviation",
+      "id": "E16264363714225175644-pcroute3162643569435134569",
+      "snm": "44-pcroute3162643569435134569",
+      "metadata": {
+        "type": "EvenementDTO",
+        "click": false,
+        "icon_marker": "deviation",
+        "lat": "47.32426042689956",
+        "long": "-2.1638300301681594",
+        "html_list": "\n\n\n\n\n<section class='ds44-card ds44-card--horizontal '>\n   <div class=\"ds44-card__section\">\n        <div class=\"ds44-innerBoxContainer\">\n            <p role=\"heading\" aria-level=\"2\" class=\"h4-like ds44-cardTitle\"><i class=\"icon ds44-icoInfoRoutes icon-deviation orangeFlag\" aria-hidden=\"true\"></i><a href=\"#\" class=\"ds44-card__globalLink\">Déviation</a></p>\n            <p class=\"ds44-docListElem ds44-mt-std\"><i class=\"icon icon-marker ds44-docListIco\" aria-hidden=\"true\"></i><span class=\"visually-hidden\">Position :</span>\n            D971 / D100 / D4\n            </p>\n            <p class=\"ds44-docListElem ds44-mt-std\"><i class=\"icon icon-date ds44-docListIco\" aria-hidden=\"true\"></i><span class=\"visually-hidden\">Durée :</span>\n            Du 09/08/2021 au 10/08/2021<br>De 22h00 à 06h00\n            </p>\n            \n            <p class=\"ds44-docListElem ds44-mt-std\"><i class=\"icon icon-tag ds44-docListIco\" aria-hidden=\"true\"></i><span class=\"visually-hidden\">Type d'intervention :</span> Véhicules déviés : tous véhicules</p>\n            \n        </div>\n        <i class=\"icon icon-arrow-right ds44-cardArrow\" aria-hidden=\"true\"></i>\n    </div>\n</section>",
+        "html_marker": "\n\n\n\n\n\n   <div class=\"ds44-flex-container\">\n        <div class=\"ds44-card__section--horizontal ds44-flex-valign-center ds44-flex-align-center\">\n            <p role=\"heading\" aria-level=\"2\" class=\"ds44-card__title\">Déviation</p>\n            <p class=\"ds44-docListElem ds44-mt-std\"><i class=\"icon icon-marker ds44-docListIco\" aria-hidden=\"true\"></i><span class=\"visually-hidden\">Position :</span>\n            D971 / D100 / D4\n            </p>\n            <p class=\"ds44-docListElem ds44-mt-std\"><i class=\"icon icon-date ds44-docListIco\" aria-hidden=\"true\"></i><span class=\"visually-hidden\">Durée :</span>\n            Du 09/08/2021 au 10/08/2021<br>De 22h00 à 06h00\n            </p>\n            \n            <p class=\"ds44-docListElem ds44-mt-std\"><i class=\"icon icon-tag ds44-docListIco\" aria-hidden=\"true\"></i><span class=\"visually-hidden\">Type d'intervention :</span> Véhicules déviés : tous véhicules</p>\n            \n        </div>\n    </div>\n"
+      }
+    },
+    {
+      "id": "E157677092543325138leve8157677077392653368",
+      "snm": "leve8157677077392653368",
+      "metadata": {
+        "type": "TraceEvtSpiralDTO",
+        "coordinates": [
+          [
+            -1.5691882919640914,
+            47.504190176995145
+          ],
+          [
+            -1.5660738901698767,
+            47.50496110782258
+          ],
+          [
+            -1.5647789341144394,
+            47.50536332187555
+          ],
+          [
+            -1.5628247630908723,
+            47.50601820812939
+          ],
+          [
+            -1.5592861321163374,
+            47.507579977747056
+          ],
+          [
+            -1.5561366809962962,
+            47.50889458995407
+          ],
+          [
+            -1.5554180288105985,
+            47.5091914767151
+          ],
+          [
+            -1.5541247072845563,
+            47.50963858211015
+          ],
+          [
+            -1.5493026613275453,
+            47.51192170470528
+          ],
+          [
+            -1.548877635853281,
+            47.51223576253206
+          ],
+          [
+            -1.547926051437216,
+            47.512957068753096
+          ],
+          [
+            -1.5475990311740053,
+            47.51301591415242
+          ],
+          [
+            -1.5452901286278913,
+            47.512460248085304
+          ],
+          [
+            -1.5389380150905225,
+            47.511007252274304
+          ],
+          [
+            -1.536477339620579,
+            47.51040448291134
+          ],
+          [
+            -1.5355526898347711,
+            47.51017671934728
+          ],
+          [
+            -1.53153223293994,
+            47.509999322036755
+          ],
+          [
+            -1.529088010549526,
+            47.509896005350065
+          ],
+          [
+            -1.5279596382672669,
+            47.5099355131499
+          ],
+          [
+            -1.5206457709681445,
+            47.51076369512609
+          ],
+          [
+            -1.5187209841950393,
+            47.51082432713246
+          ],
+          [
+            -1.514406743629772,
+            47.51063803405857
+          ],
+          [
+            -1.507647678057749,
+            47.51034329760522
+          ],
+          [
+            -1.506778280382537,
+            47.51013851634685
+          ],
+          [
+            -1.5041794098023593,
+            47.50915082817168
+          ],
+          [
+            -1.5017179333223938,
+            47.50819187092528
+          ],
+          [
+            -1.4936369763872168,
+            47.504986093374185
+          ],
+          [
+            -1.49146309359752,
+            47.504125174137044
+          ],
+          [
+            -1.4905108660435957,
+            47.503878686981096
+          ],
+          [
+            -1.4893642293730927,
+            47.50368811907831
+          ],
+          [
+            -1.485959638774561,
+            47.50306282337558
+          ],
+          [
+            -1.4847843558246028,
+            47.50285833389466
+          ],
+          [
+            -1.4831168780795196,
+            47.50282278713409
+          ],
+          [
+            -1.4827195997820932,
+            47.50283102762586
+          ]
+        ],
+        "html_marker": "\n\n\n\n\n\n   <div class=\"ds44-flex-container\">\n        <div class=\"ds44-card__section--horizontal ds44-flex-valign-center ds44-flex-align-center\">\n            <p role=\"heading\" aria-level=\"2\" class=\"ds44-card__title\">Déviation</p>\n            <p class=\"ds44-docListElem ds44-mt-std\"><i class=\"icon icon-marker ds44-docListIco\" aria-hidden=\"true\"></i><span class=\"visually-hidden\">Position :</span>\n             D69 - Nort-sur-Erdre\n            </p>\n            <p class=\"ds44-docListElem ds44-mt-std\"><i class=\"icon icon-date ds44-docListIco\" aria-hidden=\"true\"></i><span class=\"visually-hidden\">Durée :</span>\n            Du 07/01/2020 au 07/01/2022<br>Véhicules déviés : tous véhicules\n            </p>\n            \n        </div>\n    </div>\n"
+      }
+    },
+    {
+      "id": "E1605869166230614_1pcroute1605869166189638",
+      "metadata": {
+        "type": "TraceEvtSpiralDTO",
+        "coordinates": [
+          [
+            -2.183326778076282,
+            47.30386680432348
+          ],
+          [
+            -2.183326778076282,
+            47.30386680432348
+          ]
+        ],
+        "html_marker": "\n\n\n\n\n\n   <div class=\"ds44-flex-container\">\n        <div class=\"ds44-card__section--horizontal ds44-flex-valign-center ds44-flex-align-center\">\n            <p role=\"heading\" aria-level=\"2\" class=\"ds44-card__title\">Aménagement de chaussée</p>\n            <p class=\"ds44-docListElem ds44-mt-std\"><i class=\"icon icon-marker ds44-docListIco\" aria-hidden=\"true\"></i><span class=\"visually-hidden\">Position :</span>\n            D178 - Pont-Saint-Martin<br>Nantes / Machecoul\n            </p>\n            <p class=\"ds44-docListElem ds44-mt-std\"><i class=\"icon icon-date ds44-docListIco\" aria-hidden=\"true\"></i><span class=\"visually-hidden\">Durée :</span>\n            Du 05/11/2020 au 30/09/2021<br>7/7jours\n            </p>\n            \n            <p class=\"ds44-docListElem ds44-mt-std\"><i class=\"icon icon-tag ds44-docListIco\" aria-hidden=\"true\"></i><span class=\"visually-hidden\">Type d'intervention :</span> Chaussée rétrecie</p>\n            \n        </div>\n    </div>\n"
+      }
+    },
+    {
+      "id": "E157677092543325138leve8157677077392653368",
+      "snm": "leve8157677077392653368",
+      "metadata": {
+        "type": "TraceEvtSpiralDTO",
+        "coordinates": [
+          [
+            -1.4822171189472277,
+            47.50234297074343
+          ],
+          [
+            -1.482310300687498,
+            47.501763817586
+          ],
+          [
+            -1.4825214525809516,
+            47.500952271424815
+          ],
+          [
+            -1.4825711291647767,
+            47.50042653157707
+          ],
+          [
+            -1.4826283533180338,
+            47.499684933640296
+          ],
+          [
+            -1.4825470101879346,
+            47.49856357523119
+          ],
+          [
+            -1.4824148276438796,
+            47.497621508608304
+          ],
+          [
+            -1.482326511798723,
+            47.49735039205339
+          ],
+          [
+            -1.4821311967090698,
+            47.49646147866829
+          ],
+          [
+            -1.4820465014776343,
+            47.49623990015945
+          ],
+          [
+            -1.4818390295606816,
+            47.495026888011374
+          ],
+          [
+            -1.4818411632767066,
+            47.49426206464832
+          ],
+          [
+            -1.4819769753166636,
+            47.49335503918139
+          ],
+          [
+            -1.4825317777022715,
+            47.49172020194698
+          ],
+          [
+            -1.48274609235828,
+            47.4909446890352
+          ],
+          [
+            -1.4830543969794723,
+            47.48985098105534
+          ],
+          [
+            -1.4833387987985058,
+            47.489125884615255
+          ],
+          [
+            -1.4836175444331492,
+            47.488481696952526
+          ],
+          [
+            -1.4842893027913389,
+            47.48760425121936
+          ],
+          [
+            -1.4845810394871786,
+            47.48696923111182
+          ],
+          [
+            -1.4844623455035462,
+            47.48634228268468
+          ],
+          [
+            -1.484302086368742,
+            47.48584975854214
+          ],
+          [
+            -1.4842643405179539,
+            47.4854038453027
+          ],
+          [
+            -1.4843819025767422,
+            47.48521643594409
+          ],
+          [
+            -1.4847639167195807,
+            47.48502352372256
+          ],
+          [
+            -1.48489192987577,
+            47.48497572511133
+          ],
+          [
+            -1.4879869531965444,
+            47.48459816692903
+          ],
+          [
+            -1.4883850187192038,
+            47.48458541968797
+          ],
+          [
+            -1.4887210276533214,
+            47.484625842630145
+          ],
+          [
+            -1.488912290520537,
+            47.48452938282952
+          ],
+          [
+            -1.4889062676776137,
+            47.48430434677386
+          ],
+          [
+            -1.4886926294505778,
+            47.48413506272353
+          ],
+          [
+            -1.4878077802150163,
+            47.48388494059296
+          ],
+          [
+            -1.4873246267692535,
+            47.48368060471509
+          ],
+          [
+            -1.487303076551549,
+            47.48327539827318
+          ],
+          [
+            -1.4879989807256546,
+            47.48189434576572
+          ],
+          [
+            -1.4882112886367087,
+            47.48108730122328
+          ],
+          [
+            -1.4881850885839378,
+            47.47936828553727
+          ],
+          [
+            -1.488193123797146,
+            47.478967968271945
+          ],
+          [
+            -1.488033526090331,
+            47.47865542301789
+          ],
+          [
+            -1.4878870482168087,
+            47.47848702298711
+          ],
+          [
+            -1.4874543433845735,
+            47.47809438896832
+          ],
+          [
+            -1.4850832651843389,
+            47.47645688849055
+          ],
+          [
+            -1.4850059485997238,
+            47.4763208925709
+          ],
+          [
+            -1.4849730431305965,
+            47.475785060028386
+          ],
+          [
+            -1.4850194386514577,
+            47.47555621698872
+          ],
+          [
+            -1.4856916706185135,
+            47.474683266976896
+          ],
+          [
+            -1.4873172144551063,
+            47.47281508812219
+          ],
+          [
+            -1.487718824439909,
+            47.472370472463645
+          ],
+          [
+            -1.4876767717002646,
+            47.4718750120223
+          ],
+          [
+            -1.4877834363362505,
+            47.47155248079939
+          ],
+          [
+            -1.488034297068522,
+            47.47122735219599
+          ],
+          [
+            -1.4890284085121357,
+            47.4703901210077
+          ],
+          [
+            -1.4893416960169206,
+            47.470016321709046
+          ],
+          [
+            -1.4900971138040737,
+            47.46854605528005
+          ],
+          [
+            -1.4902068534156512,
+            47.46827755191171
+          ],
+          [
+            -1.4906752476123837,
+            47.467356895800606
+          ],
+          [
+            -1.4911756386615438,
+            47.466031735635106
+          ],
+          [
+            -1.4916099592061094,
+            47.46471920115874
+          ],
+          [
+            -1.491723561087773,
+            47.46448674020248
+          ],
+          [
+            -1.4917810184695115,
+            47.464213048147506
+          ],
+          [
+            -1.4924286781979303,
+            47.462259938564664
+          ],
+          [
+            -1.4932990892638438,
+            47.46043122977851
+          ],
+          [
+            -1.4934559300080583,
+            47.459929386244674
+          ],
+          [
+            -1.493809947100003,
+            47.45924116898384
+          ],
+          [
+            -1.4941559133394422,
+            47.45846286178531
+          ],
+          [
+            -1.4942796535962204,
+            47.45661533561811
+          ],
+          [
+            -1.494450663373799,
+            47.45611367656199
+          ],
+          [
+            -1.494806756006043,
+            47.4551375372907
+          ],
+          [
+            -1.4952319240399434,
+            47.4540183305961
+          ],
+          [
+            -1.4958561014535265,
+            47.45260029019175
+          ],
+          [
+            -1.4961468179418371,
+            47.45208670152312
+          ],
+          [
+            -1.496516710500266,
+            47.45158764802793
+          ],
+          [
+            -1.4963944520125176,
+            47.450915670152014
+          ],
+          [
+            -1.4963466735198419,
+            47.45019517832951
+          ],
+          [
+            -1.4965143258103628,
+            47.44982844643503
+          ],
+          [
+            -1.4974988714336677,
+            47.44872106499772
+          ],
+          [
+            -1.4978636337622688,
+            47.44816794981017
+          ],
+          [
+            -1.4980132688069734,
+            47.44757152243759
+          ],
+          [
+            -1.4981258802013628,
+            47.447343540797654
+          ],
+          [
+            -1.4994008533356558,
+            47.44558756932072
+          ],
+          [
+            -1.4997668665091117,
+            47.445002970127604
+          ]
+        ],
+        "html_marker": "\n\n\n\n\n\n   <div class=\"ds44-flex-container\">\n        <div class=\"ds44-card__section--horizontal ds44-flex-valign-center ds44-flex-align-center\">\n            <p role=\"heading\" aria-level=\"2\" class=\"ds44-card__title\">Déviation</p>\n            <p class=\"ds44-docListElem ds44-mt-std\"><i class=\"icon icon-marker ds44-docListIco\" aria-hidden=\"true\"></i><span class=\"visually-hidden\">Position :</span>\n             D69 - Nort-sur-Erdre\n            </p>\n            <p class=\"ds44-docListElem ds44-mt-std\"><i class=\"icon icon-date ds44-docListIco\" aria-hidden=\"true\"></i><span class=\"visually-hidden\">Durée :</span>\n            Du 07/01/2020 au 07/01/2022<br>Véhicules déviés : tous véhicules\n            </p>\n            \n        </div>\n    </div>\n"
+      }
+    },
+    {
+      "id": "E157677077392653207_1leve8157677077392653368",
+      "snm": "leve8157677077392653368",
+      "metadata": {
+        "type": "TraceEvtSpiralDTO",
+        "coordinates": [
+          [
+            -1.5026844360752747,
+            47.44995869666808
+          ],
+          [
+            -1.5018666404956873,
+            47.44932712816438
+          ],
+          [
+            -1.501496906521799,
+            47.448800393260356
+          ],
+          [
+            -1.5014476981683733,
+            47.44866477526047
+          ]
+        ],
+        "html_marker": "\n\n\n\n\n\n   <div class=\"ds44-flex-container\">\n        <div class=\"ds44-card__section--horizontal ds44-flex-valign-center ds44-flex-align-center\">\n            <p role=\"heading\" aria-level=\"2\" class=\"ds44-card__title\">Aménagement de chaussée</p>\n            <p class=\"ds44-docListElem ds44-mt-std\"><i class=\"icon icon-marker ds44-docListIco\" aria-hidden=\"true\"></i><span class=\"visually-hidden\">Position :</span>\n            D121 - Nort-sur-Erdre<br>Saffré / Nort-sur-Erdre\n            </p>\n            <p class=\"ds44-docListElem ds44-mt-std\"><i class=\"icon icon-date ds44-docListIco\" aria-hidden=\"true\"></i><span class=\"visually-hidden\">Durée :</span>\n            Du 07/01/2020 au 07/01/2022<br>24h / 24 et 7 jours/ 7\n            </p>\n            \n            <p class=\"ds44-docListElem ds44-mt-std\"><i class=\"icon icon-tag ds44-docListIco\" aria-hidden=\"true\"></i><span class=\"visually-hidden\">Type d'intervention :</span> Route fermée / déviation</p>\n            \n        </div>\n    </div>\n"
       }
     }
   ]

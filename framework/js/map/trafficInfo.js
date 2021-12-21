@@ -13,6 +13,7 @@ class InfoTraffic extends MapAbstract {
         }
 
         object.geojsonHoveredId = null;
+        object.timeUnHover = 0;
         object.geojsonModel = {
             'type': 'geojson',
             'data': {
@@ -94,8 +95,8 @@ class InfoTraffic extends MapAbstract {
             if (object.map.getSource('places')) {
                 object.map.removeSource('places');
             }
-            if (object.map.getLayer('lineString')) {
-                object.map.removeLayer('lineString');
+            if (object.map.getLayer('LineMarker')) {
+                object.map.removeLayer('LineMarker');
             }
             if (object.map.getSource('lines')) {
                 object.map.removeSource('lines');
@@ -140,7 +141,7 @@ class InfoTraffic extends MapAbstract {
             }
             else if(result.metadata.coordinates) {
                 hasBoundingBox = true;
-                // Create a lineString in the geojson
+                // Create a LineMarker in the geojson
                 this.createLineMarker(geojsonLineStrings, result);
             }
         }
@@ -219,9 +220,9 @@ class InfoTraffic extends MapAbstract {
         }
 
         // Add LineString
-        if(!object.map.getLayer("lineString")) {
+        if(!object.map.getLayer("LineMarker")) {
             object.map.addLayer({
-                'id': 'lineString',
+                'id': 'LineMarker',
                 'type': 'line',
                 'source': 'lines',
                 'layout': {
@@ -230,19 +231,26 @@ class InfoTraffic extends MapAbstract {
                 },
                 'paint': {
                     'line-color': '#BF93E4',
-                    //'line-color': ['get', 'color'],
-                    'line-width': 5
+                    'line-width': 5,
+                    'line-opacity': [
+                        'case',
+                        ['boolean', ['feature-state', 'hover'], false],
+                        1,
+                        1
+                    ]
                 }
             });
-            object.map.on('mouseenter', 'lineString', (evt) => {
-                object.map.getCanvas().style.cursor = 'pointer';
-                object.geojsonHoveredId = evt.features[0].properties.id;
 
+            object.map.on('mouseenter', 'LineMarker', (evt) => {
+                this.markerHover(objectIndex, evt.features[0], evt, false);
+
+                object.geojsonHoveredId = evt.features[0].properties.id;
                 var lineIds = [];
                 for (let featureIndex = 0; featureIndex < evt.features.length; featureIndex++) {
                     if(!lineIds.includes(evt.features[featureIndex].properties.id)) {
                         lineIds.push({
                             "id": evt.features[featureIndex].properties.id,
+                            "snm": evt.features[featureIndex].properties.snm,
                             "description": evt.features[featureIndex].properties.description,
                         });
                     }
@@ -254,6 +262,12 @@ class InfoTraffic extends MapAbstract {
                     "lineIds": lineIds
                 });
             });
+
+            object.map.on('mouseout', 'LineMarker', () => {
+                this.markerUnHover(objectIndex, false);
+            });
+
+
         }
 
 
@@ -279,25 +293,12 @@ class InfoTraffic extends MapAbstract {
                 }
             });
 
-            object.map.on('click', 'marker', (evt) => {
-                this.showPopup(objectIndex, evt.features[0], evt);
-            });
-
             object.map.on('mouseenter', 'marker', (evt) => {
-                object.map.getCanvas().style.cursor = 'pointer';
-                object.map.setPaintProperty(
-                  "marker",
-                  'icon-opacity',
-                  ['match', ['get', 'id'], evt.features[0].properties.id, 1 , 0.25]
-                );
+                this.markerHover(objectIndex, evt.features[0], evt);
             });
 
-            object.map.on('mouseout', 'marker', (evt) => {
-                object.map.setPaintProperty(
-                  "marker",
-                  'icon-opacity',
-                  1
-                );
+            object.map.on('mouseout', 'marker', () => {
+                this.markerUnHover(objectIndex, false);
             });
         }
 
@@ -350,6 +351,7 @@ class InfoTraffic extends MapAbstract {
                 'type': 'Feature',
                 'properties': {
                     'id': result.id,
+                    "snm": result.snm,
                     'description': result.metadata.html_marker,
                     "type":  "marker",
                     'icon': result.metadata.icon_marker !== undefined ? (object.iconsMarker.includes(result.metadata.icon_marker) ? result.metadata.icon_marker : "cd44-marker") : "cd44-marker"
@@ -391,6 +393,7 @@ class InfoTraffic extends MapAbstract {
             'type': 'Feature',
             'properties': {
                 'id':           result.id+"_line",
+                "snm":          result.snm,
                 'description':  result.metadata.html_marker,
                 "type":         "line"
             },
@@ -402,6 +405,49 @@ class InfoTraffic extends MapAbstract {
         });
     }
 
+    markerHover(objectIndex, feature, evt, showPopup = true) {
+        const object = this.objects[objectIndex];
+        if (!object) {
+            return;
+        }
+        clearTimeout(object.timeUnHover);
+        if(showPopup) {
+            this.showPopup(objectIndex, feature, evt);
+        }
+        object.map.getCanvas().style.cursor = 'pointer';
+        object.map.setPaintProperty(
+          "marker",
+          'icon-opacity',
+          ['match', ['get', 'snm'], feature.properties.snm, 1 , 0.25]
+        );
+        object.map.setPaintProperty(
+          "LineMarker",
+          'line-opacity',
+          ['match', ['get', 'snm'], feature.properties.snm, 1 , 0.25]
+        );
+    }
+
+    markerUnHover(objectIndex, hidePopup = false) {
+        const object = this.objects[objectIndex];
+        if (!object) {
+            return;
+        }
+        object.timeUnHover = setTimeout(() => {
+            if(hidePopup) {
+                this.hidePopup(objectIndex);
+            }
+            object.map.setPaintProperty(
+              "marker",
+              'icon-opacity',
+              1
+            );
+            object.map.setPaintProperty(
+              "LineMarker",
+              'line-opacity',
+              1
+            );
+        }, 500);
+    }
 
     afterLoadGeojson (objectIndex) {
         const object = this.objects[objectIndex];
@@ -466,11 +512,11 @@ class InfoTraffic extends MapAbstract {
                 filter: ['==', 'id', object.popinIdsByElementIds[evt.detail.id] !== undefined ? object.popinIdsByElementIds[evt.detail.id] : evt.detail.id]
             });
             if (features && features[0]) {
-                this.showPopup(objectIndex, features[0], null);
+                this.markerHover(objectIndex, features[0], null,true);
             }
 
             const lines = object.map.querySourceFeatures('lines', {
-                layers: ['lineString'],
+                layers: ['LineMarker'],
                 filter: ['==', 'id', evt.detail.id]
             });
             if (lines && lines[0]) {
@@ -481,7 +527,7 @@ class InfoTraffic extends MapAbstract {
 
     resultBlur () {
         for (let objectIndex = 0; objectIndex < this.objects.length; objectIndex++) {
-            this.hidePopup(objectIndex);
+            this.markerUnHover(objectIndex, true);
         }
     }
 
@@ -526,7 +572,6 @@ class InfoTraffic extends MapAbstract {
               .setHTML(description)
               .addTo(object.map);
         }
-
 
         MiscEvent.addListener('click', this.popupClick.bind(this, id), object.popup.getElement())
     }
