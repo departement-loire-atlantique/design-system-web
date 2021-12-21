@@ -24,7 +24,7 @@ class FormFieldSelectCheckbox extends FormFieldSelectAbstract {
                 continue;
             }
             object.isSubSubInitialized = true;
-
+            this.initByChecked(objectIndex);
             const flexContainerElement = object.containerElement.querySelector('.ds44-flex-container');
             const checkAllElement = flexContainerElement.querySelector('button:first-child');
             if (checkAllElement) {
@@ -35,6 +35,35 @@ class FormFieldSelectCheckbox extends FormFieldSelectAbstract {
                 MiscEvent.addListener('click', this.uncheckAll.bind(this, objectIndex), uncheckAllElement);
             }
         }
+    }
+
+    initByChecked(objectIndex) {
+        const checkboxElements = this.getCheckboxElements(objectIndex);
+        if (!checkboxElements) {
+            return;
+        }
+
+        var value = [];
+        var texts = [];
+        checkboxElements.forEach((checkboxElement) => {
+            if(checkboxElement.checked) {
+                value.push(checkboxElement.value);
+                let labelText = "";
+                var label = MiscDom.getNextSibling(checkboxElement, 'label');
+                if (label) {
+                    labelText = label.innerText.replace(/\*$/, '')
+                }
+                texts.push(labelText);
+            }
+        });
+        this.setData(
+          objectIndex,
+          {
+              'value': value,
+              'text': texts.join(', '),
+          }
+        );
+        this.enter(objectIndex);
     }
 
     setListElementEvents (listElement, objectIndex) {
@@ -178,6 +207,7 @@ class FormFieldSelectCheckbox extends FormFieldSelectAbstract {
         }
 
         const data = this.getData(objectIndex);
+        console.log(data);
         let values = [];
         if (data && data[object.name].value) {
             values = data[object.name].value;
