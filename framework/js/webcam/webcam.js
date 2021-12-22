@@ -15,6 +15,10 @@ class Webcam {
     const object = {
       "webcamElement": webcamElement,
       "viewer": webcamViewer,
+      "button": {
+        "enabled": MiscTranslate._("WEBCAM_ENABLED"),
+        "disabled": MiscTranslate._("WEBCAM_DISABLED"),
+      },
       "refresh": {
         "status": webcamViewer.dataset.webcamRefreshStatus !== undefined ? webcamViewer.dataset.webcamRefreshStatus : "disabled",
         "limit":  webcamViewer.dataset.webcamRefreshMax !== undefined ? parseFloat(webcamViewer.dataset.webcamRefreshMax) : 12,
@@ -50,7 +54,8 @@ class Webcam {
 
     MiscEvent.addListener("webcam:refresh:start", (evt) => {
       object.refresh.status = "enabled";
-      object.webcamElement.querySelector("button .ds44-entitled-button").textContent = "Désactiver la webcam";
+      object.webcamElement.querySelector("button .ds44-entitled-button").textContent = object.button.disabled;
+      object.webcamElement.querySelector("button").setAttribute("title", this.createTitle(objectIndex, object.button.disabled));
       MiscEvent.dispatch("webcam:refresh:update", {}, object.webcamElement);
       clearInterval(timeUpdate);
       timeUpdate = setInterval(() => {
@@ -66,7 +71,8 @@ class Webcam {
       object.refresh.status = "disabled";
       object.refresh.count = 0;
       clearInterval(timeUpdate);
-      object.webcamElement.querySelector("button .ds44-entitled-button").textContent = "Activer la webcam"
+      object.webcamElement.querySelector("button .ds44-entitled-button").textContent = object.button.enabled;
+      object.webcamElement.querySelector("button").setAttribute("title", this.createTitle(objectIndex, object.button.enabled));
     }, object.webcamElement);
 
     MiscEvent.addListener("webcam:refresh:update", (evt) => {
@@ -80,6 +86,18 @@ class Webcam {
       MiscEvent.dispatch("webcam:refresh:toggle", {}, object.webcamElement);
     }, object.webcamElement.querySelector("button"));
 
+  }
+
+  createTitle(objectIndex, title) {
+    const object = this.objects[objectIndex];
+    if (!object) {
+      return title;
+    }
+    let lieuWebcam = object.webcamElement.querySelector("button .visually-hidden");
+    if(lieuWebcam) {
+      title += lieuWebcam.textContent;
+    }
+    return title;
   }
 
 
