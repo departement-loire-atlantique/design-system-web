@@ -63,7 +63,9 @@ class MiscTranslate {
                 'SUGGESTIONS': '{nbResults} suggestion(s) disponible(s) - utiliser les flèches bas et haut ou tabulation pour naviguer dans la liste',
                 'NO_SUGGESTIONS': 'Aucun résultats sur {search}',
                 'FIELD_PASSWORD_VIEW': "Afficher le mot de passe",
-                'FIELD_PASSWORD_NOT_VIEW': "Cacher le mot de passe"
+                'FIELD_PASSWORD_NOT_VIEW': "Cacher le mot de passe",
+                'WEBCAM_ENABLED': "Activer la webcam",
+                'WEBCAM_DISABLED': "Désactiver la webcam",
             },
             'en': {
                 'AROUND_ME': 'Around me',
@@ -115,7 +117,9 @@ class MiscTranslate {
                 'SUGGESTIONS': '{nbResults} suggestion(s) available - use up and down arrows or tab to navigate in the list',
                 'NO_SUGGESTIONS': 'No results for {search}',
                 'FIELD_PASSWORD_VIEW': "View password",
-                'FIELD_PASSWORD_NOT_VIEW': "Hide password"
+                'FIELD_PASSWORD_NOT_VIEW': "Hide password",
+                'WEBCAM_ENABLED': "Enable the webcam",
+                'WEBCAM_DISABLED': "Disable the webcam",
             }
         })[MiscTranslate.getLanguage()];
     }
