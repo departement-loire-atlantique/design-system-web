@@ -77,7 +77,8 @@ class Webcam {
 
     MiscEvent.addListener("webcam:refresh:update", (evt) => {
       const now = new Date();
-      object.viewer.src = object.viewer.dataset.webcamSrc+"?timestamp="+now.getTime();
+      const separator = object.viewer.dataset.webcamSrc.indexOf("?") >= 0 ? "&" : "?"
+      object.viewer.src = object.viewer.dataset.webcamSrc+separator+"timestamp="+now.getTime();
     }, object.webcamElement);
 
     MiscEvent.addListener("click", (evt) => {
