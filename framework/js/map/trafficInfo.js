@@ -1,6 +1,7 @@
 class InfoTraffic extends MapAbstract {
     constructor () {
         super('.ds44-js-map.info-traffic');
+        // SI Url not found and content_html affiché le content html
     }
 
     create (element) {
@@ -25,6 +26,17 @@ class InfoTraffic extends MapAbstract {
             'clusterRadius': 50,
             'generateId': true
         };
+
+        object.hoverEnabled = true;
+        MiscEvent.addListener('loader:requestShowList', (evt) => {
+            this.markerUnHover(objectIndex, false);
+            object.hoverEnabled = true;
+        });
+
+        MiscEvent.addListener('loader:requestShow', (evt) => {
+            this.markerHover(objectIndex, {"properties": evt.detail.currentResult}, evt, false);
+            object.hoverEnabled = false;
+        });
     }
 
     afterLoad (objectIndex) {
@@ -281,7 +293,7 @@ class InfoTraffic extends MapAbstract {
                 'layout': {
                     'icon-image': ["get", "icon"],
                     'icon-size': 1,
-                    'icon-allow-overlap': true
+                    'icon-allow-overlap': true,
                 },
                 'paint': {
                     'icon-opacity': [
@@ -289,7 +301,7 @@ class InfoTraffic extends MapAbstract {
                         ['boolean', ['feature-state', 'hover'], false],
                         1,
                         1
-                    ]
+                    ],
                 }
             });
 
@@ -410,6 +422,9 @@ class InfoTraffic extends MapAbstract {
         if (!object) {
             return;
         }
+        if(!object.hoverEnabled) {
+            return;
+        }
         clearTimeout(object.timeUnHover);
         if(showPopup) {
             this.showPopup(objectIndex, feature, evt);
@@ -430,6 +445,9 @@ class InfoTraffic extends MapAbstract {
     markerUnHover(objectIndex, hidePopup = false) {
         const object = this.objects[objectIndex];
         if (!object) {
+            return;
+        }
+        if(!object.hoverEnabled) {
             return;
         }
         object.timeUnHover = setTimeout(() => {

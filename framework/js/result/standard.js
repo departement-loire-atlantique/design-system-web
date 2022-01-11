@@ -3,6 +3,7 @@ class ResultStandard {
         this.currentId = null;
         this.savedScrollTop = null;
         this.hasSearched = false;
+        this.results = {};
 
         MiscEvent.addListener('search:update', this.fillList.bind(this));
         MiscEvent.addListener('search:focus', this.resultFocus.bind(this));
@@ -42,15 +43,28 @@ class ResultStandard {
         this.savedScrollTop = scrollTopElement.scrollTop;
         scrollTopElement.scrollTo({ 'top': 0 });
 
-        MiscEvent.dispatch('loader:requestShow');
-
         this.currentId = evt.currentTarget.getAttribute('data-id');
-        const url = cardContainerElement.getAttribute('data-url');
-        MiscRequest.send(
-            url + (url.includes('?') ? '&' : '?') + 'q=' + encodeURIComponent(this.currentId),
-            this.fillCardSuccess.bind(this),
-            this.fillCardError.bind(this)
-        );
+        var sendRequest = true;
+        var currentResult = null;
+        if (this.results.hasOwnProperty(this.currentId)) {
+            currentResult = this.results[this.currentId];
+            if(currentResult.metadata.url === undefined && currentResult.metadata.content_html) {
+                sendRequest = false;
+            }
+        }
+
+        MiscEvent.dispatch('loader:requestShow', {"currentResult": currentResult});
+        if(sendRequest) {
+            const url = cardContainerElement.getAttribute('data-url');
+            MiscRequest.send(
+                url + (url.includes('?') ? '&' : '?') + 'q=' + encodeURIComponent(this.currentId),
+                this.fillCardSuccess.bind(this),
+                this.fillCardError.bind(this)
+            );
+        }
+        else if(currentResult && currentResult.metadata.url === undefined && currentResult.metadata.content_html) {
+            this.fillCardSuccess({"content_html": currentResult.metadata.content_html});
+        }
     }
 
     fillCardSuccess (result) {
@@ -163,6 +177,7 @@ class ResultStandard {
             if (resultElement) {
                 MiscAccessibility.setFocus(resultElement);
             }
+            MiscEvent.dispatch('loader:requestShowList', {"currentId": this.currentId});
             this.currentId = null;
         }
         if (this.savedScrollTop) {
@@ -299,6 +314,7 @@ class ResultStandard {
         // Add new results
         let isFirstResult = true;
         const results = (evt.detail.addUp ? evt.detail.newResults : evt.detail.results);
+        this.results = {};
         for (let resultIndex in results) {
             if (!results.hasOwnProperty(resultIndex)) {
                 continue;
@@ -317,6 +333,7 @@ class ResultStandard {
             listItemElement.setAttribute('id', 'search-result-' + result.id);
             listItemElement.setAttribute('data-id', result.id);
 
+            this.results[result.id] = result;
             let elementClickEnabled = true;
             if (result.metadata.click !== undefined && result.metadata.click === false) {
                 elementClickEnabled = false;
