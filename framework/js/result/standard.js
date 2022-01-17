@@ -217,6 +217,9 @@ class ResultStandard {
         if (!listContainerElement) {
             return;
         }
+        if(evt.detail === undefined || evt.detail == null) {
+            return;
+        }
 
         this.hasSearched = true;
 
@@ -314,7 +317,9 @@ class ResultStandard {
         // Add new results
         let isFirstResult = true;
         const results = (evt.detail.addUp ? evt.detail.newResults : evt.detail.results);
+
         this.results = {};
+        this.resultsBySNMs = {};
         for (let resultIndex in results) {
             if (!results.hasOwnProperty(resultIndex)) {
                 continue;
@@ -333,7 +338,14 @@ class ResultStandard {
             listItemElement.setAttribute('id', 'search-result-' + result.id);
             listItemElement.setAttribute('data-id', result.id);
 
+
             this.results[result.id] = result;
+            if(result.snm !== undefined) {
+                if(this.resultsBySNMs[result.snm] === undefined) {
+                    this.resultsBySNMs[result.snm] = [];
+                }
+                this.resultsBySNMs[result.snm].push(listItemElement);
+            }
             let elementClickEnabled = true;
             if (result.metadata.click !== undefined && result.metadata.click === false) {
                 elementClickEnabled = false;
@@ -348,6 +360,8 @@ class ResultStandard {
                     listItemElement.setAttribute('data-redirect-target', result.target);
                 }
             }
+
+
             listItemElement.className = 'ds44-fg1 ds44-js-results-item';
             listItemElement.innerHTML = result.metadata.html_list;
             MiscEvent.addListener('mouseenter', this.focus.bind(this), listItemElement);
@@ -383,6 +397,25 @@ class ResultStandard {
                 if (!focusElement) {
                     listItemElement.setAttribute('tabindex', '0');
                     focusElement = listItemElement;
+                }
+            }
+        }
+
+        if(this.resultsBySNMs) {
+            for (const [key, resultsBySNM] of Object.entries(this.resultsBySNMs)) {
+                if(resultsBySNM.length > 1) {
+                    for (let currentSNM in resultsBySNM) {
+                        let element = resultsBySNM[currentSNM];
+                        if(currentSNM === 0) {
+                            element.classList.add("first");
+                        }
+                        else if(currentSNM >= (resultsBySNM.length-1)) {
+                            element.classList.add("last");
+                        }
+                        else {
+                            element.classList.add("middle");
+                        }
+                    }
                 }
             }
         }

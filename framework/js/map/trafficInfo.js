@@ -28,14 +28,20 @@ class InfoTraffic extends MapAbstract {
         };
 
         object.hoverEnabled = true;
+        object.closePopup = true;
         MiscEvent.addListener('loader:requestShowList', (evt) => {
             this.markerUnHover(objectIndex, false);
+            object.propertiesOpen = {};
             object.hoverEnabled = true;
         });
 
         MiscEvent.addListener('loader:requestShow', (evt) => {
-            this.markerHover(objectIndex, {"properties": evt.detail.currentResult}, evt, false);
-            object.hoverEnabled = false;
+            if(evt.detail) {
+                object.hoverEnabled = true;
+                object.propertiesOpen = evt.detail.currentResult;
+                this.markerHover(objectIndex, {"properties": evt.detail.currentResult}, evt, false, true);
+                object.hoverEnabled = false;
+            }
         });
     }
 
@@ -279,7 +285,6 @@ class InfoTraffic extends MapAbstract {
                 this.markerUnHover(objectIndex, false);
             });
 
-
         }
 
 
@@ -311,6 +316,10 @@ class InfoTraffic extends MapAbstract {
 
             object.map.on('mouseout', 'marker', () => {
                 this.markerUnHover(objectIndex, false);
+            });
+
+            object.map.on('click', 'marker', (evt) => {
+                MiscEvent.dispatch('search:select', { 'id': evt.features[0].properties.id });
             });
         }
 
@@ -417,29 +426,53 @@ class InfoTraffic extends MapAbstract {
         });
     }
 
-    markerHover(objectIndex, feature, evt, showPopup = true) {
+    markerHover(objectIndex, feature, evt, showPopup = true, hidePopup = false) {
         const object = this.objects[objectIndex];
         if (!object) {
             return;
         }
+
+        let forceViewPopup = false
         if(!object.hoverEnabled) {
-            return;
+            object.map.getCanvas().style.cursor = 'pointer';
+            var filters = ['match', ['get', 'snm']];
+            filters.push(feature.properties.snm, 1);
+            if(object.propertiesOpen && feature.properties.snm !== object.propertiesOpen.snm) {
+                filters.push(object.propertiesOpen.snm, 1);
+                forceViewPopup = true;
+            }
+            filters.push(0.25)
+            object.map.setPaintProperty(
+              "marker",
+              'icon-opacity',
+              filters
+            );
+            object.map.setPaintProperty(
+              "LineMarker",
+              'line-opacity',
+              filters
+            );
+        }
+        else {
+            object.map.getCanvas().style.cursor = 'pointer';
+            object.map.setPaintProperty(
+              "marker",
+              'icon-opacity',
+              ['match', ['get', 'snm'], feature.properties.snm, 1 , 0.25]
+            );
+            object.map.setPaintProperty(
+              "LineMarker",
+              'line-opacity',
+              ['match', ['get', 'snm'], feature.properties.snm, 1 , 0.25]
+            );
         }
         clearTimeout(object.timeUnHover);
         if(showPopup) {
-            this.showPopup(objectIndex, feature, evt);
+            this.showPopup(objectIndex, feature, evt, forceViewPopup);
         }
-        object.map.getCanvas().style.cursor = 'pointer';
-        object.map.setPaintProperty(
-          "marker",
-          'icon-opacity',
-          ['match', ['get', 'snm'], feature.properties.snm, 1 , 0.25]
-        );
-        object.map.setPaintProperty(
-          "LineMarker",
-          'line-opacity',
-          ['match', ['get', 'snm'], feature.properties.snm, 1 , 0.25]
-        );
+        if(hidePopup) {
+            this.hidePopup(objectIndex);
+        }
     }
 
     markerUnHover(objectIndex, hidePopup = false) {
@@ -447,24 +480,39 @@ class InfoTraffic extends MapAbstract {
         if (!object) {
             return;
         }
+        object.map.getCanvas().style.cursor = 'default';
         if(!object.hoverEnabled) {
-            return;
-        }
-        object.timeUnHover = setTimeout(() => {
-            if(hidePopup) {
-                this.hidePopup(objectIndex);
+            if(object.propertiesOpen) {
+                object.timeUnHover = setTimeout(() => {
+                    this.hidePopup(objectIndex);
+                    object.map.setPaintProperty(
+                      "marker",
+                      'icon-opacity',
+                      ['match', ['get', 'snm'], object.propertiesOpen.snm, 1, 0.25]
+                    );
+                    object.map.setPaintProperty(
+                      "LineMarker",
+                      'line-opacity',
+                      ['match', ['get', 'snm'], object.propertiesOpen.snm, 1, 0.25]
+                    );
+                }, 500);
             }
-            object.map.setPaintProperty(
-              "marker",
-              'icon-opacity',
-              1
-            );
-            object.map.setPaintProperty(
-              "LineMarker",
-              'line-opacity',
-              1
-            );
-        }, 500);
+        }
+        else {
+            object.timeUnHover = setTimeout(() => {
+                this.hidePopup(objectIndex);
+                object.map.setPaintProperty(
+                  "marker",
+                  'icon-opacity',
+                  1
+                );
+                object.map.setPaintProperty(
+                  "LineMarker",
+                  'line-opacity',
+                  1
+                );
+            }, 500);
+        }
     }
 
     afterLoadGeojson (objectIndex) {
@@ -549,12 +597,14 @@ class InfoTraffic extends MapAbstract {
         }
     }
 
-    showPopup (objectIndex, feature, evt) {
+    showPopup (objectIndex, feature, evt, force = false) {
         const object = this.objects[objectIndex];
         if (!object) {
             return;
         }
-
+        if(!object.hoverEnabled && !force) {
+            return;
+        }
         if (object.popup) {
             this.hidePopup(objectIndex);
         }
@@ -592,6 +642,18 @@ class InfoTraffic extends MapAbstract {
         }
 
         MiscEvent.addListener('click', this.popupClick.bind(this, id), object.popup.getElement())
+        MiscEvent.addListener('mouseenter', () => {
+            object.closePopup = false;
+            clearTimeout(object.timeUnHover);
+        }, object.popup.getElement());
+
+        MiscEvent.addListener('mouseleave', (evt) => {
+            evt.stopPropagation();
+            evt.preventDefault();
+            object.closePopup = true;
+            clearTimeout(object.timeUnHover);
+            this.markerUnHover(objectIndex);
+        }, object.popup.getElement());
     }
 
     hidePopup (objectIndex) {
@@ -599,9 +661,10 @@ class InfoTraffic extends MapAbstract {
         if (!object || !object.popup) {
             return;
         }
-
-        object.popup.remove();
-        object.popup = null;
+        if(object.closePopup) {
+            object.popup.remove();
+            object.popup = null;
+        }
     }
 }
 
