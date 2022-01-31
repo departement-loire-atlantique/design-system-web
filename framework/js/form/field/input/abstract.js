@@ -371,12 +371,13 @@ class FormFieldInputAbstract extends FormFieldAbstract {
         let iconHide = "icon-handicap-visuel";
 
         let entitled = object.showPasswordButton.querySelector(".visually-hidden");
-        let entitledShow = MiscTranslate._('FIELD_PASSWORD_VIEW');
-        let entitledHide = MiscTranslate._('FIELD_PASSWORD_NOT_VIEW');
+        let entitledShow = MiscTranslate._('FIELD_PASSWORD_VIEW')+" : "+object.labelElement.textContent.replace("*", "");
+        let entitledHide = MiscTranslate._('FIELD_PASSWORD_NOT_VIEW')+" : "+object.labelElement.textContent.replace("*", "");
 
         if(object.showPasswordButton.classList.contains("show")) {
             object.showPasswordButton.classList.remove("show");
             object.inputElements[0].type = "password";
+            object.inputElements[0].setAttribute("aria-hidden", true);
             if(icon) {
                 icon.classList.remove(iconHide);
                 icon.classList.add(iconShow);
@@ -387,6 +388,7 @@ class FormFieldInputAbstract extends FormFieldAbstract {
         }
         else {
             object.showPasswordButton.classList.add("show");
+            object.inputElements[0].removeAttribute("aria-hidden");
             object.inputElements[0].type = "text";
             if(icon) {
                 icon.classList.add(iconHide);
