@@ -63,9 +63,6 @@ class InfoTraffic extends MapAbstract {
         );
 
         object.map.on('moveend', this.move.bind(this, objectIndex));
-        if (object.newResults) {
-            this.show(objectIndex);
-        }
     }
 
     move (objectIndex, evt) {
@@ -525,6 +522,11 @@ class InfoTraffic extends MapAbstract {
         if (object.mapElement.getAttribute('data-geojson-refine') === 'true') {
             this.showGeojson(objectIndex);
         }
+
+        if (object.newResults) {
+            this.show(objectIndex);
+        }
+
     }
 
     getGeojsonIds (objectIndex) {
