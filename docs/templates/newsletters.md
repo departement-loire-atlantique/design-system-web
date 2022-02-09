@@ -28,3 +28,15 @@ status: Brouillon
 ## Circuit interne 2 colonnes
 
 <p>Visible ici : <a href="../variations/newsletters/newsletter_4.html" target="_blank">Newsletter 4</a></p>
+
+
+
+## Inforoutes
+
+<p>Visible ici : <a href="../variations/newsletters/newsletter-inforoute-1.html" target="_blank">Newsletter inforoute</a></p>
+
+
+
+## Inforoutes - Flash info
+
+<p>Visible ici : <a href="../variations/newsletters/newsletter-inforoute-2.html" target="_blank">Newsletter inforoute - Flash info</a></p>
