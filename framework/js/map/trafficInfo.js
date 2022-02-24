@@ -5,6 +5,8 @@ class InfoTraffic extends MapAbstract {
     }
 
     create (element) {
+        document.body.classList.add('fix-scroll-refresh');
+
         super.create(element);
 
         const objectIndex = (this.objects.length - 1);
@@ -482,16 +484,18 @@ class InfoTraffic extends MapAbstract {
             if(object.propertiesOpen) {
                 object.timeUnHover = setTimeout(() => {
                     this.hidePopup(objectIndex);
-                    object.map.setPaintProperty(
-                      "marker",
-                      'icon-opacity',
-                      ['match', ['get', 'snm'], object.propertiesOpen.snm, 1, 0.25]
-                    );
-                    object.map.setPaintProperty(
-                      "LineMarker",
-                      'line-opacity',
-                      ['match', ['get', 'snm'], object.propertiesOpen.snm, 1, 0.25]
-                    );
+                    if(object.propertiesOpen.snm) {
+                        object.map.setPaintProperty(
+                          "marker",
+                          'icon-opacity',
+                          ['match', ['get', 'snm'], object.propertiesOpen.snm, 1, 0.25]
+                        );
+                        object.map.setPaintProperty(
+                          "LineMarker",
+                          'line-opacity',
+                          ['match', ['get', 'snm'], object.propertiesOpen.snm, 1, 0.25]
+                        );
+                    }
                 }, 500);
             }
         }
