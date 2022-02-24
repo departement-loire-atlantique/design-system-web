@@ -4,6 +4,8 @@ class LoaderStandard {
         this.counter = 0;
         this.previousFocusedElement = null;
 
+        this.scrollWindow = 0;
+
         MiscEvent.addListener('loader:requestShow', this.show.bind(this));
         MiscEvent.addListener('loader:requestHide', this.hide.bind(this));
         MiscEvent.addListener('loader:setFocus', this.setFocusedElement.bind(this));
@@ -15,6 +17,7 @@ class LoaderStandard {
         if (!loaderElement || !loaderTextElement) {
             return;
         }
+        this.scrollWindow = window.scrollY;
 
         document.body.classList.add('is-loader');
         this.previousFocusedElement = document.activeElement;
@@ -35,6 +38,13 @@ class LoaderStandard {
         }
 
         document.body.classList.remove('is-loader');
+        if(document.body.classList.contains("fix-scroll-refresh"))
+        {
+            document.body.scrollTop = this.scrollWindow; // For Safari
+            document.documentElement.scrollTop = this.scrollWindow;
+        }
+        this.scrollWindow = 0;
+
 
         this.counter = Math.max(0, (this.counter - 1));
         if (this.counter === 0) {
