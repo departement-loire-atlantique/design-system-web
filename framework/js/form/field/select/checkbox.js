@@ -56,14 +56,17 @@ class FormFieldSelectCheckbox extends FormFieldSelectAbstract {
                 texts.push(labelText);
             }
         });
-        this.setData(
-          objectIndex,
-          {
-              'value': value,
-              'text': texts.join(', '),
-          }
-        );
-        this.enter(objectIndex);
+        if(value.length > 0)
+        {
+            this.setData(
+              objectIndex,
+              {
+                  'value': value,
+                  'text': texts.join(', '),
+              }
+            );
+            this.enter(objectIndex);
+        }
     }
 
     setListElementEvents (listElement, objectIndex) {
