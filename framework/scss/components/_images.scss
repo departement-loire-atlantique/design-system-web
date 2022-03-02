@@ -17,6 +17,11 @@
 .ds44-container-imgZoom {
     overflow: hidden;
 
+    &.focus {
+        img {
+            transform: scale(1.1);
+        }
+    }
     img {
         transition: all $ds44-timing-standard ease-in-out;
 
@@ -55,6 +60,14 @@
     left: 0;
     display: block;
     object-fit: cover;
+}
+
+/* Spécifique image seule dans modale */
+
+.ds44-modal-container.show {
+    .ds44-imgRatio {
+        object-fit: contain;
+    }
 }
 
 /* Ratio img tuile 1/1 */

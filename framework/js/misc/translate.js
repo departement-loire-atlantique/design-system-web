@@ -61,7 +61,11 @@ class MiscTranslate {
                 'FOOD_OBLIGATION_PER_MONTH': '€ par mois pour votre obligé alimentaire n°',
                 'FOOD_OBLIGATION_TOTAL': 'L\'estimation de la capacité contributive mensuelle de l\'ensemble de vos obligés alimentaires s\'élève à {totalFoodObligation} €.',
                 'SUGGESTIONS': '{nbResults} suggestion(s) disponible(s) - utiliser les flèches bas et haut ou tabulation pour naviguer dans la liste',
-                'NO_SUGGESTIONS': 'Aucun résultats sur {search}'
+                'NO_SUGGESTIONS': 'Aucun résultats sur {search}',
+                'FIELD_PASSWORD_VIEW': "Afficher le mot de passe",
+                'FIELD_PASSWORD_NOT_VIEW': "Cacher le mot de passe",
+                'WEBCAM_ENABLED': "Activer la webcam",
+                'WEBCAM_DISABLED': "Désactiver la webcam",
             },
             'en': {
                 'AROUND_ME': 'Around me',
@@ -111,7 +115,11 @@ class MiscTranslate {
                 'FOOD_OBLIGATION_PER_MONTH': '€ per month for your food obligation no.',
                 'FOOD_OBLIGATION_TOTAL': 'The estimate of the monthly contributory capacity of all your food obligations is {totalFoodObligation} €.',
                 'SUGGESTIONS': '{nbResults} suggestion(s) available - use up and down arrows or tab to navigate in the list',
-                'NO_SUGGESTIONS': 'No results for {search}'
+                'NO_SUGGESTIONS': 'No results for {search}',
+                'FIELD_PASSWORD_VIEW': "View password",
+                'FIELD_PASSWORD_NOT_VIEW': "Hide password",
+                'WEBCAM_ENABLED': "Enable the webcam",
+                'WEBCAM_DISABLED': "Disable the webcam",
             }
         })[MiscTranslate.getLanguage()];
     }

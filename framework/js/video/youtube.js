@@ -43,7 +43,11 @@ class VideoYoutube {
             object.player = new YT.Player(object.videoElement.querySelector('.ds44-video-item'), {
                 width: null,
                 height: null,
-                videoId: object.id
+                videoId: object.id,
+                playerVars: {
+                    showinfo: 0,
+                    rel: 0
+                }
             });
         }
     }

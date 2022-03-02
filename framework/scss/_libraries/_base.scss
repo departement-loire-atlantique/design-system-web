@@ -323,7 +323,10 @@ figure, picture {
   display: block;
 }
 
-sup,
+sup[aria-hidden="true"] {
+  vertical-align: 0;
+}
+
 sub {
   vertical-align: 0;
 }

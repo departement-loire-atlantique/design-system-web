@@ -111,6 +111,16 @@ class CarouselAbstract {
                     }
                 });
         }
+
+        if(object.galleryElement) {
+            [].forEach.call(object.galleryElement.querySelectorAll('.swiper-slide'), (thumb, i) => {
+                MiscEvent.addListener("keyup", (event) => {
+                    if(event.key === "Enter") {
+                        object.swiper.slideTo(i+1);
+                    }
+                }, thumb);
+            });
+        }
     }
 
     destroySwipper (objectIndex) {
@@ -210,19 +220,25 @@ class CarouselAbstract {
         }
 
         let titleElement = null;
-        let blocTitleElement = object.wrapElement.previousElementSibling;
-        if (blocTitleElement) {
-            // On est dans le composant simple
-            titleElement = blocTitleElement;
-        } else {
-            // On est dans une page
-            blocTitleElement = object.wrapElement.parentElement.previousElementSibling;
+        let titleCarousel = null;
+        if(object.wrapElement.hasAttribute("data-swiper-title")) {
+            titleCarousel = object.wrapElement.getAttribute("data-swiper-title");
+        }
+        else {
+            let blocTitleElement = object.wrapElement.previousElementSibling;
             if (blocTitleElement) {
-                titleElement = blocTitleElement.querySelector('.h2-like');
+                // On est dans le composant simple
+                titleElement = blocTitleElement;
+            } else {
+                // On est dans une page
+                blocTitleElement = object.wrapElement.parentElement.previousElementSibling;
+                if (blocTitleElement) {
+                    titleElement = blocTitleElement.querySelector('.h2-like');
+                }
             }
+            titleCarousel = (titleElement &&  titleElement.innerText ? titleElement.innerText : 'Carousel n°' + (objectIndex + 1));
         }
 
-        const titleCarousel = (titleElement ? titleElement.innerText : 'Carousel n°' + (objectIndex + 1));
         const indexPreviousElement = (object.swiper.realIndex === 0 ? object.nbSlides : object.swiper.realIndex);
         const nbVisibleSlides = object.swiperElement.querySelectorAll('.swiper-slide.swiper-slide-visible').length;
         let indexNextElement = object.swiper.realIndex + nbVisibleSlides + 1;

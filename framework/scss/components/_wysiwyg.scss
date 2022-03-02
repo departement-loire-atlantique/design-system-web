@@ -228,12 +228,13 @@ table.ds44-tableau_5col tr {
 }
 table.inforoutes {
   text-align: left;
+  width: 100%;
 
   thead th {
     font-size: 14px;
     font-weight: normal;
   }
-  tbody tr td:first-child {
+  tbody tr td:nth-of-type(2) {
     font-weight: bold;
   }
   tbody tr td img {
@@ -250,6 +251,26 @@ table.inforoutes {
   td, th {
     padding: 1rem;
     vertical-align: top;
+  }
+
+  .ds44-icoInfoRoutes {
+    margin-right: 15px;
+    padding: 6px;
+    font-size: 2em;
+    vertical-align: baseline;
+    display: inline-block;
+    width: 51px;
+    height: 51px;
+    text-align: center;
+
+    &.orangeFlag {
+      background: $ds44-app-orangeFlag;
+      color: $ds44-dark;
+    }
+    &.redFlag {
+      background: $ds44-app-redFlag;
+      color: $ds44-light;
+    }
   }
 }
 

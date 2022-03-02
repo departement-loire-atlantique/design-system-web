@@ -3,6 +3,7 @@ class ResultStandard {
         this.currentId = null;
         this.savedScrollTop = null;
         this.hasSearched = false;
+        this.results = {};
 
         MiscEvent.addListener('search:update', this.fillList.bind(this));
         MiscEvent.addListener('search:focus', this.resultFocus.bind(this));
@@ -42,15 +43,28 @@ class ResultStandard {
         this.savedScrollTop = scrollTopElement.scrollTop;
         scrollTopElement.scrollTo({ 'top': 0 });
 
-        MiscEvent.dispatch('loader:requestShow');
-
         this.currentId = evt.currentTarget.getAttribute('data-id');
-        const url = cardContainerElement.getAttribute('data-url');
-        MiscRequest.send(
-            url + (url.includes('?') ? '&' : '?') + 'q=' + encodeURIComponent(this.currentId),
-            this.fillCardSuccess.bind(this),
-            this.fillCardError.bind(this)
-        );
+        var sendRequest = true;
+        var currentResult = null;
+        if (this.results.hasOwnProperty(this.currentId)) {
+            currentResult = this.results[this.currentId];
+            if(currentResult.metadata.url === undefined && currentResult.metadata.content_html) {
+                sendRequest = false;
+            }
+        }
+
+        MiscEvent.dispatch('loader:requestShow', {"currentResult": currentResult});
+        if(sendRequest) {
+            const url = cardContainerElement.getAttribute('data-url');
+            MiscRequest.send(
+                url + (url.includes('?') ? '&' : '?') + 'q=' + encodeURIComponent(this.currentId),
+                this.fillCardSuccess.bind(this),
+                this.fillCardError.bind(this)
+            );
+        }
+        else if(currentResult && currentResult.metadata.url === undefined && currentResult.metadata.content_html) {
+            this.fillCardSuccess({"content_html": currentResult.metadata.content_html});
+        }
     }
 
     fillCardSuccess (result) {
@@ -140,6 +154,16 @@ class ResultStandard {
             return;
         }
 
+        const listContainerElement = containerElement.querySelector('.ds44-js-results-list');
+        let titleElement = listContainerElement.querySelector('.h3-like');
+        if(titleElement.getAttribute("role") === "heading" && titleElement.getAttribute("aria-level") === "2")
+        {
+            [].forEach.call(containerElement.querySelectorAll(".ds44-js-results-item [aria-level]"), (el) => {
+                let currentLevel = parseInt(el.getAttribute("aria-level"))
+                el.setAttribute("aria-level", currentLevel+1);
+            });
+        }
+
         const cardContainerElement = containerElement.querySelector('.ds44-js-results-card');
         if (cardContainerElement) {
             MiscAccessibility.hide(cardContainerElement);
@@ -153,6 +177,7 @@ class ResultStandard {
             if (resultElement) {
                 MiscAccessibility.setFocus(resultElement);
             }
+            MiscEvent.dispatch('loader:requestShowList', {"currentId": this.currentId});
             this.currentId = null;
         }
         if (this.savedScrollTop) {
@@ -190,6 +215,9 @@ class ResultStandard {
 
         const listContainerElement = containerElement.querySelector('.ds44-js-results-list');
         if (!listContainerElement) {
+            return;
+        }
+        if(evt.detail === undefined || evt.detail == null) {
             return;
         }
 
@@ -236,7 +264,7 @@ class ResultStandard {
             titleElement = document.createElement('div');
             titleElement.className = 'h3-like mbs';
             titleElement.setAttribute('role', 'heading');
-            titleElement.setAttribute('aria-level', '1');
+            titleElement.setAttribute('aria-level', '2');
             titleElement.setAttribute('aria-live', 'polite');
             titleElement.setAttribute('aria-atomic', 'true');
             listContainerElement.appendChild(titleElement);
@@ -244,30 +272,32 @@ class ResultStandard {
         // Ne pas changer le titre de la page avec un paramètre précis
         let elemCancellingRename = document.querySelector('[data-keep-tab-name="true"]');
 
-		// Sinon, changer le nom de page pour afficher le nb de résultats
-		if (!evt.detail.nbResults) {
-			let titleElementHtml = MiscTranslate._('NO_RESULTS_FOR_SEARCH:') + ' ' + evt.detail.searchText + '.<br>' + MiscTranslate._('NO_RESULTS_NEW_SEARCH') + '.';
-			titleElement.innerHTML = titleElementHtml;
-			if (!elemCancellingRename) {
-				document.title = titleElementHtml + ' - Loire-atlantique.fr';
-				titleElement.setAttribute('tabindex', '-1');
-				focusElement = titleElement;
-			}			
-		} else {
-			let titleElementHtml = evt.detail.nbResults;
-			if (evt.detail.nbResults > 1) {
-				titleElementHtml += ' ' + MiscTranslate._('RESULTS');
-			} else {
-				titleElementHtml += ' ' + MiscTranslate._('RESULT');
-			}
-			let accessibleSentence = MiscTranslate._('NB_RESULTS_FOR_SEARCH:') + ' ' + (evt.detail.searchText === '' ? MiscTranslate._('EMPTY_SEARCH_CRITERIA') : evt.detail.searchText);
-			titleElement.innerHTML = titleElementHtml + '<p class="visually-hidden" tabindex="-1">' + accessibleSentence + '</p>';
-			if (!elemCancellingRename) {
-				document.title = titleElementHtml + ' ' + accessibleSentence + ' - Loire-atlantique.fr';
-				titleElement.removeAttribute('tabindex');
-				focusElement = titleElement.querySelector('.visually-hidden');
-			}			
-		}
+
+        let siteName = document.body.dataset.sitename !== undefined ? document.body.dataset.sitename : "Loire-atlantique.fr"
+        // Sinon, changer le nom de page pour afficher le nb de résultats
+        if (!evt.detail.nbResults) {
+          let titleElementHtml = MiscTranslate._('NO_RESULTS_FOR_SEARCH:') + ' ' + evt.detail.searchText + '.<br>' + MiscTranslate._('NO_RESULTS_NEW_SEARCH') + '.';
+          titleElement.innerHTML = titleElementHtml;
+          if (!elemCancellingRename) {
+            document.title = titleElementHtml + ' - '+siteName;
+            titleElement.setAttribute('tabindex', '-1');
+            focusElement = titleElement;
+          }
+        } else {
+          let titleElementHtml = evt.detail.nbResults;
+          if (evt.detail.nbResults > 1) {
+            titleElementHtml += ' ' + MiscTranslate._('RESULTS');
+          } else {
+            titleElementHtml += ' ' + MiscTranslate._('RESULT');
+          }
+          let accessibleSentence = MiscTranslate._('NB_RESULTS_FOR_SEARCH:') + ' ' + (evt.detail.searchText === '' ? MiscTranslate._('EMPTY_SEARCH_CRITERIA') : evt.detail.searchText);
+          titleElement.innerHTML = titleElementHtml + ' <p class="visually-hidden" tabindex="-1">' + accessibleSentence + '</p>';
+          if (!elemCancellingRename) {
+            document.title = titleElementHtml + ' ' + accessibleSentence + ' - '+siteName;
+            titleElement.removeAttribute('tabindex');
+            focusElement = titleElement.querySelector('.visually-hidden');
+          }
+        }
         
 
         // Remove existing results
@@ -287,6 +317,9 @@ class ResultStandard {
         // Add new results
         let isFirstResult = true;
         const results = (evt.detail.addUp ? evt.detail.newResults : evt.detail.results);
+
+        this.results = {};
+        this.resultsBySNMs = {};
         for (let resultIndex in results) {
             if (!results.hasOwnProperty(resultIndex)) {
                 continue;
@@ -294,8 +327,8 @@ class ResultStandard {
 
             const result = results[resultIndex];
             if (
-                !result.metadata ||
-                !result.metadata.html_list
+              !result.metadata ||
+              !result.metadata.html_list
             ) {
                 continue;
             }
@@ -304,9 +337,22 @@ class ResultStandard {
             const listItemElement = document.createElement('li');
             listItemElement.setAttribute('id', 'search-result-' + result.id);
             listItemElement.setAttribute('data-id', result.id);
+
+
+            this.results[result.id] = result;
+            if(result.snm !== undefined) {
+                if(this.resultsBySNMs[result.snm] === undefined) {
+                    this.resultsBySNMs[result.snm] = [];
+                }
+                this.resultsBySNMs[result.snm].push(listItemElement);
+            }
+            let elementClickEnabled = true;
+            if (result.metadata.click !== undefined && result.metadata.click === false) {
+                elementClickEnabled = false;
+            }
             if (
-                result.redirectUrl === true &&
-                result.metadata.url
+              result.redirectUrl === true &&
+              result.metadata.url
             ) {
                 hasRedirectDisplayMode = true;
                 listItemElement.setAttribute('data-redirect-url', result.metadata.url);
@@ -314,6 +360,8 @@ class ResultStandard {
                     listItemElement.setAttribute('data-redirect-target', result.target);
                 }
             }
+
+
             listItemElement.className = 'ds44-fg1 ds44-js-results-item';
             listItemElement.innerHTML = result.metadata.html_list;
             MiscEvent.addListener('mouseenter', this.focus.bind(this), listItemElement);
@@ -323,20 +371,22 @@ class ResultStandard {
                 MiscEvent.addListener('focus', this.focus.bind(this), listLinkItemElement);
                 MiscEvent.addListener('blur', this.blur.bind(this), listLinkItemElement);
             }
-            if (
-                hasRedirectDisplayMode === false &&
-                listContainerElement.getAttribute('data-display-mode') === 'inline'
-            ) {
-                if (listItemElement.getAttribute('data-id') != '-1') {
-                    MiscEvent.addListener('click', this.fillCard.bind(this), listItemElement);
+            if (elementClickEnabled) {
+                if (
+                  hasRedirectDisplayMode === false &&
+                  listContainerElement.getAttribute('data-display-mode') === 'inline'
+                ) {
+                    if (listItemElement.getAttribute('data-id') != '-1') {
+                        MiscEvent.addListener('click', this.fillCard.bind(this), listItemElement);
+                    }
+                    const aElement = listItemElement.querySelector('a');
+                    if (aElement) {
+                        aElement.setAttribute('role', 'button');
+                        aElement.setAttribute('tabindex', '0');
+                    }
+                } else {
+                    MiscEvent.addListener('click', this.redirectCard.bind(this), listItemElement);
                 }
-                const aElement = listItemElement.querySelector('a');
-                if (aElement) {
-                    aElement.setAttribute('role', 'button');
-                    aElement.setAttribute('tabindex', '0');
-                }
-            } else {
-                MiscEvent.addListener('click', this.redirectCard.bind(this), listItemElement);
             }
             listElement.appendChild(listItemElement);
 
@@ -347,6 +397,25 @@ class ResultStandard {
                 if (!focusElement) {
                     listItemElement.setAttribute('tabindex', '0');
                     focusElement = listItemElement;
+                }
+            }
+        }
+
+        if(this.resultsBySNMs) {
+            for (const [key, resultsBySNM] of Object.entries(this.resultsBySNMs)) {
+                if(resultsBySNM.length > 1) {
+                    for (let currentSNM in resultsBySNM) {
+                        let element = resultsBySNM[currentSNM];
+                        if(currentSNM === 0) {
+                            element.classList.add("first");
+                        }
+                        else if(currentSNM >= (resultsBySNM.length-1)) {
+                            element.classList.add("last");
+                        }
+                        else {
+                            element.classList.add("middle");
+                        }
+                    }
                 }
             }
         }

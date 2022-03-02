@@ -32,6 +32,7 @@
 .ds44-video-container {
     position: relative;
     width: 100%;
+    height:480px;
 
     .ds44-video-item {
         position: absolute;
@@ -435,7 +436,16 @@ main {
                     margin: $ds44-medium-vmargin;
                     width: calc(33.33% - 3rem);
                     max-width: calc(33.33% - 3rem);
-
+                    &.first {
+                        margin-bottom: 0;
+                    }
+                    &.middle {
+                        margin-bottom: 0;
+                        margin-top: 0.1rem;
+                    }
+                    &.last {
+                        margin-top: 0.1rem;
+                    }
                     @media (max-width: $ds44-large - .0625) {
                         width: calc(50% - 3rem);
                         max-width: calc(50% - 3rem);
@@ -479,6 +489,14 @@ main {
             left: 0;
             width: 100%;
         }
+    }
+
+    .ds44-btnStd-showLegend {
+        position: absolute;
+        top: 10px;
+        right: 10px;
+        display: block;
+        z-index: 5;
     }
 
     /* -------Resultats vide */
