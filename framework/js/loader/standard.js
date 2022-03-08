@@ -6,7 +6,9 @@ class LoaderStandard {
 
         this.scrollWindow = 0;
 
-        MiscAccessibility.hide(loaderElement);
+        if(document.querySelector('.ds44-loader')) {
+            MiscAccessibility.hide(document.querySelector('.ds44-loader'));
+        }
         MiscEvent.addListener('loader:requestShow', this.show.bind(this));
         MiscEvent.addListener('loader:requestHide', this.hide.bind(this));
         MiscEvent.addListener('loader:setFocus', this.setFocusedElement.bind(this));

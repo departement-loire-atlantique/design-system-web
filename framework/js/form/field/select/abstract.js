@@ -32,6 +32,7 @@ class FormFieldSelectAbstract extends FormFieldAbstract {
             object.selectButtonElement = object.selectContainerElement.querySelector('.ds44-btnSelect');
         }
         object.isExpanded = false;
+        object.titleDefault = object.buttonElement.getAttribute("title");
         object.validationCategories = MiscForm.getValidationCategories();
     }
 
