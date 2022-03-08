@@ -6,6 +6,7 @@ class LoaderStandard {
 
         this.scrollWindow = 0;
 
+        MiscAccessibility.hide(loaderElement);
         MiscEvent.addListener('loader:requestShow', this.show.bind(this));
         MiscEvent.addListener('loader:requestHide', this.hide.bind(this));
         MiscEvent.addListener('loader:setFocus', this.setFocusedElement.bind(this));
