@@ -32,10 +32,12 @@ class FormFieldAbstract {
             'id': MiscUtils.generateId(),
             'name': this.getName(element),
             'containerElement': (element.closest('.ds44-form__container') || element),
+            "element": element,
             'isInitialized': false,
             'isSubInitialized': false,
             'isSubSubInitialized': false,
             'isFilled': false,
+            "titleDefault": element.getAttribute("title"),
             'isRequired': (element.getAttribute('required') !== null || element.getAttribute('data-required') === 'true'),
             'isEnabled': !(element.getAttribute('readonly') !== null || element.getAttribute('disabled') !== null || element.getAttribute('data-disabled') === 'true')
         };
@@ -78,6 +80,7 @@ class FormFieldAbstract {
                 );
             }
 
+            this.changeTitle(objectIndex);
             MiscEvent.addListener('field:enable', this.enable.bind(this, objectIndex), object.containerElement);
             MiscEvent.addListener('field:disable', this.disable.bind(this, objectIndex), object.containerElement);
             MiscEvent.addListener('field:' + object.name + ':set', this.set.bind(this, objectIndex));
@@ -206,6 +209,7 @@ class FormFieldAbstract {
     }
 
     showNotEmpty (objectIndex) {
+        this.changeTitle(objectIndex);
         this.enableDisableLinkedField(objectIndex);
     }
 
@@ -247,8 +251,26 @@ class FormFieldAbstract {
         return data;
     }
 
+    changeTitle(objectIndex, element) {
+        const object = this.objects[objectIndex];
+        if (!object) {
+            return;
+        }
+        if(element === undefined || element === null) {
+            element = object.element;
+        }
+        let data = this.getData(objectIndex);
+        if(data && data[object.name] && data[object.name].text) {
+            element.setAttribute('title', data[object.name].text + " - "+MiscTranslate._("INPUT_REQUIRED"));
+        }
+        else {
+            element.setAttribute('title', object.titleDefault);
+        }
+    }
+
     enableDisableLinkedField (objectIndex) {
         const object = this.objects[objectIndex];
+
         if (!object) {
             return;
         }
@@ -269,6 +291,7 @@ class FormFieldAbstract {
         // Has a linked field
         const areMaskedLinkedFields = !!object.containerElement.closest('.ds44-js-masked-fields');
         let data = this.getData(objectIndex);
+
         if (
             !data ||
             (

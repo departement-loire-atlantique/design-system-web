@@ -196,6 +196,7 @@ class FormFieldSelectCheckbox extends FormFieldSelectAbstract {
                     }
                 }
             });
+        super.changeTitle(objectIndex, object.buttonElement);
     }
 
     selectFromValue (objectIndex) {
@@ -210,7 +211,6 @@ class FormFieldSelectCheckbox extends FormFieldSelectAbstract {
         }
 
         const data = this.getData(objectIndex);
-        console.log(data);
         let values = [];
         if (data && data[object.name].value) {
             values = data[object.name].value;

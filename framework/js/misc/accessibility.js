@@ -91,9 +91,7 @@ class MiscAccessibility {
         }
         if (element) {
             element.setAttribute('data-old-tabindex', element.getAttribute('tabindex'));
-            element.setAttribute('tabindex', '-1');
             element.focus();
-
             MiscEvent.addListener('blur', MiscAccessibility.restoreFocus, element);
         }
     }

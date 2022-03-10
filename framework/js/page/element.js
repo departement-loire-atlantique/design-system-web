@@ -15,12 +15,6 @@ class PageElement {
                 link.addEventListener("click", this.scrollToHyperlink);
             });
 
-        MiscEvent.addListener('overlay:show', this.hide.bind(this));
-        MiscEvent.addListener('overlay:hide', this.show.bind(this));
-        MiscEvent.addListener('menu:show', this.hide.bind(this));
-        MiscEvent.addListener('menu:hide', this.show.bind(this));
-        MiscEvent.addListener('loader:show', this.hide.bind(this));
-        MiscEvent.addListener('loader:hide', this.show.bind(this));
     }
 
     create (pageElement) {
@@ -33,6 +27,7 @@ class PageElement {
 
     show () {
         this.visibilityCounter = Math.min(0, (this.visibilityCounter + 1));
+        console.log(this.visibilityCounter);
         if (this.visibilityCounter === 0) {
             for (let objectIndex = 0; objectIndex < this.objects.length; objectIndex++) {
                 MiscAccessibility.show(this.objects[objectIndex].element, true, false);
