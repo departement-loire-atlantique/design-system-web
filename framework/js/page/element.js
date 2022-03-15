@@ -46,21 +46,25 @@ class PageElement {
         
     scrollToHyperlink(event) {
         event.preventDefault();
-        const scrollTo = MiscUtils.getPositionY(document.getElementById(event.target.getAttribute('href').replace('#', '')));
-        if (MiscUtils.getScrollTop() > scrollTo) {
-            // Going up, the header will show
-            MiscUtils.scrollTo(
-                scrollTo - MiscDom.getHeaderHeight(true),
-                400,
-                'linear'
-            );
-        } else {
-            // Going down, the header will hide
-            MiscUtils.scrollTo(
-                scrollTo,
-                400,
-                'linear'
-            );
+        var targetHref = event.target.getAttribute('href');
+        if(targetHref)
+        {
+            const scrollTo = MiscUtils.getPositionY(document.getElementById(targetHref.replace('#', '')));
+            if (MiscUtils.getScrollTop() > scrollTo) {
+                // Going up, the header will show
+                MiscUtils.scrollTo(
+                  scrollTo - MiscDom.getHeaderHeight(true),
+                  400,
+                  'linear'
+                );
+            } else {
+                // Going down, the header will hide
+                MiscUtils.scrollTo(
+                  scrollTo,
+                  400,
+                  'linear'
+                );
+            }
         }
     }
 }

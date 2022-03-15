@@ -193,8 +193,8 @@ class MiscAccessibility {
                     element.setAttribute('data-bkp-tabindex', '');
                 }
             }
-
             element.setAttribute('tabindex', '-1');
+            element.removeAttribute('data-old-tabindex');
         }
 
         if (bubble) {
