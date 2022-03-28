@@ -219,7 +219,7 @@ class AsideSummary {
         this.menu.classList.add('show');
         MiscAccessibility.show(this.menu);
         MiscAccessibility.setFocus(closeButton);
-        //MiscAccessibility.addFocusLoop(this.menu);
+        MiscAccessibility.addFocusLoop(this.menu);
 
         MiscEvent.dispatch('menu:show', { 'element': this.menu });
     }
