@@ -21,6 +21,10 @@ class AsideSummary {
         MiscEvent.addListener('scroll', this.scroll.bind(this), window);
         MiscEvent.addListener('resize', this.resize.bind(this), window);
         MiscEvent.addListener('load', this.resize.bind(this), window);
+        MiscEvent.addListener('keyUp:escape', this.hideMenu.bind(this));
+
+        this.menu = document.querySelector('#summaryMenu');
+        MiscAccessibility.hide(this.menu);
         window.setTimeout(this.resize.bind(this), 1000);
 
         const aElements = new Set([
@@ -199,7 +203,7 @@ class AsideSummary {
     }
 
     showMenu () {
-        this.menu = document.querySelector('#summaryMenu');
+
         if (!this.menu) {
             return;
         }
@@ -215,7 +219,7 @@ class AsideSummary {
         this.menu.classList.add('show');
         MiscAccessibility.show(this.menu);
         MiscAccessibility.setFocus(closeButton);
-        MiscAccessibility.addFocusLoop(this.menu);
+        //MiscAccessibility.addFocusLoop(this.menu);
 
         MiscEvent.dispatch('menu:show', { 'element': this.menu });
     }

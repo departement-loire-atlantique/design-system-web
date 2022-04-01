@@ -56,14 +56,17 @@ class FormFieldSelectCheckbox extends FormFieldSelectAbstract {
                 texts.push(labelText);
             }
         });
-        this.setData(
-          objectIndex,
-          {
-              'value': value,
-              'text': texts.join(', '),
-          }
-        );
-        this.enter(objectIndex);
+        if(value.length > 0)
+        {
+            this.setData(
+              objectIndex,
+              {
+                  'value': value,
+                  'text': texts.join(', '),
+              }
+            );
+            this.enter(objectIndex);
+        }
     }
 
     setListElementEvents (listElement, objectIndex) {
@@ -193,6 +196,7 @@ class FormFieldSelectCheckbox extends FormFieldSelectAbstract {
                     }
                 }
             });
+        super.changeTitle(objectIndex, object.buttonElement);
     }
 
     selectFromValue (objectIndex) {
@@ -207,7 +211,6 @@ class FormFieldSelectCheckbox extends FormFieldSelectAbstract {
         }
 
         const data = this.getData(objectIndex);
-        console.log(data);
         let values = [];
         if (data && data[object.name].value) {
             values = data[object.name].value;
