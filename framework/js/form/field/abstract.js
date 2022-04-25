@@ -261,7 +261,14 @@ class FormFieldAbstract {
         }
         let data = this.getData(objectIndex);
         if(data && data[object.name] && data[object.name].text) {
-            element.setAttribute('title', data[object.name].text + " - "+MiscTranslate._("INPUT_REQUIRED"));
+            if(element.type === "password")
+            {
+                element.setAttribute('title', "*".repeat(data[object.name].text.length) + " - "+MiscTranslate._("INPUT_REQUIRED"));
+            }
+            else
+            {
+                element.setAttribute('title', data[object.name].text + " - "+MiscTranslate._("INPUT_REQUIRED"));
+            }
         }
         else {
             element.setAttribute('title', object.titleDefault);
