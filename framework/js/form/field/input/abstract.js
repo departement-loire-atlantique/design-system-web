@@ -398,5 +398,6 @@ class FormFieldInputAbstract extends FormFieldAbstract {
                 entitled.innerText = entitledShow;
             }
         }
+        this.showNotEmpty(objectIndex);
     }
 }

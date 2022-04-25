@@ -188,6 +188,9 @@ class AsideSummary {
 
             const titleElement = sectionElement.querySelector('h2');
             if (titleElement) {
+                if(element.getAttribute('tabindex') === undefined || !element.getAttribute('tabindex')) {
+                    element.setAttribute('tabindex', 1);
+                }
                 MiscAccessibility.setFocus(titleElement);
             }
         }
@@ -219,7 +222,7 @@ class AsideSummary {
         this.menu.classList.add('show');
         MiscAccessibility.show(this.menu);
         MiscAccessibility.setFocus(closeButton);
-        //MiscAccessibility.addFocusLoop(this.menu);
+        MiscAccessibility.addFocusLoop(this.menu);
 
         MiscEvent.dispatch('menu:show', { 'element': this.menu });
     }
