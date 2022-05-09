@@ -104,9 +104,10 @@ class MiscUtils {
             const now = 'now' in window.performance ? performance.now() : new Date().getTime();
             const time = Math.min(1, ((now - startTime) / duration));
             const timeFunction = easings[easing](time);
-            window.scroll(0, Math.ceil((timeFunction * (destinationOffsetToScroll - start)) + start));
+            var scrollValue = Math.ceil((timeFunction * (destinationOffsetToScroll - start)) + start);
+            window.scroll(0, scrollValue);
 
-            if (Math.round(window.pageYOffset) === destinationOffsetToScroll) {
+        if (Math.round(window.pageYOffset) === destinationOffsetToScroll || scrollValue <= destinationOffsetToScroll ) {
                 if (callback) {
                     callback();
                 }
