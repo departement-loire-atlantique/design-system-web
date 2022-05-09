@@ -188,8 +188,8 @@ class AsideSummary {
 
             const titleElement = sectionElement.querySelector('h2');
             if (titleElement) {
-                if(element.getAttribute('tabindex') === undefined || !element.getAttribute('tabindex')) {
-                    element.setAttribute('tabindex', 1);
+                if(titleElement.getAttribute('tabindex') === undefined || !titleElement.getAttribute('tabindex')) {
+                    titleElement.setAttribute('tabindex', 1);
                 }
                 MiscAccessibility.setFocus(titleElement);
             }
