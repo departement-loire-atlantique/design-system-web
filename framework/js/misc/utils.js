@@ -107,7 +107,7 @@ class MiscUtils {
             var scrollValue = Math.ceil((timeFunction * (destinationOffsetToScroll - start)) + start);
             window.scroll(0, scrollValue);
 
-        if (Math.round(window.pageYOffset) === destinationOffsetToScroll || scrollValue <= destinationOffsetToScroll ) {
+        if (Math.round(window.pageYOffset) === destinationOffsetToScroll || scrollValue === destinationOffsetToScroll ) {
                 if (callback) {
                     callback();
                 }
