@@ -409,6 +409,10 @@ input[type=radio],
             position: relative;
             color: $ds44-color-base;
 
+            + .ds44-facetteContainer {
+                padding-top: 0;
+            }
+
             @media (max-width: $ds44-small - .0625) {
                 padding: 2.5rem; // on augmente les marges en mobile pour décoller les labels
             }
