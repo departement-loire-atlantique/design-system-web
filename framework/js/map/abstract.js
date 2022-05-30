@@ -13,19 +13,26 @@ class MapAbstract {
         this.geojsonSourceId = 'geojson-source';
         this.geojsonFillsId = 'geojson-fills';
         this.geojsonLinesId = 'geojson-lines';
+        this.isInitialized = false;
 
         maps
             .forEach((element) => {
-                this.create(element);
+                if(MiscComponent.checkAndCreate(element, "maps")) {
+                    this.create(element);
+                }
             });
-        this.initialize();
+        if(!this.isInitialized) {
+            this.isInitialized = true;
+            this.initialize();
 
-        this.submit = false;
-        [].forEach.call(document.querySelectorAll("form"), (el)=>{
-            MiscEvent.addListener("submit", () => {
-                this.submit = true;
-            }, el);
-        });
+            this.submit = false;
+            [].forEach.call(document.querySelectorAll("form"), (el)=>{
+                MiscEvent.addListener("submit", () => {
+                    this.submit = true;
+                }, el);
+            });
+        }
+
 
     }
 

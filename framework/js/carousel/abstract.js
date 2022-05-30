@@ -1,27 +1,42 @@
 class CarouselAbstract {
     constructor (selector) {
+
+        console.log("Carousel construct");
+
         this.previousSlideMessage = MiscTranslate._('CAROUSEL_WATCH_PREVIOUS_CONTENT');
         this.nextSlideMessage = MiscTranslate._('CAROUSEL_WATCH_NEXT_CONTENT');
         this.queryTitreTuile = '.ds44-card__title a[href]:not([disabled])';
         this.objects = [];
         this.breakpoint = window.matchMedia('(max-width: 63.375em)');
 
+        this.isInitialized = false;
+
+        console.log(this.objects);
+
         document
             .querySelectorAll(selector)
             .forEach((wrapElement) => {
-                this.create(wrapElement);
+                if(MiscComponent.checkAndCreate(wrapElement, "carousel"))
+                {
+                    this.create(wrapElement);
+                }
             });
 
-        MiscEvent.addListener('resize', this.resize.bind(this), window);
-        window.setTimeout(
-            () => {
-                MiscEvent.dispatch('resize', null, window);
-            },
-            1000
-        );
+        if(!this.isInitialized)
+        {
+            console.log('isInit');
+            this.isInitialized = true;
+            MiscEvent.addListener('resize', this.resize.bind(this), window);
+            window.setTimeout(
+              () => {
+                  MiscEvent.dispatch('resize', null, window);
+              },
+              1000
+            );
 
-        this.breakpoint.addListener(this.breakpointChecker.bind(this));
-        this.breakpointChecker();
+            this.breakpoint.addListener(this.breakpointChecker.bind(this));
+            this.breakpointChecker();
+        }
     }
 
     create (wrapElement) {

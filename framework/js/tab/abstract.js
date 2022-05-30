@@ -3,8 +3,10 @@ class TabAbstract {
         document
             .querySelectorAll(selector)
             .forEach((containerElement) => {
-                MiscEvent.addListener('keyDown:shiftTab', this.goBackToTab.bind(this, selector));
-                this.create(containerElement);
+                if(MiscComponent.checkAndCreate(containerElement, "tab")) {
+                    MiscEvent.addListener('keyDown:shiftTab', this.goBackToTab.bind(this, selector));
+                    this.create(containerElement);
+                }
             });
     }
 

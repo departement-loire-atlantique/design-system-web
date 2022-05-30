@@ -7,7 +7,9 @@ class ImageZoom {
         document
             .querySelectorAll('.ds44-imgLoupe')
             .forEach((magnifyContainerElement) => {
-                this.create(magnifyContainerElement);
+                if(MiscComponent.checkAndCreate(magnifyContainerElement, "image-zoom")) {
+                    this.create(magnifyContainerElement);
+                }
             });
     }
 

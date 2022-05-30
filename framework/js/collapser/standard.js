@@ -5,7 +5,9 @@ class CollapserStandard {
         document
             .querySelectorAll('.ds44-collapser_button')
             .forEach((buttonElement) => {
-                this.create(buttonElement);
+                if(MiscComponent.checkAndCreate(buttonElement, "collapser")) {
+                    this.create(buttonElement);
+                }
             });
     }
 

@@ -3,7 +3,9 @@ class ButtonSkip {
         document
             .querySelectorAll('.ds44-skiplinks--link')
             .forEach((skipElement) => {
-                MiscEvent.addListener('click', this.go.bind(this), skipElement);
+                if(MiscComponent.checkAndCreate(skipElement, "button-skip")) {
+                    MiscEvent.addListener('click', this.go.bind(this), skipElement);
+                }
             });
     }
 

@@ -18,7 +18,7 @@ class TooltipStandard {
         // Bind events
         ['mouseenter', 'focus', 'mouseleave', 'blur']
             .forEach(eventType => {
-                document.body.addEventListener(eventType, this.showHide.bind(this), true);
+                document.addEventListener(eventType, this.showHide.bind(this), true);
             });
         MiscEvent.addListener('keyDown:escape', this.hideAll.bind(this));
         MiscEvent.addListener('tooltip:add', this.add.bind(this));

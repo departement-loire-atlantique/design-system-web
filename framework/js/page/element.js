@@ -6,13 +6,17 @@ class PageElement {
         document
             .querySelectorAll('footer, main')
             .forEach((pageElement) => {
-                this.create(pageElement);
+                if(MiscComponent.checkAndCreate(pageElement, "page-element")) {
+                    this.create(pageElement);
+                }
             });
         
         document
             .querySelectorAll('a[href^="#"]')
             .forEach((link) => {
-                link.addEventListener("click", this.scrollToHyperlink);
+                if(MiscComponent.checkAndCreate(link, "link-scroll")) {
+                    link.addEventListener("click", this.scrollToHyperlink);
+                }
             });
 
     }

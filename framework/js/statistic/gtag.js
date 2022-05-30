@@ -1,7 +1,7 @@
 class StatisticGtag {
     constructor () {
         MiscEvent.addListener('statistic:gtag:event', this.sendEvent.bind(this));
-        document.body.addEventListener('click', this.detectClick.bind(this), true);
+        document.addEventListener('click', this.detectClick.bind(this), true);
     }
 
     sendEvent (evt) {

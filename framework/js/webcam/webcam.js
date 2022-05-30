@@ -4,9 +4,12 @@ class Webcam {
     document.querySelectorAll('.ds44-webcam')
       .forEach((webcamElement) => {
         const webcamViewer = webcamElement.querySelector(".ds44-webcam-viewer");
-        if(webcamViewer)
+        if(MiscComponent.checkAndCreate(webcamViewer, "webcam"))
         {
-          this.create(webcamElement, webcamViewer);
+          if(webcamViewer)
+          {
+            this.create(webcamElement, webcamViewer);
+          }
         }
       });
   }

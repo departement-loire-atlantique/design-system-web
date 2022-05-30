@@ -5,44 +5,52 @@ class MenuHeader {
         this.menuSelector = null;
         this.menu = null;
 
-        this.hideMenuListener = this.hideMenu.bind(this);
-        this.focusOutListener = this.focusOut.bind(this);
-        this.clickOutListener = this.clickOut.bind(this);
+        this.isInitialized = false;
 
-        MiscEvent.addListener('keyUp:escape', this.hideMenuListener);
+        if(!this.isInitialized)
+        {
+            this.isInitialized = true;
 
-        document
-            .querySelectorAll('header #open-menu')
-            .forEach((element) => {
-                MiscEvent.addListener('click', this.showNavigation.bind(this), element);
-            });
-        document
-            .querySelectorAll('header #open-search')
-            .forEach((element) => {
-                MiscEvent.addListener('click', this.showSearch.bind(this), element);
-            });
-        document
-            .querySelectorAll('header #open-search-observatoire')
-            .forEach((element) => {
-                MiscEvent.addListener('click', this.showSearchObservatoire.bind(this), element);
-            });
-        document
-            .querySelectorAll('header .ds44-btnOverlay--closeOverlay')
-            .forEach((element) => {
-                MiscEvent.addListener('click', this.hideMenuListener, element);
-            });
-        document
-            .querySelectorAll('#ds44-btn-applis, header .ds44-navList .ds44-menuBtn')
-            .forEach((element) => {
-                MiscEvent.addListener('click', this.showSubNavigationMenu.bind(this), element);
-            });
-        document
-            .querySelectorAll('header .ds44-btn-backOverlay')
-            .forEach((element) => {
-                MiscEvent.addListener('click', this.hideSubNavigationMenu.bind(this), element);
-            });
+            this.hideMenuListener = this.hideMenu.bind(this);
+            this.focusOutListener = this.focusOut.bind(this);
+            this.clickOutListener = this.clickOut.bind(this);
 
-        MiscAccessibility.hide(document.querySelector('header .ds44-blocMenu'));
+            MiscEvent.addListener('keyUp:escape', this.hideMenuListener);
+
+            document
+              .querySelectorAll('header #open-menu')
+              .forEach((element) => {
+                  MiscEvent.addListener('click', this.showNavigation.bind(this), element);
+              });
+            document
+              .querySelectorAll('header #open-search')
+              .forEach((element) => {
+                  MiscEvent.addListener('click', this.showSearch.bind(this), element);
+              });
+            document
+              .querySelectorAll('header #open-search-observatoire')
+              .forEach((element) => {
+                  MiscEvent.addListener('click', this.showSearchObservatoire.bind(this), element);
+              });
+            document
+              .querySelectorAll('header .ds44-btnOverlay--closeOverlay')
+              .forEach((element) => {
+                  MiscEvent.addListener('click', this.hideMenuListener, element);
+              });
+            document
+              .querySelectorAll('#ds44-btn-applis, header .ds44-navList .ds44-menuBtn')
+              .forEach((element) => {
+                  MiscEvent.addListener('click', this.showSubNavigationMenu.bind(this), element);
+              });
+            document
+              .querySelectorAll('header .ds44-btn-backOverlay')
+              .forEach((element) => {
+                  MiscEvent.addListener('click', this.hideSubNavigationMenu.bind(this), element);
+              });
+
+            MiscAccessibility.hide(document.querySelector('header .ds44-blocMenu'));
+        }
+
     }
 
     showMenu (evt) {

@@ -2,7 +2,7 @@ class ButtonLegend {
   constructor () {
     const buttonLegends = document.querySelectorAll('button[type="button"]');
     [].forEach.call(buttonLegends, (buttonLegend) => {
-      if (buttonLegend.closest("figure")) {
+      if (buttonLegend.closest("figure") && MiscComponent.checkAndCreate(buttonLegend, "button-legend")) {
         MiscEvent.addListener('focus', this.focusParent.bind(this), buttonLegend);
         MiscEvent.addListener('focusout', this.unFocusParent.bind(this), buttonLegend);
       }

@@ -6,8 +6,10 @@ class VideoYoutube {
         document
             .querySelectorAll('.ds44-js-youtube-video')
             .forEach((videoElement) => {
-                hasVideos = true;
-                this.create(videoElement);
+                if(MiscComponent.checkAndCreate(videoElement, "youtube")) {
+                    hasVideos = true;
+                    this.create(videoElement);
+                }
             });
         document
             .querySelectorAll('.ds44-js-video-seek-to')

@@ -5,7 +5,10 @@ class ButtonMore {
         document
             .querySelectorAll('.ds44-js-more-button')
             .forEach((buttonElement) => {
-                MiscEvent.addListener('click', this.showMore.bind(this), buttonElement);
+                if(MiscComponent.checkAndCreate(buttonElement, "button-more"))
+                {
+                    MiscEvent.addListener('click', this.showMore.bind(this), buttonElement);
+                }
             });
     }
 
