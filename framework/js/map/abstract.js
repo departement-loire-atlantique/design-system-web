@@ -1,10 +1,8 @@
 class MapAbstract {
-    constructor (selector) {
-        const maps = document.querySelectorAll(selector);
-        if (maps.length === 0) {
-            return;
-        }
-
+    constructor (className, selector) {
+        this.selector = selector;
+        this.className = className;
+        Debug.log(this.className+" -> Construct ");
         this.objects = [];
         this.isMapLanguageLoaded = false;
         this.isMapLoaded = false;
@@ -13,27 +11,36 @@ class MapAbstract {
         this.geojsonSourceId = 'geojson-source';
         this.geojsonFillsId = 'geojson-fills';
         this.geojsonLinesId = 'geojson-lines';
-        this.isInitialized = false;
 
-        maps
-            .forEach((element) => {
-                if(MiscComponent.checkAndCreate(element, "maps")) {
-                    this.create(element);
-                }
-            });
-        if(!this.isInitialized) {
-            this.isInitialized = true;
-            this.initialize();
+        MiscEvent.addListener('search:focus', this.resultFocus.bind(this));
+        MiscEvent.addListener('search:blur', this.resultBlur.bind(this));
+    }
 
-            this.submit = false;
-            [].forEach.call(document.querySelectorAll("form"), (el)=>{
-                MiscEvent.addListener("submit", () => {
-                    this.submit = true;
-                }, el);
-            });
+    initialise() {
+        Debug.log(this.className+" -> Initialise ");
+        const maps = document.querySelectorAll(this.selector);
+        if (maps.length === 0) {
+            return;
         }
+        maps
+          .forEach((element) => {
+              if(MiscComponent.checkAndCreate(element, "maps")) {
+                  this.create(element);
+              }
+          });
+        this.initialize();
 
+        this.submit = false;
+        [].forEach.call(document.querySelectorAll("form"), (el)=>{
+            MiscEvent.addListener("submit", () => {
+                this.submit = true;
+            }, el);
+        });
+    }
 
+    clearObject() {
+        Debug.log(this.className+" -> Clear object");
+        this.objects = [];
     }
 
     create (element) {
@@ -59,8 +66,6 @@ class MapAbstract {
     }
 
     initialize () {
-        MiscEvent.addListener('search:focus', this.resultFocus.bind(this));
-        MiscEvent.addListener('search:blur', this.resultBlur.bind(this));
 
         for (let objectIndex = 0; objectIndex < this.objects.length; objectIndex++) {
             const object = this.objects[objectIndex];

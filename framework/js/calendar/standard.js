@@ -30,7 +30,7 @@ class CalendarStandard {
         } else if (this.options.selector) {
             this.calendarElement = document.querySelector(this.options.selector);
         }
-        if (!this.calendarElement) {
+        if (!this.calendarElement && !MiscComponent.checkAndCreate(this.calendarElement, "calendar")) {
             return;
         }
 

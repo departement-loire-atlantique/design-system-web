@@ -1,6 +1,6 @@
-class MapGeojson extends MapAbstract {
+class MapGeojsonClass extends MapAbstract {
     constructor () {
-        super('.ds44-js-map[data-geojson-mode="dynamic"]');
+        super("MapGeojson", '.ds44-js-map[data-geojson-mode="dynamic"]');
     }
 
     create (element) {
@@ -179,6 +179,19 @@ class MapGeojson extends MapAbstract {
         }
     }
 }
-
 // Singleton
+var MapGeojson = (function () {
+    "use strict";
+    var instance;
+    function Singleton() {
+        if (!instance) {
+            instance = new MapGeojsonClass();
+        }
+        instance.initialise();
+    }
+    Singleton.getInstance = function () {
+        return instance || new Singleton();
+    }
+    return Singleton;
+}());
 new MapGeojson();

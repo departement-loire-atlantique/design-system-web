@@ -1,23 +1,19 @@
-class HeaderStandard {
+class HeaderStandardClass {
     constructor () {
         this.lastScroll = 0;
         this.headerVisibilityCounter = 0;
         this.menuVisibilityCounter = 0;
         this.isInitialized = false;
 
-        if(!this.isInitialized)
-        {
-            this.isInitialized = true;
-            // Bind events
-            MiscEvent.addListener('scroll', this.scroll.bind(this), window);
-            MiscEvent.addListener('overlay:show', this.overlayShow.bind(this));
-            MiscEvent.addListener('overlay:hide', this.overlayHide.bind(this));
-            MiscEvent.addListener('menu:show', this.menuShow.bind(this));
-            MiscEvent.addListener('menu:hide', this.menuHide.bind(this));
-            MiscEvent.addListener('loader:show', this.overlayShow.bind(this));
-            MiscEvent.addListener('loader:hide', this.overlayHide.bind(this));
-            MiscEvent.addListener('keyUp:tab', this.checkFocusPosition.bind(this));
-        }
+        // Bind events
+        MiscEvent.addListener('scroll', this.scroll.bind(this), window);
+        MiscEvent.addListener('overlay:show', this.overlayShow.bind(this));
+        MiscEvent.addListener('overlay:hide', this.overlayHide.bind(this));
+        MiscEvent.addListener('menu:show', this.menuShow.bind(this));
+        MiscEvent.addListener('menu:hide', this.menuHide.bind(this));
+        MiscEvent.addListener('loader:show', this.overlayShow.bind(this));
+        MiscEvent.addListener('loader:hide', this.overlayHide.bind(this));
+        MiscEvent.addListener('keyUp:tab', this.checkFocusPosition.bind(this));
     }
 
     // Sur le focus au clavier d'un élément caché sous le header, effectuer un scroll vers le haut pour que l'élément soit affiché
@@ -124,6 +120,18 @@ class HeaderStandard {
         }
     }
 }
-
 // Singleton
+var HeaderStandard = (function () {
+    "use strict";
+    var instance;
+    function Singleton() {
+        if (!instance) {
+            instance = new HeaderStandardClass();
+        }
+    }
+    Singleton.getInstance = function () {
+        return instance || new Singleton();
+    }
+    return Singleton;
+}());
 new HeaderStandard();

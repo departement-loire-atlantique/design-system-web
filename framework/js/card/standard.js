@@ -1,4 +1,4 @@
-class CardStandard {
+class CardStandardClass {
     constructor () {
         document.addEventListener('click', this.open.bind(this));
     }
@@ -21,6 +21,18 @@ class CardStandard {
         }
     }
 }
-
 // Singleton
+var CardStandard = (function () {
+    "use strict";
+    var instance;
+    function Singleton() {
+        if (!instance) {
+            instance = new CardStandardClass();
+        }
+    }
+    Singleton.getInstance = function () {
+        return instance || new Singleton();
+    }
+    return Singleton;
+}());
 new CardStandard();

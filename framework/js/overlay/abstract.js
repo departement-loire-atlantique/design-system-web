@@ -1,5 +1,9 @@
 class OverlayAbstract {
-    constructor (selector) {
+    constructor (className, selector) {
+        this.className = className;
+        this.selector = selector;
+        Debug.log(this.className+" -> Constructor");
+
         this.triggerElement = null;
         this.modal = null;
         this.visibilityCounter = 0;
@@ -12,24 +16,27 @@ class OverlayAbstract {
         MiscEvent.addListener('keyUp:escape', this.hideListener);
         MiscEvent.addListener('loader:show', this.showLoader.bind(this));
         MiscEvent.addListener('loader:hide', this.hideLoader.bind(this));
+    }
 
+    initialise() {
+        Debug.log(this.className+" -> Initialise");
         // Ajouter un event listener sur les boutons qui ouvrent un overlay / modale
         document
-            .querySelectorAll(selector)
-            .forEach((element) => {
-                MiscEvent.addListener('click', this.show.bind(this), element);
-            });
+          .querySelectorAll(this.selector)
+          .forEach((element) => {
+              MiscEvent.addListener('click', this.show.bind(this), element);
+          });
         document
-            .querySelectorAll('.ds44-modal-container .ds44-btnOverlay--closeOverlay')
-            .forEach((element) => {
-                MiscEvent.addListener('click', this.hideListener, element);
-            });
+          .querySelectorAll('.ds44-modal-container .ds44-btnOverlay--closeOverlay')
+          .forEach((element) => {
+              MiscEvent.addListener('click', this.hideListener, element);
+          });
 
         document
-            .querySelectorAll('.ds44-modal-container')
-            .forEach((element) => {
-                MiscAccessibility.hide(element);
-            });
+          .querySelectorAll('.ds44-modal-container')
+          .forEach((element) => {
+              MiscAccessibility.hide(element);
+          });
     }
 
     // Ouvre un overlay

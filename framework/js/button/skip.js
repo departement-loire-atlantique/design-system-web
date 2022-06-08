@@ -1,5 +1,10 @@
-class ButtonSkip {
+class ButtonSkipClass {
     constructor () {
+        Debug.log("ButtonSkip -> Constructor");
+    }
+
+    initialise () {
+        Debug.log("ButtonSkip -> Initialise");
         document
             .querySelectorAll('.ds44-skiplinks--link')
             .forEach((skipElement) => {
@@ -25,6 +30,19 @@ class ButtonSkip {
         MiscAccessibility.setFocus(focusElement);
     }
 }
-
 // Singleton
+var ButtonSkip = (function () {
+    "use strict";
+    var instance;
+    function Singleton() {
+        if (!instance) {
+            instance = new ButtonSkipClass();
+        }
+        instance.initialise();
+    }
+    Singleton.getInstance = function () {
+        return instance || new Singleton();
+    }
+    return Singleton;
+}());
 new ButtonSkip();

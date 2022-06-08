@@ -1,5 +1,6 @@
-class TooltipStandard {
+class TooltipStandardClass {
     constructor () {
+        Debug.log("TooltipStandard -> Constructor");
         this.TOOLTIP_SIMPLE = 'js-simple-tooltip';
         this.TOOLTIP_SIMPLE_CONTAINER = 'simpletooltip_container';
         this.TOOLTIP_SIMPLE_RAW = 'simpletooltip';
@@ -12,9 +13,6 @@ class TooltipStandard {
         this.ROLE = 'tooltip';
         this.DATA_HASH_ID = 'data-hashtooltip-id';
 
-        // Create tooltips
-        this.add();
-
         // Bind events
         ['mouseenter', 'focus', 'mouseleave', 'blur']
             .forEach(eventType => {
@@ -24,10 +22,19 @@ class TooltipStandard {
         MiscEvent.addListener('tooltip:add', this.add.bind(this));
     }
 
+    initialise() {
+        Debug.log("TooltipStandard -> Initialise");
+        this.add();
+    }
+
     add () {
         document
             .querySelectorAll('button.' + this.TOOLTIP_SIMPLE + ':not([data-is-initialized="true"])')
-            .forEach(this.create.bind(this));
+            .forEach((element) => {
+                if(MiscComponent.checkAndCreate(element, "tooltip")) {
+                    this.create(element)
+                }
+            });
     }
 
     create (element) {
@@ -134,6 +141,19 @@ class TooltipStandard {
             })
     }
 }
-
 // Singleton
+var TooltipStandard = (function () {
+    "use strict";
+    var instance;
+    function Singleton() {
+        if (!instance) {
+            instance = new TooltipStandardClass();
+        }
+        instance.initialise();
+    }
+    Singleton.getInstance = function () {
+        return instance || new Singleton();
+    }
+    return Singleton;
+}());
 new TooltipStandard();

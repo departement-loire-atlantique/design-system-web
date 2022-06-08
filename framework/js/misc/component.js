@@ -20,6 +20,4 @@ class MiscComponent {
     element.setAttribute("data-component-"+componentName+"-uuid", Uuid.generate());
   }
 
-
-
 }

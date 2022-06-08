@@ -1,56 +1,64 @@
-class MenuHeader {
+class MenuHeaderClass {
     constructor () {
+        Debug.log("MenuHeader -> Constructor");
         this.triggerMenuElement = null;
         this.triggerSubMenuElement = null;
         this.menuSelector = null;
         this.menu = null;
 
-        this.isInitialized = false;
+        this.hideMenuListener = this.hideMenu.bind(this);
+        this.focusOutListener = this.focusOut.bind(this);
+        this.clickOutListener = this.clickOut.bind(this);
 
-        if(!this.isInitialized)
-        {
-            this.isInitialized = true;
+        MiscEvent.addListener('keyUp:escape', this.hideMenuListener);
+    }
 
-            this.hideMenuListener = this.hideMenu.bind(this);
-            this.focusOutListener = this.focusOut.bind(this);
-            this.clickOutListener = this.clickOut.bind(this);
-
-            MiscEvent.addListener('keyUp:escape', this.hideMenuListener);
-
-            document
-              .querySelectorAll('header #open-menu')
-              .forEach((element) => {
+    initialise() {
+        Debug.log("MenuHeader -> Initialise");
+        document
+          .querySelectorAll('header #open-menu')
+          .forEach((element) => {
+              if(MiscComponent.checkAndCreate(element, "navigation-show")) {
                   MiscEvent.addListener('click', this.showNavigation.bind(this), element);
-              });
-            document
-              .querySelectorAll('header #open-search')
-              .forEach((element) => {
+              }
+          });
+        document
+          .querySelectorAll('header #open-search')
+          .forEach((element) => {
+              if(MiscComponent.checkAndCreate(element, "search-show")) {
                   MiscEvent.addListener('click', this.showSearch.bind(this), element);
-              });
-            document
-              .querySelectorAll('header #open-search-observatoire')
-              .forEach((element) => {
+              }
+          });
+        document
+          .querySelectorAll('header #open-search-observatoire')
+          .forEach((element) => {
+              if(MiscComponent.checkAndCreate(element, "observatoire-show")) {
                   MiscEvent.addListener('click', this.showSearchObservatoire.bind(this), element);
-              });
-            document
-              .querySelectorAll('header .ds44-btnOverlay--closeOverlay')
-              .forEach((element) => {
+              }
+          });
+        document
+          .querySelectorAll('header .ds44-btnOverlay--closeOverlay')
+          .forEach((element) => {
+              if(MiscComponent.checkAndCreate(element, "closeOverlay")) {
                   MiscEvent.addListener('click', this.hideMenuListener, element);
-              });
-            document
-              .querySelectorAll('#ds44-btn-applis, header .ds44-navList .ds44-menuBtn')
-              .forEach((element) => {
+              }
+          });
+        document
+          .querySelectorAll('#ds44-btn-applis, header .ds44-navList .ds44-menuBtn')
+          .forEach((element) => {
+              if(MiscComponent.checkAndCreate(element, "navigation-sub-menu-shwo")) {
                   MiscEvent.addListener('click', this.showSubNavigationMenu.bind(this), element);
-              });
-            document
-              .querySelectorAll('header .ds44-btn-backOverlay')
-              .forEach((element) => {
+              }
+          });
+        document
+          .querySelectorAll('header .ds44-btn-backOverlay')
+          .forEach((element) => {
+              if(MiscComponent.checkAndCreate(element, "navigation-sub-menu-hide")) {
                   MiscEvent.addListener('click', this.hideSubNavigationMenu.bind(this), element);
-              });
+              }
+          });
 
-            MiscAccessibility.hide(document.querySelector('header .ds44-blocMenu'));
-        }
-
+        MiscAccessibility.hide(document.querySelector('header .ds44-blocMenu'));
     }
 
     showMenu (evt) {
@@ -271,6 +279,20 @@ class MenuHeader {
         this.hideMenu();
     }
 }
-
+// Singleton
+var MenuHeader = (function () {
+    "use strict";
+    var instance;
+    function Singleton() {
+        if (!instance) {
+            instance = new MenuHeaderClass();
+        }
+        instance.initialise();
+    }
+    Singleton.getInstance = function () {
+        return instance || new Singleton();
+    }
+    return Singleton;
+}());
 // Singleton
 new MenuHeader();

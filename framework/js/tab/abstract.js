@@ -1,13 +1,20 @@
 class TabAbstract {
-    constructor (selector) {
+    constructor (className, selector) {
+        this.className = className;
+        this.selector = selector;
+        Debug.log(this.className+" -> Constructor");
+    }
+
+    initialise() {
+        Debug.log(this.className+" -> Initialise");
         document
-            .querySelectorAll(selector)
-            .forEach((containerElement) => {
-                if(MiscComponent.checkAndCreate(containerElement, "tab")) {
-                    MiscEvent.addListener('keyDown:shiftTab', this.goBackToTab.bind(this, selector));
-                    this.create(containerElement);
-                }
-            });
+          .querySelectorAll(this.selector)
+          .forEach((containerElement) => {
+              if(MiscComponent.checkAndCreate(containerElement, "tab")) {
+                  MiscEvent.addListener('keyDown:shiftTab', this.goBackToTab.bind(this, this.selector));
+                  this.create(containerElement);
+              }
+          });
     }
 
     getHrefFromElement (element) {
