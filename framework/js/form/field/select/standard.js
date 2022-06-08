@@ -1,6 +1,7 @@
-class FormFieldSelectStandard extends FormFieldSelectAbstract {
+class FormFieldSelectStandardClass extends FormFieldSelectAbstract {
     constructor () {
         super(
+          "FormFieldSelectStandard",
             '.ds44-selectDisplay.ds44-js-select-standard',
             'selectStandard'
         );
@@ -184,6 +185,19 @@ class FormFieldSelectStandard extends FormFieldSelectAbstract {
         return object.selectListElement.querySelectorAll('.ds44-select-list_elem');
     }
 }
-
 // Singleton
+var FormFieldSelectStandard = (function () {
+    "use strict";
+    var instance;
+    function Singleton() {
+        if (!instance) {
+            instance = new FormFieldSelectStandardClass();
+        }
+        instance.initialise();
+    }
+    Singleton.getInstance = function () {
+        return instance || new Singleton();
+    }
+    return Singleton;
+}());
 new FormFieldSelectStandard();

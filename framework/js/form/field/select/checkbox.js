@@ -1,7 +1,8 @@
-class FormFieldSelectCheckbox extends FormFieldSelectAbstract {
-    constructor (selector, category) {
+class FormFieldSelectCheckboxClass extends FormFieldSelectAbstract {
+    constructor (className, selector, category) {
         if (selector && category) {
             super(
+              className,
                 selector,
                 category
             );
@@ -10,6 +11,7 @@ class FormFieldSelectCheckbox extends FormFieldSelectAbstract {
         }
 
         super(
+            "FormFieldSelectCheckbox",
             '.ds44-selectDisplay.ds44-js-select-checkbox',
             'selectCheckbox'
         );
@@ -287,6 +289,19 @@ class FormFieldSelectCheckbox extends FormFieldSelectAbstract {
         return object.selectListElement.querySelectorAll('input');
     }
 }
-
 // Singleton
+var FormFieldSelectCheckbox = (function () {
+    "use strict";
+    var instance;
+    function Singleton() {
+        if (!instance) {
+            instance = new FormFieldSelectCheckboxClass();
+        }
+        instance.initialise();
+    }
+    Singleton.getInstance = function () {
+        return instance || new Singleton();
+    }
+    return Singleton;
+}());
 new FormFieldSelectCheckbox();

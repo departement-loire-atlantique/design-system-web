@@ -1,6 +1,6 @@
-class FormFieldInputDatepicker extends FormFieldInputAbstract {
+class FormFieldInputDatepickerClass extends FormFieldInputAbstract {
     constructor () {
-        super('.ds44-datepicker__shape', 'datepicker');
+        super("FormFieldInputDatepicker", '.ds44-datepicker__shape', 'datepicker');
 
         this.lastInputValue = null;
         this.calendar = null;
@@ -483,6 +483,19 @@ class FormFieldInputDatepicker extends FormFieldInputAbstract {
         }
     }
 }
-
 // Singleton
+var FormFieldInputDatepicker = (function () {
+    "use strict";
+    var instance;
+    function Singleton() {
+        if (!instance) {
+            instance = new FormFieldInputDatepickerClass();
+        }
+        instance.initialise();
+    }
+    Singleton.getInstance = function () {
+        return instance || new Singleton();
+    }
+    return Singleton;
+}());
 new FormFieldInputDatepicker();

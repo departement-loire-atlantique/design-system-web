@@ -1,6 +1,7 @@
-class FormFieldSelectMultilevel extends FormFieldSelectCheckbox {
+class FormFieldSelectMultilevelClass extends FormFieldSelectCheckboxClass {
     constructor () {
         super(
+            "FormFieldSelectMultilevel",
             '.ds44-selectDisplay.ds44-js-select-multilevel',
             'selectMultilevel'
         );
@@ -107,6 +108,19 @@ class FormFieldSelectMultilevel extends FormFieldSelectCheckbox {
         return object.selectListElement.querySelectorAll('.ds44-select__categ input');
     }
 }
-
 // Singleton
+var FormFieldSelectMultilevel = (function () {
+    "use strict";
+    var instance;
+    function Singleton() {
+        if (!instance) {
+            instance = new FormFieldSelectMultilevelClass();
+        }
+        instance.initialise();
+    }
+    Singleton.getInstance = function () {
+        return instance || new Singleton();
+    }
+    return Singleton;
+}());
 new FormFieldSelectMultilevel();

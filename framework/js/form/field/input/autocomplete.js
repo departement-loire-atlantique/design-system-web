@@ -1,6 +1,7 @@
-class FormFieldInputAutoComplete extends FormFieldInputAbstract {
+class FormFieldInputAutoCompleteClass extends FormFieldInputAbstract {
     constructor () {
         super(
+          "FormFieldInputAutoComplete",
             'input[aria-autocomplete="list"]',
             'inputAutocomplete'
         );
@@ -610,6 +611,19 @@ class FormFieldInputAutoComplete extends FormFieldInputAbstract {
         this.checkValidity(objectIndex);
     }
 }
-
 // Singleton
+var FormFieldInputAutoComplete = (function () {
+    "use strict";
+    var instance;
+    function Singleton() {
+        if (!instance) {
+            instance = new FormFieldInputAutoCompleteClass();
+        }
+        instance.initialise();
+    }
+    Singleton.getInstance = function () {
+        return instance || new Singleton();
+    }
+    return Singleton;
+}());
 new FormFieldInputAutoComplete();
