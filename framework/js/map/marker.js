@@ -1,6 +1,6 @@
-class MapMarker extends MapAbstract {
+class MapMarkerClass extends MapAbstract {
     constructor () {
-        super('.ds44-js-map:not([data-geojson-mode="dynamic"]):not(.info-traffic)');
+        super("MapMarker", '.ds44-js-map:not([data-geojson-mode="dynamic"]):not(.info-traffic)');
     }
 
     create (element) {
@@ -460,6 +460,19 @@ class MapMarker extends MapAbstract {
         object.popup = null;
     }
 }
-
 // Singleton
+var MapMarker = (function () {
+    "use strict";
+    var instance;
+    function Singleton() {
+        if (!instance) {
+            instance = new MapMarkerClass();
+        }
+        instance.initialise();
+    }
+    Singleton.getInstance = function () {
+        return instance || new Singleton();
+    }
+    return Singleton;
+}());
 new MapMarker();

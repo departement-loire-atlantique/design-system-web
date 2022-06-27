@@ -1,6 +1,6 @@
-class FormLayoutSearch extends FormLayoutAbstract {
+class FormLayoutSearchClass extends FormLayoutAbstract {
     constructor () {
-        super('.ds44-facette form');
+        super("FormLayoutSearch", '.ds44-facette form');
     }
 
     create (formElement) {
@@ -22,18 +22,21 @@ class FormLayoutSearch extends FormLayoutAbstract {
         // Initialize each object
         for (let objectIndex = 0; objectIndex < this.objects.length; objectIndex++) {
             const object = this.objects[objectIndex];
-            if (object.isSubInitialized) {
-                continue;
-            }
-            object.isSubInitialized = true;
+            if(!MiscComponent.isInit(object.formElement, "form-layout"))
+            {
+                if (object.isSubInitialized) {
+                    continue;
+                }
+                object.isSubInitialized = true;
 
-            // Bind events
-            MiscEvent.addListener('search:refresh', this.search.bind(this, objectIndex));
-            object.containerElement
-                .querySelectorAll('.ds44-js-toggle-search-view')
-                .forEach((searchToggleViewElement) => {
-                    MiscEvent.addListener('click', this.toggleSearchView.bind(this, objectIndex), searchToggleViewElement);
-                });
+                // Bind events
+                MiscEvent.addListener('search:refresh', this.search.bind(this, objectIndex));
+                object.containerElement
+                    .querySelectorAll('.ds44-js-toggle-search-view')
+                    .forEach((searchToggleViewElement) => {
+                        MiscEvent.addListener('click', this.toggleSearchView.bind(this, objectIndex), searchToggleViewElement);
+                    });
+            }
         }
 
         super.initialize();
@@ -319,5 +322,19 @@ class FormLayoutSearch extends FormLayoutAbstract {
         }
     }
 }
-
+// Singleton
+var FormLayoutSearch = (function () {
+    "use strict";
+    var instance;
+    function Singleton() {
+        if (!instance) {
+            instance = new FormLayoutSearchClass();
+        }
+        instance.initialise();
+    }
+    Singleton.getInstance = function () {
+        return instance || new Singleton();
+    }
+    return Singleton;
+}());
 new FormLayoutSearch();

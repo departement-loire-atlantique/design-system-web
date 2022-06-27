@@ -1,4 +1,4 @@
-class KeyboardStandard {
+class KeyboardStandardClass {
     constructor () {
         MiscEvent.addListener('keyup', this.keyUp.bind(this));
         MiscEvent.addListener('keypress', this.keyPress.bind(this));
@@ -175,7 +175,18 @@ class KeyboardStandard {
 
         return false;
     }
-}
-
-// Singleton
+}// Singleton
+var KeyboardStandard = (function () {
+    "use strict";
+    var instance;
+    function Singleton() {
+        if (!instance) {
+            instance = new KeyboardStandardClass();
+        }
+    }
+    Singleton.getInstance = function () {
+        return instance || new Singleton();
+    }
+    return Singleton;
+}());
 new KeyboardStandard();

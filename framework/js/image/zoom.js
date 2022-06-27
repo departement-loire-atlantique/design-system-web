@@ -1,14 +1,25 @@
-class ImageZoom {
+class ImageZoomClass {
     constructor () {
+        Debug.log("ImageZoom -> Constructor");
         this.objects = [];
         this.zoom = 2;
         this.borderWidth = 3;
+    }
 
+    initialise() {
+        Debug.log("ImageZoom -> Initialise");
         document
-            .querySelectorAll('.ds44-imgLoupe')
-            .forEach((magnifyContainerElement) => {
-                this.create(magnifyContainerElement);
-            });
+          .querySelectorAll('.ds44-imgLoupe')
+          .forEach((magnifyContainerElement) => {
+              if(MiscComponent.checkAndCreate(magnifyContainerElement, "image-zoom")) {
+                  this.create(magnifyContainerElement);
+              }
+          });
+    }
+
+    clearObject() {
+        Debug.log("ImageZoom -> Clear object");
+        this.objects = [];
     }
 
     create (magnifyContainerElement) {
@@ -96,6 +107,19 @@ class ImageZoom {
         };
     }
 }
-
 // Singleton
+var ImageZoom = (function () {
+    "use strict";
+    var instance;
+    function Singleton() {
+        if (!instance) {
+            instance = new ImageZoomClass();
+        }
+        instance.initialise();
+    }
+    Singleton.getInstance = function () {
+        return instance || new Singleton();
+    }
+    return Singleton;
+}());
 new ImageZoom();

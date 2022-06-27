@@ -1,20 +1,32 @@
-class PageElement {
+class PageElementClass {
     constructor () {
+        Debug.log("PageElement -> Constructor");
         this.visibilityCounter = 0;
         this.objects = []
+    }
+
+    initialise() {
+        Debug.log("PageElement -> Initialise");
+        document
+          .querySelectorAll('footer, main')
+          .forEach((pageElement) => {
+              if(MiscComponent.checkAndCreate(pageElement, "page-element")) {
+                  this.create(pageElement);
+              }
+          });
 
         document
-            .querySelectorAll('footer, main')
-            .forEach((pageElement) => {
-                this.create(pageElement);
-            });
-        
-        document
-            .querySelectorAll('a[href^="#"]')
-            .forEach((link) => {
-                link.addEventListener("click", this.scrollToHyperlink);
-            });
+          .querySelectorAll('a[href^="#"]')
+          .forEach((link) => {
+              if(MiscComponent.checkAndCreate(link, "link-scroll")) {
+                  link.addEventListener("click", this.scrollToHyperlink);
+              }
+          });
+    }
 
+    clearObject() {
+        Debug.log("PageElement -> Clear object");
+        this.objects = [];
     }
 
     create (pageElement) {
@@ -68,6 +80,19 @@ class PageElement {
         }
     }
 }
-
 // Singleton
+var PageElement = (function () {
+    "use strict";
+    var instance;
+    function Singleton() {
+        if (!instance) {
+            instance = new PageElementClass();
+        }
+        instance.initialise();
+    }
+    Singleton.getInstance = function () {
+        return instance || new Singleton();
+    }
+    return Singleton;
+}());
 new PageElement();

@@ -1,25 +1,32 @@
-class FormLayoutObligationAlimentaire extends FormLayoutAbstract {
+class FormLayoutObligationAlimentaireClass extends FormLayoutAbstract {
     constructor () {
-        super('#ds44-js-soa-form');
+        super("FormLayoutObligationAlimentaire", '#ds44-js-soa-form');
+    }
 
+    initialise()
+    {
+        super.initialise();
         this.templateElement = document.querySelector('#ds44-js-soa-template');
         this.containerElement = document.querySelector('#ds44-js-soa-container');
         if (
-            !this.templateElement ||
-            !this.containerElement
+          !this.templateElement ||
+          !this.containerElement
         ) {
             return;
         }
 
-        this.add();
+        if(MiscComponent.checkAndCreate(this.containerElement, "form-soa"))
+        {
+            this.add();
 
-        const addElement = document.querySelector('#ds44-js-soa-add');
-        if (addElement) {
-            MiscEvent.addListener('click', this.add.bind(this), addElement);
-        }
-        const deleteElement = document.querySelector('#ds44-js-soa-delete');
-        if (deleteElement) {
-            MiscEvent.addListener('click', this.delete.bind(this), deleteElement);
+            const addElement = document.querySelector('#ds44-js-soa-add');
+            if (addElement) {
+                MiscEvent.addListener('click', this.add.bind(this), addElement);
+            }
+            const deleteElement = document.querySelector('#ds44-js-soa-delete');
+            if (deleteElement) {
+                MiscEvent.addListener('click', this.delete.bind(this), deleteElement);
+            }
         }
     }
 
@@ -146,6 +153,19 @@ class FormLayoutObligationAlimentaire extends FormLayoutAbstract {
         MiscAccessibility.setFocus(resultsElement.querySelector('section:first-child'));
     }
 }
-
 // Singleton
+var FormLayoutObligationAlimentaire = (function () {
+    "use strict";
+    var instance;
+    function Singleton() {
+        if (!instance) {
+            instance = new FormLayoutObligationAlimentaireClass();
+        }
+        instance.initialise();
+    }
+    Singleton.getInstance = function () {
+        return instance || new Singleton();
+    }
+    return Singleton;
+}());
 new FormLayoutObligationAlimentaire();

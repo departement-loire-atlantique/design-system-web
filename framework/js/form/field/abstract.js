@@ -1,30 +1,45 @@
 class FormFieldAbstract {
-    constructor (selector, category) {
+    constructor (className, selector, category) {
+        this.className = className;
+        this.selector = selector;
         this.category = category;
         this.objects = [];
         this.labelClassName = 'ds44-moveLabel';
         this.errorMessage = 'FIELD_MANDATORY_ERROR_MESSAGE';
 
-        if (typeof selector === 'object') {
-            // Elements passed as parameter, not text selector
-            selector
-                .forEach((element) => {
-                    this.create(element);
-                });
-        } else {
-            document
-                .querySelectorAll(selector)
-                .forEach((element) => {
-                    this.create(element);
-                });
-        }
-        this.initialize();
-        this.fill();
-
         MiscEvent.addListener('field:add', this.add.bind(this));
         MiscEvent.addListener('field:destroy', this.destroy.bind(this));
         MiscEvent.addListener('form:validate', this.validate.bind(this));
         MiscEvent.addListener('form:clear', this.clear.bind(this));
+    }
+
+    initialise()
+    {
+        Debug.log(this.className+" -> Initialise");
+        if (typeof this.selector === 'object') {
+            // Elements passed as parameter, not text selector
+            this.selector
+              .forEach((element) => {
+                  if(MiscComponent.checkAndCreate(element, "carousel")) {
+                      this.create(element);
+                  }
+              });
+        } else {
+            document
+              .querySelectorAll(this.selector)
+              .forEach((element) => {
+                  if(MiscComponent.checkAndCreate(element, "carousel")) {
+                      this.create(element);
+                  }
+              });
+        }
+        this.initialize();
+        this.fill();
+    }
+
+    clearObject() {
+        Debug.log(this.className+" -> Clear object");
+        this.objects = [];
     }
 
     create (element) {

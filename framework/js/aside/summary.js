@@ -1,5 +1,17 @@
-class AsideSummary {
+class AsideSummaryClass {
     constructor () {
+        Debug.log("AsideSummary -> Constructor");
+        this.menu = null;
+        this.borderTop = 20;
+        this.isMoving = false;
+        this.isGoingTo = false;
+        this.lastScrollTop = 0;
+        this.scrollDirection = 'down';
+        this.eventWindowListenerInit = false;
+    }
+
+    initialise()
+    {
         this.containerElement = document.querySelector('.ds44-js-aside-summary');
         if (!this.containerElement) {
             return;
@@ -8,40 +20,40 @@ class AsideSummary {
         if (!this.summaryElement) {
             return;
         }
+        Debug.log("AsideSummary -> Initialise");
 
-        this.menu = null;
-        this.borderTop = 20;
-        this.isMoving = false;
-        this.isGoingTo = false;
-        this.lastScrollTop = 0;
-        this.scrollDirection = 'down';
+        if(MiscComponent.checkAndCreate(this.containerElement, "aside-summary") &&
+          MiscComponent.checkAndCreate(this.summaryElement, "aside-summary")) {
+            this.menu = document.querySelector('#summaryMenu');
+            MiscAccessibility.hide(this.menu);
 
-        this.resize();
-
-        MiscEvent.addListener('scroll', this.scroll.bind(this), window);
-        MiscEvent.addListener('resize', this.resize.bind(this), window);
-        MiscEvent.addListener('load', this.resize.bind(this), window);
-        MiscEvent.addListener('keyUp:escape', this.hideMenu.bind(this));
-
-        this.menu = document.querySelector('#summaryMenu');
-        MiscAccessibility.hide(this.menu);
-        window.setTimeout(this.resize.bind(this), 1000);
-
-        const aElements = new Set([
-            ...this.summaryElement.querySelectorAll('.ds44-list--puces a'),
-            ...document.querySelectorAll('#summaryMenu .ds44-list--puces a')
-        ]);
-        aElements
-            .forEach((aElement) => {
-                MiscEvent.addListener('click', this.goTo.bind(this), aElement);
-            });
-        const showModalButtonElement = document.querySelector('#ds44-summary-button');
-        if (showModalButtonElement) {
-            MiscEvent.addListener('click', this.showMenu.bind(this), showModalButtonElement);
+            const aElements = new Set([
+                ...this.summaryElement.querySelectorAll('.ds44-list--puces a'),
+                ...document.querySelectorAll('#summaryMenu .ds44-list--puces a')
+            ]);
+            aElements
+              .forEach((aElement) => {
+                  MiscEvent.addListener('click', this.goTo.bind(this), aElement);
+              });
+            const showModalButtonElement = document.querySelector('#ds44-summary-button');
+            if (showModalButtonElement) {
+                MiscEvent.addListener('click', this.showMenu.bind(this), showModalButtonElement);
+            }
+            const hideModalButtonElement = document.querySelector('#summaryMenu .ds44-btnOverlay--closeOverlay');
+            if (hideModalButtonElement) {
+                MiscEvent.addListener('click', this.hideMenu.bind(this), hideModalButtonElement);
+            }
         }
-        const hideModalButtonElement = document.querySelector('#summaryMenu .ds44-btnOverlay--closeOverlay');
-        if (hideModalButtonElement) {
-            MiscEvent.addListener('click', this.hideMenu.bind(this), hideModalButtonElement);
+
+        if(!this.eventWindowListenerInit)
+        {
+            this.eventWindowListenerInit = true;
+            this.resize();
+            MiscEvent.addListener('scroll', this.scroll.bind(this), window);
+            MiscEvent.addListener('resize', this.resize.bind(this), window);
+            MiscEvent.addListener('load', this.resize.bind(this), window);
+            MiscEvent.addListener('keyUp:escape', this.hideMenu.bind(this));
+            window.setTimeout(this.resize.bind(this), 1000);
         }
     }
 
@@ -251,6 +263,20 @@ class AsideSummary {
         MiscEvent.dispatch('menu:hide');
     }
 }
-
 // Singleton
+var AsideSummary = (function () {
+    "use strict";
+    var instance;
+    function Singleton() {
+        if (!instance) {
+            instance = new AsideSummaryClass();
+        }
+        instance.initialise();
+    }
+    Singleton.getInstance = function () {
+        return instance || new Singleton();
+    }
+    return Singleton;
+}());
 new AsideSummary();
+

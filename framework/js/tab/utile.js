@@ -1,6 +1,6 @@
-class TabUtile extends TabAbstract {
+class TabUtileClass extends TabAbstract {
     constructor () {
-        super('.js-tabs.ds44-choiceYN');
+        super("TabUtile", '.js-tabs.ds44-choiceYN');
     }
 
     getDefaultTabHandle (containerElement) {
@@ -33,6 +33,19 @@ class TabUtile extends TabAbstract {
         }
     }
 }
-
 // Singleton
+var TabUtile = (function () {
+    "use strict";
+    var instance;
+    function Singleton() {
+        if (!instance) {
+            instance = new TabUtileClass();
+        }
+        instance.initialise();
+    }
+    Singleton.getInstance = function () {
+        return instance || new Singleton();
+    }
+    return Singleton;
+}());
 new TabUtile();

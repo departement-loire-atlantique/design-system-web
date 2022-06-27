@@ -1,14 +1,24 @@
-class Webcam {
+class WebcamClass {
   constructor () {
+    Debug.log("Webcam -> Constructor");
     this.objects = [];
+  }
+
+  initialise() {
+    Debug.log("Webcam -> Initialise");
     document.querySelectorAll('.ds44-webcam')
       .forEach((webcamElement) => {
         const webcamViewer = webcamElement.querySelector(".ds44-webcam-viewer");
-        if(webcamViewer)
+        if(webcamViewer && MiscComponent.checkAndCreate(webcamViewer, "webcam"))
         {
           this.create(webcamElement, webcamViewer);
         }
       });
+  }
+
+  clearObject() {
+    Debug.log("CollapserStandard -> Clear object");
+    this.objects = [];
   }
 
   create (webcamElement, webcamViewer) {
@@ -103,6 +113,19 @@ class Webcam {
 
 
 }
-
 // Singleton
+var Webcam = (function () {
+  "use strict";
+  var instance;
+  function Singleton() {
+    if (!instance) {
+      instance = new WebcamClass();
+    }
+    instance.initialise();
+  }
+  Singleton.getInstance = function () {
+    return instance || new Singleton();
+  }
+  return Singleton;
+}());
 new Webcam();

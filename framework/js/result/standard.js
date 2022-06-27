@@ -1,5 +1,6 @@
-class ResultStandard {
+class ResultStandardClass {
     constructor () {
+        Debug.log("ResultStandard -> Constructor");
         this.currentId = null;
         this.savedScrollTop = null;
         this.hasSearched = false;
@@ -9,12 +10,16 @@ class ResultStandard {
         MiscEvent.addListener('search:focus', this.resultFocus.bind(this));
         MiscEvent.addListener('search:blur', this.resultBlur.bind(this));
         MiscEvent.addListener('search:select', this.resultSelect.bind(this));
-        const listContainerElement = document.querySelector('.ds44-results .ds44-js-results-container .ds44-js-results-list');
-        if (listContainerElement) {
-            MiscEvent.addListener('click', this.showMore.bind(this), listContainerElement);
-        }
 
-        window.setTimeout(this.initialize.bind(this), 1000);
+    }
+
+    initialise() {
+        Debug.log("ResultStandard -> Initialise");
+        const listContainerElement = document.querySelector('.ds44-results .ds44-js-results-container .ds44-js-results-list');
+        if (listContainerElement && MiscComponent.checkAndCreate(listContainerElement, "result")) {
+            MiscEvent.addListener('click', this.showMore.bind(this), listContainerElement);
+            window.setTimeout(this.initialize.bind(this), 1000);
+        }
     }
 
     initialize () {
@@ -532,6 +537,19 @@ class ResultStandard {
         }
     }
 }
-
 // Singleton
+var ResultStandard = (function () {
+    "use strict";
+    var instance;
+    function Singleton() {
+        if (!instance) {
+            instance = new ResultStandardClass();
+        }
+        instance.initialise();
+    }
+    Singleton.getInstance = function () {
+        return instance || new Singleton();
+    }
+    return Singleton;
+}());
 new ResultStandard();

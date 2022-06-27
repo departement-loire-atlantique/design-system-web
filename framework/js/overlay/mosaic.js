@@ -1,4 +1,4 @@
-class OverlayMosaic extends OverlayAbstract {
+class OverlayMosaicClass extends OverlayAbstract {
     fill () {
         const sourceFigureElement = this.triggerElement;
         if (!sourceFigureElement) {
@@ -13,6 +13,19 @@ class OverlayMosaic extends OverlayAbstract {
         destinationFigureElement.innerHTML = sourceFigureElement.innerHTML;
     }
 }
-
 // Singleton
-new OverlayMosaic('[data-js="ds44-modal"][data-target="#overlay-mosaique"]');
+var OverlayMosaic = (function () {
+    "use strict";
+    var instance;
+    function Singleton() {
+        if (!instance) {
+            instance = new OverlayMosaicClass("OverlayMosaic", '[data-js="ds44-modal"][data-target="#overlay-mosaique"]');
+        }
+        instance.initialise();
+    }
+    Singleton.getInstance = function () {
+        return instance || new Singleton();
+    }
+    return Singleton;
+}());
+new OverlayMosaic();

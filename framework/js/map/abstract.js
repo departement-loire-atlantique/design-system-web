@@ -1,10 +1,8 @@
 class MapAbstract {
-    constructor (selector) {
-        const maps = document.querySelectorAll(selector);
-        if (maps.length === 0) {
-            return;
-        }
-
+    constructor (className, selector) {
+        this.selector = selector;
+        this.className = className;
+        Debug.log(this.className+" -> Construct ");
         this.objects = [];
         this.isMapLanguageLoaded = false;
         this.isMapLoaded = false;
@@ -14,10 +12,22 @@ class MapAbstract {
         this.geojsonFillsId = 'geojson-fills';
         this.geojsonLinesId = 'geojson-lines';
 
+        MiscEvent.addListener('search:focus', this.resultFocus.bind(this));
+        MiscEvent.addListener('search:blur', this.resultBlur.bind(this));
+    }
+
+    initialise() {
+        Debug.log(this.className+" -> Initialise ");
+        const maps = document.querySelectorAll(this.selector);
+        if (maps.length === 0) {
+            return;
+        }
         maps
-            .forEach((element) => {
-                this.create(element);
-            });
+          .forEach((element) => {
+              if(MiscComponent.checkAndCreate(element, "maps")) {
+                  this.create(element);
+              }
+          });
         this.initialize();
 
         this.submit = false;
@@ -26,7 +36,11 @@ class MapAbstract {
                 this.submit = true;
             }, el);
         });
+    }
 
+    clearObject() {
+        Debug.log(this.className+" -> Clear object");
+        this.objects = [];
     }
 
     create (element) {
@@ -52,8 +66,6 @@ class MapAbstract {
     }
 
     initialize () {
-        MiscEvent.addListener('search:focus', this.resultFocus.bind(this));
-        MiscEvent.addListener('search:blur', this.resultBlur.bind(this));
 
         for (let objectIndex = 0; objectIndex < this.objects.length; objectIndex++) {
             const object = this.objects[objectIndex];
@@ -255,7 +267,7 @@ class MapAbstract {
 		    // Select specific zone in geojson
         let geojsonCode = object.mapElement.getAttribute('data-geojson-code');
 
-        if(object.geojsonId !== undefined)
+        if(object.geojsonId !== undefined && object.geojsonId !== null)
         {
             geojsonCode = object.geojsonId ? object.geojsonId : "0";
             geojsonIds = [geojsonCode];

@@ -30,7 +30,7 @@ class CalendarStandard {
         } else if (this.options.selector) {
             this.calendarElement = document.querySelector(this.options.selector);
         }
-        if (!this.calendarElement) {
+        if (!this.calendarElement && !MiscComponent.checkAndCreate(this.calendarElement, "calendar")) {
             return;
         }
 
@@ -163,6 +163,7 @@ class CalendarStandard {
         if (datas.calendarData) {
             data.data = JSON.parse(datas.calendarData);
         }
+        Debug.log("Select Date Calendar");
         this.options.onSelect(data, evt.currentTarget);
         evt.currentTarget.classList.add('vanilla-calendar-date--selected');
     }

@@ -1,6 +1,7 @@
-class FormFieldInputFile extends FormFieldInputAbstract {
+class FormFieldInputFileClass extends FormFieldInputAbstract {
     constructor () {
         super(
+          "FormFieldInputFile",
             'input[type="file"]',
             'inputFile'
         );
@@ -308,6 +309,19 @@ class FormFieldInputFile extends FormFieldInputAbstract {
         return false;
     }
 }
-
 // Singleton
+var FormFieldInputFile = (function () {
+    "use strict";
+    var instance;
+    function Singleton() {
+        if (!instance) {
+            instance = new FormFieldInputFileClass();
+        }
+        instance.initialise();
+    }
+    Singleton.getInstance = function () {
+        return instance || new Singleton();
+    }
+    return Singleton;
+}());
 new FormFieldInputFile();

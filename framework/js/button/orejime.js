@@ -1,8 +1,12 @@
-class ButtonOrejime {
+class ButtonOrejimeClass {
     constructor () {
+        Debug.log("ButtonOrejime -> Constructor");
         this.isInitialized = false;
         this.nbTrial = 3;
+    }
 
+    initialise() {
+        Debug.log("ButtonOrejime -> Initialise");
         MiscEvent.addListener('load', this.initialize.bind(this), window);
     }
 
@@ -61,6 +65,19 @@ class ButtonOrejime {
         }
     }
 }
-
 // Singleton
+var ButtonOrejime = (function () {
+    "use strict";
+    var instance;
+    function Singleton() {
+        if (!instance) {
+            instance = new ButtonOrejimeClass();
+        }
+        instance.initialise();
+    }
+    Singleton.getInstance = function () {
+        return instance || new Singleton();
+    }
+    return Singleton;
+}());
 new ButtonOrejime();

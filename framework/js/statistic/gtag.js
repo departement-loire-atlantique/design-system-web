@@ -1,7 +1,8 @@
-class StatisticGtag {
+class StatisticGtagClass {
     constructor () {
+        Debug.log("StatisticGtag -> Constructor");
         MiscEvent.addListener('statistic:gtag:event', this.sendEvent.bind(this));
-        document.body.addEventListener('click', this.detectClick.bind(this), true);
+        document.addEventListener('click', this.detectClick.bind(this), true);
     }
 
     sendEvent (evt) {
@@ -104,6 +105,18 @@ class StatisticGtag {
         }
     }
 }
-
 // Singleton
+var StatisticGtag = (function () {
+    "use strict";
+    var instance;
+    function Singleton() {
+        if (!instance) {
+            instance = new StatisticGtagClass();
+        }
+    }
+    Singleton.getInstance = function () {
+        return instance || new Singleton();
+    }
+    return Singleton;
+}());
 new StatisticGtag();

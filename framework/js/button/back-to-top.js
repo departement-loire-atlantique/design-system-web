@@ -1,8 +1,17 @@
-class ButtonBackToTop {
+class ButtonBackToTopClass {
     constructor () {
+        Debug.log("ButtonBackToTop -> Constructor");
+    }
+
+    initialise() {
+        Debug.log("ButtonBackToTop -> Initialise");
+
         const backToTopElement = document.querySelector('#backToTop');
-        if (backToTopElement) {
-            MiscEvent.addListener('click', this.go.bind(this), backToTopElement);
+        if(backToTopElement && MiscComponent.checkAndCreate(backToTopElement, "button-to-top"))
+        {
+            if (backToTopElement) {
+                MiscEvent.addListener('click', this.go.bind(this), backToTopElement);
+            }
         }
     }
 
@@ -25,6 +34,19 @@ class ButtonBackToTop {
         }
     }
 }
-
 // Singleton
+var ButtonBackToTop = (function () {
+    "use strict";
+    var instance;
+    function Singleton() {
+        if (!instance) {
+            instance = new ButtonBackToTopClass();
+        }
+        instance.initialise();
+    }
+    Singleton.getInstance = function () {
+        return instance || new Singleton();
+    }
+    return Singleton;
+}());
 new ButtonBackToTop();

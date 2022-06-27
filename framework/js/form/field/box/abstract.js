@@ -1,6 +1,7 @@
 class FormFieldBoxAbstract extends FormFieldAbstract {
-    constructor (category) {
+    constructor (className, category) {
         super(
+          className,
             '.ds44-form__' + category + '_container',
             category
         );
@@ -29,8 +30,11 @@ class FormFieldBoxAbstract extends FormFieldAbstract {
                 continue;
             }
             object.isSubInitialized = true;
-
+            object.autoSubmit = false;
             object.inputElements.forEach((inputElement) => {
+                if(inputElement.dataset.autoSubmit !== undefined) {
+                    object.autoSubmit = true;
+                }
                 MiscEvent.addListener('click', this.toggleCheck.bind(this, objectIndex), inputElement);
             });
         }
@@ -71,6 +75,10 @@ class FormFieldBoxAbstract extends FormFieldAbstract {
             evt.preventDefault();
 
             return;
+        }
+
+        if(object.autoSubmit) {
+            MiscEvent.dispatch('submit', object.containerElement.closest("form"));
         }
 
         this.showNotEmpty(objectIndex);

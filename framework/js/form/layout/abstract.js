@@ -1,16 +1,29 @@
 class FormLayoutAbstract {
-    constructor (selector) {
+    constructor (className, selector) {
+        this.className = className;
+        this.selector = selector;
+        Debug.log(this.className+" -> Constructor");
         this.objects = [];
+    }
 
+    clearObject() {
+        Debug.log(this.className+" -> Clear object");
+        this.objects = [];
+    }
+
+    initialise()
+    {
+        Debug.log(this.className+" -> Initialise");
         document
-            .querySelectorAll(selector)
-            .forEach((formElement) => {
-                if (formElement.getAttribute('data-is-initialized') !== 'true') {
-                    this.create(formElement);
-                }
-            });
+          .querySelectorAll(this.selector)
+          .forEach((formElement) => {
+              if (formElement.getAttribute('data-is-initialized') !== 'true' && !MiscComponent.isInit(formElement, "form-layout")) {
+                  this.create(formElement);
+              }
+          });
         this.initialize();
     }
+
 
     create (formElement) {
         const object = {
@@ -35,12 +48,15 @@ class FormLayoutAbstract {
         // Initialize each object
         for (let objectIndex = 0; objectIndex < this.objects.length; objectIndex++) {
             const object = this.objects[objectIndex];
+            if(!MiscComponent.isInit(object.formElement, "form-layout"))
+            {
+                MiscComponent.create(object.formElement, "form-layout")
+                // Bind events
+                MiscEvent.addListener('submit', this.submit.bind(this, objectIndex), object.formElement);
+                MiscEvent.addListener('form:validation', this.validation.bind(this, objectIndex), object.formElement);
 
-            // Bind events
-            MiscEvent.addListener('submit', this.submit.bind(this, objectIndex), object.formElement);
-            MiscEvent.addListener('form:validation', this.validation.bind(this, objectIndex), object.formElement);
-
-            this.start(objectIndex);
+                this.start(objectIndex);
+            }
         }
     }
 
