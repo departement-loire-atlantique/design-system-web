@@ -20,7 +20,7 @@ class FormFieldAbstract {
             // Elements passed as parameter, not text selector
             this.selector
               .forEach((element) => {
-                  if(MiscComponent.checkAndCreate(element, "carousel")) {
+                  if(MiscComponent.checkAndCreate(element, this.category)) {
                       this.create(element);
                   }
               });
@@ -28,7 +28,7 @@ class FormFieldAbstract {
             document
               .querySelectorAll(this.selector)
               .forEach((element) => {
-                  if(MiscComponent.checkAndCreate(element, "carousel")) {
+                  if(MiscComponent.checkAndCreate(element, this.category)) {
                       this.create(element);
                   }
               });
