@@ -27,6 +27,12 @@
             cursor: pointer;
         }
     }
+    &.ds44-theme {
+          hr {
+            color: $ds44-gray;
+            background-color: $ds44-gray;
+          }
+  }
 }
 
 .ds44-box--push {
