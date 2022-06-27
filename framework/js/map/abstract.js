@@ -267,7 +267,7 @@ class MapAbstract {
 		    // Select specific zone in geojson
         let geojsonCode = object.mapElement.getAttribute('data-geojson-code');
 
-        if(object.geojsonId !== undefined)
+        if(object.geojsonId !== undefined && object.geojsonId !== null)
         {
             geojsonCode = object.geojsonId ? object.geojsonId : "0";
             geojsonIds = [geojsonCode];
