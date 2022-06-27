@@ -20,13 +20,17 @@ class FormFieldAbstract {
             // Elements passed as parameter, not text selector
             this.selector
               .forEach((element) => {
-                  this.create(element);
+                  if(MiscComponent.checkAndCreate(element, "carousel")) {
+                      this.create(element);
+                  }
               });
         } else {
             document
               .querySelectorAll(this.selector)
               .forEach((element) => {
-                  this.create(element);
+                  if(MiscComponent.checkAndCreate(element, "carousel")) {
+                      this.create(element);
+                  }
               });
         }
         this.initialize();
