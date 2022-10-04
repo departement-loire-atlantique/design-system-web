@@ -1,4 +1,4 @@
-var logView = false;
+var logView = true;
 class Debug  {
 
   /**

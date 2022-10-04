@@ -207,7 +207,14 @@ class FormLayoutAbstract {
             });
             const sortedData = {};
             for (let i = 0; i < sortedKeys.length; i++) {
-                sortedData[sortedKeys[i]] = formattedData[sortedKeys[i]];
+                if(object.formElement.dataset.noEncoding !== undefined && object.formElement.dataset.noEncoding)
+                {
+                    sortedData[sortedKeys[i]] = formattedData[sortedKeys[i]]["value"];
+                }
+                else
+                {
+                    sortedData[sortedKeys[i]] = formattedData[sortedKeys[i]];
+                }
             }
 
             // Save city and adresse in local storage
@@ -219,6 +226,7 @@ class FormLayoutAbstract {
                     delete fieldParameters[key];
                 }
             });
+
             window.sessionStorage.setItem('fields', JSON.stringify(fieldParameters));
 
             // Statistics
@@ -271,6 +279,7 @@ class FormLayoutAbstract {
                 object.formElement.appendChild(hiddenInputElement);
             }
 
+            // Affiche les valeurs
             this.recaptchaSubmit(objectIndex, sortedData);
         } catch (ex) {
             console.log(ex);
