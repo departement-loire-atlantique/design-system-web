@@ -163,6 +163,7 @@ class CalendarStandard {
         if (datas.calendarData) {
             data.data = JSON.parse(datas.calendarData);
         }
+        Debug.log("Select Date Calendar");
         this.options.onSelect(data, evt.currentTarget);
         evt.currentTarget.classList.add('vanilla-calendar-date--selected');
     }

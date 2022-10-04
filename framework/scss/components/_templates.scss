@@ -32,7 +32,7 @@
 .ds44-video-container {
     position: relative;
     width: 100%;
-    padding-bottom: 56.25%;
+    height:480px;
 
     .ds44-video-item {
         position: absolute;
@@ -489,6 +489,14 @@ main {
             left: 0;
             width: 100%;
         }
+    }
+
+    .ds44-btnStd-showLegend {
+        position: absolute;
+        top: 10px;
+        right: 10px;
+        display: block;
+        z-index: 5;
     }
 
     /* -------Resultats vide */

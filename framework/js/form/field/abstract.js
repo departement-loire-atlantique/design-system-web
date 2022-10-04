@@ -20,13 +20,17 @@ class FormFieldAbstract {
             // Elements passed as parameter, not text selector
             this.selector
               .forEach((element) => {
-                  this.create(element);
+                  if(MiscComponent.checkAndCreate(element, this.category)) {
+                      this.create(element);
+                  }
               });
         } else {
             document
               .querySelectorAll(this.selector)
               .forEach((element) => {
-                  this.create(element);
+                  if(MiscComponent.checkAndCreate(element, this.category)) {
+                      this.create(element);
+                  }
               });
         }
         this.initialize();
@@ -48,7 +52,7 @@ class FormFieldAbstract {
             'isSubInitialized': false,
             'isSubSubInitialized': false,
             'isFilled': false,
-            "titleDefault": element.getAttribute("title"),
+            "titleDefault": element.getAttribute("title") ? element.getAttribute("title") : "",
             'isRequired': (element.getAttribute('required') !== null || element.getAttribute('data-required') === 'true'),
             'isEnabled': !(element.getAttribute('readonly') !== null || element.getAttribute('disabled') !== null || element.getAttribute('data-disabled') === 'true')
         };
@@ -282,7 +286,7 @@ class FormFieldAbstract {
             }
         }
         else {
-            element.setAttribute('title', object.titleDefault);
+            element.setAttribute('title', object.titleDefault ? object.titleDefault : "");
         }
     }
 

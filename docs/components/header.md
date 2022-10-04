@@ -19,6 +19,9 @@ variations:
 - title: Variante Grand Patrimoine
   description: Header Grand Patrimoine - Chateau de Clisson
   pattern: header/header-chateauClisson.html
+- title: Variante Aidants
+  description: Header avec logo très large
+  pattern: header/header-aidants.html  
 ---
 
 ## Notes d'intégration

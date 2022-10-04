@@ -48,12 +48,32 @@ class ButtonOrejimeClass {
     showMore() {
         const modalWrapperElement = document.querySelector('.orejime-ModalWrapper');
         if(modalWrapperElement) {
+            MiscAccessibility.hide(modalWrapperElement);
+
             modalWrapperElement.setAttribute('aria-modal', 'true');
+            modalWrapperElement.removeAttribute('tabindex');
+            [].forEach.call(document.querySelectorAll("*[data-react-modal-body-trap]"), (el) => {
+                el.remove();
+            });
+
+            const closeButton = modalWrapperElement.querySelector('.orejime-CloseIcon');
+            MiscAccessibility.show(modalWrapperElement);
+            const firstField = modalWrapperElement.querySelector('input, button, textarea, a, select')
+            if (firstField) {
+                MiscAccessibility.setFocus(firstField);
+            } else {
+                MiscAccessibility.setFocus(closeButton);
+            }
+            MiscAccessibility.addFocusLoop(modalWrapperElement);
+
         }
     }
     show () {
         if (window.orejime) {
             window.orejime.show();
+            setTimeout(() => {
+                this.showMore();
+            }, 300);
         }
     }
     consentMedia() {
