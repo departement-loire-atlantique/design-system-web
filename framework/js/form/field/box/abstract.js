@@ -35,6 +35,7 @@ class FormFieldBoxAbstract extends FormFieldAbstract {
                 if(inputElement.dataset.autoSubmit !== undefined) {
                     object.autoSubmit = true;
                 }
+                this.toggleContainer(inputElement);
                 MiscEvent.addListener('click', this.toggleCheck.bind(this, objectIndex), inputElement);
             });
         }
@@ -80,6 +81,10 @@ class FormFieldBoxAbstract extends FormFieldAbstract {
         if(object.autoSubmit) {
             MiscEvent.dispatch('submit', {}, object.containerElement.closest("form"));
         }
+
+        object.inputElements.forEach((inputElement) => {
+            this.toggleContainer(inputElement);
+        });
 
         this.showNotEmpty(objectIndex);
     }

@@ -62,5 +62,39 @@ layout: pattern
 </form>
 
 
+<br><br><br>
+<p role="heading" aria-level="2" class="h3-like">Container Masqué avec un valeur</p>
+<br>
+<form>
+    <p>Les champs suivis d’un * sont obligatoires.</p>
+    <div class="ds44-mb3" >
+        {% include form/field/input/standard.html type="last-name" label="Pour afficher le container : Voir" id="nom-field" required="false" attributes='data-enabled-field-value="Voir"'%}
+    </div>
+    <div class="ds44-mb3" data-enabled-by-field="#nom-field">
+        {% include form/field/input/standard.html type="first-name" label="Prénom" required="true" %}
+    </div>
+    <div><input type="submit" class="ds44-btnStd" value="Tester les champs" /></div>
+</form>
+
+<br><br><br>
+<p role="heading" aria-level="2" class="h3-like">Container Masqué radio</p>
+<br>
+<form>
+    <p>Les champs suivis d’un * sont obligatoires.</p>
+    <div class="ds44-mb3" >
+        {% include form/layout/radios.html name="radio2" id="radio-field" choices="1:Voir Cadre 1,2:Voir Cadre 2,3:Rien" required="true" list="true" %}
+    </div>
+    <div class="ds44-mb3" data-enabled-by-field="#name-radio-radio-field-1">
+        {% include form/field/input/standard.html type="first-name" label="Valeur 1" required="true" %}
+    </div>
+    <div class="ds44-mb3" data-enabled-by-field="#name-radio-radio-field-2">
+        {% include form/field/input/standard.html type="first-name" label="Valuer 2" required="true" %}
+    </div>
+    <div><input type="submit" class="ds44-btnStd" value="Tester les champs" /></div>
+</form>
+
+
+
+
 
 <br><br><br><br>

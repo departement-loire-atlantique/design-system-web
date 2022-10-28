@@ -58,7 +58,7 @@ class FormFieldInputAbstract extends FormFieldAbstract {
         ) {
             return;
         }
-
+        this.toggleContainerByValue(objectIndex, object.element.value);
         this.showNotEmpty(objectIndex);
     }
 
