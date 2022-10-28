@@ -54,8 +54,13 @@ class FormFieldAbstract {
             'isFilled': false,
             "titleDefault": element.getAttribute("title") ? element.getAttribute("title") : "",
             'isRequired': (element.getAttribute('required') !== null || element.getAttribute('data-required') === 'true'),
-            'isEnabled': !(element.getAttribute('readonly') !== null || element.getAttribute('disabled') !== null || element.getAttribute('data-disabled') === 'true')
+            'isEnabled': !(element.getAttribute('readonly') !== null || element.getAttribute('disabled') !== null || element.getAttribute('data-disabled') === 'true'),
+            "enabledField": {
+                "value": element.getAttribute("data-enabled-field-value"),
+                "containerFields": element.getAttribute("data-enabled-field-value") ? document.querySelectorAll("*[data-enabled-by-field='#"+element.getAttribute("id")+"']") : null
+            },
         };
+
         object.position = this.getPosition(object.containerElement);
         element.removeAttribute('data-required');
         element.removeAttribute('data-disabled');
@@ -76,6 +81,9 @@ class FormFieldAbstract {
                 continue;
             }
             object.isInitialized = true;
+            if(!MiscComponent.isInit(object.element, "form-field")) {
+                MiscComponent.create(object.element, "form-field")
+            }
 
             this.addBackupAttributes(objectIndex);
 
@@ -96,6 +104,7 @@ class FormFieldAbstract {
             }
 
             this.changeTitle(objectIndex);
+            MiscEvent.addListener('field:reset', this.reset.bind(this, objectIndex), object.element);
             MiscEvent.addListener('field:enable', this.enable.bind(this, objectIndex), object.containerElement);
             MiscEvent.addListener('field:disable', this.disable.bind(this, objectIndex), object.containerElement);
             MiscEvent.addListener('field:' + object.name + ':set', this.set.bind(this, objectIndex));
@@ -221,6 +230,12 @@ class FormFieldAbstract {
     empty (objectIndex) {
         this.setData(objectIndex);
         this.showNotEmpty(objectIndex);
+        this.toggleContainerByValue(objectIndex, null);
+    }
+
+    reset (objectIndex) {
+        this.empty(objectIndex);
+        this.quit(objectIndex);
     }
 
     showNotEmpty (objectIndex) {
@@ -591,6 +606,28 @@ class FormFieldAbstract {
 
     checkFormat (objectIndex) {
         return true;
+    }
+
+    toggleContainerByValue(objectIndex, value = null) {
+        const object = this.objects[objectIndex];
+        if (!object) {
+            return;
+        }
+        if(object.enabledField.value && object.enabledField.containerFields.length > 0) {
+            object.enabledField.containerFields.forEach((containerField) => {
+                containerField.querySelectorAll("*[data-component-form-field-uuid]").forEach((field) => {
+                    if(object.enabledField.value === value) {
+                        MiscEvent.dispatch("field:enable", {}, field);
+                        containerField.classList.remove('hidden');
+                    }
+                    else {
+                        MiscEvent.dispatch("field:reset", {}, field);
+                        MiscEvent.dispatch("field:disable", {}, field);
+                        containerField.classList.add('hidden');
+                    }
+                })
+            });
+        }
     }
 
     isValid (objectIndex) {
