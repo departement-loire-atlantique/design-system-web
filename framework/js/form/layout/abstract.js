@@ -9,6 +9,7 @@ class FormLayoutAbstract {
     clearObject() {
         Debug.log(this.className+" -> Clear object");
         this.objects = [];
+        this.submitter = null;
     }
 
     initialise()
@@ -117,6 +118,9 @@ class FormLayoutAbstract {
         if (!object) {
             return false;
         }
+        if(evt.submitter) {
+            this.submitter = evt.submitter
+        }
 
         // We need to deactivate the submit button once clicked
         // If the form is incorrect, it shall be reactivated
@@ -200,6 +204,22 @@ class FormLayoutAbstract {
                     formattedData[hiddenInputName] = hiddenInputData;
                     dataPositionByKey[hiddenInputName] = 999;
                 });
+
+            if(this.submitter !== undefined && this.submitter !== null)
+            {
+                let submitKey = "submit";
+                if(this.submitter.dataset.submitKey !== undefined && this.submitter.dataset.submitKey)
+                {
+                    submitKey = this.submitter.dataset.submitKey
+                }
+                if(this.submitter.dataset.submitValue !== undefined && this.submitter.dataset.submitValue)
+                {
+                    formattedData[submitKey] = {
+                        "value" : this.submitter.dataset.submitValue
+                    };
+                    dataPositionByKey[submitKey] = 1010;
+                }
+            }
 
             // Sort formatted data
             const sortedKeys = Object.keys(dataPositionByKey).sort(function (a, b) {

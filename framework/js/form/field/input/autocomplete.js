@@ -89,6 +89,8 @@ class FormFieldInputAutoCompleteClass extends FormFieldInputAbstract {
                 .forEach((buttonElement) => {
                     MiscEvent.addListener('click', this.select.bind(this, objectIndex), buttonElement);
                 });
+
+            this.toggleContainerByValue(objectIndex, object.valueElement.value);
         }
     }
 
@@ -227,8 +229,16 @@ class FormFieldInputAutoCompleteClass extends FormFieldInputAbstract {
         if (url.includes('$parentValue')) {
             url = url.replace('$parentValue', object.parentValue);
         }
+        let query = encodeURIComponent(object.textElement.value);
+
+        if(object.textElement.hasAttribute('data-url-prefix'))
+        {
+            let prefix = object.textElement.getAttribute('data-url-prefix');
+            query = query + "" + prefix;
+        }
+
         MiscRequest.send(
-            url + (url.includes('?') ? '&' : '?') + 'q=' + encodeURIComponent(object.textElement.value),
+          url = url + (url.includes('?') ? '&' : '?') + 'q=' + query,
             this.autoCompleteSuccess.bind(this, objectIndex),
             this.autoCompleteError.bind(this, objectIndex)
         );
@@ -289,6 +299,7 @@ class FormFieldInputAutoCompleteClass extends FormFieldInputAbstract {
                 } else {
                     elementAutoCompleterListItem.setAttribute('data-value', (results[key].id || key));
                 }
+                    elementAutoCompleterListItem.setAttribute('data-key', key);
                 elementAutoCompleterListItem.setAttribute('data-metadata', (results[key].metadata ? JSON.stringify(results[key].metadata) : null));
                 elementAutoCompleterListItem.setAttribute('tabindex', '0');
                 elementAutoCompleterListItem.innerHTML = this.highlightSearch(results[key].value, object.textElement.value);
@@ -532,6 +543,7 @@ class FormFieldInputAutoCompleteClass extends FormFieldInputAbstract {
         currentItem.setAttribute('id', 'selected_option_' + object.id);
         object.textElement.setAttribute('aria-activedescendant', 'selected_option_' + object.id);
 
+        this.toggleContainerByValue(objectIndex, currentItem.getAttribute('data-value'))
         if (this[currentItem.getAttribute('data-value')]) {
             // Call corresponding function
             this[currentItem.getAttribute('data-value')](objectIndex, currentItem);
@@ -569,7 +581,6 @@ class FormFieldInputAutoCompleteClass extends FormFieldInputAbstract {
 
         if (navigator.geolocation) {
             navigator.geolocation.getCurrentPosition(this.aroundMeSuccess.bind(this, objectIndex, currentItem));
-
             return;
         }
 

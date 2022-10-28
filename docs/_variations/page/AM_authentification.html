@@ -28,7 +28,7 @@ layout: pattern
               <div class="grid-12-small-1">
 
                   <div class="col-5-small-1">
-                      <form>
+                      <form method="GET">
                           <h2 class="h4-like ds44-mb-std">J’ai déjà un compte</h2>
                           <p>Cet espace est réservé aux assistantes et assistants maternel agréés par le Département.</p>
                           <p>Si vous avez oublié votre identifiant (choisi au moment de votre insription), essayez avec votre numéro de dossier d'agrément présent sur votre attestation.</p>
@@ -41,7 +41,7 @@ layout: pattern
                           <div>
                               {% include form/layout/checkboxes.html choices="connect:Rester connecté" %}
                           </div>
-                          <button class="ds44-btnStd ds44-btn--invert ds44-bntALeft ds44-mtb1" title="Se connecter à votre compte">
+                          <button class="ds44-btnStd ds44-btn--invert ds44-bntALeft ds44-mtb1" data-submit-value="submitValue" data-submit-key="submitKey" title="Se connecter à votre compte">
                               <span class="ds44-btnInnerText">Se connecter</span><i class="icon icon-long-arrow-right" aria-hidden="true"></i>
                           </button>
                           <p class="ds44-noMrg"><a href="#">Mot de passe oublié ?</a></p>

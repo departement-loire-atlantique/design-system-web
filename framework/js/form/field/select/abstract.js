@@ -46,6 +46,10 @@ class FormFieldSelectAbstract extends FormFieldAbstract {
             }
             object.isSubInitialized = true;
 
+            if(!MiscComponent.isInit(object.element, "form-field")) {
+                MiscComponent.create(object.element, "form-field")
+            }
+
             MiscEvent.addListener('keyUp:escape', this.escape.bind(this, objectIndex));
             MiscEvent.addListener('keyUp:arrowup', this.previousOption.bind(this, objectIndex));
             MiscEvent.addListener('keyUp:arrowdown', this.nextOption.bind(this, objectIndex));
@@ -138,7 +142,6 @@ class FormFieldSelectAbstract extends FormFieldAbstract {
             evt.stopPropagation();
             evt.preventDefault();
         }
-
         this.empty(objectIndex);
         this.focusOnButtonElement(objectIndex);
         this.autoSubmit(objectIndex);
