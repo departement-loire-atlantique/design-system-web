@@ -11,11 +11,15 @@ class FormFieldInputDatepickerClass extends FormFieldInputAbstract {
     create (element) {
         super.create(element);
 
-        // Create corresponding hidden input to store the value
-        let valueElement = document.createElement('input');
-        valueElement.classList.add('ds44-input-value');
-        valueElement.setAttribute('type', 'hidden');
-        element.parentNode.insertBefore(valueElement, element);
+        let valueElement = element.parentNode.querySelector(".ds44-input-value");
+        if(!valueElement)
+        {
+            // Create corresponding hidden input to store the value
+            valueElement = document.createElement('input');
+            valueElement.classList.add('ds44-input-value');
+            valueElement.setAttribute('type', 'hidden');
+            element.parentNode.insertBefore(valueElement, element);
+        }
 
         const objectIndex = (this.objects.length - 1);
         const object = this.objects[objectIndex];
@@ -76,6 +80,7 @@ class FormFieldInputDatepickerClass extends FormFieldInputAbstract {
 
     reset (objectIndex) {
         const object = this.objects[objectIndex];
+        Debug.log("Reset Date");
         if (object) {
             object.inputElements[0].value = null;
             object.inputElements[1].value = null;
@@ -100,6 +105,7 @@ class FormFieldInputDatepickerClass extends FormFieldInputAbstract {
 
     disableElements (objectIndex, evt) {
         const object = this.objects[objectIndex];
+        Debug.log("Disable Date");
         if (object) {
             object.inputElements[0].value = null;
             object.inputElements[1].value = null;
@@ -452,6 +458,10 @@ class FormFieldInputDatepickerClass extends FormFieldInputAbstract {
         object.inputElements[0].value = (selectedData.getDate() + '').padStart(2, '0');
         object.inputElements[1].value = ((selectedData.getMonth() + 1) + '').padStart(2, '0');
         object.inputElements[2].value = (selectedData.getFullYear() + '').padStart(2, '0');
+
+        Debug.log("Day : "+object.inputElements[0].value);
+        Debug.log("Month : "+object.inputElements[1].value);
+        Debug.log("Year : "+object.inputElements[2].value);
     }
 
     getErrorMessage (objectIndex) {

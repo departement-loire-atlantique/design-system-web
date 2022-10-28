@@ -235,6 +235,22 @@
     }
 }
 
+.orejimeBody-WithModalOpen {
+    /* Orejime */
+    #orejime {
+        height: 100%;
+        width: 100%;
+        .orejime-ModalPortal {
+            height: 100%;
+            width: 100%;
+            position: fixed;
+            z-index: 100;
+            left: 0;
+            top: 0;
+        }
+    }
+}
+
 /* Orejime */
 #orejime {
     position: fixed;
