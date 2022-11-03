@@ -50,5 +50,12 @@ layout: pattern
 
 <hr />
 
+<p role="heading" aria-level="2" class="h3-like">Champ de mot de passe avec confirmation</p>
+
+{% include form/field/input/standard.html label="Mot de passe" type="password" showPassword="true" explanation="Info complémentaire" required="true" %}
+{% include form/field/input/standard.html label="Confirmation du mot de passe" type="password" showPassword="true" required="true" %}
+
+<hr />
+
 <p role="heading" aria-level="2" class="h3-like">Message de validation de formulaire (à positionner au dessus du form)</p>
 {% include form/layout/valid-form.html %}
