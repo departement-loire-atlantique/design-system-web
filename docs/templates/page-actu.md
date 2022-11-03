@@ -35,6 +35,9 @@ variations:
 - title: Page type Vidéo
   pattern: page/LA__video.html
 
+- title: Page Fiche Assmat
+  pattern: page/AM__fiche-assmat.html
+
 - title: Template centré
   pattern: templates/template-generique-centre.html
 ---

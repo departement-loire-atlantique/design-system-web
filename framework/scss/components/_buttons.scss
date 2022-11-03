@@ -75,6 +75,11 @@ button, a.ds44-btnStd, a > .ds44-btnStd, .ds44-btnStd > a, .ds44-btnIcoText--max
         padding: $ds44-padding-large;
         right: 7rem;
         transition: bottom 0s;
+
+        &.ds44-btnLeft {
+            left: 2rem;
+            right: auto;
+        }
     }
 
     &.ds44-theme {
@@ -413,6 +418,18 @@ a.ds44-btnStd--retourPage {
     position: absolute;
     top: 20px;
     left: 20px;
+    max-width: 14%;
+    text-align: center;
+    z-index:10;
+}
+
+// Bouton page suivante
+
+.ds44-btnStd--nextPage,
+a.ds44-btnStd--nextPage {
+    position: absolute;
+    top: 20px;
+    right: 20px;
     max-width: 14%;
     text-align: center;
     z-index:10;
