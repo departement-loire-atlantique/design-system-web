@@ -55,16 +55,11 @@ class FormFieldAbstract {
             "titleDefault": element.getAttribute("title") ? element.getAttribute("title") : "",
             'isRequired': (element.getAttribute('required') !== null || element.getAttribute('data-required') === 'true'),
             'isEnabled': !(element.getAttribute('readonly') !== null || element.getAttribute('disabled') !== null || element.getAttribute('data-disabled') === 'true'),
-            "enabledField": {
-                "value": element.getAttribute("data-enabled-field-value"),
-                "containerFields": element.getAttribute("data-enabled-field-value") ? document.querySelectorAll("*[data-enabled-by-field='#"+element.getAttribute("id")+"']") : null
-            },
         };
 
         object.position = this.getPosition(object.containerElement);
         element.removeAttribute('data-required');
         element.removeAttribute('data-disabled');
-
         const valuesAllowed = element.getAttribute('data-values');
         if (valuesAllowed) {
             object.valuesAllowed = JSON.parse(valuesAllowed);
@@ -84,6 +79,8 @@ class FormFieldAbstract {
             if(!MiscComponent.isInit(object.element, "form-field")) {
                 MiscComponent.create(object.element, "form-field")
             }
+
+            this.toggleContainerByValue(objectIndex, object.element.value);
 
             this.addBackupAttributes(objectIndex);
 
@@ -613,19 +610,54 @@ class FormFieldAbstract {
         if (!object) {
             return;
         }
-        if(object.enabledField.value && object.enabledField.containerFields.length > 0) {
-            object.enabledField.containerFields.forEach((containerField) => {
-                containerField.querySelectorAll("*[data-component-form-field-uuid]").forEach((field) => {
-                    if(object.enabledField.value === value) {
-                        MiscEvent.dispatch("field:enable", {}, field);
+        this.toggleContainer(object.element, value);
+    }
+
+    toggleContainer(field, value = null)
+    {
+        let valueEnabled = field.getAttribute("data-enabled-field-value");
+        let containerFields = document.querySelectorAll("*[data-enabled-by-field='#"+field.getAttribute("id")+"']");
+
+        let valueIsEqual = false;
+        if(containerFields.length > 0) {
+
+            if(field.tagName === "INPUT" && (field.type === "radio" || field.type === "checkbox"))
+            {
+                valueIsEqual = field.checked;
+            }
+            else
+            {
+                valueIsEqual = valueEnabled === value;
+            }
+
+            containerFields.forEach((containerField) => {
+                let condition = containerField.hasAttribute("data-enabled-field-condition") ?
+                  containerField.getAttribute("data-enabled-field-condition") :
+                  "equal";
+                let viewElement = condition === "diff" ? !valueIsEqual : valueIsEqual;
+                if(containerField.querySelectorAll("*[data-component-form-field-uuid]").length > 0)
+                {
+                    containerField.querySelectorAll("*[data-component-form-field-uuid]").forEach((field) => {
+                        if(viewElement) {
+                            MiscEvent.dispatch("field:enable", {}, field);
+                            containerField.classList.remove('hidden');
+                        }
+                        else {
+                            MiscEvent.dispatch("field:reset", {}, field);
+                            MiscEvent.dispatch("field:disable", {}, field);
+                            containerField.classList.add('hidden');
+                        }
+                    })
+                }
+                else
+                {
+                    if(viewElement) {
                         containerField.classList.remove('hidden');
                     }
                     else {
-                        MiscEvent.dispatch("field:reset", {}, field);
-                        MiscEvent.dispatch("field:disable", {}, field);
                         containerField.classList.add('hidden');
                     }
-                })
+                }
             });
         }
     }
