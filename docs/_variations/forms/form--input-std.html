@@ -52,8 +52,8 @@ layout: pattern
 
 <p role="heading" aria-level="2" class="h3-like">Champ de mot de passe avec confirmation</p>
 
-{% include form/field/input/standard.html label="Mot de passe" type="password" showPassword="true" explanation="Info complémentaire" required="true" %}
-{% include form/field/input/standard.html label="Confirmation du mot de passe" type="password" showPassword="true" required="true" %}
+{% include form/field/input/standard.html id="password" label="Mot de passe" type="password" showPassword="true" explanation="Info complémentaire" required="true" %}
+{% include form/field/input/standard.html id="password_verif" attributes='data-field-compare="#password"' label="Confirmation du mot de passe" type="password" showPassword="true" required="true" %}
 
 <hr />
 
