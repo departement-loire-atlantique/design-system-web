@@ -537,6 +537,7 @@ class FormFieldAbstract {
 
         let isValid = true;
         let data = {};
+
         for (let objectIndex = 0; objectIndex < this.objects.length; objectIndex++) {
             const object = this.objects[objectIndex];
 
