@@ -33,42 +33,51 @@ class ResultStandardClass {
     }
 
     fillCard (evt) {
-        evt.stopPropagation();
-        evt.preventDefault();
 
-        const cardContainerElement = document.querySelector('.ds44-results .ds44-js-results-container .ds44-js-results-card');
-        if (!cardContainerElement) {
-            return;
+        let viewCard = true;
+        if(evt.target.tagName === "A" && evt.target.getAttribute("href") && evt.target.closest(".ds44-card") && !evt.target.classList.contains("ds44-card__globalLink"))
+        {
+            viewCard = false;
         }
+        if(viewCard)
+        {
+            evt.stopPropagation();
+            evt.preventDefault();
 
-        let scrollTopElement = (document.documentElement || document.body);
-        if (cardContainerElement.closest('.ds44-results--mapVisible')) {
-            scrollTopElement = cardContainerElement.closest('.ds44-innerBoxContainer');
-        }
-        this.savedScrollTop = scrollTopElement.scrollTop;
-        scrollTopElement.scrollTo({ 'top': 0 });
-
-        this.currentId = evt.currentTarget.getAttribute('data-id');
-        var sendRequest = true;
-        var currentResult = null;
-        if (this.results.hasOwnProperty(this.currentId)) {
-            currentResult = this.results[this.currentId];
-            if(currentResult.metadata.url === undefined && currentResult.metadata.content_html) {
-                sendRequest = false;
+            const cardContainerElement = document.querySelector('.ds44-results .ds44-js-results-container .ds44-js-results-card');
+            if (!cardContainerElement) {
+                return;
             }
-        }
 
-        MiscEvent.dispatch('loader:requestShow', {"currentResult": currentResult});
-        if(sendRequest) {
-            const url = cardContainerElement.getAttribute('data-url');
-            MiscRequest.send(
-                url + (url.includes('?') ? '&' : '?') + 'q=' + encodeURIComponent(this.currentId),
-                this.fillCardSuccess.bind(this),
-                this.fillCardError.bind(this)
-            );
-        }
-        else if(currentResult && currentResult.metadata.url === undefined && currentResult.metadata.content_html) {
-            this.fillCardSuccess({"content_html": currentResult.metadata.content_html});
+            let scrollTopElement = (document.documentElement || document.body);
+            if (cardContainerElement.closest('.ds44-results--mapVisible')) {
+                scrollTopElement = cardContainerElement.closest('.ds44-innerBoxContainer');
+            }
+            this.savedScrollTop = scrollTopElement.scrollTop;
+            scrollTopElement.scrollTo({ 'top': 0 });
+
+            this.currentId = evt.currentTarget.getAttribute('data-id');
+            var sendRequest = true;
+            var currentResult = null;
+            if (this.results.hasOwnProperty(this.currentId)) {
+                currentResult = this.results[this.currentId];
+                if(currentResult.metadata.url === undefined && currentResult.metadata.content_html) {
+                    sendRequest = false;
+                }
+            }
+
+            MiscEvent.dispatch('loader:requestShow', {"currentResult": currentResult});
+            if(sendRequest) {
+                const url = cardContainerElement.getAttribute('data-url');
+                MiscRequest.send(
+                  url + (url.includes('?') ? '&' : '?') + 'q=' + encodeURIComponent(this.currentId),
+                  this.fillCardSuccess.bind(this),
+                  this.fillCardError.bind(this)
+                );
+            }
+            else if(currentResult && currentResult.metadata.url === undefined && currentResult.metadata.content_html) {
+                this.fillCardSuccess({"content_html": currentResult.metadata.content_html});
+            }
         }
     }
 
@@ -129,6 +138,7 @@ class ResultStandardClass {
     }
 
     showCard () {
+
         const containerElement = document.querySelector('.ds44-results .ds44-js-results-container');
         if (!containerElement) {
             return;
@@ -342,7 +352,6 @@ class ResultStandardClass {
             const listItemElement = document.createElement('li');
             listItemElement.setAttribute('id', 'search-result-' + result.id);
             listItemElement.setAttribute('data-id', result.id);
-
 
             this.results[result.id] = result;
             if(result.snm !== undefined) {
