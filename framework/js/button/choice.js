@@ -50,6 +50,7 @@ class ButtonChoiceClass {
         if(buttonElement.hasAttribute("data-inputs-disabled")) {
             element.querySelectorAll("input, select").forEach((field) => {
                 field.removeAttribute('disabled');
+                MiscEvent.dispatch("field:enable", {}, field);
             });
         }
     }
@@ -59,6 +60,8 @@ class ButtonChoiceClass {
         if(buttonElement.hasAttribute("data-inputs-disabled")) {
             element.querySelectorAll("input, select").forEach((field) => {
                 field.setAttribute('disabled', true);
+                MiscEvent.dispatch("field:reset", {}, field);
+                MiscEvent.dispatch("field:disable", {}, field);
             });
         }
     }
