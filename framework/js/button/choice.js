@@ -16,6 +16,9 @@ class ButtonChoiceClass {
     }
 
     showMore (evt) {
+        evt.stopPropagation();
+        evt.preventDefault();
+
         const buttonElement = evt.currentTarget;
         const viewElements = document.querySelectorAll(buttonElement.dataset.choiceElementView);
         if (!viewElements) {
@@ -35,6 +38,7 @@ class ButtonChoiceClass {
                 });
             });
         }
+        return false;
     }
 }
 // Singleton
