@@ -11,6 +11,12 @@ class ButtonChoiceClass {
               if(MiscComponent.checkAndCreate(buttonElement, "button-choice"))
               {
                   MiscEvent.addListener('click', this.showMore.bind(this), buttonElement);
+                  const viewElements = document.querySelectorAll(buttonElement.dataset.choiceElementView);
+                  viewElements.forEach((viewElement) => {
+                      if(viewElement.classList.contains("hidden")) {
+                          this.hideElement(buttonElement, viewElement);
+                      }
+                  });
               }
           });
     }
@@ -25,21 +31,39 @@ class ButtonChoiceClass {
             return;
         }
 
-        viewElements
-            .forEach((viewElement) => {
-                viewElement.classList.remove('hidden');
-            });
+        viewElements.forEach((viewElement) => {
+            this.showElement(buttonElement, viewElement);
+        });
         if(buttonElement.dataset.choiceElementHide) {
             [].forEach.call(buttonElement.dataset.choiceElementHide.split(","), (selector) => {
-                console.log(selector.trim());
                 let hiddenElements = document.querySelectorAll(selector.trim());
                 hiddenElements.forEach((hiddenElement) => {
-                    hiddenElement.classList.add('hidden');
+                    this.hideElement(buttonElement, hiddenElement);
                 });
             });
         }
         return false;
     }
+
+    showElement(buttonElement, element) {
+        element.classList.remove('hidden');
+        if(buttonElement.hasAttribute("data-inputs-disabled")) {
+            element.querySelectorAll("input, select").forEach((field) => {
+                field.removeAttribute('disabled');
+            });
+        }
+    }
+
+    hideElement(buttonElement, element) {
+        element.classList.add('hidden');
+        if(buttonElement.hasAttribute("data-inputs-disabled")) {
+            element.querySelectorAll("input, select").forEach((field) => {
+                field.setAttribute('disabled', true);
+            });
+        }
+    }
+
+
 }
 // Singleton
 var ButtonChoice = (function () {
