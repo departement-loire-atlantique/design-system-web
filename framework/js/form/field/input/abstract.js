@@ -89,7 +89,6 @@ class FormFieldInputAbstract extends FormFieldAbstract {
         }
 
         if(object.fieldCompare) {
-            console.log('ici');
             if(object.fieldCompare.element.value !== null && object.fieldCompare.element.value !== object.element.value) {
                 object.fieldCompare.error = true;
                 this.invalid(objectIndex);
@@ -113,10 +112,13 @@ class FormFieldInputAbstract extends FormFieldAbstract {
         this.showHideResetButton(objectIndex);
     }
 
-    reset (objectIndex) {
+    reset (objectIndex, evt) {
         this.empty(objectIndex);
 
-        this.focusOnTextElement(objectIndex);
+        if(evt.detail.focus === undefined || evt.detail.focus !== false)
+        {
+            this.focusOnTextElement(objectIndex);
+        }
     }
 
     enableElements (objectIndex, evt) {

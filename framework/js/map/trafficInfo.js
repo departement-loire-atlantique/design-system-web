@@ -1,7 +1,6 @@
 class InfoTrafficClass extends MapAbstract {
     constructor () {
         super("InfoTraffic", '.ds44-js-map.info-traffic');
-        // SI Url not found and content_html affiché le content html
     }
 
     create (element) {
