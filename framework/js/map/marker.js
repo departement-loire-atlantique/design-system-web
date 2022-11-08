@@ -154,15 +154,52 @@ class MapMarkerClass extends MapAbstract {
 
         // Add cluster
         if (!object.map.getLayer('cluster-background')) {
+
+
+            let paintCluster = {
+                'circle-color': '#99e6d1',
+                'circle-radius': 20
+            }
+            if(object.mapElement.getAttribute('data-cluster-theme') && object.mapElement.getAttribute('data-cluster-theme') === "theme-2")
+            {
+                paintCluster = {
+                    'circle-color': [
+                        'step',
+                        ['get', 'point_count'],
+                        '#fff',
+                        10,
+                        '#fff',
+                    ],
+                    'circle-stroke-color': [
+                        'step',
+                        ['get', 'point_count'],
+                        '#000',
+                        10,
+                        '#000',
+                    ],
+                    'circle-stroke-width': [
+                        'step',
+                        ['get', 'point_count'],
+                        1,
+                        10,
+                        1,
+                    ],
+                    'circle-radius': [
+                        'step',
+                        ['get', 'point_count'],
+                        20,
+                        10,
+                        25,
+                    ]
+                }
+            }
+
             object.map.addLayer({
                 id: 'cluster-background',
                 type: 'circle',
                 source: 'places',
                 filter: ['has', 'point_count'],
-                paint: {
-                    'circle-color': '#99e6d1',
-                    'circle-radius': 20
-                }
+                paint: paintCluster
             });
             object.map.on('click', 'cluster-background', (evt) => {
                 const features = object.map.queryRenderedFeatures(evt.point, {

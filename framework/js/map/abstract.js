@@ -19,6 +19,7 @@ class MapAbstract {
     initialise() {
         Debug.log(this.className+" -> Initialise ");
         const maps = document.querySelectorAll(this.selector);
+
         if (maps.length === 0) {
             return;
         }
