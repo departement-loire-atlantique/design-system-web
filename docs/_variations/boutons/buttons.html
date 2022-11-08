@@ -23,11 +23,12 @@ layout: pattern
 
 <hr />
 
-<button class="ds44-btnStd ds44-bgGray ds44-js-choice-button" data-choice-element-view=".choice-1" data-choice-element-hide=".choice-2, .choice-3"><span class="ds44-btnInnerText">Choix 1</span></button>
+<button class="ds44-btnStd ds44-bgGray ds44-js-choice-button" data-choice-element-view=".choice-1" data-inputs-disabled="" data-choice-element-hide=".choice-2, .choice-3"><span class="ds44-btnInnerText">Choix 1</span></button>
 <button class="ds44-btnStd ds44-bgGray ds44-js-choice-button" data-choice-element-view=".choice-2" data-choice-element-hide=".choice-1, .choice-3"><span class="ds44-btnInnerText">Choix 2</span></button>
 <button class="ds44-btnStd ds44-bgGray ds44-js-choice-button" data-choice-element-view=".choice-3" data-choice-element-hide=".choice-1, .choice-2"><span class="ds44-btnInnerText">Choix 3</span></button>
 <div class="choice-1 hidden">
-    Choix 1 ouvert
+    {% include form/layout/checkboxes.html choices="m:Homme,f:Femme" required="true" list="true" %}
+    {% include form/field/input/standard.html label="Champ standard" required="true" %}
 </div>
 <div class="choice-2 hidden">
     Choix 2 ouvert
