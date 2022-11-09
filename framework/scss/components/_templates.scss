@@ -366,6 +366,10 @@ main {
     display: block;
     position: relative;
 
+    .ds44-js-html-result {
+        margin: 0 1.5rem;
+    }
+
     .ds44-listResults {
         width: 100%;
         transition: width $ds44-timing-x2 $ds44-transition-std;
