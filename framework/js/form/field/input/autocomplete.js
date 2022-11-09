@@ -579,18 +579,14 @@ class FormFieldInputAutoCompleteClass extends FormFieldInputAbstract {
             currentItem = null;
         }
 
-        evt.stopPropagation();
-        evt.preventDefault();
-
         if (navigator.geolocation) {
             navigator.geolocation.getCurrentPosition(this.aroundMeSuccess.bind(this, objectIndex, currentItem));
-            return false;
         }
 
         if (currentItem) {
             this.selectRecord(objectIndex, currentItem);
         }
-        return false;
+        return;
     }
 
     aroundMeSuccess (objectIndex, currentItem, position) {
