@@ -272,6 +272,7 @@ class FormLayoutSearchClass extends FormLayoutAbstract {
             'pageIndex': response['page-index'] || 1,
             'nbResultsPerPage': response['nb-result-per-page'] || response['max-result'],
             'nbResults': response['nb-result'],
+            'nbResultHtml': response['html-nb-result'] !== undefined ? response["html-nb-result"] : null,
             'maxNbResults': response['max-result'],
             'results': results,
             'geojsonId' : response.hasOwnProperty("geojsonId") ? response['geojsonId'] : null,

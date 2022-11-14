@@ -291,27 +291,42 @@ class ResultStandardClass {
         let siteName = document.body.dataset.sitename !== undefined ? document.body.dataset.sitename : "Loire-atlantique.fr"
         // Sinon, changer le nom de page pour afficher le nb de résultats
         if (!evt.detail.nbResults) {
-          let titleElementHtml = MiscTranslate._('NO_RESULTS_FOR_SEARCH:') + ' ' + evt.detail.searchText + '.<br>' + MiscTranslate._('NO_RESULTS_NEW_SEARCH') + '.';
-          titleElement.innerHTML = titleElementHtml;
-          if (!elemCancellingRename) {
-            document.title = titleElementHtml + ' - '+siteName;
-            titleElement.setAttribute('tabindex', '-1');
-            focusElement = titleElement;
-          }
+            let titleElementHtml = MiscTranslate._('NO_RESULTS_FOR_SEARCH:') + ' ' + evt.detail.searchText + '.<br>' + MiscTranslate._('NO_RESULTS_NEW_SEARCH') + '.';
+            titleElement.innerHTML = titleElementHtml;
+            if (!elemCancellingRename) {
+                document.title = titleElementHtml + ' - '+siteName;
+                titleElement.setAttribute('tabindex', '-1');
+                focusElement = titleElement;
+            }
         } else {
-          let titleElementHtml = evt.detail.nbResults;
-          if (evt.detail.nbResults > 1) {
-            titleElementHtml += ' ' + MiscTranslate._('RESULTS');
-          } else {
-            titleElementHtml += ' ' + MiscTranslate._('RESULT');
-          }
-          let accessibleSentence = MiscTranslate._('NB_RESULTS_FOR_SEARCH:') + ' ' + (evt.detail.searchText === '' ? MiscTranslate._('EMPTY_SEARCH_CRITERIA') : evt.detail.searchText);
-          titleElement.innerHTML = titleElementHtml + ' <p class="visually-hidden" tabindex="-1">&nbsp;' + accessibleSentence + '</p>';
-          if (!elemCancellingRename) {
-            document.title = titleElementHtml + ' ' + accessibleSentence + ' - '+siteName;
-            titleElement.removeAttribute('tabindex');
-            focusElement = titleElement.querySelector('.visually-hidden');
-          }
+            let titleElementHtml = evt.detail.nbResults;
+            if (evt.detail.nbResults > 1) {
+                titleElementHtml += ' ' + MiscTranslate._('RESULTS');
+            } else {
+                titleElementHtml += ' ' + MiscTranslate._('RESULT');
+            }
+            let accessibleSentence = MiscTranslate._('NB_RESULTS_FOR_SEARCH:') + ' ' + (evt.detail.searchText === '' ? MiscTranslate._('EMPTY_SEARCH_CRITERIA') : evt.detail.searchText);
+            titleElement.innerHTML = titleElementHtml + ' <p class="visually-hidden" tabindex="-1">&nbsp;' + accessibleSentence + '</p>';
+            if (!elemCancellingRename) {
+                document.title = titleElementHtml + ' ' + accessibleSentence + ' - '+siteName;
+                titleElement.removeAttribute('tabindex');
+                focusElement = titleElement.querySelector('.visually-hidden');
+            }
+        }
+
+        if(evt.detail.nbResultHtml !== undefined && evt.detail.nbResultHtml)
+        {
+            let htmlResult = listContainerElement.querySelector('.html-result');
+            if (!htmlResult) {
+                htmlResult = document.createElement('div');
+                htmlResult.className = 'ds44-js-html-result';
+                listContainerElement.appendChild(htmlResult);
+            }
+            htmlResult.innerHTML = evt.detail.nbResultHtml;
+            titleElement.classList.add("hidden");
+        }
+        else if(titleElement.classList.contains("hidden")) {
+            titleElement.classList.remove("hidden");
         }
         
 

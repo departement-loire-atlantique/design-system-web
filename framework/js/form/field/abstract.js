@@ -496,7 +496,17 @@ class FormFieldAbstract {
             return;
         }
 
-        object.labelElement.classList.remove(this.labelClassName);
+        if(object.element.value !== undefined && object.element.value)
+        {
+            if(!object.labelElement.classList.contains(this.labelClassName)) {
+                object.labelElement.classList.add(this.labelClassName);
+            }
+        }
+        else
+        {
+            object.labelElement.classList.remove(this.labelClassName);
+        }
+
     }
 
     clear (evt) {
