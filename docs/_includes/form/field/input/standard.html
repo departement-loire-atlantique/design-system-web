@@ -28,7 +28,7 @@
 {% endif %}
 
 {% capture mainContent %}
-    <input type="{{ type }}" id="{{ id }}" name="{{ name }}" class="{{ mainClass }}" {{ title }} {{ attributes }} {{ inputAttributes }} {{ placeholder }} {% if ariaDescribedBy and ariaDescribedBy != '' %}aria-describedby="{{ ariaDescribedBy }}"{% endif %} />
+    <input type="{{ type }}" id="{{ id }}" name="{{ name }}" value="{% if include.value %}{{ include.value }}{% endif %}" class="{{ mainClass }}" {{ title }} {{ attributes }} {{ inputAttributes }} {{ placeholder }} {% if ariaDescribedBy and ariaDescribedBy != '' %}aria-describedby="{{ ariaDescribedBy }}"{% endif %} />
     {% if include.showPassword == 'true' %}
         {% include form/field/partial/showPassword.html %}
     {% endif %}
