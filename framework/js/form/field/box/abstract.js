@@ -19,6 +19,9 @@ class FormFieldBoxAbstract extends FormFieldAbstract {
         }
 
         object.inputElements = element.querySelectorAll('input[type="' + this.category + '"]');
+        object.inputElements.forEach((input) => {
+            MiscEvent.addListener("change", this.changeValue.bind(this, objectIndex, input), input);
+        });
     }
 
     initialize () {
@@ -82,11 +85,36 @@ class FormFieldBoxAbstract extends FormFieldAbstract {
             MiscEvent.dispatch('submit', {}, object.containerElement.closest("form"));
         }
 
-        object.inputElements.forEach((inputElement) => {
-            this.toggleContainer(inputElement);
-        });
 
         this.showNotEmpty(objectIndex);
+    }
+
+    changeValue(objectIndex, input, evt) {
+        const object = this.objects[objectIndex];
+        if (!object || !object.isEnabled) {
+            evt.stopPropagation();
+            evt.preventDefault();
+
+            return;
+        }
+        if(input.checked)
+        {
+            object.inputElements.forEach((inputElement) => {
+                if(inputElement !== input) {
+                    this.toggleContainer(inputElement);
+                }
+            });
+            this.toggleContainer(input);
+        }
+        else
+        {
+            this.toggleContainer(input);
+            object.inputElements.forEach((inputElement) => {
+                if(inputElement !== input) {
+                    this.toggleContainer(inputElement);
+                }
+            });
+        }
     }
 
     setData (objectIndex, data = null) {

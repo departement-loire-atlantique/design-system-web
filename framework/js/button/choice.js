@@ -1,10 +1,10 @@
 class ButtonChoiceClass {
     constructor () {
-        Debug.log("ButtonMore -> Constructor");
+        Debug.log("ButtonChoice -> Constructor");
         this.nbResults = 5;
     }
     initialise() {
-        Debug.log("ButtonMore -> Initialise");
+        Debug.log("ButtonChoice -> Initialise");
         document
           .querySelectorAll('.ds44-js-choice-button')
           .forEach((buttonElement) => {
