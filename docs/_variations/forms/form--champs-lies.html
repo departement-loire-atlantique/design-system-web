@@ -101,10 +101,10 @@ layout: pattern
     <div class="ds44-mb3" >
         {% include form/layout/checkboxes.html name="radio2" id="checkbox-field" choices="1:Voir Cadre 1,2:Voir Cadre 2,3:Rien" required="true" list="true" %}
     </div>
-    <div class="ds44-mb3" data-enabled-by-field="#name-check-checkbox-field-1">
+    <div class="ds44-mb3" data-enabled-by-name-check-checkbox-field-1>
         {% include form/field/input/standard.html type="first-name" label="Valeur 1" required="true" %}
     </div>
-    <div class="ds44-mb3" data-enabled-by-field="#name-check-checkbox-field-2">
+    <div class="ds44-mb3" data-enabled-by-name-check-checkbox-field-1 data-enabled-by-name-check-checkbox-field-2 >
         {% include form/field/input/standard.html type="first-name" label="Valuer 2" required="true" %}
     </div>
     <div><input type="submit" class="ds44-btnStd" value="Tester les champs" /></div>

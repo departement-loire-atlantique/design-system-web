@@ -627,10 +627,12 @@ class FormFieldAbstract {
     toggleContainer(field, value = null)
     {
         let valueEnabled = field.getAttribute("data-enabled-field-value");
-        let containerFields = document.querySelectorAll("*[data-enabled-by-field='#"+field.getAttribute("id")+"']");
-
+        let containerFields = document.querySelectorAll("*[data-enabled-by-field='#"+field.getAttribute("id")+"'], *[data-enabled-by-"+field.getAttribute("id")+"]");
         let valueIsEqual = false;
         if(containerFields.length > 0) {
+
+
+
 
             if(field.tagName === "INPUT" && (field.type === "radio" || field.type === "checkbox"))
             {
