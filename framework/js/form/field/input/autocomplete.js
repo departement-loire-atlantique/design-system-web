@@ -16,6 +16,7 @@ class FormFieldInputAutoCompleteClass extends FormFieldInputAbstract {
         // Create corresponding hidden input to store the value
         let valueElement = document.createElement('input');
         valueElement.classList.add('ds44-input-value');
+        valueElement.setAttribute("id",element.getAttribute("id")+"-value");
         valueElement.setAttribute('type', 'hidden');
         element.parentNode.insertBefore(valueElement, element);
 
@@ -90,7 +91,6 @@ class FormFieldInputAutoCompleteClass extends FormFieldInputAbstract {
                     MiscEvent.addListener('click', this.select.bind(this, objectIndex), buttonElement);
                 });
 
-            this.toggleContainerByValue(objectIndex, object.valueElement.value);
         }
     }
 
@@ -112,6 +112,7 @@ class FormFieldInputAutoCompleteClass extends FormFieldInputAbstract {
             return;
         }
 
+        this.toggleContainerByValue(objectIndex, object.valueElement.value);
         object.currentElementValue = ((data && data.text) ? data.text : null);
         if (object.currentElementValue) {
             object.textElement.setAttribute('value', object.currentElementValue);

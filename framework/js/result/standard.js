@@ -316,7 +316,7 @@ class ResultStandardClass {
 
         if(evt.detail.nbResultHtml !== undefined && evt.detail.nbResultHtml)
         {
-            let htmlResult = listContainerElement.querySelector('.html-result');
+            let htmlResult = listContainerElement.querySelector('.ds44-js-html-result');
             if (!htmlResult) {
                 htmlResult = document.createElement('div');
                 htmlResult.className = 'ds44-js-html-result';
