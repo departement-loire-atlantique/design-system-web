@@ -163,18 +163,29 @@ class AsideSummaryClass {
 
         // Deselect all bullets
         this.summaryElement
-            .querySelectorAll('.ds44-list--puces a')
+            .querySelectorAll('.ds44-list--puces li > span')
             .forEach((aElement) => {
                 aElement.classList.remove('active');
-                aElement.removeAttribute('aria-current');
+                if(aElement.closest("li")) {
+                    aElement.closest("li").removeAttribute('aria-current', 'true');
+                }
+                else {
+                    aElement.removeAttribute('aria-current', 'true');
+                }
+                aElement.outerHTML = aElement.outerHTML.replace(/<span/g,"<a");
                 aElement.removeAttribute('tabindex');
             });
 
         // Select active bullets
         const aElement = evt.currentTarget;
         aElement.classList.add('active');
-        aElement.setAttribute('aria-current', 'true');
-        aElement.setAttribute('tabindex', '-1');
+        if(aElement.closest("li")) {
+            aElement.closest("li").setAttribute('aria-current', 'true');
+        }
+        else {
+            aElement.setAttribute('aria-current', 'true');
+        }
+        aElement.outerHTML = aElement.outerHTML.replace(/<a/g,"<span");
 
         const sectionId = aElement.getAttribute('href').replace(/^#/, '');
         const sectionElement = document.querySelector('#' + sectionId);
