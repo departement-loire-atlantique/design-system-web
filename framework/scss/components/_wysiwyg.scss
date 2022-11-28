@@ -276,7 +276,11 @@ table.inforoutes {
 
 @media (max-width: 64em) {
   .col.mrl ,
-  .col.mll {
+  .col.mll,
+  .col-4.mrl ,
+  .col-6.mll,
+  .col-6.mrl ,
+  .col-4.mll {
       margin-left: 0;
       margin-right: 0;
   }
