@@ -429,6 +429,7 @@ class ResultStandardClass {
                 }
             }
         }
+        ButtonSelect.getInstance().initialise();
 
         if(this.resultsBySNMs) {
             for (const [key, resultsBySNM] of Object.entries(this.resultsBySNMs)) {
