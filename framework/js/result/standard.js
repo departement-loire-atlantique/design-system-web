@@ -400,7 +400,13 @@ class ResultStandardClass {
                 MiscEvent.addListener('focus', this.focus.bind(this), listLinkItemElement);
                 MiscEvent.addListener('blur', this.blur.bind(this), listLinkItemElement);
             }
-            if (elementClickEnabled) {
+
+            let multiLink = false;
+            if(listContainerElement.hasAttribute('data-multi-links'))
+            {
+                multiLink = listContainerElement.getAttribute('data-multi-links');
+            }
+            if (elementClickEnabled && !multiLink) {
                 if (
                   hasRedirectDisplayMode === false &&
                   listContainerElement.getAttribute('data-display-mode') === 'inline'
