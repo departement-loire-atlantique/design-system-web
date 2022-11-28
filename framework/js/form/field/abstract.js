@@ -640,7 +640,18 @@ class FormFieldAbstract {
             }
             else
             {
-                valueIsEqual = valueEnabled === value;
+                if(valueEnabled.startsWith("*"))
+                {
+                    valueIsEqual = valueEnabled.endsWith(value);
+                }
+                else if(valueEnabled.endsWith("*"))
+                {
+                    valueIsEqual = valueEnabled.startsWith(value);
+                }
+                else
+                {
+                    valueIsEqual = valueEnabled === value;
+                }
             }
 
             containerFields.forEach((containerField) => {
