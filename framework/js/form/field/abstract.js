@@ -638,15 +638,17 @@ class FormFieldAbstract {
             {
                 valueIsEqual = field.checked;
             }
-            else
+            else if(value)
             {
                 if(valueEnabled.startsWith("*"))
                 {
-                    valueIsEqual = valueEnabled.endsWith(value);
+                    let valueEnd = valueEnabled.replace("*", "");
+                    valueIsEqual = value.endsWith(valueEnd);
                 }
                 else if(valueEnabled.endsWith("*"))
                 {
-                    valueIsEqual = valueEnabled.startsWith(value);
+                    let valueStart = valueEnabled.replace("*", "");
+                    valueIsEqual = value.startsWith(valueStart);
                 }
                 else
                 {
