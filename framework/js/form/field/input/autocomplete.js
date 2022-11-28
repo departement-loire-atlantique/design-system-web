@@ -576,6 +576,9 @@ class FormFieldInputAutoCompleteClass extends FormFieldInputAbstract {
 
     aroundMe (objectIndex, currentItem) {
         if (currentItem instanceof Event) {
+            let event = currentItem;
+            event.stopPropagation();
+            event.preventDefault();
             // Only accept dom elements
             currentItem = null;
         }
@@ -587,7 +590,7 @@ class FormFieldInputAutoCompleteClass extends FormFieldInputAbstract {
         if (currentItem) {
             this.selectRecord(objectIndex, currentItem);
         }
-        return;
+        return false;
     }
 
     aroundMeSuccess (objectIndex, currentItem, position) {
