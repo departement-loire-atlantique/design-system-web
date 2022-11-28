@@ -39,7 +39,6 @@ class PageElementClass {
 
     show () {
         this.visibilityCounter = Math.min(0, (this.visibilityCounter + 1));
-        console.log(this.visibilityCounter);
         if (this.visibilityCounter === 0) {
             for (let objectIndex = 0; objectIndex < this.objects.length; objectIndex++) {
                 MiscAccessibility.show(this.objects[objectIndex].element, true, false);
