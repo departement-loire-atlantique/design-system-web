@@ -95,4 +95,13 @@ class MiscDom {
 
         return headerElement.offsetHeight;
     };
+
+    static changeTagName(element, newTag) {
+        let newElement = document.createElement(newTag);
+        element.getAttributeNames().forEach((name) => {
+            newElement.setAttribute(name, element.getAttribute(name));
+        });
+        newElement.innerHTML = element.innerHTML;
+        element.parentElement.replaceChild(newElement, element);
+    }
 }
