@@ -22,7 +22,7 @@ variations:
   pattern: page/IR__map.html
 
 - title: Page Assmat "Résultats"
-  pattern: page/AM_recherche.html
+  pattern: page/AM__recherche.html
 
 - title: Template home
   pattern: templates/template-home.html
