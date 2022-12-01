@@ -24,6 +24,9 @@ variations:
 - title: Page Assmat "Résultats"
   pattern: page/AM_recherche.html
 
+- title: Recherche 3 lignes
+  pattern: page/EC__resultatsRecherche_3lignesFacette.html
+
 - title: Template home
   pattern: templates/template-home.html
 
