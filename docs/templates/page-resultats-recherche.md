@@ -27,6 +27,9 @@ variations:
 - title: Recherche 3 lignes
   pattern: page/EC__resultatsRecherche_3lignesFacette.html
 
+- title: Recherche Avancée
+  pattern: page/EC__resultatsRecherche_avancee.html
+
 - title: Template home
   pattern: templates/template-home.html
 
