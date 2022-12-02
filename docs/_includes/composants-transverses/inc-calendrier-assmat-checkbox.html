@@ -1,0 +1,80 @@
+<p role="heading" aria-level="2">{{ include.title }}</p>
+<table class="tabDispos tabDispos_checkbox">
+  <caption class="caption-side bottom mtm">
+      <span class="visually-hidden">{{ include.title }}</span>
+      <span class="inbl">{% include form/field/box/checkbox.html value="yes"  checked="checked" ariaDescribedBy="Créneau disponible" label="Créneau disponible" boxAttributes=boxAttributes %}</span>
+      <span class="inbl">{% include form/field/box/checkbox.html value="no"  checked="" ariaDescribedBy="Créneau non disponible" label="Créneau non disponible" boxAttributes=boxAttributes %}</span>
+  </caption>
+  <tbody>
+    <tr>
+      <td>&nbsp;</td>
+      <th scope="col">L</th>
+      <th scope="col">M</th>
+      <th scope="col">M</th>
+      <th scope="col">J</th>
+      <th scope="col">V</th>
+      <th scope="col">S</th>
+      <th scope="col">D</th>
+    </tr>
+    <tr>
+      <th scope="row">Avant l'école</th>
+      <td>{% include form/field/box/checkbox.html value="1"  checked="" ariaDescribedBy="Lundi - Avant l'école" boxAttributes=boxAttributes %}</td>
+      <td>{% include form/field/box/checkbox.html value="2"  checked="checked" ariaDescribedBy="Mardi - Avant l'école" boxAttributes=boxAttributes %}</td>
+      <td>{% include form/field/box/checkbox.html value="3"  checked="checked" ariaDescribedBy="Mercredi - Avant l'école" boxAttributes=boxAttributes %}</td>
+      <td>{% include form/field/box/checkbox.html value="4"  checked="checked" ariaDescribedBy="Jeudi - Avant l'école" boxAttributes=boxAttributes %}</td>
+      <td>{% include form/field/box/checkbox.html value="5"  checked="checked" ariaDescribedBy="Vendredi - Avant l'école" boxAttributes=boxAttributes %}</td>
+      <td>{% include form/field/box/checkbox.html value="6"  checked="" ariaDescribedBy="Samedi - Avant l'école" boxAttributes=boxAttributes %}</td>
+      <td>{% include form/field/box/checkbox.html value="7"  checked="" ariaDescribedBy="Dimanche - Avant l'école" boxAttributes=boxAttributes %}</td>
+    </tr>
+    <tr>
+      <th scope="row">Matin</th>
+      <td>{% include form/field/box/checkbox.html value="8"  checked="" ariaDescribedBy="Lundi - Matin" boxAttributes=boxAttributes %}</td>
+      <td>{% include form/field/box/checkbox.html value="9"  checked="checked" ariaDescribedBy="Mardi - Matin" boxAttributes=boxAttributes %}</td>
+      <td>{% include form/field/box/checkbox.html value="10"  checked="checked" ariaDescribedBy="Mercredi - Matin" boxAttributes=boxAttributes %}</td>
+      <td>{% include form/field/box/checkbox.html value="11"  checked="checked" ariaDescribedBy="Jeudi - Matin" boxAttributes=boxAttributes %}</td>
+      <td>{% include form/field/box/checkbox.html value="12"  checked="checked" ariaDescribedBy="Vendredi - Matin" boxAttributes=boxAttributes %}</td>
+      <td>{% include form/field/box/checkbox.html value="13"  checked="" ariaDescribedBy="Samedi - Matin" boxAttributes=boxAttributes %}</td>
+      <td>{% include form/field/box/checkbox.html value="14"  checked="" ariaDescribedBy="Dimanche - Matin" boxAttributes=boxAttributes %}</td>
+    </tr>
+    <tr>
+      <th scope="row">Midi</th>
+      <td>{% include form/field/box/checkbox.html value="15"  checked="" ariaDescribedBy="Lundi - Midi" boxAttributes=boxAttributes %}</td>
+      <td>{% include form/field/box/checkbox.html value="16"  checked="checked" ariaDescribedBy="Mardi - Midi" boxAttributes=boxAttributes %}</td>
+      <td>{% include form/field/box/checkbox.html value="17"  checked="checked" ariaDescribedBy="Mercredi - Midi" boxAttributes=boxAttributes %}</td>
+      <td>{% include form/field/box/checkbox.html value="18"  checked="checked" ariaDescribedBy="Jeudi - Midi" boxAttributes=boxAttributes %}</td>
+      <td>{% include form/field/box/checkbox.html value="19"  checked="checked" ariaDescribedBy="Vendredi - Midi" boxAttributes=boxAttributes %}</td>
+      <td>{% include form/field/box/checkbox.html value="20"  checked="" ariaDescribedBy="Samedi - Midi" boxAttributes=boxAttributes %}</td>
+      <td>{% include form/field/box/checkbox.html value="21"  checked="" ariaDescribedBy="Dimanche - Midi" boxAttributes=boxAttributes %}</td>
+    </tr>
+    <tr>
+      <th scope="row">Après midi</th>
+      <td>{% include form/field/box/checkbox.html value="22"  checked="" ariaDescribedBy="Lundi - Après midi" boxAttributes=boxAttributes %}</td>
+      <td>{% include form/field/box/checkbox.html value="23"  checked="checked" ariaDescribedBy="Mardi - Après midi" boxAttributes=boxAttributes %}</td>
+      <td>{% include form/field/box/checkbox.html value="24"  checked="checked" ariaDescribedBy="Mercredi - Après midi" boxAttributes=boxAttributes %}</td>
+      <td>{% include form/field/box/checkbox.html value="25"  checked="checked" ariaDescribedBy="Jeudi - Après midi" boxAttributes=boxAttributes %}</td>
+      <td>{% include form/field/box/checkbox.html value="26"  checked="checked" ariaDescribedBy="Vendredi - Après midi" boxAttributes=boxAttributes %}</td>
+      <td>{% include form/field/box/checkbox.html value="27"  checked="" ariaDescribedBy="Samedi - Après midi" boxAttributes=boxAttributes %}</td>
+      <td>{% include form/field/box/checkbox.html value="28"  checked="" ariaDescribedBy="Dimanche - Après midi" boxAttributes=boxAttributes %}</td>
+    </tr>
+    <tr>
+      <th scope="row">Après l'école</th>
+      <td>{% include form/field/box/checkbox.html value="29"  checked="" ariaDescribedBy="Lundi - Après l'école" boxAttributes=boxAttributes %}</td>
+      <td>{% include form/field/box/checkbox.html value="30"  checked="checked" ariaDescribedBy="Mardi - Après l'école" boxAttributes=boxAttributes %}</td>
+      <td>{% include form/field/box/checkbox.html value="31"  checked="checked" ariaDescribedBy="Mercredi - Après l'école" boxAttributes=boxAttributes %}</td>
+      <td>{% include form/field/box/checkbox.html value="32"  checked="checked" ariaDescribedBy="Jeudi - Après l'école" boxAttributes=boxAttributes %}</td>
+      <td>{% include form/field/box/checkbox.html value="33"  checked="checked" ariaDescribedBy="Vendredi - Après l'école" boxAttributes=boxAttributes %}</td>
+      <td>{% include form/field/box/checkbox.html value="34"  checked="" ariaDescribedBy="Samedi - Après l'école" boxAttributes=boxAttributes %}</td>
+      <td>{% include form/field/box/checkbox.html value="35"  checked="" ariaDescribedBy="Dimanche - Après l'école" boxAttributes=boxAttributes %}</td>
+    </tr>
+    <tr>
+      <th scope="row">Nuit</th>
+      <td>{% include form/field/box/checkbox.html value="36"  checked="" ariaDescribedBy="Lundi - Nuit" boxAttributes=boxAttributes %}</td>
+      <td>{% include form/field/box/checkbox.html value="37"  checked="" ariaDescribedBy="Mardi - Nuit" boxAttributes=boxAttributes %}</td>
+      <td>{% include form/field/box/checkbox.html value="38"  checked="" ariaDescribedBy="Mercredi - Nuit" boxAttributes=boxAttributes %}</td>
+      <td>{% include form/field/box/checkbox.html value="39"  checked="" ariaDescribedBy="Jeudi - Nuit" boxAttributes=boxAttributes %}</td>
+      <td>{% include form/field/box/checkbox.html value="40"  checked="" ariaDescribedBy="Vendredi - Nuit" boxAttributes=boxAttributes %}</td>
+      <td>{% include form/field/box/checkbox.html value="41"  checked="" ariaDescribedBy="Samedi - Nuit" boxAttributes=boxAttributes %}</td>
+      <td>{% include form/field/box/checkbox.html value="42"  checked="" ariaDescribedBy="Dimanche - Nuit" boxAttributes=boxAttributes %}</td>
+    </tr>
+  </tbody>
+</table>

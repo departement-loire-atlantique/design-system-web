@@ -145,6 +145,15 @@
     font-weight: normal;
     text-align: left;
   }
+  &.tabDispos_checkbox tbody{
+      .ds44-form__container.ds44-checkBox-radio_list {
+          margin: 0;
+
+          .ds44-boxLabel {
+              padding: 0;
+          }
+      }
+  }
 }
 .PictoCreneauPrint {
     display: none;
