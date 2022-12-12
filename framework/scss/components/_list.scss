@@ -17,6 +17,7 @@
             position: relative;
             padding-left: $ds44-padding-large;
 
+            > span,
             > a {
                 text-decoration: none;
                 transition: all $ds44-timing-standard $ds44-transition-std;
@@ -38,6 +39,7 @@
                 }
             }
 
+            > span.active,
             > a.active {
                 &:hover {
                     text-decoration: none;
@@ -146,6 +148,7 @@
         padding-left: 0;
     }
 
+    i ~ span,
     i ~ a {
         display: inline-block;
         vertical-align: top;

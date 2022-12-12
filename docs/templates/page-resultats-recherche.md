@@ -22,7 +22,7 @@ variations:
   pattern: page/IR__map.html
 
 - title: Page Assmat "Résultats"
-  pattern: page/AM_recherche.html
+  pattern: page/AM__recherche.html
 
 - title: Recherche 3 lignes
   pattern: page/EC__resultatsRecherche_3lignesFacette.html

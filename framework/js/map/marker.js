@@ -13,6 +13,11 @@ class MapMarkerClass extends MapAbstract {
         }
 
         object.geojsonHoveredId = null;
+        let clusterTolerance = 0.375;
+        if(object.mapElement.getAttribute('data-cluster-tolerance') !== undefined && object.mapElement.getAttribute('data-cluster-tolerance') !== null)
+        {
+            clusterTolerance = parseFloat(object.mapElement.getAttribute('data-cluster-tolerance'));
+        }
         object.geojsonModel = {
             'type': 'geojson',
             'data': {
@@ -22,6 +27,7 @@ class MapMarkerClass extends MapAbstract {
             'cluster': (object.mapElement.getAttribute('data-use-cluster') === 'true'),
             'clusterMaxZoom': 14,
             'clusterRadius': 50,
+            "tolerance": clusterTolerance,
             'generateId': true
         };
     }

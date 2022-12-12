@@ -638,9 +638,22 @@ class FormFieldAbstract {
             {
                 valueIsEqual = field.checked;
             }
-            else
+            else if(value)
             {
-                valueIsEqual = valueEnabled === value;
+                if(valueEnabled.startsWith("*"))
+                {
+                    let valueEnd = valueEnabled.replace("*", "");
+                    valueIsEqual = value.endsWith(valueEnd);
+                }
+                else if(valueEnabled.endsWith("*"))
+                {
+                    let valueStart = valueEnabled.replace("*", "");
+                    valueIsEqual = value.startsWith(valueStart);
+                }
+                else
+                {
+                    valueIsEqual = valueEnabled === value;
+                }
             }
 
             containerFields.forEach((containerField) => {

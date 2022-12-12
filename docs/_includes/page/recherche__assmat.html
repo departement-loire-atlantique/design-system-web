@@ -10,7 +10,10 @@
       {% include form/field/select/standard.html label="Select à cases" %}
     </div>
     {% endcapture %}
-    {% include form/layout/recherche-facettes.html id=formId fields=fields url=include.url %}
+    {% include form/layout/recherche-facettes-assmat.html id=formId fields=fields url=include.url %}
   </section>
   {% include page/partial/recherche-resultats-assmat.html iconsMarker=include.iconsMarker geoJsonAttributes=include.geoJsonAttributes %}
 </main>
+
+
+

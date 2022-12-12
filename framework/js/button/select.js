@@ -1,7 +1,6 @@
 class ButtonSelectClass {
     constructor () {
         Debug.log("ButtonSelect -> Constructor");
-        this.nbResults = 5;
     }
     initialise() {
         Debug.log("ButtonSelect -> Initialise");
@@ -24,6 +23,21 @@ class ButtonSelectClass {
                 if(response.enabled !== undefined) {
                     this.switch(buttonElement, response.enabled);
                 }
+                document
+                  .querySelectorAll('*[data-nb-select]')
+                  .forEach((element) => {
+                      element.textContent = response.nbSelect;
+                  });
+                document
+                  .querySelectorAll('*[data-link-has-select]')
+                  .forEach((element) => {
+                      if(response.nbSelect > 0 && element.tagName === "SPAN") {
+                        MiscDom.changeTagName(element, "A");
+                      }
+                      else if(response.nbSelect === 0 && element.tagName === "A") {
+                          MiscDom.changeTagName(element, "SPAN");
+                      }
+                  });
             });
         }
         return false;

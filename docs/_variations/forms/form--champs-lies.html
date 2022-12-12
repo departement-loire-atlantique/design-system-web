@@ -63,7 +63,7 @@ layout: pattern
 
 
 <br><br><br>
-<p role="heading" aria-level="2" class="h3-like">Container Masqué avec une valeur</p>
+<p role="heading" aria-level="2" class="h3-like">Container Masqué avec une valeur exact</p>
 <br>
 <form>
     <p>Les champs suivis d’un * sont obligatoires.</p>
@@ -71,6 +71,36 @@ layout: pattern
         {% include form/field/input/standard.html type="last-name" label="Pour afficher le container : Voir" id="nom-field" required="false" attributes='data-enabled-field-value="Voir"'%}
     </div>
     <div class="ds44-mb3" data-enabled-by-field="#nom-field">
+        {% include form/field/input/standard.html type="first-name" label="Prénom" required="true" %}
+    </div>
+    <div><input type="submit" class="ds44-btnStd" value="Tester les champs" /></div>
+</form>
+
+
+<br><br><br>
+<p role="heading" aria-level="2" class="h3-like">Container Masqué avec une valeur commençant par "Voir" </p>
+<br>
+<form>
+    <p>Les champs suivis d’un * sont obligatoires.</p>
+    <div class="ds44-mb3" >
+        {% include form/field/input/standard.html type="last-name" label="Pour afficher le container : Voir" id="nom-field-2" required="false" attributes='data-enabled-field-value="Voir*"'%}
+    </div>
+    <div class="ds44-mb3" data-enabled-by-field="#nom-field-2">
+        {% include form/field/input/standard.html type="first-name" label="Prénom" required="true" %}
+    </div>
+    <div><input type="submit" class="ds44-btnStd" value="Tester les champs" /></div>
+</form>
+
+
+<br><br><br>
+<p role="heading" aria-level="2" class="h3-like">Container Masqué avec une valeur finissant par "voir"</p>
+<br>
+<form>
+    <p>Les champs suivis d’un * sont obligatoires.</p>
+    <div class="ds44-mb3" >
+        {% include form/field/input/standard.html type="last-name" label="Pour afficher le container : voir" id="nom-field-3" required="false" attributes='data-enabled-field-value="*voir"'%}
+    </div>
+    <div class="ds44-mb3" data-enabled-by-field="#nom-field-3">
         {% include form/field/input/standard.html type="first-name" label="Prénom" required="true" %}
     </div>
     <div><input type="submit" class="ds44-btnStd" value="Tester les champs" /></div>

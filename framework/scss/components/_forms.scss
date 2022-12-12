@@ -460,7 +460,7 @@ input[type=radio],
                     li {
                         display: inline-block;
                         margin: 0.6em $ds44-padding-medium;
-
+                        span,
                         a {
                             text-decoration: none;
                             width: auto;
@@ -510,7 +510,8 @@ input[type=radio],
                 margin-right: $ds44-margin-base;
                 padding-left: 1.9rem;
 
-                i ~ a {
+                i ~ a,
+                i ~ span{
                     text-decoration: none;
                     width: auto;
                     font-weight: bold;
