@@ -65,6 +65,7 @@ class FormFieldInputDatepickerClass extends FormFieldInputAbstract {
             if(object.inputElements[0].value && object.inputElements[1].value && object.inputElements[2].value)
             {
                 this.record(objectIndex);
+                this.showHideResetButton(objectIndex);
             }
             else
             {
