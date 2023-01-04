@@ -62,9 +62,16 @@ class FormFieldInputDatepickerClass extends FormFieldInputAbstract {
                 MiscEvent.addListener('click', this.showHideCalendar.bind(this, objectIndex), object.calendarButtonElement);
             }
 
-            if(object.inputElements[0].value || object.inputElements[1].value || object.inputElements[2].value)
+            if(object.inputElements[0].value && object.inputElements[1].value && object.inputElements[2].value)
             {
                 this.record(objectIndex);
+            }
+            else
+            {
+                object.element.classList.remove('show');
+                object.inputElements[2].value = null;
+                object.inputElements[1].value = null;
+                object.inputElements[0].value = null;
             }
 
         }
@@ -281,18 +288,6 @@ class FormFieldInputDatepickerClass extends FormFieldInputAbstract {
                 'value': dateText
             }
         )
-    }
-
-    empty(objectIndex) {
-        super.empty(objectIndex);
-        const object = this.objects[objectIndex];
-        if (!object) {
-            return;
-        }
-        object.element.classList.remove('show');
-        object.inputElements[2].value = null;
-        object.inputElements[1].value = null;
-        object.inputElements[0].value = null;
     }
 
     isValid (objectIndex) {
