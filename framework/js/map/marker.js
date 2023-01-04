@@ -49,7 +49,11 @@ class MapMarkerClass extends MapAbstract {
           }
         );
 
-        object.map.on('moveend', this.move.bind(this, objectIndex));
+        console.log(object.mapElement);
+        if(!object.mapElement.hasAttribute("data-no-refresh"))
+        {
+            object.map.on('moveend', this.move.bind(this, objectIndex));
+        }
         if (object.newResults) {
             this.show(objectIndex);
         }
@@ -64,6 +68,8 @@ class MapMarkerClass extends MapAbstract {
         if (!object || !object.isVisible) {
             return;
         }
+
+
 
         const mapBounds = object.map.getBounds();
         MiscEvent.dispatch(
@@ -489,8 +495,11 @@ class MapMarkerClass extends MapAbstract {
               .addTo(object.map);
         }
 
-
-        MiscEvent.addListener('click', this.popupClick.bind(this, id), object.popup.getElement())
+        ButtonSelect.getInstance().initialise();
+        if(!object.mapElement.hasAttribute("data-popup-click-disabled"))
+        {
+            MiscEvent.addListener('click', this.popupClick.bind(this, id), object.popup.getElement())
+        }
     }
 
     hidePopup (objectIndex) {

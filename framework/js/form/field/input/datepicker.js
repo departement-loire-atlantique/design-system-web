@@ -61,7 +61,14 @@ class FormFieldInputDatepickerClass extends FormFieldInputAbstract {
             if (object.calendarButtonElement) {
                 MiscEvent.addListener('click', this.showHideCalendar.bind(this, objectIndex), object.calendarButtonElement);
             }
+
+            if(object.inputElements[0].value || object.inputElements[1].value || object.inputElements[2].value)
+            {
+                this.record(objectIndex);
+            }
+
         }
+
     }
 
     write (objectIndex) {
@@ -262,6 +269,7 @@ class FormFieldInputDatepickerClass extends FormFieldInputAbstract {
             // If the date object is invalid it
             // will return 'NaN' on getTime()
             // and NaN is never equal to itself.
+
             this.empty(objectIndex);
 
             return;
@@ -273,6 +281,18 @@ class FormFieldInputDatepickerClass extends FormFieldInputAbstract {
                 'value': dateText
             }
         )
+    }
+
+    empty(objectIndex) {
+        super.empty(objectIndex);
+        const object = this.objects[objectIndex];
+        if (!object) {
+            return;
+        }
+        object.element.classList.remove('show');
+        object.inputElements[2].value = null;
+        object.inputElements[1].value = null;
+        object.inputElements[0].value = null;
     }
 
     isValid (objectIndex) {
