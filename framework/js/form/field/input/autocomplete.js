@@ -183,7 +183,9 @@ class FormFieldInputAutoCompleteClass extends FormFieldInputAbstract {
             return;
         }
 
-        let limitNbChar = object.textElement.getAttribute("data-limit-char") ?? 0;
+        let limitNbChar = object.textElement.hasAttribute("data-limit-char") ?
+          object.textElement.getAttribute("data-limit-char") :
+          0;
         let value = object.textElement.value;
 
         if (value && value.length >= limitNbChar) {
