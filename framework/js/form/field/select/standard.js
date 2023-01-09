@@ -9,7 +9,14 @@ class FormFieldSelectStandardClass extends FormFieldSelectAbstract {
 
     initialize () {
 
-        const selectedListItemInit = object.selectListElement.querySelector('.selected_option');
+        for (let objectIndex = 0; objectIndex < this.objects.length; objectIndex++) {
+            const object = this.objects[objectIndex];
+            if (object.isSubSubInitialized) {
+                continue;
+            }
+            this.objects[objectIndex]["selectedOption"] = object.selectListElement.querySelector('.selected_option');
+        }
+
         super.initialize();
 
         for (let objectIndex = 0; objectIndex < this.objects.length; objectIndex++) {
@@ -21,12 +28,14 @@ class FormFieldSelectStandardClass extends FormFieldSelectAbstract {
 
             MiscEvent.addListener('keyPress:spacebar', this.selectOption.bind(this, objectIndex));
             MiscEvent.addListener('keyPress:enter', this.selectOption.bind(this, objectIndex));
+
+            if (this.objects[objectIndex]["selectedOption"]) {
+                this.objects[objectIndex]["selectedOption"].classList.add('selected_option');
+                this.record(objectIndex);
+            }
+
         }
 
-        if (selectedListItemInit) {
-            selectedListItemInit.classList.add('selected_option');
-            this.record(objectIndex);
-        }
     }
 
     selectOption (objectIndex, evt) {
