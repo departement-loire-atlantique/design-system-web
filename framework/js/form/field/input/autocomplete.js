@@ -596,7 +596,7 @@ class FormFieldInputAutoCompleteClass extends FormFieldInputAbstract {
         }
 
         if (navigator.geolocation) {
-            navigator.geolocation.getCurrentPosition(this.aroundMeSuccess.bind(this, objectIndex, currentItem));
+            navigator.geolocation.getCurrentPosition(this.aroundMeSuccess.bind(this, objectIndex, currentItem), (error) => {console.log(error)});
         }
 
         if (currentItem) {
