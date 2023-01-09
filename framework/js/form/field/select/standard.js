@@ -25,6 +25,7 @@ class FormFieldSelectStandardClass extends FormFieldSelectAbstract {
 
         if (selectedListItemInit) {
             selectedListItemInit.classList.add('selected_option');
+            this.record(objectIndex);
         }
     }
 
