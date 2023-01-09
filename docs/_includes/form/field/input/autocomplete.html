@@ -9,7 +9,7 @@
 {% endif %}
 
 {% capture mainContent %}
-    <input type="text" id="{{ id }}" name="{{ name }}" class="{{ mainClass }}" role="combobox" aria-autocomplete="list" autocomplete="off" aria-expanded="false" data-url="{{ include.url }}" {{ title }} {{ attributes }} {{ inputAttributes }} {{ placeholder }} {% if ariaDescribedBy and ariaDescribedBy != '' %}aria-describedby="{{ ariaDescribedBy }}"{% endif %} />{% include form/field/partial/reset.html %}
+    <input type="text" id="{{ id }}" name="{{ name }}" class="{{ mainClass }}" role="combobox" aria-autocomplete="list" autocomplete="off" aria-expanded="false" data-limit-char="3" data-url="{{ include.url }}" {{ title }} {{ attributes }} {{ inputAttributes }} {{ placeholder }} {% if ariaDescribedBy and ariaDescribedBy != '' %}aria-describedby="{{ ariaDescribedBy }}"{% endif %} />{% include form/field/partial/reset.html %}
 
     {% if include.hasLocation == 'true' %}
         <button class="ds44-location" title="Autoriser la localisation automatique 'autour de moi' pour le champ : {{ label }}">
