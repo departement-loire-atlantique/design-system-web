@@ -8,6 +8,8 @@ class FormFieldSelectStandardClass extends FormFieldSelectAbstract {
     }
 
     initialize () {
+
+        const selectedListItemInit = object.selectListElement.querySelector('.selected_option');
         super.initialize();
 
         for (let objectIndex = 0; objectIndex < this.objects.length; objectIndex++) {
@@ -19,6 +21,10 @@ class FormFieldSelectStandardClass extends FormFieldSelectAbstract {
 
             MiscEvent.addListener('keyPress:spacebar', this.selectOption.bind(this, objectIndex));
             MiscEvent.addListener('keyPress:enter', this.selectOption.bind(this, objectIndex));
+        }
+
+        if (selectedListItemInit) {
+            selectedListItemInit.classList.add('selected_option');
         }
     }
 
