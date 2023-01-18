@@ -8,7 +8,6 @@ class CarouselAbstract {
         this.queryTitreTuile = '.ds44-card__title a[href]:not([disabled])';
         this.objects = [];
         this.breakpoint = window.matchMedia('(max-width: 63.375em)');
-        this.initialise();
         MiscEvent.addListener('resize', this.resize.bind(this), window);
         window.setTimeout(
           () => {
