@@ -1265,6 +1265,15 @@ input[type=radio],
     }
 }
 
+#ds44-creneaux {
+    th, td {
+        height: 8.5rem;
+        .ds44-form__container {
+            margin: 1rem 0;
+        }
+    }
+}
+
 
 /* Media Queries Print / Impression */
 @media print {

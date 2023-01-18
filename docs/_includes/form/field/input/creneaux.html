@@ -1,0 +1,39 @@
+<div class="ds44-creneaux-content">
+  {% capture templateThFirst %}{% include form/field/partial/creneauThFirst.html creneauKey="__CRENEAU_NUM__" %}{% endcapture %}
+  {% capture templateThSecond %}{% include form/field/partial/creneauThSecond.html creneauKey="__CRENEAU_NUM__" %}{% endcapture %}
+  {% capture templateTd %}{% include form/field/partial/creneauTd.html creneauKey="__CRENEAU_NUM__" day="__DAY__" %}{% endcapture %}
+  <table id="ds44-creneaux" data-template='{"th_first": "{{ templateThFirst }}", th_second: "{{ templateThSecond }}", "td": "{{templateTd}}"}'>
+    <thead>
+      <tr class="first" data-row-name="th-first">
+        <th></th>
+        {% include form/field/partial/creneauThFirst.html creneauKey="1" %}
+      </tr>
+      <tr class="second" data-row-name="th-second">
+        <th>Jours</th>
+        {% include form/field/partial/creneauThSecond.html creneauKey="1" %}
+      </tr>
+    </thead>
+    <tbody>
+      <tr data-row-name="monday">
+        <td class="day">Lundi</td>
+        {% include form/field/partial/creneauTd.html creneauKey="1" day="monday" %}
+      </tr>
+      <tr data-row-name="tuesday">
+        <td class="value">Mardi</td>
+        {% include form/field/partial/creneauTd.html creneauKey="1" day="tuesday" %}
+      </tr>
+      <tr data-row-name="wednesday">
+        <td class="value">Mercredi</td>
+        {% include form/field/partial/creneauTd.html creneauKey="1" day="wednesday" %}
+      </tr>
+      <tr data-row-name="thursday">
+        <td class="value">Jeudi</td>
+        {% include form/field/partial/creneauTd.html creneauKey="1" day="thursday" %}
+      </tr>
+      <tr data-row-name="friday">
+        <td class="value">Vendredi</td>
+        {% include form/field/partial/creneauTd.html creneauKey="1" day="friday" %}
+      </tr>
+    </tbody>
+  </table>
+</div>

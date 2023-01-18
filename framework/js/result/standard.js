@@ -282,7 +282,7 @@ class ResultStandardClass {
             titleElement.setAttribute('aria-level', '2');
             titleElement.setAttribute('aria-live', 'polite');
             titleElement.setAttribute('aria-atomic', 'true');
-            listContainerElement.appendChild(titleElement);
+            listContainerElement.prepend(titleElement);
         }
         // Ne pas changer le titre de la page avec un paramètre précis
         let elemCancellingRename = document.querySelector('[data-keep-tab-name="true"]');

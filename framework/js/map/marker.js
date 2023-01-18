@@ -495,7 +495,20 @@ class MapMarkerClass extends MapAbstract {
               .addTo(object.map);
         }
 
-        ButtonSelect.getInstance().initialise();
+        let buttonSelect = object.popup.getElement().querySelector(".ds44-js-select-button");
+        if(buttonSelect)
+        {
+            ButtonSelect.getInstance().initialise();
+            document
+              .querySelectorAll("*[data-select-button-id='"+buttonSelect.dataset.selectButtonId+"']")
+              .forEach((button) => {
+                  if(button !== buttonSelect) {
+                      MiscEvent.dispatch("button::switch-value", {isSelect: button.classList.contains("is-select")}, buttonSelect);
+                  }
+              });
+        }
+
+
         if(!object.mapElement.hasAttribute("data-popup-click-disabled"))
         {
             MiscEvent.addListener('click', this.popupClick.bind(this, id), object.popup.getElement())

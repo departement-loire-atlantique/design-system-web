@@ -11,6 +11,9 @@ class ButtonSelectClass {
               {
                   this.switch(buttonElement, buttonElement.classList.contains("is-select"));
                   MiscEvent.addListener('click', this.executeSwitch.bind(this, buttonElement), buttonElement);
+                  MiscEvent.addListener("button::switch-value", (event)=>{
+                      this.switch(buttonElement, event.detail.isSelect);
+                  }, buttonElement)
               }
           });
     }
@@ -22,6 +25,14 @@ class ButtonSelectClass {
             MiscRequest.send(buttonElement.dataset.url, (response) => {
                 if(response.enabled !== undefined) {
                     this.switch(buttonElement, response.enabled);
+
+                    document
+                      .querySelectorAll("*[data-select-button-id='"+buttonElement.dataset.selectButtonId+"']")
+                      .forEach((button) => {
+                        if(button !== buttonElement) {
+                            MiscEvent.dispatch("button::switch-value", {isSelect: response.enabled}, button);
+                        }
+                      });
                 }
                 document
                   .querySelectorAll('*[data-nb-select]')
@@ -50,6 +61,7 @@ class ButtonSelectClass {
         let titles = JSON.parse(button.dataset.titles);
         let icons = JSON.parse(button.dataset.icons);
         if(isSelect) {
+            button.classList.add("is-select");
             if(titles && titles.enabled !== undefined) {
                 title = titles.enabled;
             }
@@ -59,6 +71,7 @@ class ButtonSelectClass {
             }
         }
         else {
+            button.classList.remove("is-select");
             if(titles && titles.disabled !== undefined) {
                 title = titles.disabled;
             }

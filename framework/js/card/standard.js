@@ -11,13 +11,18 @@ class CardStandardClass {
         ) {
             return;
         }
+        Debug.log(evt);
 
         const elementLinks = evt.target.closest('.ds44-js-card').getElementsByTagName('a');
         if (
             elementLinks[0] &&
             elementLinks[0] !== evt.target
         ) {
-            elementLinks[0].click();
+
+            let multiLinks = (evt.target.closest("*[data-popup-click-disabled]") || evt.target.closest("*[data-multi-links]"))
+            if(!multiLinks) {
+                elementLinks[0].click();
+            }
         }
     }
 }

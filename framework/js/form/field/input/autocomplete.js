@@ -183,7 +183,21 @@ class FormFieldInputAutoCompleteClass extends FormFieldInputAbstract {
             return;
         }
 
-        this.autoComplete(objectIndex);
+        let limitNbChar = object.textElement.hasAttribute("data-limit-char") ?
+          object.textElement.getAttribute("data-limit-char") :
+          0;
+        let value = object.textElement.value;
+
+        if (value && value.length >= limitNbChar) {
+            this.autoComplete(objectIndex);
+        }
+        else {
+            object.autoCompleterElement.classList.add('hidden');
+            MiscAccessibility.hide(object.autoCompleterElement);
+            object.textElement.setAttribute('aria-expanded', 'false');
+            object.isExpanded = false;
+        }
+
     }
 
     autoComplete (objectIndex) {
@@ -584,7 +598,7 @@ class FormFieldInputAutoCompleteClass extends FormFieldInputAbstract {
         }
 
         if (navigator.geolocation) {
-            navigator.geolocation.getCurrentPosition(this.aroundMeSuccess.bind(this, objectIndex, currentItem));
+            navigator.geolocation.getCurrentPosition(this.aroundMeSuccess.bind(this, objectIndex, currentItem), (error) => {console.log(error)});
         }
 
         if (currentItem) {
