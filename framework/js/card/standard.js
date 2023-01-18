@@ -11,6 +11,7 @@ class CardStandardClass {
         ) {
             return;
         }
+        Debug.log(evt);
 
         const elementLinks = evt.target.closest('.ds44-js-card').getElementsByTagName('a');
         if (

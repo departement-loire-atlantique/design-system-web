@@ -17,7 +17,7 @@ class StatisticGtagClass {
         ) {
             return;
         }
-
+        Debug.log(evt);
         const gtagEvent = {
             'event': evt.detail.statistic.name,
             'eventCategory': evt.detail.statistic.category,
