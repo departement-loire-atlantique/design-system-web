@@ -157,13 +157,12 @@ class FormFieldInputAutoCompleteClass extends FormFieldInputAbstract {
         if (locationElement) {
             if(object.valueElement.value === "aroundMe")
             {
-                console.log("Dispatch");
                 document.querySelectorAll(".ds44-js-map").forEach((map) => {
-                    MiscEvent.dispatch("map:aroundMe", {metadata: JSON.parse(object.metadataElement.value)}, map);
+                    map.setAttribute("data-aroundMe", object.metadataElement.value);
                 });
             }
         }
-        
+
     }
 
     getData (objectIndex) {

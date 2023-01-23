@@ -76,6 +76,10 @@ class MapAbstract {
             MiscEvent.addListener('scroll', this.scroll.bind(this, objectIndex), window);
             MiscEvent.addListener("map:aroundMe", this.aroundMe.bind(this, objectIndex), object.mapElement);
 
+            if(object.mapElement.hasAttribute("data-aroundMe")) {
+                MiscEvent.dispatch("map:aroundMe", {metadata: JSON.parse(object.mapElement.getAttribute("data-aroundMe"))}, object.mapElement);
+            }
+
             // Show results at startup for mobiles
             const breakpoint = window.matchMedia('(max-width: 767px)');
             if (breakpoint.matches) {
@@ -130,7 +134,6 @@ class MapAbstract {
         if (!object) {
             return;
         }
-        console.log(evt);
         if(evt.detail.metadata)
         {
             object.map.addSource('currentMarker', {
