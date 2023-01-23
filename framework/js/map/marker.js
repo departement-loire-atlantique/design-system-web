@@ -49,7 +49,6 @@ class MapMarkerClass extends MapAbstract {
           }
         );
 
-        console.log(object.mapElement);
         if(!object.mapElement.hasAttribute("data-no-refresh"))
         {
             object.map.on('moveend', this.move.bind(this, objectIndex));
@@ -247,6 +246,36 @@ class MapMarkerClass extends MapAbstract {
                     'text-field': '{point_count_abbreviated}',
                     'text-font': ['DIN Offc Pro Medium', 'Arial Unicode MS Bold'],
                     'text-size': 12
+                }
+            });
+        }
+
+
+        if(this.currentLocalisationMarker) {
+
+            object.map.addSource('currentMarker', {
+                'type': 'geojson',
+                'data': {
+                    'type': 'FeatureCollection',
+                    'features': [
+                        {
+                            'type': 'Feature',
+                            'geometry': {
+                                'type': 'Point',
+                                'coordinates': [this.currentLocalisationMarker.longitude, this.currentLocalisationMarker.latitude]
+                            }
+                        }
+                    ]
+                }
+            });
+            // Add a layer to use the image to represent the data.
+            object.map.addLayer({
+                'id': 'currentMarker',
+                'type': 'symbol',
+                'source': 'currentMarker', // reference the data source
+                'layout': {
+                    'icon-image': 'current-marker', // reference the image
+                    'icon-size': 0.30
                 }
             });
         }

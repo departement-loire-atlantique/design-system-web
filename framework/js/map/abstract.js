@@ -11,6 +11,7 @@ class MapAbstract {
         this.geojsonSourceId = 'geojson-source';
         this.geojsonFillsId = 'geojson-fills';
         this.geojsonLinesId = 'geojson-lines';
+        this.currentLocalisationMarker = null;
 
         MiscEvent.addListener('search:focus', this.resultFocus.bind(this));
         MiscEvent.addListener('search:blur', this.resultBlur.bind(this));
@@ -183,6 +184,14 @@ class MapAbstract {
             );
         }
 
+        object.map.loadImage(
+          "/assets/images/apps/assmat/icones/png/icon-current.png",
+          (error, image) => {
+              if (error) throw error;
+              object.map.addImage("current-marker", image);
+          }
+        );
+
         object.map.addControl(new window.mapboxgl.NavigationControl(), 'bottom-right');
         object.map.addControl(new window.mapboxgl.FullscreenControl(), 'bottom-left');
         object.map.addControl(new window.MapboxLanguage({ defaultLanguage: 'fr' }));
@@ -197,6 +206,16 @@ class MapAbstract {
             .forEach((mapToggleViewElement) => {
                 MiscEvent.addListener('click', this.toggleView.bind(this, objectIndex), mapToggleViewElement);
             });
+
+        let fieldMetadata = document.querySelector(".ds44-input-metadata");
+        if(fieldMetadata)
+        {
+            let fieldAddressValue = fieldMetadata.closest(".ds44-form__container").querySelector(".ds44-input-value");
+            if(fieldAddressValue === "aroundMe")
+            {
+                this.currentLocalisationMarker = JSON.parse(fieldMetadata.value);
+            }
+        }
     }
 
     loadGeojson (objectIndex, geojson) {
