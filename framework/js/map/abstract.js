@@ -210,10 +210,15 @@ class MapAbstract {
         let fieldMetadata = document.querySelector(".ds44-input-metadata");
         if(fieldMetadata)
         {
+            console.log(fieldMetadata);
             let fieldAddressValue = fieldMetadata.closest(".ds44-form__container").querySelector(".ds44-input-value");
+
+            console.log(fieldAddressValue);
             if(fieldAddressValue && fieldAddressValue.value === "aroundMe")
             {
+                console.log(fieldAddressValue);
                 this.currentLocalisationMarker = JSON.parse(fieldMetadata.value);
+                console.log(this.currentLocalisationMarker);
             }
         }
     }
