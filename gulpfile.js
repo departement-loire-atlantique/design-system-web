@@ -262,7 +262,12 @@ gulp.task('serve', gulp.series('build', function () {
 
     browserSync.init({
         server: {
-            baseDir: 'dist'
+            baseDir: 'dist',
+            middleware: function (req, res, next) {
+              res.setHeader('Access-Control-Allow-Origin', '*');
+              res.setHeader('Access-Control-Allow-Headers', '*');
+              next();
+            }
         },
         port: 4000,
         ghostMode: false, // do not mirror clicks, reloads, etc. (performance optimization)
