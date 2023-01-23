@@ -85,6 +85,8 @@ class FormFieldInputAutoCompleteClass extends FormFieldInputAbstract {
             const locationElement = object.containerElement.querySelector('.ds44-location');
             if (locationElement) {
                 MiscEvent.addListener('click', this.aroundMe.bind(this, objectIndex), locationElement);
+
+                console.log(object.valueElement.value);
                 if(object.valueElement.value === "aroundMe")
                 {
                     console.log("Dispatch");
