@@ -131,6 +131,11 @@ class FormLayoutAbstract {
             submitBtn.setAttribute("aria-disabled", true);
         }
 
+        if(this.submitter.hasAttribute("data-form-no-validate"))
+        {
+            return true;
+        }
+
         // Submission is in two steps :
         //  - First we ask the form components if they are valid through event dispatching
         //  - Then, once everyone came back, we make a decision on the form validity
@@ -172,6 +177,10 @@ class FormLayoutAbstract {
                 }
 
                 return false;
+            }
+            else if(this.submitter.hasAttribute("data-send-native"))
+            {
+                return true;
             }
 
             // Organize data
