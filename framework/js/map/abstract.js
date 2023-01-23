@@ -130,7 +130,7 @@ class MapAbstract {
         if (!object) {
             return;
         }
-        console.log(evt.detail);
+        console.log(evt.detail.metadata);
         if(evt.detail.metadata)
         {
             object.map.addSource('currentMarker', {
