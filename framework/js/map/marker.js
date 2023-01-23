@@ -250,52 +250,6 @@ class MapMarkerClass extends MapAbstract {
             });
         }
 
-
-        let fieldMetadata = document.querySelector(".ds44-input-metadata");
-        if(fieldMetadata)
-        {
-            console.log(fieldMetadata);
-            let fieldAddressValue = fieldMetadata.closest(".ds44-form__container").querySelector(".ds44-input-value");
-
-            console.log(fieldAddressValue, fieldAddressValue.value);
-            if(fieldAddressValue && fieldAddressValue.value === "aroundMe")
-            {
-                console.log(fieldAddressValue);
-                this.currentLocalisationMarker = JSON.parse(fieldMetadata.value);
-                console.log(this.currentLocalisationMarker);
-            }
-        }
-
-
-        if(this.currentLocalisationMarker) {
-
-            object.map.addSource('currentMarker', {
-                'type': 'geojson',
-                'data': {
-                    'type': 'FeatureCollection',
-                    'features': [
-                        {
-                            'type': 'Feature',
-                            'geometry': {
-                                'type': 'Point',
-                                'coordinates': [this.currentLocalisationMarker.longitude, this.currentLocalisationMarker.latitude]
-                            }
-                        }
-                    ]
-                }
-            });
-            // Add a layer to use the image to represent the data.
-            object.map.addLayer({
-                'id': 'currentMarker',
-                'type': 'symbol',
-                'source': 'currentMarker', // reference the data source
-                'layout': {
-                    'icon-image': 'current-marker', // reference the image
-                    'icon-size': 0.30
-                }
-            });
-        }
-
         // Add marker
         if (!object.map.getLayer('marker')) {
             object.map.addLayer({

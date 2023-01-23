@@ -11,7 +11,6 @@ class MapAbstract {
         this.geojsonSourceId = 'geojson-source';
         this.geojsonFillsId = 'geojson-fills';
         this.geojsonLinesId = 'geojson-lines';
-        this.currentLocalisationMarker = null;
 
         MiscEvent.addListener('search:focus', this.resultFocus.bind(this));
         MiscEvent.addListener('search:blur', this.resultBlur.bind(this));
@@ -75,6 +74,7 @@ class MapAbstract {
             MiscEvent.addListener('search:update', this.search.bind(this, objectIndex));
             MiscEvent.addListener('resize', this.resize.bind(this, objectIndex), window);
             MiscEvent.addListener('scroll', this.scroll.bind(this, objectIndex), window);
+            MiscEvent.addListener("map:aroundMe", this.aroundMe.bind(this, objectIndex), object.mapElement);
 
             // Show results at startup for mobiles
             const breakpoint = window.matchMedia('(max-width: 767px)');
@@ -123,6 +123,44 @@ class MapAbstract {
         this.isMapLoaded = true;
         window.mapboxgl.accessToken = 'pk.eyJ1IjoiemF6aWZmaWMiLCJhIjoiY2s3bmtxYXh2MDNqZzNkdDc3NzJ0aGdqayJ9.TuhsI1ZKXwKSGw2F3bVy5g';
         this.mapLoad();
+    }
+
+    aroundMe(objectIndex, evt) {
+        const object = this.objects[objectIndex];
+        if (!object) {
+            return;
+        }
+
+        if(evt.detail.metadata)
+        {
+            object.map.addSource('currentMarker', {
+                'type': 'geojson',
+                'data': {
+                    'type': 'FeatureCollection',
+                    'features': [
+                        {
+                            'type': 'Feature',
+                            'geometry': {
+                                'type': 'Point',
+                                'coordinates': [evt.detail.metadata.longitude, evt.detail.metadata.latitude]
+                            }
+                        }
+                    ]
+                }
+            });
+            // Add a layer to use the image to represent the data.
+            object.map.addLayer({
+                'id': 'currentMarker',
+                'type': 'symbol',
+                'source': 'currentMarker', // reference the data source
+                'layout': {
+                    'icon-image': 'current-marker', // reference the image
+                    'icon-size': 0.30
+                }
+            });
+        }
+
+
     }
 
     mapLoad () {
