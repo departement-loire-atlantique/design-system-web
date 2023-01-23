@@ -298,10 +298,13 @@ class FormLayoutAbstract {
                     hiddenInputElement.value = value;
                     object.formElement.appendChild(hiddenInputElement);
                 }
-                // Affiche les valeurs
 
+                // Affiche les valeurs
+                this.recaptchaSubmit(objectIndex, sortedData);
             }
-            this.recaptchaSubmit(objectIndex, sortedData);
+            else {
+                object.formElement.submit();
+            }
         } catch (ex) {
             console.log(ex);
 
