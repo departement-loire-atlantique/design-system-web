@@ -294,7 +294,7 @@ class FormFieldAbstract {
             }
             else
             {
-                element.setAttribute('title', data[object.name].text + " - "+MiscTranslate._("INPUT_REQUIRED"));
+                element.setAttribute('title', data[object.name].text + ( element.hasAttribute("required") ? " - "+MiscTranslate._("INPUT_REQUIRED") : ""));
             }
         }
         else {
@@ -628,11 +628,9 @@ class FormFieldAbstract {
     {
         let valueEnabled = field.getAttribute("data-enabled-field-value");
         let containerFields = document.querySelectorAll("*[data-enabled-by-field='#"+field.getAttribute("id")+"'], *[data-enabled-by-"+field.getAttribute("id")+"]");
+        let disableFields = document.querySelectorAll("*[data-disabled-by-field='#"+field.getAttribute("id")+"'], *[data-disabled-by-"+field.getAttribute("id")+"]");
         let valueIsEqual = false;
-        if(containerFields.length > 0) {
-
-
-
+        if(containerFields.length > 0 || disableFields.length > 0) {
 
             if(field.tagName === "INPUT" && (field.type === "radio" || field.type === "checkbox"))
             {
@@ -683,6 +681,20 @@ class FormFieldAbstract {
                     else {
                         containerField.classList.add('hidden');
                     }
+                }
+            });
+
+            disableFields.forEach((field) => {
+                let condition = field.hasAttribute("data-enabled-field-condition") ?
+                  field.getAttribute("data-enabled-field-condition") :
+                  "equal";
+                let hiddenElement = condition === "diff" ? !valueIsEqual : valueIsEqual;
+                let fieldContainer = (field.closest('.ds44-form__container') || field);
+                if(!hiddenElement) {
+                    MiscEvent.dispatch("field:enable", {}, fieldContainer);
+                }
+                else {
+                    MiscEvent.dispatch("field:disable", {}, fieldContainer);
                 }
             });
         }

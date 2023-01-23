@@ -55,6 +55,8 @@ class FormFieldInputAutoCompleteClass extends FormFieldInputAbstract {
             object.mode = this.FREE_TEXT_MODE;
         }
         object.isExpanded = false;
+
+        object.autocompleteSubFields = document.querySelectorAll("*[data-"+object.element.getAttribute("id")+"]");
     }
 
     initialize () {
@@ -98,6 +100,25 @@ class FormFieldInputAutoCompleteClass extends FormFieldInputAbstract {
         super.disableElements(objectIndex, evt);
 
         this.hide(objectIndex);
+    }
+
+    reset (objectIndex, evt) {
+        const object = this.objects[objectIndex];
+        if (
+          !object ||
+          !object.textElement
+        ) {
+            return;
+        }
+        super.reset(objectIndex, evt);
+        if(object.autocompleteSubFields) {
+            object.autocompleteSubFields.forEach((input) => {
+                if(evt.detail && input !== evt.detail.input) {
+                    MiscEvent.dispatch("field:reset", {focus: false}, input);
+                }
+            });
+            this.enableElements(objectIndex);
+        }
     }
 
     setData (objectIndex, data = null) {
@@ -314,6 +335,12 @@ class FormFieldInputAutoCompleteClass extends FormFieldInputAbstract {
                 } else {
                     elementAutoCompleterListItem.setAttribute('data-value', (results[key].id || key));
                 }
+
+                elementAutoCompleterListItem.setAttribute('data-value-libelle', (results[key].libelle));
+                elementAutoCompleterListItem.setAttribute('data-value-postCode', (results[key].postcode));
+                elementAutoCompleterListItem.setAttribute('data-value-city', (results[key].city));
+
+
                     elementAutoCompleterListItem.setAttribute('data-key', key);
                 elementAutoCompleterListItem.setAttribute('data-metadata', (results[key].metadata ? JSON.stringify(results[key].metadata) : null));
                 elementAutoCompleterListItem.setAttribute('tabindex', '0');
@@ -352,7 +379,10 @@ class FormFieldInputAutoCompleteClass extends FormFieldInputAbstract {
                         metadata: {
                             latitude: feature.geometry.coordinates[1],
                             longitude: feature.geometry.coordinates[0]
-                        }
+                        },
+                        libelle:    feature.properties.name,
+                        postcode:   feature.properties.postcode,
+                        city:       feature.properties.city
                     }
                 }
             }
@@ -564,6 +594,18 @@ class FormFieldInputAutoCompleteClass extends FormFieldInputAbstract {
             this[currentItem.getAttribute('data-value')](objectIndex, currentItem);
             return;
         }
+
+        if(object.autocompleteSubFields.length > 0) {
+            object.autocompleteSubFields.forEach((input) => {
+                let keyValue = input.getAttribute("data-"+object.element.getAttribute("id"));
+                if(currentItem.hasAttribute("data-value-"+keyValue))
+                {
+                    MiscEvent.dispatch("field:"+this.getName(input)+":set", {value: currentItem.getAttribute("data-value-"+keyValue)});
+                }
+            });
+        }
+
+
 
         this.selectRecord(objectIndex, currentItem);
     }

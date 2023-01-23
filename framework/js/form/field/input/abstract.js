@@ -51,7 +51,9 @@ class FormFieldInputAbstract extends FormFieldAbstract {
             MiscEvent.addListener('field:check-value', this.checkValue.bind(this, objectIndex), object.textElement);
 
             if (object.resetButtonElement) {
-                MiscEvent.addListener('click', this.reset.bind(this, objectIndex), object.resetButtonElement);
+                MiscEvent.addListener('click', ()=>{
+                    MiscEvent.dispatch("field:reset", {}, object.textElement);
+                }, object.resetButtonElement);
             }
             if (object.labelElement) {
                 MiscEvent.addListener('click', this.focusOnTextElement.bind(this, objectIndex), object.labelElement);
