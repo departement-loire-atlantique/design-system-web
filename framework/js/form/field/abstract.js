@@ -294,7 +294,7 @@ class FormFieldAbstract {
             }
             else
             {
-                element.setAttribute('title', data[object.name].text + " - "+MiscTranslate._("INPUT_REQUIRED"));
+                element.setAttribute('title', data[object.name].text + ( element.hasAttribute("required") ? " - "+MiscTranslate._("INPUT_REQUIRED") : ""));
             }
         }
         else {
