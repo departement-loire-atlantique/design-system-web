@@ -130,6 +130,7 @@ class MapAbstract {
         if (!object) {
             return;
         }
+        console.log(evt.detail);
         if(evt.detail.metadata)
         {
             object.map.addSource('currentMarker', {
@@ -244,8 +245,8 @@ class MapAbstract {
                 MiscEvent.addListener('click', this.toggleView.bind(this, objectIndex), mapToggleViewElement);
             });
 
-        if(object.mapElement.hasAttribute("data-aroundMe")) {
-            MiscEvent.dispatch("map:aroundMe", {metadata: JSON.parse(object.mapElement.getAttribute("data-aroundMe"))}, object.mapElement);
+        if(object.mapElement.hasAttribute("data-around-me")) {
+            MiscEvent.dispatch("map:aroundMe", {metadata: JSON.parse(object.mapElement.getAttribute("data-around-me"))}, object.mapElement);
         }
     }
 
