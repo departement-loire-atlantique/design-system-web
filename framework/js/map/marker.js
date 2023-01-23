@@ -257,7 +257,7 @@ class MapMarkerClass extends MapAbstract {
             console.log(fieldMetadata);
             let fieldAddressValue = fieldMetadata.closest(".ds44-form__container").querySelector(".ds44-input-value");
 
-            console.log(fieldAddressValue);
+            console.log(fieldAddressValue, fieldAddressValue.value);
             if(fieldAddressValue && fieldAddressValue.value === "aroundMe")
             {
                 console.log(fieldAddressValue);
