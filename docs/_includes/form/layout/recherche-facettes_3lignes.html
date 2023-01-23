@@ -1,0 +1,59 @@
+{% include form/_variables.html %}
+{% include images/loader.html %}
+
+{% if include.url %}
+    {% assign url = include.url %}
+{% else %}
+    {% assign url = '/json/recherche-keyword.json' %}
+{% endif %}
+
+<div class="ds44-facette">
+    <div class="ds44-facette-body">
+        {% if include.titleFacette %}<h3 class="ds44-facette__title">{{ include.titleFacette }}</h3>{% endif %}
+        <form data-is-ajax="true" data-auto-load="true" action="{{ url }}">
+            {% include form/layout/partial/recherche-facettes-main.html fields=include.fields fieldStyle=include.fieldStyle %}
+
+            {% if include.subfields and include.subfields != '' %}
+                <div class="ds44-facetteContainer ds44-theme ds44-flex-container ds44-medium-flex-col">
+                    <div class="ds44-fg1 ds44-flex-container ds44-medium-flex-col">
+                        <p id="filter-by-{{ id }}" class="ds44-heading ds44-small-fg1 ">Affiner par</p>
+                        <div class="">
+                            <ul class="ds44-noMrg ds44-noPdg" id="listbox-{{ id }}">
+                                <li class="ds44-select-list_elem inbl ds44-noMrgb">
+                                    {% include form/field/box/checkbox.html value="1"  checked="checked" label="Choix 1" boxAttributes=boxAttributes %}
+                                </li>
+                                <li class="ds44-select-list_elem inbl ds44-noMrgb">
+                                    {% include form/field/box/checkbox.html value="2"  checked="checked"  label="Choix 2" boxAttributes=boxAttributes %}
+                                </li>
+                                <li class="ds44-select-list_elem inbl ds44-noMrgb">
+                                    {% include form/field/box/checkbox.html value="3" label="Choix 3" boxAttributes=boxAttributes %}
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="ds44-push ds44-small-fg1 ds44-hide-tiny-to-medium ds44-show-medium">
+                        {% include form/layout/partial/recherche-facettes-avancee.html %}
+                    </div>
+                </div>
+                <div class="ds44-facetteContainer ds44-theme ds44-flex-container ds44-medium-flex-col ds44--noPdg-t ds44-sixSelect">
+                    <div class="ds44-fg1 ds44-flex-container ds44-medium-flex-col">
+                        <p id="filter-by-{{ id }}" class="ds44-heading ds44-small-fg1 ">Filtrer par</p>
+                        {{ include.subfields }}
+                    </div>
+                </div>
+
+            {% endif %}
+        </form>
+    </div>
+    <div class="ds44-facette-mobile-button ds44-bgDark ds44--l-padding ds44-show-tiny-to-medium ds44-hide-medium">
+        <button class="ds44-btnStd ds44-btn--contextual ds44-w100 ds44-js-toggle-search-view">
+            <span class="ds44-btnInnerText ds44-facette-mobile-button-collapse">Modifier ou affiner ma recherche</span>
+            <span class="ds44-btnInnerText ds44-facette-mobile-button-expand">Masquer ma recherche</span>
+        </button>
+    </div>
+    {% if include.subfields and include.subfields != '' %}
+        <div class="ds44-facette-mobile-export ds44-push ds44-small-fg1 ds44-show-tiny-to-medium ds44-hide-medium">
+            {% include form/layout/partial/recherche-facettes-export.html %}
+        </div>
+    {% endif %}
+</div>

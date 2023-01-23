@@ -1,0 +1,112 @@
+---
+layout: pattern
+---
+
+{% include header/inc-header.html %}
+
+<main role="main" id="content">
+
+    <article class="ds44-container-large">
+
+        <div class="ds44-lightBG ds44-posRel">
+            <div class="ds44-inner-container ds44--xl-padding-t ds44--m-padding-b ds44-mobile-reduced-pt">
+                <div class="ds44-grid12-offset-2">
+                    {% include breadcrumb/breadcrumb.html %}
+                    <h1 class="h1-like mbl mts ds44-mobile-reduced-mb ds44-mobile-reduced-mt" id="idTitre1">Mes favoris</h1>
+                </div>
+            </div>
+        </div>
+
+        <section class="ds44-contenuArticle ds44-mtb5" id="section1">
+            <div class="ds44-inner-container ">
+                <div class="grid-12-small-1">
+                    <div class="col-7">
+                        <h3 class="h3-like mbs">Retrouvez ici la liste de vos favoris</h3>
+                        <form>
+                            <div id="overlay-newsletter-buttons-archives" class="">
+                                <button class="ds44--m-padding" type="button" aria-describedby="titre-modale-newsletter">
+                                    <span class="ds44-btnInnerText">Tout sélectionner</span><i class="icon icon-check icon--medium" aria-hidden="true"></i>
+                                </button>
+                                <button class="ds44--m-padding" type="button" aria-describedby="titre-modale-newsletter">
+                                    <span class="ds44-btnInnerText">Tout désélectionner</span><i class="icon icon-cross icon--medium" aria-hidden="true"></i>
+                                </button>
+                                <button class="ds44--m-padding ds44-flRight" type="button" aria-describedby="titre-modale-newsletter">
+                                    <span class="ds44-btnInnerText">Tout supprimer</span><i class="icon icon-cross icon--medium" aria-hidden="true"></i>
+                                </button>
+                            </div>
+                            <div class="mtm">
+                                {% capture section3Id %}titre-{% increment my_counter %}{% endcapture %}
+                                <table class="ds44-table ds44-table_favoris ds44-tableau_4col"  id="{{ section3Id }}">
+                                    <tbody>
+                                        <tr>
+                                            <th scope="col">Action</th>
+                                            <th scope="col">Visuel</th>
+                                            <th scope="col">Titre</th>
+                                            <th scope="col">Supprimer</th>
+                                        </tr>
+                                        <tr>
+                                            <td>{% include form/layout/checkboxes.html choices="1" ariaDescribedBy=section3Id %}</td>
+                                            <td>
+                                                <figure class="ds44-container-imgRatio">
+                                                  <img src="../../assets/images/img_article_bigger@2x.jpg" alt="" class="ds44-w100 ds44-imgRatio">
+                                                </figure>
+                                            </td>
+                                            <td>Balance monétaire nantaise</td>
+                                            <td><i class="icon icon-cross" aria-hidden="true"></i></td>
+                                        </tr>
+                                        <tr>
+                                            <td>{% include form/layout/checkboxes.html choices="2" ariaDescribedBy=section3Id %}</td>
+                                            <td>
+                                                <figure class="ds44-container-imgRatio">
+                                                  <img src="../../assets/images/img_article_bigger@2x.jpg" alt="" class="ds44-w100 ds44-imgRatio">
+                                                </figure>
+                                            </td>
+                                            <td>Maurice Sibille</td>
+                                            <td><i class="icon icon-cross" aria-hidden="true"></i></td>
+                                        </tr>
+                                        <tr>
+                                            <td>{% include form/layout/checkboxes.html choices="3" ariaDescribedBy=section3Id %}</td>
+                                            <td>
+                                                <figure class="ds44-container-imgRatio">
+                                                  <img src="../../assets/images/img_article_bigger@2x.jpg" alt="" class="ds44-w100 ds44-imgRatio">
+                                                </figure>
+                                            </td>
+                                            <td>Chapiteau corinthien à la croix </td>
+                                            <td><i class="icon icon-cross" aria-hidden="true"></i></td>
+                                        </tr>
+                                        <tr>
+                                            <td>{% include form/layout/checkboxes.html choices="4" ariaDescribedBy=section3Id %}</td>
+                                            <td>
+                                                <figure class="ds44-container-imgRatio">
+                                                  <img src="../../assets/images/img_article_bigger@2x.jpg" alt="" class="ds44-w100 ds44-imgRatio">
+                                                </figure>
+                                            </td>
+                                            <td>Demi-gros au lion de Montfort</td>
+                                            <td><i class="icon icon-cross" aria-hidden="true"></i></td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        </form>
+
+                    </div>
+                    <div class="col-1 grid-offset ds44-hide-tiny-to-medium"></div>
+                    <aside class="col-4">
+                        <section class="ds44-box ds44-theme ds44-mb3">
+                            <div class="ds44-innerBoxContainer">
+                                <p role="heading" aria-level="2" class="ds44-box-heading">Ma sélection</p>
+                                <p class="ds44-docListElem mts"><i class="icon icon-star-empty  ds44-docListIco" aria-hidden="true"></i><a href="#" class="">Ma sélection (5)</a></p>
+                                <button class="ds44-btnStd ds44-btn--invert mtm" title="Télécharger ma sélection"><span class="ds44-btnInnerText">Télécharger ma sélection</span><i class="icon icon-long-arrow-right" aria-hidden="true"></i></button>
+                                <button class="ds44-btnStd mtm" title="Partager ma sélection"><span class="ds44-btnInnerText">Partager ma sélection</span><i class="icon icon-long-arrow-right" aria-hidden="true"></i></button>
+                        </section>
+                    </aside>
+                </div>
+            </div>
+        </section>
+    </article>
+
+
+</main>
+
+
+{% include footer/footer-LA.html %}

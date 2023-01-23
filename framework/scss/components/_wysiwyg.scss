@@ -226,6 +226,7 @@ table.ds44-tableau_4col tr {
 table.ds44-tableau_5col tr {
     width: 20%;
 }
+/* Tables Inforoutes */
 table.inforoutes {
   text-align: left;
   width: 100%;
@@ -273,10 +274,44 @@ table.inforoutes {
     }
   }
 }
+/* Tables */
+table.ds44-table {
+    th {
+        text-align: left;
+        background-color: $ds44-light-bg;
+    }
+    tr td {
+        text-align: left;
+    }
+    tr:nth-child(odd) {
+        background-color: $ds44-light-bg;
+    }
+}
+table.ds44-table {
+    &.ds44-table_favoris {
+        tr td:first-child,
+        tr td:last-child {
+            text-align: center;
+        }
+        .ds44-form__container {
+            margin: 0;
+
+            .ds44-boxLabel::before {
+                left:auto;
+            }
+        }
+    }
+}
+
+
 
 @media (max-width: 64em) {
   .col.mrl ,
-  .col.mll {
+  .col.mll,
+  .col-4.mrl ,
+  .col-6.mll,
+  .col-6.mrl ,
+  .col-4.mll {
       margin-left: 0;
       margin-right: 0;
   }

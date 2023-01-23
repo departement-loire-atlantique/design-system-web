@@ -30,6 +30,9 @@ variations:
 - title: Authentification Assmat
   pattern: page/AM_authentification.html
 
+- title: Favoris / Sélection
+  pattern: page/RE__favoris.html
+
 - title: Template carrefour
   pattern: templates/template-entryMenu.html
 

@@ -423,16 +423,22 @@ a.ds44-btnStd--retourPage {
     z-index:10;
 }
 
-// Bouton page suivante
+// Bouton page précédente / suivante
 
-.ds44-btnStd--nextPage,
-a.ds44-btnStd--nextPage {
+.ds44-btnStd--nextPrevPage {
     position: absolute;
     top: 20px;
     right: 20px;
-    max-width: 14%;
     text-align: center;
     z-index:10;
+
+
+}
+
+// Bouton Supprimer Rouge Espace Collection
+
+.ds44-red .icon{
+    color: $ds44-light;
 }
 
 
@@ -501,7 +507,19 @@ a.ds44-btnStd--nextPage {
 
 /* medium screens */
 /* ------------- */
+@media (max-width: $ds44-extra-large - .0625) {
+    .ds44-btnStd--nextPrevPage {
 
+        a.ds44-btnStd {
+            span {
+            display: none;
+            }
+            .icon {
+            margin: 0;
+            }
+        }
+    }
+}
 @media (max-width: $ds44-large - .0625) {
 
     .ds44-btnOverlay {
@@ -513,11 +531,7 @@ a.ds44-btnStd--nextPage {
 
     .ds44-btnStd--retourPage,
     a.ds44-btnStd--retourPage {
-        position: relative;
-        top: 40px;
-        left: 16.666%;
         max-width: 100%;
-        margin-bottom: 20px;
     }
 
     .ds44-btnStd, a.ds44-btnStd, a > .ds44-btnStd, .ds44-btnStd > a {
@@ -540,6 +554,10 @@ a.ds44-btnStd--nextPage {
     .ds44-btnStd--retourPage,
     a.ds44-btnStd--retourPage {
         left: 5%;
+        top: 1.5rem;
+    }
+    .ds44-btnStd--nextPrevPage {
+        right: 5%;
         top: 1.5rem;
     }
 

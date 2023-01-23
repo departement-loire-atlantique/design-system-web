@@ -14,15 +14,15 @@ layout: pattern
 
 <p role="heading" aria-level="2" class="h3-like">Cases à cocher et boutons radio</p>
 
-{% include form/layout/checkboxes.html choices="m:Homme,f:Femme" required="true" %}
+{% include form/layout/checkboxes.html label="Au moins une de ces cases doit être cochée" choices="m:Homme,f:Femme" required="true" %}
 
-{% include form/layout/radios.html name="radio1" choices="m:Homme,f:Femme" required="true" %}
+{% include form/layout/radios.html  label="Au moins une de ces cases doit être cochée" name="radio1" choices="m:Homme,f:Femme" required="true" %}
 
 <p role="heading" aria-level="2" class="h3-like">Cases à cocher et boutons radio en liste horizontale</p>
 
-{% include form/layout/checkboxes.html choices="m:Homme,f:Femme" required="true" list="true" %}
+{% include form/layout/checkboxes.html label="Au moins une de ces cases doit être cochée" choices="m:Homme,f:Femme" required="true" list="true" %}
 
-{% include form/layout/radios.html name="radio2" choices="m:Homme,f:Femme" required="true" list="true" %}
+{% include form/layout/radios.html  label="Au moins une de ces cases doit être cochée" name="radio2" choices="m:Homme,f:Femme" required="true" list="true" %}
 
 <hr />
 

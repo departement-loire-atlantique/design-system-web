@@ -1,0 +1,78 @@
+<p role="heading" aria-level="2">{{ include.title }}</p>
+<table class="tabDispos tabDispos_checkbox">
+  <caption class="caption-side bottom mtm">
+      <span class="visually-hidden">Semainier hebdomadaire de disponibilité des créneaux : {{ include.title }}</span>
+  </caption>
+  <tbody>
+    <tr>
+      <td>&nbsp;</td>
+      <th scope="col" aria-label="Lundi">L</th>
+      <th scope="col" aria-label="Mardi">M</th>
+      <th scope="col" aria-label="Mercredi">M</th>
+      <th scope="col" aria-label="Jeudi">J</th>
+      <th scope="col" aria-label="Vendredi">V</th>
+      <th scope="col" aria-label="Samedi">S</th>
+      <th scope="col" aria-label="Dimanche">D</th>
+    </tr>
+    <tr>
+      <th scope="row">Avant l'école</th>
+      <td>{% include form/field/box/checkbox.html value="1"  checked="" label="Lundi - Avant l'école" boxAttributes=boxAttributes %}</td>
+      <td>{% include form/field/box/checkbox.html value="2"  checked="checked" label="Mardi - Avant l'école" boxAttributes=boxAttributes %}</td>
+      <td>{% include form/field/box/checkbox.html value="3"  checked="checked" label="Mercredi - Avant l'école" boxAttributes=boxAttributes %}</td>
+      <td>{% include form/field/box/checkbox.html value="4"  checked="checked" label="Jeudi - Avant l'école" boxAttributes=boxAttributes %}</td>
+      <td>{% include form/field/box/checkbox.html value="5"  checked="checked" label="Vendredi - Avant l'école" boxAttributes=boxAttributes %}</td>
+      <td>{% include form/field/box/checkbox.html value="6"  checked="" label="Samedi - Avant l'école" boxAttributes=boxAttributes %}</td>
+      <td>{% include form/field/box/checkbox.html value="7"  checked="" label="Dimanche - Avant l'école" boxAttributes=boxAttributes %}</td>
+    </tr>
+    <tr>
+      <th scope="row">Matin</th>
+      <td>{% include form/field/box/checkbox.html value="8"  checked="" label="Lundi - Matin" boxAttributes=boxAttributes %}</td>
+      <td>{% include form/field/box/checkbox.html value="9"  checked="checked" label="Mardi - Matin" boxAttributes=boxAttributes %}</td>
+      <td>{% include form/field/box/checkbox.html value="10"  checked="checked" label="Mercredi - Matin" boxAttributes=boxAttributes %}</td>
+      <td>{% include form/field/box/checkbox.html value="11"  checked="checked" label="Jeudi - Matin" boxAttributes=boxAttributes %}</td>
+      <td>{% include form/field/box/checkbox.html value="12"  checked="checked" label="Vendredi - Matin" boxAttributes=boxAttributes %}</td>
+      <td>{% include form/field/box/checkbox.html value="13"  checked="" label="Samedi - Matin" boxAttributes=boxAttributes %}</td>
+      <td>{% include form/field/box/checkbox.html value="14"  checked="" label="Dimanche - Matin" boxAttributes=boxAttributes %}</td>
+    </tr>
+    <tr>
+      <th scope="row">Midi</th>
+      <td>{% include form/field/box/checkbox.html value="15"  checked="" label="Lundi - Midi" boxAttributes=boxAttributes %}</td>
+      <td>{% include form/field/box/checkbox.html value="16"  checked="checked" label="Mardi - Midi" boxAttributes=boxAttributes %}</td>
+      <td>{% include form/field/box/checkbox.html value="17"  checked="checked" label="Mercredi - Midi" boxAttributes=boxAttributes %}</td>
+      <td>{% include form/field/box/checkbox.html value="18"  checked="checked" label="Jeudi - Midi" boxAttributes=boxAttributes %}</td>
+      <td>{% include form/field/box/checkbox.html value="19"  checked="checked" label="Vendredi - Midi" boxAttributes=boxAttributes %}</td>
+      <td>{% include form/field/box/checkbox.html value="20"  checked="" label="Samedi - Midi" boxAttributes=boxAttributes %}</td>
+      <td>{% include form/field/box/checkbox.html value="21"  checked="" label="Dimanche - Midi" boxAttributes=boxAttributes %}</td>
+    </tr>
+    <tr>
+      <th scope="row">Après midi</th>
+      <td>{% include form/field/box/checkbox.html value="22"  checked="" label="Lundi - Après midi" boxAttributes=boxAttributes %}</td>
+      <td>{% include form/field/box/checkbox.html value="23"  checked="checked" label="Mardi - Après midi" boxAttributes=boxAttributes %}</td>
+      <td>{% include form/field/box/checkbox.html value="24"  checked="checked" label="Mercredi - Après midi" boxAttributes=boxAttributes %}</td>
+      <td>{% include form/field/box/checkbox.html value="25"  checked="checked" label="Jeudi - Après midi" boxAttributes=boxAttributes %}</td>
+      <td>{% include form/field/box/checkbox.html value="26"  checked="checked" label="Vendredi - Après midi" boxAttributes=boxAttributes %}</td>
+      <td>{% include form/field/box/checkbox.html value="27"  checked="" label="Samedi - Après midi" boxAttributes=boxAttributes %}</td>
+      <td>{% include form/field/box/checkbox.html value="28"  checked="" label="Dimanche - Après midi" boxAttributes=boxAttributes %}</td>
+    </tr>
+    <tr>
+      <th scope="row">Après l'école</th>
+      <td>{% include form/field/box/checkbox.html value="29"  checked="" label="Lundi - Après l'école" boxAttributes=boxAttributes %}</td>
+      <td>{% include form/field/box/checkbox.html value="30"  checked="checked" label="Mardi - Après l'école" boxAttributes=boxAttributes %}</td>
+      <td>{% include form/field/box/checkbox.html value="31"  checked="checked" label="Mercredi - Après l'école" boxAttributes=boxAttributes %}</td>
+      <td>{% include form/field/box/checkbox.html value="32"  checked="checked" label="Jeudi - Après l'école" boxAttributes=boxAttributes %}</td>
+      <td>{% include form/field/box/checkbox.html value="33"  checked="checked" label="Vendredi - Après l'école" boxAttributes=boxAttributes %}</td>
+      <td>{% include form/field/box/checkbox.html value="34"  checked="" label="Samedi - Après l'école" boxAttributes=boxAttributes %}</td>
+      <td>{% include form/field/box/checkbox.html value="35"  checked="" label="Dimanche - Après l'école" boxAttributes=boxAttributes %}</td>
+    </tr>
+    <tr>
+      <th scope="row">Nuit</th>
+      <td>{% include form/field/box/checkbox.html value="36"  checked="" label="Lundi - Nuit" boxAttributes=boxAttributes %}</td>
+      <td>{% include form/field/box/checkbox.html value="37"  checked="" label="Mardi - Nuit" boxAttributes=boxAttributes %}</td>
+      <td>{% include form/field/box/checkbox.html value="38"  checked="" label="Mercredi - Nuit" boxAttributes=boxAttributes %}</td>
+      <td>{% include form/field/box/checkbox.html value="39"  checked="" label="Jeudi - Nuit" boxAttributes=boxAttributes %}</td>
+      <td>{% include form/field/box/checkbox.html value="40"  checked="" label="Vendredi - Nuit" boxAttributes=boxAttributes %}</td>
+      <td>{% include form/field/box/checkbox.html value="41"  checked="" label="Samedi - Nuit" boxAttributes=boxAttributes %}</td>
+      <td>{% include form/field/box/checkbox.html value="42"  checked="" label="Dimanche - Nuit" boxAttributes=boxAttributes %}</td>
+    </tr>
+  </tbody>
+</table>

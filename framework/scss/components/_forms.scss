@@ -469,6 +469,12 @@ input[type=radio],
                         }
                     }
                 }
+                &.ds44-sixSelect {
+                    .ds44-fieldContainer {
+                        flex: none;
+                        width: 14%;
+                        }
+                }
             }
         }
 

@@ -36,6 +36,10 @@ variations:
   description: Présentation du calendrier pour les disponibilités des assmats.
   pattern: composants-transverses/calendrier-assmat.html
 
+- title: Calendrier Assmat Checkbox
+  description: Modification du calendrier coté assmats pour leurs disponibilités.
+  pattern: composants-transverses/calendrier-assmat-checkbox.html
+
 
 ---
 

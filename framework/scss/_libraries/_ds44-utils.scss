@@ -186,6 +186,10 @@
     padding-left: $ds44-padding-xlarge*3 !important; // 9rem
 }
 
+.ds44--3xl-padding-r {
+    padding-right: $ds44-padding-xlarge*3 !important; // 9rem
+}
+
 .ds44--3xl-padding-t {
     padding-top: $ds44-padding-xlarge*3 !important; // 9rem
 }
@@ -198,6 +202,10 @@
 
 .ds44-noMrg {
     margin: 0 !important;
+}
+
+.ds44-noMrgb {
+    margin-bottom: 0 !important;
 }
 
 .ds44-hmt {
@@ -244,6 +252,10 @@
 
 .ds44-mr-std {
     margin-right: $ds44-medium-vmargin; // 1.5rem
+}
+
+.ds44-ml-std {
+    margin-left: $ds44-medium-vmargin; // 1.5rem
 }
 
 .ds44-m-std {
@@ -697,6 +709,12 @@
     height: 100%;
 }
 
+/* === Float === */
+
+.ds44-flRight {
+    float : right;
+}
+
 /* === Color utils === */
 
 .ds44-darkContext {
@@ -772,6 +790,14 @@
 
 .ds44-img50 {
     background: linear-gradient(to bottom, $ds44-light-bg 50%, $ds44-light 50%);
+}
+
+// Thematic color button More / Less Espace Collection
+.ds44-green {
+    background-color: #99E6D1;
+}
+.ds44-red {
+    background-color: #DC3545;
 }
 
 // Thematic color dataviz
@@ -1012,6 +1038,14 @@
     }
 }
 
+.ds44-separator_light {
+    height: 1px;
+    width: 100%;
+    background-color: $ds44-lightgray;
+    z-index: 1;
+    margin: 30px 0;
+}
+
 
 @media (max-width: $ds44-medium - .0625) {
 
@@ -1245,6 +1279,9 @@ h6.visually-hidden + * {
     }
     .ds44-posTopCont {
         top: $ds44-margin-base;
+    }
+    .ds44-tablet-augment-pt {
+        padding-top: 9rem !important;
     }
 
 }
