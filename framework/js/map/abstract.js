@@ -185,7 +185,7 @@ class MapAbstract {
         }
 
         object.map.loadImage(
-          "/assets/images/apps/assmat/icones/png/icon-current.png",
+          "https://design-loire-atlantique.yipikai.dev/assets/images/apps/assmat/icones/png/icon-current.png",
           (error, image) => {
               if (error) throw error;
               object.map.addImage("current-marker", image);
