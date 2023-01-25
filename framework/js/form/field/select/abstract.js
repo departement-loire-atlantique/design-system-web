@@ -8,6 +8,7 @@ class FormFieldSelectAbstract extends FormFieldAbstract {
         let valueElement = document.createElement('input');
         valueElement.classList.add('ds44-input-value');
         valueElement.setAttribute('type', 'hidden');
+        valueElement.setAttribute('name', element.hasAttribute("data-name") ? element.getAttribute("data-name") : element.getAttribute("id"));
         element.parentNode.insertBefore(valueElement, element);
 
         const objectIndex = (this.objects.length - 1);

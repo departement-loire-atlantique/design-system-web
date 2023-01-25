@@ -303,6 +303,21 @@ class FormLayoutAbstract {
                 this.recaptchaSubmit(objectIndex, sortedData);
             }
             else {
+
+                if (this.submitter !== undefined && this.submitter !== null) {
+                    let submitKey = "submit";
+                    if (this.submitter.dataset.submitKey !== undefined && this.submitter.dataset.submitKey) {
+                        submitKey = this.submitter.dataset.submitKey
+                    }
+                    if (this.submitter.dataset.submitValue !== undefined && this.submitter.dataset.submitValue) {
+                        let buttonHiddenField = document.createElement("input");
+                        buttonHiddenField.setAttribute('type', 'hidden');
+                        buttonHiddenField.setAttribute('name', submitKey);
+                        buttonHiddenField.value = this.submitter.dataset.submitValue;
+                        object.formElement.appendChild(buttonHiddenField);
+                    }
+                }
+
                 object.formElement.submit();
             }
         } catch (ex) {
