@@ -304,6 +304,7 @@ class FormLayoutAbstract {
             }
             else {
 
+                console.log(this.submitter);
                 if (this.submitter !== undefined && this.submitter !== null) {
                     let submitKey = "submit";
                     if (this.submitter.dataset.submitKey !== undefined && this.submitter.dataset.submitKey) {
@@ -315,9 +316,10 @@ class FormLayoutAbstract {
                         buttonHiddenField.setAttribute('name', submitKey);
                         buttonHiddenField.value = this.submitter.dataset.submitValue;
                         object.formElement.appendChild(buttonHiddenField);
+                        console.log(buttonHiddenField);
                     }
                 }
-
+                console.log('submit');
                 object.formElement.submit();
             }
         } catch (ex) {
