@@ -42,6 +42,13 @@ class FormLayoutAbstract {
             this.delayedFocus(msgContainerElement);
         }
 
+        formElement.querySelectorAll("button").forEach((button) => {
+            MiscEvent.addListener("click", () => {
+                this.submitter = button;
+            }, button);
+        });
+
+
         this.objects.push(object);
     }
 
@@ -118,7 +125,9 @@ class FormLayoutAbstract {
         if (!object) {
             return false;
         }
-        if(evt.submitter) {
+
+
+        if(!this.submitter && evt.submitter) {
             this.submitter = evt.submitter
         }
 
@@ -131,7 +140,7 @@ class FormLayoutAbstract {
             submitBtn.setAttribute("aria-disabled", true);
         }
 
-        if(this.submitter.hasAttribute("data-form-no-validate"))
+        if(this.submitter && this.submitter.hasAttribute("data-form-no-validate"))
         {
             return true;
         }
@@ -315,9 +324,9 @@ class FormLayoutAbstract {
                         buttonHiddenField.setAttribute('name', submitKey);
                         buttonHiddenField.value = this.submitter.dataset.submitValue;
                         object.formElement.appendChild(buttonHiddenField);
+                        console.log(buttonHiddenField);
                     }
                 }
-
                 object.formElement.submit();
             }
         } catch (ex) {
