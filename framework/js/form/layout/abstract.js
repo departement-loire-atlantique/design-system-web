@@ -122,6 +122,8 @@ class FormLayoutAbstract {
             this.submitter = evt.submitter
         }
 
+        console.log(evt);
+
         // We need to deactivate the submit button once clicked
         // If the form is incorrect, it shall be reactivated
         let submitBtn = object.formElement.querySelector('.ds44-btnStd');
@@ -131,10 +133,12 @@ class FormLayoutAbstract {
             submitBtn.setAttribute("aria-disabled", true);
         }
 
-        if(this.submitter.hasAttribute("data-form-no-validate"))
+        if(this.submitter && this.submitter.hasAttribute("data-form-no-validate"))
         {
             return true;
         }
+
+        console.log(this.submitter);
 
         // Submission is in two steps :
         //  - First we ask the form components if they are valid through event dispatching
