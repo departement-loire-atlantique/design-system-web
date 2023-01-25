@@ -49,7 +49,6 @@ class MapMarkerClass extends MapAbstract {
           }
         );
 
-        console.log(object.mapElement);
         if(!object.mapElement.hasAttribute("data-no-refresh"))
         {
             object.map.on('moveend', this.move.bind(this, objectIndex));

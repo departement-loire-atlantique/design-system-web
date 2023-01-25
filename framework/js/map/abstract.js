@@ -74,6 +74,7 @@ class MapAbstract {
             MiscEvent.addListener('search:update', this.search.bind(this, objectIndex));
             MiscEvent.addListener('resize', this.resize.bind(this, objectIndex), window);
             MiscEvent.addListener('scroll', this.scroll.bind(this, objectIndex), window);
+            MiscEvent.addListener("map:aroundMe", this.aroundMe.bind(this, objectIndex), object.mapElement);
 
             // Show results at startup for mobiles
             const breakpoint = window.matchMedia('(max-width: 767px)');
@@ -122,6 +123,43 @@ class MapAbstract {
         this.isMapLoaded = true;
         window.mapboxgl.accessToken = 'pk.eyJ1IjoiemF6aWZmaWMiLCJhIjoiY2s3bmtxYXh2MDNqZzNkdDc3NzJ0aGdqayJ9.TuhsI1ZKXwKSGw2F3bVy5g';
         this.mapLoad();
+    }
+
+    aroundMe(objectIndex, evt) {
+        const object = this.objects[objectIndex];
+        if (!object) {
+            return;
+        }
+        if(evt.detail.metadata)
+        {
+            object.map.addSource('currentMarker', {
+                'type': 'geojson',
+                'data': {
+                    'type': 'FeatureCollection',
+                    'features': [
+                        {
+                            'type': 'Feature',
+                            'geometry': {
+                                'type': 'Point',
+                                'coordinates': [evt.detail.metadata.longitude, evt.detail.metadata.latitude]
+                            }
+                        }
+                    ]
+                }
+            });
+            // Add a layer to use the image to represent the data.
+            object.map.addLayer({
+                'id': 'currentMarker',
+                'type': 'symbol',
+                'source': 'currentMarker', // reference the data source
+                'layout': {
+                    'icon-image': 'current-marker', // reference the image
+                    'icon-size': 0.30
+                }
+            });
+        }
+
+
     }
 
     mapLoad () {
@@ -183,6 +221,17 @@ class MapAbstract {
             );
         }
 
+        object.map.loadImage(
+          "https://design-loire-atlantique.yipikai.dev/assets/images/apps/assmat/icones/png/icon-current.png",
+          (error, image) => {
+              if (error) throw error;
+              object.map.addImage("current-marker", image);
+              if(object.mapElement.hasAttribute("data-around-me")) {
+                  MiscEvent.dispatch("map:aroundMe", {metadata: JSON.parse(object.mapElement.getAttribute("data-around-me"))}, object.mapElement);
+              }
+          }
+        );
+
         object.map.addControl(new window.mapboxgl.NavigationControl(), 'bottom-right');
         object.map.addControl(new window.mapboxgl.FullscreenControl(), 'bottom-left');
         object.map.addControl(new window.MapboxLanguage({ defaultLanguage: 'fr' }));
@@ -197,6 +246,7 @@ class MapAbstract {
             .forEach((mapToggleViewElement) => {
                 MiscEvent.addListener('click', this.toggleView.bind(this, objectIndex), mapToggleViewElement);
             });
+
     }
 
     loadGeojson (objectIndex, geojson) {
