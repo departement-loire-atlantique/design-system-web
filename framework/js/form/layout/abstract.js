@@ -42,6 +42,13 @@ class FormLayoutAbstract {
             this.delayedFocus(msgContainerElement);
         }
 
+        formElement.querySelectorAll("button").forEach((button) => {
+            MiscEvent.addListener("click", () => {
+                this.submitter = button;
+            }, button);
+        });
+
+
         this.objects.push(object);
     }
 
@@ -118,11 +125,11 @@ class FormLayoutAbstract {
         if (!object) {
             return false;
         }
-        if(evt.submitter) {
+
+
+        if(!this.submitter && evt.submitter) {
             this.submitter = evt.submitter
         }
-
-        console.log(evt);
 
         // We need to deactivate the submit button once clicked
         // If the form is incorrect, it shall be reactivated
@@ -137,8 +144,6 @@ class FormLayoutAbstract {
         {
             return true;
         }
-
-        console.log(this.submitter);
 
         // Submission is in two steps :
         //  - First we ask the form components if they are valid through event dispatching
@@ -308,7 +313,6 @@ class FormLayoutAbstract {
             }
             else {
 
-                console.log(this.submitter);
                 if (this.submitter !== undefined && this.submitter !== null) {
                     let submitKey = "submit";
                     if (this.submitter.dataset.submitKey !== undefined && this.submitter.dataset.submitKey) {
@@ -323,7 +327,6 @@ class FormLayoutAbstract {
                         console.log(buttonHiddenField);
                     }
                 }
-                console.log('submit');
                 object.formElement.submit();
             }
         } catch (ex) {
