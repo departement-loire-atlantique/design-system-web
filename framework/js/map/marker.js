@@ -211,7 +211,7 @@ class MapMarkerClass extends MapAbstract {
                 source: 'places',
                 filter: ['has', 'point_count'],
                 paint: paintCluster
-            });
+            }, "currentMarker");
             object.map.on('click', 'cluster-background', (evt) => {
                 const features = object.map.queryRenderedFeatures(evt.point, {
                     layers: ['cluster-background']
@@ -247,7 +247,7 @@ class MapMarkerClass extends MapAbstract {
                     'text-font': ['DIN Offc Pro Medium', 'Arial Unicode MS Bold'],
                     'text-size': 12
                 }
-            });
+            }, "currentMarker");
         }
 
         // Add marker
@@ -262,7 +262,7 @@ class MapMarkerClass extends MapAbstract {
                     'icon-size': 1,
                     'icon-allow-overlap': true
                 }
-            });
+            }, "currentMarker");
             object.map.on('click', 'marker', (evt) => {
                 this.showPopup(objectIndex, evt.features[0], evt);
             });
