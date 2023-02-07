@@ -218,7 +218,6 @@ class FormLayoutSearchClass extends FormLayoutAbstract {
             (options.addUp ? object.searchData.results : null)
         );
 
-        console.log(response);
 
         // Set url with the search parameters
         this.setSearchHash(objectIndex, response.id);

@@ -325,7 +325,6 @@ class FormLayoutAbstract {
                         buttonHiddenField.setAttribute('name', submitKey);
                         buttonHiddenField.value = this.submitter.dataset.submitValue;
                         object.formElement.appendChild(buttonHiddenField);
-                        console.log(buttonHiddenField);
                     }
                 }
                 object.formElement.submit();
