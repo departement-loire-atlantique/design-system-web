@@ -218,6 +218,8 @@ class FormLayoutSearchClass extends FormLayoutAbstract {
             (options.addUp ? object.searchData.results : null)
         );
 
+        console.log(response);
+
         // Set url with the search parameters
         this.setSearchHash(objectIndex, response.id);
 
@@ -307,7 +309,6 @@ class FormLayoutSearchClass extends FormLayoutAbstract {
         }
 
 
-        console.log(searchId, object.parameter);
         if (MiscUtils.isInDevMode()) {
             // In dev mode, generate the search id and use the local storage to store the search data
             // as there is no back end
