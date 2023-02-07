@@ -163,6 +163,7 @@ class MapAbstract {
             }
             else
             {
+                console.log(object.map.getSource('currentMarker'));
                 object.map.getSource('currentMarker').setData({
                   'type': 'Feature',
                   'geometry': {
