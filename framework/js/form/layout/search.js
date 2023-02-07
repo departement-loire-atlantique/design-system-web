@@ -218,7 +218,6 @@ class FormLayoutSearchClass extends FormLayoutAbstract {
             (options.addUp ? object.searchData.results : null)
         );
 
-        console.log('Search Success');
         // Set url with the search parameters
         this.setSearchHash(objectIndex, response.id);
 
@@ -307,6 +306,7 @@ class FormLayoutSearchClass extends FormLayoutAbstract {
             return;
         }
 
+
         if (MiscUtils.isInDevMode()) {
             // In dev mode, generate the search id and use the local storage to store the search data
             // as there is no back end
@@ -317,6 +317,7 @@ class FormLayoutSearchClass extends FormLayoutAbstract {
             return;
         }
 
+        console.log(searchId, object.parameter);
         if (object.formElement.getAttribute('data-seo-url') !== 'true') {
             MiscUrl.setHashParameters(object.parameters);
         } else {
