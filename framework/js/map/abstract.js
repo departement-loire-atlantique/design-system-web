@@ -163,20 +163,13 @@ class MapAbstract {
             }
             else
             {
-                const data = object.map.querySourceFeatures('currentMarker');
-                console.log(data);
                 object.map.getSource('currentMarker').setData({
-                    'type': 'FeatureCollection',
-                    'features': [
-                        {
-                            'type': 'Feature',
-                            'geometry': {
-                                'type': 'Point',
-                                'coordinates': [evt.detail.metadata.longitude, evt.detail.metadata.latitude]
-                            }
-                        }
-                    ]
-                });
+                  'type': 'Feature',
+                  'geometry': {
+                      'type': 'Point',
+                      'coordinates': [evt.detail.metadata.longitude, evt.detail.metadata.latitude]
+                  }
+              });
             }
 
         }
