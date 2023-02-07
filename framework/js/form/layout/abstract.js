@@ -126,8 +126,9 @@ class FormLayoutAbstract {
             return false;
         }
 
+        this.submitter = null;
 
-        if(!this.submitter && evt.submitter) {
+        if(evt.submitter) {
             this.submitter = evt.submitter
         }
 
@@ -187,7 +188,7 @@ class FormLayoutAbstract {
 
                 return false;
             }
-            else if(!this.submitter.hasAttribute("data-send-native")) {
+            else if(!this.submitter || !this.submitter.hasAttribute("data-send-native")) {
 
                 // Organize data
                 const formattedData = {};
@@ -220,7 +221,7 @@ class FormLayoutAbstract {
                       dataPositionByKey[hiddenInputName] = 999;
                   });
 
-                if (this.submitter !== undefined && this.submitter !== null) {
+                if (this.submitter !== null) {
                     let submitKey = "submit";
                     if (this.submitter.dataset.submitKey !== undefined && this.submitter.dataset.submitKey) {
                         submitKey = this.submitter.dataset.submitKey
@@ -313,7 +314,7 @@ class FormLayoutAbstract {
             }
             else {
 
-                if (this.submitter !== undefined && this.submitter !== null) {
+                if (this.submitter !== null) {
                     let submitKey = "submit";
                     if (this.submitter.dataset.submitKey !== undefined && this.submitter.dataset.submitKey) {
                         submitKey = this.submitter.dataset.submitKey
