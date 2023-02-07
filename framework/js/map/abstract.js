@@ -149,16 +149,6 @@ class MapAbstract {
                         ]
                     }
                 });
-                // Add a layer to use the image to represent the data.
-                object.map.addLayer({
-                    'id': 'currentMarker',
-                    'type': 'symbol',
-                    'source': 'currentMarker', // reference the data source
-                    'layout': {
-                        'icon-image': 'current-marker', // reference the image
-                        'icon-size': 0.30
-                    }
-                });
             }
             else
             {
@@ -175,6 +165,16 @@ class MapAbstract {
                     ]
                 });
             }
+            // Add a layer to use the image to represent the data.
+            object.map.addLayer({
+                'id': 'currentMarker',
+                'type': 'symbol',
+                'source': 'currentMarker', // reference the data source
+                'layout': {
+                    'icon-image': 'current-marker', // reference the image
+                    'icon-size': 0.30
+                }
+            });
 
         }
 
