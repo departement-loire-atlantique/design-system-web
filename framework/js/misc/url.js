@@ -14,7 +14,7 @@ class MiscUrl {
     }
 
     static setHashParameters (parameters = {}) {
-        document.location.href = document.location.href.split('?')[0] + '?' + MiscUrl.jsonToUrl(parameters);
+        document.location.href = document.location.href.split('#')[0] + '#' + MiscUrl.jsonToUrl(parameters);
     }
 
     static getSeoHashParameters () {
