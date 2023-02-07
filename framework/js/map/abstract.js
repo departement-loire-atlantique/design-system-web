@@ -164,7 +164,6 @@ class MapAbstract {
             else
             {
                 console.log(object.map.getSource('currentMarker'));
-                console.log(evt.detail.metadata);
                 object.map.getSource('currentMarker').setData({
                   'type': 'Feature',
                   'geometry': {
