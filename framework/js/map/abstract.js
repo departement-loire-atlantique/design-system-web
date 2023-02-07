@@ -160,21 +160,6 @@ class MapAbstract {
                     }
                 });
             }
-            else
-            {
-                object.map.getSource('currentMarker').setData({
-                    'type': 'FeatureCollection',
-                    'features': [
-                        {
-                            'type': 'Feature',
-                            'geometry': {
-                                'type': 'Point',
-                                'coordinates': [evt.detail.metadata.longitude, evt.detail.metadata.latitude]
-                            }
-                        }
-                    ]
-                });
-            }
 
         }
 
