@@ -315,8 +315,6 @@ class FormLayoutSearchClass extends FormLayoutAbstract {
             const parameters = JSON.stringify(object.parameters);
             searchId = await MiscUtils.digestMessage(parameters);
             window.sessionStorage.setItem('search_' + searchId, parameters);
-        } else if (!searchId) {
-            return;
         }
 
         if (object.formElement.getAttribute('data-seo-url') !== 'true') {
