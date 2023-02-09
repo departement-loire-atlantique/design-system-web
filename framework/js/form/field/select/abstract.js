@@ -437,18 +437,20 @@ class FormFieldSelectAbstract extends FormFieldAbstract {
         }
 
         let subSelectListElement = object.selectListElement.querySelector('.ds44-list');
-        if (!subSelectListElement) {
-            if(!object.selectListElement.classList.contains("ds44-collapser"))
-            {
-                return;
-            }
+        if(object.selectListElement.classList.contains("ds44-collapser"))
+        {
             subSelectListElement = object.selectListElement;
+        }
+
+        if (!subSelectListElement) {
+            return;
         }
 
         object.textElement.removeAttribute('aria-activedescendant');
         Array.from(subSelectListElement.children).map((childElement) => {
             childElement.remove();
         });
+        subSelectListElement.innerHTML = "";
 
         if (Object.keys(results).length === 0) {
             // No result
