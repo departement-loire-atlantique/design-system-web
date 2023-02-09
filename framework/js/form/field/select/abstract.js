@@ -436,9 +436,13 @@ class FormFieldSelectAbstract extends FormFieldAbstract {
             return;
         }
 
-        const subSelectListElement = object.selectListElement.querySelector('.ds44-list');
+        let subSelectListElement = object.selectListElement.querySelector('.ds44-list');
         if (!subSelectListElement) {
-            return;
+            if(!object.selectListElement.classList.contains("ds44-collapser"))
+            {
+                return;
+            }
+            subSelectListElement = object.selectListElement;
         }
 
         object.textElement.removeAttribute('aria-activedescendant');
@@ -459,13 +463,13 @@ class FormFieldSelectAbstract extends FormFieldAbstract {
                     continue;
                 }
 
-                let elementSelectListItem = this.getListElement(object, (results[key].id || key), results[key].value);
+                let elementSelectListItem = this.getListElement(object, (results[key].id || key), results[key].value,  results[key].children !== undefined ? results[key].children : null, objectIndex);
                 subSelectListElement.appendChild(elementSelectListItem);
 
                 this.setListElementEvents(elementSelectListItem, objectIndex);
             }
         }
-
+        let collapser = new CollapserStandard();
         this.selectFromValue(objectIndex);
         MiscAccessibility.hide(object.selectContainerElement);
     }
