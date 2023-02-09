@@ -42,8 +42,10 @@ class CollapserStandardClass {
         MiscEvent.addListener('click', this.showHide.bind(this, objectIndex), buttonElement);
     }
 
-    showHide (objectIndex) {
+    showHide (objectIndex, evt) {
         const object = this.objects[objectIndex];
+        evt.stopPropagation();
+        evt.preventDefault();
         if (!object || !object.buttonElement) {
             return;
         }
@@ -75,6 +77,14 @@ class CollapserStandardClass {
         panel.style.maxHeight = (panel.style.maxHeight ? null : panel.scrollHeight + 60 + 'px');
         MiscAccessibility.show(panel);
         panel.style.visibility = 'visible';
+
+        const icon = object.buttonElement.querySelector(".icon");
+        if(icon)
+        {
+            icon.classList.remove("icon-down");
+            icon.classList.add("icon-up");
+        }
+
     }
 
     hide (objectIndex) {
@@ -93,6 +103,13 @@ class CollapserStandardClass {
         panel.style.maxHeight = null;
         MiscAccessibility.hide(panel);
         panel.style.visibility = 'hidden';
+
+        const icon = object.buttonElement.querySelector(".icon");
+        if(icon)
+        {
+            icon.classList.remove("icon-up");
+            icon.classList.add("icon-down");
+        }
     }
 
     escape (objectIndex) {
