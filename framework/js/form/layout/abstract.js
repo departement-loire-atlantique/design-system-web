@@ -135,7 +135,7 @@ class FormLayoutAbstract {
         evt.preventDefault();
         evt.stopPropagation();
 
-        console.log(this.submitter);
+        console.log(evt, this.submitter);
         return false;
 
         // We need to deactivate the submit button once clicked
