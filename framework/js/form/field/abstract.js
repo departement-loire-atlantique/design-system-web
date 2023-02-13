@@ -664,28 +664,24 @@ class FormFieldAbstract {
                   containerField.getAttribute("data-enabled-field-condition") :
                   "equal";
                 let viewElement = condition === "diff" ? !valueIsEqual : valueIsEqual;
+
                 if(containerField.querySelectorAll("*[data-component-form-field-uuid]").length > 0)
                 {
                     containerField.querySelectorAll("*[data-component-form-field-uuid]").forEach((childField) => {
                         if(viewElement) {
                             MiscEvent.dispatch("field:enable", {}, childField);
-                            containerField.classList.remove('hidden');
                         }
-                        else if(!containerField.classList.contains('hidden')) {
+                        else {
                             MiscEvent.dispatch("field:reset", {focus: false}, childField);
                             MiscEvent.dispatch("field:disable", {}, childField);
-                            containerField.classList.add('hidden');
                         }
                     })
                 }
-                else
-                {
-                    if(viewElement) {
-                        containerField.classList.remove('hidden');
-                    }
-                    else {
-                        containerField.classList.add('hidden');
-                    }
+                if(viewElement) {
+                    containerField.classList.remove('hidden');
+                }
+                else {
+                    containerField.classList.add('hidden');
                 }
             });
 
