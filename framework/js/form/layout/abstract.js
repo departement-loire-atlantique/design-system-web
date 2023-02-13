@@ -45,7 +45,6 @@ class FormLayoutAbstract {
 
         formElement.querySelectorAll("button").forEach((button) => {
             MiscEvent.addListener("click", () => {
-                console.log(button);
                 this.submitter = button;
             }, button);
         });
@@ -128,17 +127,9 @@ class FormLayoutAbstract {
             return false;
         }
 
-        this.submitter = null;
-
         if(evt.submitter) {
             this.submitter = evt.submitter
         }
-
-        evt.preventDefault();
-        evt.stopPropagation();
-
-        console.log(evt, this.submitter);
-        return false;
 
         // We need to deactivate the submit button once clicked
         // If the form is incorrect, it shall be reactivated
