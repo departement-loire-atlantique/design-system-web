@@ -326,7 +326,6 @@ class FormLayoutAbstract {
                         object.formElement.appendChild(buttonHiddenField);
                     }
                 }
-                return false;
                 object.formElement.submit();
             }
         } catch (ex) {
