@@ -4,6 +4,7 @@ class FormLayoutAbstract {
         this.selector = selector;
         Debug.log(this.className+" -> Constructor");
         this.objects = [];
+        this.submitter = null;
     }
 
     clearObject() {
@@ -43,6 +44,7 @@ class FormLayoutAbstract {
         }
 
         formElement.querySelectorAll("button").forEach((button) => {
+            console.log(button);
             MiscEvent.addListener("click", () => {
                 console.log(button);
                 this.submitter = button;
