@@ -132,6 +132,9 @@ class FormLayoutAbstract {
             this.submitter = evt.submitter
         }
 
+        evt.preventDefault();
+        evt.stopPropagation();
+
         console.log(this.submitter);
         return false;
 
