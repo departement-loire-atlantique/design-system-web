@@ -132,6 +132,9 @@ class FormLayoutAbstract {
             this.submitter = evt.submitter
         }
 
+        console.log(this.submitter);
+        return false;
+
         // We need to deactivate the submit button once clicked
         // If the form is incorrect, it shall be reactivated
         let submitBtn = object.formElement.querySelector('.ds44-btnStd');
