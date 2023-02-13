@@ -188,7 +188,8 @@ class FormLayoutAbstract {
 
                 return false;
             }
-            else {
+            else if(!this.submitter || !this.submitter.hasAttribute("data-send-native")) {
+
                 // Organize data
                 const formattedData = {};
                 const dataPositionByKey = {};
@@ -232,101 +233,101 @@ class FormLayoutAbstract {
                     }
                 }
 
-                if(!this.submitter || !this.submitter.hasAttribute("data-send-native")) {
-
-                    // Sort formatted data
-                    const sortedKeys = Object.keys(dataPositionByKey).sort(function (a, b) {
-                        return parseInt(dataPositionByKey[a], 10) - parseInt(dataPositionByKey[b], 10);
-                    });
-                    const sortedData = {};
-                    for (let i = 0; i < sortedKeys.length; i++) {
-                        if (object.formElement.dataset.noEncoding !== undefined && object.formElement.dataset.noEncoding) {
-                            sortedData[sortedKeys[i]] = formattedData[sortedKeys[i]]["value"];
-                        } else {
-                            sortedData[sortedKeys[i]] = formattedData[sortedKeys[i]];
-                        }
+                // Sort formatted data
+                const sortedKeys = Object.keys(dataPositionByKey).sort(function (a, b) {
+                    return parseInt(dataPositionByKey[a], 10) - parseInt(dataPositionByKey[b], 10);
+                });
+                const sortedData = {};
+                for (let i = 0; i < sortedKeys.length; i++) {
+                    if (object.formElement.dataset.noEncoding !== undefined && object.formElement.dataset.noEncoding) {
+                        sortedData[sortedKeys[i]] = formattedData[sortedKeys[i]]["value"];
+                    } else {
+                        sortedData[sortedKeys[i]] = formattedData[sortedKeys[i]];
                     }
+                }
 
-                    // Save city and adresse in local storage
-                    const fieldParameters = JSON.parse(window.sessionStorage.getItem('fields') || '{}');
-                    ['commune', 'adresse'].forEach((key) => {
-                        if (sortedData[key]) {
-                            fieldParameters[key] = sortedData[key];
-                        } else if (fieldParameters[key]) {
-                            delete fieldParameters[key];
-                        }
-                    });
-
-                    window.sessionStorage.setItem('fields', JSON.stringify(fieldParameters));
-
-                    // Statistics
-                    if (object.formElement.getAttribute('data-statistic')) {
-                        MiscEvent.dispatch(
-                          'statistic:gtag:event',
-                          {
-                              'statistic': JSON.parse(object.formElement.getAttribute('data-statistic')),
-                              'data': sortedData
-                          });
+                // Save city and adresse in local storage
+                const fieldParameters = JSON.parse(window.sessionStorage.getItem('fields') || '{}');
+                ['commune', 'adresse'].forEach((key) => {
+                    if (sortedData[key]) {
+                        fieldParameters[key] = sortedData[key];
+                    } else if (fieldParameters[key]) {
+                        delete fieldParameters[key];
                     }
+                });
 
-                    if (object.formElement.getAttribute('data-is-ajax') === 'true') {
-                        // Ajax submission
-                        this.recaptchaSubmit(objectIndex, sortedData);
+                window.sessionStorage.setItem('fields', JSON.stringify(fieldParameters));
 
-                        evt.stopPropagation();
-                        evt.preventDefault();
-
-                        return false;
-                    }
-
-                    // Regular submission
-                    let hasFile = false;
-                    object.formElement
-                      .querySelectorAll('[name][type="file"]')
-                      .forEach((inputFileElement) => {
-                          hasFile = true;
-                          inputFileElement.setAttribute('name', inputFileElement.getAttribute('name') + '[value]');
+                // Statistics
+                if (object.formElement.getAttribute('data-statistic')) {
+                    MiscEvent.dispatch(
+                      'statistic:gtag:event',
+                      {
+                          'statistic': JSON.parse(object.formElement.getAttribute('data-statistic')),
+                          'data': sortedData
                       });
-                    if (hasFile) {
-                        object.formElement.setAttribute('method', 'post');
-                        object.formElement.setAttribute('enctype', 'multipart/form-data');
-                    }
+                }
 
-                    // Remove name from all elements not to interfere with the next step
-                    object.formElement
-                      .querySelectorAll('[name]:not([type="file"])')
-                      .forEach((element) => {
-                          element.removeAttribute('name');
-                      });
-
-                    // Regular submission
-                    const formData = MiscForm.jsonToFormData(sortedData);
-                    for (var [key, value] of formData.entries()) {
-                        let hiddenInputElement = document.createElement('input');
-                        hiddenInputElement.setAttribute('type', 'hidden');
-                        hiddenInputElement.setAttribute('name', key);
-                        hiddenInputElement.value = value;
-                        object.formElement.appendChild(hiddenInputElement);
-                    }
-
-                    // Affiche les valeurs
+                if (object.formElement.getAttribute('data-is-ajax') === 'true') {
+                    // Ajax submission
                     this.recaptchaSubmit(objectIndex, sortedData);
-                }
-                else {
-                    // Regular submission
-                    for (var [fieldName, fieldValue] of formattedData.entries()) {
-                        let hiddenInputElement = document.createElement('input');
-                        hiddenInputElement.setAttribute('type', 'hidden');
-                        hiddenInputElement.setAttribute('name', fieldName);
-                        hiddenInputElement.value = fieldValue;
-                        object.formElement.appendChild(hiddenInputElement);
-                    }
-                    object.formElement.submit();
+
+                    evt.stopPropagation();
+                    evt.preventDefault();
+
+                    return false;
                 }
 
+                // Regular submission
+                let hasFile = false;
+                object.formElement
+                  .querySelectorAll('[name][type="file"]')
+                  .forEach((inputFileElement) => {
+                      hasFile = true;
+                      inputFileElement.setAttribute('name', inputFileElement.getAttribute('name') + '[value]');
+                  });
+                if (hasFile) {
+                    object.formElement.setAttribute('method', 'post');
+                    object.formElement.setAttribute('enctype', 'multipart/form-data');
+                }
 
+                // Remove name from all elements not to interfere with the next step
+                object.formElement
+                  .querySelectorAll('[name]:not([type="file"])')
+                  .forEach((element) => {
+                      element.removeAttribute('name');
+                  });
+
+                // Regular submission
+                const formData = MiscForm.jsonToFormData(sortedData);
+                for (var [key, value] of formData.entries()) {
+                    let hiddenInputElement = document.createElement('input');
+                    hiddenInputElement.setAttribute('type', 'hidden');
+                    hiddenInputElement.setAttribute('name', key);
+                    hiddenInputElement.value = value;
+                    object.formElement.appendChild(hiddenInputElement);
+                }
+
+                // Affiche les valeurs
+                this.recaptchaSubmit(objectIndex, sortedData);
             }
+            else {
 
+                if (this.submitter !== null) {
+                    let submitKey = "submit";
+                    if (this.submitter.dataset.submitKey !== undefined && this.submitter.dataset.submitKey) {
+                        submitKey = this.submitter.dataset.submitKey
+                    }
+                    if (this.submitter.dataset.submitValue !== undefined && this.submitter.dataset.submitValue) {
+                        let buttonHiddenField = document.createElement("input");
+                        buttonHiddenField.setAttribute('type', 'hidden');
+                        buttonHiddenField.setAttribute('name', submitKey);
+                        buttonHiddenField.value = this.submitter.dataset.submitValue;
+                        object.formElement.appendChild(buttonHiddenField);
+                    }
+                }
+                object.formElement.submit();
+            }
         } catch (ex) {
             console.log(ex);
 
