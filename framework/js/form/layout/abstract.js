@@ -326,6 +326,24 @@ class FormLayoutAbstract {
                         object.formElement.appendChild(buttonHiddenField);
                     }
                 }
+
+                for (let dataKey in formValidity.data) {
+                    if (!formValidity.data.hasOwnProperty(dataKey)) {
+                        continue;
+                    }
+                    try {
+                        if(!object.formElement.querySelector("*[name='"+dataKey+"']"))
+                        {
+                            let dataValue = formValidity.data[dataKey];
+                            let hiddenField = document.createElement("input");
+                            hiddenField.setAttribute('type', 'hidden');
+                            hiddenField.setAttribute('name', dataKey);
+                            hiddenField.value = dataValue.value;
+                            object.formElement.appendChild(hiddenField);
+                        }
+                    } catch (ex) {
+                    }
+                }
                 object.formElement.submit();
             }
         } catch (ex) {
