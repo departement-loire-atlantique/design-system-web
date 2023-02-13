@@ -190,6 +190,7 @@ class FormLayoutAbstract {
             }
             else if(!this.submitter || !this.submitter.hasAttribute("data-send-native")) {
 
+                Debug.log("Form - Send default");
                 // Organize data
                 const formattedData = {};
                 const dataPositionByKey = {};
@@ -312,7 +313,7 @@ class FormLayoutAbstract {
                 this.recaptchaSubmit(objectIndex, sortedData);
             }
             else {
-
+                Debug.log("Form - Send native");
                 if (this.submitter !== null) {
                     let submitKey = "submit";
                     if (this.submitter.dataset.submitKey !== undefined && this.submitter.dataset.submitKey) {
@@ -326,6 +327,7 @@ class FormLayoutAbstract {
                         object.formElement.appendChild(buttonHiddenField);
                     }
                 }
+                return false;
                 object.formElement.submit();
             }
         } catch (ex) {
