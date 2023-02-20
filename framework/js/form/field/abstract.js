@@ -672,7 +672,7 @@ class FormFieldAbstract {
                             MiscEvent.dispatch("field:enable", {}, childField);
                         }
                         else {
-                            if(!containerFields.hasAttribute("data-fields-no-reset"))
+                            if(!containerField.hasAttribute("data-fields-no-reset"))
                             {
                                 MiscEvent.dispatch("field:reset", {focus: false}, childField);
                             }
