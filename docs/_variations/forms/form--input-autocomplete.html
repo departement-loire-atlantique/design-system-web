@@ -7,7 +7,10 @@ layout: pattern
 {% include form/field/input/autocomplete.html label="Champ texte libre" required="true" type="address" url="https://api-adresse.data.gouv.fr/search/?limit=5&citycode=44109" attributes='data-mode="free-text"' %}
 <br>
 <br>
-<br>
 {% include form/field/input/autocomplete.html label="Champ selection seulement" required="true" type="address" url="https://api-adresse.data.gouv.fr/search/?limit=5&citycode=44109" attributes='data-mode="select-only"' %}
+<br>
+<br>
+{% include form/field/input/autocomplete.html label="Champ selection seulement avec latence" required="true" type="address" url="https://api-adresse.data.gouv.fr/search/?limit=5&citycode=44109" attributes='data-mode="select-only" data-latence="1000"' %}
+<code class=" highlighter-rouge language-plaintext">-> Ajouter l'attribut : data-latence="1000" / Valeur est en ms</code>
 <br>
 <br>
