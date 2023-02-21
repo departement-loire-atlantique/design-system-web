@@ -145,6 +145,8 @@ class FormLayoutAbstract {
             return true;
         }
 
+        console.log(this.submitter);
+
         // Submission is in two steps :
         //  - First we ask the form components if they are valid through event dispatching
         //  - Then, once everyone came back, we make a decision on the form validity
