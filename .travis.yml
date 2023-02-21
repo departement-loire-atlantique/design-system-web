@@ -29,13 +29,14 @@ env:
 
 addons:
   ssh_known_hosts: ssh.cluster011.hosting.ovh.net
-  
+
+node_js: 10.24.1
 install:
   - npm install -g gulp-cli
   - npm install
 
-script: 
-  - gulp build
+cache:
+  npm: false
 
 # Unlock private key
 before_deploy:
