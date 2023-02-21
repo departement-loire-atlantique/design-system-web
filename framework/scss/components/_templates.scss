@@ -58,7 +58,7 @@
         border: 0;
         background-color: #000;
     }
-    
+
     .ds44-msg-media-desactive {
         color: #fff;
         display:table-cell;
@@ -404,6 +404,24 @@ main {
 
                 #ds44-results-new-search {
                     display: none;
+                }
+
+                &[data-multi-links="true"] {
+                   .ds44-card {
+                       a {
+                           text-decoration: underline;
+                           &:hover {
+                               text-decoration: none ;
+                           }
+                       }
+                   }
+                   .ds44-card:focus, .ds44-card:hover, .ds44-card:active, .ds44-card.active {
+                       box-shadow:none;
+
+                       .ds44-cardArrow {
+                           opacity: 0;
+                       }
+                   }
                 }
             }
 

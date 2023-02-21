@@ -414,6 +414,14 @@ input[type=radio],
             }
 
             &.ds44-theme {
+                .ds44-flex-container {
+                    max-width: 80%;
+
+                    @media (max-width: $ds44-medium - .0625) {
+                        max-width: 100%;
+                    }
+                }
+
                 .ds44-fieldContainer {
 
                     flex: none;
@@ -470,6 +478,9 @@ input[type=radio],
                     }
                 }
                 &.ds44-sixSelect {
+                    .ds44-flex-container {
+                        max-width: 100%;
+                    }
                     .ds44-fieldContainer {
                         flex: none;
                         width: 14%;
