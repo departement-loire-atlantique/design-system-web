@@ -117,7 +117,7 @@ class FormLayoutAbstract {
 
         // All the component categories answered the call, we can carry on with the form validation
         if (isFinished) {
-            this.submit(objectIndex, evt);
+            //this.submit(objectIndex, evt);
         }
     }
 
