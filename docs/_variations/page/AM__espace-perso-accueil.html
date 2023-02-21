@@ -118,7 +118,7 @@ layout: pattern
                               <fieldset class=" ds44-mt4">
                                 <legend class="h2-like" role="heading" aria-level="2">Représentant légal 1</legend>
                                 <div class="ds44-mb3">
-                                  {% include form/layout/radios.html label="Civilité" name="radio2" choices="m:Madame,m:Monsieur" required="true" list="true" %}
+                                  {% include form/layout/radios.html label="Civilité" name="radio2" choices="m1:Madame,mr1:Monsieur" required="true" list="true" %}
                                 </div>
                                 <div class="ds44-mb3">
                                     {% include form/field/input/standard.html type="last-name" label="Nom" required="true" %}
@@ -142,7 +142,7 @@ layout: pattern
                               <fieldset class=" ds44-mt4">
                                 <legend class="h2-like" role="heading" aria-level="2">Représentant légal 2</legend>
                                 <div class="ds44-mb3">
-                                    {% include form/layout/radios.html label="Civilité" name="radio3" choices="m:Madame,m:Monsieur" required="true" list="true" %}
+                                    {% include form/layout/radios.html label="Civilité" name="radio3" choices="m2:Madame,mr2:Monsieur" required="true" list="true" %}
                                 </div>
                                 <div class="ds44-mb3">
                                     {% include form/field/input/standard.html type="last-name" label="Nom" required="true" %}
@@ -156,7 +156,7 @@ layout: pattern
                               </fieldset>
                               <div class="ds44-flex ds44-fsb">
                                 <button class="ds44-btnStd"><span class="ds44-btnInnerText">Enregistrer en brouillon</span></button>
-                                <button class="ds44-btnStd ds44-btn--invert" title="Passer à l'étape suivante"><span class="ds44-btnInnerText">Étape suivante</span><i class="icon icon-long-arrow-right" aria-hidden="true"></i></button>
+                                <button class="ds44-btnStd ds44-btn--invert" title="Étape suivante : [étape XX/XX] - [NomDeLetape]"><span class="ds44-btnInnerText">Étape suivante</span><i class="icon icon-long-arrow-right" aria-hidden="true"></i></button>
                               </div>
                               <p class="ds44-wsg-smallText ds44-mt3">Les informations personnelles vous concernant sont collectées et traitées par le Département de Loire-Atlantique aux fins d’instruction et de réponse aux demandes reçues. <a href="#">En savoir plus sur la protection des données personnelles</a>.</p>
                           </form>
