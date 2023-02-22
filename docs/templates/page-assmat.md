@@ -26,6 +26,9 @@ variations:
 - title: Authentification Assmat
   pattern: page/AM_authentification.html
 
+- title: Préférences contact
+  pattern: page/AM_preferencesContact.html
+
 ---
 ## Utilisation
 
