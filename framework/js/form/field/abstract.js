@@ -669,12 +669,14 @@ class FormFieldAbstract {
                 {
                     containerField.querySelectorAll("*[data-component-form-field-uuid]").forEach((childField) => {
 
+                        Debug.log(childField);
                         let autoSubmit = null;
                         if(childField.hasAttribute('data-auto-submit'))
                         {
                             autoSubmit = childField.getAttribute('data-auto-submit');
                             childField.setAttribute('data-auto-submit', false);
                         }
+                        Debug.log(childField);
 
                         if(viewElement) {
                             MiscEvent.dispatch("field:enable", {}, childField);
