@@ -35,11 +35,9 @@ install:
   - npm install -g gulp-cli
   - npm install
 
-cache:
-  npm: false
-
 # Unlock private key
 before_deploy:
+  - npm i -g npm@8.14.0
   - echo $key_password | gpg --passphrase-fd 0 deploy_rsa.gpg
   - eval "$(ssh-agent -s)"
   - chmod 600 deploy_rsa
