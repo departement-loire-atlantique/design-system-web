@@ -668,16 +668,27 @@ class FormFieldAbstract {
                 if(containerField.querySelectorAll("*[data-component-form-field-uuid]").length > 0)
                 {
                     containerField.querySelectorAll("*[data-component-form-field-uuid]").forEach((childField) => {
-                        console.log(childField);
+
+                        let autoSubmit = null;
+                        if(childField.hasAttribute('data-auto-submit'))
+                        {
+                            autoSubmit = childField.getAttribute('data-auto-submit');
+                            childField.setAttribute('data-auto-submit', false);
+                        }
+
                         if(viewElement) {
-                            //MiscEvent.dispatch("field:enable", {}, childField);
+                            MiscEvent.dispatch("field:enable", {}, childField);
                         }
                         else {
                             if(!containerField.hasAttribute("data-fields-no-reset"))
                             {
-                                //MiscEvent.dispatch("field:reset", {focus: false}, childField);
+                                MiscEvent.dispatch("field:reset", {focus: false}, childField);
                             }
-                            //MiscEvent.dispatch("field:disable", {}, childField);
+                            MiscEvent.dispatch("field:disable", {}, childField);
+                        }
+                        if(childField.hasAttribute('data-auto-submit'))
+                        {
+                            childField.setAttribute('data-auto-submit', autoSubmit);
                         }
                     })
                 }
