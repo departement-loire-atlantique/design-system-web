@@ -132,31 +132,46 @@ class MapAbstract {
         }
         if(evt.detail.metadata)
         {
-            object.map.addSource('currentMarker', {
-                'type': 'geojson',
-                'data': {
-                    'type': 'FeatureCollection',
-                    'features': [
-                        {
-                            'type': 'Feature',
-                            'geometry': {
-                                'type': 'Point',
-                                'coordinates': [evt.detail.metadata.longitude, evt.detail.metadata.latitude]
+            if(!object.map.getSource('currentMarker'))
+            {
+                object.map.addSource('currentMarker', {
+                    'type': 'geojson',
+                    'data': {
+                        'type': 'FeatureCollection',
+                        'features': [
+                            {
+                                'type': 'Feature',
+                                'geometry': {
+                                    'type': 'Point',
+                                    'coordinates': [evt.detail.metadata.longitude, evt.detail.metadata.latitude]
+                                }
                             }
-                        }
-                    ]
-                }
-            });
-            // Add a layer to use the image to represent the data.
-            object.map.addLayer({
-                'id': 'currentMarker',
-                'type': 'symbol',
-                'source': 'currentMarker', // reference the data source
-                'layout': {
-                    'icon-image': 'current-marker', // reference the image
-                    'icon-size': 0.30
-                }
-            });
+                        ]
+                    }
+                });
+
+                // Add a layer to use the image to represent the data.
+                object.map.addLayer({
+                    'id': 'currentMarker',
+                    'type': 'symbol',
+                    'source': 'currentMarker', // reference the data source
+                    'layout': {
+                        'icon-image': 'current-marker', // reference the image
+                        'icon-size': 0.30
+                    }
+                });
+            }
+            else
+            {
+                object.map.getSource('currentMarker').setData({
+                  'type': 'Feature',
+                  'geometry': {
+                      'type': 'Point',
+                      'coordinates': [evt.detail.metadata.longitude, evt.detail.metadata.latitude]
+                  }
+              });
+            }
+
         }
 
 

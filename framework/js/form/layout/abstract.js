@@ -4,6 +4,7 @@ class FormLayoutAbstract {
         this.selector = selector;
         Debug.log(this.className+" -> Constructor");
         this.objects = [];
+        this.submitter = null;
     }
 
     clearObject() {
@@ -126,8 +127,7 @@ class FormLayoutAbstract {
             return false;
         }
 
-
-        if(!this.submitter && evt.submitter) {
+        if(evt.submitter) {
             this.submitter = evt.submitter
         }
 
@@ -187,8 +187,9 @@ class FormLayoutAbstract {
 
                 return false;
             }
-            else if(!this.submitter.hasAttribute("data-send-native")) {
+            else if(!this.submitter || !this.submitter.hasAttribute("data-send-native")) {
 
+                Debug.log("Form - Send default");
                 // Organize data
                 const formattedData = {};
                 const dataPositionByKey = {};
@@ -213,14 +214,13 @@ class FormLayoutAbstract {
                   .querySelectorAll('input[type="hidden"][name][data-technical-field]')
                   .forEach((hiddenInputElement) => {
                       const hiddenInputName = hiddenInputElement.getAttribute('name');
-                      const hiddenInputData = {
+                      formattedData[hiddenInputName] = {
                           'value': hiddenInputElement.value
                       };
-                      formattedData[hiddenInputName] = hiddenInputData;
                       dataPositionByKey[hiddenInputName] = 999;
                   });
 
-                if (this.submitter !== undefined && this.submitter !== null) {
+                if (this.submitter !== null) {
                     let submitKey = "submit";
                     if (this.submitter.dataset.submitKey !== undefined && this.submitter.dataset.submitKey) {
                         submitKey = this.submitter.dataset.submitKey
@@ -312,8 +312,8 @@ class FormLayoutAbstract {
                 this.recaptchaSubmit(objectIndex, sortedData);
             }
             else {
-
-                if (this.submitter !== undefined && this.submitter !== null) {
+                Debug.log("Form - Send native");
+                if (this.submitter !== null) {
                     let submitKey = "submit";
                     if (this.submitter.dataset.submitKey !== undefined && this.submitter.dataset.submitKey) {
                         submitKey = this.submitter.dataset.submitKey
@@ -324,7 +324,24 @@ class FormLayoutAbstract {
                         buttonHiddenField.setAttribute('name', submitKey);
                         buttonHiddenField.value = this.submitter.dataset.submitValue;
                         object.formElement.appendChild(buttonHiddenField);
-                        console.log(buttonHiddenField);
+                    }
+                }
+
+                for (let dataKey in formValidity.data) {
+                    if (!formValidity.data.hasOwnProperty(dataKey)) {
+                        continue;
+                    }
+                    try {
+                        if(!object.formElement.querySelector("*[name='"+dataKey+"']"))
+                        {
+                            let dataValue = formValidity.data[dataKey];
+                            let hiddenField = document.createElement("input");
+                            hiddenField.setAttribute('type', 'hidden');
+                            hiddenField.setAttribute('name', dataKey);
+                            hiddenField.value = dataValue.value;
+                            object.formElement.appendChild(hiddenField);
+                        }
+                    } catch (ex) {
                     }
                 }
                 object.formElement.submit();

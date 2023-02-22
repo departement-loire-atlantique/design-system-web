@@ -32,6 +32,8 @@ class FormFieldInputAutoCompleteClass extends FormFieldInputAbstract {
             return;
         }
 
+        this.timeSendAutocomplete = 0;
+
         object.valueElement = valueElement;
         object.metadataElement = metadataElement;
         object.autoCompleterElement = object.containerElement.querySelector('.ds44-autocomp-container');
@@ -155,12 +157,12 @@ class FormFieldInputAutoCompleteClass extends FormFieldInputAbstract {
 
         const locationElement = object.containerElement.querySelector('.ds44-location');
         if (locationElement) {
-            if(object.valueElement.value === "aroundMe")
-            {
-                document.querySelectorAll(".ds44-js-map").forEach((map) => {
+            document.querySelectorAll(".ds44-js-map").forEach((map) => {
+                if(object.metadataElement.value) {
                     map.setAttribute("data-around-me", object.metadataElement.value);
-                });
-            }
+                    MiscEvent.dispatch("map:aroundMe", {metadata: JSON.parse(object.metadataElement.value)}, map);
+                }
+            });
         }
 
     }
@@ -284,11 +286,31 @@ class FormFieldInputAutoCompleteClass extends FormFieldInputAbstract {
             query = query + "" + prefix;
         }
 
-        MiscRequest.send(
-          url = url + (url.includes('?') ? '&' : '?') + 'q=' + query,
-            this.autoCompleteSuccess.bind(this, objectIndex),
-            this.autoCompleteError.bind(this, objectIndex)
-        );
+        let timeLatence = 0;
+        if(object.textElement.hasAttribute("data-latence"))
+        {
+            timeLatence = parseFloat(object.textElement.getAttribute("data-latence"));
+        }
+
+        if(timeLatence > 0)
+        {
+            clearTimeout(this.timeSendAutocomplete);
+            this.timeSendAutocomplete = setTimeout(() => {
+                MiscRequest.send(
+                  url = url + (url.includes('?') ? '&' : '?') + 'q=' + query,
+                  this.autoCompleteSuccess.bind(this, objectIndex),
+                  this.autoCompleteError.bind(this, objectIndex)
+                );
+            }, timeLatence);
+        }
+        else
+        {
+            MiscRequest.send(
+              url = url + (url.includes('?') ? '&' : '?') + 'q=' + query,
+              this.autoCompleteSuccess.bind(this, objectIndex),
+              this.autoCompleteError.bind(this, objectIndex)
+            );
+        }
     }
 
     autoCompleteSuccess (objectIndex, results) {

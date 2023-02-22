@@ -26,7 +26,6 @@ class FormFieldBoxAbstract extends FormFieldAbstract {
 
     initialize () {
         super.initialize();
-
         for (let objectIndex = 0; objectIndex < this.objects.length; objectIndex++) {
             const object = this.objects[objectIndex];
             if (object.isSubInitialized) {
@@ -38,7 +37,9 @@ class FormFieldBoxAbstract extends FormFieldAbstract {
                 if(inputElement.dataset.autoSubmit !== undefined) {
                     object.autoSubmit = true;
                 }
-                this.toggleContainer(inputElement);
+                if(inputElement.checked) {
+                    this.toggleContainerByValue(inputElement);
+                }
                 MiscEvent.addListener('click', this.toggleCheck.bind(this, objectIndex), inputElement);
             });
         }

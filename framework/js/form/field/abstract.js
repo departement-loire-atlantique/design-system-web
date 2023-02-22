@@ -52,7 +52,7 @@ class FormFieldAbstract {
             'isSubInitialized': false,
             'isSubSubInitialized': false,
             'isFilled': false,
-            "titleDefault": element.getAttribute("title") ? element.getAttribute("title") : "",
+            "titleDefault": element.getAttribute("title") ? element.getAttribute("title") : null,
             'isRequired': (element.getAttribute('required') !== null || element.getAttribute('data-required') === 'true'),
             'isEnabled': !(element.getAttribute('readonly') !== null || element.getAttribute('disabled') !== null || element.getAttribute('data-disabled') === 'true'),
         };
@@ -100,11 +100,16 @@ class FormFieldAbstract {
                 );
             }
 
+            if(object.labelElement !== undefined && !object.titleDefault)
+            {
+                object.titleDefault = object.labelElement.textContent;
+            }
             this.changeTitle(objectIndex);
             MiscEvent.addListener('field:reset', this.reset.bind(this, objectIndex), object.element);
             MiscEvent.addListener('field:enable', this.enable.bind(this, objectIndex), object.containerElement);
             MiscEvent.addListener('field:disable', this.disable.bind(this, objectIndex), object.containerElement);
             MiscEvent.addListener('field:' + object.name + ':set', this.set.bind(this, objectIndex));
+
         }
     }
 
@@ -659,28 +664,27 @@ class FormFieldAbstract {
                   containerField.getAttribute("data-enabled-field-condition") :
                   "equal";
                 let viewElement = condition === "diff" ? !valueIsEqual : valueIsEqual;
+
                 if(containerField.querySelectorAll("*[data-component-form-field-uuid]").length > 0)
                 {
                     containerField.querySelectorAll("*[data-component-form-field-uuid]").forEach((childField) => {
                         if(viewElement) {
                             MiscEvent.dispatch("field:enable", {}, childField);
-                            containerField.classList.remove('hidden');
                         }
-                        else if(!containerField.classList.contains('hidden')) {
-                            MiscEvent.dispatch("field:reset", {focus: false}, childField);
+                        else {
+                            if(!containerField.hasAttribute("data-fields-no-reset"))
+                            {
+                                MiscEvent.dispatch("field:reset", {focus: false}, childField);
+                            }
                             MiscEvent.dispatch("field:disable", {}, childField);
-                            containerField.classList.add('hidden');
                         }
                     })
                 }
-                else
-                {
-                    if(viewElement) {
-                        containerField.classList.remove('hidden');
-                    }
-                    else {
-                        containerField.classList.add('hidden');
-                    }
+                if(viewElement) {
+                    containerField.classList.remove('hidden');
+                }
+                else {
+                    containerField.classList.add('hidden');
                 }
             });
 

@@ -30,6 +30,9 @@ variations:
 - title: Authentification Assmat
   pattern: page/AM_authentification.html
 
+- title: Formulaire Assmat
+  pattern: page/AM_formulaire.html
+
 - title: Favoris / Sélection
   pattern: page/RE__favoris.html
 
