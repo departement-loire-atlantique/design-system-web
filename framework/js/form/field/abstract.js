@@ -669,14 +669,14 @@ class FormFieldAbstract {
                 {
                     containerField.querySelectorAll("*[data-component-form-field-uuid]").forEach((childField) => {
                         if(viewElement) {
-                            MiscEvent.dispatch("field:enable", {}, childField);
+                            //MiscEvent.dispatch("field:enable", {}, childField);
                         }
                         else {
                             if(!containerField.hasAttribute("data-fields-no-reset"))
                             {
-                                MiscEvent.dispatch("field:reset", {focus: false}, childField);
+                                //MiscEvent.dispatch("field:reset", {focus: false}, childField);
                             }
-                            MiscEvent.dispatch("field:disable", {}, childField);
+                            //MiscEvent.dispatch("field:disable", {}, childField);
                         }
                     })
                 }
@@ -695,10 +695,10 @@ class FormFieldAbstract {
                 let hiddenElement = condition === "diff" ? !valueIsEqual : valueIsEqual;
                 let fieldContainer = (field.closest('.ds44-form__container') || field);
                 if(!hiddenElement) {
-                    MiscEvent.dispatch("field:enable", {}, fieldContainer);
+                    //MiscEvent.dispatch("field:enable", {}, fieldContainer);
                 }
                 else {
-                    MiscEvent.dispatch("field:disable", {}, fieldContainer);
+                    //MiscEvent.dispatch("field:disable", {}, fieldContainer);
                 }
             });
         }
