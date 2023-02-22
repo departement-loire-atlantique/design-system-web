@@ -79,9 +79,9 @@ class FormFieldInputAbstract extends FormFieldAbstract {
         ) {
             return;
         }
-        this.checkValue(objectIndex);
-        this.toggleContainerByValue(objectIndex, object.element.value);
-        this.showNotEmpty(objectIndex);
+        //this.checkValue(objectIndex);
+        //this.toggleContainerByValue(objectIndex, object.element.value);
+        //this.showNotEmpty(objectIndex);
     }
 
     checkValue(objectIndex) {
