@@ -83,7 +83,6 @@ class FormFieldBoxAbstract extends FormFieldAbstract {
         }
 
         if(object.autoSubmit) {
-            Debug.log(object);
             MiscEvent.dispatch('submit', {}, object.containerElement.closest("form"));
         }
 
