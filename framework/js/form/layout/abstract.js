@@ -117,7 +117,7 @@ class FormLayoutAbstract {
 
         // All the component categories answered the call, we can carry on with the form validation
         if (isFinished) {
-            //this.submit(objectIndex, evt);
+            this.submit(objectIndex, evt);
         }
     }
 
@@ -144,8 +144,6 @@ class FormLayoutAbstract {
         {
             return true;
         }
-
-        console.log(evt);
 
         // Submission is in two steps :
         //  - First we ask the form components if they are valid through event dispatching
