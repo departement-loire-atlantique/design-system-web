@@ -698,6 +698,7 @@ class FormFieldSelectAbstract extends FormFieldAbstract {
         }
 
         if (object.textElement.getAttribute('data-auto-submit')) {
+            Debug.log("Auto Submit", object.textElement);
             // Auto submit
             const formElement = object.textElement.closest('form');
             if (formElement) {
