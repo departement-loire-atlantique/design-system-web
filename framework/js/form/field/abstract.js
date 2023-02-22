@@ -669,7 +669,7 @@ class FormFieldAbstract {
                 {
                     containerField.querySelectorAll("*[data-component-form-field-uuid]").forEach((childField) => {
                         if(viewElement) {
-                            MiscEvent.dispatch("field:enable", {}, childField);
+                            //MiscEvent.dispatch("field:enable", {}, childField);
                         }
                         else {
                             if(!containerField.hasAttribute("data-fields-no-reset"))
