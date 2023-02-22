@@ -32,16 +32,17 @@ addons:
 
 node_js:
   - 10.24.1
-cache:
-  npm: false
+
 install:
   - npm --version
   - npm install -g gulp-cli
   - npm install
 
+before_install:
+  - npm i -g npm@8.14.0
+
 # Unlock private key
 before_deploy:
-  - npm i -g npm@8.14.0
   - echo $key_password | gpg --passphrase-fd 0 deploy_rsa.gpg
   - eval "$(ssh-agent -s)"
   - chmod 600 deploy_rsa
