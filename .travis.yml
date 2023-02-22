@@ -30,8 +30,12 @@ env:
 addons:
   ssh_known_hosts: ssh.cluster011.hosting.ovh.net
 
-node_js: 10.24.1
+node_js:
+  - 10.24.1
+cache:
+  npm: false
 install:
+  - npm --version
   - npm install -g gulp-cli
   - npm install
 
