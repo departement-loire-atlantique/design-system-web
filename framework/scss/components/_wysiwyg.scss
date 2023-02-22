@@ -274,6 +274,27 @@ table.inforoutes {
     }
   }
 }
+/* Tables Déclaration d'accueil des assmats */
+table.historiqueAssmat {
+  text-align: left;
+  width: 100%;
+
+  thead th {
+    font-size: 14px;
+    font-weight: normal;
+  }
+  tbody tr td:nth-of-type(1) {
+    font-weight: bold;
+  }
+  td, th {
+    padding: 1rem;
+    vertical-align: middle;
+  }
+  td ul li {
+    margin-top:0 !important;
+  }
+}
+
 /* Tables */
 table.ds44-table {
     th {
@@ -317,7 +338,8 @@ table.ds44-table {
   }
 }
 @media (max-width: 64em) {
-  table.inforoutes {
+  table.inforoutes,
+  table.historiqueAssmat {
     width: 100%;
 
     thead th {
