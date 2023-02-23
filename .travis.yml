@@ -30,16 +30,10 @@ env:
 addons:
   ssh_known_hosts: ssh.cluster011.hosting.ovh.net
 
-node_js:
-  - 10.24.1
-
 install:
   - npm --version
   - npm install -g gulp-cli
   - npm install
-
-before_install:
-  - npm i -g npm@8.14.0
 
 # Unlock private key
 before_deploy:
