@@ -39,6 +39,9 @@ install:
   - npm install -g gulp-cli
   - npm install
 
+script:
+  - gulp build
+
 # Unlock private key
 before_deploy:
   - echo $key_password | gpg --passphrase-fd 0 deploy_rsa.gpg
