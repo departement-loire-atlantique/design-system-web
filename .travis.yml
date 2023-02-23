@@ -31,6 +31,7 @@ addons:
   ssh_known_hosts: ssh.cluster011.hosting.ovh.net
 
 install:
+  - nvm install v11.15.0
   - npm --version
   - npm install -g gulp-cli
   - npm install
