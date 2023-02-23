@@ -668,6 +668,13 @@ class FormFieldAbstract {
                 if(containerField.querySelectorAll("*[data-component-form-field-uuid]").length > 0)
                 {
                     containerField.querySelectorAll("*[data-component-form-field-uuid]").forEach((childField) => {
+                        let autoSubmit = false;
+                        if(childField.hasAttribute('data-auto-submit'))
+                        {
+                            autoSubmit = true;
+                            childField.removeAttribute('data-auto-submit');
+                        }
+
                         if(viewElement) {
                             MiscEvent.dispatch("field:enable", {}, childField);
                         }
@@ -677,6 +684,10 @@ class FormFieldAbstract {
                                 MiscEvent.dispatch("field:reset", {focus: false}, childField);
                             }
                             MiscEvent.dispatch("field:disable", {}, childField);
+                        }
+                        if(autoSubmit === true)
+                        {
+                            childField.setAttribute('data-auto-submit', true);
                         }
                     })
                 }

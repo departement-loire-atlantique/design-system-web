@@ -196,6 +196,7 @@ class FormFieldInputAutoCompleteClass extends FormFieldInputAbstract {
         ) {
             return;
         }
+        Debug.log("Autocomplete - Record");
 
         object.currentElementValue = object.textElement.value;
         if (object.currentElementValue) {
@@ -216,6 +217,7 @@ class FormFieldInputAutoCompleteClass extends FormFieldInputAbstract {
         ) {
             return;
         }
+        Debug.log("Autocomplete - write");
 
         let limitNbChar = object.textElement.hasAttribute("data-limit-char") ?
           object.textElement.getAttribute("data-limit-char") :
@@ -245,6 +247,7 @@ class FormFieldInputAutoCompleteClass extends FormFieldInputAbstract {
         ) {
             return;
         }
+        Debug.log("Autocomplete - Autocomplete");
 
         if (
             object.mode === this.FREE_TEXT_MODE ||
@@ -311,6 +314,7 @@ class FormFieldInputAutoCompleteClass extends FormFieldInputAbstract {
               this.autoCompleteError.bind(this, objectIndex)
             );
         }
+        Debug.log("Autocomplete - Autocomplete - End");
     }
 
     autoCompleteSuccess (objectIndex, results) {
