@@ -29,6 +29,8 @@ var jekyllDir = "docs/",
     cssDest = 'dist/css',
     jsMiscFiles = 'framework/js/misc/*.js',
     jsAbstractFiles = 'framework/js/**/abstract.js',
+    jsDuplicateLine = 'framework/js/form/field/duplicateLine.js',
+    jsFormFields = 'framework/js/form/field/formFields.js',
     jsFieldAbstractFile = 'framework/js/form/field/abstract.js',
     jsFieldFiles = 'framework/js/form/field/**/*.js',
     jsFormFiles = 'framework/js/form/layout/**/!(standard)*.js',
@@ -163,7 +165,7 @@ gulp.task('build:css:cd44:prod', function () {
 });
 
 gulp.task('build:js', function () {
-    return gulp.src([jsFileSwiper, jsFileAos, jsMiscFiles, jsFieldAbstractFile, jsAbstractFiles, jsFieldFiles, jsFormFiles, jsComponentFiles])
+    return gulp.src([jsFileSwiper, jsFileAos, jsMiscFiles, jsDuplicateLine, jsFieldAbstractFile, jsAbstractFiles, jsFieldFiles, jsFormFiles, jsComponentFiles, jsFormFields])
         .pipe(concat('cd44.js'))
         .pipe(gulp.dest(jsDest));
 });
