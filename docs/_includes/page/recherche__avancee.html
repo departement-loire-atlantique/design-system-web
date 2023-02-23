@@ -12,29 +12,13 @@
         <div class="ds44-fieldContainer ds44-fg1">
             {% include form/field/input/standard.html label="Champ standard" %}
         </div>
-        <div class="ds44-fieldContainer ds44-small-fg1">
+        <div class="ds44-fieldContainer ds44-small-fg1" data-line-add data-no-duplicate>
             <button class="ds44-btnStd ds44-green {{ buttonClass }}" title="Ajouter une ligne de champs de recherche"><span class="visually-hidden">Ajouter une ligne de champs de recherche</span><i class="icon icon-plus" aria-hidden="true"></i></button>
         </div>
-        {% endcapture %}
-
-        {% capture subfields %}
-        <div class="ds44-fieldContainer ds44-fg1 ds44-fieldContainer--select">
-            {% include form/field/select/standard.html label="Select option" %}
-        </div>
-        <div class="ds44-fieldContainer ds44-fg1 ds44-fieldContainer--select">
-            {% include form/field/select/standard.html label="Select option" %}
-        </div>
-        <div class="ds44-fieldContainer ds44-fg1">
-            {% include form/field/input/standard.html label="Champ standard" %}
-        </div>
-        <div class="ds44-fieldContainer ds44-small-fg1">
+        <div class="ds44-fieldContainer ds44-small-fg1" data-line-remove data-no-first-line>
             <button class="ds44-btnStd ds44-red {{ buttonClass }}" title="Supprimer une ligne de champs de recherche"><span class="visually-hidden">Supprimer une ligne de champs de recherche</span><i class="icon icon-minus" aria-hidden="true"></i></button>
         </div>
-        <div class="ds44-fieldContainer ds44-small-fg1">
-            <button class="ds44-btnStd ds44-green {{ buttonClass }}" title="Ajouter une ligne de champs de recherche"><span class="visually-hidden">Ajouter une ligne de champs de recherche</span><i class="icon icon-plus" aria-hidden="true"></i></button>
-        </div>
         {% endcapture %}
-
         {% include form/layout/recherche-facettes_avancee.html id=formId fields=fields subfields=subfields url=include.url %}
     </section>
     {% include page/partial/recherche-resultats.html geoJsonAttributes=include.geoJsonAttributes %}
