@@ -109,7 +109,6 @@ class FormFieldAbstract {
             MiscEvent.addListener('field:enable', this.enable.bind(this, objectIndex), object.containerElement);
             MiscEvent.addListener('field:disable', this.disable.bind(this, objectIndex), object.containerElement);
             MiscEvent.addListener('field:' + object.name + ':set', this.set.bind(this, objectIndex));
-
         }
     }
 
@@ -319,16 +318,27 @@ class FormFieldAbstract {
             return;
         }
 
-        const secondLinkedFieldElement = MiscDom.getNextSibling(object.containerElement);
+        let secondLinkedFieldElement = null;
+        if(linkedFieldsContainerElement.hasAttribute("data-linked-fields-content"))
+        {
+            secondLinkedFieldElement = document.querySelector(linkedFieldsContainerElement.getAttribute("data-linked-fields-content")+" .ds44-form__container");
+        }
+        else
+        {
+            secondLinkedFieldElement = MiscDom.getNextSibling(object.containerElement);
+        }
+
         if (
-            !secondLinkedFieldElement ||
-            secondLinkedFieldElement === object.containerElement
+          !secondLinkedFieldElement ||
+          secondLinkedFieldElement === object.containerElement
         ) {
             return;
         }
 
+
         // Has a linked field
         const areMaskedLinkedFields = !!object.containerElement.closest('.ds44-js-masked-fields');
+
         let data = this.getData(objectIndex);
 
         if (

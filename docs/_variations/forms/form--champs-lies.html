@@ -54,8 +54,11 @@ layout: pattern
 <hr/>
 <br>
 <form>
-    <div class="ds44-js-linked-fields">
+    <div class="ds44-js-linked-fields" data-linked-fields-content=".ds44-js-linked-fields-content">
         {% include form/field/input/autocomplete.html label="Champ commune" required="true" type="address-level2" url="/json/autocomplete-city.json" attributes='data-mode="select-only"' class="ds44-inpLarge" title="Sélectionner Champ commune - mise à jour automatique des sous-thèmes Rayon triés par ordre alphabétique" %}
+    </div>
+    {% include form/field/input/autocomplete.html label="Autre" required="true" type="address" url="https://api-adresse.data.gouv.fr/search/?limit=5" attributes='data-mode="select-only"' class="ds44-inpLarge" %}
+    <div class="ds44-js-linked-fields-content">
         {% include form/field/input/autocomplete.html label="Champ adresse" required="true" disabled="true" type="address" url="https://api-adresse.data.gouv.fr/search/?limit=5&citycode=$parentValue" attributes='data-mode="select-only"' class="ds44-inpLarge" %}
     </div>
     <div><input type="submit" class="ds44-btnStd" value="Tester les champs" /></div>
