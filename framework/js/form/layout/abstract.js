@@ -321,6 +321,10 @@ class FormLayoutAbstract {
                     if (this.submitter.dataset.submitValue !== undefined && this.submitter.dataset.submitValue) {
                         let buttonHiddenField = document.createElement("input");
                         buttonHiddenField.setAttribute('type', 'hidden');
+                        if(submitKey === "submit")
+                        {
+                            submitKey = "submit_button"
+                        }
                         buttonHiddenField.setAttribute('name', submitKey);
                         buttonHiddenField.value = this.submitter.dataset.submitValue;
                         object.formElement.appendChild(buttonHiddenField);
