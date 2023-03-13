@@ -9,21 +9,21 @@ class FormFieldsClass {
 
   fieldsInitialise() {
     /** Box Field **/
-    (new FormFieldBoxCheckboxClass()).initialise();
-    (new FormFieldBoxRadioClass()).initialise();
+    (new FormFieldBoxCheckbox());
+    (new FormFieldBoxRadio());
 
     /** Input Field **/
-    (new FormFieldInputAutoCompleteClass()).initialise();
-    (new FormFieldInputDatepickerClass()).initialise();
-    (new FormFieldInputFileClass()).initialise();
-    (new FormFieldInputStandardClass()).initialise();
-    (new FormFieldInputTextareaClass()).initialise();
+    (new FormFieldInputAutoComplete());
+    (new FormFieldInputDatepicker());
+    (new FormFieldInputFile());
+    (new FormFieldInputStandard());
+    (new FormFieldInputTextarea());
 
     /** Select Field **/
-    (new FormFieldSelectCheckboxClass()).initialise();
-    (new FormFieldSelectMultilevelClass()).initialise();
-    (new FormFieldSelectRadioClass()).initialise();
-    (new FormFieldSelectStandardClass()).initialise();
+    (new FormFieldSelectCheckbox());
+    (new FormFieldSelectMultilevel());
+    (new FormFieldSelectRadio());
+    (new FormFieldSelectStandard());
   }
 
 
