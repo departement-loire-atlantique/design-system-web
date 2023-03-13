@@ -3,7 +3,6 @@ class FormFieldsClass {
     MiscEvent.addListener('fields:initialise', this.fieldsInitialise.bind(this));
     window.addEventListener('DOMContentLoaded', () => {
       let currentFocus = document.activeElement;
-      console.log(currentFocus);
       document.querySelectorAll("input, select, textarea").forEach((input) => {
         MiscEvent.dispatch("focus", {}, input);
       });
