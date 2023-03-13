@@ -18,28 +18,11 @@ class DuplicateLineClass {
 
   create (currentLine) {
 
-
-    currentLine.querySelectorAll("input, select, textarea").forEach((element) => {
-      let name = element.getAttribute("name");
-      if(name)
-      {
-        element.setAttribute("name", "__LINE_DUPLICATE_NAME__["+name+"]");
-        element.setAttribute("id", "__LINE_DUPLICATE_ID___"+name);
-        currentLine.querySelectorAll("*[for='"+name+"']").forEach((label) => {
-          label.setAttribute("for", "__LINE_DUPLICATE_ID___"+name);
-        });
-      }
-
-      let dataName = element.getAttribute("data-name");
-      if(dataName)
-      {
-        element.setAttribute("data-name", "__LINE_DUPLICATE_NAME__["+dataName+"]");
-        element.setAttribute("id", "__LINE_DUPLICATE_ID___"+name);
-        currentLine.querySelectorAll("*[for='"+name+"']").forEach((label) => {
-          label.setAttribute("for", "__LINE_DUPLICATE_ID___"+name);
-        });
-      }
-
+    currentLine.querySelectorAll("*[name]").forEach((element) => {
+      this.transformElement(currentLine, element, element.getAttribute("name"), "name");
+    });
+    currentLine.querySelectorAll("*[data-name]").forEach((element) => {
+      this.transformElement(currentLine, element, element.getAttribute("data-name"), "data-name");
     });
 
     let duplicateLine = document.createElement("div");
@@ -52,6 +35,34 @@ class DuplicateLineClass {
       "duplicateLine": duplicateLine,
     };
     this.objects.push(object);
+  }
+
+  transformElement(currentLine, element, name, keyName)
+  {
+    if(name)
+    {
+      element.setAttribute(keyName, "__LINE_DUPLICATE_NAME__["+name+"]");
+      element.setAttribute("id", "__LINE_DUPLICATE_ID___"+name);
+      element.closest(".ds44-fieldContainer").querySelectorAll("*[for='"+name+"']").forEach((label) => {
+        label.setAttribute("for", "__LINE_DUPLICATE_ID___"+name);
+      });
+      element.closest(".ds44-fieldContainer").querySelectorAll("*[id]").forEach((otherElement) => {
+        let currentId = ""+otherElement.getAttribute("id");
+        if(currentId && !currentId.match(/__LINE_DUPLICATE_ID___/))
+        {
+          let regexId = new RegExp(name, "gi");
+          let newId = currentId.replace(regexId, "__LINE_DUPLICATE_ID___"+name);
+          otherElement.setAttribute("id", newId);
+        }
+        if(otherElement.getAttribute("aria-labelledby"))
+        {
+          let currentAriaLabelledby = otherElement.getAttribute("aria-labelledby");
+          let regexAria = new RegExp(name, "gi");
+          let newAria = currentAriaLabelledby.replace(regexAria, "__LINE_DUPLICATE_ID___"+name);
+          otherElement.setAttribute("aria-labelledby", newAria);
+        }
+      });
+    }
   }
 
   initialize () {
