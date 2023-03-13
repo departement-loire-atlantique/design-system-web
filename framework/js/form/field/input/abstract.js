@@ -43,9 +43,6 @@ class FormFieldInputAbstract extends FormFieldAbstract {
                 continue;
             }
             object.isSubInitialized = true;
-            let currentFocus = document.activeElement;
-            object.textElement.focus();
-            currentFocus.focus();
 
             MiscEvent.addListener('focus', this.focus.bind(this, objectIndex), object.textElement);
             MiscEvent.addListener('blur', this.blur.bind(this, objectIndex), object.textElement);
@@ -70,6 +67,10 @@ class FormFieldInputAbstract extends FormFieldAbstract {
                 MiscEvent.addListener('click', this.tooglePasswordField.bind(this, objectIndex), object.showPasswordButton);
             }
             this.quit(objectIndex);
+
+            let currentFocus = document.activeElement;
+            object.textElement.focus();
+            currentFocus.focus();
         }
     }
 
