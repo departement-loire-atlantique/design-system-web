@@ -1,6 +1,13 @@
 class FormFieldsClass {
   constructor(className, selector, category) {
     MiscEvent.addListener('fields:initialise', this.fieldsInitialise.bind(this));
+    window.addEventListener('DOMContentLoaded', () => {
+      let currentFocus = document.activeElement;
+      document.querySelectorAll("input, select, textarea").forEach((input) => {
+        input.focus();
+      });
+      currentFocus.focus();
+    });
   }
 
   initialise() {
