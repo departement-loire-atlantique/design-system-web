@@ -67,12 +67,6 @@ class FormFieldInputAbstract extends FormFieldAbstract {
                 MiscEvent.addListener('click', this.tooglePasswordField.bind(this, objectIndex), object.showPasswordButton);
             }
             this.quit(objectIndex);
-
-            let currentFocus = document.activeElement;
-            console.log(currentFocus);
-            object.textElement.focus();
-            console.log(object.textElement);
-            currentFocus.focus();
         }
     }
 
