@@ -1,6 +1,17 @@
 class FormFieldsClass {
   constructor(className, selector, category) {
     MiscEvent.addListener('fields:initialise', this.fieldsInitialise.bind(this));
+
+    MiscEvent.addListener("DOMContentLoaded", () => {
+      setTimeout(() => {
+        document.querySelectorAll("input").forEach((input) => {
+          if(window.getComputedStyle(input, ':autofill').getPropertyValue("content") !== "normal")
+          {
+            MiscEvent.dispatch("field:label-move", {}, input);
+          }
+        });
+      }, 600);
+    });
   }
 
   initialise() {

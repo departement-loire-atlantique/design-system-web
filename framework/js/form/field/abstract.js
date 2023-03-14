@@ -109,6 +109,11 @@ class FormFieldAbstract {
             MiscEvent.addListener('field:enable', this.enable.bind(this, objectIndex), object.containerElement);
             MiscEvent.addListener('field:disable', this.disable.bind(this, objectIndex), object.containerElement);
             MiscEvent.addListener('field:' + object.name + ':set', this.set.bind(this, objectIndex));
+            MiscEvent.addListener('field:label-move', () => {
+                if(!object.labelElement.classList.contains(this.labelClassName)) {
+                    object.labelElement.classList.add(this.labelClassName);
+                }
+            }, object.element);
         }
     }
 

@@ -39,6 +39,9 @@ input[type="file"] {
     position: absolute;
     z-index: -1;
 }
+input:-webkit-autofill {
+    content: "";
+}
 
 .ds44-form__container {
     position: relative;
