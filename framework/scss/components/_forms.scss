@@ -40,7 +40,7 @@ input[type="file"] {
     z-index: -1;
 }
 input:-webkit-autofill {
-    content: "";
+    content: "autofill";
 }
 
 .ds44-form__container {
