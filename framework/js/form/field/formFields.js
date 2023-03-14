@@ -5,7 +5,6 @@ class FormFieldsClass {
     MiscEvent.addListener("DOMContentLoaded", () => {
       setTimeout(() => {
         document.querySelectorAll("input").forEach((input) => {
-          console.log(window.getComputedStyle(input, ':autofill').getPropertyValue("content") );
           if(window.getComputedStyle(input, ':autofill').getPropertyValue("content") === "\"autofill\"")
           {
             MiscEvent.dispatch("field:label-move", {}, input);
