@@ -1287,11 +1287,17 @@ input[type=radio],
     }
 }
 
-#ds44-creneaux {
+.ds44-planning {
     th, td {
         height: 8.5rem;
         .ds44-form__container {
             margin: 1rem 0;
+        }
+    }
+    td {
+        input {
+            width: 10rem;
+            padding: 1.1rem 1rem 1rem 1rem;
         }
     }
 }

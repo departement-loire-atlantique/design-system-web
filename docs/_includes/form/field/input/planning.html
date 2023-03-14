@@ -1,0 +1,54 @@
+{% capture templateThFirst %}{% include form/field/partial/planning/thFirst.html creneauKey="__CRENEAU_NUM__" %}{% endcapture %}
+{% capture templateThSecond %}{% include form/field/partial/planning/thSecond.html creneauKey="__CRENEAU_NUM__" %}{% endcapture %}
+{% capture templateTd %}{% include form/field/partial/planning/td.html creneauKey="__CRENEAU_NUM__" day="__DAY__" %}{% endcapture %}
+
+<div class="ds44-planning" data-limit-max="5" data-limit-min="1">
+  <table class="ds44-planning-table">
+    <thead>
+      <tr class="first" data-row-name="th-first">
+        <th></th>
+        {% include form/field/partial/planning/thFirst.html creneauKey="1" %}
+      </tr>
+      <tr class="second" data-row-name="th-second">
+        <th>Jours</th>
+        {% include form/field/partial/planning/thSecond.html creneauKey="1" %}
+      </tr>
+    </thead>
+    <tbody>
+      <tr data-row-name="monday">
+        <td class="day">Lundi</td>
+        {% include form/field/partial/planning/td.html creneauKey="1" day="monday" %}
+      </tr>
+      <tr data-row-name="tuesday">
+        <td class="value">Mardi</td>
+        {% include form/field/partial/planning/td.html creneauKey="1" day="tuesday" %}
+      </tr>
+      <tr data-row-name="wednesday">
+        <td class="value">Mercredi</td>
+        {% include form/field/partial/planning/td.html creneauKey="1" day="wednesday" %}
+      </tr>
+      <tr data-row-name="thursday">
+        <td class="value">Jeudi</td>
+        {% include form/field/partial/planning/td.html creneauKey="1" day="thursday" %}
+      </tr>
+      <tr data-row-name="friday">
+        <td class="value">Vendredi</td>
+        {% include form/field/partial/planning/td.html creneauKey="1" day="friday" %}
+      </tr>
+    </tbody>
+  </table>
+
+  <span class="content-button">
+    <button class="ds44-btnStd ds44-btn--contextual" data-planning-action="add">
+      <span class="ds44-btnInnerText">Ajouté un créneau</span>
+    </button>
+  </span>
+
+  <span class="content-button">
+    <button class="ds44-btnStd ds44-btn--contextual" data-planning-action="remove">
+      <span class="ds44-btnInnerText">Supprimé un créneau</span>
+    </button>
+  </span>
+
+
+</div>
