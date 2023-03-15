@@ -26,6 +26,7 @@ class FormFieldsClass {
     /** Input Field **/
     (new FormFieldInputAutoComplete());
     (new FormFieldInputDatepicker());
+    (new FormFieldInputTime());
     (new FormFieldInputFile());
     (new FormFieldInputStandard());
     (new FormFieldInputTextarea());

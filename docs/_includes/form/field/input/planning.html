@@ -3,6 +3,16 @@
 {% capture templateTd %}{% include form/field/partial/planning/td.html creneauKey="__CRENEAU_NUM__" day="__DAY__" %}{% endcapture %}
 
 <div class="ds44-planning" data-limit-max="5" data-limit-min="1">
+
+  <span class="content-button">
+    <button class="ds44-btnStd ds44-btn--contextual" data-planning-action="add">
+      <span class="ds44-btnInnerText">Ajouter un créneau</span>
+    </button>
+    <button class="ds44-btnStd ds44-btn--contextual" data-planning-action="remove">
+      <span class="ds44-btnInnerText">Supprimer un créneau</span>
+    </button>
+  </span>
+
   <table class="ds44-planning-table">
     <thead>
       <tr class="first" data-row-name="th-first">
@@ -40,15 +50,11 @@
 
   <span class="content-button">
     <button class="ds44-btnStd ds44-btn--contextual" data-planning-action="add">
-      <span class="ds44-btnInnerText">Ajouté un créneau</span>
+      <span class="ds44-btnInnerText">Ajouter un créneau</span>
     </button>
-  </span>
-
-  <span class="content-button">
     <button class="ds44-btnStd ds44-btn--contextual" data-planning-action="remove">
-      <span class="ds44-btnInnerText">Supprimé un créneau</span>
+      <span class="ds44-btnInnerText">Supprimer un créneau</span>
     </button>
   </span>
-
 
 </div>

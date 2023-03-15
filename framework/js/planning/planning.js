@@ -60,6 +60,16 @@ class PlanningClass {
           td.setAttribute("data-col-key", "__CRENEAU_NUM__");
           td.querySelectorAll("input").forEach((input) => {
             input.setAttribute("value", "");
+            let title = input.getAttribute("title");
+            title = title.replace(/monday/gi, "__DAY_TEXT__");
+            title = title.replace(/Créneau 1/gi, "Créneau __CRENEAU_NUM__");
+            input.setAttribute("title", title);
+          });
+          td.querySelectorAll("label").forEach((label) => {
+            let title = label.querySelector(".ds44-labelTypePlaceholder span").textContent;
+            title = title.replace(/monday/gi, "__DAY_TEXT__");
+            title = title.replace(/Créneau 1/gi, "Créneau __CRENEAU_NUM__");
+            label.querySelector(".ds44-labelTypePlaceholder span").textContent = title;
           });
           templateTd += td.outerHTML;
         });
@@ -74,6 +84,15 @@ class PlanningClass {
         object.template.td = templateTd;
       }
       i += 1;
+
+      trElement.querySelectorAll("label").forEach((label) => {
+        let title = label.querySelector(".ds44-labelTypePlaceholder span").textContent;
+        let regex = new RegExp(trElement.dataset.rowName, "gi");
+        title = title.replace(regex, MiscTranslate._(trElement.dataset.rowName));
+        label.querySelector(".ds44-labelTypePlaceholder span").textContent = title;
+      });
+
+
     });
     this.objects.push(object);
 
@@ -167,6 +186,7 @@ class PlanningClass {
     template = template.replace(/__CRENEAU_NUM__/gi, numCreneau);
     if(day) {
       template = template.replace(/__DAY__/gi, day);
+      template = template.replace(/__DAY_TEXT__/gi, MiscTranslate._(day));
     }
     return template;
   }

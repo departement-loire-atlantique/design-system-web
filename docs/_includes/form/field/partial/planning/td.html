@@ -1,10 +1,12 @@
 <td class="value" data-col-key="{{ include.creneauKey }}" data-value-key="start">
   {% capture startFieldName %}creneau[{{ include.creneauKey }}][{{include.day}}][start]{% endcapture %}
   {% capture startFieldId %}creneau_{{ include.creneauKey }}_{{include.day}}_start{% endcapture %}
-  {% include form/field/input/standard.html label="Heure de début" id=startFieldId name=startFieldName required="true" %}
+  {% capture startLabelValue %}Créneau {{ include.creneauKey }} du {{include.day}} heure de début{% endcapture %}
+  {% include form/field/input/time.html label=startLabelValue id=startFieldId name=startFieldName required="true" %}
 </td>
 <td class="value" data-col-key="{{ include.creneauKey }}" data-value-key="end">
   {% capture endFieldName %}creneau[{{ include.creneauKey }}][{{include.day}}][start]{% endcapture %}
   {% capture endFieldId %}creneau_{{ include.creneauKey }}_{{include.day}}_end{% endcapture %}
-  {% include form/field/input/standard.html label="Heure de fin" id=endFieldId name=endFieldName required="true" %}
+  {% capture endLabelValue %}Créneau {{ include.creneauKey }} du {{include.day}} heure de fin{% endcapture %}
+  {% include form/field/input/time.html label=endLabelValue id=endFieldId name=endFieldName required="true" %}
 </td>

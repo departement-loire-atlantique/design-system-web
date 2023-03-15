@@ -1,0 +1,33 @@
+{% include form/_variables.html %}
+
+{% if include.required == 'true' %}
+    {% capture hourLabel %}title="{{ label }} : Heure (ex. 14) - obligatoire"{% endcapture %}
+    {% capture minuteLabel %}title="{{ label }} : Minute (ex. 05) - obligatoire"{% endcapture %}
+{% else %}
+    {% capture hourLabel %}title="{{ label }} : Heure (ex. 14)"{% endcapture %}
+    {% capture minuteLabel %}title="{{ label }} : Minute (ex. 05)"{% endcapture %}
+{% endif %}
+
+{% capture hourValue %}13{% endcapture %}
+{% capture minuteValue %}30{% endcapture %}
+
+{% assign labelClass = labelClass | append: ' ds44-time' %}
+
+{% capture mainContent %}
+    <div data-name="{{ name }}" class="ds44-time__shape {{ mainClass }}" {{ containerAttributes }}>
+        <input id="{{ id }}" type="text" inputmode="numeric" pattern="([01]?[0-9]{1}|2[0-3]{1})" maxlength="2" {{ hourLabel }} value="{{ hourValue }}" {{ attributes }} {{ inputAttributes }} {% if ariaDescribedBy and ariaDescribedBy != '' %}aria-describedby="{{ ariaDescribedBy }}"{% endif %}>
+        <span>:</span>
+        <input type="text" inputmode="numeric" pattern="[0-5]{1}[0-9]{1}" maxlength="2" {{ minuteLabel }}  value="{{ minuteValue }}" {{ attributes }} {{ inputAttributes }} {% if ariaDescribedBy and ariaDescribedBy != '' %}aria-describedby="{{ ariaDescribedBy }}"{% endif %}>
+    </div>
+    {% include form/field/partial/reset.html %}
+{% endcapture %}
+
+{% capture labelContent %}
+    {% include form/field/partial/label.html content=mainContent disabled=include.disabled %}
+{% endcapture %}
+
+{% if include.hidden == 'true' %}
+    {% assign containerClass = containerClass | append : ' hidden' %}
+{% endif %}
+
+{% include form/field/partial/container.html id=id content=labelContent containerClass=containerClass explanation=include.explanation %}
