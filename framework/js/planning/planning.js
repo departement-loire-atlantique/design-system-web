@@ -63,9 +63,11 @@ class PlanningClass {
           td.querySelectorAll("input").forEach((input) => {
             input.setAttribute("value", "");
             let title = input.getAttribute("title");
-            title = title.replace(/monday/gi, "__DAY_TEXT__");
-            title = title.replace(/Créneau 1/gi, "Créneau __CRENEAU_NUM__");
-            input.setAttribute("title", title);
+            if(title) {
+              title = title.replace(/monday/gi, "__DAY_TEXT__");
+              title = title.replace(/Créneau 1/gi, "Créneau __CRENEAU_NUM__");
+              input.setAttribute("title", title);
+            }
           });
           td.querySelectorAll("label").forEach((label) => {
             let title = label.querySelector(".ds44-labelTypePlaceholder span").textContent;
