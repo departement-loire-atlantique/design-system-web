@@ -4,6 +4,14 @@
 
 <div class="ds44-planning" data-limit-max="5" data-limit-min="1">
 
+  {% if include.choiceDays %}
+    <div class="ds-44-choices-days">
+      <h3 class="h3-like" id="idTitre3">Quels jours accueillez-vous l'enfant ?</h3>
+      {% include form/layout/checkboxes.html label="Choisissez les jours d'accueils" choices="monday:Lundi,tuesday:Mardi,wednesday:Mercredi,thursday:Jeudi,friday:Vendredi,saturday:Samedi,sunday:Dimanche" required="true" list="true" %}
+    </div>
+  {% endif %}
+
+
   <span class="content-button">
     <button class="ds44-btnStd ds44-btn--contextual" data-planning-action="add">
       <span class="ds44-btnInnerText">Ajouter un créneau</span>
@@ -25,6 +33,7 @@
       </tr>
     </thead>
     <tbody>
+      <tr data-first-line></tr>
       <tr data-row-name="monday">
         <td class="day">Lundi</td>
         {% include form/field/partial/planning/td.html creneauKey="1" day="monday" %}

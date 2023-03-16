@@ -80,7 +80,7 @@ class FormFieldInputTimeClass extends FormFieldInputAbstract {
         this.showNotEmpty(objectIndex);
     }
 
-    reset (objectIndex) {
+    reset (objectIndex, evt) {
         const object = this.objects[objectIndex];
         Debug.log("Reset Time");
         if (object) {
@@ -88,7 +88,7 @@ class FormFieldInputTimeClass extends FormFieldInputAbstract {
             object.inputElements[1].value = null;
         }
 
-        super.reset(objectIndex);
+        super.reset(objectIndex, evt);
     }
 
     disableElements (objectIndex, evt) {
@@ -178,8 +178,6 @@ class FormFieldInputTimeClass extends FormFieldInputAbstract {
 
         if (evt.currentTarget === object.inputElements[0]) {
             MiscAccessibility.setFocus(object.inputElements[1]);
-        } else {
-            MiscAccessibility.setFocus(object.inputElements[2]);
         }
     }
 
@@ -210,15 +208,39 @@ class FormFieldInputTimeClass extends FormFieldInputAbstract {
         }
 
         const timeText = this.getText(objectIndex);
+
         if (
             !timeText ||
-            !timeText.match(/(?:[01]\d|2[0-3]):(?:[0-5]\d):(?:[0-5]\d)/)
+            !timeText.match(/^(?:[01]\d|2[0-3])|(?:[0-5]\d)$/)
         ) {
             // Not nicely formatted
+            this.empty(objectIndex);
+            return;
+        }
+
+        let minute = parseInt(object.inputElements[1].value, 10);
+        let hour = parseInt(object.inputElements[0].value, 10);
+
+        const minuteStr = ""+minute;
+        if(minuteStr.length !== 2)
+        {
+            minute = minute+"0";
+        }
+        const dateNow = new Date();
+        const date = new Date(dateNow.getFullYear()+"-"+dateNow.getMonth()+"-"+dateNow.getDay()+" "+hour+":"+minute);
+        if (
+          date.getHours() !== hour ||
+          date.getMinutes() !== minute
+        ) {
+            // If the date object is invalid it
+            // will return 'NaN' on getTime()
+            // and NaN is never equal to itself.
+
             this.empty(objectIndex);
 
             return;
         }
+
         this.setData(
             objectIndex,
             {
@@ -260,11 +282,9 @@ class FormFieldInputTimeClass extends FormFieldInputAbstract {
 
         const dateNow = new Date();
         const selectedData = new Date(dateNow.getFullYear()+"-"+dateNow.getMonth()+"-"+dateNow.getDay()+" "+time);
-        console.log(selectedData);
         object.inputElements[0].value = (selectedData.getHours() + '').padStart(2, '0');
-        object.inputElements[1].value = ((selectedData.getMinutes() + 1) + '').padStart(2, '0');
+        object.inputElements[1].value = ((selectedData.getMinutes()) + '').padStart(2, '0');
 
-        console.log(selectedData);
         Debug.log("Hour : "+object.inputElements[0].value);
         Debug.log("Minute : "+object.inputElements[1].value);
     }
@@ -279,7 +299,6 @@ class FormFieldInputTimeClass extends FormFieldInputAbstract {
 
     setData (objectIndex, data = null) {
         super.setData(objectIndex, data);
-        console.log(data);
         if (data && data.value) {
             this.setTime(objectIndex, data.value);
             this.focus(objectIndex);

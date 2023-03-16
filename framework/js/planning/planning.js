@@ -24,6 +24,8 @@ class PlanningClass {
       'element': planning,
       "nbColonne": planning.querySelectorAll('tr.first *[data-col-key]').length,
       "table": planning.querySelector(".ds44-planning-table"),
+      "choiceDays": planning.querySelector(".ds-44-choices-days"),
+      "daySort": [],
       "days": [],
       "limit":  {
         "min": planning.dataset.limitMin ?? null,
@@ -91,8 +93,6 @@ class PlanningClass {
         title = title.replace(regex, MiscTranslate._(trElement.dataset.rowName));
         label.querySelector(".ds44-labelTypePlaceholder span").textContent = title;
       });
-
-
     });
     this.objects.push(object);
 
@@ -101,6 +101,17 @@ class PlanningClass {
     }
     if(object.limit.max !== null && object.limit.max < object.nbColonne+1) {
       this.disabledButtons(object,"add");
+    }
+
+    if(object.choiceDays)
+    {
+      object.choiceDays.querySelectorAll("input").forEach((input) => {
+        if(planning.querySelector("*[data-row-name='"+input.value+"']"))
+        {
+          input.checked = true;
+        }
+        object.daySort.push(input.value);
+      });
     }
 
   }
@@ -127,7 +138,77 @@ class PlanningClass {
           }
         }, button);
       });
+      if(object.choiceDays)
+      {
+        object.choiceDays.querySelectorAll("input").forEach((input) => {
+          MiscEvent.addListener("field:change-value", this.choiceDay.bind(this, objectIndex), input);
+        });
+      }
+    }
 
+  }
+
+  choiceDay(objectIndex, event = null) {
+    const object = this.objects[objectIndex];
+    if (!object || !event.target) {
+      return;
+    }
+
+    if(event.detail.checked === undefined) {
+      return;
+    }
+
+    let dayKeyname = event.target.value;
+    if(event.detail.checked === false) {
+      let row = object.element.querySelector("*[data-row-name='"+dayKeyname+"']");
+      if(row) {
+        row.remove();
+      }
+      for(let i=0; i < object.days.length; i++)
+      {
+        if(object.days[i] === dayKeyname)
+        {
+          delete object.days[i];
+        }
+      }
+    }
+    else {
+      let dayKeynameAfter = null;
+      let daysEnabled = [];
+      object.choiceDays.querySelectorAll("input:checked").forEach((choice) => {
+        daysEnabled.push(choice.value);
+      });
+
+      for(let i=0; i < daysEnabled.length; i++)
+      {
+        if(daysEnabled[i] === dayKeyname)
+        {
+          let num = i-1;
+          if(num < 0) {
+            num = 0;
+          }
+          dayKeynameAfter = daysEnabled[num];
+        }
+      }
+      let row = document.createElement("tr");
+      row.setAttribute("data-row-name", dayKeyname);
+      let td = document.createElement("td");
+      let label = MiscTranslate._(dayKeyname);
+      label = label.charAt(0).toUpperCase() + label.slice(1)
+      td.innerText = label;
+      row.append(td);
+
+      for(let i=0; i < object.nbColonne; i++)
+      {
+        let tdTemplates = this.htmlToElements(this.replaceValueTemplate(object.template.td, i+1, dayKeyname));
+        row.append(tdTemplates[0], tdTemplates[1]);
+      }
+      object.days.push(dayKeyname);
+      let elementAfterAppend = object.element.querySelector("*[data-row-name='"+dayKeynameAfter+"']");
+      if(!elementAfterAppend) {
+        elementAfterAppend = object.element.querySelector("*[data-first-line]");
+      }
+        elementAfterAppend.parentNode.insertBefore(row, elementAfterAppend.nextSibling);
     }
   }
 
