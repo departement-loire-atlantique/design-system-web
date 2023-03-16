@@ -1318,6 +1318,9 @@ input[type=radio],
     thead .first th[data-col-key] {
         background: $ds44-LA;
     }
+    thead .second th {
+        background: $ds44-lightgray;
+    }
     td {
         height: 8.5rem;
         .ds44-form__container {
