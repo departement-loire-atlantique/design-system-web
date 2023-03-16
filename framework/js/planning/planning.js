@@ -28,8 +28,8 @@ class PlanningClass {
       "daySort": [],
       "days": [],
       "limit":  {
-        "min": planning.dataset.limitMin ?? null,
-        "max": planning.dataset.limitMax ?? null,
+        "min": planning.dataset.limitMin !== undefined ? planning.dataset.limitMin : null,
+        "max": planning.dataset.limitMax !== undefined ? planning.dataset.limitMax : null,
       },
       "template": {
         "header": "",
