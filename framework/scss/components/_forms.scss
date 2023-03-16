@@ -1329,6 +1329,9 @@ input[type=radio],
         padding-right: 2rem;
     }
     td {
+        &:first-child {
+            width: 10rem;
+        }
         &:nth-child(2) {
             padding-left: 2rem;
         }
