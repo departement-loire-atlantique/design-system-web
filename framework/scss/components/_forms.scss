@@ -1311,6 +1311,14 @@ input[type=radio],
 }
 
 .ds44-planning {
+    .ds44-planing-table-button {
+        margin: 2rem -1rem;
+        display: flex;
+        .content-button,
+        .ds44-planning-table {
+            margin: 0 1rem;
+        }
+    }
     th {
       height: 4.5rem;
     }
@@ -1341,9 +1349,6 @@ input[type=radio],
         label {
             display:none;
         }
-    }
-    .ds44-planning-table {
-        margin: 2rem 0;
     }
 }
 

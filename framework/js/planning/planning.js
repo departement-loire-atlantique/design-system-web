@@ -81,8 +81,8 @@ class PlanningClass {
         let clearTemplate = document.createElement("template");
         clearTemplate.innerHTML = templateTd;
         templateTd = clearTemplate.innerHTML;
-        templateTd = templateTd.replace(/creneau_1/gi, "creneau___CRENEAU_NUM__");
-        templateTd = templateTd.replace(/creneau\[1\]/gi, "creneau[__CRENEAU_NUM__]");
+        templateTd = templateTd.replace(/_1/gi, "___CRENEAU_NUM__");
+        templateTd = templateTd.replace(/\[1\]/gi, "[__CRENEAU_NUM__]");
         templateTd = templateTd.replace(/monday/gi, "__DAY__");
         templateTd = templateTd.replace(/\n/gi, "");
         object.template.td = templateTd;
@@ -127,6 +127,7 @@ class PlanningClass {
       }
       object.isInitialized = true;
       MiscEvent.addListener('planning:add', this.add.bind(this, objectIndex), object.element);
+      MiscEvent.addListener('planning:copy-paste', this.copyPaste.bind(this, objectIndex), object.element);
       MiscEvent.addListener('planning:remove', this.remove.bind(this, objectIndex), object.element);
       object.element.querySelectorAll("*[data-planning-action]").forEach((button) => {
         MiscEvent.addListener('click', () => {
@@ -137,6 +138,10 @@ class PlanningClass {
           else if(button.dataset.planningAction === "remove")
           {
             MiscEvent.dispatch("planning:remove", {"button": button}, object.element);
+          }
+          else if(button.dataset.planningAction === "copy-paste")
+          {
+            MiscEvent.dispatch("planning:copy-paste", {"button": button}, object.element);
           }
         }, button);
       });
@@ -210,7 +215,8 @@ class PlanningClass {
       if(!elementAfterAppend) {
         elementAfterAppend = object.element.querySelector("*[data-first-line]");
       }
-        elementAfterAppend.parentNode.insertBefore(row, elementAfterAppend.nextSibling);
+      elementAfterAppend.parentNode.insertBefore(row, elementAfterAppend.nextSibling);
+      MiscEvent.dispatch('fields:initialise', {});
     }
   }
 
@@ -242,6 +248,32 @@ class PlanningClass {
     if(object.limit.min !== null && object.limit.min <= object.nbColonne-1) {
       this.enabledButtons(object,"remove");
     }
+  }
+
+  copyPaste(objectIndex) {
+    const object = this.objects[objectIndex];
+    if (!object) {
+      return;
+    }
+    object.table.querySelectorAll("tbody tr[data-row-name]").forEach((tr) => {
+      if(tr.dataset.rowName !== "monday")
+      {
+        tr.querySelectorAll("td[data-value-key='start'] *[data-component-time-uuid]").forEach((fieldTime) => {
+          let colKey = fieldTime.closest("td").dataset.colKey;
+          let mondayStartValue = object.table.querySelector("tbody tr[data-row-name='monday'] td[data-value-key='start'][data-col-key='"+colKey+"'] .ds44-input-value").value;
+          MiscEvent.dispatch('field:' + this.getFieldName(fieldTime) + ':set', {value: mondayStartValue});
+        });
+        tr.querySelectorAll("td[data-value-key='end'] *[data-component-time-uuid]").forEach((fieldTime) => {
+          let colKey = fieldTime.closest("td").dataset.colKey;
+          let mondayTdEndValue = object.table.querySelector("tbody tr[data-row-name='monday'] td[data-value-key='end'][data-col-key='"+colKey+"'] .ds44-input-value").value;
+          MiscEvent.dispatch('field:' + this.getFieldName(fieldTime) + ':set', {value: mondayTdEndValue});
+        });
+      }
+    });
+  }
+
+  getFieldName (element) {
+    return (element.getAttribute('name') || element.getAttribute('data-name'));
   }
 
   remove(objectIndex) {
