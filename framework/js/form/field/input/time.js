@@ -222,12 +222,16 @@ class FormFieldInputTimeClass extends FormFieldInputAbstract {
         let hour = parseInt(object.inputElements[0].value, 10);
 
         const minuteStr = ""+minute;
-        if(minuteStr.length !== 2)
+        if(object.inputElements[1].value.length !== 2)
         {
             minute = minute+"0";
         }
         const dateNow = new Date();
         const date = new Date(dateNow.getFullYear()+"-"+dateNow.getMonth()+"-"+dateNow.getDay()+" "+hour+":"+minute);
+
+
+        console.log(date.getHours(), date.getMinutes(), hour, minute);
+
         if (
           date.getHours() !== hour ||
           date.getMinutes() !== minute
@@ -299,6 +303,7 @@ class FormFieldInputTimeClass extends FormFieldInputAbstract {
 
     setData (objectIndex, data = null) {
         super.setData(objectIndex, data);
+        console.log(data);
         if (data && data.value) {
             this.setTime(objectIndex, data.value);
             this.focus(objectIndex);
