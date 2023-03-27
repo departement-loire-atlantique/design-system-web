@@ -502,6 +502,25 @@ class ResultStandardClass {
             MiscAccessibility.setFocus(focusElement);
         }
 
+        let searchModal = document.querySelector("*[data-search-modal]");
+        if(searchModal)
+        {
+            let buttonModal = document.querySelector("*[data-js='ds44-modal'][data-target='#"+searchModal.getAttribute("id")+"']");
+            let contentModal = searchModal.querySelector("*[data-search-modal-content]");
+            contentModal.innerHTML = "";
+            if(evt.detail.modal.length > 0)
+            {
+                let newHtmlModal = "";
+                for (const [key, modalElement] of Object.entries(evt.detail.modal)) {
+                    newHtmlModal += modalElement.metadata["html_list"];
+                }
+                contentModal.innerHTML = newHtmlModal;
+            }
+            else
+            {
+                buttonModal.style.display = "none";
+            }
+        }
         MiscEvent.dispatch('result:created');
     }
 

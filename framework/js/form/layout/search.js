@@ -278,6 +278,7 @@ class FormLayoutSearchClass extends FormLayoutAbstract {
             'results': results,
             'geojsonId' : response.hasOwnProperty("geojsonId") ? response['geojsonId'] : null,
             'newResults': response['result'],
+            "modal":  response["result-modal"] !== undefined ? response["result-modal"] : [],
             'searchText': searchText.join(', ')
         };
     }
