@@ -58,14 +58,13 @@
       <button class="ds44-btnStd ds44-btn--contextual" data-planning-action="add">
         <span class="ds44-btnInnerText">Ajouter un créneau</span>
       </button>
+      {% capture idToolTips %}tooltips-{{include.creneauName}}{%endcapture%}
+      {% include composants-transverses/inc-tooltips.html description="Si vous gardez l’enfant sur plusieurs plages horaires dans la même journée, ajouter des créneaux pour saisir toutes les plages horaires. Vous pouvez saisir jusqu’à trois créneaux." idTooltips=idToolTips %}
     </div>
   </div>
 
 
   <div class="content-button">
-    <button class="ds44-btnStd ds44-btn--contextual" data-planning-action="add">
-      <span class="ds44-btnInnerText">Ajouter un créneau</span>
-    </button>
     <button class="ds44-btnStd ds44-btn--contextual" data-planning-action="remove">
       <span class="ds44-btnInnerText">Supprimer un créneau</span>
     </button>
