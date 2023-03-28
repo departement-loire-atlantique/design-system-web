@@ -256,19 +256,38 @@ class PlanningClass {
       return;
     }
     object.table.querySelectorAll("tbody tr[data-row-name]").forEach((tr) => {
-      if(tr.dataset.rowName !== "monday")
-      {
-        tr.querySelectorAll("td[data-value-key='start'] *[data-component-time-uuid]").forEach((fieldTime) => {
-          let colKey = fieldTime.closest("td").dataset.colKey;
-          let mondayStartValue = object.table.querySelector("tbody tr[data-row-name='monday'] td[data-value-key='start'][data-col-key='"+colKey+"'] .ds44-input-value").value;
+      tr.querySelectorAll("td[data-value-key='start'] *[data-component-time-uuid]").forEach((fieldTime) => {
+        let colKey = fieldTime.closest("td").dataset.colKey;
+        let mondayStartValueByCol = object.table.querySelector("tbody tr[data-row-name='monday'] td[data-value-key='start'][data-col-key='"+colKey+"'] .ds44-input-value").value;
+        let mondayStartValue;
+        if(!mondayStartValueByCol) {
+          mondayStartValue = object.table.querySelector("tbody tr[data-row-name='monday'] td[data-value-key='start'][data-col-key='1'] .ds44-input-value").value;
+        }
+        else {
+          mondayStartValue = mondayStartValueByCol;
+        }
+
+        if((tr.dataset.rowName !== "monday" || !mondayStartValueByCol) && !fieldTime.querySelector(".ds44-input-value").value)
+        {
           MiscEvent.dispatch('field:' + this.getFieldName(fieldTime) + ':set', {value: mondayStartValue});
-        });
-        tr.querySelectorAll("td[data-value-key='end'] *[data-component-time-uuid]").forEach((fieldTime) => {
-          let colKey = fieldTime.closest("td").dataset.colKey;
-          let mondayTdEndValue = object.table.querySelector("tbody tr[data-row-name='monday'] td[data-value-key='end'][data-col-key='"+colKey+"'] .ds44-input-value").value;
-          MiscEvent.dispatch('field:' + this.getFieldName(fieldTime) + ':set', {value: mondayTdEndValue});
-        });
-      }
+        }
+
+      });
+      tr.querySelectorAll("td[data-value-key='end'] *[data-component-time-uuid]").forEach((fieldTime) => {
+        let colKey = fieldTime.closest("td").dataset.colKey;
+
+        let mondayEndValueByCol = object.table.querySelector("tbody tr[data-row-name='monday'] td[data-value-key='end'][data-col-key='"+colKey+"'] .ds44-input-value").value;
+        let mondayEndValue;
+        if(!mondayEndValueByCol) {
+          mondayEndValue = object.table.querySelector("tbody tr[data-row-name='monday'] td[data-value-key='end'][data-col-key='1'] .ds44-input-value").value;
+        }
+        else {
+          mondayEndValue = mondayEndValueByCol;
+        }
+        if((tr.dataset.rowName !== "monday" || !mondayEndValueByCol) && !fieldTime.querySelector(".ds44-input-value").value) {
+          MiscEvent.dispatch('field:' + this.getFieldName(fieldTime) + ':set', {value: mondayEndValue});
+        }
+      });
     });
   }
 
@@ -315,7 +334,7 @@ class PlanningClass {
   disabledButtons(object, type) {
     object.element.querySelectorAll("*[data-planning-action='"+type+"']").forEach((button) => {
       button.style.cursor = "default";
-      button.classList.remove("ds44-btn--contextual");
+      button.classList.remove("ds44-btn--invert");
       button.setAttribute("disabled", "");
     });
   }
@@ -323,7 +342,7 @@ class PlanningClass {
   enabledButtons(object, type) {
     object.element.querySelectorAll("*[data-planning-action='"+type+"']").forEach((button) => {
       button.style.cursor = "pointer";
-      button.classList.add("ds44-btn--contextual");
+      button.classList.add("ds44-btn--invert");
       button.removeAttribute("disabled");
     });
   }

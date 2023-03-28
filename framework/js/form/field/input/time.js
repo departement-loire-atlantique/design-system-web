@@ -14,7 +14,7 @@ class FormFieldInputTimeClass extends FormFieldInputAbstract {
             valueElement = document.createElement('input');
             valueElement.classList.add('ds44-input-value');
             valueElement.setAttribute('type', 'hidden');
-            element.parentNode.insertBefore(valueElement, element);
+            element.append(valueElement);
         }
 
         const objectIndex = (this.objects.length - 1);

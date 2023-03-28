@@ -13,7 +13,7 @@
 
 
   <div class="content-button">
-    <button class="ds44-btnStd ds44-btn--contextual" data-planning-action="copy-paste">
+    <button class="ds44-btnStd ds44-btn--invert" data-planning-action="copy-paste">
       <span class="ds44-btnInnerText">Copier et coller la première ligne</span>
     </button>
   </div>
@@ -55,7 +55,8 @@
       </tbody>
     </table>
     <div class="content-button">
-      <button class="ds44-btnStd ds44-btn--contextual" data-planning-action="add">
+      <button class="ds44-btnStd ds44-btn--invert" data-planning-action="add">
+        <i class="icon icon-plus" aria-hidden="true"></i>
         <span class="ds44-btnInnerText">Ajouter un créneau</span>
       </button>
       {% capture idToolTips %}tooltips-{{include.creneauName}}{%endcapture%}
@@ -65,7 +66,8 @@
 
 
   <div class="content-button">
-    <button class="ds44-btnStd ds44-btn--contextual" data-planning-action="remove">
+    <button class="ds44-btnStd ds44-btn--invert" data-planning-action="remove">
+      <i class="icon icon-cross" aria-hidden="true"></i>
       <span class="ds44-btnInnerText">Supprimer un créneau</span>
     </button>
   </div>
