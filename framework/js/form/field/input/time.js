@@ -229,9 +229,6 @@ class FormFieldInputTimeClass extends FormFieldInputAbstract {
         const dateNow = new Date();
         const date = new Date(dateNow.getFullYear()+"-"+dateNow.getMonth()+"-"+dateNow.getDay()+" "+hour+":"+minute);
 
-
-        console.log(date.getHours(), date.getMinutes(), hour, minute);
-
         if (
           date.getHours() !== hour ||
           date.getMinutes() !== minute
