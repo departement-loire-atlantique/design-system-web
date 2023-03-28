@@ -106,6 +106,7 @@ class FormFieldBoxAbstract extends FormFieldAbstract {
                 }
             });
             this.toggleContainer(input);
+            MiscEvent.dispatch("field:change-value", {checked: true}, input);
         }
         else
         {
@@ -115,6 +116,7 @@ class FormFieldBoxAbstract extends FormFieldAbstract {
                     this.toggleContainer(inputElement);
                 }
             });
+            MiscEvent.dispatch("field:change-value", {checked: false}, input);
         }
     }
 

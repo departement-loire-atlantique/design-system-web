@@ -39,6 +39,9 @@ input[type="file"] {
     position: absolute;
     z-index: -1;
 }
+input:-webkit-autofill {
+    content: "autofill";
+}
 
 .ds44-form__container {
     position: relative;
@@ -980,7 +983,7 @@ input[type=radio],
 }
 
 /**
- * Date picker
+ * Date picker & Time
  */
 .ds44-datepicker__shape {
     cursor: pointer;
@@ -1006,6 +1009,25 @@ input[type=radio],
         span {
             display: inline;
         }
+    }
+}
+
+/**
+ * Time
+ */
+.ds44-time__shape {
+
+    cursor: pointer;
+    background-color: $ds44-light-color;
+    input {
+        border: none;
+        outline: none;
+        text-align: center;
+        width: 2.6rem;
+        background-color: transparent;
+    }
+    span {
+        display: inline;
     }
 }
 
@@ -1070,6 +1092,7 @@ input[type=radio],
         input,
         .ds44-select__shape,
         .ds44-datepicker__shape,
+        .ds44-time__shape,
         .ds44-file__shape {
             border-radius: 3px 0 0 3px;
         }
@@ -1085,6 +1108,7 @@ input[type=radio],
         input,
         .ds44-select__shape,
         .ds44-datepicker__shape,
+        .ds44-time__shape,
         .ds44-file__shape {
             border-radius: 0 3px 3px 0;
             margin-left: -1px;
@@ -1258,6 +1282,7 @@ input[type=radio],
             input,
             .ds44-select__shape,
             .ds44-datepicker__shape,
+            .ds44-time__shape,
             .ds44-file__shape {
                 border-radius: 3px 3px 0 0;
             }
@@ -1272,6 +1297,7 @@ input[type=radio],
             input,
             .ds44-select__shape,
             .ds44-datepicker__shape,
+            .ds44-time__shape,
             .ds44-file__shape {
                 border-radius: 0 0 3px 3px;
                 margin: -1px 0 0 0;
@@ -1284,11 +1310,44 @@ input[type=radio],
     }
 }
 
-#ds44-creneaux {
-    th, td {
+.ds44-planning {
+    .ds44-planing-table-button {
+        margin: 2rem -1rem;
+        display: flex;
+        .content-button,
+        .ds44-planning-table {
+            margin: 0 1rem;
+        }
+    }
+    th {
+      height: 4.5rem;
+    }
+    thead .second th:first-child,
+    thead .first th[data-col-key] {
+        background: $ds44-LA;
+    }
+    thead .second th {
+        background: $ds44-lightgray;
+    }
+    td {
         height: 8.5rem;
         .ds44-form__container {
             margin: 1rem 0;
+        }
+    }
+    thead .first th:last-child,
+    *[data-value-key="end"]:last-child {
+        padding-right: 2rem;
+    }
+    td {
+        &:first-child {
+            width: 10rem;
+        }
+        &:nth-child(2) {
+            padding-left: 2rem;
+        }
+        label {
+            display:none;
         }
     }
 }
