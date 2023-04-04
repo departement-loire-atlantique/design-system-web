@@ -322,7 +322,7 @@ class PlanningClass {
     template = template.replace(/__CRENEAU_NUM__/gi, numCreneau);
     if(day) {
       template = template.replace(/__CRENEAU_DEB__/gi, "debcr"+numCreneau);
-      template = template.replace(/__CRENEAU_FIN__/gi, "finbcr"+numCreneau);
+      template = template.replace(/__CRENEAU_FIN__/gi, "fincr"+numCreneau);
       template = template.replace(/__DAY__/gi, day);
       template = template.replace(/__DAY_TEXT__/gi, MiscTranslate._(day));
     }
