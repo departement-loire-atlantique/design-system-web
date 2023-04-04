@@ -84,6 +84,8 @@ class PlanningClass {
         templateTd = templateTd.replace(/_1/gi, "___CRENEAU_NUM__");
         templateTd = templateTd.replace(/\[1\]/gi, "[__CRENEAU_NUM__]");
         templateTd = templateTd.replace(/monday/gi, "__DAY__");
+        templateTd = templateTd.replace(/debcr1/gi, "__CRENEAU_DEB__");
+        templateTd = templateTd.replace(/fincr1/gi, "__CRENEAU_FIN__");
         templateTd = templateTd.replace(/\n/gi, "");
         object.template.td = templateTd;
       }
@@ -319,6 +321,8 @@ class PlanningClass {
   replaceValueTemplate(template, numCreneau = 2, day = null) {
     template = template.replace(/__CRENEAU_NUM__/gi, numCreneau);
     if(day) {
+      template = template.replace(/__CRENEAU_DEB__/gi, "debcr"+numCreneau);
+      template = template.replace(/__CRENEAU_FIN__/gi, "finbcr"+numCreneau);
       template = template.replace(/__DAY__/gi, day);
       template = template.replace(/__DAY_TEXT__/gi, MiscTranslate._(day));
     }
