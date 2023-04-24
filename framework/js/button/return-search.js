@@ -29,7 +29,7 @@ class ButtonReturnSearchClass {
   }
 }
 // Singleton
-var ButtonBackToTop = (function () {
+var ButtonReturnSearch = (function () {
   "use strict";
   var instance;
   function Singleton() {
