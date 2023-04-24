@@ -210,7 +210,7 @@ class FormLayoutSearchClass extends FormLayoutAbstract {
         if (!object) {
             return;
         }
-
+        localStorage.setItem("LaDesignSystem.urlSearch", window.location.href);
         // Save search data
         object.searchData = this.formatSearchData(
             response,
