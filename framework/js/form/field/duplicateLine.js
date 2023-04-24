@@ -18,58 +18,85 @@ class DuplicateLineClass {
 
   create (currentLine) {
 
-    currentLine.querySelectorAll("*[name]").forEach((element) => {
-      this.transformElement(currentLine, element, element.getAttribute("name"), "name");
-    });
-    currentLine.querySelectorAll("*[data-name]").forEach((element) => {
-      this.transformElement(currentLine, element, element.getAttribute("data-name"), "data-name");
-    });
-
     let duplicateLine = document.createElement("div");
     duplicateLine.innerHTML = currentLine.innerHTML;
+
+    duplicateLine.querySelectorAll("*[name]").forEach((element) => {
+      this.transformElement(duplicateLine, element, element.getAttribute("name"), "name", true);
+    });
+    duplicateLine.querySelectorAll("*[data-name]").forEach((element) => {
+      this.transformElement(duplicateLine, element, element.getAttribute("data-name"), "data-name", true);
+    });
+
+
+    let isTransform = false
+    currentLine.querySelectorAll("*[name]").forEach((element) => {
+      isTransform = this.transformElement(currentLine, element, element.getAttribute("name"), "name", false);
+    });
+    currentLine.querySelectorAll("*[data-name]").forEach((element) => {
+      isTransform = this.transformElement(currentLine, element, element.getAttribute("data-name"), "data-name", false);
+    });
 
     const object = {
       'id': MiscUtils.generateId(),
       "container": currentLine.parentElement,
       'firstLine': currentLine,
+      "firstLineTransform": isTransform,
       "duplicateLine": duplicateLine,
     };
     this.objects.push(object);
   }
 
-  transformElement(currentLine, element, name, keyName)
+  transformElement(currentLine, element, name, keyName, isDuplicateLine = false)
   {
+    let isTransform = false;
     if(name)
     {
-      element.setAttribute(keyName, "__LINE_DUPLICATE_NAME__["+name+"]");
-      element.setAttribute("id", "__LINE_DUPLICATE_ID___"+name);
-      element.closest(".ds44-fieldContainer").querySelectorAll("*[for='"+name+"']").forEach((label) => {
-        label.setAttribute("for", "__LINE_DUPLICATE_ID___"+name);
-      });
-      element.closest(".ds44-fieldContainer").querySelectorAll("*[id]").forEach((otherElement) => {
-        let currentId = ""+otherElement.getAttribute("id");
-        if(currentId && !currentId.match(/__LINE_DUPLICATE_ID___/))
-        {
-          let regexId = new RegExp(name, "gi");
-          let newId = currentId.replace(regexId, "__LINE_DUPLICATE_ID___"+name);
-          otherElement.setAttribute("id", newId);
-        }
-        if(otherElement.getAttribute("aria-labelledby"))
-        {
-          let currentAriaLabelledby = otherElement.getAttribute("aria-labelledby");
-          let regexAria = new RegExp(name, "gi");
-          let newAria = currentAriaLabelledby.replace(regexAria, "__LINE_DUPLICATE_ID___"+name);
-          otherElement.setAttribute("aria-labelledby", newAria);
-        }
-      });
+      let regexNameValidate = new RegExp("line\\[.*\\]\\[(.*)\\]", "gi");
+      let matches = regexNameValidate.exec(name);
+      if(matches)
+      {
+        name = matches[1];
+      }
+
+      if(!matches || isDuplicateLine)
+      {
+        isTransform = true;
+        element.setAttribute(keyName, "__LINE_DUPLICATE_NAME__["+name+"]");
+        element.setAttribute("id", "__LINE_DUPLICATE_ID___"+name);
+        element.closest(".ds44-fieldContainer").querySelectorAll("*[for='"+name+"']").forEach((label) => {
+          label.setAttribute("for", "__LINE_DUPLICATE_ID___"+name);
+        });
+        element.closest(".ds44-fieldContainer").querySelectorAll("*[id]").forEach((otherElement) => {
+          let currentId = ""+otherElement.getAttribute("id");
+          if(currentId && !currentId.match(/__LINE_DUPLICATE_ID___/))
+          {
+            let regexId = new RegExp(name, "gi");
+            let newId = currentId.replace(regexId, "__LINE_DUPLICATE_ID___"+name);
+            otherElement.setAttribute("id", newId);
+          }
+          if(otherElement.getAttribute("aria-labelledby"))
+          {
+            let currentAriaLabelledby = otherElement.getAttribute("aria-labelledby");
+            let regexAria = new RegExp(name, "gi");
+            let newAria = currentAriaLabelledby.replace(regexAria, "__LINE_DUPLICATE_ID___"+name);
+            otherElement.setAttribute("aria-labelledby", newAria);
+          }
+        });
+      }
     }
+    return isTransform;
   }
 
   initialize () {
     for (let objectIndex = 0; objectIndex < this.objects.length; objectIndex++) {
       const object = this.objects[objectIndex];
-      object.firstLine.innerHTML = this.generateHtml(objectIndex);
-      object.firstLine.classList.add("line-is-duplicate");
+
+      if(object.firstLineTransform)
+      {
+        object.firstLine.innerHTML = this.generateHtml(objectIndex);
+        object.firstLine.classList.add("line-is-duplicate");
+      }
       object.firstLine.querySelectorAll("*[data-no-first-line]").forEach((element) => {
         element.remove();
       });
