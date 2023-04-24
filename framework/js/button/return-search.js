@@ -13,7 +13,12 @@ class ButtonReturnSearchClass {
         if(this.linkSearch) {
           if(MiscComponent.checkAndCreate(buttonElement, "button-return-search"))
           {
-            MiscEvent.addListener('click', this.openLink.bind(this, buttonElement), buttonElement);
+            if(buttonElement.tagName === "A") {
+              buttonElement.setAttribute("href", this.linkSearch);
+            }
+            else {
+              MiscEvent.addListener('click', this.openLink.bind(this, buttonElement), buttonElement);
+            }
           }
         }
         else {
