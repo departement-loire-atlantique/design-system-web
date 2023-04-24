@@ -314,6 +314,18 @@ class ResultStandardClass {
             }
         }
 
+        document
+          .querySelectorAll('*[data-link-has-result]')
+          .forEach((element) => {
+              if(evt.detail.nbResults > 0 && element.tagName === "SPAN") {
+                  MiscDom.changeTagName(element, "A");
+              }
+              else if(evt.detail.nbResults === 0 && element.tagName === "A") {
+                  MiscDom.changeTagName(element, "SPAN");
+              }
+          });
+
+
         if(evt.detail.nbResultHtml !== undefined && evt.detail.nbResultHtml)
         {
             let htmlResult = listContainerElement.querySelector('.ds44-js-html-result');
