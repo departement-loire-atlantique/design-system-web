@@ -8,7 +8,7 @@ class SubMenuClass {
         document
           .querySelectorAll("*[data-sub-menu]")
           .forEach((subMenu) => {
-              if(MiscComponent.checkAndCreate(subMenu, "carousel"))
+              if(MiscComponent.checkAndCreate(subMenu, "sub-menu"))
               {
                   this.create(subMenu);
               }
@@ -42,8 +42,6 @@ class SubMenuClass {
                 }
             }, button);
         });
-
-
     }
 
     showMenu(objectIndex, button, evt)
