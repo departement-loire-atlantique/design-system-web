@@ -10,6 +10,9 @@ variations:
 - title: Bandeau standard
   description: Header Loire Atlantique
   pattern: header/header-LA.html
+- title: Variante ASSMAT Connecté
+  description: Header avec le menu Mon compte
+  pattern: header/header-assmat-connected.html
 - title: Variante type site Handicap
   description: Header avec menu supplémentaire
   pattern: header/header-variante-1.html
