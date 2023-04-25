@@ -21,6 +21,7 @@ class CartManageClass {
         Debug.log("SubMenu -> Create");
         const object = {
             'element': cartManage,
+            'nbElements': cartManage.querySelectorAll("*[data-cart-element]").length
         };
 
         this.objects.push(object);
@@ -29,16 +30,34 @@ class CartManageClass {
             MiscEvent.addListener("click", (evt) => {
                 MiscRequest.send(button.getAttribute("data-cart-remove-url"), () =>{
                     let removeElement = button.closest("*[data-cart-element]");
+                    let nbElements = this.objects[objectIndex]["nbElements"];
                     if(removeElement)
                     {
                         this.remove(objectIndex, removeElement);
+                        nbElements--;
                     }
                     else
                     {
                         cartManage.querySelectorAll("*[data-cart-element]").forEach((removeElement) => {
                             this.remove(objectIndex, removeElement);
+                            nbElements--;
                         });
                     }
+                    this.objects[objectIndex]["nbElements"] = nbElements;
+                    let title = this.objects[objectIndex]['element'].querySelector("*[data-cart-title]");
+                    if(title)
+                    {
+                        if(nbElements <= 0)
+                        {
+                            title.innerText = MiscTranslate._("ASSMAT_SELECTED_EMPTY");
+                        }
+                        else
+                        {
+                            title.innerText = MiscTranslate._("ASSMAT_SELECTED").replace("__NB__", nbElements);
+                        }
+                    }
+
+
                 }, (response) => {
                     console.log(response);
                 });
