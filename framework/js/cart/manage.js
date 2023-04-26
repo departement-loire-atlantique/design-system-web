@@ -28,6 +28,8 @@ class CartManageClass {
         const objectIndex = (this.objects.length - 1);
         cartManage.querySelectorAll("*[data-cart-remove-url]").forEach((button) => {
             MiscEvent.addListener("click", (evt) => {
+                evt.stopPropagation();
+                evt.preventDefault();
                 MiscRequest.send(button.getAttribute("data-cart-remove-url"), () =>{
                     let removeElement = button.closest("*[data-cart-element]");
                     let nbElements = this.objects[objectIndex]["nbElements"];
