@@ -2,7 +2,7 @@ class FormFieldInputStandardClass extends FormFieldInputAbstract {
     constructor () {
         super(
           "FormFieldInputStandard",
-            'input[type="text"]:not([aria-autocomplete="list"]):not([data-is-date]), ' +
+            'input[type="text"]:not([aria-autocomplete="list"]):not([data-is-date]):not([data-is-time]), ' +
             'input[type="email"]:not([aria-autocomplete="list"]), ' +
             'input[type="password"]:not([aria-autocomplete="list"]), ' +
             'input[type="number"]:not([aria-autocomplete="list"])',

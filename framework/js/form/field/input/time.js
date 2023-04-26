@@ -300,7 +300,6 @@ class FormFieldInputTimeClass extends FormFieldInputAbstract {
 
     setData (objectIndex, data = null) {
         super.setData(objectIndex, data);
-        console.log(data);
         if (data && data.value) {
             this.setTime(objectIndex, data.value);
             this.focus(objectIndex);
