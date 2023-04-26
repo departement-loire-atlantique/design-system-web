@@ -5,6 +5,7 @@ class CalendarStandard {
             selector: null,
             datesFilter: false,
             pastDates: true,
+            nextDates: true,
             nextYearDates: true,
             availableWeekDays: [],
             availableDates: [],
@@ -47,6 +48,9 @@ class CalendarStandard {
         }
         if (this.calendarElement.getAttribute('data-calendar-next-year-dates') === 'false') {
             this.options.nextYearDates = false;
+        }
+        if (this.calendarElement.getAttribute('data-calendar-next-dates') === 'false') {
+            this.options.nextDates = false;
         }
 
         this.options.date.setDate(1);
@@ -109,9 +113,16 @@ class CalendarStandard {
         }
         const oneYearFromNow = new Date();
         oneYearFromNow.setFullYear(oneYearFromNow.getFullYear() + 1);
+
+        console.log(oneYearFromNow);
         if (
             this.options.date.getTime() <= this.options.todayDate.getTime() - 1 &&
             !this.options.pastDates
+        ) {
+            newDayElement.classList.add('vanilla-calendar-date--disabled');
+        } else if (
+            this.options.date.getTime() >= this.options.todayDate.getTime() + 1 &&
+            !this.options.nextDates
         ) {
             newDayElement.classList.add('vanilla-calendar-date--disabled');
         } else if (

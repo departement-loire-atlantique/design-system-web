@@ -75,7 +75,9 @@ class MiscTranslate {
                 'thursday': "jeudi",
                 'friday': "vendredi",
                 'saturday': "samedi",
-                'sunday': "dimanche"
+                'sunday': "dimanche",
+                "ASSMAT_SELECTED": "Vous avez sélectionné __NB__ assistant·es maternel·les",
+                "ASSMAT_SELECTED_EMPTY": "Vous n'avez sélectionné aucune assistant·es maternel·les"
             },
             'en': {
                 'AROUND_ME': 'Around me',
@@ -139,7 +141,9 @@ class MiscTranslate {
                 'thursday': "thursday",
                 'friday': "friday",
                 'saturday': "saturday",
-                'sunday': "sunday"
+                'sunday': "sunday",
+                "ASSMAT_SELECTED": "You have selected __NB__ childminders",
+                "ASSMAT_SELECTED_EMPTY": "You have not selected any childminders",
             }
         })[MiscTranslate.getLanguage()];
     }

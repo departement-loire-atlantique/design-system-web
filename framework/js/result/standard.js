@@ -81,6 +81,23 @@ class ResultStandardClass {
         }
     }
 
+    cardOpenNewTab(evt) {
+        let viewCard = true;
+        let linkMaster = null;
+        if(evt.target.tagName === "A" && evt.target.getAttribute("href") && !evt.target.closest(".ds44-cardTitle")) {
+            viewCard = false;
+        }
+        else {
+
+            linkMaster = evt.target.closest(".ds44-js-results-item").querySelector(".ds44-cardTitle a");
+        }
+        if(viewCard && linkMaster && evt.ctrlKey === true) {
+            evt.stopPropagation();
+            evt.preventDefault();
+            window.open(linkMaster.getAttribute("href"), '_blank').focus();
+        }
+    }
+
     fillCardSuccess (result) {
         const cardContainerElement = document.querySelector('.ds44-results .ds44-js-results-container .ds44-js-results-card');
         if (!cardContainerElement) {
@@ -434,6 +451,9 @@ class ResultStandardClass {
                 } else {
                     MiscEvent.addListener('click', this.redirectCard.bind(this), listItemElement);
                 }
+            }
+            else if(multiLink) {
+                MiscEvent.addListener('click', this.cardOpenNewTab.bind(this), listItemElement);
             }
             listElement.appendChild(listItemElement);
 

@@ -84,8 +84,6 @@ class PlanningClass {
         templateTd = templateTd.replace(/_1/gi, "___CRENEAU_NUM__");
         templateTd = templateTd.replace(/\[1\]/gi, "[__CRENEAU_NUM__]");
         templateTd = templateTd.replace(/monday/gi, "__DAY__");
-        templateTd = templateTd.replace(/debcr1/gi, "__CRENEAU_DEB__");
-        templateTd = templateTd.replace(/fincr1/gi, "__CRENEAU_FIN__");
         templateTd = templateTd.replace(/\n/gi, "");
         object.template.td = templateTd;
       }
@@ -132,7 +130,9 @@ class PlanningClass {
       MiscEvent.addListener('planning:copy-paste', this.copyPaste.bind(this, objectIndex), object.element);
       MiscEvent.addListener('planning:remove', this.remove.bind(this, objectIndex), object.element);
       object.element.querySelectorAll("*[data-planning-action]").forEach((button) => {
-        MiscEvent.addListener('click', () => {
+        MiscEvent.addListener('click', (evt) => {
+          evt.stopPropagation();
+          evt.preventDefault();
           if(button.dataset.planningAction === "add")
           {
             MiscEvent.dispatch("planning:add", {"button": button}, object.element);
@@ -252,11 +252,16 @@ class PlanningClass {
     }
   }
 
-  copyPaste(objectIndex) {
+  copyPaste(objectIndex, evt) {
     const object = this.objects[objectIndex];
     if (!object) {
       return;
     }
+    if(evt) {
+      evt.stopPropagation();
+      evt.preventDefault();
+    }
+
     object.table.querySelectorAll("tbody tr[data-row-name]").forEach((tr) => {
       tr.querySelectorAll("td[data-value-key='start'] *[data-component-time-uuid]").forEach((fieldTime) => {
         let colKey = fieldTime.closest("td").dataset.colKey;
@@ -268,7 +273,6 @@ class PlanningClass {
         else {
           mondayStartValue = mondayStartValueByCol;
         }
-
         if((tr.dataset.rowName !== "monday" || !mondayStartValueByCol) && !fieldTime.querySelector(".ds44-input-value").value)
         {
           MiscEvent.dispatch('field:' + this.getFieldName(fieldTime) + ':set', {value: mondayStartValue});
@@ -321,8 +325,6 @@ class PlanningClass {
   replaceValueTemplate(template, numCreneau = 2, day = null) {
     template = template.replace(/__CRENEAU_NUM__/gi, numCreneau);
     if(day) {
-      template = template.replace(/__CRENEAU_DEB__/gi, "debcr"+numCreneau);
-      template = template.replace(/__CRENEAU_FIN__/gi, "fincr"+numCreneau);
       template = template.replace(/__DAY__/gi, day);
       template = template.replace(/__DAY_TEXT__/gi, MiscTranslate._(day));
     }
