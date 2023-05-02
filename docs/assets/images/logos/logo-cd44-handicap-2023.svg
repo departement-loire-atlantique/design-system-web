@@ -6,11 +6,11 @@
    id="Logo_x5F_Def"
    x="0px"
    y="0px"
-   viewBox="0 0 479.09999 82.458459"
+   viewBox="0 0 482.17616 95.974565"
    xml:space="preserve"
-   sodipodi:docname="logo-cd44-handicap-2023-crop.svg"
-   width="479.10001"
-   height="82.458458"
+   sodipodi:docname="logo-cd44-handicap-2023.svg"
+   width="482.17618"
+   height="95.974564"
    inkscape:version="1.2.2 (732a01da63, 2022-12-09)"
    xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
    xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
@@ -51,8 +51,8 @@
    inkscape:deskcolor="#d1d1d1"
    showgrid="false"
    inkscape:zoom="1.3024283"
-   inkscape:cx="152.02373"
-   inkscape:cy="-54.513558"
+   inkscape:cx="71.405084"
+   inkscape:cy="-138.20339"
    inkscape:window-width="1680"
    inkscape:window-height="997"
    inkscape:window-x="-8"
@@ -79,7 +79,7 @@
 <g
    id="g167"
    clip-path="url(#clipPath1092)"
-   transform="translate(-43.8,-48.641545)">
+   transform="translate(-42.228809,-41.461018)">
 	<path
    class="st0"
    d="m 522.9,66.4 c -60.6,-23.4 -134,-22.2 -162,-5 l 23.2,69.7 C 417.2,110.7 439.4,106 522.8,110.9 V 66.4 Z"
@@ -195,11 +195,11 @@
    height="62.900002"
    id="rect169"
    clip-path="url(#clipPath1088)"
-   transform="translate(-43.8,-48.641545)" />
+   transform="translate(-42.228809,-41.461018)" />
 <g
    id="g225"
    clip-path="url(#clipPath1084)"
-   transform="translate(-43.8,-48.641545)">
+   transform="translate(-42.228809,-41.461018)">
 	<path
    class="st4"
    d="m 225.6,62.3 h -8.1 v 4.6 h 1.2 c 4,0 5.6,0.3 6.3,1.3 0.4,0.5 0.5,0.9 0.5,3.3 0,0.3 0,0.4 0,0.4 v -0.3 0 -9.3"
@@ -335,4 +335,11 @@
    height="14.8"
    id="rect223" />
 </g>
-</svg>
+<rect
+   style="opacity:0;fill:#ffffff;stroke-width:0.996906"
+   id="rect1160"
+   width="482.17618"
+   height="95.974564"
+   x="0"
+   y="0"
+   ry="0" /></svg>
