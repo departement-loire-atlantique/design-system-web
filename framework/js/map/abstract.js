@@ -121,7 +121,7 @@ class MapAbstract {
 
     mapScriptLoaded () {
         this.isMapLoaded = true;
-        window.mapboxgl.accessToken = 'pk.eyJ1IjoiemF6aWZmaWMiLCJhIjoiY2s3bmtxYXh2MDNqZzNkdDc3NzJ0aGdqayJ9.TuhsI1ZKXwKSGw2F3bVy5g';
+        window.mapboxgl.accessToken = 'pk.eyJ1IjoibG9pcmVhdGxhbnRpcXVlIiwiYSI6ImNqaHZ5YnNnazBkbWIza21tbWQ2NHF4aWMifQ.oAN8kiv6TejIMjHDVLelXA';
         this.mapLoad();
     }
 
