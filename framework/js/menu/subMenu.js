@@ -42,6 +42,15 @@ class SubMenuClass {
                 }
             }, button);
         });
+
+        MiscEvent.addListener("resize", (evt) => {
+            if(object.element.classList.contains("view"))
+            {
+                let buttonEnabled = document.querySelector("*[data-open-sub-menu='#"+subMenuId+"'].is-open");
+                this.positionMenuByButton(objectIndex, buttonEnabled);
+            }
+        }, window);
+
     }
 
     showMenu(objectIndex, button, evt)
@@ -54,17 +63,7 @@ class SubMenuClass {
             evt.stopPropagation();
         }
 
-        let buttonPosition = MiscDom.getOffset(button);
-
-        let limitLeft = buttonPosition["left"]+object.element.clientWidth;
-        let positionLeft = buttonPosition["left"];
-        if(window.innerWidth < limitLeft)
-        {
-            positionLeft = window.innerWidth-object.element.clientWidth;
-        }
-
-        object.element.style.top = (buttonPosition["top"]+button.innerHeight)+"px";
-        object.element.style.left = positionLeft+"px";
+        this.positionMenuByButton(objectIndex, button);
 
         MiscAccessibility.show(object.element);
         MiscAccessibility.addFocusLoop(object.element);
@@ -79,7 +78,29 @@ class SubMenuClass {
 
         MiscEvent.addListener('click', this.clickOut.bind(this, objectIndex), document.body);
         this.objects[objectIndex]['currentButton'] = button;
+    }
 
+    positionMenuByButton(objectIndex, button)
+    {
+        const object = this.objects[objectIndex];
+        if (!object) {
+            return;
+        }
+
+        let buttonPosition = MiscDom.getOffset(button);
+        let limitLeft = buttonPosition["left"]+object.element.clientWidth;
+
+        object.element.style.top = (buttonPosition["top"]+button.innerHeight)+"px";
+        if(window.innerWidth < limitLeft)
+        {
+            object.element.style.right = "1rem";
+            object.element.style.left = "auto";
+        }
+        else
+        {
+            object.element.style.left = buttonPosition["left"]+"px";
+            object.element.style.right = "auto";
+        }
     }
 
     hideMenu(objectIndex, evt)

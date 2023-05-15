@@ -111,7 +111,7 @@
     &.view {
         display:block;
         opacity: 1;
-        pointer-events: none;
+        pointer-events: all;
     }
     .ds44-list {
         padding: 2rem;
@@ -196,6 +196,18 @@
         }
 
     }
+
+    .ds44-subMenu {
+        .ds44-list {
+            li {
+                padding-bottom: 1rem;
+            }
+            a {
+                font-size: 1em;
+            }
+        }
+    }
+
 }
 
 @media (max-width: $ds44-medium - .0625) {
