@@ -16,7 +16,7 @@
             {% if include.subfields and include.subfields != '' %}
                 <div class="ds44-facetteContainer ds44-theme ds44-flex-container ds44-medium-flex-col">
                     <div class="ds44-fg1 ds44-flex-container ds44-medium-flex-col">
-                        <p id="filter-by-{{ id }}" class="ds44-heading ds44-small-fg1 ">Affiner par</p>
+                        <p id="filter-by-{{ id }}" class="ds44-heading ds44-small-fg1 ">Filtrer par</p>
                         <div class="">
                             <ul class="ds44-noMrg ds44-noPdg" id="listbox-{{ id }}">
                                 <li class="ds44-select-list_elem inbl ds44-noMrgb">
@@ -37,8 +37,16 @@
                 </div>
                 <div class="ds44-facetteContainer ds44-theme ds44-flex-container ds44-medium-flex-col ds44--noPdg-t ds44-sixSelect">
                     <div class="ds44-fg1 ds44-flex-container ds44-medium-flex-col">
-                        <p id="filter-by-{{ id }}" class="ds44-heading ds44-small-fg1 ">Filtrer par</p>
-                        {{ include.subfields }}
+                        <p id="filter-by-{{ id }}" class="ds44-heading ds44-small-fg1 ">Affiner par</p>
+                        <div class="ds44-fg1">
+                            <div class="ds44-fg1 ds44-flex-container ds44-medium-flex-col ds44--l-padding-b">
+                                {{ include.subfields }}
+                            </div>
+                            <div class="ds44-fg1 ds44-flex-container ds44-medium-flex-col">
+                                {{ include.subfields }}
+                            </div>
+                        </div>
+
                     </div>
                 </div>
 
