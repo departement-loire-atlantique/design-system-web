@@ -55,8 +55,16 @@ class SubMenuClass {
         }
 
         let buttonPosition = MiscDom.getOffset(button);
+
+        let limitLeft = buttonPosition["left"]+object.element.clientWidth;
+        let positionLeft = buttonPosition["left"];
+        if(window.innerWidth < limitLeft)
+        {
+            positionLeft = window.innerWidth-object.element.clientWidth;
+        }
+
         object.element.style.top = (buttonPosition["top"]+button.innerHeight)+"px";
-        object.element.style.left = buttonPosition["left"]+"px";
+        object.element.style.left = positionLeft+"px";
 
         MiscAccessibility.show(object.element);
         MiscAccessibility.addFocusLoop(object.element);
