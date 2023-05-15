@@ -440,8 +440,10 @@ layout: pattern
 
                     <section id="services1clic">
                         <p role="heading" aria-level="2" class="ds44-box-heading">Vos services en 1 clic</p>
-                        {% include card/card--horizontal.html title="Bien vieillir en Loire-Atlantique" text="PDF - 291,3 Ko" target='target="_blank"' newWindow="- nouvelle fenêtre" %}
-                        {% include card/card--horizontal.html title="Téléassistance : un nouveau service avec un téléphone mobile" %}
+                        <ul class="ds44-list">
+                            <li>{% include card/card--horizontal.html title="Bien vieillir en Loire-Atlantique" text="PDF - 291,3 Ko" target='target="_blank"' newWindow="- nouvelle fenêtre" %}</li>
+                            <li>{% include card/card--horizontal.html title="Téléassistance : un nouveau service avec un téléphone mobile" %}</li>
+                        </ul>
                     </section>
 
                 </aside>
