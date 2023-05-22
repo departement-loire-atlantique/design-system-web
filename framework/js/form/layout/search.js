@@ -210,7 +210,7 @@ class FormLayoutSearchClass extends FormLayoutAbstract {
         if (!object) {
             return;
         }
-
+        localStorage.setItem("LaDesignSystem.urlSearch", window.location.href);
         // Save search data
         object.searchData = this.formatSearchData(
             response,
@@ -278,6 +278,7 @@ class FormLayoutSearchClass extends FormLayoutAbstract {
             'results': results,
             'geojsonId' : response.hasOwnProperty("geojsonId") ? response['geojsonId'] : null,
             'newResults': response['result'],
+            "modal":  response["result-modal"] !== undefined ? response["result-modal"] : [],
             'searchText': searchText.join(', ')
         };
     }

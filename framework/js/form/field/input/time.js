@@ -14,7 +14,7 @@ class FormFieldInputTimeClass extends FormFieldInputAbstract {
             valueElement = document.createElement('input');
             valueElement.classList.add('ds44-input-value');
             valueElement.setAttribute('type', 'hidden');
-            element.parentNode.insertBefore(valueElement, element);
+            element.append(valueElement);
         }
 
         const objectIndex = (this.objects.length - 1);
@@ -222,12 +222,13 @@ class FormFieldInputTimeClass extends FormFieldInputAbstract {
         let hour = parseInt(object.inputElements[0].value, 10);
 
         const minuteStr = ""+minute;
-        if(minuteStr.length !== 2)
+        if(object.inputElements[1].value.length !== 2)
         {
             minute = minute+"0";
         }
         const dateNow = new Date();
         const date = new Date(dateNow.getFullYear()+"-"+dateNow.getMonth()+"-"+dateNow.getDay()+" "+hour+":"+minute);
+
         if (
           date.getHours() !== hour ||
           date.getMinutes() !== minute

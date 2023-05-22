@@ -24,6 +24,10 @@
     {% capture containerAttributes %}{{ containerAttributes }} data-next-year-dates="false"{% endcapture %}
     {% capture calendarAttributes %}{{ calendarAttributes }} data-calendar-next-year-dates="false"{% endcapture %}
 {% endif %}
+{% if include.nextDates == 'false' %}
+    {% capture containerAttributes %}{{ containerAttributes }} data-next-dates="false"{% endcapture %}
+    {% capture calendarAttributes %}{{ calendarAttributes }} data-calendar-next-dates="false"{% endcapture %}
+{% endif %}
 
 {% capture mainContent %}
     <div data-name="{{ name }}" class="ds44-datepicker__shape {{ mainClass }}" {{ containerAttributes }}>

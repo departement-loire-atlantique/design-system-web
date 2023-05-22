@@ -1,69 +1,75 @@
-{% capture templateThFirst %}{% include form/field/partial/planning/thFirst.html creneauKey="__CRENEAU_NUM__" %}{% endcapture %}
-{% capture templateThSecond %}{% include form/field/partial/planning/thSecond.html creneauKey="__CRENEAU_NUM__" %}{% endcapture %}
-{% capture templateTd %}{% include form/field/partial/planning/td.html creneauKey="__CRENEAU_NUM__" day="__DAY__" %}{% endcapture %}
+<form action="" >
 
-<div class="ds44-planning" data-limit-max="3" data-limit-min="1">
+    <div class="ds44-planning" data-limit-max="3" data-limit-min="1">
 
-  {% if include.choiceDays %}
-    <div class="ds-44-choices-days">
-      <h3 class="h3-like" id="idTitre3">Quels jours accueillez-vous l'enfant ?</h3>
-      {% include form/layout/checkboxes-planning.html label="Choisissez les jours d'accueils" choices="1:Lundi:monday,1:Mardi:tuesday,1:Mercredi:wednesday,1:Jeudi:thursday,1:Vendredi:friday,1:Samedi:saturday,1:Dimanche:sunday" required="true" list="true" %}
+      {% if include.choiceDays %}
+        <div class="ds-44-choices-days">
+          <h3 class="h3-like" id="idTitre3">Quels jours accueillez-vous l'enfant ?</h3>
+          {% include form/layout/checkboxes-planning.html label="Choisissez les jours d'accueils" choices="1:Lundi:monday,1:Mardi:tuesday,1:Mercredi:wednesday,1:Jeudi:thursday,1:Vendredi:friday,1:Samedi:saturday,1:Dimanche:sunday" required="true" list="true" %}
+        </div>
+      {% endif %}
+
+
+      <div class="content-button">
+        <button class="ds44-btnStd ds44-btn--invert" data-planning-action="copy-paste">
+          <span class="ds44-btnInnerText">Copier et coller la première ligne</span>
+        </button>
+      </div>
+
+      <div class="ds44-planing-table-button">
+        <table class="ds44-planning-table">
+          <thead>
+          <tr class="first" data-row-name="th-first">
+            <th></th>
+            {% include form/field/partial/planning/thFirst.html creneauName=include.creneauName creneauKey="1" %}
+          </tr>
+          <tr class="second" data-row-name="th-second">
+            <th>Jours</th>
+            {% include form/field/partial/planning/thSecond.html creneauName=include.creneauName creneauKey="1" %}
+          </tr>
+          </thead>
+          <tbody>
+          <tr data-first-line></tr>
+          <tr data-row-name="monday">
+            <td class="day">Lundi</td>
+            {% include form/field/partial/planning/td.html creneauName=include.creneauName creneauKey="1" day="monday" %}
+          </tr>
+          <tr data-row-name="tuesday">
+            <td class="value">Mardi</td>
+            {% include form/field/partial/planning/td.html creneauName=include.creneauName creneauKey="1" day="tuesday" %}
+          </tr>
+          <tr data-row-name="wednesday">
+            <td class="value">Mercredi</td>
+            {% include form/field/partial/planning/td.html creneauName=include.creneauName creneauKey="1" day="wednesday" %}
+          </tr>
+          <tr data-row-name="thursday">
+            <td class="value">Jeudi</td>
+            {% include form/field/partial/planning/td.html creneauName=include.creneauName creneauKey="1" day="thursday" %}
+          </tr>
+          <tr data-row-name="friday">
+            <td class="value">Vendredi</td>
+            {% include form/field/partial/planning/td.html creneauName=include.creneauName creneauKey="1" day="friday" %}
+          </tr>
+          </tbody>
+        </table>
+        <div class="content-button">
+          <button class="ds44-btnStd ds44-btn--invert" data-planning-action="add">
+            <i class="icon icon-plus" aria-hidden="true"></i>
+            <span class="ds44-btnInnerText">Ajouter un créneau</span>
+          </button>
+          {% capture idToolTips %}tooltips-{{include.creneauName}}{%endcapture%}
+          {% include composants-transverses/inc-tooltips.html description="Si vous gardez l’enfant sur plusieurs plages horaires dans la même journée, ajouter des créneaux pour saisir toutes les plages horaires. Vous pouvez saisir jusqu’à trois créneaux." idTooltips=idToolTips %}
+        </div>
+      </div>
+
+
+      <div class="content-button">
+        <button class="ds44-btnStd ds44-btn--invert" data-planning-action="remove">
+          <i class="icon icon-cross" aria-hidden="true"></i>
+          <span class="ds44-btnInnerText">Supprimer un créneau</span>
+        </button>
+      </div>
+
     </div>
-  {% endif %}
-
-
-  <span class="content-button">
-    <button class="ds44-btnStd ds44-btn--contextual" data-planning-action="add">
-      <span class="ds44-btnInnerText">Ajouter un créneau</span>
-    </button>
-    <button class="ds44-btnStd ds44-btn--contextual" data-planning-action="remove">
-      <span class="ds44-btnInnerText">Supprimer un créneau</span>
-    </button>
-  </span>
-
-  <table class="ds44-planning-table">
-    <thead>
-      <tr class="first" data-row-name="th-first">
-        <th></th>
-        {% include form/field/partial/planning/thFirst.html creneauKey="1" %}
-      </tr>
-      <tr class="second" data-row-name="th-second">
-        <th>Jours</th>
-        {% include form/field/partial/planning/thSecond.html creneauKey="1" %}
-      </tr>
-    </thead>
-    <tbody>
-      <tr data-first-line></tr>
-      <tr data-row-name="monday">
-        <td class="day">Lundi</td>
-        {% include form/field/partial/planning/td.html creneauKey="1" day="monday" %}
-      </tr>
-      <tr data-row-name="tuesday">
-        <td class="value">Mardi</td>
-        {% include form/field/partial/planning/td.html creneauKey="1" day="tuesday" %}
-      </tr>
-      <tr data-row-name="wednesday">
-        <td class="value">Mercredi</td>
-        {% include form/field/partial/planning/td.html creneauKey="1" day="wednesday" %}
-      </tr>
-      <tr data-row-name="thursday">
-        <td class="value">Jeudi</td>
-        {% include form/field/partial/planning/td.html creneauKey="1" day="thursday" %}
-      </tr>
-      <tr data-row-name="friday">
-        <td class="value">Vendredi</td>
-        {% include form/field/partial/planning/td.html creneauKey="1" day="friday" %}
-      </tr>
-    </tbody>
-  </table>
-
-  <span class="content-button">
-    <button class="ds44-btnStd ds44-btn--contextual" data-planning-action="add">
-      <span class="ds44-btnInnerText">Ajouter un créneau</span>
-    </button>
-    <button class="ds44-btnStd ds44-btn--contextual" data-planning-action="remove">
-      <span class="ds44-btnInnerText">Supprimer un créneau</span>
-    </button>
-  </span>
-
-</div>
+    <div style="padding-top: 2rem;"><input data-send-native type="submit" class="ds44-btnStd" value="Tester les champs" /></div>
+</form>

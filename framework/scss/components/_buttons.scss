@@ -214,7 +214,8 @@ a > .ds44-btn--contextual,
     font-weight: bolder;
 
     .icon + .ds44-btnInnerText,
-    .ds44-btnInnerText + .icon {
+    .ds44-btnInnerText + .icon,
+    .icon + .icon {
         margin-left: 1rem;
         font-size: .875em; // 14px
         vertical-align: sub;
@@ -256,7 +257,8 @@ a > .ds44-btn--contextual,
 
 // icon margins
 .icon + .ds44-btnInnerText,
-.ds44-btnInnerText + .icon {
+.ds44-btnInnerText + .icon,
+.icon + .icon {
   margin-left: 1.5rem;
 }
 
@@ -593,7 +595,8 @@ a.ds44-btnStd--retourPage {
 
         // icon margins
         .icon + .ds44-btnInnerText,
-        .ds44-btnInnerText + .icon {
+        .ds44-btnInnerText + .icon,
+        .icon + .icon {
           margin-left: 0;
         }
     }
