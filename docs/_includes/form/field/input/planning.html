@@ -7,7 +7,7 @@
   {% if include.choiceDays %}
     <div class="ds-44-choices-days">
       <h3 class="h3-like" id="idTitre3">Quels jours accueillez-vous l'enfant ?</h3>
-      {% include form/layout/checkboxes.html label="Choisissez les jours d'accueils" choices="monday:Lundi,tuesday:Mardi,wednesday:Mercredi,thursday:Jeudi,friday:Vendredi,saturday:Samedi,sunday:Dimanche" required="true" list="true" %}
+      {% include form/layout/checkboxes-planning.html label="Choisissez les jours d'accueils" choices="1:Lundi:monday,1:Mardi:tuesday,1:Mercredi:wednesday,1:Jeudi:thursday,1:Vendredi:friday,1:Samedi:saturday,1:Dimanche:sunday" required="true" list="true" %}
     </div>
   {% endif %}
 
