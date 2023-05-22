@@ -1,0 +1,28 @@
+{% include form/_variables.html %}
+
+{% if include.disabled == 'true' %}
+    {% assign containerClass = containerClass | append: ' ds44-inputDisabled' %}
+{% endif %}
+
+<div id="{{ id }}" data-name="{{ name }}" class="ds44-form__checkbox_container {{ containerClass }}" {{ containerAttributes }}>
+    {% if include.required == 'true' %}
+        <p id="mandatory-message-{{ id }}" class="">{{ include.label }}{{ requiredStar }}</p>
+        {% capture ariaDescribedBy %}mandatory-message-{{ id }}{% if ariaDescribedBy and ariaDescribedBy != '' %} {{ ariaDescribedBy }}{% endif %}{% endcapture %}
+    {% endif %}
+
+    {% assign choices = (include.choices | split:',') %}
+    {% assign attributesDefault = attributes %}
+    {% assign idDefault = id %}
+    {% assign nameDefault = name %}
+    {% for choiceData in choices %}
+        {% assign choice = (choiceData | split:':') %}
+        {% assign value = choice[0] %}
+        {% assign label = choice[1] %}
+        {% assign dataDay = choice[2] %}
+        {% assign attributesByDay = attributesDefault | append : ' data-day="' | append: dataDay | append: '"' %}
+        {% assign idByDay = idDefault | append : '-day-' | append: dataDay %}
+        {% assign nameByDay = nameDefault | append : '-day-' | append: dataDay %}
+
+        {% include form/field/box/checkbox.html id=idByDay name=nameByDay value=value label=label list=include.list attributes=attributesByDay boxAttributes=boxAttributes ariaDescribedBy=ariaDescribedBy %}
+    {% endfor %}
+</div>

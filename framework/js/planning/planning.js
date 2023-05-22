@@ -108,11 +108,11 @@ class PlanningClass {
     if(object.choiceDays)
     {
       object.choiceDays.querySelectorAll("input").forEach((input) => {
-        if(planning.querySelector("*[data-row-name='"+input.value+"']"))
+        if(planning.querySelector("*[data-row-name='"+input.getAttribute("data-day")+"']"))
         {
           input.checked = true;
         }
-        object.daySort.push(input.value);
+        object.daySort.push(input.getAttribute("data-day"));
       });
     }
 
@@ -167,7 +167,7 @@ class PlanningClass {
       return;
     }
 
-    let dayKeyname = event.target.value;
+    let dayKeyname = event.target.getAttribute("data-day");
     if(event.detail.checked === false) {
       let row = object.element.querySelector("*[data-row-name='"+dayKeyname+"']");
       if(row) {
@@ -185,7 +185,7 @@ class PlanningClass {
       let dayKeynameAfter = null;
       let daysEnabled = [];
       object.choiceDays.querySelectorAll("input:checked").forEach((choice) => {
-        daysEnabled.push(choice.value);
+        daysEnabled.push(choice.getAttribute("data-day"));
       });
 
       for(let i=0; i < daysEnabled.length; i++)
