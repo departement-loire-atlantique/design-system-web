@@ -1,11 +1,19 @@
 <form action="" >
+  {% if include.addPlanning == 1 %}
+    <div class="ds44-plannings" data-limit-max="3" data-limit-min="1">
+      <div class="ds44-plannings-content">
+  {% endif %}
 
-    <div class="ds44-planning" data-limit-max="3" data-limit-min="1">
+    <div {% if include.addPlanning != 1 %}class="ds44-planning"{% endif %} data-limit-max="3" data-limit-min="1" {% if include.addPlanning == 1 %} data-planning="{{ include.creneauName }}" {% endif %}>
+
+      {% if include.addPlanning == 1 %}
+        <h2 class="h2-like">Semaine __NUM_PLANNING__</h2>
+      {% endif %}
 
       {% if include.choiceDays %}
         <div class="ds-44-choices-days">
           <h3 class="h3-like" id="idTitre3">Quels jours accueillez-vous l'enfant ?</h3>
-          {% include form/layout/checkboxes-planning.html label="Choisissez les jours d'accueils" choices="1:Lundi:monday,1:Mardi:tuesday,1:Mercredi:wednesday,1:Jeudi:thursday,1:Vendredi:friday,1:Samedi:saturday,1:Dimanche:sunday" required="true" list="true" %}
+          {% include form/layout/checkboxes-planning.html planningName=include.creneauName label="Choisissez les jours d'accueils" choices="1:Lundi:monday,1:Mardi:tuesday,1:Mercredi:wednesday,1:Jeudi:thursday,1:Vendredi:friday,1:Samedi:saturday,1:Dimanche:sunday" required="true" list="true" %}
         </div>
       {% endif %}
 
@@ -71,5 +79,22 @@
       </div>
 
     </div>
+    {% if include.addPlanning == 1 %}
+      </div>
+      <div class="content-button">
+        <button class="ds44-btnStd ds44-btn--invert" data-plannings-action="add-planning">
+          <span class="ds44-btnInnerText">Ajouter une semaine</span>
+        </button>
+        <button class="ds44-btnStd ds44-btn--invert" data-plannings-action="remove-planning">
+          <span class="ds44-btnInnerText">Supprimer une semaine</span>
+        </button>
+      </div>
+    {% endif %}
+
+  {% if include.addPlanning == 1 %}
+    </div>
+  {% endif %}
+
+
     <div style="padding-top: 2rem;"><input data-send-native type="submit" class="ds44-btnStd" value="Tester les champs" /></div>
 </form>
