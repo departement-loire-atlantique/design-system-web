@@ -64,14 +64,14 @@ class PlanningClass {
             input.setAttribute("value", "");
             let title = input.getAttribute("title");
             if(title) {
-              title = title.replace(/monday/gi, "__DAY_TEXT__");
+              title = title.replace(/lundi/gi, "__DAY_TEXT__");
               title = title.replace(/Créneau 1/gi, "Créneau __CRENEAU_NUM__");
               input.setAttribute("title", title);
             }
           });
           td.querySelectorAll("label").forEach((label) => {
             let title = label.querySelector(".ds44-labelTypePlaceholder span").textContent;
-            title = title.replace(/monday/gi, "__DAY_TEXT__");
+            title = title.replace(/lundi/gi, "__DAY_TEXT__");
             title = title.replace(/Créneau 1/gi, "Créneau __CRENEAU_NUM__");
             label.querySelector(".ds44-labelTypePlaceholder span").textContent = title;
           });
@@ -81,11 +81,12 @@ class PlanningClass {
         let clearTemplate = document.createElement("template");
         clearTemplate.innerHTML = templateTd;
         templateTd = clearTemplate.innerHTML;
-        templateTd = templateTd.replace(/_1/gi, "___CRENEAU_NUM__");
+        templateTd = templateTd.replace(/1/gi, "__CRENEAU_NUM__");
         templateTd = templateTd.replace(/\[1\]/gi, "[__CRENEAU_NUM__]");
-        templateTd = templateTd.replace(/monday/gi, "__DAY__");
+        templateTd = templateTd.replace(/lundi/gi, "__DAY__");
         templateTd = templateTd.replace(/\n/gi, "");
         object.template.td = templateTd;
+        console.log(templateTd)
       }
       i += 1;
 
@@ -235,7 +236,7 @@ class PlanningClass {
 
       let thTemplates = this.htmlToElements(this.replaceValueTemplate(object.template.th, object.nbColonne));
       object.table.querySelector("tr.second").append(thTemplates[0], thTemplates[1]);
-
+      console.log(object.template);
       object.days.forEach((day) => {
         let tdTemplates = this.htmlToElements(this.replaceValueTemplate(object.template.td, object.nbColonne, day));
         object.table.querySelector("tbody tr[data-row-name='"+day+"']").append(tdTemplates[0], tdTemplates[1]);
@@ -265,33 +266,33 @@ class PlanningClass {
     object.table.querySelectorAll("tbody tr[data-row-name]").forEach((tr) => {
       tr.querySelectorAll("td[data-value-key='start'] *[data-component-time-uuid]").forEach((fieldTime) => {
         let colKey = fieldTime.closest("td").dataset.colKey;
-        let mondayStartValueByCol = object.table.querySelector("tbody tr[data-row-name='monday'] td[data-value-key='start'][data-col-key='"+colKey+"'] .ds44-input-value").value;
-        let mondayStartValue;
-        if(!mondayStartValueByCol) {
-          mondayStartValue = object.table.querySelector("tbody tr[data-row-name='monday'] td[data-value-key='start'][data-col-key='1'] .ds44-input-value").value;
+        let lundiStartValueByCol = object.table.querySelector("tbody tr[data-row-name='lundi'] td[data-value-key='start'][data-col-key='"+colKey+"'] .ds44-input-value").value;
+        let lundiStartValue;
+        if(!lundiStartValueByCol) {
+          lundiStartValue = object.table.querySelector("tbody tr[data-row-name='lundi'] td[data-value-key='start'][data-col-key='1'] .ds44-input-value").value;
         }
         else {
-          mondayStartValue = mondayStartValueByCol;
+          lundiStartValue = lundiStartValueByCol;
         }
-        if((tr.dataset.rowName !== "monday" || !mondayStartValueByCol) && !fieldTime.querySelector(".ds44-input-value").value)
+        if((tr.dataset.rowName !== "lundi" || !lundiStartValueByCol) && !fieldTime.querySelector(".ds44-input-value").value)
         {
-          MiscEvent.dispatch('field:' + this.getFieldName(fieldTime) + ':set', {value: mondayStartValue});
+          MiscEvent.dispatch('field:' + this.getFieldName(fieldTime) + ':set', {value: lundiStartValue});
         }
 
       });
       tr.querySelectorAll("td[data-value-key='end'] *[data-component-time-uuid]").forEach((fieldTime) => {
         let colKey = fieldTime.closest("td").dataset.colKey;
 
-        let mondayEndValueByCol = object.table.querySelector("tbody tr[data-row-name='monday'] td[data-value-key='end'][data-col-key='"+colKey+"'] .ds44-input-value").value;
-        let mondayEndValue;
-        if(!mondayEndValueByCol) {
-          mondayEndValue = object.table.querySelector("tbody tr[data-row-name='monday'] td[data-value-key='end'][data-col-key='1'] .ds44-input-value").value;
+        let lundiEndValueByCol = object.table.querySelector("tbody tr[data-row-name='lundi'] td[data-value-key='end'][data-col-key='"+colKey+"'] .ds44-input-value").value;
+        let lundiEndValue;
+        if(!lundiEndValueByCol) {
+          lundiEndValue = object.table.querySelector("tbody tr[data-row-name='lundi'] td[data-value-key='end'][data-col-key='1'] .ds44-input-value").value;
         }
         else {
-          mondayEndValue = mondayEndValueByCol;
+          lundiEndValue = lundiEndValueByCol;
         }
-        if((tr.dataset.rowName !== "monday" || !mondayEndValueByCol) && !fieldTime.querySelector(".ds44-input-value").value) {
-          MiscEvent.dispatch('field:' + this.getFieldName(fieldTime) + ':set', {value: mondayEndValue});
+        if((tr.dataset.rowName !== "lundi" || !lundiEndValueByCol) && !fieldTime.querySelector(".ds44-input-value").value) {
+          MiscEvent.dispatch('field:' + this.getFieldName(fieldTime) + ':set', {value: lundiEndValue});
         }
       });
     });
