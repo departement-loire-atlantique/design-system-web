@@ -281,6 +281,7 @@ class FormFieldInputTimeClass extends FormFieldInputAbstract {
             return;
         }
 
+        time.replace('h', ":");
         const dateNow = new Date();
         const selectedData = new Date(dateNow.getFullYear()+"-"+dateNow.getMonth()+"-"+dateNow.getDay()+" "+time);
         object.inputElements[0].value = (selectedData.getHours() + '').padStart(2, '0');
@@ -299,9 +300,23 @@ class FormFieldInputTimeClass extends FormFieldInputAbstract {
     }
 
     setData (objectIndex, data = null) {
-        super.setData(objectIndex, data);
-        if (data && data.value) {
-            this.setTime(objectIndex, data.value);
+        const object = this.objects[objectIndex];
+        if (!object || !object.valueElement) {
+            return;
+        }
+
+        let value = ((data && data.value) ? data.value : null);
+        if (
+          value &&
+          typeof value === 'object'
+        ) {
+            value = JSON.stringify(value);
+        }
+        if (value) {
+            let valueData = value.replace(":", "h");
+            let valueTime = value.replace("h", ":");
+            object.valueElement.value = valueData;
+            this.setTime(objectIndex, valueTime);
             this.focus(objectIndex);
         }
     }
