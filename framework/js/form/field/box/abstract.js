@@ -37,9 +37,7 @@ class FormFieldBoxAbstract extends FormFieldAbstract {
                 if(inputElement.dataset.autoSubmit !== undefined) {
                     object.autoSubmit = true;
                 }
-                if(inputElement.checked) {
-                    this.toggleContainer(inputElement);
-                }
+                this.toggleContainer(inputElement);
                 MiscEvent.addListener('click', this.toggleCheck.bind(this, objectIndex), inputElement);
             });
         }

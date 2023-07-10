@@ -1,6 +1,6 @@
 <form>
   <div class="ds44-mb3" >
-  {% include form/field/input/autocomplete.html label="Champ texte libre" id="address_search" required="true" type="address" url="https://api-adresse.data.gouv.fr/search/?limit=5&citycode=44109" attributes='data-mode="free-text" data-disabled-by-name-check-address_manuel-1 data-address-autocomplete=""' %}
+  {% include form/field/input/autocomplete.html label="Champ texte libre" id="address_search" required="true" type="address" url="https://api-adresse.data.gouv.fr/search/?limit=5&citycode=44109" attributes='value="" data-mode="free-text" data-disabled-metadata="false" data-disabled-by-name-check-address_manuel-1 data-address-autocomplete=""' %}
   </div>
   <div class="ds44-mb3" >
   {% include form/layout/checkboxes.html id="address_manuel" choices="1:Je ne trouve pas mon adresse" %}

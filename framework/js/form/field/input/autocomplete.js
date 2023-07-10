@@ -32,6 +32,10 @@ class FormFieldInputAutoCompleteClass extends FormFieldInputAbstract {
             return;
         }
 
+        if(object.element.hasAttribute("data-disabled-metadata")) {
+            valueElement.value = object.element.value;
+        }
+
         this.timeSendAutocomplete = 0;
 
         object.valueElement = valueElement;
@@ -378,7 +382,7 @@ class FormFieldInputAutoCompleteClass extends FormFieldInputAbstract {
                 elementAutoCompleterListItem.setAttribute('data-value-city', (results[key].city));
 
 
-                    elementAutoCompleterListItem.setAttribute('data-key', key);
+                elementAutoCompleterListItem.setAttribute('data-key', key);
                 elementAutoCompleterListItem.setAttribute('data-metadata', (results[key].metadata ? JSON.stringify(results[key].metadata) : null));
                 elementAutoCompleterListItem.setAttribute('tabindex', '0');
                 elementAutoCompleterListItem.innerHTML = this.highlightSearch(results[key].value, object.textElement.value);
