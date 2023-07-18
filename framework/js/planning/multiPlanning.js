@@ -49,7 +49,7 @@ class MultiPlanningClass {
       i++;
     });
 
-    object.planningNum = i;
+    object.planningNum = i-1;
 
     this.objects.push(object);
 
