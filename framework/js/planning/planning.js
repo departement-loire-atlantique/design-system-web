@@ -40,7 +40,7 @@ class PlanningClass {
 
     let header = planning.querySelector('tr.first *[data-col-key="1"]').cloneNode(true);
     header.setAttribute("data-col-key", "__CRENEAU_NUM__");
-    header.setAttribute("data-value-key", "creneau___CRENEAU_NUM__");
+    header.setAttribute("data-value-key", "creneau__CRENEAU_NUM__");
     let templateHeader = header.outerHTML
     templateHeader = templateHeader.replace(/1/gi, "__CRENEAU_NUM__");
     object.template.header = templateHeader;
@@ -54,6 +54,7 @@ class PlanningClass {
     let i = 0;
     planning.querySelectorAll('tbody tr[data-row-name]').forEach((trElement) => {
       object.days.push(trElement.dataset.rowName);
+      let regexName = RegExp(trElement.dataset.rowName, "gi");
       if(i === 0)
       {
         let templateTd = "";
@@ -64,14 +65,14 @@ class PlanningClass {
             input.setAttribute("value", "");
             let title = input.getAttribute("title");
             if(title) {
-              title = title.replace(/lundi/gi, "__DAY_TEXT__");
+              title = title.replace(regexName, "__DAY_TEXT__");
               title = title.replace(/Créneau 1/gi, "Créneau __CRENEAU_NUM__");
               input.setAttribute("title", title);
             }
           });
           td.querySelectorAll("label").forEach((label) => {
             let title = label.querySelector(".ds44-labelTypePlaceholder span").textContent;
-            title = title.replace(/lundi/gi, "__DAY_TEXT__");
+            title = title.replace(regexName, "__DAY_TEXT__");
             title = title.replace(/Créneau 1/gi, "Créneau __CRENEAU_NUM__");
             label.querySelector(".ds44-labelTypePlaceholder span").textContent = title;
           });
@@ -81,9 +82,9 @@ class PlanningClass {
         let clearTemplate = document.createElement("template");
         clearTemplate.innerHTML = templateTd;
         templateTd = clearTemplate.innerHTML;
-        templateTd = templateTd.replace(/1/gi, "___CRENEAU_NUM__");
+        templateTd = templateTd.replace(/1/gi, "__CRENEAU_NUM__");
         templateTd = templateTd.replace(/\[1\]/gi, "[__CRENEAU_NUM__]");
-        templateTd = templateTd.replace(/lundi/gi, "__DAY__");
+        templateTd = templateTd.replace(regexName, "__DAY__");
         templateTd = templateTd.replace(/\n/gi, "");
         object.template.td = templateTd;
       }
