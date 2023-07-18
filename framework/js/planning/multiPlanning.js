@@ -49,6 +49,8 @@ class MultiPlanningClass {
       i++;
     });
 
+    object.planningNum = i-1;
+
     this.objects.push(object);
 
     if(object.limit.min !== null && object.limit.min > object.planningNum-1) {
