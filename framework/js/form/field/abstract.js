@@ -52,7 +52,7 @@ class FormFieldAbstract {
             'isSubInitialized': false,
             'isSubSubInitialized': false,
             'isFilled': false,
-            "titleDefault": element.getAttribute("title") ? element.getAttribute("title") : "",
+            "titleDefault": element.getAttribute("title") ? element.getAttribute("title") : null,
             'isRequired': (element.getAttribute('required') !== null || element.getAttribute('data-required') === 'true'),
             'isEnabled': !(element.getAttribute('readonly') !== null || element.getAttribute('disabled') !== null || element.getAttribute('data-disabled') === 'true'),
         };
@@ -100,11 +100,20 @@ class FormFieldAbstract {
                 );
             }
 
+            if(object.labelElement !== undefined && !object.titleDefault)
+            {
+                object.titleDefault = object.labelElement.textContent;
+            }
             this.changeTitle(objectIndex);
             MiscEvent.addListener('field:reset', this.reset.bind(this, objectIndex), object.element);
             MiscEvent.addListener('field:enable', this.enable.bind(this, objectIndex), object.containerElement);
             MiscEvent.addListener('field:disable', this.disable.bind(this, objectIndex), object.containerElement);
             MiscEvent.addListener('field:' + object.name + ':set', this.set.bind(this, objectIndex));
+            MiscEvent.addListener('field:label-move', () => {
+                if(!object.labelElement.classList.contains(this.labelClassName)) {
+                    object.labelElement.classList.add(this.labelClassName);
+                }
+            }, object.element);
         }
     }
 
@@ -314,16 +323,27 @@ class FormFieldAbstract {
             return;
         }
 
-        const secondLinkedFieldElement = MiscDom.getNextSibling(object.containerElement);
+        let secondLinkedFieldElement = null;
+        if(linkedFieldsContainerElement.hasAttribute("data-linked-fields-content"))
+        {
+            secondLinkedFieldElement = document.querySelector(linkedFieldsContainerElement.getAttribute("data-linked-fields-content")+" .ds44-form__container");
+        }
+        else
+        {
+            secondLinkedFieldElement = MiscDom.getNextSibling(object.containerElement);
+        }
+
         if (
-            !secondLinkedFieldElement ||
-            secondLinkedFieldElement === object.containerElement
+          !secondLinkedFieldElement ||
+          secondLinkedFieldElement === object.containerElement
         ) {
             return;
         }
 
+
         // Has a linked field
         const areMaskedLinkedFields = !!object.containerElement.closest('.ds44-js-masked-fields');
+
         let data = this.getData(objectIndex);
 
         if (
@@ -659,28 +679,52 @@ class FormFieldAbstract {
                   containerField.getAttribute("data-enabled-field-condition") :
                   "equal";
                 let viewElement = condition === "diff" ? !valueIsEqual : valueIsEqual;
+
                 if(containerField.querySelectorAll("*[data-component-form-field-uuid]").length > 0)
                 {
                     containerField.querySelectorAll("*[data-component-form-field-uuid]").forEach((childField) => {
+                        let autoSubmit = false;
+                        if(childField.hasAttribute('data-auto-submit'))
+                        {
+                            autoSubmit = true;
+                            childField.removeAttribute('data-auto-submit');
+                        }
+
                         if(viewElement) {
                             MiscEvent.dispatch("field:enable", {}, childField);
-                            containerField.classList.remove('hidden');
                         }
-                        else if(!containerField.classList.contains('hidden')) {
-                            MiscEvent.dispatch("field:reset", {focus: false}, childField);
+                        else {
+                            if(!containerField.hasAttribute("data-fields-no-reset"))
+                            {
+                                MiscEvent.dispatch("field:reset", {focus: false}, childField);
+                            }
                             MiscEvent.dispatch("field:disable", {}, childField);
-                            containerField.classList.add('hidden');
+                        }
+                        if(autoSubmit === true)
+                        {
+                            childField.setAttribute('data-auto-submit', true);
                         }
                     })
                 }
-                else
-                {
-                    if(viewElement) {
-                        containerField.classList.remove('hidden');
-                    }
-                    else {
-                        containerField.classList.add('hidden');
-                    }
+                if(viewElement) {
+                    containerField.classList.remove('hidden');
+                    containerField.querySelectorAll("input, select, textarea").forEach((field) => {
+                        if(field.hasAttribute("data-field-required"))
+                        {
+                            field.setAttribute("required", "");
+                            field.removeAttribute("data-field-required");
+                        }
+                    });
+                }
+                else {
+                    containerField.classList.add('hidden');
+                    containerField.querySelectorAll("input, select, textarea").forEach((field) => {
+                        if(field.hasAttribute("required"))
+                        {
+                            field.setAttribute("data-field-required", "");
+                            field.removeAttribute("required");
+                        }
+                    });
                 }
             });
 
@@ -692,9 +736,21 @@ class FormFieldAbstract {
                 let fieldContainer = (field.closest('.ds44-form__container') || field);
                 if(!hiddenElement) {
                     MiscEvent.dispatch("field:enable", {}, fieldContainer);
+                    if(field.getAttribute("data-required-disable"))
+                    {
+                        field.setAttribute("data-required", field.getAttribute("data-required-disable"));
+                        field.setAttribute("required", "");
+                        field.removeAttribute("data-required-disable");
+                    }
                 }
                 else {
                     MiscEvent.dispatch("field:disable", {}, fieldContainer);
+                    if(field.getAttribute("data-required"))
+                    {
+                        field.setAttribute("data-required-disable", field.getAttribute("data-required"));
+                        field.removeAttribute("data-required");
+                        field.removeAttribute("required");
+                    }
                 }
             });
         }

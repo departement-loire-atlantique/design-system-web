@@ -18,6 +18,7 @@ var fs = require('fs');
 var jekyllDir = "docs/",
     scssFile = 'framework/scss/cd44.scss',
     scssAidantsFile = 'framework/scss/aidants.scss',
+    scssHandicapFile = 'framework/scss/handicap.scss',
     scssClissonFile = 'framework/scss/SP-chateauClisson.scss',
     scssGarenneMemotFile = 'framework/scss/SP-garenneLemot.scss',
     scssChateaubriantFile = 'framework/scss/SP-chateauChateaubriant.scss',
@@ -27,8 +28,12 @@ var jekyllDir = "docs/",
     scssFileSwiper = 'node_modules/swiper/css/swiper.min.css',
     scssFileAos = 'node_modules/aos/dist/aos.css',
     cssDest = 'dist/css',
+    jsMultiPlanning = 'framework/js/planning/multiPlanning.js',
+    jsPlanning = 'framework/js/planning/planning.js',
     jsMiscFiles = 'framework/js/misc/*.js',
     jsAbstractFiles = 'framework/js/**/abstract.js',
+    jsDuplicateLine = 'framework/js/form/field/duplicateLine.js',
+    jsFormFields = 'framework/js/form/field/formFields.js',
     jsFieldAbstractFile = 'framework/js/form/field/abstract.js',
     jsFieldFiles = 'framework/js/form/field/**/*.js',
     jsFormFiles = 'framework/js/form/layout/**/!(standard)*.js',
@@ -90,6 +95,18 @@ gulp.task('build:css:aidants:dev', function () {
         }))
         .pipe(postcss(postCssPluginsDev))
         .pipe(concat('aidants.css'))
+        .pipe(browserSync.stream())
+        .pipe(gulp.dest(cssDest));
+});
+
+gulp.task('build:css:handicap:dev', function () {
+    return gulp.src([scssFileSwiper, scssFileAos, scssHandicapFile])
+        .pipe(sass({
+            // CSS non minifiée plus lisible ('}' à la ligne)
+            outputStyle: 'expanded'
+        }))
+        .pipe(postcss(postCssPluginsDev))
+        .pipe(concat('handicap.css'))
         .pipe(browserSync.stream())
         .pipe(gulp.dest(cssDest));
 });
@@ -163,7 +180,7 @@ gulp.task('build:css:cd44:prod', function () {
 });
 
 gulp.task('build:js', function () {
-    return gulp.src([jsFileSwiper, jsFileAos, jsMiscFiles, jsFieldAbstractFile, jsAbstractFiles, jsFieldFiles, jsFormFiles, jsComponentFiles])
+    return gulp.src([jsFileSwiper, jsFileAos, jsMiscFiles, jsDuplicateLine, jsMultiPlanning, jsPlanning, jsFieldAbstractFile, jsAbstractFiles, jsFieldFiles, jsFormFiles, jsComponentFiles, jsFormFields])
         .pipe(concat('cd44.js'))
         .pipe(gulp.dest(jsDest));
 });
@@ -238,6 +255,7 @@ gulp.task('build:ds', gulp.parallel(
     'build:css:cd44:dev',
     'build:css:cd44:prod',
     'build:css:aidants:dev',
+    'build:css:handicap:dev',
     'build:css:clisson:dev',
     'build:css:garenne-lemot:dev',
     'build:css:chateaubriant:dev',

@@ -210,13 +210,14 @@ class FormLayoutSearchClass extends FormLayoutAbstract {
         if (!object) {
             return;
         }
-
+        localStorage.setItem("LaDesignSystem.urlSearch", window.location.href);
         // Save search data
         object.searchData = this.formatSearchData(
             response,
             object.parameters,
             (options.addUp ? object.searchData.results : null)
         );
+
 
         // Set url with the search parameters
         this.setSearchHash(objectIndex, response.id);
@@ -277,6 +278,7 @@ class FormLayoutSearchClass extends FormLayoutAbstract {
             'results': results,
             'geojsonId' : response.hasOwnProperty("geojsonId") ? response['geojsonId'] : null,
             'newResults': response['result'],
+            "modal":  response["result-modal"] !== undefined ? response["result-modal"] : [],
             'searchText': searchText.join(', ')
         };
     }
@@ -312,13 +314,11 @@ class FormLayoutSearchClass extends FormLayoutAbstract {
             const parameters = JSON.stringify(object.parameters);
             searchId = await MiscUtils.digestMessage(parameters);
             window.sessionStorage.setItem('search_' + searchId, parameters);
-        } else if (!searchId) {
-            return;
         }
 
         if (object.formElement.getAttribute('data-seo-url') !== 'true') {
             MiscUrl.setHashParameters(object.parameters);
-        } else {
+        } else if(searchId) {
             MiscUrl.setSeoHashParameters(object.parameters, searchId);
         }
     }

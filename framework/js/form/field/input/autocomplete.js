@@ -32,6 +32,12 @@ class FormFieldInputAutoCompleteClass extends FormFieldInputAbstract {
             return;
         }
 
+        if(object.element.hasAttribute("data-disabled-metadata")) {
+            valueElement.value = object.element.value;
+        }
+
+        this.timeSendAutocomplete = 0;
+
         object.valueElement = valueElement;
         object.metadataElement = metadataElement;
         object.autoCompleterElement = object.containerElement.querySelector('.ds44-autocomp-container');
@@ -155,12 +161,12 @@ class FormFieldInputAutoCompleteClass extends FormFieldInputAbstract {
 
         const locationElement = object.containerElement.querySelector('.ds44-location');
         if (locationElement) {
-            if(object.valueElement.value === "aroundMe")
-            {
-                document.querySelectorAll(".ds44-js-map").forEach((map) => {
+            document.querySelectorAll(".ds44-js-map").forEach((map) => {
+                if(object.metadataElement.value) {
                     map.setAttribute("data-around-me", object.metadataElement.value);
-                });
-            }
+                    MiscEvent.dispatch("map:aroundMe", {metadata: JSON.parse(object.metadataElement.value)}, map);
+                }
+            });
         }
 
     }
@@ -194,6 +200,7 @@ class FormFieldInputAutoCompleteClass extends FormFieldInputAbstract {
         ) {
             return;
         }
+        Debug.log("Autocomplete - Record");
 
         object.currentElementValue = object.textElement.value;
         if (object.currentElementValue) {
@@ -214,6 +221,7 @@ class FormFieldInputAutoCompleteClass extends FormFieldInputAbstract {
         ) {
             return;
         }
+        Debug.log("Autocomplete - write");
 
         let limitNbChar = object.textElement.hasAttribute("data-limit-char") ?
           object.textElement.getAttribute("data-limit-char") :
@@ -243,6 +251,7 @@ class FormFieldInputAutoCompleteClass extends FormFieldInputAbstract {
         ) {
             return;
         }
+        Debug.log("Autocomplete - Autocomplete");
 
         if (
             object.mode === this.FREE_TEXT_MODE ||
@@ -284,11 +293,32 @@ class FormFieldInputAutoCompleteClass extends FormFieldInputAbstract {
             query = query + "" + prefix;
         }
 
-        MiscRequest.send(
-          url = url + (url.includes('?') ? '&' : '?') + 'q=' + query,
-            this.autoCompleteSuccess.bind(this, objectIndex),
-            this.autoCompleteError.bind(this, objectIndex)
-        );
+        let timeLatence = 0;
+        if(object.textElement.hasAttribute("data-latence"))
+        {
+            timeLatence = parseFloat(object.textElement.getAttribute("data-latence"));
+        }
+
+        if(timeLatence > 0)
+        {
+            clearTimeout(this.timeSendAutocomplete);
+            this.timeSendAutocomplete = setTimeout(() => {
+                MiscRequest.send(
+                  url = url + (url.includes('?') ? '&' : '?') + 'q=' + query,
+                  this.autoCompleteSuccess.bind(this, objectIndex),
+                  this.autoCompleteError.bind(this, objectIndex)
+                );
+            }, timeLatence);
+        }
+        else
+        {
+            MiscRequest.send(
+              url = url + (url.includes('?') ? '&' : '?') + 'q=' + query,
+              this.autoCompleteSuccess.bind(this, objectIndex),
+              this.autoCompleteError.bind(this, objectIndex)
+            );
+        }
+        Debug.log("Autocomplete - Autocomplete - End");
     }
 
     autoCompleteSuccess (objectIndex, results) {
@@ -352,7 +382,7 @@ class FormFieldInputAutoCompleteClass extends FormFieldInputAbstract {
                 elementAutoCompleterListItem.setAttribute('data-value-city', (results[key].city));
 
 
-                    elementAutoCompleterListItem.setAttribute('data-key', key);
+                elementAutoCompleterListItem.setAttribute('data-key', key);
                 elementAutoCompleterListItem.setAttribute('data-metadata', (results[key].metadata ? JSON.stringify(results[key].metadata) : null));
                 elementAutoCompleterListItem.setAttribute('tabindex', '0');
                 elementAutoCompleterListItem.innerHTML = this.highlightSearch(results[key].value, object.textElement.value);

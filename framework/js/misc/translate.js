@@ -23,6 +23,7 @@ class MiscTranslate {
                 'FIELD_VALID_CHRONOLOGY_ERROR_MESSAGE': 'La date ne doit pas être inférieure à celle du champ précédent',
                 'FIELD_PAST_DATE_ERROR_MESSAGE': 'La date ne doit pas être dans le passé',
                 'FIELD_NEXT_YEAR_DATE_ERROR_MESSAGE': 'La date ne doit pas être supérieure à un an',
+                'FIELD_VALID_TIME_FORMAT_ERROR_MESSAGE': 'L\'heure est invalide. Merci de respecter le format d’exemple',
                 'FIELD_VALID_EMAIL_MESSAGE': 'Email invalide. Merci de respecter le format d’un email',
                 'FIELD_VALID_PHONE_MESSAGE': 'Numéro de téléphone invalide. Merci de respecter le format d’un numéro de téléphone',
                 'FIELD_VALID_POSTCODE_MESSAGE': 'Code postal invalide. Merci de respecter le format d’un code postal',
@@ -68,6 +69,15 @@ class MiscTranslate {
                 'FIELD_PASSWORD_NOT_VIEW': "Cacher le mot de passe",
                 'WEBCAM_ENABLED': "Activer la webcam",
                 'WEBCAM_DISABLED': "Désactiver la webcam",
+                'monday': "lundi",
+                'tuesday': "mardi",
+                'wednesday': "mercredi",
+                'thursday': "jeudi",
+                'friday': "vendredi",
+                'saturday': "samedi",
+                'sunday': "dimanche",
+                "ASSMAT_SELECTED": "Vous avez sélectionné __NB__ assistant·es maternel·les",
+                "ASSMAT_SELECTED_EMPTY": "Vous n'avez sélectionné aucune assistant·es maternel·les"
             },
             'en': {
                 'AROUND_ME': 'Around me',
@@ -78,6 +88,7 @@ class MiscTranslate {
                 'FIELD_VALID_DATE_FORMAT_ERROR_MESSAGE': 'Invalid date format. Please enter a date with the same format than the example',
                 'FIELD_VALID_CHRONOLOGY_ERROR_MESSAGE': 'The date should not be less than the one in the previous field',
                 'FIELD_PAST_DATE_ERROR_MESSAGE': 'The date should not be in the past',
+                'FIELD_VALID_TIME_FORMAT_ERROR_MESSAGE': 'Invalid time format. Please enter a time with the same format than the example',
                 'FIELD_NEXT_YEAR_DATE_ERROR_MESSAGE': 'The date should not be later than in a year',
                 'FIELD_VALID_EMAIL_MESSAGE': 'Invalid email format. Please enter an email with a valid format',
                 'FIELD_VALID_PHONE_MESSAGE': 'Invalid phone number format. Please enter a phone number with a valid format',
@@ -124,6 +135,15 @@ class MiscTranslate {
                 'FIELD_PASSWORD_NOT_VIEW': "Hide password",
                 'WEBCAM_ENABLED': "Enable the webcam",
                 'WEBCAM_DISABLED': "Disable the webcam",
+                'monday': "monday",
+                'tuesday': "tuesday",
+                'wednesday': "wednesday",
+                'thursday': "thursday",
+                'friday': "friday",
+                'saturday': "saturday",
+                'sunday': "sunday",
+                "ASSMAT_SELECTED": "You have selected __NB__ childminders",
+                "ASSMAT_SELECTED_EMPTY": "You have not selected any childminders",
             }
         })[MiscTranslate.getLanguage()];
     }

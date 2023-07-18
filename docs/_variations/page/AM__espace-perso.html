@@ -2,10 +2,10 @@
 layout: pattern
 ---
 
-{% include header/inc-header.html
+{% include header/inc-header-assmat-connected.html
     rawLogo=true
     logo='<picture class="ds44-logo"><img src="../../assets/images/logos/logo-cd44-assmat.svg" alt="Retour à l&apos;accueil du site : Assitantes maternelles de Loire-Atlantique" /></picture>'
-    variante2='<a class="ds44-btnIcoText--maxi ds44--xl-padding" tabindex="0"><span class="ds44-btnInnerText">Connexion</span><i class="icon icon-user icon--large" aria-hidden="true"></i></a>'
+    variante2=''
 %}
 
 <main role="main" id="content">
@@ -64,7 +64,15 @@ layout: pattern
                       <p class="ds44-introduction">Vous pouvez dans cet espace gérer les informations personnelles et professionnelles qui seront affichées sur le site assmat.</p>
 
                       <section class="ds44-contenuArticle">
-                          <h2>Accueils en cours</h2>
+                          <div class="ds44-flex ds44-fsb ds44-mb2">
+                              <div>
+                                  <h2>Accueils en cours</h2>
+                              </div>
+                              <button class="ds44-btnStd">
+                                <span class="ds44-btnInnerText">Planning</span>
+                                <i class="icon icon-date" aria-hidden="true"></i>
+                              </button>
+                          </div>
                           <p>Seules les déclarations saisies via le site internet sont affichées ici. Merci de déclarer tous vos accueils en cours via le site, même si vous avez transmis vos déclarations par courrier.</p>
                           <ul class="ds44-mtb3 ds44-multiCol ds44-list">
                             <li class="ds44-noCut">{% include card/card--assmat-accueil.html nom="Maxence DE GIBON" %}</li>

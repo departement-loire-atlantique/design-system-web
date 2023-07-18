@@ -26,7 +26,6 @@ class FormFieldBoxAbstract extends FormFieldAbstract {
 
     initialize () {
         super.initialize();
-
         for (let objectIndex = 0; objectIndex < this.objects.length; objectIndex++) {
             const object = this.objects[objectIndex];
             if (object.isSubInitialized) {
@@ -105,6 +104,7 @@ class FormFieldBoxAbstract extends FormFieldAbstract {
                 }
             });
             this.toggleContainer(input);
+            MiscEvent.dispatch("field:change-value", {checked: true}, input);
         }
         else
         {
@@ -114,6 +114,7 @@ class FormFieldBoxAbstract extends FormFieldAbstract {
                     this.toggleContainer(inputElement);
                 }
             });
+            MiscEvent.dispatch("field:change-value", {checked: false}, input);
         }
     }
 

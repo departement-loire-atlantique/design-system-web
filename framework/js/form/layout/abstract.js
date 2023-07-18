@@ -4,6 +4,7 @@ class FormLayoutAbstract {
         this.selector = selector;
         Debug.log(this.className+" -> Constructor");
         this.objects = [];
+        this.submitter = null;
     }
 
     clearObject() {
@@ -41,6 +42,13 @@ class FormLayoutAbstract {
         if (msgContainerElement) {
             this.delayedFocus(msgContainerElement);
         }
+
+        formElement.querySelectorAll("button").forEach((button) => {
+            MiscEvent.addListener("click", () => {
+                this.submitter = button;
+            }, button);
+        });
+
 
         this.objects.push(object);
     }
@@ -118,11 +126,10 @@ class FormLayoutAbstract {
         if (!object) {
             return false;
         }
+
         if(evt.submitter) {
             this.submitter = evt.submitter
         }
-
-        console.log(evt);
 
         // We need to deactivate the submit button once clicked
         // If the form is incorrect, it shall be reactivated
@@ -137,8 +144,6 @@ class FormLayoutAbstract {
         {
             return true;
         }
-
-        console.log(this.submitter);
 
         // Submission is in two steps :
         //  - First we ask the form components if they are valid through event dispatching
@@ -182,8 +187,9 @@ class FormLayoutAbstract {
 
                 return false;
             }
-            else if(!this.submitter.hasAttribute("data-send-native")) {
+            else if(!this.submitter || !this.submitter.hasAttribute("data-send-native")) {
 
+                Debug.log("Form - Send default");
                 // Organize data
                 const formattedData = {};
                 const dataPositionByKey = {};
@@ -208,14 +214,13 @@ class FormLayoutAbstract {
                   .querySelectorAll('input[type="hidden"][name][data-technical-field]')
                   .forEach((hiddenInputElement) => {
                       const hiddenInputName = hiddenInputElement.getAttribute('name');
-                      const hiddenInputData = {
+                      formattedData[hiddenInputName] = {
                           'value': hiddenInputElement.value
                       };
-                      formattedData[hiddenInputName] = hiddenInputData;
                       dataPositionByKey[hiddenInputName] = 999;
                   });
 
-                if (this.submitter !== undefined && this.submitter !== null) {
+                if (this.submitter !== null) {
                     let submitKey = "submit";
                     if (this.submitter.dataset.submitKey !== undefined && this.submitter.dataset.submitKey) {
                         submitKey = this.submitter.dataset.submitKey
@@ -307,9 +312,8 @@ class FormLayoutAbstract {
                 this.recaptchaSubmit(objectIndex, sortedData);
             }
             else {
-
-                console.log(this.submitter);
-                if (this.submitter !== undefined && this.submitter !== null) {
+                Debug.log("Form - Send native");
+                if (this.submitter !== null) {
                     let submitKey = "submit";
                     if (this.submitter.dataset.submitKey !== undefined && this.submitter.dataset.submitKey) {
                         submitKey = this.submitter.dataset.submitKey
@@ -317,13 +321,33 @@ class FormLayoutAbstract {
                     if (this.submitter.dataset.submitValue !== undefined && this.submitter.dataset.submitValue) {
                         let buttonHiddenField = document.createElement("input");
                         buttonHiddenField.setAttribute('type', 'hidden');
+                        if(submitKey === "submit")
+                        {
+                            submitKey = "submit_button"
+                        }
                         buttonHiddenField.setAttribute('name', submitKey);
                         buttonHiddenField.value = this.submitter.dataset.submitValue;
                         object.formElement.appendChild(buttonHiddenField);
-                        console.log(buttonHiddenField);
                     }
                 }
-                console.log('submit');
+
+                for (let dataKey in formValidity.data) {
+                    if (!formValidity.data.hasOwnProperty(dataKey)) {
+                        continue;
+                    }
+                    try {
+                        if(!object.formElement.querySelector("*[name='"+dataKey+"']"))
+                        {
+                            let dataValue = formValidity.data[dataKey];
+                            let hiddenField = document.createElement("input");
+                            hiddenField.setAttribute('type', 'hidden');
+                            hiddenField.setAttribute('name', dataKey);
+                            hiddenField.value = dataValue.value;
+                            object.formElement.appendChild(hiddenField);
+                        }
+                    } catch (ex) {
+                    }
+                }
                 object.formElement.submit();
             }
         } catch (ex) {

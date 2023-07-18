@@ -121,7 +121,7 @@ class MapAbstract {
 
     mapScriptLoaded () {
         this.isMapLoaded = true;
-        window.mapboxgl.accessToken = 'pk.eyJ1IjoiemF6aWZmaWMiLCJhIjoiY2s3bmtxYXh2MDNqZzNkdDc3NzJ0aGdqayJ9.TuhsI1ZKXwKSGw2F3bVy5g';
+        window.mapboxgl.accessToken = 'pk.eyJ1IjoibG9pcmVhdGxhbnRpcXVlIiwiYSI6ImNqaHZ5YnNnazBkbWIza21tbWQ2NHF4aWMifQ.oAN8kiv6TejIMjHDVLelXA';
         this.mapLoad();
     }
 
@@ -132,31 +132,46 @@ class MapAbstract {
         }
         if(evt.detail.metadata)
         {
-            object.map.addSource('currentMarker', {
-                'type': 'geojson',
-                'data': {
-                    'type': 'FeatureCollection',
-                    'features': [
-                        {
-                            'type': 'Feature',
-                            'geometry': {
-                                'type': 'Point',
-                                'coordinates': [evt.detail.metadata.longitude, evt.detail.metadata.latitude]
+            if(!object.map.getSource('currentMarker'))
+            {
+                object.map.addSource('currentMarker', {
+                    'type': 'geojson',
+                    'data': {
+                        'type': 'FeatureCollection',
+                        'features': [
+                            {
+                                'type': 'Feature',
+                                'geometry': {
+                                    'type': 'Point',
+                                    'coordinates': [evt.detail.metadata.longitude, evt.detail.metadata.latitude]
+                                }
                             }
-                        }
-                    ]
-                }
-            });
-            // Add a layer to use the image to represent the data.
-            object.map.addLayer({
-                'id': 'currentMarker',
-                'type': 'symbol',
-                'source': 'currentMarker', // reference the data source
-                'layout': {
-                    'icon-image': 'current-marker', // reference the image
-                    'icon-size': 0.30
-                }
-            });
+                        ]
+                    }
+                });
+
+                // Add a layer to use the image to represent the data.
+                object.map.addLayer({
+                    'id': 'currentMarker',
+                    'type': 'symbol',
+                    'source': 'currentMarker', // reference the data source
+                    'layout': {
+                        'icon-image': 'current-marker', // reference the image
+                        'icon-size': 0.30
+                    }
+                });
+            }
+            else
+            {
+                object.map.getSource('currentMarker').setData({
+                  'type': 'Feature',
+                  'geometry': {
+                      'type': 'Point',
+                      'coordinates': [evt.detail.metadata.longitude, evt.detail.metadata.latitude]
+                  }
+              });
+            }
+
         }
 
 
