@@ -103,8 +103,10 @@ class MultiPlanningClass {
     let newPlanning = document.createElement("div");
     newPlanning.innerHTML = planningHtml;
     newPlanning.querySelector("*[data-planning]").classList.add('ds44-planning');
-    object.planningsContent.append(newPlanning.querySelector("*[data-planning]"));
+    let newPlanningElement = newPlanning.querySelector("*[data-planning]");
+    object.planningsContent.append(newPlanningElement);
     (new Planning());
+    MiscEvent.dispatch('planning:initialize-week', {}, newPlanningElement);
     MiscEvent.dispatch('fields:initialise');
 
     if(object.limit.max !== null && object.limit.max < object.planningNum+1) {

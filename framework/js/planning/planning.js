@@ -127,6 +127,7 @@ class PlanningClass {
         continue;
       }
       object.isInitialized = true;
+      MiscEvent.addListener('planning:initialize-week', this.initializeWeek.bind(this, objectIndex), object.element);
       MiscEvent.addListener('planning:add', this.add.bind(this, objectIndex), object.element);
       MiscEvent.addListener('planning:copy-paste', this.copyPaste.bind(this, objectIndex), object.element);
       MiscEvent.addListener('planning:remove', this.remove.bind(this, objectIndex), object.element);
@@ -221,6 +222,21 @@ class PlanningClass {
       elementAfterAppend.parentNode.insertBefore(row, elementAfterAppend.nextSibling);
       MiscEvent.dispatch('fields:initialise', {});
     }
+  }
+
+  initializeWeek(objectIndex) {
+    const object = this.objects[objectIndex];
+    if (!object || !event.target) {
+      return;
+    }
+    let daysInitialise = ["lundi", "mardi", "mercredi", "jeudi", "vendredi"];
+    object.choiceDays.querySelectorAll("input").forEach((choice) => {
+      if(daysInitialise.includes(choice.getAttribute("data-day")) && !choice.checked)
+      {
+        choice.checked = true;
+        MiscEvent.dispatch("field:change-value", {checked: true}, choice);
+      }
+    });
   }
 
   add(objectIndex) {
