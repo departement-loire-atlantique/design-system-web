@@ -15,9 +15,7 @@
 
 {% capture mainContent %}
     <div data-name="{{ name }}" class="ds44-time__shape {{ mainClass }}" {{ containerAttributes }}>
-        <input id="{{ id }}" type="text" inputmode="numeric" pattern="([01]?[0-9]{1}|2[0-3]{1})" maxlength="2" {{ hourLabel }} value="{{ hourValue }}" data-is-time="true" {{ attributes }} {{ inputAttributes }} {% if ariaDescribedBy and ariaDescribedBy != '' %}aria-describedby="{{ ariaDescribedBy }}"{% endif %}>
-        <span>h</span>
-        <input type="text" inputmode="numeric" pattern="[0-5]{1}[0-9]{1}" maxlength="2" {{ minuteLabel }}  value="{{ minuteValue }}" data-is-time="true" {{ attributes }} {{ inputAttributes }} {% if ariaDescribedBy and ariaDescribedBy != '' %}aria-describedby="{{ ariaDescribedBy }}"{% endif %}>
+        <input id="{{ id }}" type="text" inputmode="numeric" pattern="([01]?[0-9]{1}|2[0-3]{1})" maxlength="2" {{ hourLabel }} value="{{ hourValue }}" data-is-time="true" {{ attributes }} {{ inputAttributes }} {% if ariaDescribedBy and ariaDescribedBy != '' %}aria-describedby="{{ ariaDescribedBy }}"{% endif %}><span>h</span><input type="text" inputmode="numeric" pattern="[0-5]{1}[0-9]{1}" maxlength="2" {{ minuteLabel }}  value="{{ minuteValue }}" data-is-time="true" {{ attributes }} {{ inputAttributes }} {% if ariaDescribedBy and ariaDescribedBy != '' %}aria-describedby="{{ ariaDescribedBy }}"{% endif %}>
     </div>
     {% include form/field/partial/reset.html %}
 {% endcapture %}

@@ -318,6 +318,8 @@ class FormFieldInputTimeClass extends FormFieldInputAbstract {
             object.valueElement.value = valueData;
             this.setTime(objectIndex, valueTime);
             this.focus(objectIndex);
+        } else {
+            object.valueElement.value = null;
         }
     }
 }

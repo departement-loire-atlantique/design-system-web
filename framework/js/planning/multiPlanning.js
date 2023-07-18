@@ -46,6 +46,7 @@ class MultiPlanningClass {
       let planningElementHtml = planningElement.innerHTML;
       planningElementHtml = planningElementHtml.replace(/__NUM_PLANNING__/gi, i);
       planningElement.innerHTML = planningElementHtml;
+      i++;
     });
 
     this.objects.push(object);
