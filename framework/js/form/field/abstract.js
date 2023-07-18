@@ -708,9 +708,23 @@ class FormFieldAbstract {
                 }
                 if(viewElement) {
                     containerField.classList.remove('hidden');
+                    containerField.querySelectorAll("input, select, textarea").forEach((field) => {
+                        if(field.hasAttribute("data-field-required"))
+                        {
+                            field.setAttribute("required", "");
+                            field.removeAttribute("data-field-required");
+                        }
+                    });
                 }
                 else {
                     containerField.classList.add('hidden');
+                    containerField.querySelectorAll("input, select, textarea").forEach((field) => {
+                        if(field.hasAttribute("required"))
+                        {
+                            field.setAttribute("data-field-required", "");
+                            field.removeAttribute("required");
+                        }
+                    });
                 }
             });
 
@@ -722,9 +736,21 @@ class FormFieldAbstract {
                 let fieldContainer = (field.closest('.ds44-form__container') || field);
                 if(!hiddenElement) {
                     MiscEvent.dispatch("field:enable", {}, fieldContainer);
+                    if(field.getAttribute("data-required-disable"))
+                    {
+                        field.setAttribute("data-required", field.getAttribute("data-required-disable"));
+                        field.setAttribute("required", "");
+                        field.removeAttribute("data-required-disable");
+                    }
                 }
                 else {
                     MiscEvent.dispatch("field:disable", {}, fieldContainer);
+                    if(field.getAttribute("data-required"))
+                    {
+                        field.setAttribute("data-required-disable", field.getAttribute("data-required"));
+                        field.removeAttribute("data-required");
+                        field.removeAttribute("required");
+                    }
                 }
             });
         }
