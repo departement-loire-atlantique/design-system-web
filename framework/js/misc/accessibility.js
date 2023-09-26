@@ -3,6 +3,10 @@ class MiscAccessibility {
         return ['a[href]', 'link[href]', 'button', 'textarea', 'input:not([type="hidden"])', 'select', 'object', 'area'].map(selector => selector + ':not([disabled])');
     }
 
+    static getTagsListAutoTabIndex() {
+        return ['DIV', 'SPAN', 'MAIN', "HEADER", "FOOTER", "IMG"];
+    }
+
     static getProtectedElementsSelector () {
         return ['i', 'sup', 'svg', 'hr'];
     }
@@ -89,8 +93,17 @@ class MiscAccessibility {
         if (!element && selector) {
             element = document.querySelector(selector);
         }
-        if (element) {
-            element.setAttribute('data-old-tabindex', element.getAttribute('tabindex'));
+        if (element !== undefined && element && element.innerHTML !== undefined ) {
+            if(element.getAttribute('tabindex') !== null && element.getAttribute('tabindex') !== "") {
+                element.setAttribute('data-old-tabindex', element.getAttribute('tabindex'));
+            }
+            else {
+                element.setAttribute('data-old-tabindex', "");
+            }
+            if(MiscAccessibility.getTagsListAutoTabIndex().includes(element.tagName))
+            {
+                element.setAttribute('tabindex', -1);
+            }
             element.focus();
             MiscEvent.addListener('blur', MiscAccessibility.restoreFocus, element);
         }
