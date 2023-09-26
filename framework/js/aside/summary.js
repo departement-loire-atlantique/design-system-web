@@ -34,6 +34,15 @@ class AsideSummaryClass {
             aElements
               .forEach((aElement) => {
                   MiscEvent.addListener('click', this.goTo.bind(this), aElement);
+                  const sectionId = aElement.getAttribute('href').replace(/^#/, '');
+                  const sectionElement = document.querySelector('#' + sectionId);
+                  const titleElement = sectionElement.querySelector('h2');
+                  if (titleElement) {
+                      sectionElement.removeAttribute("tabindex");
+                      if(titleElement.getAttribute('tabindex') === undefined || !titleElement.getAttribute('tabindex')) {
+                          titleElement.setAttribute('tabindex', -1);
+                      }
+                  }
               });
             const showModalButtonElement = document.querySelector('#ds44-summary-button');
             if (showModalButtonElement) {
@@ -163,7 +172,7 @@ class AsideSummaryClass {
 
         // Deselect all bullets
         this.summaryElement
-            .querySelectorAll('.ds44-list--puces li > span')
+            .querySelectorAll('.ds44-list--puces li > .active')
             .forEach((aElement) => {
                 aElement.classList.remove('active');
                 if(aElement.closest("li")) {
@@ -172,7 +181,6 @@ class AsideSummaryClass {
                 else {
                     aElement.removeAttribute('aria-current', 'true');
                 }
-                aElement.outerHTML = aElement.outerHTML.replace(/<span/g,"<a");
                 aElement.removeAttribute('tabindex');
             });
 
@@ -185,7 +193,6 @@ class AsideSummaryClass {
         else {
             aElement.setAttribute('aria-current', 'true');
         }
-        aElement.outerHTML = aElement.outerHTML.replace(/<a/g,"<span");
 
         const sectionId = aElement.getAttribute('href').replace(/^#/, '');
         const sectionElement = document.querySelector('#' + sectionId);
@@ -212,7 +219,7 @@ class AsideSummaryClass {
             const titleElement = sectionElement.querySelector('h2');
             if (titleElement) {
                 if(titleElement.getAttribute('tabindex') === undefined || !titleElement.getAttribute('tabindex')) {
-                    titleElement.setAttribute('tabindex', 1);
+                    titleElement.setAttribute('tabindex', -1);
                 }
                 MiscAccessibility.setFocus(titleElement);
             }
