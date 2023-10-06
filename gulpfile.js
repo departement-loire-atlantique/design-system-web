@@ -283,6 +283,8 @@ gulp.task('build:ds', gulp.parallel(
     'build:css:aidants:dev',
     'build:css:handicap:dev',
     'build:css:clisson:dev',
+    'build:css:arcantique:dev',
+    'build:css:archeo:dev',
     'build:css:garenne-lemot:dev',
     'build:css:chateaubriant:dev',
     'build:css:blanche-couronne:dev',
