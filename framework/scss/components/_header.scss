@@ -132,6 +132,147 @@
     }
 }
 
+/* Musée Dobrée Header */
+.dobree-header {
+    min-height: inherit;
+    .ds44-colRight {
+      min-height: inherit;
+      > * {
+          margin-right: -4px;
+      }
+    }
+}
+.dobree-header .ds44-logoContainer img {
+  height: 46px;
+  margin-left: 4em;
+}
+.dobree-header.ds44-header .ds44-colRight {
+  min-height: inherit;
+  flex: auto;
+}
+
+.dobree-header .ds44-colRight .dobree-listAccessibility {
+    vertical-align: middle;
+    border-radius: 3px;
+    background-color: rgba(0, 0, 0, 0.06);
+    color: $ds44-dark ;
+    transition: all ease-in-out .25s;
+
+    ul.ds44-list {
+        margin-bottom: 0;
+        li {
+            margin: 0 5px;
+        }
+    }
+}
+/* Musée Dobrée Header Homepage vidéo */
+.dobree-header.containerVideo {
+    .ds44-colRight .dobree-listAccessibility {
+        background-color: rgba(0, 0, 0, 0.4);
+        color: $ds44-light ;
+
+        &:hover {
+            background-color: rgba(255, 255, 255, 1);
+            color: $ds44-dark ;
+        }
+    }
+     .ds44-logoContainer img {
+      display: none;
+    }
+}
+
+/* Musée Dobrée Header Menu */
+.dobree-header .ds44-blocMenu .ds44-multiCol3 {
+  -webkit-column-count: 3;
+  -moz-column-count: 3;
+  column-count: 3;
+  display: block;
+  padding: 3em 0;
+
+  > div {
+      overflow: auto;
+      padding:0 4rem;
+
+      &:nth-child(2) {
+          border-left : 1px $ds44-color-base solid;
+          border-right : 1px $ds44-color-base solid;
+      }
+      .ds44-navListN2 {
+          margin-bottom: 0;
+      }
+  }
+}
+
+.dobree-header .ds44-blocMenu {
+    .ds44-navContainer {
+      padding-top: 0rem;
+    }
+    .ds44-logoContainer img {
+         display: block;
+         margin: 0 0 0 4em;
+       }
+       .ds44-colLeft {
+          flex: 2 1;
+        }
+        .ds44-colRight {
+           .ds44-form__container {
+               margin-right: 6em;
+           }
+         }
+
+  .h3-like {
+      font-family: $ds44-font-family-baseDobree;
+      font-size: 26px;
+      font-weight: 700;
+      margin-bottom: 1em;
+  }
+  .ds44-menuLink {
+      font-family: $ds44-font-family-baseDobree;
+      font-size: 16px;
+      margin-bottom: 1rem;
+      position: relative;
+
+      &::before {
+        content: '';
+        display: block;
+        width: 10px;
+        height: 4px;
+        background: $ds44-color-base;
+        margin-left: -15px;
+        position: absolute;
+        top: 8px;
+        transition: all ease-in-out .25s;
+        opacity: 0;
+      }
+      &:hover, &:focus {
+          &::before {
+            opacity: 1;
+          }
+      }
+  }
+}
+.dobree-header .ds44-blocMenu .dobree-blocVousEtes {
+    background-color: $ds44-lightgray ;
+    padding: 5em 0;
+
+    .ds44-multiCol5 {
+      -webkit-column-count: 5;
+      -moz-column-count: 5;
+      column-count: 5;
+      display: block;
+
+      > div {
+          overflow: auto;
+          padding:0 4rem;
+
+          .ds44-navListN2 {
+              margin-bottom: 0;
+          }
+
+      }
+}
+}
+
 
 
 
@@ -207,6 +348,22 @@
             }
         }
     }
+
+    .dobree-header .ds44-colRight .ds44-btnIcoText--maxi {
+      flex-direction: row;
+      margin: 0 ;
+      padding: 1em 2rem ;
+
+      .ds44-btnInnerText + .icon, .icon + .icon {
+        margin-left: 1.5rem;
+      }
+    }
+    .dobree-header .ds44-logoDobree img {
+          margin-left: 1em;
+    }
+
+
+
 
 }
 
@@ -296,6 +453,24 @@
   .ds44-header {
       min-height: $header-height-small;
   }
+
+  .ds44-header.dobree-header .ds44-colRight .ds44-btnIcoText--maxi.ds44-btn--menu {
+   padding: 1em 2em;
+
+    .ds44-btnInnerText {
+     font-size: 1.4rem;
+   }
+   .icon-long-arrow-right {
+      margin-left: 0.5rem ;
+
+      &::before {
+         font-size: 1em !important;
+       }
+    }
+
+
+ }
+
 
 }
 

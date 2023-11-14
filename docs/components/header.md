@@ -25,6 +25,9 @@ variations:
 - title: Variante Aidants
   description: Header avec logo très large
   pattern: header/header-aidants.html  
+- title: Variante Musée Dobrée
+  description: Header du site du Musée Dobrée
+  pattern: header/header-dobree.html  
 ---
 
 ## Notes d'intégration

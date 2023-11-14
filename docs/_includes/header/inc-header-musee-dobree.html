@@ -1,0 +1,194 @@
+<header role="banner" id="topPage">
+    <div class="ds44-blocBandeau ds44-header dobree-header ">
+        <div class="">
+            <ul class="ds44-list ds44-skiplinks">
+                <li><a href="#content" class="ds44-skiplinks--link">Aller au contenu</a></li>
+                <li><a href="#open-menu" class="ds44-skiplinks--link">Aller au menu</a></li>
+                <li><a href="#open-search" class="ds44-skiplinks--link">Aller à la recherche</a></li>
+                <li><a href="/" class="ds44-skiplinks--link">Aller à la page d'accessibilité</a></li>
+            </ul>
+            <div class="ds44-flex-container ds44-flex-valign-center">
+                <div class="ds44-colLeft">
+                        <p class="ds44-logoContainer">
+                        <a href="/" class="ds44-logoContainer">
+                            <picture class="ds44-logo ds44-hide-tinyToLarge"><img src="../../assets/images/logos/logo-musee-Dobree.svg" alt="{% if include.logoAlt %}{{ include.logoAlt }}{% else %}Retour à l&apos;accueil du site Musée Dobrée{% endif %}"></picture>
+                            <picture class="ds44-logoDobree ds44-show-tinyToLarge ds44-hide-large"><img src="../../assets/images/logos/logo-musee-Dobree-mobile.svg" alt="{% if include.logoAlt %}{{ include.logoAlt }}{% else %}Retour à l&apos;accueil du site Musée Dobrée{% endif %}"></picture>
+                        </a>
+                        </p>
+                </div>
+                <div class="ds44-colRight">
+                    <div class="inbl dobree-listAccessibility ds44-hide-tinyToLarge">
+                        <div class="ds44-flex-container ds44-flex-align-center ds44--m-padding">
+                            <span class="">Accessibilité du musée :</span>
+                            <ul class="ds44-list ds44-flex-container ds44-flex-align-center ds44-fse">
+                                <li><i class="icon icon-handicap-auditif icon--sizeL" aria-hidden="true"></i><span class="visually-hidden">Handicap auditif</span></li>
+                                <li><i class="icon icon-handicap-mental icon--sizeL" aria-hidden="true"></i><span class="visually-hidden">Handicap mental</span></li>
+                                <li><i class="icon icon-handicap-moteur icon--sizeL" aria-hidden="true"></i><span class="visually-hidden">Handicap moteur</span></li>
+                                <li><i class="icon icon-handicap-visuel icon--sizeL" aria-hidden="true"></i><span class="visually-hidden">Handicap visuel</span></li>
+                            </ul>
+                        </div>
+                        </div>
+                        <button type="button" class="ds44-btn--menu ds44-btnIcoText--maxi ds44--xl-padding ds44-hide-tinyToLarge" aria-label="Ouvrir le menu pour choisir une langue" aria-controls="menu" data-open-sub-menu="#subMenu-choixLangue">
+                            <i class="icon icon-french icon--medium" aria-hidden="true"></i><span class="ds44-btnInnerText" aria-label="Langue sélectionné : FR - Français">FR</span><i class="icon icon-toggle icon-down icon--medium" aria-hidden="true"></i>
+                        </button>
+                        <a href="#" class="ds44-btn--menu ds44-btn--contextual ds44-btnIcoText--maxi ds44--xl-padding" title="Ouvrir la billetterie"><span class="ds44-btnInnerText">Billetterie</span><i class="icon icon-long-arrow-right icon--large" aria-hidden="true"></i></a>
+                        <button type="button" class="ds44-btn--menu ds44-btnIcoText--maxi ds44--xl-padding ds44-btn--invert" aria-label="Ouvrir le menu de navigation" aria-controls="menu" data-open-overlay="true" id="open-menu">
+                            <span class="ds44-btnInnerText">Menu</span><i class="icon icon-burger icon--large" aria-hidden="true"></i>
+                        </button>
+                </div>
+            </div>
+        </div>
+        <div id="subMenu-choixLangue" class="ds44-subMenu" data-sub-menu="" aria-hidden="true">
+            <p role="heading" aria-level="1" class="visually-hidden">Choix de la langue</p>
+            <ul class="ds44-list">
+                <li>
+                    <a href="#">Français</a>
+                </li>
+                <li>
+                    <a href="#">Anglais</a>
+                </li>
+            </ul>
+        </div>
+        <div class="ds44-blocMenu" aria-hidden="true">
+            <section class="ds44-menuBox" id="menu">
+                <div class="ds44-overlay ds44-theme ds44-bg-br ds44-overlay--navNiv1" role="dialog" aria-modal="true" aria-label="Menu principal : premier niveau de navigation" id="nav1" aria-hidden="true">
+                    <p role="heading" aria-level="1" class="visually-hidden">Menu de navigation</p>
+                    <nav role="navigation" class="ds44-navContainer ds44-flex-container--column" aria-label="Menu de navigation">
+                        <div class="ds44-flex-container ds44-flex-valign-center">
+                            <div class="ds44-colLeft">
+                                    <p class="ds44-logoContainer">
+                                    <a href="/" class="ds44-logoContainer">
+                                        <picture class="ds44-logo"><img src="../../assets/images/logos/logo-musee-Dobree.svg" alt="{% if include.logoAlt %}{{ include.logoAlt }}{% else %}Retour à l&apos;accueil du site Musée Dobrée{% endif %}"></picture>
+                                    </a>
+                                    </p>
+                            </div>
+                            <div class="ds44-colRight">
+                                {% include form/field/input/standard.html label="Saisissez un ou plusieurs mots-clé" class="ds44-inpLarge" ariaDescribedBy="inp-rech" %}
+                                <button class="ds44-btnOverlay ds44-btnOverlay--closeOverlay" type="button" aria-label="Fermer le menu de navigation">
+                                    <i class="icon icon-cross icon--xlarge" aria-hidden="true"></i><span class="ds44-btnInnerText--bottom">Fermer</span>
+                                </button>
+                            </div>
+                        </div>
+                        <div class="ds44-inner-container ds44-flex-mauto">
+                            <div class="ds44-multiCol3 ds44-navList">
+                                <div>
+                                    <h3 class="h3-like">Infos pratiques</h3>
+                                    <ul class="ds44-navListN2 ds44-list">
+                                        <li>
+                                            <a href="#" class="ds44-menuLink ds44-menuLink--subLvl">Horaires, tarifs</a>
+                                        </li>
+                                        <li>
+                                            <a href="#" class="ds44-menuLink ds44-menuLink--subLvl">Accès</a>
+                                        </li>
+                                        <li>
+                                            <a href="#" class="ds44-menuLink ds44-menuLink--subLvl">Services</a>
+                                        </li>
+                                        <li>
+                                            <a href="#" class="ds44-menuLink ds44-menuLink--subLvl">Plan</a>
+                                        </li>
+                                        <li>
+                                            <a href="#" class="ds44-menuLink ds44-menuLink--subLvl">Accessibilité / Handicaps</a>
+                                        </li>
+                                    </ul>
+                                </div>
+                                <div>
+                                    <h3 class="h3-like">Visites</h3>
+                                    <ul class="ds44-navListN2 ds44-list">
+                                        <li>
+                                            <a href="#" class="ds44-menuLink ds44-menuLink--subLvl">Parcours et conseils de visite</a>
+                                        </li>
+                                        <li>
+                                            <a href="#" class="ds44-menuLink ds44-menuLink--subLvl">Visites guidées</a>
+                                        </li>
+                                        <li>
+                                            <a href="#" class="ds44-menuLink ds44-menuLink--subLvl">Agenda</a>
+                                        </li>
+                                        <li>
+                                            <a href="#" class="ds44-menuLink ds44-menuLink--subLvl">Expositions</a>
+                                        </li>
+                                        <li>
+                                            <a href="#" class="ds44-menuLink ds44-menuLink--subLvl">Évènements</a>
+                                        </li>
+                                        <li>
+                                            <a href="#" class="ds44-menuLink ds44-menuLink--subLvl">Conférences</a>
+                                        </li>
+                                        <li>
+                                            <a href="#" class="ds44-menuLink ds44-menuLink--subLvl">Ateliers et activités</a>
+                                        </li>
+                                    </ul>
+                                </div>
+                                <div>
+                                    <h3 class="h3-like">Musée et collections</h3>
+                                    <ul class="ds44-navListN2 ds44-list">
+                                        <li>
+                                            <a href="#" class="ds44-menuLink ds44-menuLink--subLvl">Histoire du musée</a>
+                                        </li>
+                                        <li>
+                                            <a href="#" class="ds44-menuLink ds44-menuLink--subLvl">Architecture, le lieu</a>
+                                        </li>
+                                        <li>
+                                            <a href="#" class="ds44-menuLink ds44-menuLink--subLvl">Collections</a>
+                                        </li>
+                                        <li>
+                                            <a href="#" class="ds44-menuLink ds44-menuLink--subLvl">Équipe et métiers</a>
+                                        </li>
+                                        <li>
+                                            <a href="#" class="ds44-menuLink ds44-menuLink--subLvl">Projet scientifique et culture</a>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                        <section class="dobree-blocVousEtes">
+                            <div class="ds44-inner-container ds44-flex-mauto">
+                                <div class="ds44-multiCol5 ds44-navList">
+                                    <div>
+                                        <h3 class="h3-like">Vous êtes</h3>
+                                    </div>
+                                    <div>
+                                        <ul class="ds44-navListN2 ds44-list">
+                                            <li>
+                                                <a href="#" class="ds44-menuLink ds44-menuLink--subLvl">En famille</a>
+                                            </li>
+                                            <li>
+                                                <a href="#" class="ds44-menuLink ds44-menuLink--subLvl">En situation de handicap</a>
+                                            </li>
+                                            <li>
+                                                <a href="#" class="ds44-menuLink ds44-menuLink--subLvl">En groupe</a>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                    <div>
+                                        <ul class="ds44-navListN2 ds44-list">
+                                            <li>
+                                                <a href="#" class="ds44-menuLink ds44-menuLink--subLvl">Une entreprise</a>
+                                            </li>
+                                            <li>
+                                                <a href="#" class="ds44-menuLink ds44-menuLink--subLvl">Enseignant</a>
+                                            </li>
+                                            <li>
+                                                <a href="#" class="ds44-menuLink ds44-menuLink--subLvl">Chercheur</a>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                    <div>
+                                        <ul class="ds44-navListN2 ds44-list">
+                                            <li>
+                                                <a href="#" class="ds44-menuLink ds44-menuLink--subLvl">Ami du musée</a>
+                                            </li>
+                                            <li>
+                                                <a href="#" class="ds44-menuLink ds44-menuLink--subLvl">Journaliste</a>
+                                            </li>
+                                            <li>
+                                                <a href="#" class="ds44-menuLink ds44-menuLink--subLvl">Toutes et tous</a>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                </div>
+                        </section>
+                    </nav>
+                </div>
+            </section>
+        </div>
+    </div>
+</header>
