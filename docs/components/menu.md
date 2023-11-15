@@ -38,6 +38,7 @@ variations:
 - title: Menu Étapes
   description: Menu de navigation étapes par étapes (stepper)
   pattern: menu/nav-stepper.html
+
 ---
 
 ## Note d'intégration

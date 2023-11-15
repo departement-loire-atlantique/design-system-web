@@ -507,6 +507,60 @@ a.ds44-btnStd--retourPage {
 }
 
 
+// Lien Flèche Ancre
+.flecheAncre{
+    .bounce2 {
+      animation: bounce2 2s ease 3;  // Animation de 2s répétée 3 fois
+    }
+    @keyframes bounce2 {
+    	0%, 20%, 50%, 80%, 100% {transform: translateY(0);}
+    	40% {transform: translateY(-20px);}
+    	60% {transform: translateY(-10px);}
+    }
+}
+
+// Horaires ouverture Musée Dobrée
+.horairesOuverture{
+    font-size: 20px;
+    color: $ds44-light;
+    position: relative;
+    text-decoration: none;
+
+    &::before {
+        content: '';
+        display: block;
+        position: absolute;
+        top: 3px;
+        left: -20px;
+        width: 12px;
+        height: 12px;
+        border-radius: 12px;
+        background-color: #28BA62 ;
+    }
+
+    &::after {
+        content: '';
+        display: block;
+        position: absolute;
+        bottom: -8px;
+        left: 0px;
+        width: 0px;
+        height: 1px;
+        background-color: $ds44-light;
+        transition: all .25s ease-in-out;
+    }
+
+    &:hover,&:focus  {
+        color: $ds44-light;
+
+        &::after {
+            width: 50px;
+        }
+    }
+}
+
+
+
 /* medium screens */
 /* ------------- */
 @media (max-width: $ds44-extra-large - .0625) {
@@ -539,6 +593,22 @@ a.ds44-btnStd--retourPage {
     .ds44-btnStd, a.ds44-btnStd, a > .ds44-btnStd, .ds44-btnStd > a {
         &.ds44-btnQuestion {
             right: 7rem;
+        }
+    }
+
+    // Lien Flèche Ancre
+    .flecheAncre{
+        .bounce2 {
+          width: 28px;
+          height: 14px;
+        }
+    }
+    // Horaires ouverture Musée Dobrée
+    .horairesOuverture{
+        font-size: 14px;
+
+        &::before {
+            top: 1px;
         }
     }
 
