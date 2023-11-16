@@ -559,6 +559,21 @@ a.ds44-btnStd--retourPage {
     }
 }
 
+// Choix langue
+.mobile .choixLangue{
+    margin-right: 4em !important;
+    padding: 0 !important;
+    > * {
+        display: inline-block;
+        width: auto !important;
+        margin: 0 10px 0 0;
+        position: relative !important;
+    }
+    span {
+        font-size: .97em !important;
+    }
+}
+
 
 
 /* medium screens */

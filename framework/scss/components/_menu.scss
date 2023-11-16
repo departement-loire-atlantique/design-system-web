@@ -253,7 +253,7 @@
 }
 
 /* Musée Dobrée Header Menu */
-.dobree-header .ds44-blocMenu .ds44-multiCol3 {
+.dobree-menu.ds44-blocMenu .ds44-multiCol3 {
   -webkit-column-count: 3;
   -moz-column-count: 3;
   column-count: 3;
@@ -274,7 +274,7 @@
   }
 }
 
-.dobree-header .ds44-blocMenu {
+.dobree-menu.ds44-blocMenu {
     .ds44-navContainer {
       padding-top: 0rem;
     }
@@ -321,8 +321,40 @@
           }
       }
   }
+  &.mobile {
+      .ds44-logoContainer img {
+              height: 62px;
+              margin: 0;
+          }
+    #subMenu-choixLangue {
+        top : 6rem;
+        right: 6rem !important;
+        width: 20rem;
+    }
+    .ds44-collapser {
+        margin: 0;
+    }
+    .ds44-collapser_button {
+        font-family: $ds44-font-family-baseDobree;
+        font-size: 20px;
+        font-weight: 700;
+    }
+    .ds44-collapser_content {
+      background-color: transparent;
+      ul {
+          padding-top: 0;
+          .ds44-collapser_content--link {
+              padding: 0rem 1rem 0rem 3rem;
+              font-size: 14px;
+            }
+      }
+    }
+    .dobree-listAccessibility a{
+        background-color: rgba(255, 255, 255, 0.4);
+    }
+  }
 }
-.dobree-header .ds44-blocMenu .dobree-blocVousEtes {
+.dobree-menu.ds44-blocMenu .dobree-blocVousEtes {
     background-color: $ds44-lightgray ;
     padding: 5em 0;
 
@@ -359,7 +391,7 @@
         padding-left: 2.5rem;
     }
 
-    .dobree-header .ds44-blocMenu  .ds44-navListN2 {
+    .dobree-menu.ds44-blocMenu  .ds44-navListN2 {
         margin: 0 ;
     }
 

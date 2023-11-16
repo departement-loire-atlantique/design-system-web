@@ -39,6 +39,14 @@ variations:
   description: Menu de navigation étapes par étapes (stepper)
   pattern: menu/nav-stepper.html
 
+- title: Menu Dobrée
+  description: Menu de navigation du Musée Dobrée
+  pattern: menu/nav-musee-dobree.html
+
+- title: Menu Dobrée Mobile
+  description: Menu de navigation du Musée Dobrée en version mobile
+  pattern: menu/nav-musee-dobree-mobile.html
+
 ---
 
 ## Note d'intégration

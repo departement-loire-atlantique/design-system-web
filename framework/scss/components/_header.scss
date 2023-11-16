@@ -151,7 +151,7 @@
   flex: auto;
 }
 
-.dobree-header .ds44-colRight .dobree-listAccessibility {
+.dobree-listAccessibility {
     vertical-align: middle;
         a {
             border-radius: 3px;
@@ -280,6 +280,7 @@
     }
     .dobree-header .ds44-logoDobree img {
           margin-left: 1em;
+          height: 59px;
     }
 
 
@@ -375,7 +376,7 @@
   }
 
   .ds44-header.dobree-header .ds44-colRight .ds44-btnIcoText--maxi.ds44-btn--menu {
-   padding: 1em 2em;
+   padding: 1em;
 
     .ds44-btnInnerText {
      font-size: 1.4rem;
@@ -387,6 +388,9 @@
          font-size: 1em !important;
        }
     }
+    .icon-burger {
+       margin-left: 0.5rem ;
+     }
 
 
  }
