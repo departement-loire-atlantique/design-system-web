@@ -1,0 +1,43 @@
+---
+layout: pattern
+---
+
+<div class="dobree-video-container ds44-posRel" data-nb-visible-slides="1">
+    <p role="heading" aria-level="1" class="h1-like ds44-text--colorInvert ds44-hide-tinyToLarge ds44-noMrg">
+        <picture class="ds44-logo"><img src="../../assets/images/logos/logo-musee-Dobree-white.svg" alt="{% if include.logoAlt %}{{ include.logoAlt }}{% else %}Retour à l&apos;accueil du site Musée Dobrée{% endif %}"></picture>
+    </p>
+    <p role="heading" aria-level="1" class="h1-like ds44-text--colorInvert ds44-show-tinyToLarge ds44-hide-large ds44-noMrg">
+        <picture class="ds44-logo"><img src="../../assets/images/logos/logo-musee-Dobree-white.svg" alt="{% if include.logoAlt %}{{ include.logoAlt }}{% else %}Retour à l&apos;accueil du site Musée Dobrée{% endif %}"></picture>
+        <span>Un musée du Département de Loire-Atlantique</span>
+    </p>
+    <div class="bandeau-info ds44-flex-container ds44-flex-valign-center ds44--2xl-padding ds44-fsb">
+        <a href="#" class="logoLA ds44-flex-container ds44-flex-valign-center ds44-text--colorInvert ds44-hide-tinyToLarge">
+            <picture class="ds44-logo"><img src="../../assets/images/logos/logo-LA-white.svg" alt="{% if include.logoAlt %}{{ include.logoAlt }}{% else %}Logo de Loire-Atlantique{% endif %}"></picture>
+            <span>Un musée du Département de Loire-Atlantique</span>
+        </a>
+        {% include composants-transverses/inc-fleche-ancre.html %}
+        <div class="ds44-flex-container ds44-flex-valign-center">
+            <button class="ds44-btnIco ds44-btnIco--carre ds44-bgDark ds44-mr5" type="button">
+                <i class="icon icon-pause" aria-hidden="true"></i>
+                <span class="visually-hidden">Arrêter l'animation</span>
+            </button>
+            {% include composants-transverses/inc-horaires-ouverture.html %}
+        </div>
+        <!-- <div class="inbl dobree-listAccessibility ds44-hide-tinyToLarge">
+            <div class="ds44-flex-container ds44-flex-align-center ds44--m-padding">
+                <span class="">Accessibilité du musée :</span>
+                <ul class="ds44-list ds44-flex-container ds44-flex-align-center ds44-fse">
+                    <li><i class="icon icon-handicap-auditif icon--sizeL" aria-hidden="true"></i><span class="visually-hidden">Handicap auditif</span></li>
+                    <li><i class="icon icon-handicap-mental icon--sizeL" aria-hidden="true"></i><span class="visually-hidden">Handicap mental</span></li>
+                    <li><i class="icon icon-handicap-moteur icon--sizeL" aria-hidden="true"></i><span class="visually-hidden">Handicap moteur</span></li>
+                    <li><i class="icon icon-handicap-visuel icon--sizeL" aria-hidden="true"></i><span class="visually-hidden">Handicap visuel</span></li>
+                </ul>
+            </div>
+        </div> -->
+    </div>
+    <div class="dobree-video">
+        <video loop autoplay="true" class="" role="presentation">
+          <source src="../../assets/images/video-test-dobree.mp4" type="video/mp4" />
+        </video>
+    </div>
+</div>

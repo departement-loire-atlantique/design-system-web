@@ -153,31 +153,41 @@
 
 .dobree-header .ds44-colRight .dobree-listAccessibility {
     vertical-align: middle;
-    border-radius: 3px;
-    background-color: rgba(0, 0, 0, 0.06);
-    color: $ds44-dark ;
-    transition: all ease-in-out .25s;
+        a {
+            border-radius: 3px;
+            background-color: rgba(0, 0, 0, 0.06);
+            color: $ds44-dark ;
+            transition: all ease-in-out .25s;
+            text-decoration: none;
 
-    ul.ds44-list {
-        margin-bottom: 0;
-        li {
-            margin: 0 5px;
+            &:hover {
+                background-color: rgba(255, 255, 255, 1);
+                color: $ds44-dark ;
+            }
+
+            ul.ds44-list {
+                margin-bottom: 0;
+                li {
+                    margin: 0 5px;
+                }
+            }
         }
-    }
 }
 /* Musée Dobrée Header Homepage vidéo */
 .dobree-header.containerVideo {
-    .ds44-colRight .dobree-listAccessibility {
+    .ds44-colRight .dobree-listAccessibility a {
         background-color: rgba(0, 0, 0, 0.4);
         color: $ds44-light ;
-
-        &:hover {
-            background-color: rgba(255, 255, 255, 1);
-            color: $ds44-dark ;
-        }
     }
      .ds44-logoContainer img {
       display: none;
+    }
+    .choixLangue {
+        border-radius: 3px;
+        background-color: rgba(0, 0, 0, 0.4);
+        color: $ds44-light ;
+        padding: 1rem;
+        margin: 0 3rem;
     }
 }
 

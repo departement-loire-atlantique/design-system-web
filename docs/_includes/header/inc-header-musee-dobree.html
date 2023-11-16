@@ -1,5 +1,5 @@
 <header role="banner" id="topPage">
-    <div class="ds44-blocBandeau ds44-header dobree-header ">
+    <div class="ds44-blocBandeau ds44-header dobree-header {{ include.style-containerVideo }}" {{ include.surcharge-ds }}>
         <div class="">
             <ul class="ds44-list ds44-skiplinks">
                 <li><a href="#content" class="ds44-skiplinks--link">Aller au contenu</a></li>
@@ -18,7 +18,7 @@
                 </div>
                 <div class="ds44-colRight">
                     <div class="inbl dobree-listAccessibility ds44-hide-tinyToLarge">
-                        <div class="ds44-flex-container ds44-flex-align-center ds44--m-padding">
+                        <a href="#" class="ds44-flex-container ds44-flex-align-center ds44--m-padding">
                             <span class="">Accessibilité du musée :</span>
                             <ul class="ds44-list ds44-flex-container ds44-flex-align-center ds44-fse">
                                 <li><i class="icon icon-handicap-auditif icon--sizeL" aria-hidden="true"></i><span class="visually-hidden">Handicap auditif</span></li>
@@ -26,10 +26,10 @@
                                 <li><i class="icon icon-handicap-moteur icon--sizeL" aria-hidden="true"></i><span class="visually-hidden">Handicap moteur</span></li>
                                 <li><i class="icon icon-handicap-visuel icon--sizeL" aria-hidden="true"></i><span class="visually-hidden">Handicap visuel</span></li>
                             </ul>
+                        </a>
                         </div>
-                        </div>
-                        <button type="button" class="ds44-btn--menu ds44-btnIcoText--maxi ds44--xl-padding ds44-hide-tinyToLarge" aria-label="Ouvrir le menu pour choisir une langue" aria-controls="menu" data-open-sub-menu="#subMenu-choixLangue">
-                            <i class="icon icon-french icon--medium" aria-hidden="true"></i><span class="ds44-btnInnerText" aria-label="Langue sélectionné : FR - Français">FR</span><i class="icon icon-toggle icon-down icon--medium" aria-hidden="true"></i>
+                        <button type="button" class="ds44-btn--menu ds44-btnIcoText--maxi ds44--xl-padding ds44-hide-tinyToLarge choixLangue" aria-label="Ouvrir le menu pour choisir une langue" aria-controls="menu" data-open-sub-menu="#subMenu-choixLangue">
+                            <img class="flag" src="../../assets/icons/icon-flag-fr.svg" alt="Langue : FR - Français"><span class="ds44-btnInnerText" aria-label="Langue sélectionné : FR - Français">FR</span><i class="icon icon-toggle icon-down icon--medium" aria-hidden="true"></i>
                         </button>
                         <a href="#" class="ds44-btn--menu ds44-btn--contextual ds44-btnIcoText--maxi ds44--xl-padding" title="Ouvrir la billetterie"><span class="ds44-btnInnerText">Billetterie</span><i class="icon icon-long-arrow-right icon--large" aria-hidden="true"></i></a>
                         <button type="button" class="ds44-btn--menu ds44-btnIcoText--maxi ds44--xl-padding ds44-btn--invert" aria-label="Ouvrir le menu de navigation" aria-controls="menu" data-open-overlay="true" id="open-menu">
@@ -42,10 +42,10 @@
             <p role="heading" aria-level="1" class="visually-hidden">Choix de la langue</p>
             <ul class="ds44-list">
                 <li>
-                    <a href="#">Français</a>
+                    <a href="#"><img class="flag" src="../../assets/icons/icon-flag-fr.svg" alt="Langue : FR - Français">Français</a>
                 </li>
                 <li>
-                    <a href="#">Anglais</a>
+                    <a href="#"><img class="flag" src="../../assets/icons/icon-flag-en.svg" alt="Language : EN - English">English</a>
                 </li>
             </ul>
         </div>
