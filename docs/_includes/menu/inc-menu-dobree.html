@@ -12,7 +12,17 @@
                             </p>
                     </div>
                     <div class="ds44-colRight">
-                        {% include form/field/input/standard.html label="Saisissez un ou plusieurs mots-clé" class="ds44-inpLarge" ariaDescribedBy="inp-rech" %}
+
+                        <div class="ds44--xl-padding ds44-flex-container ds44-small-flex-col">
+                            <div class="ds44-fieldContainer ds44-fg1">
+                                {% include form/field/input/standard.html label="Saisissez un ou plusieurs mots-clé"  class="ds44-inpLarge" ariaDescribedBy="inp-rech" %}
+                            </div>
+                            <div class="ds44-fieldContainer ds44-small-fg1">
+                                <button type="submit" class="ds44-btnStd ds44-btn--invert ds44-btnStd--large" title="Valider votre recherche par mots-clés">
+                                    <span class="ds44-btnInnerText">Valider</span><i class="icon icon-long-arrow-right" aria-hidden="true"></i>
+                                </button>
+                            </div>
+                        </div>
                         <button class="ds44-btnOverlay ds44-btnOverlay--closeOverlay" type="button" aria-label="Fermer le menu de navigation">
                             <i class="icon icon-cross icon--xlarge" aria-hidden="true"></i><span class="ds44-btnInnerText--bottom">Fermer</span>
                         </button>
