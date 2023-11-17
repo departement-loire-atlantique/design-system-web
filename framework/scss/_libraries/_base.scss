@@ -183,6 +183,16 @@ h6, .h6-like {
   display: block;
 }
 
+
+/* Musée DObrée Title Monotype */
+.h1-like.dobree-title,
+.h2-like.dobree-title {
+    font-family: $ds44-font-family-headingsDobree;
+    font-weight: normal;
+}
+
+
+
 [role="heading"] {
   font-weight: bold;
 

@@ -523,8 +523,6 @@ a.ds44-btnStd--retourPage {
 .horairesOuverture{
     font-size: 20px;
     color: $ds44-light;
-    position: relative;
-    text-decoration: none;
 
     &::before {
         content: '';
@@ -539,6 +537,20 @@ a.ds44-btnStd--retourPage {
     }
 
     &::after {
+        background-color: $ds44-light !important;
+    }
+
+    &:hover,&:focus  {
+        color: $ds44-light;
+    }
+}
+
+// Style de lien avec bordure au survol Musée Dobrée
+.dobree-link {
+    position: relative;
+    text-decoration: none;
+
+    &::after {
         content: '';
         display: block;
         position: absolute;
@@ -546,12 +558,11 @@ a.ds44-btnStd--retourPage {
         left: 0px;
         width: 0px;
         height: 1px;
-        background-color: $ds44-light;
+        background-color: $ds44-dark;
         transition: all .25s ease-in-out;
     }
 
     &:hover,&:focus  {
-        color: $ds44-light;
 
         &::after {
             width: 50px;
