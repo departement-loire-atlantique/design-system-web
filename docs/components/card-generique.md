@@ -39,6 +39,10 @@ variations:
 - title: Autres tuiles
   description:
   pattern: cards/card--AA--autres.html
+
+- title: Dobrée
+  description: Tuiles spécifiques dans leur mise en forme pour le Musée Dobrée
+  pattern: cards/card--dobree.html
 ---
 
 ## Documentation

@@ -311,6 +311,32 @@ figure[role=figure]  + .ds44-card__section {
     }
 }
 
+
+
+// Horizontal card specific Musée Dobrée Focus object
+
+.ds44-card--focus {
+    .ds44-card__section--horizontal--img {
+        width: 50%;
+        height: 430px;
+
+        @media (min-width: $ds44-medium) and (max-width: ($ds44-large - .0625)) {
+            width: 50%;
+        }
+        @media (max-width: ($ds44-medium - .0625)) {
+            min-width: 100%;
+        }
+        .dobree-imgFocus {
+              width: 100%;
+              height: 430px;
+              object-fit: cover;
+              overflow: hidden;
+        }
+    }
+}
+
+
+
 .ds44-homepage-container .ds44-card {
     z-index: 10;
 }

@@ -1,0 +1,14 @@
+<section class="ds44-card ds44-card--noLink ds44-card--horizontal ds44-card--focus{{ include.context }}">
+  <div class="ds44-flex-container ds44-flex-valign-center">
+    <div class="ds44-card__section--horizontal--img{{ include.imgdim }}">
+       <picture class="">
+         <img src="../../assets/images/ds44-card--sampleImg.png" alt="" class="dobree-imgFocus" />
+      </picture>
+   </div>
+    <div class="ds44-card__section--horizontal">
+      {% if include.date %}<p class="date">{{ include.date }}</p>{% endif %}
+      <p role="heading" {{ include.arialevel }} class="ds44-card__title">{{ include.title }}</p>
+      <button class="ds44-btnStd ds44-btn--contextual"><span class="ds44-btnInnerText">Découvrir l'objet</span><i class="icon icon-long-arrow-right" aria-hidden="true"></i></button>
+    </div>
+  </div>
+</section>
