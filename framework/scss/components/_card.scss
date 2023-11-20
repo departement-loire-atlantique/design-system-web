@@ -318,10 +318,12 @@ figure[role=figure]  + .ds44-card__section {
 .ds44-card--focus {
     .ds44-card__section--horizontal--img {
         width: 50%;
+        min-width: 50%;
         height: 430px;
 
         @media (min-width: $ds44-medium) and (max-width: ($ds44-large - .0625)) {
             width: 50%;
+            min-width: 50%;
         }
         @media (max-width: ($ds44-medium - .0625)) {
             min-width: 100%;
@@ -331,6 +333,63 @@ figure[role=figure]  + .ds44-card__section {
               height: 430px;
               object-fit: cover;
               overflow: hidden;
+        }
+    }
+    .ds44-card__section--horizontal {
+        width: 100%;
+        padding: 2rem 7rem;
+        .date {
+            font-size: 1.125em;
+        }
+        .ds44-card__title {
+            font-size: 1.875em;
+            font-weight: normal;
+            margin-bottom: 2em;
+            padding-bottom: 1em;
+            position: relative;
+            width:100%;
+
+            &:after {
+                content: '';
+                display: block;
+                width: 125%;
+                height: 1px;
+                background-color: $ds44-Dobree;
+                position: absolute;
+                bottom: 0;
+                right: 0;
+            }
+        }
+    }
+    .ds44-frw .ds44-card__section--horizontal {
+        .ds44-card__title {
+            &:after {
+                left: 0;
+            }
+        }
+    }
+    @media (max-width: ($ds44-medium - .0625)) {
+        .ds44-flex-container,
+         .ds44-frw {
+            flex-direction: column;
+
+            .ds44-card__section--horizontal {
+                padding: 4rem;
+                text-align: center;
+                align-items: center;
+                .date {
+                    font-size: 0.875em;
+                }
+                .ds44-card__title {
+                    font-size: 1.25em;
+                    margin-bottom: 2rem;
+                    padding-bottom: 0;
+
+                    &:after {
+                        display: none;
+                    }
+                }
+            }
         }
     }
 }
