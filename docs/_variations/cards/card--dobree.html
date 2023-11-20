@@ -12,6 +12,30 @@ layout: pattern
 
 <hr />
 
+<p class="h4-like">Deux tuiles à côté</p>
+<ul class="grid-2-tiny-1 ds44-mosaique ds44-gutter ds44-list">
+    <li {{ include.surcharge-ds }}>
+        {% include card/card--contact.html
+            is-partner="false"
+            has-picture="true"
+            titreTuile="La représentation exotique dans les arts décoratifs"
+            idTuile="8"
+            cardContent='<p class="ds44-docListElem ds44-mt-std"><i class="icon icon-date ds44-docListIco" aria-hidden="true"></i>28 novembre 2019</p>
+            <p class="ds44-docListElem ds44-mt-std"><i class="icon icon-tag ds44-docListIco" aria-hidden="true"></i>Conférence</p>
+            <p class="ds44-docListElem ds44-mt-std"><i class="icon icon-user ds44-docListIco" aria-hidden="true"></i>Les amis du Musée Dobrée</p>'
+        %}    </li>
+    <li>
+        {% include card/card--contact.html
+            is-partner="false"
+            has-picture="true"
+            titreTuile="La représentation exotique dans les arts décoratifs"
+            idTuile="8"
+            cardContent='<p class="ds44-docListElem ds44-mt-std"><i class="icon icon-date ds44-docListIco" aria-hidden="true"></i>28 novembre 2019</p>
+            <p class="ds44-docListElem ds44-mt-std"><i class="icon icon-tag ds44-docListIco" aria-hidden="true"></i>Conférence</p>
+            <p class="ds44-docListElem ds44-mt-std"><i class="icon icon-user ds44-docListIco" aria-hidden="true"></i>Les amis du Musée Dobrée</p>'
+        %}    </li>
+</ul>
+
 
 <p class="h4-like">Tuile date avec lieu</p>
 {% include card/card--contact.html

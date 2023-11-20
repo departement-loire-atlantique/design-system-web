@@ -189,6 +189,20 @@ h6, .h6-like {
 .h2-like.dobree-title {
     font-family: $ds44-font-family-headingsDobree;
     font-weight: normal;
+
+    @media (max-width: $ds44-large - .625) {
+
+    }
+}
+.h1-like.dobree-title{
+    font-size: 3.5em;
+
+    @media (max-width: $ds44-medium - .625) {
+        font-size: 2.5em;
+    }
+    @media (max-width: $ds44-small - .625) {
+        font-size: 1.5em;
+    }
 }
 
 
