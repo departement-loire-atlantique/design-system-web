@@ -1,0 +1,14 @@
+<section class="ds44-card ds44-js-card ds44-card--dobree ds44-box ds44-bgGray">
+    {% if include['has-picture'] == 'true' %}
+    <picture class="ds44-container-imgRatio">
+      <img src="../../assets/images/ds44-logo--sampleImg.png" alt="" class="ds44-imgRatio"/>
+    </picture>
+    {% endif %}
+    <div class="ds44-card__section">
+      <div class="ds44-innerBoxContainer">
+          <p role="heading" aria-level="2" class="h4-like ds44-cardTitle" id="{{ include.idTuile }}"><a href="#" class="ds44-card__globalLink">{{ include.titreTuile }}</a></p>
+          {{ include.cardContent }}
+      </div>
+      <i class="icon icon-arrow-right ds44-cardArrow" aria-hidden="true"></i>
+    </div>
+</section>

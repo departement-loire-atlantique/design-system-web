@@ -274,40 +274,33 @@ figure[role=figure]  + .ds44-card__section {
 .ds44-card__section--horizontal--img {
     width: auto;
     min-width: 38%;
-
     @media (min-width: $ds44-small) and (max-width: ($ds44-large - .0625)) {
         min-width: 20%;
     }
 
     &--dim110 {
         min-width: 31%;
-
         @media (min-width: $ds44-extra-large) {
             min-width: 110px;
         }
     }
+
     &--dim80 {
         min-width: 25%;
-
         @media (min-width: $ds44-extra-large) {
             min-width: 80px;
         }
     }
 }
-
 .ds44-homepage-container .ds44-card__section--horizontal--img {
-
     &--dim110 {
         min-width: 31%;
-
-
         @media (min-width: $ds44-extra-large) {
             min-width: 90px;
         }
         @media (min-width: $ds44-large) and (max-width: ($ds44-extra-large - .0625)) {
             min-width: 80px;
         }
-
     }
 }
 
@@ -352,9 +345,9 @@ figure[role=figure]  + .ds44-card__section {
             &:after {
                 content: '';
                 display: block;
-                width: 125%;
+                width: 150%;
                 height: 1px;
-                background-color: $ds44-Dobree;
+                background-color: $ds44-contextual-color;
                 position: absolute;
                 bottom: 0;
                 right: 0;
@@ -394,7 +387,15 @@ figure[role=figure]  + .ds44-card__section {
     }
 }
 
+// Vertical card Musée Dobrée
 
+.ds44-card.ds44-card--dobree .ds44-card__section {
+  padding: 2rem;
+  position: relative;
+  .ds44-innerBoxContainer {
+      padding: 1rem;
+    }
+}
 
 .ds44-homepage-container .ds44-card {
     z-index: 10;

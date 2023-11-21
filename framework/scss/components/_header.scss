@@ -135,10 +135,21 @@
 /* Musée Dobrée Header */
 .dobree-header {
     min-height: inherit;
+    background: $ds44-light;
     .ds44-colRight {
       min-height: inherit;
       > * {
           margin-right: -4px;
+      }
+      .ds44-btn--menu:focus-visible.ds44-btn--contextual {
+          border: 1px  solid blue;
+      }
+      .choixLangue {
+          border-radius: 3px;
+          background-color: rgba(0, 0, 0, 0);
+          color: $ds44-dark ;
+          padding: 1rem;
+          margin: 0 3rem;
       }
     }
 }
@@ -175,19 +186,17 @@
 }
 /* Musée Dobrée Header Homepage vidéo */
 .dobree-header.containerVideo {
+    background: none;
     .ds44-colRight .dobree-listAccessibility a {
-        background-color: rgba(0, 0, 0, 0.4);
+        background-color: rgba(0, 0, 0, 0.6);
         color: $ds44-light ;
     }
      .ds44-logoContainer img {
       display: none;
     }
     .choixLangue {
-        border-radius: 3px;
-        background-color: rgba(0, 0, 0, 0.4);
+        background-color: rgba(0, 0, 0, 0.6);
         color: $ds44-light ;
-        padding: 1rem;
-        margin: 0 3rem;
     }
 }
 
