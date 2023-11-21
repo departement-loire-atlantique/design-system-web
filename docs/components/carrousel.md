@@ -29,6 +29,9 @@ variations:
 - title: Diaporama photos
   pattern: carrousel/carrousel-photos.html
 
+- title: Slider trois tuiles Dobrée
+  pattern: carrousel/carrousel-x3-Dobree.html
+
 ---
 
 
