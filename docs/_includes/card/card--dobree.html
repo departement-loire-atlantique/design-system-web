@@ -2,6 +2,9 @@
     {% if include['has-picture'] == 'true' %}
     <picture class="ds44-container-imgRatio">
       <img src="../../assets/images/ds44-logo--sampleImg.png" alt="" class="ds44-imgRatio"/>
+      {% if include['has-video'] == 'true' %}
+      <img src="../../assets/icons/icon-player.svg" alt="" class="dobree-icon-player"/>
+      {% endif %}
     </picture>
     {% endif %}
     <div class="ds44-card__section">

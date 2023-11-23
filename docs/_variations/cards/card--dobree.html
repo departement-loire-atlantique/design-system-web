@@ -31,3 +31,50 @@ layout: pattern
 </ul>
 
 <hr />
+
+<p class="h4-like">Deux tuiles à côté - Contenu Vidéo</p>
+<ul class="grid-2-tiny-1 ds44-mosaique ds44-gutter ds44-list">
+    <li>
+        {% include card/card--dobree.html
+            has-picture="true"
+            has-video="true"
+            titreTuile="Les collections en 3D"
+            idTuile="8"
+            cardContent='<p>Explorez une sélection d&apos;oeuvres en 3D</p>'
+        %}    </li>
+        <li>
+            {% include card/card--dobree.html
+                has-picture="true"
+                has-video="true"
+                titreTuile="Espace ressources éducatives"
+                idTuile="8"
+                cardContent='<p>Un espace réservé aux enseignants</p>'
+            %}    </li>
+</ul>
+
+<hr />
+
+<p class="h4-like">Tuiles format portait</p>
+<ul class="grid-3-tiny-1 ds44-mosaique ds44-gutter ds44-list">
+    <li>
+        {% include card/card--dobree-portrait.html
+            has-picture="true"
+            titreTuile="Les collections en 3D"
+            idTuile="8"
+        %}
+    </li>
+    <li>
+        {% include card/card--dobree-portrait.html
+            has-picture="true"
+            titreTuile="Les collections en 3D"
+            idTuile="8"
+        %}
+    </li>
+    <li>
+        {% include card/card--dobree-portrait.html
+            has-picture="true"
+            titreTuile="Les collections en 3D"
+            idTuile="8"
+        %}
+    </li>
+</ul>

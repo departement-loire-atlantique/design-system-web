@@ -115,6 +115,12 @@
         height: 100%;
         margin-bottom: 0;
 
+        .dobree-icon-player {
+            position: absolute;
+            top:calc(50% - 17px);
+            left: calc(50% - 17px);
+        }
+
         .ds44-card__section {
           padding: 2rem;
           position: relative;
@@ -136,6 +142,11 @@
         }
         .ds44-cardArrow {
           color: $ds44-dark ;
+        }
+        .ds44-container-imgRatio--carreAllonge + .ds44-card__section {
+            .ds44-cardArrow {
+                bottom : 1em;
+            }
         }
     }
 
