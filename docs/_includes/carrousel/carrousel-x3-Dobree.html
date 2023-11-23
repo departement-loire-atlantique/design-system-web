@@ -1,5 +1,5 @@
 <div class="ds44-container-large">
-    <div class="mod--hidden ds44-list swipper-carousel-wrap ds44-posRel" data-nb-visible-slides="3">
+    <div class="mod--hidden ds44-list swipper-carousel-wrap swipper-carousel-wrap--dobree ds44-posRel" data-nb-visible-slides="3">
         <div class="swiper-container">
             <ul class="swiper-wrapper ds44-list grid-3-small-1 has-gutter-l ds44-carousel-swiper">
                 <li class="swiper-slide">
@@ -52,5 +52,27 @@
             <i class="icon icon-right" aria-hidden="true"></i>
             <span class="visually-hidden"></span>
         </button>
+        <div class="swiper-thumbs">
+            <div class="swiper-thumbs-container">
+                <nav class="swiper-container" aria-label="Navigation au sein des vignettes - {{ include.titreCarrousel }}">
+
+                    <ul class="swiper-wrapper ds44-list">
+                        <li class="swiper-slide">
+                            {% include carrousel/diaporama/diaporama-thumb-puces.html title="Ceci est la tuile numéro 1" %}
+                        </li>
+                        <li class="swiper-slide">
+                            {% include carrousel/diaporama/diaporama-thumb-puces.html title="Ceci est la tuile numéro 2" %}
+                        </li>
+                        <li class="swiper-slide">
+                            {% include carrousel/diaporama/diaporama-thumb-puces.html title="Ceci est la tuile numéro 3" %}
+                        </li>
+                        <li class="swiper-slide">
+                            {% include carrousel/diaporama/diaporama-thumb-puces.html title="Ceci est la tuile numéro 4" %}
+                        </li>
+                    </ul>
+                </nav>
+            </div>
+        </div>
+
     </div>
 </div>
