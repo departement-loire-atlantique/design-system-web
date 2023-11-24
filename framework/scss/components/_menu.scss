@@ -351,6 +351,13 @@
         background-color: rgba(255, 255, 255, 0.4);
     }
   }
+  //Zoom à 200% passe le menu visible entièrement
+  @media (-webkit-device-pixel-ratio: 4) {
+  .ds44-navContainer > .ds44-inner-container  {
+    max-height: inherit;
+  }
+}
+
 }
 .dobree-menu.ds44-blocMenu .dobree-blocVousEtes {
     background-color: $ds44-lightgray ;

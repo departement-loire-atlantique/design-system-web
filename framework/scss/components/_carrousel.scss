@@ -142,7 +142,7 @@
 
         &.ds44-not-edge-42 {
             .icon::before {
-                font-size: 45px;
+                font-size: 55px;
 
                 @media screen and (max-width: $ds44-medium - .0625) {
                     font-size: 30px;
@@ -383,16 +383,17 @@
 
                   > * {
                       display: inline-flex;
+                      align-items: center;
                   }
                    .swiper-wrapper .swiper-slide .ds44-diaporama-thumb {
-                      width: 13px;
-                      height: 13px;
+                      width: 9px;
+                      height: 9px;
                       padding: 0;
                       border: 1px solid $ds44-dark;
                   }
                    .swiper-wrapper .swiper-slide.swiper-slide-thumb-active  .ds44-diaporama-thumb  {
                       background: $ds44-dark;
-                      border: 1px solid $ds44-dark;
+                      border: 2px solid $ds44-dark;
                   }
             }
             }
