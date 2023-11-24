@@ -196,6 +196,7 @@ h6, .h6-like {
 }
 .h1-like.dobree-title{
     font-size: 3.5em;
+    line-height: 1.2em;
 
     @media (max-width: $ds44-medium - .625) {
         font-size: 2.5em;
