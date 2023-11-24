@@ -141,8 +141,9 @@
       > * {
           margin-right: -4px;
       }
-      .ds44-btn--menu:focus-visible.ds44-btn--contextual {
-          border: 1px  solid blue;
+      .ds44-btn--menu:focus-visible.ds44-btn--contextual,
+      #open-menu:focus-visible {
+          border: 1px solid blue;
       }
       .choixLangue {
           border-radius: 3px;
