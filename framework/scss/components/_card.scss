@@ -144,6 +144,9 @@
           color: $ds44-dark ;
         }
         .ds44-container-imgRatio--carreAllonge + .ds44-card__section {
+            .ds44-cardTitle a {
+                font-size: 1.5em;
+            }
             .ds44-cardArrow {
                 bottom : 1em;
             }
