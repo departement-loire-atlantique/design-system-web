@@ -406,6 +406,18 @@ figure[role=figure]  + .ds44-card__section {
             }
         }
     }
+
+    &.dobree-text-image {
+        .ds44-card__section--horizontal--img {
+            width: 50%;
+            min-width: 50%;
+            height: auto;
+
+            .ds44-container-imgRatio {
+              height: 100%;
+            }
+        }
+    }
     @media (max-width: ($ds44-medium - .0625)) {
         .ds44-flex-container,
          .ds44-frw {

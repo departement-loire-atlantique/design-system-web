@@ -48,6 +48,10 @@ variations:
   description: Lien vers les horaires d'ouverture du site Musée Dobrée.
   pattern: composants-transverses/horaires-ouverture.html
 
+- title: Image et Texte
+  description: Section texte et image partagé 50/50
+  pattern: composants-transverses/text-image.html
+
 
 ---
 
