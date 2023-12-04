@@ -277,6 +277,10 @@
 .dobree-menu.ds44-blocMenu {
     .ds44-navContainer {
       padding-top: 0rem;
+
+      & > .ds44-inner-container {
+          max-height: inherit;
+        }
     }
     .ds44-logoContainer img {
          display: block;
