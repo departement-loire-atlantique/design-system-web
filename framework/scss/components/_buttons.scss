@@ -528,7 +528,7 @@ a.ds44-btnStd--retourPage {
         content: '';
         display: block;
         position: absolute;
-        top: 3px;
+        top: 20%;
         left: -20px;
         width: 12px;
         height: 12px;
@@ -566,6 +566,30 @@ a.ds44-btnStd--retourPage {
 
         &::after {
             width: 50px;
+        }
+    }
+}
+.dobree-link-2 {
+    font-size: 16px;
+    margin-bottom: 1rem;
+    position: relative;
+    text-decoration: none;
+
+    &::before {
+      content: '';
+      display: block;
+      width: 10px;
+      height: 4px;
+      background: $ds44-color-base;
+      margin-left: -15px;
+      position: absolute;
+      top: 8px;
+      transition: all ease-in-out .25s;
+      opacity: 0;
+    }
+    &:hover, &:focus {
+        &::before {
+          opacity: 1;
         }
     }
 }
