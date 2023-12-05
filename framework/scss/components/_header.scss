@@ -1,4 +1,5 @@
 /*
+/*
 * CD44 Design System - Headers
 */
 
@@ -230,6 +231,9 @@
         min-height: $header-height-medium;
         padding: 0;
         left: 0;
+    }
+   .ds44-header.dobree-header {
+        min-height: 5.8rem ;
     }
 
     .ds44-header .ds44-colRight {

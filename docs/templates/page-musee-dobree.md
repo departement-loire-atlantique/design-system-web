@@ -10,9 +10,9 @@ status: Validé
 variations:
 - title: Accueil Dobrée
   pattern: page/MD__accueil.html
-  
-- title: Accueil Dobrée
-  pattern: page/MD__accueil.html
+
+- title: Les bonnes raisons 
+  pattern: page/MD__raisons.html
 
 
 ---
