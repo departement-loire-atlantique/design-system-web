@@ -28,8 +28,12 @@ variations:
   pattern: images/mosaiques.html
 
 - title: Vidéo
-  description: Vidéo du Muée Dobrée
+  description: Vidéo du Musée Dobrée
   pattern: images/video-dobree.html
+
+- title: Image pleine largeur
+  description: Image bandeau décorative du Musée Dobrée
+  pattern: images/img_bandeau.html
 ---
 
 

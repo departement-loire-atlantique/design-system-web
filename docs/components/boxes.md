@@ -4,7 +4,7 @@ group: components
 
 title: Encadrés
 alternative_title: boxes
-description: Un encadré permet la mise en exergue de contenus. Également connu en tant que boxes 
+description: Un encadré permet la mise en exergue de contenus. Également connu en tant que boxes
 status: Validé
 
 variations:
@@ -44,6 +44,10 @@ variations:
 - title: Navigation
   description: Encadrés de navigation interne à une page (flottants)
   pattern: boxes/box-navigation.html
+
+- title: Titre
+  description: Encadrés contenant un titre et un bouton (Dobrée)
+  pattern: boxes/box-title.html
 
 ---
 

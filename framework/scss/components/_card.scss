@@ -412,9 +412,45 @@ figure[role=figure]  + .ds44-card__section {
             width: 50%;
             min-width: 50%;
             height: auto;
+            position: relative;
+
+            &:hover, :active, :focus {
+                cursor: pointer;
+            }
+            .ds44-btnIco {
+                position: absolute;
+                top: 10px;
+                right:10px;
+                height: 30px;
+                  width: 30px;
+                  border-radius: 30px;
+                  background-color: rgba(0,0,0,0.4);
+
+                  .icon::before {
+                      line-height: .7;
+                    }
+            }
 
             .ds44-container-imgRatio {
               height: 100%;
+              button {
+                  padding: 0;
+              }
+            }
+            @media (max-width: ($ds44-medium - .0625)) {
+                min-width: 100%;
+            }
+        }
+        .ds44-card__section--horizontal  {
+            .ds44-card__title {
+                margin-bottom: 0;
+
+                &::after {
+                    display: none;
+                }
+            }
+            @media (max-width: ($ds44-medium - .0625)) {
+                text-align: left !important;
             }
         }
     }
