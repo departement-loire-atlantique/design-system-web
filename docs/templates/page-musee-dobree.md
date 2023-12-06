@@ -11,8 +11,11 @@ variations:
 - title: Accueil Dobrée
   pattern: page/MD__accueil.html
 
-- title: Les bonnes raisons 
+- title: Les bonnes raisons
   pattern: page/MD__raisons.html
+
+- title: Horaires, tarifs
+  pattern: page/MD__horaires-tarifs.html
 
 
 ---

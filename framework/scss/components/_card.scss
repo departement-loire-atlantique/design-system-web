@@ -454,6 +454,32 @@ figure[role=figure]  + .ds44-card__section {
             }
         }
     }
+
+    &.dobree-card--tarif {
+        p[role=heading] {
+            font-size: 1.25em;
+            margin-bottom: 2rem;
+        }
+        .ds44-card__section--horizontal--img {
+            height: 260px;
+            .dobree-imgFocus {
+              height: 260px;
+            }
+        }
+        .txtTarif {
+            width: 90px;
+            display: inline-block;
+        }
+        .tarif::before {
+            content: '';
+            display: inline-block;
+            width: 80px;
+            height: 1px;
+            background: $ds44-color-base;
+            margin: 4px 10px;
+        }
+
+    }
     @media (max-width: ($ds44-medium - .0625)) {
         .ds44-flex-container,
          .ds44-frw {
@@ -484,6 +510,14 @@ figure[role=figure]  + .ds44-card__section {
 .ds44-homepage-container .ds44-card {
     z-index: 10;
 }
+
+.dobree-fontSize-20 {
+    font-size: 1.25em;
+    @media (max-width: ($ds44-medium - .0625)) {
+        font-size: 1em;
+    }
+}
+
 
 // Calendar card
 

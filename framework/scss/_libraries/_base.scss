@@ -190,8 +190,8 @@ h6, .h6-like {
     font-family: $ds44-font-family-headingsDobree;
     font-weight: normal;
 
-    @media (max-width: $ds44-large - .625) {
-
+    &.dobree-title--helvetica {
+        font-family: $ds44-font-family-baseDobree;
     }
 }
 .h1-like.dobree-title{

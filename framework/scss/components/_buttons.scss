@@ -523,6 +523,7 @@ a.ds44-btnStd--retourPage {
 .horairesOuverture{
     font-size: 20px;
     color: $ds44-light;
+    position: relative;
 
     &::before {
         content: '';
