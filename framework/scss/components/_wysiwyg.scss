@@ -342,6 +342,15 @@ table.ds44-table {
     }
 }
 
+.tableau_dobree {
+    th, td {
+        border: 1px solid $ds44-light  ;
+    }
+    tr > td:first-of-type {
+        text-align: left;
+    }
+}
+
 
 
 @media (max-width: 64em) {

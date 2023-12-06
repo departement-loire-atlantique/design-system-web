@@ -25,7 +25,6 @@ layout: pattern
                     </div>
                   </div>
                 </section>
-                {% include card/card--tarifs.html title="Entrée collection permanente" aria-level="3" %}
             </div>
         </div>
     </section>
@@ -39,33 +38,151 @@ layout: pattern
                 			<button type="button" class="ds44-collapser_button">Visite libre<i class="icon icon-down" aria-hidden="true"></i></button>
                         </p>
                 		<div class="ds44-collapser_content">
-                            <ul class="ds44-list ds44-collapser_content--level2">
-                                <li><a href="#" class="ds44-collapser_content--link">Lien direct vers sous-catégorie N2 (sans sous-catégorie N3)</a></li>
-                                <li><a href="#" class="ds44-collapser_content--link">Lien direct vers sous-catégorie N2 (sans sous-catégorie N3)</a></li>
-                                <li><a href="#" class="ds44-collapser_content--link">Lien direct vers sous-catégorie N2</a></li>
-                                <li><a href="#" class="ds44-collapser_content--link">Lien direct vers sous-catégorie N2</a></li>
-                            </ul>
+                            <div class="ds44-mtb5 ds44-xl-fluid-margin">
+                                <p role="heading" aria-level="3" class="ds44-mb2">Vous parcourez les salles du musée librement</p>
+                                {% include card/card--tarifs.html title="Entrée collection permanente" aria-level="3" %}
+                                <div class="grid-2-tiny-1 has-gutter-xl ds44-mt3">
+                                        <section class="ds44-card ds44-card--noLink ds44-card--horizontal ds44-card--focus dobree-card--tarif">
+                                      <div class="ds44-flex-container ds44-flex-valign-center">
+                                        <div class="ds44-card__section--horizontal">
+                                          <p role="heading" aria-level="4">Entrée gratuite</p>
+                                          <ul class="ds44-mb2">
+                                              <li class="ds44-listDisc">Moins de 26 ans</li>
+                                              <li class="ds44-listDisc">Étudiant.es</li>
+                                              <li class="ds44-listDisc">Demandeurs.euses d’emploi inscrit.es à Pôle Emploi</li>
+                                              <li class="ds44-listDisc">Bénéficiaires de minima sociaux (RSA, ASS...)</li>
+                                              <li class="ds44-listDisc">Personnes en situation de handicap</li>
+                                          </ul>
+                                          <p><a class="ds44-btnStd"><span class="ds44-btnInnerText">Voir toutes les gratuités</span><i class="icon icon-long-arrow-right" aria-hidden="true"></i></a></p>
+                                        </div>
+                                      </div>
+                                    </section>
+                                    <section class="ds44-card ds44-card--noLink ds44-card--horizontal ds44-card--focus dobree-card--tarif">
+                                      <div class="ds44-flex-container ds44-flex-valign-center">
+                                        <div class="ds44-card__section--horizontal">
+                                          <p role="heading" aria-level="4">Tarif réduit</p>
+                                          <ul class="ds44-mb2">
+                                              <li class="ds44-listDisc">Titulaires de cartes partenaires spécifiques</li>
+                                              <li class="ds44-listDisc">Carte famille nombreuse</li>
+                                              <li class="ds44-listDisc">Utilisateurs.rices du train : abonnements SNCF et Aléop, billet de train du jour</li>
+                                              <li class="ds44-listDisc">Dernière heure chaque jour</li>
+                                          </ul>
+                                          <p><a class="ds44-btnStd"><span class="ds44-btnInnerText">Voir tous les tarifs réduits</span><i class="icon icon-long-arrow-right" aria-hidden="true"></i></a></p>
+                                        </div>
+                                      </div>
+                                    </section>
+                                </div>
+                            </div>
                         </div>
                     </li>
                     <li class="ds44-collapser_element">
-                		<p role="heading" aria-level="3">
-                			<button type="button" class="ds44-collapser_button">Catégorie N1<i class="icon icon-down" aria-hidden="true"></i></button>
+                        <p role="heading" aria-level="3">
+                            <button type="button" class="ds44-collapser_button">Visite libre Version 2<i class="icon icon-down" aria-hidden="true"></i></button>
                         </p>
-                		<div class="ds44-collapser_content">
-                            <ul class="ds44-list ds44-collapser_content--level2">
-                                <li><a href="#" class="ds44-collapser_content--link">Lien direct vers N2 (sans sous-catégorie N3)</a></li>
-                                <li><a href="#" class="ds44-collapser_content--link">Lien direct vers N2 (sans sous-catégorie N3)</a></li>
-                                <li>
-                                    <a href="#" class="ds44-collapser_content--link">Lien direct vers sous-catégorie N2</a>
-                                    <ul class="ds44-list ds44-collapser_content--level3">
-                                        <li><a href="#" class="ds44-collapser_content--link">Lien direct (dernier niveau)</a></li>
-                                        <li><a href="#" class="ds44-collapser_content--link">Lien direct (dernier niveau)</a></li>
-                                        <li><a href="#" class="ds44-collapser_content--link">Lien direct (dernier niveau)</a></li>
-                                    </ul>
-                                </li>
-                                <li><a href="#" class="ds44-collapser_content--link">Lien direct vers sous-catégorie N2</a></li>
-                                <li><a href="#" class="ds44-collapser_content--link">Lien direct vers sous-catégorie N2</a></li>
-                            </ul>
+                        <div class="ds44-collapser_content">
+                            <div class="ds44-mtb5 ds44-container-large">
+                                <p role="heading" aria-level="3" class="ds44-mb2">Vous parcourez les salles du musée librement</p>
+                                <div class="grid-12 has-gutter-xl">
+                                    <div class="col-7">
+                                        <div class="ds44-mb2">
+                                            {% include card/card--tarifs.html title="Entrée collection permanente" aria-level="3" imgdim="--dim80" %}
+                                        </div>
+                                        <div class="ds44-mb2">
+                                            {% include card/card--tarifs.html title="Entrée exposition temporaire" aria-level="3" imgdim="--dim80" %}
+                                        </div>
+                                        <div class="ds44-mb2">
+                                            {% include card/card--tarifs.html title="Entrée collection permanente + exposition temporaire" aria-level="3" imgdim="--dim80" %}
+                                        </div>
+                                    </div>
+                                    <div class="col-5">
+                                        <section class="ds44-card ds44-card--noLink ds44-card--horizontal ds44-card--focus dobree-card--tarif">
+                                          <div class="ds44-flex-container ds44-flex-valign-center">
+                                            <div class="ds44-card__section--horizontal">
+                                                <p role="heading" aria-level="4">Entrée gratuite</p>
+                                                <ul class="ds44-mb2">
+                                                    <li class="ds44-listDisc">Moins de 26 ans</li>
+                                                    <li class="ds44-listDisc">Étudiant.es</li>
+                                                    <li class="ds44-listDisc">Demandeurs.euses d’emploi inscrit.es à Pôle Emploi</li>
+                                                    <li class="ds44-listDisc">Bénéficiaires de minima sociaux (RSA, ASS...)</li>
+                                                    <li class="ds44-listDisc">Personnes en situation de handicap</li>
+                                                </ul>
+                                              <p><a class="ds44-btnStd"><span class="ds44-btnInnerText">Voir tous les tarifs réduits</span><i class="icon icon-long-arrow-right" aria-hidden="true"></i></a></p>
+                                            </div>
+                                          </div>
+                                        </section>
+                                        <section class="ds44-card ds44-card--noLink ds44-card--horizontal ds44-card--focus dobree-card--tarif">
+                                          <div class="ds44-flex-container ds44-flex-valign-center">
+                                            <div class="ds44-card__section--horizontal">
+                                              <p role="heading" aria-level="4">Tarif réduit</p>
+                                              <ul class="ds44-mb2">
+                                                  <li class="ds44-listDisc">Titulaires de cartes partenaires spécifiques</li>
+                                                  <li class="ds44-listDisc">Carte famille nombreuse</li>
+                                                  <li class="ds44-listDisc">Utilisateurs.rices du train : abonnements SNCF et Aléop, billet de train du jour</li>
+                                                  <li class="ds44-listDisc">Dernière heure chaque jour</li>
+                                              </ul>
+                                              <p><a class="ds44-btnStd"><span class="ds44-btnInnerText">Voir tous les tarifs réduits</span><i class="icon icon-long-arrow-right" aria-hidden="true"></i></a></p>
+                                            </div>
+                                          </div>
+                                        </section>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </li>
+                    <li class="ds44-collapser_element">
+                        <p role="heading" aria-level="3">
+                            <button type="button" class="ds44-collapser_button">Visite de groupe<i class="icon icon-down" aria-hidden="true"></i></button>
+                        </p>
+                        <div class="ds44-collapser_content">
+                            <div class="ds44-mtb5 ds44-container-large">
+                                {% include onglets/onglets-lateral.html
+                                  titleOngletUn="Groupes scolaires"
+                                  titleOngletDeux="Groupes ALSH centre de loisir"
+                                  titleOngletTrois="Groupes Culture-social"
+                                  titleOngletQuatre="Groupes constitués"
+                                  contenuOngletUn='
+                                <div class="ds44-lightBG ds44--l-padding">
+                                    <table class="ds44-tableau_4col ds44-mtb1 tableau_dobree">
+                                        <caption>Tarifs par groupe – à compter du 01/09/2024</caption>
+                                        <tbody>
+                                            <tr>
+                                                <th scope="col"></th>
+                                                <th scope="col">Visites en autonomie</th>
+                                                <th scope="col">Visites guidées</th>
+                                                <th scope="col">Ateliers</th>
+                                            </tr>
+                                            <tr>
+                                                <td><b>Collèges 44</b></td>
+                                                <td>Gratuit</td>
+                                                <td>Gratuit</td>
+                                                <td>XX€</td>
+                                            </tr>
+                                            <tr>
+                                                <td><b>Établissements REP + ULYS</b></td>
+                                                <td>Gratuit</td>
+                                                <td>Gratuit</td>
+                                                <td>XX€</td>
+                                            </tr>
+                                            <tr>
+                                                <td><b>Autres</b></td>
+                                                <td>Gratuit</td>
+                                                <td>Gratuit</td>
+                                                <td>XX€</td>
+                                            </tr>
+
+                                        </tbody>
+                                    </table>
+                                    <p class="ds44-textLegend">Si 2 activités payantes : 2e activité à 28 €</p>
+                                    <p class="ds44-txtRight"><a class="ds44-btnStd"><span class="ds44-btnInnerText">Plus d&#39;infos sur les visites proposées</span><i class="icon icon-long-arrow-right" aria-hidden="true"></i></a></p>
+
+                                </div>
+                                  '
+
+                                  contenuOngletDeux='<p>Ici le contenu du deuxieme onglet <a href="#">Tab 2</a></p>'
+                                  contenuOngletTrois='<p>Ici le contenu du troisieme onglet <a href="#">Tab 3</a></p>'
+                                  contenuOngletQuatre='<p>Ici le contenu du quatrième onglet <a href="#">Tab 4</a></p>'
+                                %}
+                            </div>
                         </div>
                     </li>
                 </ul>

@@ -323,6 +323,11 @@ ul:not(.ds44-list):not(.ds44-collapser) {
         list-style-image: unset;
       }
     }
+
+    &.ds44-listDisc {
+        list-style-type: disc !important;
+        list-style-image: unset;
+    }
   }
 }
 

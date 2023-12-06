@@ -456,29 +456,36 @@ figure[role=figure]  + .ds44-card__section {
     }
 
     &.dobree-card--tarif {
-        p[role=heading] {
-            font-size: 1.25em;
-            margin-bottom: 2rem;
+        .ds44-card__section--horizontal {
+            padding: 2rem 3rem;
+            p[role=heading] {
+                font-size: 1.25em;
+                margin-bottom: 2rem;
+            }
+            .tarif::before {
+                content: '';
+                display: inline-block;
+                width: 80px;
+                height: 1px;
+                background: $ds44-color-base;
+                margin: 4px 10px;
+            }
+            .txtTarif {
+                width: 90px;
+                display: inline-block;
+            }
+            ul:not(.ds44-list) {
+                padding-left: 2rem;
+            }
         }
-        .ds44-card__section--horizontal--img {
+        .ds44-card__section--horizontal--img,
+        .ds44-card__section--horizontal--img--dim80 {
             height: 260px;
             .dobree-imgFocus {
               height: 260px;
+              object-fit: cover;
             }
         }
-        .txtTarif {
-            width: 90px;
-            display: inline-block;
-        }
-        .tarif::before {
-            content: '';
-            display: inline-block;
-            width: 80px;
-            height: 1px;
-            background: $ds44-color-base;
-            margin: 4px 10px;
-        }
-
     }
     @media (max-width: ($ds44-medium - .0625)) {
         .ds44-flex-container,
