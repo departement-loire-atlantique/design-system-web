@@ -1236,8 +1236,8 @@ h6.visually-hidden + * {
     }
 
     .ds44--xxl-padding-tb {
-        padding-top: $ds44-padding-xlarge; // 3rem
-        padding-bottom: $ds44-padding-xlarge; // 3rem
+        padding-top: $ds44-padding-xlarge !important; // 3rem
+        padding-bottom: $ds44-padding-xlarge !important; // 3rem
     }
 
     .ds44-xl-margin-tb {
@@ -1293,6 +1293,10 @@ h6.visually-hidden + * {
     .ds44-tablet-padding-tb {
         padding-top: $ds44-padding-medium; // 1rem
         padding-bottom: $ds44-padding-medium; // 1rem
+    }
+    .ds44--xxl-padding-tb {
+        padding-top: $ds44-padding-large*2 !important; // 4rem
+        padding-bottom: $ds44-padding-large*2 !important; // 4rem
     }
 
 }

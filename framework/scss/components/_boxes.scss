@@ -343,6 +343,38 @@
 }
 
 
+// Bloc logos et tarfis Musée Dobrée
+.dobree-bloc-tarif {
+    .list-logos {
+        border-radius: 36px 0 0 36px;
+        padding: 4rem;
+
+        @media (max-width: $ds44-tiny) {
+            border-radius: 36px 36px 0 0 ;
+            margin-bottom: 0;
+        }
+        li img {
+            height: 43px;
+            padding: 0;
+            margin-bottom: 2rem;
+        }
+        li:last-child img {
+            margin-bottom: 0;
+        }
+    }
+    .prix {
+        border-radius: 0 36px 36px 0;
+        font-weight: bold;
+        display: flex;
+
+        @media (max-width: $ds44-tiny) {
+            border-radius:  0 0 36px 36px;
+            padding: 3rem 0;
+        }
+    }
+}
+
+
 /* =======
   MEDIA QUERIES
   === */
