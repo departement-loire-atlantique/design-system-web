@@ -17,6 +17,9 @@ variations:
 - title: Horaires, tarifs
   pattern: page/MD__horaires-tarifs.html
 
+- title: Dossier
+  pattern: page/MD__dossier.html
+
 
 ---
 ## Utilisation
