@@ -4,6 +4,10 @@ layout: pattern
 
 {% include header/inc-header-musee-dobree.html logoAlt="" %}
 
+<button class="ds44-btnStd ds44-btn--invert ds44-fullWBtn ds44-btn-fixed ds44-show-tinyToLarge ds44-hide-large" id="ds44-summary-button" type="button" data-target="#navSommaire">
+    <span class="ds44-btnInnerText">Sommaire</span><i class="icon icon-summary" aria-hidden="true"></i>
+</button>
+
 <main role="main" id="content" class="main-dobree">
 
     <section class="ds44-container-fluid">
@@ -33,7 +37,7 @@ layout: pattern
             <div class="ds44-inner-container">
                 <div class="grid-12-medium-1 grid-12-small-1">
 
-                    <aside class="col-4 ds44-hide-tinyToLarge ds44-js-aside-summary">
+                    <aside class="col-4 ds44-hide-tinyToMedium ds44-js-aside-summary ds44-mb3">
                         <section class="ds44-box ds44-theme">
                             <nav role="navigation" class="ds44-innerBoxContainer">
                                 <p role="heading" aria-level="2" class="ds44-box-heading">Sommaire</p>
@@ -48,11 +52,11 @@ layout: pattern
 
                     <div class="col-1 grid-offset ds44-hide-tinyToLarge"></div>
 
-                    <article class="col-7 ds44-contenuDossier">
+                    <article class="col-7 ds44-contenuDossier ds44-mb3">
                         <p class="ds44-introduction">Place au vote ! Depuis le 9 octobre, les habitantes et habitants de Loire-Atlantique peuvent voter parmi les 245 projets citoyens retenus dans le cadre du budget participatif lancé par le Département. Le vote se fait uniquement en ligne jusqu’au lundi 13 novembre 2023 inclus. Lancez-vous !</p>
 
-                        <section class="ds44-contenuArticle" id="section1">
-                            <h2 id="idTitre2" class="h3-like dobree-title dobree-title--helvetica">Dernière ligne droite pour le premier budget participatif</h2>
+                        <section class="ds44-contenuArticle ds44-contenuArticle--dobree" id="section1">
+                            <h2 id="idTitre2">Dernière ligne droite pour le premier budget participatif</h2>
                             <p>Pendant plusieurs mois, les services du Département ainsi que le comité citoyen, composé de 24 membres, ont analysé l’éligibilité des 397 projets déposés en fonction des critères du règlement et de leur faisabilité (coût, calendrier, faisabilité technique). Les projets lauréats seront révélés en décembre, à la suite de la validation de la liste par le comité citoyen. Leur réalisation se fera en 2024 et 2025.</p>
                             <p><b>Pour cette première édition, une enveloppe de 2 millions d’euros est consacrée au budget participatif, avec un montant maximum de 50 000 euros par projet.</b></p>
                             <div class="ds44-contenuMedia">
@@ -62,13 +66,14 @@ layout: pattern
                             </div>
                         </section>
 
-                        <section class="ds44-contenuArticle" id="section2">
-                            <h2 id="idTitre3" class="h3-like dobree-title dobree-title--helvetica">245 projets citoyens ouverts au vote</h2>
+                        <section class="ds44-contenuArticle ds44-contenuArticle--dobree" id="section2">
+                            <h2 id="idTitre3">245 projets citoyens ouverts au vote</h2>
                             <p>Pendant plusieurs mois, les services du Département ainsi que le comité citoyen, composé de 24 membres, ont analysé l’éligibilité des 397 projets déposés en fonction des critères du règlement et de leur faisabilité (coût, calendrier, faisabilité technique). Les projets lauréats seront révélés en décembre, à la suite de la validation de la liste par le comité citoyen. Leur réalisation se fera en 2024 et 2025.</p>
                             <p><a class="ds44-btnStd ds44-btn--contextual"><span class="ds44-btnInnerText">Je vote en ligne</span><i class="icon icon-long-arrow-right" aria-hidden="true"></i></a></p>
                         </section>
-                        <section class="ds44-contenuArticle" id="section3">
-                            <h2 id="idTitre4" class="h3-like dobree-title dobree-title--helvetica">Le calendrier du budget participatif</h2>
+                        <section class="ds44-contenuArticle ds44-contenuArticle--dobree" id="section3">
+                            <h2 id="idTitre4">Le calendrier du budget participatif</h2>
+                            <p>Pendant plusieurs mois, les services du Département ainsi que le comité citoyen, composé de 24 membres, ont analysé l’éligibilité des 397 projets déposés en fonction des critères du règlement et de leur faisabilité (coût, calendrier, faisabilité technique). Les projets lauréats seront révélés en décembre, à la suite de la validation de la liste par le comité citoyen. Leur réalisation se fera en 2024 et 2025.</p>
                             <p>Pendant plusieurs mois, les services du Département ainsi que le comité citoyen, composé de 24 membres, ont analysé l’éligibilité des 397 projets déposés en fonction des critères du règlement et de leur faisabilité (coût, calendrier, faisabilité technique). Les projets lauréats seront révélés en décembre, à la suite de la validation de la liste par le comité citoyen. Leur réalisation se fera en 2024 et 2025.</p>
                             <p><a class="ds44-btnStd ds44-btn--contextual"><span class="ds44-btnInnerText">Je vote en ligne</span><i class="icon icon-long-arrow-right" aria-hidden="true"></i></a></p>
                         </section>
@@ -83,8 +88,25 @@ layout: pattern
 
 </main>
 
-<button class="ds44-btnStd ds44-btn--invert ds44-fullWBtn ds44-btn-fixed ds44-show-tinyToLarge ds44-hide-large" id="ds44-summary-button" type="button" data-target="#navSommaire">
-    <span class="ds44-btnInnerText">Sommaire</span><i class="icon icon-summary" aria-hidden="true"></i>
-</button>
+
+<section id="summaryMenu" class="ds44-overlay ds44-overlay--navFromBottom" aria-modal="true" role="dialog" aria-label="Sommaire" aria-labelledby="titreSommaire"><span class="ds44-tmpFocusHidden" tabindex="0"></span>
+    <div class="ds44-container-menuBackLink">
+        <p role="heading" aria-level="1" class="ds44-menuBackLink">Sommaire</p>
+    </div>
+    <button type="button" class="ds44-btnOverlay ds44-btnOverlay--closeOverlay ds44-tmpFirstFocus" aria-label="Fermer le menu Sommaire">
+        <i class="icon icon-cross icon--xlarge" aria-hidden="true"></i><span class="ds44-btnInnerText--bottom">Fermer</span>
+    </button>
+    <p id="titreSommaire" role="heading" aria-level="1" class="visually-hidden">Menu "Sommaire"</p>
+    <div class="ds44-flex-container ds44-flex-valign-center ds44-flex-align-center ds44-hv100 ds44-container-large ds44-tiny-to-med-atop ds44-ttl-pt9">
+        <div class="ds44-grid-valign-center ds44-w100">
+            <ul class="ds44-list ds44-list--puces">
+                <li><a href="#section1">Dernière ligne droite pour le premier budget participatif</a></li>
+                <li><a href="#section2">245 projets citoyens ouverts au vote</a></li>
+                <li><a href="#section3" class="ds44-tmpLastFocus">Le calendrier du budget participatif</a></li>
+            </ul>
+        </div>
+    </div>
+    <span class="ds44-tmpFocusHidden" tabindex="0"></span>
+</section>
 
 {% include footer/footer-dobree.html %}

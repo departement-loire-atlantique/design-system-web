@@ -20,6 +20,15 @@ variations:
 - title: Dossier
   pattern: page/MD__dossier.html
 
+- title: Article
+  pattern: page/MD__article.html
+
+- title: Agenda
+  pattern: page/MD__agenda.html
+
+- title: Agenda
+  pattern: page/MD__evenement.html
+
 
 ---
 ## Utilisation

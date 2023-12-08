@@ -32,6 +32,58 @@
 
 }
 
+.ds44-contenuArticle.ds44-contenuArticle--dobree {
+    margin: 0 auto 5rem auto;
+
+    h2, h3, h4 {
+        font-family: $ds44-font-family-baseDobree;
+        font-weight: normal;
+        padding: 0;
+        background: transparent;
+        margin-top: 4rem;
+        margin-bottom: 2rem;
+        display: block;
+    }
+
+    h2 {
+        font-size: 1.875em;
+
+        @media (max-width: $ds44-medium - .625) {
+            font-size: 1.5em;
+        }
+        @media (max-width: $ds44-small - .625) {
+            font-size: 1.25em;
+        }
+    }
+    h3{
+        font-size: 1.25em;
+        font-weight: bold;
+
+        @media (max-width: $ds44-medium - .625) {
+            font-size: 1.25em;
+        }
+        @media (max-width: $ds44-small - .625) {
+            font-size: 1em;
+        }
+    }
+    h4{
+        font-size: 1.125em;
+    }
+    ul:not(.ds44-list):not(.ds44-collapser) > li {
+      list-style-position: outside;
+      list-style-image: none;
+      list-style-type: disc;
+    }
+    .grid-12 {
+        margin: 3rem 0;
+        h2,
+        h3,
+        h4 {
+            margin-top: 0;
+        }
+    }
+}
+
 .ds44-bgDark {
   .ds44-contenuArticle {
 

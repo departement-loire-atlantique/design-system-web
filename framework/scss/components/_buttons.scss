@@ -189,6 +189,19 @@ a > .ds44-btn--contextual,
           background: $ds44-background-dark;
         }
     }
+    .ds44-facette .ds44-btnStd, .ds44-facette .ds44-btnStd--large {
+        background-color: $ds44-contextual-color!important;
+        border-color: $ds44-contextual-color;
+        color: $ds44-color-base;
+
+        &:focus,
+        &:hover,
+        &:active {
+            background-color: $ds44-contextual-hover!important;
+            border-color: $ds44-contextual-color;
+            color: $ds44-color-base;
+        }
+    }
 
 }
 
