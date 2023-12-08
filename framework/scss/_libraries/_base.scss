@@ -233,6 +233,16 @@ h6, .h6-like {
         font-size: 1.25em;
     }
 }
+.h4-like.dobree-title{
+    font-size: 1.25em;
+
+    @media (max-width: $ds44-medium - .625) {
+        font-size: 1.25em;
+    }
+    @media (max-width: $ds44-small - .625) {
+        font-size: 1.125em;
+    }
+}
 .dobree-title--helvetica {
     font-family: $ds44-font-family-baseDobree !important;
 }
@@ -351,11 +361,13 @@ ul:not(.ds44-list):not(.ds44-collapser) {
         list-style-image: unset;
       }
     }
-
-    &.ds44-listDisc {
-        list-style-type: disc !important;
-        list-style-image: unset;
-    }
+  }
+  &.ds44-listDisc  {
+      padding-left: 2rem;
+      > li {
+          list-style-type: disc !important;
+          list-style-image: unset;
+      }
   }
 }
 

@@ -26,8 +26,11 @@ variations:
 - title: Agenda
   pattern: page/MD__agenda.html
 
-- title: Agenda
+- title: Événement
   pattern: page/MD__evenement.html
+
+- title: Exposition
+  pattern: page/MD__exposition.html
 
 
 ---
