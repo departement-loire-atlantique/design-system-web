@@ -14,11 +14,11 @@
                     <span>Un musée du Département de Loire-Atlantique</span>
                 </a>
             </p>
-            {% include composants-transverses/inc-fleche-ancre.html %}
+            {% include composants-transverses/inc-fleche-ancre.html anchor="#video-anchor" %}
             <div class="ds44-flex-container ds44-flex-valign-center mobile">
-                <button class="ds44-btnIco ds44-btnIco--carre ds44-bgDark ds44-mr5" type="button">
-                    <i class="icon icon-pause" aria-hidden="true"></i>
-                    <span class="visually-hidden">Arrêter l'animation</span>
+                <button class="ds44-btnIco ds44-btnIco--carre ds44-bgDark ds44-mr5" data-video-button="video-presentation" type="button">
+                    <i class="icon icon-pause" data-icon-play="icon-play" data-icon-pause="icon-pause" aria-hidden="true"></i>
+                    <span class="value visually-hidden" data-value-play="Démarrer l'animation" data-value-pause="Arrêter l'animation">Arrêter l'animation</span>
                 </button>
                 {% include composants-transverses/inc-horaires-ouverture.html %}
             </div>
@@ -37,7 +37,7 @@
         </div>
     </div>
     <div class="dobree-video">
-        <video loop autoplay="true" class="" role="presentation">
+        <video id="video-presentation" loop autoplay="true" class="ds44-js-video" role="presentation" tabindex="-1">
           <source src="../../assets/images/video-test-dobree.mp4" type="video/mp4" />
         </video>
     </div>

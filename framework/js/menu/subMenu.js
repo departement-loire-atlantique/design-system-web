@@ -27,10 +27,11 @@ class SubMenuClass {
         this.objects.push(object);
         const objectIndex = (this.objects.length - 1);
 
-
         this.hideMenu.bind(this, objectIndex);
         MiscEvent.addListener('keyUp:escape', this.hideMenu.bind(this, objectIndex));
         document.querySelectorAll("*[data-open-sub-menu='#"+subMenuId+"']").forEach((button) => {
+            button.setAttribute("aria-expanded", false);
+            MiscAccessibility.hide(object.element);
             MiscEvent.addListener("click", (evt) => {
                 if(button.classList.contains("is-open"))
                 {
@@ -42,6 +43,13 @@ class SubMenuClass {
                 }
             }, button);
         });
+
+        MiscEvent.addListener("focus-first-loop", (evt) => {
+            this.hideMenu(objectIndex, evt);
+        }, subMenu);
+        MiscEvent.addListener("focus-last-loop", (evt) => {
+            this.hideMenu(objectIndex, evt);
+        }, subMenu);
 
         MiscEvent.addListener("resize", (evt) => {
             if(object.element.classList.contains("view"))
@@ -66,7 +74,7 @@ class SubMenuClass {
         this.positionMenuByButton(objectIndex, button);
 
         MiscAccessibility.show(object.element);
-        MiscAccessibility.addFocusLoop(object.element);
+        MiscAccessibility.addFocusAutoclose(object.element);
 
         let links = object.element.querySelectorAll("a");
         if(links[0] !== undefined) {
@@ -117,6 +125,7 @@ class SubMenuClass {
             this.transformButton(button, false);
         });
         MiscAccessibility.hide(object.element);
+        MiscAccessibility.removeFocusLoop();
         MiscEvent.removeListener('click', this.clickOut.bind(this, objectIndex), document.body);
 
         let currentButton = this.objects[objectIndex]['currentButton'];
@@ -145,11 +154,13 @@ class SubMenuClass {
             button.classList.add("is-open");
             button.querySelector(".icon-toggle").classList.remove("icon-down");
             button.querySelector(".icon-toggle").classList.add("icon-up");
+            button.setAttribute("aria-expanded", true);
         }
         else {
             button.classList.remove("is-open");
             button.querySelector(".icon-toggle").classList.add("icon-down");
             button.querySelector(".icon-toggle").classList.remove("icon-up");
+            button.setAttribute("aria-expanded", false);
         }
     }
 

@@ -19,7 +19,9 @@ class PageElementClass {
           .querySelectorAll('a[href^="#"]')
           .forEach((link) => {
               if(MiscComponent.checkAndCreate(link, "link-scroll")) {
-                  link.addEventListener("click", this.scrollToHyperlink);
+                  MiscEvent.addListener("click", (event) => {
+                      this.scrollToHyperlink(event, link);
+                  }, link);
               }
           });
     }
@@ -55,12 +57,13 @@ class PageElementClass {
         this.visibilityCounter--;
     }
         
-    scrollToHyperlink(event) {
+    scrollToHyperlink(event, button) {
         event.preventDefault();
-        var targetHref = event.target.getAttribute('href');
+        var targetHref = button.getAttribute('href');
         if(targetHref)
         {
-            const scrollTo = MiscUtils.getPositionY(document.getElementById(targetHref.replace('#', '')));
+            let elementToScroll = document.getElementById(targetHref.replace('#', ''));
+            const scrollTo = MiscUtils.getPositionY(elementToScroll);
             if (MiscUtils.getScrollTop() > scrollTo) {
                 // Going up, the header will show
                 MiscUtils.scrollTo(
@@ -76,6 +79,15 @@ class PageElementClass {
                   'linear'
                 );
             }
+            // Create first hidden focus element
+            const fakeElement = document.createElement('span');
+            fakeElement.classList.add('ds44-tmpFocusHidden');
+            fakeElement.setAttribute('tabindex', '-1');
+            elementToScroll.prepend(fakeElement);
+            fakeElement.focus();
+            MiscEvent.addListener("blur", (event) => {
+                fakeElement.remove();
+            }, fakeElement);
         }
     }
 }
