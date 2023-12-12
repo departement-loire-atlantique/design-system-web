@@ -14,4 +14,7 @@ variations:
 - title: Liste à chevrons
   description: Liste à chevrons sans séparateurs. Affiche la date de modification majeure et le titre du contenu.
   pattern: list/list-style2.html  
+- title: Liste Dobrée
+  description: Liste des cibles de public du Musée Dobrée
+  pattern: list/list-dobree.html  
 ---

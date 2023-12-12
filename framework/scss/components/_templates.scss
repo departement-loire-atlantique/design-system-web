@@ -137,12 +137,18 @@
 
 main {
     padding-top: $header-height-large;
+    &.main-dobree {
+        padding-top: 8.8rem;
+    }
 }
 
 @media (max-width: $ds44-large - .0625) {
 
     main {
         padding-top: $header-height-medium;
+        &.main-dobree {
+            padding-top: 5.8rem;
+        }
     }
 
 }
@@ -151,6 +157,9 @@ main {
 
     main {
         padding-top: $header-height-small;
+        &.main-dobree {
+            padding-top: 5.8rem;
+        }
     }
 
 }
@@ -325,6 +334,12 @@ main {
     font-weight: $weight-bold;
     margin-top: $ds44-large-vmargin;
     margin-bottom: $ds44-large-vmargin;
+}
+.dobree-introduction {
+    font-size: 1.25em;
+    @media (max-width: $ds44-medium - .0625) {
+        font-size: 1em;
+    }
 }
 
 /* Links */

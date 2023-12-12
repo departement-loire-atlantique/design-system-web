@@ -22,6 +22,9 @@ variations:
 - title: Titre de page centré sans image
   description: Titre principal pour les pages sans bandeau image
   pattern: titres/main-title-centered.html
+- title: Titre et texte (colonnes)
+  description: Titre associé à un paragraphe à droite pour le musée Dobrée
+  pattern: titres/main-title-text.html
 ---
 
 ## General guidelines

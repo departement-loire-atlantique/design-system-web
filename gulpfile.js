@@ -1,4 +1,4 @@
-// Requires
+// Requires 
 var gulp = require('gulp');
 var postcss = require('gulp-postcss');
 var sass = require('gulp-sass');
@@ -20,6 +20,8 @@ var jekyllDir = "docs/",
     scssAidantsFile = 'framework/scss/aidants.scss',
     scssHandicapFile = 'framework/scss/handicap.scss',
     scssClissonFile = 'framework/scss/SP-chateauClisson.scss',
+    scssArcAntiqueFile = 'framework/scss/SP-laboArcAntique.scss',
+    scssArcheoFile = 'framework/scss/SP-poleArcheoLA.scss',
     scssGarenneMemotFile = 'framework/scss/SP-garenneLemot.scss',
     scssChateaubriantFile = 'framework/scss/SP-chateauChateaubriant.scss',
     scssBlancheCouronneFile = 'framework/scss/SP-abbayeBlancheCouronne.scss',
@@ -71,6 +73,30 @@ gulp.task('build:css:cd44:dev', function () {
         }))
         .pipe(postcss(postCssPluginsDev))
         .pipe(concat('cd44.css'))
+        .pipe(browserSync.stream())
+        .pipe(gulp.dest(cssDest));
+});
+
+gulp.task('build:css:arcantique:dev', function () {
+    return gulp.src([scssFileSwiper, scssFileAos, scssArcAntiqueFile])
+        .pipe(sass({
+            // CSS non minifiée plus lisible ('}' à la ligne)
+            outputStyle: 'expanded'
+        }))
+        .pipe(postcss(postCssPluginsDev))
+        .pipe(concat('arcantique.css'))
+        .pipe(browserSync.stream())
+        .pipe(gulp.dest(cssDest));
+});
+
+gulp.task('build:css:archeo:dev', function () {
+    return gulp.src([scssFileSwiper, scssFileAos, scssArcheoFile])
+        .pipe(sass({
+            // CSS non minifiée plus lisible ('}' à la ligne)
+            outputStyle: 'expanded'
+        }))
+        .pipe(postcss(postCssPluginsDev))
+        .pipe(concat('archeo.css'))
         .pipe(browserSync.stream())
         .pipe(gulp.dest(cssDest));
 });
@@ -257,6 +283,8 @@ gulp.task('build:ds', gulp.parallel(
     'build:css:aidants:dev',
     'build:css:handicap:dev',
     'build:css:clisson:dev',
+    'build:css:arcantique:dev',
+    'build:css:archeo:dev',
     'build:css:garenne-lemot:dev',
     'build:css:chateaubriant:dev',
     'build:css:blanche-couronne:dev',

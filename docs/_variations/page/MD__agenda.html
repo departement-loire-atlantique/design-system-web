@@ -1,0 +1,140 @@
+---
+layout: pattern
+---
+
+{% include header/inc-header.html %}
+
+<main role="main" id="content">
+    <section class="ds44-container-fluid">
+        <div class="ds44-lightBG">
+            <div class="ds44-inner-container ds44--xl-padding-t ds44--m-padding-b">
+                {% include breadcrumb/breadcrumb.html %}
+                <h1 class="h1-like dobree-title mbs mts ds44-mobile-reduced-mb ds44-mobile-reduced-mt">L’agenda du musée</h1>
+            </div>
+            <div class="ds44-container-large">
+                <div id="mainResults__cantons" class="ds44-mainResults {% if include['no-padding'] == 'true' %} ds44-noPdg {% endif %}">
+                  <section>
+                    {% assign formId = 'recherche-facette' %}
+                    {% capture ariaDescribedBy %}filter-by-{{ formId }}{% endcapture %}
+                    {% capture fields %}
+                    <div class="ds44-fieldContainer ds44-fg1">
+                        {% include form/field/select/standard.html label="Quoi ?" %}
+                    </div>
+                    <div class="ds44-fieldContainer ds44-fg1 ds44-fieldContainer--select">
+                      {% include form/field/select/standard.html label="Sélectionner une date" %}
+                    </div>
+                    {% endcapture %}
+                    {% include form/layout/recherche-facettes.html id=formId fields=fields url=include.url %}
+                  </section>
+                </div>
+            </div>
+        </div>
+
+    </section>
+    <section class="ds44-container-large">
+        <div class="ds44-flex-container ds44-results ds44-results--empty">
+            <div class="ds44-listResults ds44-innerBoxContainer ds44-innerBoxContainer--list">
+                <div class="ds44-js-results-container">
+                    <div class="ds44-js-results-card" data-url="/json/search-card.json" aria-hidden="true"></div>
+                    <div class="ds44-js-results-list--off">
+                        <ul class="ds44-list ds44-list--results ds44-flex-container">
+                            <li class="ds44-fg1 ds44-js-results-item">
+                                {% include card/card--dobree.html
+                                    has-picture="true"
+                                    titreTuile="Le musée fête sa réouverture"
+                                    idTuile="8"
+                                    cardContent='
+                                    <p class="ds44-docListElem "><i class="icon icon-date ds44-docListIco" aria-hidden="true"></i>4 avril 2024 à 15h</p>
+                                    <p class="ds44-docListElem "><i class="icon icon-marker ds44-docListIco" aria-hidden="true"></i>Boutique</p>'
+                                %}
+                            </li>
+                            <li class="ds44-fg1 ds44-js-results-item">
+                                {% include card/card--dobree.html
+                                    has-picture="true"
+                                    titreTuile="Le musée fête sa réouverture"
+                                    idTuile="8"
+                                    cardContent='
+                                    <p class="ds44-docListElem "><i class="icon icon-date ds44-docListIco" aria-hidden="true"></i>4 avril 2024 à 15h</p>
+                                    <p class="ds44-docListElem "><i class="icon icon-marker ds44-docListIco" aria-hidden="true"></i>Boutique</p>'
+                                %}
+                            </li>
+                            <li class="ds44-fg1 ds44-js-results-item">
+                                {% include card/card--dobree.html
+                                    has-picture="true"
+                                    titreTuile="Le musée fête sa réouverture"
+                                    idTuile="8"
+                                    cardContent='
+                                    <p class="ds44-docListElem "><i class="icon icon-date ds44-docListIco" aria-hidden="true"></i>4 avril 2024 à 15h</p>
+                                    <p class="ds44-docListElem "><i class="icon icon-marker ds44-docListIco" aria-hidden="true"></i>Boutique</p>'
+                                %}
+                            </li>
+                            <li class="ds44-fg1 ds44-js-results-item">
+                                {% include card/card--dobree.html
+                                    has-picture="true"
+                                    titreTuile="Le musée fête sa réouverture"
+                                    idTuile="8"
+                                    cardContent='
+                                    <p class="ds44-docListElem "><i class="icon icon-date ds44-docListIco" aria-hidden="true"></i>4 avril 2024 à 15h</p>
+                                    <p class="ds44-docListElem "><i class="icon icon-marker ds44-docListIco" aria-hidden="true"></i>Boutique</p>'
+                                %}
+                            </li>
+                            <li class="ds44-fg1 ds44-js-results-item">
+                                {% include card/card--dobree.html
+                                    has-picture="true"
+                                    titreTuile="Le musée fête sa réouverture"
+                                    idTuile="8"
+                                    cardContent='
+                                    <p class="ds44-docListElem "><i class="icon icon-date ds44-docListIco" aria-hidden="true"></i>4 avril 2024 à 15h</p>
+                                    <p class="ds44-docListElem "><i class="icon icon-marker ds44-docListIco" aria-hidden="true"></i>Boutique</p>'
+                                %}
+                            </li>
+                            <li class="ds44-fg1 ds44-js-results-item">
+                                {% include card/card--dobree.html
+                                    has-picture="true"
+                                    titreTuile="Le musée fête sa réouverture"
+                                    idTuile="8"
+                                    cardContent='
+                                    <p class="ds44-docListElem "><i class="icon icon-date ds44-docListIco" aria-hidden="true"></i>4 avril 2024 à 15h</p>
+                                    <p class="ds44-docListElem "><i class="icon icon-marker ds44-docListIco" aria-hidden="true"></i>Boutique</p>'
+                                %}
+                            </li>
+                            <li class="ds44-fg1 ds44-js-results-item">
+                                {% include card/card--dobree.html
+                                    has-picture="true"
+                                    titreTuile="Le musée fête sa réouverture"
+                                    idTuile="8"
+                                    cardContent='
+                                    <p class="ds44-docListElem "><i class="icon icon-date ds44-docListIco" aria-hidden="true"></i>4 avril 2024 à 15h</p>
+                                    <p class="ds44-docListElem "><i class="icon icon-marker ds44-docListIco" aria-hidden="true"></i>Boutique</p>'
+                                %}
+                            </li>
+                            <li class="ds44-fg1 ds44-js-results-item">
+                                {% include card/card--dobree.html
+                                    has-picture="true"
+                                    titreTuile="Le musée fête sa réouverture"
+                                    idTuile="8"
+                                    cardContent='
+                                    <p class="ds44-docListElem "><i class="icon icon-date ds44-docListIco" aria-hidden="true"></i>4 avril 2024 à 15h</p>
+                                    <p class="ds44-docListElem "><i class="icon icon-marker ds44-docListIco" aria-hidden="true"></i>Boutique</p>'
+                                %}
+                            </li>
+                            <li class="ds44-fg1 ds44-js-results-item">
+                                {% include card/card--dobree.html
+                                    has-picture="true"
+                                    titreTuile="Le musée fête sa réouverture"
+                                    idTuile="8"
+                                    cardContent='
+                                    <p class="ds44-docListElem "><i class="icon icon-date ds44-docListIco" aria-hidden="true"></i>4 avril 2024 à 15h</p>
+                                    <p class="ds44-docListElem "><i class="icon icon-marker ds44-docListIco" aria-hidden="true"></i>Boutique</p>'
+                                %}
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+</main>
+
+
+{% include footer/footer-dobree.html %}

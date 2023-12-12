@@ -183,6 +183,72 @@ h6, .h6-like {
   display: block;
 }
 
+
+/* Musée DObrée Title Monotype */
+.h1-like.dobree-title,
+.h2-like.dobree-title,
+.h3-like.dobree-title {
+    font-family: $ds44-font-family-headingsDobree;
+    font-weight: normal;
+}
+.h1-like.dobree-title,
+.h2-like.dobree-title {
+    line-height: 1.2em;
+    margin-bottom: 3rem;
+
+    @media (max-width: $ds44-medium - .625) {
+        margin-bottom: 2rem;
+    }
+    @media (max-width: $ds44-small - .625) {
+        margin-bottom: 1rem;
+    }
+}
+.h1-like.dobree-title{
+    font-size: 3.5em;
+
+    @media (max-width: $ds44-medium - .625) {
+        font-size: 2.5em;
+    }
+    @media (max-width: $ds44-small - .625) {
+        font-size: 1.5em;
+    }
+}
+.h2-like.dobree-title{
+    font-size: 2.5em;
+
+    @media (max-width: $ds44-medium - .625) {
+        font-size: 2em;
+    }
+    @media (max-width: $ds44-small - .625) {
+        font-size: 1.25em;
+    }
+}
+.h3-like.dobree-title{
+    font-size: 1.875em;
+
+    @media (max-width: $ds44-medium - .625) {
+        font-size: 1.5em;
+    }
+    @media (max-width: $ds44-small - .625) {
+        font-size: 1.25em;
+    }
+}
+.h4-like.dobree-title{
+    font-size: 1.25em;
+
+    @media (max-width: $ds44-medium - .625) {
+        font-size: 1.25em;
+    }
+    @media (max-width: $ds44-small - .625) {
+        font-size: 1.125em;
+    }
+}
+.dobree-title--helvetica {
+    font-family: $ds44-font-family-baseDobree !important;
+}
+
+
+
 [role="heading"] {
   font-weight: bold;
 
@@ -295,6 +361,13 @@ ul:not(.ds44-list):not(.ds44-collapser) {
         list-style-image: unset;
       }
     }
+  }
+  &.ds44-listDisc  {
+      padding-left: 2rem;
+      > li {
+          list-style-type: disc !important;
+          list-style-image: unset;
+      }
   }
 }
 

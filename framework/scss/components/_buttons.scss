@@ -189,6 +189,19 @@ a > .ds44-btn--contextual,
           background: $ds44-background-dark;
         }
     }
+    .ds44-facette .ds44-btnStd, .ds44-facette .ds44-btnStd--large {
+        background-color: $ds44-contextual-color!important;
+        border-color: $ds44-contextual-color;
+        color: $ds44-color-base;
+
+        &:focus,
+        &:hover,
+        &:active {
+            background-color: $ds44-contextual-hover!important;
+            border-color: $ds44-contextual-color;
+            color: $ds44-color-base;
+        }
+    }
 
 }
 
@@ -507,6 +520,111 @@ a.ds44-btnStd--retourPage {
 }
 
 
+// Lien Flèche Ancre
+.flecheAncre{
+    .bounce2 {
+      animation: bounce2 1.5s ease 3;  // Animation de 2s répétée 3 fois
+    }
+    @keyframes bounce2 {
+    	0%, 20%, 50%, 80%, 100% {transform: translateY(0);}
+    	40% {transform: translateY(-20px);}
+    	60% {transform: translateY(-10px);}
+    }
+}
+
+// Horaires ouverture Musée Dobrée
+.horairesOuverture{
+    font-size: 20px;
+    color: $ds44-light;
+    position: relative;
+
+    &::before {
+        content: '';
+        display: block;
+        position: absolute;
+        top: 20%;
+        left: -20px;
+        width: 12px;
+        height: 12px;
+        border-radius: 12px;
+        background-color: #28BA62 ;
+    }
+
+    &::after {
+        background-color: $ds44-light !important;
+    }
+
+    &:hover,&:focus  {
+        color: $ds44-light;
+    }
+}
+
+// Style de lien avec bordure au survol Musée Dobrée
+.dobree-link {
+    position: relative;
+    text-decoration: none;
+
+    &::after {
+        content: '';
+        display: block;
+        position: absolute;
+        bottom: -8px;
+        left: 0px;
+        width: 0px;
+        height: 1px;
+        background-color: $ds44-dark;
+        transition: all .25s ease-in-out;
+    }
+
+    &:hover,&:focus  {
+
+        &::after {
+            width: 50px;
+        }
+    }
+}
+.dobree-link-2 {
+    font-size: 16px;
+    margin-bottom: 1rem;
+    position: relative;
+    text-decoration: none;
+
+    &::before {
+      content: '';
+      display: block;
+      width: 10px;
+      height: 4px;
+      background: $ds44-color-base;
+      margin-left: -15px;
+      position: absolute;
+      top: 8px;
+      transition: all ease-in-out .25s;
+      opacity: 0;
+    }
+    &:hover, &:focus {
+        &::before {
+          opacity: 1;
+        }
+    }
+}
+
+// Choix langue
+.mobile .choixLangue{
+    margin-right: 4em !important;
+    padding: 0 !important;
+    > * {
+        display: inline-block;
+        width: auto !important;
+        margin: 0 10px 0 0;
+        position: relative !important;
+    }
+    span {
+        font-size: .97em !important;
+    }
+}
+
+
+
 /* medium screens */
 /* ------------- */
 @media (max-width: $ds44-extra-large - .0625) {
@@ -539,6 +657,28 @@ a.ds44-btnStd--retourPage {
     .ds44-btnStd, a.ds44-btnStd, a > .ds44-btnStd, .ds44-btnStd > a {
         &.ds44-btnQuestion {
             right: 7rem;
+        }
+    }
+
+    // Lien Flèche Ancre
+    .flecheAncre{
+        .bounce2 {
+          width: 28px;
+          height: 14px;
+        }
+    }
+    // Horaires ouverture Musée Dobrée
+    .horairesOuverture{
+        font-size: 14px;
+
+        &::before {
+            top: 1px;
+        }
+    }
+    .dobree-fontSize-20 .horairesOuverture{
+        font-size: 1em;
+        &::before {
+            top: 7px;
         }
     }
 

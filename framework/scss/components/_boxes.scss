@@ -312,6 +312,27 @@
         }
       }
     }
+    &.dobree-alert {
+        background-color: #FFF2C3;
+        text-align: left;
+        .ds44-collapser .ds44-card__title .icon::before {
+          color: #D9AA00;
+        }
+        .ds44-collapser .ds44-collapser_element .ds44-collapser_button:focus {
+          border: 2px solid #D9AA00;
+        }
+        .ds44-collapser .ds44-collapser_content {
+          background-color: #FFF2C3;
+          padding: 0 16%;
+        }
+        .ds44-collapser .ds44-collapser_content .ds44-collapser_content--level2 ul.ds44-listDisc {
+          padding-left: 2rem;
+          li {
+              display: list-item;
+              list-style: disc !important;
+          }
+        }
+    }
 }
 
 
@@ -340,6 +361,38 @@
 }
 .grid-12-small-1 .colFocusProjets:first-of-type{
   align-self: auto;
+}
+
+
+// Bloc logos et tarfis Musée Dobrée
+.dobree-bloc-tarif {
+    .list-logos {
+        border-radius: 36px 0 0 36px;
+        padding: 4rem;
+
+        @media (max-width: $ds44-tiny) {
+            border-radius: 36px 36px 0 0 ;
+            margin-bottom: 0;
+        }
+        li img {
+            height: 43px;
+            padding: 0;
+            margin-bottom: 2rem;
+        }
+        li:last-child img {
+            margin-bottom: 0;
+        }
+    }
+    .prix {
+        border-radius: 0 36px 36px 0;
+        font-weight: bold;
+        display: flex;
+
+        @media (max-width: $ds44-tiny) {
+            border-radius:  0 0 36px 36px;
+            padding: 3rem 0;
+        }
+    }
 }
 
 

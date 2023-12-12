@@ -13,6 +13,9 @@ variations:
 - title: Onglets avec boutons
   description: Bande de navigation d'onglets composite
   pattern: onglets/onglets-composites.html
+- title: Onglets sur le côté
+  description: Bande de navigation latérale
+  pattern: onglets/onglets-lateral.html
 ---
 
 

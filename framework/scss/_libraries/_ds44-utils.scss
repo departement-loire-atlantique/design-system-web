@@ -339,6 +339,10 @@
     margin-top: 4rem !important; // 4rem
 }
 
+.ds44-mb4 {
+    margin-bottom: 4rem !important; // 4rem
+}
+
 .ds44-mtb4 {
     margin-top: 4rem !important; // 4rem
     margin-bottom: 4rem !important; // 4rem
@@ -504,6 +508,10 @@
     align-self: center !important;
 }
 
+.ds44-fgap1 {
+    gap : 1em;
+}
+
 @media (max-width: $ds44-large - .0625) {
 
     .ds44-flex-wrap-large {
@@ -546,8 +554,17 @@
 
     }
 
+    .ds44-flex-dir-reverse,
+     .ds44-card--focus .ds44-flex-container.ds44-flex-dir-reverse {
+        flex-direction: column-reverse;
+    }
+
     .ds44-medium-flex-col { // change l'orientation flex de row à column sur les écrans moyens et petits
         flex-direction: column;
+    }
+
+    .ds44-tiny-to-med-noPdg {
+        padding: 0 !important;
     }
 
 }
@@ -723,6 +740,10 @@
 
 .ds44-darkContext {
     background-color: $ds44-color-inverse !important;
+}
+
+.ds44-darkText {
+    color: $ds44-color-base !important;
 }
 
 /* === Text utils === */
@@ -1215,8 +1236,8 @@ h6.visually-hidden + * {
     }
 
     .ds44--xxl-padding-tb {
-        padding-top: $ds44-padding-xlarge; // 3rem
-        padding-bottom: $ds44-padding-xlarge; // 3rem
+        padding-top: $ds44-padding-xlarge !important; // 3rem
+        padding-bottom: $ds44-padding-xlarge !important; // 3rem
     }
 
     .ds44-xl-margin-tb {
@@ -1272,6 +1293,10 @@ h6.visually-hidden + * {
     .ds44-tablet-padding-tb {
         padding-top: $ds44-padding-medium; // 1rem
         padding-bottom: $ds44-padding-medium; // 1rem
+    }
+    .ds44--xxl-padding-tb {
+        padding-top: $ds44-padding-large*2 !important; // 4rem
+        padding-bottom: $ds44-padding-large*2 !important; // 4rem
     }
 
 }

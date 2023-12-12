@@ -150,6 +150,11 @@
     padding-top: 141.43%;
 }
 
+/* Ratio img carré allongé en hauteur */
+.ds44-container-imgRatio--carreAllonge {
+    padding-top: 112% ;
+}
+
 
 /* légende d'image */
 figure {
@@ -272,6 +277,92 @@ figure {
    width: 100%;
  }
 
+ /* Video Full size Dobrée */
+ .dobree-video-container  {
+     .h1-like   {
+         position: absolute;
+         top: calc(50% - 64px);
+         left: calc(50% - 195px);
+         color: $ds44-light ;
+         z-index: 500;
+         text-align: center;
+     }
+     .bandeau-info {
+         position: absolute;
+         bottom: 0;
+         left: 0;
+         z-index: 50;
+         width: 100%;
+         height: auto;
+         background: linear-gradient(0deg, rgba(0,0,0,1) 0%, rgba(0,0,0,0.70) 50%, rgba(0,0,0,0) 100%);
+
+         .logoLA {
+             text-decoration: none;
+
+             picture {
+                 display: inline-block;
+             }
+             span {
+                 font-size: 20px;
+                  display: inline-block;
+                  margin-left: 20px;
+                  max-width: 60%;
+                  line-height: 23px;
+             }
+             &:hover, &:focus {
+                 color: $ds44-light ;
+                 text-decoration: underline;
+             }
+         }
+         .flecheAncre {
+             position: absolute;
+             top: 50%;
+             left: calc(50% - 10px);
+         }
+         .ds44-btnIco {
+             border-radius: 44px;
+             width: 30px;
+             height: 30px;
+         }
+
+     }
+     .dobree-video {
+         &::after {
+             content: '';
+             display: block;
+             width: 100%;
+             height: 100vh;
+             background: rgba(0,0,0,0.5);
+             position: absolute;
+             top:0;
+             left: 0;
+             z-index: 2;
+         }
+         video {
+             position: relative;
+              width: 100%;
+              height: 100vh;
+              z-index: 1;
+              display: flex;
+              object-fit: cover;
+              top: 0;
+              right: 0;
+              overflow: hidden;
+         }
+     }
+ }
+
+.dobree-img_bandeau {
+     max-height: 380px;
+     width: 100%;
+     object-fit: cover;
+ }
+
+.flag {
+    margin-right:10px;
+}
+
+
 /* =======
   MEDIA QUERIES
   === */
@@ -296,6 +387,54 @@ figure {
     /* Logo tous nos sites page accueil sites patrimoines */
     .ds44-logoCard {
       margin: 0px;
+    }
+
+    /* Video Full size Dobrée */
+    .dobree-video-container  {
+        .h1-like   {
+            top: calc(50% - 64px);
+            left: calc(50% - 86px);
+
+            img {
+                width: 192px;
+            }
+
+            // span {
+            //     font-family: $ds44-font-family-baseDobree;
+            //     font-size: 14px;
+            //     font-weight: normal;
+            //     max-width: 192px;
+            //     display: block;
+            //     margin-top: 4rem;
+            //     line-height: 1.2;
+            // }
+        }
+        .bandeau-info {
+            padding: 3rem !important;
+
+            .ds44-flex-container.mobile {
+                justify-content: space-between;
+                 width: 100%;
+                 flex-direction: row-reverse;
+                 .ds44-btnIco {
+                     margin: 0;
+                 }
+                 .horairesOuverture {
+                     margin-left:2rem;
+                 }
+            }
+            .dobree-listAccessibility a {
+                background-color: rgba(0, 0, 0, 0.4);
+                color: $ds44-light ;
+                font-size: 0.875em;
+            }
+            .flecheAncre {
+                position: absolute;
+                top: 0;
+                left: calc(50% - 10px);
+            }
+
+        }
     }
 
 }
