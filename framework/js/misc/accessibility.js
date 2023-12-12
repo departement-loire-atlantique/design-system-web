@@ -22,6 +22,60 @@ class MiscAccessibility {
     // Fonction qui va forcer le focus à faire une boucle sur un élément
     // en ajoutant deux inputs 'hidden' qui peuvent être focus, au début
     // et à la fin
+    static addFocusAutoclose (element) {
+        MiscAccessibility.removeFocusLoop();
+
+        if (!element) {
+            return;
+        }
+
+        const focusableElements = element.querySelectorAll(MiscAccessibility.getEnabledElementsSelector());
+        if (!focusableElements.length) {
+            return;
+        }
+
+        // Add class to first and last focusable elements
+        // For loops to make sure the first and last focusable elements are displayed
+        for (let indexElem in Array.prototype.slice.call(focusableElements)) {
+            let itElem = Array.prototype.slice.call(focusableElements)[indexElem];
+            if (MiscAccessibility.isDisplayed(itElem)) {
+                itElem.classList.add('ds44-tmpFirstFocus');
+                break;
+            }
+        }
+        // Starting from the end
+        for (let indexElem in Array.prototype.slice.call(focusableElements).reverse()) {
+            let itElem = Array.prototype.slice.call(focusableElements).reverse()[indexElem];
+            if (MiscAccessibility.isDisplayed(itElem)) {
+                itElem.classList.add('ds44-tmpLastFocus');
+                break;
+            }
+        }
+
+        // Create first hidden focus element
+        const fakeFirstElement = document.createElement('span');
+        fakeFirstElement.classList.add('ds44-tmpFocusHidden');
+        fakeFirstElement.setAttribute('tabindex', '0');
+        element.prepend(fakeFirstElement);
+
+        // Create last hidden focus element
+        const fakeLastElement = document.createElement('span');
+        fakeLastElement.classList.add('ds44-tmpFocusHidden');
+        fakeLastElement.setAttribute('tabindex', '0');
+        element.appendChild(fakeLastElement);
+
+        // Add events
+        MiscEvent.addListener('focus', ()=>{
+            MiscEvent.dispatch("focus-first-loop", {}, element);
+        }, fakeFirstElement);
+        MiscEvent.addListener('focus', ()=>{
+            MiscEvent.dispatch("focus-last-loop", {}, element);
+        }, fakeLastElement);
+    }
+
+    // Fonction qui va forcer le focus à faire une boucle sur un élément
+    // en ajoutant deux inputs 'hidden' qui peuvent être focus, au début
+    // et à la fin
     static addFocusLoop (element) {
         MiscAccessibility.removeFocusLoop();
 

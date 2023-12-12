@@ -1,8 +1,7 @@
 <section class="ds44-card--noLink ds44-card--horizontal ds44-card--focus dobree-text-image ds44-noMrg">
   <div class="ds44-flex-container ds44-flex-valign-center {{ include.direction }}">
     <div class="ds44-card__section--horizontal--img">
-        {% include images/inc-mosaiques_img-base.html srcImg='src="../../assets/images/img_dobree1.jpg"' legend="Légende associée © Copyright" %}
-        <button class="ds44-btnIco ds44-btnIco--carre ds44-bgDark"><i class="icon icon-fullscreen" aria-hidden="true"></i><span class="visually-hidden">Plein écran</span></button>
+        {% include images/inc-mosaiques_img-base.html srcImg='src="../../assets/images/img_dobree1.jpg"' legend="Légende associée © Copyright" pictoFullscreen='true'%}
    </div>
     <div class="ds44-card__section--horizontal">
       {% if include.title %}<p role="heading" aria-level="{{ include.arialevel }}" class="ds44-card__title h3-like dobree-title dobree-title--helvetica">{{ include.title }}</p>{% endif %}
