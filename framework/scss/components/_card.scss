@@ -123,7 +123,6 @@
 
         .ds44-card__section {
           padding: 2rem;
-          position: relative;
               .ds44-innerBoxContainer {
                   padding: 0;
             }
@@ -146,9 +145,27 @@
         .ds44-container-imgRatio--carreAllonge + .ds44-card__section {
             .ds44-cardTitle a {
                 font-size: 1.5em;
+                @media (max-width: ($ds44-medium - .0625)) {
+                    font-size: 1.25em;
+                }
             }
             .ds44-cardArrow {
-                bottom : 1em;
+                bottom: 2rem;
+                right: 1rem;
+            }
+        }
+        &.ds44-container-imgZoom {
+            overflow: hidden;
+            .ds44-container-imgRatio {
+                overflow: hidden;
+                img {
+                transition: all $ds44-timing-standard ease-in-out;
+                border: 0;
+
+                &:hover {
+                    transform: scale(1.1);
+                }
+                }
             }
         }
     }
