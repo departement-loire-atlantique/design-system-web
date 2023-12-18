@@ -166,12 +166,16 @@
 
 .dobree-listAccessibility {
     vertical-align: middle;
-        a {
+        > div {
             border-radius: 3px;
             background-color: rgba(0, 0, 0, 0.06);
             color: $ds44-dark ;
             transition: all ease-in-out .25s;
-            text-decoration: none;
+            color: $ds44-light ;
+
+            a {
+                text-decoration: none;
+            }
 
             &:hover {
                 background-color: rgba(255, 255, 255, 1);
@@ -189,9 +193,13 @@
 /* Musée Dobrée Header Homepage vidéo */
 .dobree-header.containerVideo {
     background: none;
-    .ds44-colRight .dobree-listAccessibility a {
+    .ds44-colRight .dobree-listAccessibility > div {
         background-color: rgba(0, 0, 0, 0.6);
         color: $ds44-light ;
+
+        a {
+            color: $ds44-light ;
+        }
     }
      .ds44-logoContainer img {
       display: none;

@@ -323,6 +323,10 @@ figure {
              border-radius: 44px;
              width: 30px;
              height: 30px;
+             text-align: center;
+             .icon::before {
+              line-height: 0.7;
+            }
          }
 
      }
@@ -423,10 +427,14 @@ figure {
                      margin-left:2rem;
                  }
             }
-            .dobree-listAccessibility a {
+            .dobree-listAccessibility > div {
                 background-color: rgba(0, 0, 0, 0.4);
                 color: $ds44-light ;
                 font-size: 0.875em;
+
+                a {
+                    color: $ds44-light ;
+                }
             }
             .flecheAncre {
                 position: absolute;

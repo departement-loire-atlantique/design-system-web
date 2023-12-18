@@ -351,8 +351,9 @@
             }
       }
     }
-    .dobree-listAccessibility a{
+    .dobree-listAccessibility > div{
         background-color: rgba(255, 255, 255, 0.4);
+        color: $ds44-dark;
     }
   }
   //Zoom à 200% passe le menu visible entièrement
