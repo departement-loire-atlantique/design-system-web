@@ -2,16 +2,16 @@
 layout: pattern
 ---
 
-{% include header/inc-header.html %}
+{% include header/inc-header-musee-dobree.html logoAlt="" %}
 
-<main role="main" id="content">
+<main role="main" id="content" class="main-dobree">
     <section class="ds44-container-fluid">
         <div class="ds44-lightBG">
-            <div class="ds44-inner-container ds44--xl-padding-t ds44--m-padding-b">
-                {% include breadcrumb/breadcrumb.html %}
-                <h1 class="h1-like dobree-title mbs mts ds44-mobile-reduced-mb ds44-mobile-reduced-mt">L’agenda du musée</h1>
-            </div>
             <div class="ds44-container-large">
+                <div class="ds44-grid12-offset-1 ds44--xl-padding-t ds44--m-padding-b">
+                    {% include breadcrumb/breadcrumb.html %}
+                    <h1 class="h1-like dobree-title mbs mts ds44-mobile-reduced-mb ds44-mobile-reduced-mt">L’agenda du musée</h1>
+                </div>
                 <div id="mainResults__cantons" class="ds44-mainResults {% if include['no-padding'] == 'true' %} ds44-noPdg {% endif %}">
                   <section>
                     {% assign formId = 'recherche-facette' %}
