@@ -48,3 +48,34 @@ Licence SIL Open Font
 ## Tableaux
 
 {% include pattern-live-preview.html pattern_path="_variations/typography/tables.html" %}
+
+<hr/>
+
+<h1 class="c-page-header__title" style="margin-top:80px;">Typographie "Grand Patrimoine"</h1>
+
+Le design system du Département de Loire-Atlantique utilise également deux familles de typographies pour hiérarchiser ses contenus sur les sites patrimoniaux du Grand Patrimoine :
+#### La typographie Monotype Modern Std :
+
+Utilisée pour les titres
+
+Variantes Regular
+
+<p>Source : <a href="https://freefontsdownload.net/free-modernmtstdwide-font-142327.htm">https://freefontsdownload.net/free-modernmtstdwide-font-142327.htm</a></p>
+
+<a href="../fonts/Monotype-Modern-Std.zip" class="ds44-btnStd ds44-btn--invert"><span class="ds44-btnInnerText">Télécharger la typographie Monotype Modern Std</span></a>
+
+
+#### La typographie Helvetica :
+
+Utilisée pour les textes courants, titres d’encadrés, boutons, …
+
+Variantes Regular, Bold
+
+<p>Source : <a href="https://dwl.freefontsfamily.com/download/Helvetica-Font/">https://dwl.freefontsfamily.com/download/Helvetica-Font/</a></p>
+
+<a href="../fonts/Helvetica.zip" class="ds44-btnStd ds44-btn--invert"><span class="ds44-btnInnerText">Télécharger la typographie Helvetica</span></a>
+
+
+## Titres Grand Patrimoine
+
+{% include pattern-live-preview.html pattern_path="_variations/typography/headings-GP.html" %}

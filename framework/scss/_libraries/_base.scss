@@ -186,13 +186,10 @@ h6, .h6-like {
 
 /* Musée DObrée Title Monotype */
 .h1-like.dobree-title,
-.h2-like.dobree-title,
-.h3-like.dobree-title {
+.h1-like.h1-like--light.dobree-title,
+h1.dobree-title {
     font-family: $ds44-font-family-headingsDobree;
     font-weight: normal;
-}
-.h1-like.dobree-title,
-.h2-like.dobree-title {
     line-height: 1.2em;
     margin-bottom: 3rem;
 
@@ -213,7 +210,7 @@ h6, .h6-like {
         font-size: 1.5em;
     }
 }
-.h2-like.dobree-title{
+.h1-like.h1-like--light.dobree-title{
     font-size: 2.5em;
 
     @media (max-width: $ds44-medium - .625) {
@@ -223,7 +220,17 @@ h6, .h6-like {
         font-size: 1.25em;
     }
 }
-.h3-like.dobree-title{
+.h2-like.dobree-title,
+.h3-like.dobree-title,
+.h5-like.dobree-title,
+.h5-like.dobree-title {
+    font-family: $ds44-font-family-baseDobree;
+    padding: 0;
+    background: none;
+    display: block;
+    font-weight: inherit;
+}
+.h2-like.dobree-title{
     font-size: 1.875em;
 
     @media (max-width: $ds44-medium - .625) {
@@ -233,8 +240,9 @@ h6, .h6-like {
         font-size: 1.25em;
     }
 }
-.h4-like.dobree-title{
+.h3-like.dobree-title{
     font-size: 1.25em;
+    font-weight: bold;
 
     @media (max-width: $ds44-medium - .625) {
         font-size: 1.25em;
@@ -243,9 +251,14 @@ h6, .h6-like {
         font-size: 1.125em;
     }
 }
-.dobree-title--helvetica {
-    font-family: $ds44-font-family-baseDobree !important;
+.h4-like.dobree-title{
+    font-size: 1.125em;
 }
+.h5-like.dobree-title{
+    font-size: 1em;
+    font-weight: bold;
+}
+
 
 
 

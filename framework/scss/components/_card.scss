@@ -293,6 +293,10 @@ figure[role=figure]  + .ds44-card__section {
     line-height: 1.2;
     background: transparent;
     font-family: $ds44-font-family-base;
+
+    &.h2-like.dobree-title + * {
+        margin-top: 0 !important;
+    }
 }
 
 .ds44-cardPicture {
@@ -393,7 +397,7 @@ figure[role=figure]  + .ds44-card__section {
         .ds44-card__title {
             font-size: 1.875em;
             font-weight: normal;
-            margin-bottom: 2em;
+            margin-bottom: 1em;
             padding-bottom: 1em;
             position: relative;
             width:100%;
