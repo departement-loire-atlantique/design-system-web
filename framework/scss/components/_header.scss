@@ -116,7 +116,10 @@
     }
     &#subMenu-choixLangue {
         text-align: left;
-        width: 12rem;
+        width: 10rem;
+        &#subMenu-choixLangue a {
+            font-size: 1em;
+        }
     }
     .ds44-list {
         padding: 2rem;
@@ -212,6 +215,7 @@
     }
     .ds44-subMenu {
         background-color: rgba(0, 0, 0, 0.6);
+        top:65px;
         &#subMenu-choixLangue a {
             color: $ds44-light ;
         }

@@ -12,6 +12,20 @@
     display: block;
     padding-top: 66.6667%;
     position: relative;
+
+    &.dobree-icon-player {
+        cursor: pointer;
+        &::after {
+            content: '';
+            background-image: url("../../assets/icons/icon-player.svg") ;
+            display: block;
+            width: 64px;
+            height: 65px;
+            position: absolute;
+            top:calc(50% - 17px);
+            left: calc(50% - 17px);
+        }
+    }
 }
 
 .ds44-container-imgZoom {
