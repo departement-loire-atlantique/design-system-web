@@ -393,6 +393,7 @@ figure[role=figure]  + .ds44-card__section {
         padding: 2rem 7rem;
         .date {
             font-size: 1.125em;
+            order: -1;
         }
         .ds44-card__title {
             font-size: 1.875em;
