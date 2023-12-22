@@ -440,9 +440,10 @@ figure[role=figure]  + .ds44-card__section {
                   width: 30px;
                   border-radius: 30px;
                   background-color: rgba(0,0,0,0.4);
+                  text-align: center;
 
                   .icon::before {
-                      line-height: .7;
+                      line-height: .9;
                     }
             }
 
