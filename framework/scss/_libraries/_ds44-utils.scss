@@ -951,6 +951,41 @@
     line-height: 0.25;
 }
 
+/* === Icons GPLA === */
+
+.icon {
+    &.icon--simple,
+    &.icon--full,
+    &.icon--circle {
+        width: 45px;
+        height: 45px;
+        border : 2px solid  $ds44-dark;
+        vertical-align: middle;
+        text-align: center;
+        border-radius: 30px;
+        vertical-align: middle;
+        display: inline-flex;
+        justify-content: center;
+        align-items: center;
+        &::before {
+            vertical-align: middle;
+            display: table;
+        }
+    }
+    &.icon--full {
+        background: $ds44-dark;
+        &::before {
+            color: $ds44-light ;
+        }
+    }
+    &.icon--circle {
+        background: $ds44-light;
+    }
+    &.icon--simple {
+        border : 2px solid  transparent;
+    }
+}
+
 // icon margins
 .icon + .ds44-iconInnerText,
 .ds44-iconInnerText + .icon {
