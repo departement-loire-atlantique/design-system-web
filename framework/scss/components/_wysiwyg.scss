@@ -401,6 +401,12 @@ table.ds44-table {
     tr > td:first-of-type {
         text-align: left;
     }
+    tr:nth-child(2n+1) {
+      background-color: #fff;
+    }
+    tr:nth-child(2n) {
+      background-color: $ds44-light-bg;
+    }
 }
 
 
