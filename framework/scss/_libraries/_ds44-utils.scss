@@ -954,6 +954,7 @@
 /* === Icons GPLA === */
 
 .icon {
+    position: relative;
     &.icon--simple,
     &.icon--full,
     &.icon--circle {
@@ -983,6 +984,17 @@
     }
     &.icon--simple {
         border : 2px solid  transparent;
+    }
+    &.icon--forbidden::after {
+        content: '';
+        position: absolute;
+        width: 100%;
+        height: 3px;
+        background: $ds44-error;
+        top: calc(50% - 1.5px);
+        left: 0;
+        transform: rotate(45deg);
+        display: block;
     }
 }
 
