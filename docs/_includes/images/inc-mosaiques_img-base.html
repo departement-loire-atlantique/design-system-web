@@ -1,9 +1,9 @@
 <figure class="ds44-legendeContainer ds44-container-imgRatio ds44-container-imgZoom {% if include.portrait == 'true' %}ds44-container-imgRatio--A4{% endif %}" data-target="#overlay-mosaique" data-js="ds44-modal" role="figure" aria-label="{{ include.legend }}">
-    <button type="button" title="Ouvir la boîte de dialogue : [titre de la modale]">
-      <img {{ include.srcImg }} alt="{{ include.legend }}" class="ds44-imgRatio">
+    <button type="button">
+      <img {{ include.srcImg }} alt="{{ include.legend }} - Ouvir la fenêtre : [titre de la modale]" class="ds44-imgRatio">
     </button>
     <figcaption class="ds44-imgCaption">{{ include.legend }}</figcaption>
-    {% if include.pictoFullscreen == 'true' %}
-      <p class="ds44-btnIco ds44-btnIco--carre ds44-bgDark"><i class="icon icon-fullscreen" aria-hidden="true"></i></p>
-    {% endif %}
 </figure>
+{% if include.pictoFullscreen == 'true' %}
+  <p class="ds44-btnIco ds44-btnIco--carre ds44-bgDark"><i class="icon icon-fullscreen" aria-hidden="true"></i></p>
+{% endif %}

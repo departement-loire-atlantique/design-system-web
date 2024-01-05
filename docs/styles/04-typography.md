@@ -51,7 +51,7 @@ Licence SIL Open Font
 
 <hr/>
 
-<h1 class="c-page-header__title" style="margin-top:80px;">Typographie "Grand Patrimoine"</h1>
+<h1 class="c-page-header__title" style="margin-top:80px;">Typographie Musée Dobrée</h1>
 
 Le design system du Département de Loire-Atlantique utilise également deux familles de typographies pour hiérarchiser ses contenus sur les sites patrimoniaux du Grand Patrimoine :
 #### La typographie Monotype Modern Std :
@@ -76,6 +76,6 @@ Variantes Regular, Bold
 <a href="../fonts/Helvetica.zip" class="ds44-btnStd ds44-btn--invert"><span class="ds44-btnInnerText">Télécharger la typographie Helvetica</span></a>
 
 
-## Titres Grand Patrimoine
+## Titres Musée Dobrée
 
 {% include pattern-live-preview.html pattern_path="_variations/typography/headings-GP.html" %}
