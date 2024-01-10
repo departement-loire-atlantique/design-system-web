@@ -32,14 +32,6 @@ variations:
 - title: Exposition
   pattern: page/MD__exposition.html
 
-- title: Tableau mobile
-    description: Tableau spécifique en format mobile pour le Musée Dobrée
-    pattern: composants-transverses/table-mobile.html
-
-- title: Menu Dobrée Mobile
-  description: Menu de navigation du Musée Dobrée en version mobile
-  pattern: menu/nav-musee-dobree-mobile.html
-
 
 ---
 ## Utilisation
