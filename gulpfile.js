@@ -27,6 +27,7 @@ var jekyllDir = "docs/",
     scssBlancheCouronneFile = 'framework/scss/SP-abbayeBlancheCouronne.scss',
     scssFoliesSiffaitFile = 'framework/scss/SP-jardinsFoliesSiffait.scss',
     scssSaintSulpiceFile = 'framework/scss/SP-egliseVieuxBourg.scss',
+    scssDobreeFile = 'framework/scss/SP-museeDobree.scss',
     scssFileSwiper = 'node_modules/swiper/css/swiper.min.css',
     scssFileAos = 'node_modules/aos/dist/aos.css',
     cssDest = 'dist/css',
@@ -193,6 +194,18 @@ gulp.task('build:css:saint-sulpice:dev', function () {
         }))
         .pipe(postcss(postCssPluginsDev))
         .pipe(concat('saint-sulpice.css'))
+        .pipe(browserSync.stream())
+        .pipe(gulp.dest(cssDest));
+});
+
+gulp.task('build:css:dobree:dev', function () {
+    return gulp.src([scssFileSwiper, scssFileAos, scssDobreeFile])
+        .pipe(sass({
+            // CSS non minifiée plus lisible ('}' à la ligne)
+            outputStyle: 'expanded'
+        }))
+        .pipe(postcss(postCssPluginsDev))
+        .pipe(concat('dobree.css'))
         .pipe(browserSync.stream())
         .pipe(gulp.dest(cssDest));
 });
