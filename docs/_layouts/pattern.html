@@ -24,7 +24,14 @@
   <meta name="twitter:image:src" content="{https://www.loire-atlantique.fr/}">
 
   <!-- DS -->
-  <link rel="stylesheet" href="{{ "/css/cd44.css" | prepend: site.baseurl }}">
+  <!-- Si une css a été spécifiée alors on la charge sinon on prend la css par défaut (cd44.css) -->
+  {% if page.css %}
+  <link rel="stylesheet" href="{{ "/css/" | append:page.css | prepend: site.baseurl }}"> 
+  {% else %}
+    <link rel="stylesheet" href="{{ "/css/cd44.css" | prepend: site.baseurl }}">
+  {% endif %}
+    
+  
   <link rel="stylesheet" href="{{ "/css/icons.css" | prepend: site.baseurl }}">
 
 
