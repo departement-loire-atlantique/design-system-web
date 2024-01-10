@@ -303,6 +303,7 @@ gulp.task('build:ds', gulp.parallel(
     'build:css:blanche-couronne:dev',
     'build:css:folies-siffait:dev',
     'build:css:saint-sulpice:dev',
+    'build:css:dobree:dev',
     'build:glyphicons',
     'build:demoicons',
     'build:js',
