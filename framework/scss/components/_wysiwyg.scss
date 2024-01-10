@@ -407,6 +407,20 @@ table.ds44-table {
     tr:nth-child(2n) {
       background-color: $ds44-light-bg;
     }
+    &.tableau_dobree--mobile {
+        th, td {
+            border: 0;  ;
+        }
+        tr:nth-child(2n+1) {
+          background-color: $ds44-light-bg;
+        }
+        tr:nth-child(2n) {
+          background-color: #fff;
+        }
+        tr.last td {
+            padding-bottom: 25px;
+        }
+    }
 }
 
 

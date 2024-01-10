@@ -431,6 +431,10 @@
     align-items: center;
 }
 
+.ds44-flex-valign-stretch {
+    align-items: stretch;
+}
+
 .ds44-flex-align-center {
     justify-content: center;
 }
@@ -1335,6 +1339,11 @@ h6.visually-hidden + * {
 
     li:first-child > .ds44-arrowLink {
         margin-top: 1.5rem;
+    }
+
+    .ds44-tablet-xxl-padding-lr {
+        padding-left: $ds44-padding-large*2 !important; // 1rem
+        padding-right: $ds44-padding-large*2 !important; // 1rem
     }
 
     .ds44-tablet-padding-tb {

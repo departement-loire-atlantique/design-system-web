@@ -2,8 +2,8 @@
     <button type="button">
       <img {{ include.srcImg }} alt="{{ include.legend }} - Ouvir la fenêtre : [titre de la modale]" class="ds44-imgRatio">
     </button>
+    {% if include.pictoFullscreen == 'true' %}
+      <span class="ds44-btnIco ds44-btnIco--carre ds44-bgDark" aria-hidden="true"><i class="icon icon-fullscreen" aria-hidden="true"></i></span>
+    {% endif %}
     <figcaption class="ds44-imgCaption">{{ include.legend }}</figcaption>
 </figure>
-{% if include.pictoFullscreen == 'true' %}
-  <p class="ds44-btnIco ds44-btnIco--carre ds44-bgDark"><i class="icon icon-fullscreen" aria-hidden="true"></i></p>
-{% endif %}

@@ -346,7 +346,8 @@ figure[role=figure]  + .ds44-card__section {
     }
 
     &--dim80 {
-        min-width: 25%;
+        max-width: 25%;
+        width: 100%;
         @media (min-width: $ds44-extra-large) {
             min-width: 80px;
         }
@@ -390,7 +391,7 @@ figure[role=figure]  + .ds44-card__section {
     }
     .ds44-card__section--horizontal {
         width: 100%;
-        padding: 2rem 7rem;
+        padding: 2rem 7rem 2rem 9rem;
         .date {
             font-size: 1.125em;
             order: -1;
@@ -497,11 +498,16 @@ figure[role=figure]  + .ds44-card__section {
         }
         .ds44-card__section--horizontal--img,
         .ds44-card__section--horizontal--img--dim80 {
-            height: 260px;
-            .dobree-imgFocus {
-              height: 260px;
-              object-fit: cover;
+            picture {
+                height: 100%;
+                .dobree-imgFocus {
+                  height: 100%;
+                  object-fit: cover;
+                }
             }
+        }
+        .ds44-card__section--horizontal--img {
+            height: 240px;
         }
     }
     @media (max-width: ($ds44-medium - .0625)) {

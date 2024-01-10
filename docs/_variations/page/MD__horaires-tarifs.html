@@ -39,8 +39,8 @@ layout: pattern
                             <div class="ds44-mtb5 ds44-xl-fluid-margin">
                                 <p role="heading" aria-level="3" class="ds44-mb2">Vous parcourez les salles du musée librement</p>
                                 {% include card/card--tarifs.html title="Entrée collection permanente" aria-level="3" %}
-                                <div class="grid-2-tiny-1 has-gutter-xl ds44-mt3">
-                                        <section class="ds44-card ds44-card--noLink ds44-card--horizontal ds44-card--focus dobree-card--tarif">
+                                <div class="grid-2-tiny-1 grid-2-small-1 has-gutter-xl ds44-mt4">
+                                        <section class="ds44-card ds44-card--noLink ds44-card--horizontal ds44-card--focus dobree-card--tarif ds44-noMrg">
                                       <div class="ds44-flex-container ds44-flex-valign-center">
                                         <div class="ds44-card__section--horizontal">
                                           <p role="heading" aria-level="3">Entrée gratuite</p>
@@ -55,7 +55,7 @@ layout: pattern
                                         </div>
                                       </div>
                                     </section>
-                                    <section class="ds44-card ds44-card--noLink ds44-card--horizontal ds44-card--focus dobree-card--tarif">
+                                    <section class="ds44-card ds44-card--noLink ds44-card--horizontal ds44-card--focus dobree-card--tarif ds44-noMrg">
                                       <div class="ds44-flex-container ds44-flex-valign-center">
                                         <div class="ds44-card__section--horizontal">
                                           <p role="heading" aria-level="3">Tarif réduit</p>
@@ -78,50 +78,54 @@ layout: pattern
                             <button type="button" class="ds44-collapser_button">Visite libre Version 2<i class="icon icon-down" aria-hidden="true"></i></button>
                         </p>
                         <div class="ds44-collapser_content">
-                            <div class="ds44-mtb5 ds44-container-large">
+                            <div class="ds44-mtb5 ds44-xl-fluid-margin">
                                 <p role="heading" aria-level="3" class="ds44-mb2">Vous parcourez les salles du musée librement</p>
-                                <div class="grid-12 has-gutter-xl">
+                                <div class="grid-12-medium-1 grid-12-small-1 has-gutter-xl ds44-noGapCol">
                                     <div class="col-7">
-                                        <div class="ds44-mb2">
+                                        <div class="ds44-mb4">
                                             {% include card/card--tarifs.html title="Entrée collection permanente" aria-level="3" imgdim="--dim80" %}
                                         </div>
-                                        <div class="ds44-mb2">
+                                        <div class="ds44-mb4">
                                             {% include card/card--tarifs.html title="Entrée exposition temporaire" aria-level="3" imgdim="--dim80" %}
                                         </div>
-                                        <div class="ds44-mb2">
+                                        <div class="ds44-mb4">
                                             {% include card/card--tarifs.html title="Entrée collection permanente + exposition temporaire" aria-level="3" imgdim="--dim80" %}
                                         </div>
                                     </div>
                                     <div class="col-5">
-                                        <section class="ds44-card ds44-card--noLink ds44-card--horizontal ds44-card--focus dobree-card--tarif">
-                                          <div class="ds44-flex-container ds44-flex-valign-center">
-                                            <div class="ds44-card__section--horizontal">
-                                                <p role="heading" aria-level="4">Entrée gratuite</p>
-                                                <ul class="ds44-mb2 ds44-listDisc">
-                                                    <li>Moins de 26 ans</li>
-                                                    <li>Étudiant.es</li>
-                                                    <li>Demandeurs.euses d’emploi inscrit.es à Pôle Emploi</li>
-                                                    <li>Bénéficiaires de minima sociaux (RSA, ASS...)</li>
-                                                    <li>Personnes en situation de handicap</li>
-                                                </ul>
-                                              <p><a class="ds44-btnStd" href="/"><span class="ds44-btnInnerText">Voir tous les tarifs réduits</span><i class="icon icon-long-arrow-right" aria-hidden="true"></i></a></p>
-                                            </div>
-                                          </div>
-                                        </section>
-                                        <section class="ds44-card ds44-card--noLink ds44-card--horizontal ds44-card--focus dobree-card--tarif">
-                                          <div class="ds44-flex-container ds44-flex-valign-center">
-                                            <div class="ds44-card__section--horizontal">
-                                              <p role="heading" aria-level="4">Tarif réduit</p>
-                                              <ul class="ds44-mb2 ds44-listDisc">
-                                                  <li>Titulaires de cartes partenaires spécifiques</li>
-                                                  <li>Carte famille nombreuse</li>
-                                                  <li>Utilisateurs.rices du train : abonnements SNCF et Aléop, billet de train du jour</li>
-                                                  <li>Dernière heure chaque jour</li>
-                                              </ul>
-                                              <p><a class="ds44-btnStd" href="/"><span class="ds44-btnInnerText">Voir tous les tarifs réduits</span><i class="icon icon-long-arrow-right" aria-hidden="true"></i></a></p>
-                                            </div>
-                                          </div>
-                                        </section>
+                                        <div class="ds44-mb4">
+                                            <section class="ds44-card ds44-card--noLink ds44-card--horizontal ds44-card--focus dobree-card--tarif ds44-noMrg">
+                                              <div class="ds44-flex-container ds44-flex-valign-center">
+                                                <div class="ds44-card__section--horizontal">
+                                                    <p role="heading" aria-level="4">Entrée gratuite</p>
+                                                    <ul class="ds44-mb4 ds44-listDisc">
+                                                        <li>Moins de 26 ans</li>
+                                                        <li>Étudiant.es</li>
+                                                        <li>Demandeurs.euses d’emploi inscrit.es à Pôle Emploi</li>
+                                                        <li>Bénéficiaires de minima sociaux (RSA, ASS...)</li>
+                                                        <li>Personnes en situation de handicap</li>
+                                                    </ul>
+                                                  <p><a class="ds44-btnStd" href="/"><span class="ds44-btnInnerText">Voir tous les tarifs réduits</span><i class="icon icon-long-arrow-right" aria-hidden="true"></i></a></p>
+                                                </div>
+                                              </div>
+                                            </section>
+                                        </div>
+                                        <div class="">
+                                            <section class="ds44-card ds44-card--noLink ds44-card--horizontal ds44-card--focus dobree-card--tarif">
+                                              <div class="ds44-flex-container ds44-flex-valign-center">
+                                                <div class="ds44-card__section--horizontal">
+                                                  <p role="heading" aria-level="4">Tarif réduit</p>
+                                                  <ul class="ds44-mb4 ds44-listDisc">
+                                                      <li>Titulaires de cartes partenaires spécifiques</li>
+                                                      <li>Carte famille nombreuse</li>
+                                                      <li>Utilisateurs.rices du train : abonnements SNCF et Aléop, billet de train du jour</li>
+                                                      <li>Dernière heure chaque jour</li>
+                                                  </ul>
+                                                  <p><a class="ds44-btnStd" href="/"><span class="ds44-btnInnerText">Voir tous les tarifs réduits</span><i class="icon icon-long-arrow-right" aria-hidden="true"></i></a></p>
+                                                </div>
+                                              </div>
+                                            </section>
+                                        </div>
                                     </div>
                                 </div>
                             </div>
@@ -132,7 +136,7 @@ layout: pattern
                             <button type="button" class="ds44-collapser_button">Visite guidée<i class="icon icon-down" aria-hidden="true"></i></button>
                         </p>
                         <div class="ds44-collapser_content">
-                            <div class="ds44-mtb5 ds44-container-large">
+                            <div class="ds44-mtb5 ds44-xl-fluid-margin">
                                 <p role="heading" aria-level="3" class="ds44-mb2">Contenu de Visite guidée</p>
                             </div>
                         </div>
@@ -142,7 +146,7 @@ layout: pattern
                             <button type="button" class="ds44-collapser_button">Ateliers<i class="icon icon-down" aria-hidden="true"></i></button>
                         </p>
                         <div class="ds44-collapser_content">
-                            <div class="ds44-mtb5 ds44-container-large">
+                            <div class="ds44-mtb5 ds44-xl-fluid-margin">
                                 <p role="heading" aria-level="3" class="ds44-mb2">Contenu d'Ateliers</p>
                             </div>
                         </div>
@@ -152,7 +156,7 @@ layout: pattern
                             <button type="button" class="ds44-collapser_button">Visite de groupe<i class="icon icon-down" aria-hidden="true"></i></button>
                         </p>
                         <div class="ds44-collapser_content">
-                            <div class="ds44-mtb5 ds44-container-large">
+                            <div class="ds44-mtb5 ds44-xl-fluid-margin">
                                 {% include onglets/onglets-lateral.html
                                   titleOngletUn="Groupes scolaires"
                                   titleOngletDeux="Groupes ALSH centre de loisir"
