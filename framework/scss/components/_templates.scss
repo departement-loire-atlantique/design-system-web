@@ -165,6 +165,8 @@ main {
 
 /* Body Modern spécifique pour le musée Dobrée par exemple */
 body.modern {
+    font-family: $ds44-font-family-baseModern;
+
     main {
         padding-top: 8.8rem;
         @media (max-width: $ds44-large - .0625) {
@@ -185,7 +187,7 @@ body.modern {
     .h1-like,
     .h1-like.h1-like--light,
     h1 {
-        font-family: $ds44-font-family-headingsDobree;
+        font-family: $ds44-font-family-headingsModern;
         font-weight: normal;
         line-height: 1.2em;
         margin-bottom: 3rem;
@@ -221,7 +223,7 @@ body.modern {
     .h3-like,
     .h5-like,
     .h5-like {
-        font-family: $ds44-font-family-baseDobree;
+        font-family: $ds44-font-family-baseModern;
         padding: 0;
         background: none;
         display: block;

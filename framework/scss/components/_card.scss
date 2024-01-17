@@ -124,7 +124,7 @@
 
         .ds44-cardTitle {
             font-size: 1.25em;
-            font-family: $ds44-font-family-baseDobree;
+            font-family: $ds44-font-family-baseModern;
             font-weight: 400;
         }
         .ds44-docListElem {
@@ -293,9 +293,14 @@ figure[role=figure]  + .ds44-card__section {
     line-height: 1.2;
     background: transparent;
     font-family: $ds44-font-family-base;
+}
 
-    &.h2-like.dobree-title + * {
-        margin-top: 0 !important;
+body.modern {
+    .ds44-card__title,
+    .ds44-facette__title {
+        &.h2-like + * {
+            margin-top: 0 !important;
+        }
     }
 }
 
