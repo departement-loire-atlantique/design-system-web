@@ -441,12 +441,23 @@ figure {
                  }
             }
             .dobree-listAccessibility > div {
-                background-color: rgba(0, 0, 0, 0.4);
+                background-color: transparent;
                 color: $ds44-light ;
                 font-size: 0.875em;
+                padding: 0 !important;
 
                 a {
                     color: $ds44-light ;
+                    margin-right: 10px;
+                }
+            }
+            .logoLA {
+                .ds44-logo img {
+                    height: 35px;
+                }
+                span {
+                    font-size:  0.875em;
+                    line-height: 1.25em;
                 }
             }
             .flecheAncre {
