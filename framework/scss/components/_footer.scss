@@ -87,7 +87,7 @@ footer [role="heading"] {
 /* ----------------------- */
 
 footer.footer-dobree {
-    border: 0;
+    border: 0; 
 
     .horairesOuverture {
         font-size: 1em;
@@ -112,6 +112,11 @@ footer.footer-dobree {
          @media (max-width: $ds44-medium - .0625) {
              margin :0 1rem .5rem 1rem;
              padding: 0 1rem;
+         }
+     }
+     .ds44-footerLink {
+         @media (max-width: $ds44-medium - .0625) {
+             font-size: 1em;
          }
      }
      .dobree-label {

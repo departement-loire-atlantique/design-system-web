@@ -1354,6 +1354,9 @@ h6.visually-hidden + * {
         padding-top: $ds44-padding-large*2 !important; // 4rem
         padding-bottom: $ds44-padding-large*2 !important; // 4rem
     }
+    .ds44--tablet--m-padding-b {
+        padding-bottom: $ds44-padding-medium !important; // 1rem
+    }
 
 }
 
