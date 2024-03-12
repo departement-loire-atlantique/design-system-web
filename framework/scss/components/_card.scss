@@ -374,6 +374,10 @@ body.modern {
 
 // Horizontal card specific Musée Dobrée Focus object
 
+.ds44-card__no-padding-left .ds44-card--focus .ds44-card__section--horizontal {
+    padding-left: 0;
+}
+
 .ds44-card--focus {
     .ds44-card__section--horizontal--img {
         width: 50%;
