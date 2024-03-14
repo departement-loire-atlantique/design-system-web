@@ -120,6 +120,10 @@
     position: absolute;
     z-index: 1;
     width: 27.5vw;
+
+    &.fullW{
+        width: 100%;
+    }
 }
 
 .ds44-legendeContainer .ds44-blockAbsolute--br {
