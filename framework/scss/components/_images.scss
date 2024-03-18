@@ -12,6 +12,20 @@
     display: block;
     padding-top: 66.6667%;
     position: relative;
+
+    &.dobree-icon-player {
+        cursor: pointer;
+        &::after {
+            content: '';
+            background-image: url("../../assets/icons/icon-player.svg") ;
+            display: block;
+            width: 64px;
+            height: 65px;
+            position: absolute;
+            top:calc(50% - 17px);
+            left: calc(50% - 17px);
+        }
+    }
 }
 
 .ds44-container-imgZoom {
@@ -106,6 +120,10 @@
     position: absolute;
     z-index: 1;
     width: 27.5vw;
+
+    &.fullW{
+        width: 100%;
+    }
 }
 
 .ds44-legendeContainer .ds44-blockAbsolute--br {
@@ -306,7 +324,6 @@ figure {
                  font-size: 20px;
                   display: inline-block;
                   margin-left: 20px;
-                  max-width: 60%;
                   line-height: 23px;
              }
              &:hover, &:focus {
@@ -323,6 +340,10 @@ figure {
              border-radius: 44px;
              width: 30px;
              height: 30px;
+             text-align: center;
+             .icon::before {
+              line-height: 0.7;
+            }
          }
 
      }
@@ -400,7 +421,7 @@ figure {
             }
 
             // span {
-            //     font-family: $ds44-font-family-baseDobree;
+            //     font-family: $ds44-font-family-baseModern;
             //     font-size: 14px;
             //     font-weight: normal;
             //     max-width: 192px;
@@ -423,10 +444,25 @@ figure {
                      margin-left:2rem;
                  }
             }
-            .dobree-listAccessibility a {
-                background-color: rgba(0, 0, 0, 0.4);
+            .dobree-listAccessibility > div {
+                background-color: transparent;
                 color: $ds44-light ;
                 font-size: 0.875em;
+                padding: 0 !important;
+
+                a {
+                    color: $ds44-light ;
+                    margin-right: 10px;
+                }
+            }
+            .logoLA {
+                .ds44-logo img {
+                    height: 35px;
+                }
+                span {
+                    font-size:  0.875em;
+                    line-height: 1.25em;
+                }
             }
             .flecheAncre {
                 position: absolute;

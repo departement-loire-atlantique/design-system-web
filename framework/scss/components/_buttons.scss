@@ -547,7 +547,15 @@ a.ds44-btnStd--retourPage {
         width: 12px;
         height: 12px;
         border-radius: 12px;
+    }
+    &.open::before {
         background-color: #28BA62 ;
+    }
+    &.close::before {
+        background-color: $ds44-error ;
+    }
+    &.indispo::before {
+        background-color: $ds44-gray  ;
     }
 
     &::after {
@@ -621,6 +629,8 @@ a.ds44-btnStd--retourPage {
     span {
         font-size: .97em !important;
     }
+    background-color: transparent !important;
+    color: $ds44-dark !important;
 }
 
 

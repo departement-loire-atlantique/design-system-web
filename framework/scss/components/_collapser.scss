@@ -78,14 +78,14 @@
       .ds44-collapser_button {
           background: $ds44-contextual-color;
           font-size: 1.875em;
-          padding: 2rem 3.5rem 2rem 3rem;
+          padding: 2rem 4rem 2rem 4rem;
 
           @media (max-width: $medium - .0625) {
               font-size: 1.25em;
           }
 
           .icon {
-              right: 3rem;
+              right: 4rem;
               top: 2rem;
             }
       }

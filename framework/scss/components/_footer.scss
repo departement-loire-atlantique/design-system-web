@@ -96,7 +96,7 @@ footer.footer-dobree {
         margin-left: 20px;
 
         &::before {
-           top: 20% !important;
+           top: 5px !important;
          }
     }
      [role="heading"] {
@@ -108,6 +108,16 @@ footer.footer-dobree {
      .ds44-footerLink:first-of-type {
          margin-left:0;
          padding-left: 0;
+
+         @media (max-width: $ds44-medium - .0625) {
+             margin :0 1rem .5rem 1rem;
+             padding: 0 1rem;
+         }
+     }
+     .ds44-footerLink {
+         @media (max-width: $ds44-medium - .0625) {
+             font-size: 1em;
+         }
      }
      .dobree-label {
          .ds44-logoContainer {
@@ -120,6 +130,9 @@ footer.footer-dobree {
 
              img {
                  height: 58px;
+             }
+             @media (max-width: $ds44-medium - .0625) {
+                 margin:1rem 2rem;
              }
          }
      }
@@ -137,6 +150,7 @@ footer.footer-dobree {
              .ds44-logoContainer {
                  border-right : none !important;
                  border-bottom : 1px solid $ds44-color-base;
+                 padding-bottom: 4rem;
              }
              .ds44-logo {
                  margin: 0 2rem;

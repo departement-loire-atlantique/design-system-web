@@ -1,27 +1,30 @@
 ---
 layout: pattern
+title: Dossier
+style: modern
+css: dobree.css
 ---
 
-{% include header/inc-header-musee-dobree.html logoAlt="" %}
+{% include header/inc-header-musee-dobree.html %}
 
 <button class="ds44-btnStd ds44-btn--invert ds44-fullWBtn ds44-btn-fixed ds44-show-tinyToLarge ds44-hide-large" id="ds44-summary-button" type="button" data-target="#navSommaire">
     <span class="ds44-btnInnerText">Sommaire</span><i class="icon icon-summary" aria-hidden="true"></i>
 </button>
 
-<main role="main" id="content" class="main-dobree">
-
+<main role="main" id="content">
     <section class="ds44-container-fluid">
         <div class="ds44-lightBG">
-            <div class="ds44-inner-container ds44--xl-padding-t ds44--m-padding-b">
-                <div class="ds44-grid12-offset-1">
+            <div class="ds44-container-large">
+                <div class="ds44-inner-container ds44--xl-padding-t ds44--m-padding-b">
                     {% include breadcrumb/breadcrumb.html %}
-                    <h1 class="h1-like dobree-title mbs mts ds44-mobile-reduced-mb ds44-mobile-reduced-mt" id="idTitre1">Budget participatif du Département : derniers jours pour voter !</h1>
+                    <h1 class="h1-like mbs mts ds44-mobile-reduced-mb ds44-mobile-reduced-mt" id="idTitre1">Budget participatif du Département : derniers jours pour voter !</h1>
+                    <p class="ds44-introduction">Place au vote ! Depuis le 9 octobre, les habitantes et habitants de Loire-Atlantique peuvent voter parmi les 245 projets citoyens retenus dans le cadre du budget participatif lancé par le Département. Le vote se fait uniquement en ligne jusqu’au lundi 13 novembre 2023 inclus. Lancez-vous !</p>
                 </div>
             </div>
         </div>
         <div class="ds44-img50">
-            <div class="ds44-inner-container">
-                <div class="ds44-grid12-offset-1">
+            <div class="ds44-container-large">
+                <div class="ds44-inner-container">
                     <figure class="ds44-legendeContainer ds44-container-imgRatio" role="figure"
                         aria-label="Légende associée © Copyright">
                         <img src="../../assets/images/img_article_bigger@2x.jpg" alt="Légende associée © Copyright" class="ds44-w100 ds44-imgRatio">
@@ -53,29 +56,27 @@ layout: pattern
                     <div class="col-1 grid-offset ds44-hide-tinyToLarge"></div>
 
                     <article class="col-7 ds44-contenuDossier ds44-mb3">
-                        <p class="ds44-introduction">Place au vote ! Depuis le 9 octobre, les habitantes et habitants de Loire-Atlantique peuvent voter parmi les 245 projets citoyens retenus dans le cadre du budget participatif lancé par le Département. Le vote se fait uniquement en ligne jusqu’au lundi 13 novembre 2023 inclus. Lancez-vous !</p>
-
-                        <section class="ds44-contenuArticle ds44-contenuArticle--dobree" id="section1">
+                        <section class="ds44-contenuArticle " id="section1">
                             <h2 id="idTitre2">Dernière ligne droite pour le premier budget participatif</h2>
                             <p>Pendant plusieurs mois, les services du Département ainsi que le comité citoyen, composé de 24 membres, ont analysé l’éligibilité des 397 projets déposés en fonction des critères du règlement et de leur faisabilité (coût, calendrier, faisabilité technique). Les projets lauréats seront révélés en décembre, à la suite de la validation de la liste par le comité citoyen. Leur réalisation se fera en 2024 et 2025.</p>
                             <p><b>Pour cette première édition, une enveloppe de 2 millions d’euros est consacrée au budget participatif, avec un montant maximum de 50 000 euros par projet.</b></p>
                             <div class="ds44-contenuMedia">
                                 <div class="ds44-inner-container ds44-mtb3">
-                                    <a href="#"><img src="../../assets/images/img_video_bigger@2x.jpg" alt="Vidéo : le Canal ouvre à la navigation" class="ds44-w100 ds44-hiddenPrint"></a>
+                                    <p><a href="#"><img src="../../assets/images/img_video_bigger@2x.jpg" alt="Vidéo : le Canal ouvre à la navigation" class="ds44-w100 ds44-hiddenPrint"></a></p>
                                 </div>
                             </div>
                         </section>
 
-                        <section class="ds44-contenuArticle ds44-contenuArticle--dobree" id="section2">
+                        <section class="ds44-contenuArticle " id="section2">
                             <h2 id="idTitre3">245 projets citoyens ouverts au vote</h2>
                             <p>Pendant plusieurs mois, les services du Département ainsi que le comité citoyen, composé de 24 membres, ont analysé l’éligibilité des 397 projets déposés en fonction des critères du règlement et de leur faisabilité (coût, calendrier, faisabilité technique). Les projets lauréats seront révélés en décembre, à la suite de la validation de la liste par le comité citoyen. Leur réalisation se fera en 2024 et 2025.</p>
-                            <p><a class="ds44-btnStd ds44-btn--contextual"><span class="ds44-btnInnerText">Je vote en ligne</span><i class="icon icon-long-arrow-right" aria-hidden="true"></i></a></p>
+                            <p><a class="ds44-btnStd ds44-btn--contextual" href="#"  title="Je vote en ligne : [TitreDuProjet]"><span class="ds44-btnInnerText">Je vote en ligne</span><i class="icon icon-long-arrow-right" aria-hidden="true"></i></a></p>
                         </section>
-                        <section class="ds44-contenuArticle ds44-contenuArticle--dobree" id="section3">
+                        <section class="ds44-contenuArticle " id="section3">
                             <h2 id="idTitre4">Le calendrier du budget participatif</h2>
                             <p>Pendant plusieurs mois, les services du Département ainsi que le comité citoyen, composé de 24 membres, ont analysé l’éligibilité des 397 projets déposés en fonction des critères du règlement et de leur faisabilité (coût, calendrier, faisabilité technique). Les projets lauréats seront révélés en décembre, à la suite de la validation de la liste par le comité citoyen. Leur réalisation se fera en 2024 et 2025.</p>
                             <p>Pendant plusieurs mois, les services du Département ainsi que le comité citoyen, composé de 24 membres, ont analysé l’éligibilité des 397 projets déposés en fonction des critères du règlement et de leur faisabilité (coût, calendrier, faisabilité technique). Les projets lauréats seront révélés en décembre, à la suite de la validation de la liste par le comité citoyen. Leur réalisation se fera en 2024 et 2025.</p>
-                            <p><a class="ds44-btnStd ds44-btn--contextual"><span class="ds44-btnInnerText">Je vote en ligne</span><i class="icon icon-long-arrow-right" aria-hidden="true"></i></a></p>
+                            <p><a class="ds44-btnStd ds44-btn--contextual" href="#"  title="Je vote en ligne : [TitreDuProjet]"><span class="ds44-btnInnerText">Je vote en ligne</span><i class="icon icon-long-arrow-right" aria-hidden="true"></i></a></p>
                         </section>
 
                     </article>

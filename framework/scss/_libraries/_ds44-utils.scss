@@ -431,6 +431,10 @@
     align-items: center;
 }
 
+.ds44-flex-valign-stretch {
+    align-items: stretch;
+}
+
 .ds44-flex-align-center {
     justify-content: center;
 }
@@ -951,6 +955,53 @@
     line-height: 0.25;
 }
 
+/* === Icons GPLA === */
+
+.icon {
+    position: relative;
+    &.icon--simple,
+    &.icon--full,
+    &.icon--circle {
+        width: 45px;
+        height: 45px;
+        border : 2px solid  $ds44-dark;
+        vertical-align: middle;
+        text-align: center;
+        border-radius: 30px;
+        vertical-align: middle;
+        display: inline-flex;
+        justify-content: center;
+        align-items: center;
+        &::before {
+            vertical-align: middle;
+            display: table;
+        }
+    }
+    &.icon--full {
+        background: $ds44-dark;
+        &::before {
+            color: $ds44-light ;
+        }
+    }
+    &.icon--circle {
+        background: $ds44-light;
+    }
+    &.icon--simple {
+        border : 2px solid  transparent;
+    }
+    &.icon--forbidden::after {
+        content: '';
+        position: absolute;
+        width: 100%;
+        height: 3px;
+        background: $ds44-error;
+        top: calc(50% - 1.5px);
+        left: 0;
+        transform: rotate(45deg);
+        display: block;
+    }
+}
+
 // icon margins
 .icon + .ds44-iconInnerText,
 .ds44-iconInnerText + .icon {
@@ -1290,6 +1341,11 @@ h6.visually-hidden + * {
         margin-top: 1.5rem;
     }
 
+    .ds44-tablet-xxl-padding-lr {
+        padding-left: $ds44-padding-large*2 !important; // 1rem
+        padding-right: $ds44-padding-large*2 !important; // 1rem
+    }
+
     .ds44-tablet-padding-tb {
         padding-top: $ds44-padding-medium; // 1rem
         padding-bottom: $ds44-padding-medium; // 1rem
@@ -1297,6 +1353,9 @@ h6.visually-hidden + * {
     .ds44--xxl-padding-tb {
         padding-top: $ds44-padding-large*2 !important; // 4rem
         padding-bottom: $ds44-padding-large*2 !important; // 4rem
+    }
+    .ds44--tablet--m-padding-b {
+        padding-bottom: $ds44-padding-medium !important; // 1rem
     }
 
 }

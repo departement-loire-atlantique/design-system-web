@@ -52,6 +52,10 @@ variations:
   description: Section texte et image partagé 50/50
   pattern: composants-transverses/text-image.html
 
+- title: Tableau mobile
+  description: Tableau spécifique en format mobile pour le Musée Dobrée
+  pattern: composants-transverses/table-mobile.html
+
 
 ---
 

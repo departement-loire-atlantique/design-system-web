@@ -1,17 +1,20 @@
 ---
 layout: pattern
+title: Agenda
+style: modern
+css: dobree.css
 ---
 
-{% include header/inc-header.html %}
+{% include header/inc-header-musee-dobree.html %}
 
 <main role="main" id="content">
     <section class="ds44-container-fluid">
         <div class="ds44-lightBG">
-            <div class="ds44-inner-container ds44--xl-padding-t ds44--m-padding-b">
-                {% include breadcrumb/breadcrumb.html %}
-                <h1 class="h1-like dobree-title mbs mts ds44-mobile-reduced-mb ds44-mobile-reduced-mt">L’agenda du musée</h1>
-            </div>
             <div class="ds44-container-large">
+                <div class="ds44-inner-container ds44--xl-padding-t ds44--m-padding-b">
+                    {% include breadcrumb/breadcrumb.html %}
+                    <h1 class="h1-like  mbs mts ds44-mobile-reduced-mb ds44-mobile-reduced-mt">L’agenda du musée</h1>
+                </div>
                 <div id="mainResults__cantons" class="ds44-mainResults {% if include['no-padding'] == 'true' %} ds44-noPdg {% endif %}">
                   <section>
                     {% assign formId = 'recherche-facette' %}
@@ -21,7 +24,7 @@ layout: pattern
                         {% include form/field/select/standard.html label="Quoi ?" %}
                     </div>
                     <div class="ds44-fieldContainer ds44-fg1 ds44-fieldContainer--select">
-                      {% include form/field/select/standard.html label="Sélectionner une date" %}
+                      {% include form/field/select/radio.html label="Sélectionner une date" %}
                     </div>
                     {% endcapture %}
                     {% include form/layout/recherche-facettes.html id=formId fields=fields url=include.url %}
@@ -44,7 +47,7 @@ layout: pattern
                                     titreTuile="Le musée fête sa réouverture"
                                     idTuile="8"
                                     cardContent='
-                                    <p class="ds44-docListElem "><i class="icon icon-date ds44-docListIco" aria-hidden="true"></i>4 avril 2024 à 15h</p>
+                                    <p class="ds44-docListElem "><i class="icon icon-date ds44-docListIco" aria-hidden="true"></i><span class="visually-hidden">Date de l&#39;événement : </span>4 avril 2024 à 15h</p>
                                     <p class="ds44-docListElem "><i class="icon icon-marker ds44-docListIco" aria-hidden="true"></i>Boutique</p>'
                                 %}
                             </li>
@@ -54,7 +57,7 @@ layout: pattern
                                     titreTuile="Le musée fête sa réouverture"
                                     idTuile="8"
                                     cardContent='
-                                    <p class="ds44-docListElem "><i class="icon icon-date ds44-docListIco" aria-hidden="true"></i>4 avril 2024 à 15h</p>
+                                    <p class="ds44-docListElem "><i class="icon icon-date ds44-docListIco" aria-hidden="true"></i><span class="visually-hidden">Date de l&#39;événement : </span>4 avril 2024 à 15h</p>
                                     <p class="ds44-docListElem "><i class="icon icon-marker ds44-docListIco" aria-hidden="true"></i>Boutique</p>'
                                 %}
                             </li>
@@ -64,7 +67,7 @@ layout: pattern
                                     titreTuile="Le musée fête sa réouverture"
                                     idTuile="8"
                                     cardContent='
-                                    <p class="ds44-docListElem "><i class="icon icon-date ds44-docListIco" aria-hidden="true"></i>4 avril 2024 à 15h</p>
+                                    <p class="ds44-docListElem "><i class="icon icon-date ds44-docListIco" aria-hidden="true"></i><span class="visually-hidden">Date de l&#39;événement : </span>4 avril 2024 à 15h</p>
                                     <p class="ds44-docListElem "><i class="icon icon-marker ds44-docListIco" aria-hidden="true"></i>Boutique</p>'
                                 %}
                             </li>
@@ -74,7 +77,7 @@ layout: pattern
                                     titreTuile="Le musée fête sa réouverture"
                                     idTuile="8"
                                     cardContent='
-                                    <p class="ds44-docListElem "><i class="icon icon-date ds44-docListIco" aria-hidden="true"></i>4 avril 2024 à 15h</p>
+                                    <p class="ds44-docListElem "><i class="icon icon-date ds44-docListIco" aria-hidden="true"></i><span class="visually-hidden">Date de l&#39;événement : </span>4 avril 2024 à 15h</p>
                                     <p class="ds44-docListElem "><i class="icon icon-marker ds44-docListIco" aria-hidden="true"></i>Boutique</p>'
                                 %}
                             </li>
@@ -84,7 +87,7 @@ layout: pattern
                                     titreTuile="Le musée fête sa réouverture"
                                     idTuile="8"
                                     cardContent='
-                                    <p class="ds44-docListElem "><i class="icon icon-date ds44-docListIco" aria-hidden="true"></i>4 avril 2024 à 15h</p>
+                                    <p class="ds44-docListElem "><i class="icon icon-date ds44-docListIco" aria-hidden="true"></i><span class="visually-hidden">Date de l&#39;événement : </span>4 avril 2024 à 15h</p>
                                     <p class="ds44-docListElem "><i class="icon icon-marker ds44-docListIco" aria-hidden="true"></i>Boutique</p>'
                                 %}
                             </li>
@@ -94,7 +97,7 @@ layout: pattern
                                     titreTuile="Le musée fête sa réouverture"
                                     idTuile="8"
                                     cardContent='
-                                    <p class="ds44-docListElem "><i class="icon icon-date ds44-docListIco" aria-hidden="true"></i>4 avril 2024 à 15h</p>
+                                    <p class="ds44-docListElem "><i class="icon icon-date ds44-docListIco" aria-hidden="true"></i><span class="visually-hidden">Date de l&#39;événement : </span>4 avril 2024 à 15h</p>
                                     <p class="ds44-docListElem "><i class="icon icon-marker ds44-docListIco" aria-hidden="true"></i>Boutique</p>'
                                 %}
                             </li>
@@ -104,7 +107,7 @@ layout: pattern
                                     titreTuile="Le musée fête sa réouverture"
                                     idTuile="8"
                                     cardContent='
-                                    <p class="ds44-docListElem "><i class="icon icon-date ds44-docListIco" aria-hidden="true"></i>4 avril 2024 à 15h</p>
+                                    <p class="ds44-docListElem "><i class="icon icon-date ds44-docListIco" aria-hidden="true"></i><span class="visually-hidden">Date de l&#39;événement : </span>4 avril 2024 à 15h</p>
                                     <p class="ds44-docListElem "><i class="icon icon-marker ds44-docListIco" aria-hidden="true"></i>Boutique</p>'
                                 %}
                             </li>
@@ -114,7 +117,7 @@ layout: pattern
                                     titreTuile="Le musée fête sa réouverture"
                                     idTuile="8"
                                     cardContent='
-                                    <p class="ds44-docListElem "><i class="icon icon-date ds44-docListIco" aria-hidden="true"></i>4 avril 2024 à 15h</p>
+                                    <p class="ds44-docListElem "><i class="icon icon-date ds44-docListIco" aria-hidden="true"></i><span class="visually-hidden">Date de l&#39;événement : </span>4 avril 2024 à 15h</p>
                                     <p class="ds44-docListElem "><i class="icon icon-marker ds44-docListIco" aria-hidden="true"></i>Boutique</p>'
                                 %}
                             </li>
@@ -124,7 +127,7 @@ layout: pattern
                                     titreTuile="Le musée fête sa réouverture"
                                     idTuile="8"
                                     cardContent='
-                                    <p class="ds44-docListElem "><i class="icon icon-date ds44-docListIco" aria-hidden="true"></i>4 avril 2024 à 15h</p>
+                                    <p class="ds44-docListElem "><i class="icon icon-date ds44-docListIco" aria-hidden="true"></i><span class="visually-hidden">Date de l&#39;événement : </span>4 avril 2024 à 15h</p>
                                     <p class="ds44-docListElem "><i class="icon icon-marker ds44-docListIco" aria-hidden="true"></i>Boutique</p>'
                                 %}
                             </li>

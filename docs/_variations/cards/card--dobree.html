@@ -13,21 +13,22 @@ layout: pattern
 <hr />
 
 <p class="h4-like">Deux tuiles à côté</p>
-<ul class="grid-2-tiny-1 ds44-mosaique ds44-gutter ds44-list">
+<ul class="grid-2-tiny-1 ds44-mosaique has-gutter-l ds44-list">
     <li>
         {% include card/card--dobree.html
             has-picture="true"
             titreTuile="Le musée fête sa réouverture"
             idTuile="8"
-            cardContent='<p class="ds44-docListElem "><i class="icon icon-date ds44-docListIco" aria-hidden="true"></i>4 avril 2024</p>'
+            cardContent='<p class="ds44-docListElem "><i class="icon icon-date ds44-docListIco" aria-hidden="true"></i><span class="visually-hidden">Date de l&#39;événement : </span>4 avril 2024</p>'
         %}    </li>
         <li>
-            {% include card/card--dobree.html
-                has-picture="true"
-                titreTuile="C'est bientôt la nuit des musées"
-                idTuile="8"
-                cardContent='<p class="ds44-docListElem ds44-mt-std"><i class="icon icon-date ds44-docListIco" aria-hidden="true"></i>18 mai 2024</p>'
-            %}    </li>
+        {% include card/card--dobree.html
+            has-picture="true"
+            titreTuile="C'est bientôt la nuit des musées"
+            idTuile="8"
+            cardContent='<p class="ds44-docListElem ds44-mt-std"><i class="icon icon-date ds44-docListIco" aria-hidden="true"></i><span class="visually-hidden">Date de l&#39;événement : </span>18 mai 2024</p>'
+        %}
+        </li>
 </ul>
 
 <hr />
@@ -96,7 +97,7 @@ layout: pattern
 <section class="ds44-card ds44-card--noLink ds44-card--horizontal ds44-card--focus dobree-card--tarif">
   <div class="ds44-flex-container ds44-flex-valign-center">
     <div class="ds44-card__section--horizontal">
-        <p role="heading" aria-level="4">Entrée gratuite</p>
+        <p role="heading" aria-level="3">Entrée gratuite</p>
         <ul class="ds44-mb2 ds44-listDisc">
             <li>Moins de 26 ans</li>
             <li>Étudiant.es</li>

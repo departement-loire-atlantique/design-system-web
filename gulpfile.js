@@ -27,6 +27,7 @@ var jekyllDir = "docs/",
     scssBlancheCouronneFile = 'framework/scss/SP-abbayeBlancheCouronne.scss',
     scssFoliesSiffaitFile = 'framework/scss/SP-jardinsFoliesSiffait.scss',
     scssSaintSulpiceFile = 'framework/scss/SP-egliseVieuxBourg.scss',
+    scssDobreeFile = 'framework/scss/SP-museeDobree.scss',
     scssFileSwiper = 'node_modules/swiper/css/swiper.min.css',
     scssFileAos = 'node_modules/aos/dist/aos.css',
     cssDest = 'dist/css',
@@ -197,6 +198,18 @@ gulp.task('build:css:saint-sulpice:dev', function () {
         .pipe(gulp.dest(cssDest));
 });
 
+gulp.task('build:css:dobree:dev', function () {
+    return gulp.src([scssFileSwiper, scssFileAos, scssDobreeFile])
+        .pipe(sass({
+            // CSS non minifiée plus lisible ('}' à la ligne)
+            outputStyle: 'expanded'
+        }))
+        .pipe(postcss(postCssPluginsDev))
+        .pipe(concat('dobree.css'))
+        .pipe(browserSync.stream())
+        .pipe(gulp.dest(cssDest));
+});
+
 gulp.task('build:css:cd44:prod', function () {
     return gulp.src([scssFileSwiper, scssFileAos, scssFile])
         .pipe(sass())
@@ -290,6 +303,7 @@ gulp.task('build:ds', gulp.parallel(
     'build:css:blanche-couronne:dev',
     'build:css:folies-siffait:dev',
     'build:css:saint-sulpice:dev',
+    'build:css:dobree:dev',
     'build:glyphicons',
     'build:demoicons',
     'build:js',

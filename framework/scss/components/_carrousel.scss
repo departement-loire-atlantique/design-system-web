@@ -368,11 +368,10 @@
         .swiper-thumbs  {
             display: none;
         }
-
 }
 
 @media screen and (max-width: $ds44-medium - .0625) {
-    // Musée Dobrée Carrousel - ajout puces et positionnement des flèches sous le carroussel en mobile
+    // Musée Dobrée Carrousel - ajout puces et positionnement des flèches sous le carroussel
     .swipper-carousel-wrap--dobree {
             .swiper-thumbs  {
               background-color: $ds44-light;

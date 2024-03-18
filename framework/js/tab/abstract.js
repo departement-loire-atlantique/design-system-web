@@ -18,7 +18,7 @@ class TabAbstract {
     }
 
     getHrefFromElement (element) {
-        return element.getAttribute('href') || element.getAttribute('data-href');
+        return element.getAttribute('data-href') || element.getAttribute('href');
     }
 
     create (containerElement) {

@@ -1,16 +1,17 @@
 ---
 layout: pattern
+title: Horaires et tarifs
+style: modern
+css: dobree.css
 ---
 
-{% include header/inc-header-musee-dobree.html logoAlt="" %}
+{% include header/inc-header-musee-dobree.html %}
 
-<main role="main" id="content" class="main-dobree">
-
+<main role="main" id="content">
     <section class="ds44-container-large">
-        <div class="">
-            <div class="ds44-inner-container ds44--xxl-padding-tb">
+            <div class="ds44-inner-container ds44--xl-padding-tb">
                 {% include breadcrumb/breadcrumb.html %}
-                <h1 class="h1-like dobree-title dobree-title--helvetica mbs mts ds44-mobile-reduced-mb ds44-mobile-reduced-mt" id="idTitre1">Horaires, tarifs</h1>
+                <h1 class="h1-like mbs mts ds44-mobile-reduced-mb ds44-mobile-reduced-mt" id="idTitre1">Horaires, tarifs</h1>
                 <section class="ds44-card--noLink ds44-card--horizontal ds44-card--focus dobree-text-image ds44-noMrg">
                   <div class="ds44-flex-container ds44-flex-valign-center ds44-flex-dir-reverse">
                     <div class="ds44-card__section--horizontal--img">
@@ -19,18 +20,17 @@ layout: pattern
                         </picture>
                     </div>
                     <div class="ds44-card__section--horizontal dobree-fontSize-20">
-                        <p class="horairesOuverture ds44-mb2 ds44-darkText">Le musée est ouvert aujourd’hui <b>de 8h à 17h</b></p>
+                        <p class="horairesOuverture open ds44-mb2 ds44-darkText">Le musée est ouvert aujourd’hui <b>de 8h à 17h</b></p>
                         <p class="ds44-mb1"><b>Du mardi au dimanche</b></p>
                         <p><b>de 10h à 18h</b> de septembre à juin <br><b>de 10h à 19h</b> en juillet et août</p>
                     </div>
                   </div>
                 </section>
             </div>
-        </div>
     </section>
 
     <section class="ds44--xxl-padding-tb">
-    	<div class="ds44-container-fluid">
+    	<div class="ds44-container-large">
             <div class="ds44-inner-container">
                 <ul class="ds44-collapser dobree-collapser">
                     <li class="ds44-collapser_element">
@@ -38,14 +38,14 @@ layout: pattern
                 			<button type="button" class="ds44-collapser_button">Visite libre<i class="icon icon-down" aria-hidden="true"></i></button>
                         </p>
                 		<div class="ds44-collapser_content">
-                            <div class="ds44-mtb5 ds44-xl-fluid-margin">
+                            <div class="ds44-mtb5 ds44-m-fluid-margin">
                                 <p role="heading" aria-level="3" class="ds44-mb2">Vous parcourez les salles du musée librement</p>
                                 {% include card/card--tarifs.html title="Entrée collection permanente" aria-level="3" %}
-                                <div class="grid-2-tiny-1 has-gutter-xl ds44-mt3">
-                                        <section class="ds44-card ds44-card--noLink ds44-card--horizontal ds44-card--focus dobree-card--tarif">
+                                <div class="grid-2-tiny-1 grid-2-small-1 has-gutter-xl ds44-mt4">
+                                        <section class="ds44-card ds44-card--noLink ds44-card--horizontal ds44-card--focus dobree-card--tarif ds44-noMrg">
                                       <div class="ds44-flex-container ds44-flex-valign-center">
                                         <div class="ds44-card__section--horizontal">
-                                          <p role="heading" aria-level="4">Entrée gratuite</p>
+                                          <p role="heading" aria-level="3">Entrée gratuite</p>
                                           <ul class="ds44-mb2 ds44-listDisc">
                                               <li>Moins de 26 ans</li>
                                               <li>Étudiant.es</li>
@@ -53,21 +53,21 @@ layout: pattern
                                               <li>Bénéficiaires de minima sociaux (RSA, ASS...)</li>
                                               <li>Personnes en situation de handicap</li>
                                           </ul>
-                                          <p><a class="ds44-btnStd"><span class="ds44-btnInnerText">Voir toutes les gratuités</span><i class="icon icon-long-arrow-right" aria-hidden="true"></i></a></p>
+                                          <p><a class="ds44-btnStd" href="/"><span class="ds44-btnInnerText">Voir toutes les gratuités</span><i class="icon icon-long-arrow-right" aria-hidden="true"></i></a></p>
                                         </div>
                                       </div>
                                     </section>
-                                    <section class="ds44-card ds44-card--noLink ds44-card--horizontal ds44-card--focus dobree-card--tarif">
+                                    <section class="ds44-card ds44-card--noLink ds44-card--horizontal ds44-card--focus dobree-card--tarif ds44-noMrg">
                                       <div class="ds44-flex-container ds44-flex-valign-center">
                                         <div class="ds44-card__section--horizontal">
-                                          <p role="heading" aria-level="4">Tarif réduit</p>
+                                          <p role="heading" aria-level="3">Tarif réduit</p>
                                           <ul class="ds44-mb2 ds44-listDisc">
                                               <li>Titulaires de cartes partenaires spécifiques</li>
                                               <li>Carte famille nombreuse</li>
                                               <li>Utilisateurs.rices du train : abonnements SNCF et Aléop, billet de train du jour</li>
                                               <li>Dernière heure chaque jour</li>
                                           </ul>
-                                          <p><a class="ds44-btnStd"><span class="ds44-btnInnerText">Voir tous les tarifs réduits</span><i class="icon icon-long-arrow-right" aria-hidden="true"></i></a></p>
+                                          <p><a class="ds44-btnStd" href="/"><span class="ds44-btnInnerText">Voir tous les tarifs réduits</span><i class="icon icon-long-arrow-right" aria-hidden="true"></i></a></p>
                                         </div>
                                       </div>
                                     </section>
@@ -80,50 +80,54 @@ layout: pattern
                             <button type="button" class="ds44-collapser_button">Visite libre Version 2<i class="icon icon-down" aria-hidden="true"></i></button>
                         </p>
                         <div class="ds44-collapser_content">
-                            <div class="ds44-mtb5 ds44-container-large">
+                            <div class="ds44-mtb5 ds44-m-fluid-margin">
                                 <p role="heading" aria-level="3" class="ds44-mb2">Vous parcourez les salles du musée librement</p>
-                                <div class="grid-12 has-gutter-xl">
+                                <div class="grid-12-medium-1 grid-12-small-1 has-gutter-xl ds44-noGapCol">
                                     <div class="col-7">
-                                        <div class="ds44-mb2">
+                                        <div class="ds44-mb4">
                                             {% include card/card--tarifs.html title="Entrée collection permanente" aria-level="3" imgdim="--dim80" %}
                                         </div>
-                                        <div class="ds44-mb2">
+                                        <div class="ds44-mb4">
                                             {% include card/card--tarifs.html title="Entrée exposition temporaire" aria-level="3" imgdim="--dim80" %}
                                         </div>
-                                        <div class="ds44-mb2">
+                                        <div class="ds44-mb4">
                                             {% include card/card--tarifs.html title="Entrée collection permanente + exposition temporaire" aria-level="3" imgdim="--dim80" %}
                                         </div>
                                     </div>
                                     <div class="col-5">
-                                        <section class="ds44-card ds44-card--noLink ds44-card--horizontal ds44-card--focus dobree-card--tarif">
-                                          <div class="ds44-flex-container ds44-flex-valign-center">
-                                            <div class="ds44-card__section--horizontal">
-                                                <p role="heading" aria-level="4">Entrée gratuite</p>
-                                                <ul class="ds44-mb2 ds44-listDisc">
-                                                    <li>Moins de 26 ans</li>
-                                                    <li>Étudiant.es</li>
-                                                    <li>Demandeurs.euses d’emploi inscrit.es à Pôle Emploi</li>
-                                                    <li>Bénéficiaires de minima sociaux (RSA, ASS...)</li>
-                                                    <li>Personnes en situation de handicap</li>
-                                                </ul>
-                                              <p><a class="ds44-btnStd"><span class="ds44-btnInnerText">Voir tous les tarifs réduits</span><i class="icon icon-long-arrow-right" aria-hidden="true"></i></a></p>
-                                            </div>
-                                          </div>
-                                        </section>
-                                        <section class="ds44-card ds44-card--noLink ds44-card--horizontal ds44-card--focus dobree-card--tarif">
-                                          <div class="ds44-flex-container ds44-flex-valign-center">
-                                            <div class="ds44-card__section--horizontal">
-                                              <p role="heading" aria-level="4">Tarif réduit</p>
-                                              <ul class="ds44-mb2 ds44-listDisc">
-                                                  <li>Titulaires de cartes partenaires spécifiques</li>
-                                                  <li>Carte famille nombreuse</li>
-                                                  <li>Utilisateurs.rices du train : abonnements SNCF et Aléop, billet de train du jour</li>
-                                                  <li>Dernière heure chaque jour</li>
-                                              </ul>
-                                              <p><a class="ds44-btnStd"><span class="ds44-btnInnerText">Voir tous les tarifs réduits</span><i class="icon icon-long-arrow-right" aria-hidden="true"></i></a></p>
-                                            </div>
-                                          </div>
-                                        </section>
+                                        <div class="ds44-mb4">
+                                            <section class="ds44-card ds44-card--noLink ds44-card--horizontal ds44-card--focus dobree-card--tarif ds44-noMrg">
+                                              <div class="ds44-flex-container ds44-flex-valign-center">
+                                                <div class="ds44-card__section--horizontal">
+                                                    <p role="heading" aria-level="4">Entrée gratuite</p>
+                                                    <ul class="ds44-mb4 ds44-listDisc">
+                                                        <li>Moins de 26 ans</li>
+                                                        <li>Étudiant.es</li>
+                                                        <li>Demandeurs.euses d’emploi inscrit.es à Pôle Emploi</li>
+                                                        <li>Bénéficiaires de minima sociaux (RSA, ASS...)</li>
+                                                        <li>Personnes en situation de handicap</li>
+                                                    </ul>
+                                                  <p><a class="ds44-btnStd" href="/"><span class="ds44-btnInnerText">Voir tous les tarifs réduits</span><i class="icon icon-long-arrow-right" aria-hidden="true"></i></a></p>
+                                                </div>
+                                              </div>
+                                            </section>
+                                        </div>
+                                        <div class="">
+                                            <section class="ds44-card ds44-card--noLink ds44-card--horizontal ds44-card--focus dobree-card--tarif">
+                                              <div class="ds44-flex-container ds44-flex-valign-center">
+                                                <div class="ds44-card__section--horizontal">
+                                                  <p role="heading" aria-level="4">Tarif réduit</p>
+                                                  <ul class="ds44-mb4 ds44-listDisc">
+                                                      <li>Titulaires de cartes partenaires spécifiques</li>
+                                                      <li>Carte famille nombreuse</li>
+                                                      <li>Utilisateurs.rices du train : abonnements SNCF et Aléop, billet de train du jour</li>
+                                                      <li>Dernière heure chaque jour</li>
+                                                  </ul>
+                                                  <p><a class="ds44-btnStd" href="/"><span class="ds44-btnInnerText">Voir tous les tarifs réduits</span><i class="icon icon-long-arrow-right" aria-hidden="true"></i></a></p>
+                                                </div>
+                                              </div>
+                                            </section>
+                                        </div>
                                     </div>
                                 </div>
                             </div>
@@ -134,7 +138,7 @@ layout: pattern
                             <button type="button" class="ds44-collapser_button">Visite guidée<i class="icon icon-down" aria-hidden="true"></i></button>
                         </p>
                         <div class="ds44-collapser_content">
-                            <div class="ds44-mtb5 ds44-container-large">
+                            <div class="ds44-mtb5 ds44-m-fluid-margin">
                                 <p role="heading" aria-level="3" class="ds44-mb2">Contenu de Visite guidée</p>
                             </div>
                         </div>
@@ -144,7 +148,7 @@ layout: pattern
                             <button type="button" class="ds44-collapser_button">Ateliers<i class="icon icon-down" aria-hidden="true"></i></button>
                         </p>
                         <div class="ds44-collapser_content">
-                            <div class="ds44-mtb5 ds44-container-large">
+                            <div class="ds44-mtb5 ds44-m-fluid-margin">
                                 <p role="heading" aria-level="3" class="ds44-mb2">Contenu d'Ateliers</p>
                             </div>
                         </div>
@@ -154,7 +158,7 @@ layout: pattern
                             <button type="button" class="ds44-collapser_button">Visite de groupe<i class="icon icon-down" aria-hidden="true"></i></button>
                         </p>
                         <div class="ds44-collapser_content">
-                            <div class="ds44-mtb5 ds44-container-large">
+                            <div class="ds44-mtb5 ds44-m-fluid-margin">
                                 {% include onglets/onglets-lateral.html
                                   titleOngletUn="Groupes scolaires"
                                   titleOngletDeux="Groupes ALSH centre de loisir"
@@ -193,7 +197,7 @@ layout: pattern
                                         </tbody>
                                     </table>
                                     <p class="ds44-textLegend">Si 2 activités payantes : 2e activité à 28 €</p>
-                                    <p class="ds44-txtRight"><a class="ds44-btnStd"><span class="ds44-btnInnerText">Plus d&#39;infos sur les visites proposées</span><i class="icon icon-long-arrow-right" aria-hidden="true"></i></a></p>
+                                    <p class="ds44-txtRight"><a class="ds44-btnStd" href="/"><span class="ds44-btnInnerText">Plus d&#39;infos sur les visites proposées</span><i class="icon icon-long-arrow-right" aria-hidden="true"></i></a></p>
 
                                 </div>
                                   '
@@ -216,13 +220,14 @@ layout: pattern
             <div class="ds44-inner-container">
                 <div class="grid-12-medium-1 grid-12-small-1 has-gutter-xl">
                     <div class="col-6">
-                        <h1 class="h3-like dobree-title dobree-title--helvetica ds44-mb3" id="idTitre2">Une carte <b>Grand patrimoine de Loire-Atlantique</b> pour tous les sites patrimoniaux départementaux</h1>
+                        <h1 class="h2-like ds44-mb3" id="idTitre2">Une carte <b>Grand patrimoine de Loire-Atlantique</b> pour tous les sites patrimoniaux départementaux</h1>
                         <p>Donne accès à la gratuité pour les entrées en illimité au château de Clisson et au musée Dobrée.</p>
                         <p>Donne accès au tarif réduit pour les médiations de tous les sites départementaux + dans les boutiques</p>
-                        <p><a class="ds44-btnStd ds44-btn--contextual ds44-mtb3"><span class="ds44-btnInnerText">Acheter une carte</span><i class="icon icon-long-arrow-right" aria-hidden="true"></i></a></p>
+                        <p><a class="ds44-btnStd ds44-btn--contextual ds44-mtb3" href="/"><span class="ds44-btnInnerText">Acheter une carte</span><i class="icon icon-long-arrow-right" aria-hidden="true"></i></a></p>
                     </div>
                     <div class="col-6">
-                        <div class="grid-12-tiny-1 dobree-bloc-tarif">
+                        <img src="../../assets/images/img_carte-dobree.svg" alt="" class="ds44-w100"/>
+                        <!-- <div class="grid-12-tiny-1 dobree-bloc-tarif">
                             <ul class="col-7 ds44-list list-logos ds44-lightBG">
                                 <li><img src="../../assets/images/logos/logomusee-dobree-noir.svg" alt="Logo du Musée Dobrée" /></li>
                                 <li><img src="../../assets/images/logos/logo-domaine-de-la-garenne-lemot-noir.svg" alt="Logo du Domaine de la Garenne Lemot" /></li>
@@ -230,8 +235,8 @@ layout: pattern
                                 <li><img src="../../assets/images/logos/logo-chateau-de-chateaubriant-noir.svg" alt="Logo du Chateau de Chateaubriant" /></li>
                                 <li><img src="../../assets/images/logos/logo-jardins-des-folies-siffait-noir.svg" alt="Logo des Jardins des Folies Sifflait" /></li>
                             </ul>
-                            <p class="col-5 prix ds44-theme flex-container ds44-flex-valign-center ds44-flex-align-center h1-like dobree-title--helvetica">XX€</p>
-                        </div>
+                            <p class="col-5 prix ds44-theme flex-container ds44-flex-valign-center ds44-flex-align-center h1-like ">XX€</p>
+                        </div> -->
                     </div>
                 </div>
             </div>

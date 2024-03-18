@@ -115,15 +115,8 @@
         height: 100%;
         margin-bottom: 0;
 
-        .dobree-icon-player {
-            position: absolute;
-            top:calc(50% - 17px);
-            left: calc(50% - 17px);
-        }
-
         .ds44-card__section {
           padding: 2rem;
-          position: relative;
               .ds44-innerBoxContainer {
                   padding: 0;
             }
@@ -131,7 +124,7 @@
 
         .ds44-cardTitle {
             font-size: 1.25em;
-            font-family: $ds44-font-family-baseDobree;
+            font-family: $ds44-font-family-baseModern;
             font-weight: 400;
         }
         .ds44-docListElem {
@@ -146,9 +139,27 @@
         .ds44-container-imgRatio--carreAllonge + .ds44-card__section {
             .ds44-cardTitle a {
                 font-size: 1.5em;
+                @media (max-width: ($ds44-medium - .0625)) {
+                    font-size: 1em;
+                }
             }
             .ds44-cardArrow {
-                bottom : 1em;
+                bottom: 2rem;
+                right: 1rem;
+            }
+        }
+        &.ds44-container-imgZoom {
+            overflow: hidden;
+            .ds44-container-imgRatio {
+                overflow: hidden;
+                img {
+                transition: all $ds44-timing-standard ease-in-out;
+                border: 0;
+
+                &:hover {
+                    transform: scale(1.1);
+                }
+                }
             }
         }
     }
@@ -284,6 +295,15 @@ figure[role=figure]  + .ds44-card__section {
     font-family: $ds44-font-family-base;
 }
 
+body.modern {
+    .ds44-card__title,
+    .ds44-facette__title {
+        &.h2-like + * {
+            margin-top: 0 !important;
+        }
+    }
+}
+
 .ds44-cardPicture {
     object-fit: cover;
     min-width: 120px;
@@ -331,7 +351,8 @@ figure[role=figure]  + .ds44-card__section {
     }
 
     &--dim80 {
-        min-width: 25%;
+        max-width: 25%;
+        width: 100%;
         @media (min-width: $ds44-extra-large) {
             min-width: 80px;
         }
@@ -352,6 +373,10 @@ figure[role=figure]  + .ds44-card__section {
 
 
 // Horizontal card specific Musée Dobrée Focus object
+
+.ds44-card__no-padding-left .ds44-card--focus .ds44-card__section--horizontal {
+    padding-left: 0;
+}
 
 .ds44-card--focus {
     .ds44-card__section--horizontal--img {
@@ -375,14 +400,15 @@ figure[role=figure]  + .ds44-card__section {
     }
     .ds44-card__section--horizontal {
         width: 100%;
-        padding: 2rem 7rem;
+        padding: 2rem 7rem 2rem 9rem;
         .date {
             font-size: 1.125em;
+            order: -1;
         }
         .ds44-card__title {
             font-size: 1.875em;
             font-weight: normal;
-            margin-bottom: 2em;
+            margin-bottom: 1em;
             padding-bottom: 1em;
             position: relative;
             width:100%;
@@ -390,7 +416,7 @@ figure[role=figure]  + .ds44-card__section {
             &:after {
                 content: '';
                 display: block;
-                width: 150%;
+                width: 135%;
                 height: 1px;
                 background-color: $ds44-contextual-color;
                 position: absolute;
@@ -425,9 +451,10 @@ figure[role=figure]  + .ds44-card__section {
                   width: 30px;
                   border-radius: 30px;
                   background-color: rgba(0,0,0,0.4);
+                  text-align: center;
 
                   .icon::before {
-                      line-height: .7;
+                      line-height: .9;
                     }
             }
 
@@ -480,11 +507,16 @@ figure[role=figure]  + .ds44-card__section {
         }
         .ds44-card__section--horizontal--img,
         .ds44-card__section--horizontal--img--dim80 {
-            height: 260px;
-            .dobree-imgFocus {
-              height: 260px;
-              object-fit: cover;
+            picture {
+                height: 100%;
+                .dobree-imgFocus {
+                  height: 100%;
+                  object-fit: cover;
+                }
             }
+        }
+        .ds44-card__section--horizontal--img {
+            height: 240px;
         }
     }
     @media (max-width: ($ds44-medium - .0625)) {

@@ -1,23 +1,26 @@
 ---
 layout: pattern
+title: Accueil
+style: modern
+css: dobree.css
 ---
 
-{% include header/inc-header-musee-dobree.html style-containerVideo="containerVideo" logoAlt="" noLink='style="display:none;"' %}
+{% include header/inc-header-musee-dobree.html style-containerVideo="containerVideo" logoAlt="Musée Dobrée" noLink='style="display:none;"' %}
 
-<main role="main" id="content" class="ds44-noPdg home-main-dobree">
+<main role="main" id="content" class="ds44-noPdg">
     {% include images/inc-video-dobree.html %}
     <div id="video-anchor">
-      {% include titres/main-title-text.html title="Cultivez votre curiosité au musée Dobrée"
+      {% include titres/main-title-text.html title="Cultivez<br> votre curiosité<br> au musée Dobrée"
       textContent='
       <p class="ds44-mb2">Bienvenue au Musée Dobrée. Dans un écrin rénové, le Musée Dobrée révèle toute l&apos;originalité d&apos;un lieu atypique composé d&apos;un palais néo-médiéval, d&apos;un manoir du 15e siècle, d&apos;un bâtiment d&apos;accueil des 20e et 21e siècles au coeur d&apos;un jardin anglo-normand. </p>
       <p>Le musée offre aux visiteurs une expérience unique, accessible à toutes et tous, guidée par le plaisir de la visite et de la curiosité.</p>'
       %}
     </div>
-    <section class="ds44-theme ds44--xxl-padding-tb ds44-mb3">
-    	<div class="ds44-inner-container">
-    		<div class="ds44-grid12-offset-1">
-                <h2 id="idTitre2" class="h1-like dobree-title">Vous souhaitez venir</h2>
-                <ul class="dobree-list-title ds44-multiCol ds44-txtRight ds44-mtb4">
+    <section class="ds44-theme ds44--xxl-padding-tb ds44-mb5 ds44-container-fluid">
+        <div class="ds44-container-large">
+            <div class="ds44-grid12-offset-1">
+                <h2 id="idTitre2" class="h1-like">Vous souhaitez venir</h2>
+                <ul class="dobree-list-title ds44-multiCol ds44-txtRight ds44-mtb4 ds44-tablet-xxl-padding-lr">
                     <li><a href="#">Seul·e ou entre ami·es<i class="icon icon-long-arrow-right" aria-hidden="true"></i></a></li>
                     <li><a href="#">En famille<i class="icon icon-long-arrow-right" aria-hidden="true"></i></a></li>
                     <li><a href="#">En groupe<i class="icon icon-long-arrow-right" aria-hidden="true"></i></a></li>
@@ -26,37 +29,37 @@ layout: pattern
                 <p class="ds44-txtRight ds44-stl-center">
 					<a href="#" class="ds44-btnStd"><span class="ds44-btnInnerText">Autres publics</span><i class="icon icon-long-arrow-right" aria-hidden="true"></i></a>
 				</p>
-    		</div>
-    	</div>
+        	</div>
+        </div>
     </section>
     <section class="ds44--xxl-padding-tb">
-    	<div class="ds44-inner-container">
-    		<div class="ds44-grid12-offset-1">
-                <h2 id="idTitre2" class="h1-like dobree-title">Les curiosités du musée</h2>
+        <div class="ds44-container-large">
+            <div class="ds44-grid12-offset-1">
+                <h2 id="idTitre2" class="h1-like">Les curiosités du musée</h2>
             </div>
 		</div>
         {% include card/card--focus-objet.html  title="Magot chinois (détail)" date="Entre 1800 et 1825. Terre crue" arialevel="3" %}
         {% include card/card--focus-objet.html  title="Le laraire de Rezé" date="Fin Ier-début du IIe s. Terre cuite" arialevel="4" direction="ds44-frw" %}
     </section>
     <section class="ds44--xxl-padding-tb">
-    	<div class="ds44-inner-container">
-    		<div class="ds44-grid12-offset-1">
-                <h2 id="idTitre2" class="h1-like dobree-title">L’agenda du musée</h2>
+        <div class="ds44-container-large">
+            <div class="ds44-grid12-offset-1">
+                <h2 id="idTitre2" class="h1-like ">L’agenda du musée</h2>
             </div>
-            <ul class="grid-2-tiny-1 ds44-mosaique ds44-gutter ds44-list">
+            <ul class="grid-2-small-1 ds44-mosaique has-gutter-l ds44-list">
                 <li>
                     {% include card/card--dobree.html
                         has-picture="true"
                         titreTuile="Le musée fête sa réouverture"
                         idTuile="8"
-                        cardContent='<p class="ds44-docListElem "><i class="icon icon-date ds44-docListIco" aria-hidden="true"></i>4 avril 2024</p>'
+                        cardContent='<p class="ds44-docListElem "><i class="icon icon-date ds44-docListIco" aria-hidden="true"></i><span class="visually-hidden">Date de l&#39;événement : </span>4 avril 2024</p>'
                     %}    </li>
                     <li>
                         {% include card/card--dobree.html
                             has-picture="true"
                             titreTuile="C'est bientôt la nuit des musées"
                             idTuile="8"
-                            cardContent='<p class="ds44-docListElem ds44-mt-std"><i class="icon icon-date ds44-docListIco" aria-hidden="true"></i>18 mai 2024</p>'
+                            cardContent='<p class="ds44-docListElem ds44-mt-std"><i class="icon icon-date ds44-docListIco" aria-hidden="true"></i><span class="visually-hidden">Date de l&#39;événement : </span>18 mai 2024</p>'
                         %}    </li>
             </ul>
             {% include carrousel/carrousel-x3-Dobree.html %}
@@ -66,9 +69,9 @@ layout: pattern
 		</div>
     </section>
     <section class="ds44--xxl-padding-tb">
-    	<div class="ds44-inner-container">
-    		<div class="ds44-grid12-offset-1">
-                <h2 id="idTitre2" class="h1-like dobree-title">Autour du musée</h2>
+        <div class="ds44-container-large">
+            <div class="ds44-grid12-offset-1">
+                <h2 id="idTitre2" class="h1-like ">Autour du musée</h2>
             </div>
             <ul class="grid-3-tiny-1 ds44-mosaique ds44-gutter ds44-list">
                 <li>
@@ -96,15 +99,15 @@ layout: pattern
 		</div>
     </section>
     <section class="ds44--xxl-padding-tb">
-    	<div class="ds44-inner-container">
-    		<div class="ds44-grid12-offset-1">
-                <h2 id="idTitre2" class="h1-like dobree-title">Découvrez en ligne</h2>
+        <div class="ds44-container-large">
+            <div class="ds44-grid12-offset-1">
+                <h2 id="idTitre2" class="h1-like ">Découvrez en ligne</h2>
             </div>
             <ul class="grid-2-tiny-1 ds44-mosaique ds44-gutter ds44-list">
                 <li>
                     {% include card/card--dobree.html
                         has-picture="true"
-                        has-video="true"
+                        video="dobree-icon-player"
                         titreTuile="Les collections en 3D"
                         idTuile="8"
                         cardContent='<p>Explorez une sélection d&apos;oeuvres en 3D</p>'
@@ -112,7 +115,7 @@ layout: pattern
                     <li>
                         {% include card/card--dobree.html
                             has-picture="true"
-                            has-video="true"
+                            video="dobree-icon-player"
                             titreTuile="Espace ressources éducatives"
                             idTuile="8"
                             cardContent='<p>Un espace réservé aux enseignants</p>'

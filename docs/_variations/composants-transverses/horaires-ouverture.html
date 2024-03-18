@@ -2,4 +2,8 @@
 layout: pattern
 ---
 
-{% include composants-transverses/inc-horaires-ouverture.html surchargeDS='style="background:black; padding : 3em;"' %}
+{% include composants-transverses/inc-horaires-ouverture.html text="Ouvert jusqu'à 17h" statut="open" surchargeDS='style="background:black; padding : 3em;"' %}
+
+{% include composants-transverses/inc-horaires-ouverture.html text="Fermé, ouvre à 8h" statut="close" surchargeDS='style="background:black; padding : 3em;"' %}
+
+{% include composants-transverses/inc-horaires-ouverture.html text="Horaires indisponibles" statut="indispo" surchargeDS='style="background:black; padding : 3em;"' %}

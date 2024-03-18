@@ -101,7 +101,7 @@
 .ds44-subMenu {
     position:fixed;
     background: $ds44-light-color;
-    display:block;
+    display:none;
     opacity: 0;
     pointer-events: none;
     box-shadow: 0px 13px 20px 0px rgba(0, 0, 0, 0.35);
@@ -113,6 +113,13 @@
         display:block;
         opacity: 1;
         pointer-events: all;
+    }
+    &#subMenu-choixLangue {
+        text-align: left;
+        width: 10rem;
+        &#subMenu-choixLangue a {
+            font-size: 1em;
+        }
     }
     .ds44-list {
         padding: 2rem;
@@ -156,7 +163,6 @@
     }
 }
 .dobree-header .ds44-logoContainer img {
-  height: 46px;
   margin-left: 4em;
 }
 .dobree-header.ds44-header .ds44-colRight {
@@ -166,12 +172,15 @@
 
 .dobree-listAccessibility {
     vertical-align: middle;
-        a {
+        > div {
             border-radius: 3px;
             background-color: rgba(0, 0, 0, 0.06);
             color: $ds44-dark ;
             transition: all ease-in-out .25s;
-            text-decoration: none;
+
+            a {
+                text-decoration: none;
+            }
 
             &:hover {
                 background-color: rgba(255, 255, 255, 1);
@@ -185,13 +194,18 @@
                 }
             }
         }
+        p {margin-bottom:0;}
 }
 /* Musée Dobrée Header Homepage vidéo */
 .dobree-header.containerVideo {
     background: none;
-    .ds44-colRight .dobree-listAccessibility a {
+    .ds44-colRight .dobree-listAccessibility > div {
         background-color: rgba(0, 0, 0, 0.6);
         color: $ds44-light ;
+
+        a {
+            color: $ds44-light ;
+        }
     }
      .ds44-logoContainer img {
       display: none;
@@ -199,6 +213,13 @@
     .choixLangue {
         background-color: rgba(0, 0, 0, 0.6);
         color: $ds44-light ;
+    }
+    .ds44-subMenu {
+        background-color: rgba(0, 0, 0, 0.6);
+        top:65px;
+        &#subMenu-choixLangue a {
+            color: $ds44-light ;
+        }
     }
 }
 
