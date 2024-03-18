@@ -1,12 +1,22 @@
-class FormFieldSelectStandard extends FormFieldSelectAbstract {
+class FormFieldSelectStandardClass extends FormFieldSelectAbstract {
     constructor () {
         super(
+          "FormFieldSelectStandard",
             '.ds44-selectDisplay.ds44-js-select-standard',
             'selectStandard'
         );
     }
 
     initialize () {
+
+        for (let objectIndex = 0; objectIndex < this.objects.length; objectIndex++) {
+            const object = this.objects[objectIndex];
+            if (object.isSubSubInitialized) {
+                continue;
+            }
+            this.objects[objectIndex]["selectedOption"] = object.selectListElement.querySelector('.selected_option');
+        }
+
         super.initialize();
 
         for (let objectIndex = 0; objectIndex < this.objects.length; objectIndex++) {
@@ -18,7 +28,14 @@ class FormFieldSelectStandard extends FormFieldSelectAbstract {
 
             MiscEvent.addListener('keyPress:spacebar', this.selectOption.bind(this, objectIndex));
             MiscEvent.addListener('keyPress:enter', this.selectOption.bind(this, objectIndex));
+
+            if (this.objects[objectIndex]["selectedOption"]) {
+                this.objects[objectIndex]["selectedOption"].classList.add('selected_option');
+                this.record(objectIndex);
+            }
+
         }
+
     }
 
     selectOption (objectIndex, evt) {
@@ -184,6 +201,19 @@ class FormFieldSelectStandard extends FormFieldSelectAbstract {
         return object.selectListElement.querySelectorAll('.ds44-select-list_elem');
     }
 }
-
 // Singleton
+var FormFieldSelectStandard = (function () {
+    "use strict";
+    var instance;
+    function Singleton() {
+        if (!instance) {
+            instance = new FormFieldSelectStandardClass();
+        }
+        instance.initialise();
+    }
+    Singleton.getInstance = function () {
+        return instance || new Singleton();
+    }
+    return Singleton;
+}());
 new FormFieldSelectStandard();

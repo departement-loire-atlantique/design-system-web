@@ -25,7 +25,9 @@ $medium: 65em !default;     // 1024px (KNACSS crée ses breakpoints en retirant 
 
 // Font families
 $ds44-font-family-base      : Muli, Arial, Helvetica, sans-serif;             // texts standard font
+$ds44-font-family-baseModern: Helvetica, Arial, sans-serif;                   // texts standard font for Musée Dobrée
 $ds44-font-family-headings  : "Blogger Sans", Arial, Helvetica, sans-serif;   // font for h1, h2.. h6
+$ds44-font-family-headingsModern  : "Monotype Modern Std", Arial, Helvetica, sans-serif;   // font for h1, h2 for Musée Dobrée
 $ds44-font-family-monospace : consolas, courier, monospace;                   // font for code and samples
 $ds44-font-icon             : "ds44-icons";                                   // icons
 
@@ -107,8 +109,8 @@ $ds44-font-sizes: (
     desktop : 1.125em   // 18px
   ),
   button: (
-    mobile  : .875em,   // 14px
-    desktop : .875em    // 14px
+    mobile  : 1em,   // 16px
+    desktop : 1em    // 16px
   ),
   largeButton: (
     mobile  : 1em,      // 16px
@@ -191,6 +193,7 @@ $ds44-lightgray         : #E6E6E6             !default;
 $ds44-darkgray          : #333                !default;
 $ds44-LA                : #99E6D1             !default;
 $ds44-Agenda            : #FFD883             !default;
+$ds44-Dobree            : #FFBED2             !default;
 $ds44-dataviz-color     : #ff4a90             !default;
 $ds44-valid             : #24883E             !default;
 $ds44-valid-bg          : #F3F9F5             !default;
@@ -210,6 +213,7 @@ $ds44-color-dark-text   : $ds44-dark      !default;  // for CD44 standard texts 
 $ds44-color-soft-text   : $ds44-gray      !default;  // for CD44 light texts (legends, captions etc.)
 $ds44-LA-color          : $ds44-LA        !default;  // for CD44 colored elements
 $ds44-Agenda-color      : $ds44-Agenda    !default;  // for CD44 agenda website
+$ds44-Dobree-color      : $ds44-Dobree    !default;  // for CD44 agenda website
 $ds44-light-color       : $ds44-light     !default;  // for CD44 light colored elements
 $ds44-forms-color       : $ds44-gray      !default;
 $ds44-graytext-color    : $ds44-darkgray  !default;
@@ -222,6 +226,7 @@ $ds44-hover-dark        : lighten($ds44-background-dark, 25%) !default;
 $ds44-hover-light       : lighten($ds44-background-dark, 80%) !default;
 $ds44-hover-LA          : lighten($ds44-LA, 25%)              !default;
 $ds44-hover-Agenda      : lighten($ds44-Agenda, 25%)          !default;
+$ds44-hover-Dobree      : lighten($ds44-Dobree, 25%)          !default;
 
 
 // ---------------

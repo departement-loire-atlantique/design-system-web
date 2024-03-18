@@ -1,0 +1,34 @@
+<main role="main" id="mainResults" class="ds44-mainResults">
+    <section class="ds44-container-large">
+        {% assign formId = 'recherche-facette' %}
+        {% capture ariaDescribedBy %}filter-by-{{ formId }}{% endcapture %}
+        {% capture fields %}
+        <div class="ds44-fieldContainer ds44-fg1">
+            {% include form/field/input/standard.html label="Champ standard" required="true" %}
+        </div>
+        {% endcapture %}
+        {% capture subfields %}
+        <div class="ds44-fieldContainer ds44-fg1 ds44-fieldContainer--select">
+            {% include form/field/select/multilevel.html label="Select multi niveaux" containerAttributes='data-auto-submit="true"' ariaDescribedBy=ariaDescribedBy %}
+        </div>
+        <div class="ds44-fieldContainer ds44-fg1 ds44-fieldContainer--select">
+            {% include form/field/select/multilevel.html label="Select multi niveaux" containerAttributes='data-auto-submit="true"' ariaDescribedBy=ariaDescribedBy %}
+        </div>
+        <div class="ds44-fieldContainer ds44-fg1 ds44-fieldContainer--select">
+            {% include form/field/select/multilevel.html label="Select multi niveaux" containerAttributes='data-auto-submit="true"' ariaDescribedBy=ariaDescribedBy %}
+        </div>
+        <div class="ds44-fieldContainer ds44-fg1 ds44-fieldContainer--select">
+            {% include form/field/select/multilevel.html label="Select multi niveaux" containerAttributes='data-auto-submit="true"' ariaDescribedBy=ariaDescribedBy %}
+        </div>
+        <div class="ds44-fieldContainer ds44-fg1 ds44-fieldContainer--select">
+            {% include form/field/select/multilevel.html label="Select multi niveaux" containerAttributes='data-auto-submit="true"' ariaDescribedBy=ariaDescribedBy %}
+        </div>
+        <div class="ds44-fieldContainer ds44-fg1 ds44-fieldContainer--select">
+            {% include form/field/select/multilevel.html label="Select multi niveaux" containerAttributes='data-auto-submit="true"' ariaDescribedBy=ariaDescribedBy %}
+        </div>
+        {% endcapture %}
+
+        {% include form/layout/recherche-facettes_3lignes.html id=formId fields=fields subfields=subfields url=include.url %}
+    </section>
+    {% include page/partial/recherche-resultats.html geoJsonAttributes=include.geoJsonAttributes %}
+</main>

@@ -58,7 +58,7 @@
         border: 0;
         background-color: #000;
     }
-    
+
     .ds44-msg-media-desactive {
         color: #fff;
         display:table-cell;
@@ -159,6 +159,109 @@ main {
 
     .ds44-inner-container {
         max-width: $ds44-max-inner-size;
+    }
+
+}
+
+/* Body Modern spécifique pour le musée Dobrée par exemple */
+body.modern {
+    font-family: $ds44-font-family-baseModern;
+
+    main {
+        padding-top: 8.8rem;
+        @media (max-width: $ds44-large - .0625) {
+            padding-top: 5.8rem;
+        }
+        @media (max-width: $ds44-small - .0625) {
+            padding-top: 5.8rem;
+        }
+    }
+    .ds44-introduction {
+        font-weight: normal;
+    }
+    .ds44-contenuDossier .ds44-contenuArticle h2:first-of-type {
+        margin-top: 0;
+    }
+
+    /* Title Monotype */
+    .h1-like,
+    .h1-like.h1-like--light,
+    h1 {
+        font-family: $ds44-font-family-headingsModern;
+        font-weight: normal;
+        line-height: 1.2em;
+        margin-bottom: 3rem;
+
+        @media (max-width: $ds44-medium - .625) {
+            margin-bottom: 2rem;
+        }
+        @media (max-width: $ds44-small - .625) {
+            margin-bottom: 1rem;
+        }
+    }
+    .h1-like{
+        font-size: 3.5em;
+
+        @media (max-width: $ds44-medium - .625) {
+            font-size: 2.5em;
+        }
+        @media (max-width: $ds44-small - .625) {
+            font-size: 1.5em;
+        }
+    }
+    .h1-like.h1-like--light{
+        font-size: 2.5em;
+
+        @media (max-width: $ds44-medium - .625) {
+            font-size: 2em;
+        }
+        @media (max-width: $ds44-small - .625) {
+            font-size: 1.25em;
+        }
+    }
+    .h2-like,
+    .h3-like,
+    .h4-like,
+    .h5-like {
+        font-family: $ds44-font-family-baseModern;
+        padding: 0;
+        background: none;
+        display: block;
+        font-weight: inherit;
+    }
+    .h2-like{
+        font-size: 1.875em;
+
+        @media (max-width: $ds44-medium - .625) {
+            font-size: 1.5em;
+        }
+        @media (max-width: $ds44-small - .625) {
+            font-size: 1.25em;
+        }
+    }
+    .h3-like{
+        font-size: 1.25em;
+        font-weight: bold;
+
+        @media (max-width: $ds44-medium - .625) {
+            font-size: 1.25em;
+        }
+        @media (max-width: $ds44-small - .625) {
+            font-size: 1.125em;
+        }
+    }
+    .h4-like{
+        font-size: 1.125em;
+    }
+    .h5-like{
+        font-size: 1em;
+        font-weight: bold;
+    }
+
+    .ds44-img50--event .ds44-theme .ds44-docListElem {
+      margin: .25em .5em;
+      padding-left: 2.5rem;
+      line-height: 1.4;
     }
 
 }
@@ -326,6 +429,12 @@ main {
     margin-top: $ds44-large-vmargin;
     margin-bottom: $ds44-large-vmargin;
 }
+.dobree-introduction {
+    font-size: 1.25em;
+    @media (max-width: $ds44-medium - .0625) {
+        font-size: 1em;
+    }
+}
 
 /* Links */
 
@@ -366,6 +475,10 @@ main {
     display: block;
     position: relative;
 
+    .ds44-js-html-result {
+        margin: 0 1.5rem;
+    }
+
     .ds44-listResults {
         width: 100%;
         transition: width $ds44-timing-x2 $ds44-transition-std;
@@ -400,6 +513,24 @@ main {
 
                 #ds44-results-new-search {
                     display: none;
+                }
+
+                &[data-multi-links="true"] {
+                   .ds44-card {
+                       a {
+                           text-decoration: underline;
+                           &:hover {
+                               text-decoration: none ;
+                           }
+                       }
+                   }
+                   .ds44-card:focus, .ds44-card:hover, .ds44-card:active, .ds44-card.active {
+                       box-shadow:none;
+
+                       .ds44-cardArrow {
+                           opacity: 0;
+                       }
+                   }
                 }
             }
 

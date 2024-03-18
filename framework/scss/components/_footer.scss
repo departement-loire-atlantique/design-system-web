@@ -37,10 +37,10 @@ footer .ds44-logo {
 }
 
 footer .ds44-logo--label {
-  max-width: 75px;
+  max-width: 165px;
   margin-right: 10px;
   margin-left: 10px;
-  max-height: 80px;
+  max-height: 120px;
   height: auto;
 }
 
@@ -82,6 +82,89 @@ footer [role="heading"] {
 
 }
 
+/* ----------------------- */
+/* ==Musée Dobrée Footer           */
+/* ----------------------- */
+
+footer.footer-dobree {
+    border: 0;
+
+    .horairesOuverture {
+        font-size: 1em;
+        color: $ds44-color-base;
+        position: relative;
+        margin-left: 20px;
+
+        &::before {
+           top: 5px !important;
+         }
+    }
+     [role="heading"] {
+         font-weight: bold;
+     }
+     .ds44-list li {
+         margin-bottom: .5rem;
+     }
+     .ds44-footerLink:first-of-type {
+         margin-left:0;
+         padding-left: 0;
+
+         @media (max-width: $ds44-medium - .0625) {
+             margin :0 1rem .5rem 1rem;
+             padding: 0 1rem;
+         }
+     }
+     .ds44-footerLink {
+         @media (max-width: $ds44-medium - .0625) {
+             font-size: 1em;
+         }
+     }
+     .dobree-label {
+         .ds44-logoContainer {
+             border-right : 1px solid $ds44-color-base;
+         }
+         .ds44-logo {
+             margin: 0 2rem;
+             max-width: inherit;
+             width: inherit;
+
+             img {
+                 height: 58px;
+             }
+             @media (max-width: $ds44-medium - .0625) {
+                 margin:1rem 2rem;
+             }
+         }
+     }
+}
+
+@media (max-width: $ds44-large - .0625) {
+    .footer-dobree {
+        .dobree-label {
+            align-items: center;
+
+            & > * {
+                padding: 2rem 0;
+            }
+
+             .ds44-logoContainer {
+                 border-right : none !important;
+                 border-bottom : 1px solid $ds44-color-base;
+                 padding-bottom: 4rem;
+             }
+             .ds44-logo {
+                 margin: 0 2rem;
+                 max-width: inherit;
+                 width: inherit;
+
+                 img {
+                     height: 58px;
+                 }
+             }
+         }
+    }
+ }
+
 @media (max-width: $ds44-medium - .0625) {
 
     footer {
@@ -101,6 +184,23 @@ footer [role="heading"] {
     footer .ds44-logo {
         margin-left: auto;
         margin-right: auto;
+    }
+    .footer-dobree {
+        .ds44-list {
+            justify-content:  center;
+        }
+    }
+
+
+}
+
+@media (max-width: $ds44-small - .0625) {
+
+    footer.footer-dobree {
+
+        p.inbl.ds44-mr-std {
+            margin-right: 0;
+        }
     }
 
 }

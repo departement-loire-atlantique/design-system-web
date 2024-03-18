@@ -1,6 +1,7 @@
-class FormFieldSelectMultilevel extends FormFieldSelectCheckbox {
+class FormFieldSelectMultilevelClass extends FormFieldSelectCheckboxClass {
     constructor () {
         super(
+            "FormFieldSelectMultilevel",
             '.ds44-selectDisplay.ds44-js-select-multilevel',
             'selectMultilevel'
         );
@@ -25,7 +26,7 @@ class FormFieldSelectMultilevel extends FormFieldSelectCheckbox {
             }
 
             // Remove data-url attribute as multilevel select do not exist yet
-            object.textElement.removeAttribute('data-url');
+            //object.textElement.removeAttribute('data-url');
         }
     }
 
@@ -106,7 +107,69 @@ class FormFieldSelectMultilevel extends FormFieldSelectCheckbox {
 
         return object.selectListElement.querySelectorAll('.ds44-select__categ input');
     }
-}
 
+    getListElement (object, key, value, children, objectIndex) {
+        let elementSelectListItem = super.getListElement(object, key, value);
+        elementSelectListItem.classList.add('ds44-collapser_element');
+        elementSelectListItem.classList.add('ds44-collapser--select');
+        elementSelectListItem.querySelector(".ds44-form__container").classList.add('ds44-select__categ');
+
+        MiscEvent.addListener('change', this.selectCategory.bind(this), elementSelectListItem.querySelector("input"));
+
+        if(children)
+        {
+          elementSelectListItem.classList.add('ds44-collapser_element');
+
+          let button = document.createElement("button");
+          button.classList.add('ds44-collapser_button');
+          button.classList.add('ds44-collapser_button--select');
+
+          let span = document.createElement("span");
+          span.classList.add('visually-hidden');
+          button.appendChild(span);
+
+          let icon = document.createElement("i");
+          icon.classList.add('icon-down');
+          icon.classList.add('icon');
+          icon.classList.add('ds44-noLineH');
+          button.appendChild(icon);
+
+          elementSelectListItem.appendChild(button);
+          let collapserContent = document.createElement("div");
+          collapserContent.classList.add("ds44-collapser_content");
+
+          let collapserContentUl = document.createElement("ul");
+          collapserContentUl.classList.add("ds44-list");
+          collapserContentUl.classList.add("ds44-collapser_content--level2");
+          for (let key in children) {
+            if (!children.hasOwnProperty(key)) {
+                continue;
+            }
+            let subElementSelectListItem = super.getListElement(object, (children[key].id || key), children[key].value);
+            this.setListElementEvents(subElementSelectListItem, objectIndex);
+            collapserContentUl.appendChild(subElementSelectListItem);
+          }
+          collapserContent.appendChild(collapserContentUl);
+          elementSelectListItem.appendChild(collapserContent);
+        }
+        return elementSelectListItem;
+    }
+
+
+}
 // Singleton
+var FormFieldSelectMultilevel = (function () {
+    "use strict";
+    var instance;
+    function Singleton() {
+        if (!instance) {
+            instance = new FormFieldSelectMultilevelClass();
+        }
+        instance.initialise();
+    }
+    Singleton.getInstance = function () {
+        return instance || new Singleton();
+    }
+    return Singleton;
+}());
 new FormFieldSelectMultilevel();

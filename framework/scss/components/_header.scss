@@ -1,4 +1,5 @@
 /*
+/*
 * CD44 Design System - Headers
 */
 
@@ -97,6 +98,134 @@
   }
 }
 
+.ds44-subMenu {
+    position:fixed;
+    background: $ds44-light-color;
+    display:none;
+    opacity: 0;
+    pointer-events: none;
+    box-shadow: 0px 13px 20px 0px rgba(0, 0, 0, 0.35);
+    width: 35rem;
+    &.full {
+        width: auto;
+    }
+    &.view {
+        display:block;
+        opacity: 1;
+        pointer-events: all;
+    }
+    &#subMenu-choixLangue {
+        text-align: left;
+        width: 10rem;
+        &#subMenu-choixLangue a {
+            font-size: 1em;
+        }
+    }
+    .ds44-list {
+        padding: 2rem;
+        li {
+            &:last-child {
+                padding-bottom: 0;
+            }
+            padding-bottom: 3rem;
+        }
+        a {
+            font-size: 1.2em;
+            text-decoration: none;
+            display: block;
+            &:hover {
+                text-decoration: underline;
+            }
+        }
+    }
+}
+
+/* Musée Dobrée Header */
+.dobree-header {
+    min-height: inherit;
+    background: $ds44-light;
+    .ds44-colRight {
+      min-height: inherit;
+      > * {
+          margin-right: -4px;
+      }
+      .ds44-btn--menu:focus-visible.ds44-btn--contextual,
+      #open-menu:focus-visible {
+          border: 1px solid blue;
+      }
+      .choixLangue {
+          border-radius: 3px;
+          background-color: rgba(0, 0, 0, 0);
+          color: $ds44-dark ;
+          padding: 1rem;
+          margin: 0 3rem;
+      }
+    }
+}
+.dobree-header .ds44-logoContainer img {
+  margin-left: 4em;
+}
+.dobree-header.ds44-header .ds44-colRight {
+  min-height: inherit;
+  flex: auto;
+}
+
+.dobree-listAccessibility {
+    vertical-align: middle;
+        > div {
+            border-radius: 3px;
+            background-color: rgba(0, 0, 0, 0.06);
+            color: $ds44-dark ;
+            transition: all ease-in-out .25s;
+
+            a {
+                text-decoration: none;
+            }
+
+            &:hover {
+                background-color: rgba(255, 255, 255, 1);
+                color: $ds44-dark ;
+            }
+
+            ul.ds44-list {
+                margin-bottom: 0;
+                li {
+                    margin: 0 5px;
+                }
+            }
+        }
+        p {margin-bottom:0;}
+}
+/* Musée Dobrée Header Homepage vidéo */
+.dobree-header.containerVideo {
+    background: none;
+    .ds44-colRight .dobree-listAccessibility > div {
+        background-color: rgba(0, 0, 0, 0.6);
+        color: $ds44-light ;
+
+        a {
+            color: $ds44-light ;
+        }
+    }
+     .ds44-logoContainer img {
+      display: none;
+    }
+    .choixLangue {
+        background-color: rgba(0, 0, 0, 0.6);
+        color: $ds44-light ;
+    }
+    .ds44-subMenu {
+        background-color: rgba(0, 0, 0, 0.6);
+        top:65px;
+        &#subMenu-choixLangue a {
+            color: $ds44-light ;
+        }
+    }
+}
+
+
+
+
 
 
 /* --------------- */
@@ -124,6 +253,9 @@
         padding: 0;
         left: 0;
     }
+   .ds44-header.dobree-header {
+        min-height: 5.8rem ;
+    }
 
     .ds44-header .ds44-colRight {
         display: flex;
@@ -142,7 +274,8 @@
             padding: $ds44-padding-xlarge  $ds44-padding-large;
 
             .icon + .ds44-btnInnerText,
-            .ds44-btnInnerText + .icon {
+            .ds44-btnInnerText + .icon,
+            .icon + .icon {
                 margin-left: 0;
             }
 
@@ -151,9 +284,43 @@
                 white-space: nowrap;
             }
 
+            &[data-open-sub-menu] {
+                .icon-toggle {
+                    display:none;
+                }
+            }
         }
 
     }
+
+    .ds44-subMenu {
+        .ds44-list {
+            li {
+                padding-bottom: 1rem;
+            }
+            a {
+                font-size: 1em;
+            }
+        }
+    }
+
+    .dobree-header .ds44-colRight .ds44-btnIcoText--maxi {
+      flex-direction: row;
+      margin: 0 ;
+      padding: 1em 2rem ;
+
+      .ds44-btnInnerText + .icon, .icon + .icon {
+        margin-left: 1.5rem;
+      }
+    }
+    .dobree-header .ds44-logoDobree img {
+          margin-left: 1em;
+          height: 59px;
+    }
+
+
+
+
 }
 
 @media (max-width: $ds44-medium - .0625) {
@@ -231,12 +398,38 @@
           &.ds44-btn--menu {
               padding: .5rem 1rem 1rem 1rem;
           }
+          &[data-open-sub-menu] {
+            .icon-toggle {
+                display:none;
+            }
+          }
       }
   }
 
   .ds44-header {
       min-height: $header-height-small;
   }
+
+  .ds44-header.dobree-header .ds44-colRight .ds44-btnIcoText--maxi.ds44-btn--menu {
+   padding: 1em;
+
+    .ds44-btnInnerText {
+     font-size: 1.4rem;
+   }
+   .icon-long-arrow-right {
+      margin-left: 0.5rem ;
+
+      &::before {
+         font-size: 1em !important;
+       }
+    }
+    .icon-burger {
+       margin-left: 0.5rem ;
+     }
+
+
+ }
+
 
 }
 

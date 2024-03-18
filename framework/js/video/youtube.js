@@ -1,22 +1,32 @@
-class VideoYoutube {
+class VideoYoutubeClass {
     constructor () {
+        Debug.log("Youtube -> Constructor");
         this.objects = [];
+        this.scriptLoad = false;
 
-        let hasVideos = false;
-        document
-            .querySelectorAll('.ds44-js-youtube-video')
-            .forEach((videoElement) => {
-                hasVideos = true;
-                this.create(videoElement);
-            });
-        document
-            .querySelectorAll('.ds44-js-video-seek-to')
-            .forEach((seekToElement) => {
-                MiscEvent.addListener('click', this.seekTo.bind(this), seekToElement);
-            });
         MiscEvent.addListener('keyPress:spacebar', this.selectSeekTo.bind(this));
+    }
 
-        if (hasVideos) {
+    initialise() {
+        Debug.log("Youtube -> Initialise");
+        document
+          .querySelectorAll('.ds44-js-youtube-video')
+          .forEach((videoElement) => {
+              if(MiscComponent.checkAndCreate(videoElement, "youtube")) {
+                  this.scriptLoad();
+                  this.create(videoElement);
+              }
+          });
+        document
+          .querySelectorAll('.ds44-js-video-seek-to')
+          .forEach((seekToElement) => {
+              MiscEvent.addListener('click', this.seekTo.bind(this), seekToElement);
+          });
+    }
+
+    scriptLoad() {
+        if (!this.scriptLoad) {
+            this.scriptLoad = true;
             window.onYouTubeIframeAPIReady = this.load.bind(this);
 
             const scriptElement = document.createElement('script');
@@ -24,6 +34,11 @@ class VideoYoutube {
             scriptElement.setAttribute('type', 'text/javascript');
             document.head.appendChild(scriptElement);
         }
+    }
+
+    clearObject() {
+        Debug.log("Youtube -> Clear object");
+        this.objects = [];
     }
 
     create (videoElement) {
@@ -104,6 +119,19 @@ class VideoYoutube {
         }
     }
 }
-
 // Singleton
+var VideoYoutube = (function () {
+    "use strict";
+    var instance;
+    function Singleton() {
+        if (!instance) {
+            instance = new VideoYoutubeClass();
+        }
+        instance.initialise();
+    }
+    Singleton.getInstance = function () {
+        return instance || new Singleton();
+    }
+    return Singleton;
+}());
 new VideoYoutube();

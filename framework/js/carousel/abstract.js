@@ -1,26 +1,40 @@
 class CarouselAbstract {
-    constructor (selector) {
+    constructor (className, selector) {
+        this.selector = selector;
+        this.className = className;
+        Debug.log(this.className+" -> Constructor");
         this.previousSlideMessage = MiscTranslate._('CAROUSEL_WATCH_PREVIOUS_CONTENT');
         this.nextSlideMessage = MiscTranslate._('CAROUSEL_WATCH_NEXT_CONTENT');
         this.queryTitreTuile = '.ds44-card__title a[href]:not([disabled])';
         this.objects = [];
         this.breakpoint = window.matchMedia('(max-width: 63.375em)');
-
-        document
-            .querySelectorAll(selector)
-            .forEach((wrapElement) => {
-                this.create(wrapElement);
-            });
-
         MiscEvent.addListener('resize', this.resize.bind(this), window);
         window.setTimeout(
-            () => {
-                MiscEvent.dispatch('resize', null, window);
-            },
-            1000
+          () => {
+              MiscEvent.dispatch('resize', null, window);
+          },
+          1000
         );
 
         this.breakpoint.addListener(this.breakpointChecker.bind(this));
+    }
+
+    clearObject() {
+        Debug.log(this.className+" -> Clear object");
+        this.objects = [];
+    }
+
+    initialise()
+    {
+        Debug.log(this.className+" -> Initialise");
+        document
+          .querySelectorAll(this.selector)
+          .forEach((wrapElement) => {
+            if(MiscComponent.checkAndCreate(wrapElement, "carousel"))
+            {
+                this.create(wrapElement);
+            }
+        });
         this.breakpointChecker();
     }
 

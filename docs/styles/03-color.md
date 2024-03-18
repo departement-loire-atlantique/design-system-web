@@ -109,7 +109,7 @@ Les informations essentielles de type "alerte" sont de couleur rouge
 {% include color-preview.html name="Abbaye de blanche Couronne" hexcode="#B47878" %}
 {% include color-preview.html name="Pôle Archéologie de Loire-Atlantique" hexcode="#FF646E" %}
 {% include color-preview.html name="Laboratoire Arc’Antique" hexcode="#1496dc" %}
-<!-- {% include color-preview.html name="Musée Dobrée" hexcode="#ffbed2" %} -->
+{% include color-preview.html name="Musée Dobrée" hexcode="#FFBED2" %} 
 
 
 

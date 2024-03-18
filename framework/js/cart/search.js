@@ -1,4 +1,4 @@
-class CartSearch {
+class CartSearchClass {
     constructor () {
         this.manageListener = this.manage.bind(this);
 
@@ -103,6 +103,18 @@ class CartSearch {
         buttonElement.innerHTML = buttonElement.innerHTML.replace(/ ?\([0-9]+\)/, '') + ' (' + bookmarks.length + ')';
     }
 }
-
 // Singleton
+var CartSearch = (function () {
+    "use strict";
+    var instance;
+    function Singleton() {
+        if (!instance) {
+            instance = new CartSearchClass();
+        }
+    }
+    Singleton.getInstance = function () {
+        return instance || new Singleton();
+    }
+    return Singleton;
+}());
 new CartSearch();

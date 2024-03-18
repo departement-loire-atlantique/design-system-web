@@ -1,0 +1,23 @@
+{% include form/_variables.html %}
+{% include images/loader.html %}
+
+{% if include.url %}
+    {% assign url = include.url %}
+{% else %}
+    {% assign url = '/json/recherche-keyword.json' %}
+{% endif %}
+
+<div class="ds44-facette">
+    <div class="ds44-facette-body">
+        {% if include.titleFacette %}<h3 class="ds44-facette__title">{{ include.titleFacette }}</h3>{% endif %}
+        <form data-is-ajax="true" data-auto-load="true" action="{{ url }}">
+            {% include form/layout/partial/recherche-facettes-main-avancee.html fields=include.fields subfields=include.subfields fieldStyle=include.fieldStyle %}
+        </form>
+    </div>
+    <div class="ds44-facette-mobile-button ds44-bgDark ds44--l-padding ds44-show-tiny-to-medium ds44-hide-medium">
+        <button class="ds44-btnStd ds44-btn--contextual ds44-w100 ds44-js-toggle-search-view">
+            <span class="ds44-btnInnerText ds44-facette-mobile-button-collapse">Modifier ou affiner ma recherche</span>
+            <span class="ds44-btnInnerText ds44-facette-mobile-button-expand">Masquer ma recherche</span>
+        </button>
+    </div>
+</div>

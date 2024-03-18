@@ -36,6 +36,26 @@ variations:
   description: Présentation du calendrier pour les disponibilités des assmats.
   pattern: composants-transverses/calendrier-assmat.html
 
+- title: Calendrier Assmat Checkbox
+  description: Modification du calendrier coté assmats pour leurs disponibilités.
+  pattern: composants-transverses/calendrier-assmat-checkbox.html
+
+- title: Flèche Ancre
+  description: Flèche présente sur la vidéo du site Musée Dobrée, au clic un système d'ancre amène vers le contenu en-dessous.
+  pattern: composants-transverses/fleche-ancre.html
+
+- title: Horaires ouverture
+  description: Lien vers les horaires d'ouverture du site Musée Dobrée.
+  pattern: composants-transverses/horaires-ouverture.html
+
+- title: Image et Texte
+  description: Section texte et image partagé 50/50
+  pattern: composants-transverses/text-image.html
+
+- title: Tableau mobile
+  description: Tableau spécifique en format mobile pour le Musée Dobrée
+  pattern: composants-transverses/table-mobile.html
+
 
 ---
 

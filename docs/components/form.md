@@ -30,6 +30,10 @@ variations:
 - title: Champs liés
   description: Quand deux champs sont liés, le sous-thèmes n'est accessible qu'après avoir validé le premier champ.
   pattern: forms/form--champs-lies.html
+
+- title: Champs spéciaux
+  description: 
+  pattern: forms/form--special-fields.html
 ---
 
 ## Usage

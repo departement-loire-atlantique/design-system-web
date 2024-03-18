@@ -1,6 +1,6 @@
-class FormLayoutSearch extends FormLayoutAbstract {
+class FormLayoutSearchClass extends FormLayoutAbstract {
     constructor () {
-        super('.ds44-facette form');
+        super("FormLayoutSearch", '.ds44-facette form');
     }
 
     create (formElement) {
@@ -22,18 +22,21 @@ class FormLayoutSearch extends FormLayoutAbstract {
         // Initialize each object
         for (let objectIndex = 0; objectIndex < this.objects.length; objectIndex++) {
             const object = this.objects[objectIndex];
-            if (object.isSubInitialized) {
-                continue;
-            }
-            object.isSubInitialized = true;
+            if(!MiscComponent.isInit(object.formElement, "form-layout"))
+            {
+                if (object.isSubInitialized) {
+                    continue;
+                }
+                object.isSubInitialized = true;
 
-            // Bind events
-            MiscEvent.addListener('search:refresh', this.search.bind(this, objectIndex));
-            object.containerElement
-                .querySelectorAll('.ds44-js-toggle-search-view')
-                .forEach((searchToggleViewElement) => {
-                    MiscEvent.addListener('click', this.toggleSearchView.bind(this, objectIndex), searchToggleViewElement);
-                });
+                // Bind events
+                MiscEvent.addListener('search:refresh', this.search.bind(this, objectIndex));
+                object.containerElement
+                    .querySelectorAll('.ds44-js-toggle-search-view')
+                    .forEach((searchToggleViewElement) => {
+                        MiscEvent.addListener('click', this.toggleSearchView.bind(this, objectIndex), searchToggleViewElement);
+                    });
+            }
         }
 
         super.initialize();
@@ -207,13 +210,14 @@ class FormLayoutSearch extends FormLayoutAbstract {
         if (!object) {
             return;
         }
-
+        localStorage.setItem("LaDesignSystem.urlSearch", window.location.href);
         // Save search data
         object.searchData = this.formatSearchData(
             response,
             object.parameters,
             (options.addUp ? object.searchData.results : null)
         );
+
 
         // Set url with the search parameters
         this.setSearchHash(objectIndex, response.id);
@@ -269,10 +273,12 @@ class FormLayoutSearch extends FormLayoutAbstract {
             'pageIndex': response['page-index'] || 1,
             'nbResultsPerPage': response['nb-result-per-page'] || response['max-result'],
             'nbResults': response['nb-result'],
+            'nbResultHtml': response['html-nb-result'] !== undefined ? response["html-nb-result"] : null,
             'maxNbResults': response['max-result'],
             'results': results,
             'geojsonId' : response.hasOwnProperty("geojsonId") ? response['geojsonId'] : null,
             'newResults': response['result'],
+            "modal":  response["result-modal"] !== undefined ? response["result-modal"] : [],
             'searchText': searchText.join(', ')
         };
     }
@@ -308,16 +314,28 @@ class FormLayoutSearch extends FormLayoutAbstract {
             const parameters = JSON.stringify(object.parameters);
             searchId = await MiscUtils.digestMessage(parameters);
             window.sessionStorage.setItem('search_' + searchId, parameters);
-        } else if (!searchId) {
-            return;
         }
 
         if (object.formElement.getAttribute('data-seo-url') !== 'true') {
             MiscUrl.setHashParameters(object.parameters);
-        } else {
+        } else if(searchId) {
             MiscUrl.setSeoHashParameters(object.parameters, searchId);
         }
     }
 }
-
+// Singleton
+var FormLayoutSearch = (function () {
+    "use strict";
+    var instance;
+    function Singleton() {
+        if (!instance) {
+            instance = new FormLayoutSearchClass();
+        }
+        instance.initialise();
+    }
+    Singleton.getInstance = function () {
+        return instance || new Singleton();
+    }
+    return Singleton;
+}());
 new FormLayoutSearch();

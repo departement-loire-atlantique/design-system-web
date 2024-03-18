@@ -1,7 +1,6 @@
-class InfoTraffic extends MapAbstract {
+class InfoTrafficClass extends MapAbstract {
     constructor () {
-        super('.ds44-js-map.info-traffic');
-        // SI Url not found and content_html affiché le content html
+        super("InfoTraffic", '.ds44-js-map.info-traffic');
     }
 
     create (element) {
@@ -673,6 +672,19 @@ class InfoTraffic extends MapAbstract {
         }
     }
 }
-
 // Singleton
+var InfoTraffic = (function () {
+    "use strict";
+    var instance;
+    function Singleton() {
+        if (!instance) {
+            instance = new InfoTrafficClass();
+        }
+        instance.initialise();
+    }
+    Singleton.getInstance = function () {
+        return instance || new Singleton();
+    }
+    return Singleton;
+}());
 new InfoTraffic();

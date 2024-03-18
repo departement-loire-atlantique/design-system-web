@@ -1,0 +1,21 @@
+<section class="ds44-card ds44-js-card ds44-card--contact ds44-box ds44-bgGray {% if include['is-partner'] == 'true' %} ds44-cardIsPartner {% endif %} {% if include['is-focus'] == 'true' %} ds44-cardIsFocus {% endif %}">
+  {% if include['has-picture'] == 'true' %}
+  <picture class="ds44-container-imgRatio">
+    <img src="../../assets/images/ds44-logo--sampleImg.png" alt="" class="ds44-imgRatio"/>
+  </picture>
+  {% endif %}
+  <div class="ds44-card__section">
+    <p class="ds44-cardSelect pa0 ma0">
+      <button class="pas ds44-js-select-button {% if include['is-select'] == 'true' %}is-select{% endif%}" {% if include['is-select'] == 'true' %}data-url="/json/button-return-select-disabled.json"{% else %}data-url="/json/button-return-select-enabled.json"{% endif%} data-titles='{ "enabled": "Désélectionner {{ include.titreTuile }}", "disabled": "Sélectionner {{ include.titreTuile }}"}' data-icons='{ "enabled": "icon-star-full", "disabled": "icon-star-empty"}' type="button" aria-describedby="{{ include.idTuile }}">
+        <i class="icon" data-icon aria-hidden="true"></i>
+        <span class="visually-hidden" data-entitled>Sélection</span>
+      </button>
+    </p>
+    <div class="ds44-innerBoxContainer">
+        <p role="heading" aria-level="2" class="h4-like ds44-cardTitle" id="{{ include.idTuile }}"><a href="#" class="ds44-card__globalLink">{{ include.titreTuile }}</a></p>
+        <hr class="mbs" aria-hidden="true" />
+        {{ include.cardContent }}
+    </div>
+    <i class="icon icon-arrow-right ds44-cardArrow" aria-hidden="true"></i>
+  </div>
+</section>

@@ -423,6 +423,10 @@
     display: block!important;
   }
 
+  .ds44-show-mobile-flex {
+    display: flex!important;
+  }
+
   .ds44-hide-smallScreens {
     display: none !important;
   }
@@ -485,4 +489,15 @@
         display: none !important;
     }
 
+}
+
+
+.all-wauto {
+  display: block !important;
+  float: none !important;
+  clear: none !important;
+  width: auto !important;
+  margin-left: 0 !important;
+  margin-right: 0 !important;
+  border: 0;
 }

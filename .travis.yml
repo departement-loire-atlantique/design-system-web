@@ -22,19 +22,24 @@
 # 
 # Add the key to github
 # git add deploy_rsa.enc
-# 
+#
+
+language: node_js
+
 env:
   global:
     secure: "EZ1p4bNLpqVeg5LP+fikJJI+61nM773d8pUenC9yqTdrY6ubeZbuKGlR4EMMMnRAW+8IobBlE3FjcIt4ulJPJFjBt1GV8qrI83q/1j02G3S3nEhi5XFdXiR9w5LiSkG0FxBiyRpzRGT7gR8Fg+2jq7IOaaU9h98O35URato1F9GtqJ9uKiSc0jbfrT8T5Mom6502F+vvbIait2kyLQ5ZH7kWz6i7QPs8lVQ0Zirf5n4AkUWxemXL6ff+txV+Nu55jhTTn9cExOj50AmAMwqCF7Yp/XoU7IDGTiZvTVM0qBnWFaVd6teotGUflXxY6SbS6wmyR0EaN6mQ2ZIaamZ00e0IcMKgnQNxs5NWdlLZicu7E6wJ1kUmxBmOjMIzL+HHKr8KJth52wqo6wNQe2KwwoGLuu0jvChHFVyJLvv8eswPsq4d/nwiVNQ0njwJW7oKTYFbGiZBJRHNLKAFOt0aBytPEItCWNAEbh4IsXGRBuSPfkJ3rLMZF88hGREzHu4rzD5ka0PeBcFO75sLXZ+kFgtbu+48TulcdwgVKlGlul4oo7Joug0//Iaop9/hiPz9ZR6hFa2vlaFZXbLb2QfMI3FLg/OX+WnoMiNIzlAhyqiL9S2Az6JKQTziozIRSOTk2xLetnJpipgLCQvK4afj+K+eEONmyIuV3IOK1QGMsME="
 
 addons:
   ssh_known_hosts: ssh.cluster011.hosting.ovh.net
-  
+
 install:
+  - nvm install v11.15.0
+  - npm --version
   - npm install -g gulp-cli
   - npm install
 
-script: 
+script:
   - gulp build
 
 # Unlock private key

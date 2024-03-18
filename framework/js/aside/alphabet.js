@@ -1,15 +1,22 @@
-class AsideAlphabet {
+class AsideAlphabetClass {
     constructor () {
+        Debug.log("AsideAlphabet -> Constructor");
+    }
+
+    initialise()
+    {
+        Debug.log("AsideAlphabet -> Initialise");
         this.containerElement = document.querySelector('.ds44-js-aside-alphabet');
         if (!this.containerElement) {
             return;
         }
-
-        this.containerElement
-            .querySelectorAll('li a')
-            .forEach((letterElement) => {
-                MiscEvent.addListener('click', this.select.bind(this), letterElement);
-            });
+        if(MiscComponent.checkAndCreate(this.containerElement, "aside-alphabet")) {
+            this.containerElement
+              .querySelectorAll('li a')
+              .forEach((letterElement) => {
+                  MiscEvent.addListener('click', this.select.bind(this), letterElement);
+              });
+        }
     }
 
     select (evt) {
@@ -25,6 +32,19 @@ class AsideAlphabet {
         evt.currentTarget.setAttribute('tabindex', '-1');
     }
 }
-
 // Singleton
+var AsideAlphabet = (function () {
+    "use strict";
+    var instance;
+    function Singleton() {
+        if (!instance) {
+            instance = new AsideAlphabetClass();
+        }
+        instance.initialise();
+    }
+    Singleton.getInstance = function () {
+        return instance || new Singleton();
+    }
+    return Singleton;
+}());
 new AsideAlphabet();

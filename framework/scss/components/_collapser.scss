@@ -70,6 +70,50 @@
     border: none;
   }
 
+  &.dobree-collapser {
+      .ds44-collapser_element{
+          border: 0;
+          margin-bottom: 5px;
+      }
+      .ds44-collapser_button {
+          background: $ds44-contextual-color;
+          font-size: 1.875em;
+          padding: 2rem 4rem 2rem 4rem;
+
+          @media (max-width: $medium - .0625) {
+              font-size: 1.25em;
+          }
+
+          .icon {
+              right: 4rem;
+              top: 2rem;
+            }
+      }
+      .ds44-collapser_content {
+          background-color: transparent;
+
+          p[role=heading] {
+              font-size: 1.25em;
+          }
+        }
+        @media (max-width: $medium - .0625) {
+            .ds44-card--focus .ds44-flex-container, .ds44-card--focus .ds44-frw {
+               flex-direction: row;
+
+               .ds44-card__section--horizontal--img {
+                  min-width: 25%;
+                }
+               .ds44-card__section--horizontal {
+                  padding: 2rem;
+                  text-align: left;
+                  align-items: flex-start;
+                }
+             }
+        }
+
+
+  }
+
 }
 
 /* row-like button */

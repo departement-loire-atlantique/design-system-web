@@ -1,6 +1,6 @@
-class MapMarker extends MapAbstract {
+class MapMarkerClass extends MapAbstract {
     constructor () {
-        super('.ds44-js-map:not([data-geojson-mode="dynamic"]):not(.info-traffic)');
+        super("MapMarker", '.ds44-js-map:not([data-geojson-mode="dynamic"]):not(.info-traffic)');
     }
 
     create (element) {
@@ -13,6 +13,11 @@ class MapMarker extends MapAbstract {
         }
 
         object.geojsonHoveredId = null;
+        let clusterTolerance = 0.375;
+        if(object.mapElement.getAttribute('data-cluster-tolerance') !== undefined && object.mapElement.getAttribute('data-cluster-tolerance') !== null)
+        {
+            clusterTolerance = parseFloat(object.mapElement.getAttribute('data-cluster-tolerance'));
+        }
         object.geojsonModel = {
             'type': 'geojson',
             'data': {
@@ -22,6 +27,7 @@ class MapMarker extends MapAbstract {
             'cluster': (object.mapElement.getAttribute('data-use-cluster') === 'true'),
             'clusterMaxZoom': 14,
             'clusterRadius': 50,
+            "tolerance": clusterTolerance,
             'generateId': true
         };
     }
@@ -43,7 +49,10 @@ class MapMarker extends MapAbstract {
           }
         );
 
-        object.map.on('moveend', this.move.bind(this, objectIndex));
+        if(!object.mapElement.hasAttribute("data-no-refresh"))
+        {
+            object.map.on('moveend', this.move.bind(this, objectIndex));
+        }
         if (object.newResults) {
             this.show(objectIndex);
         }
@@ -58,6 +67,8 @@ class MapMarker extends MapAbstract {
         if (!object || !object.isVisible) {
             return;
         }
+
+
 
         const mapBounds = object.map.getBounds();
         MiscEvent.dispatch(
@@ -95,6 +106,8 @@ class MapMarker extends MapAbstract {
                 object.map.removeSource('places');
             }
         }
+
+        let beforeId = object.map.getLayer('currentMarker') ? "currentMarker" : ""
 
         // Initialize bounding box
         let hasBoundingBox = false;
@@ -154,16 +167,53 @@ class MapMarker extends MapAbstract {
 
         // Add cluster
         if (!object.map.getLayer('cluster-background')) {
+
+
+            let paintCluster = {
+                'circle-color': '#99e6d1',
+                'circle-radius': 20
+            }
+            if(object.mapElement.getAttribute('data-cluster-theme') && object.mapElement.getAttribute('data-cluster-theme') === "theme-2")
+            {
+                paintCluster = {
+                    'circle-color': [
+                        'step',
+                        ['get', 'point_count'],
+                        '#fff',
+                        10,
+                        '#fff',
+                    ],
+                    'circle-stroke-color': [
+                        'step',
+                        ['get', 'point_count'],
+                        '#000',
+                        10,
+                        '#000',
+                    ],
+                    'circle-stroke-width': [
+                        'step',
+                        ['get', 'point_count'],
+                        1,
+                        10,
+                        1,
+                    ],
+                    'circle-radius': [
+                        'step',
+                        ['get', 'point_count'],
+                        20,
+                        10,
+                        25,
+                    ]
+                }
+            }
+
             object.map.addLayer({
                 id: 'cluster-background',
                 type: 'circle',
                 source: 'places',
                 filter: ['has', 'point_count'],
-                paint: {
-                    'circle-color': '#99e6d1',
-                    'circle-radius': 20
-                }
-            });
+                paint: paintCluster
+            }, beforeId);
             object.map.on('click', 'cluster-background', (evt) => {
                 const features = object.map.queryRenderedFeatures(evt.point, {
                     layers: ['cluster-background']
@@ -199,7 +249,7 @@ class MapMarker extends MapAbstract {
                     'text-font': ['DIN Offc Pro Medium', 'Arial Unicode MS Bold'],
                     'text-size': 12
                 }
-            });
+            }, beforeId);
         }
 
         // Add marker
@@ -214,7 +264,7 @@ class MapMarker extends MapAbstract {
                     'icon-size': 1,
                     'icon-allow-overlap': true
                 }
-            });
+            }, beforeId);
             object.map.on('click', 'marker', (evt) => {
                 this.showPopup(objectIndex, evt.features[0], evt);
             });
@@ -446,8 +496,24 @@ class MapMarker extends MapAbstract {
               .addTo(object.map);
         }
 
+        let buttonSelect = object.popup.getElement().querySelector(".ds44-js-select-button");
+        if(buttonSelect)
+        {
+            ButtonSelect.getInstance().initialise();
+            document
+              .querySelectorAll("*[data-select-button-id='"+buttonSelect.dataset.selectButtonId+"']")
+              .forEach((button) => {
+                  if(button !== buttonSelect) {
+                      MiscEvent.dispatch("button::switch-value", {isSelect: button.classList.contains("is-select")}, buttonSelect);
+                  }
+              });
+        }
 
-        MiscEvent.addListener('click', this.popupClick.bind(this, id), object.popup.getElement())
+
+        if(!object.mapElement.hasAttribute("data-popup-click-disabled"))
+        {
+            MiscEvent.addListener('click', this.popupClick.bind(this, id), object.popup.getElement())
+        }
     }
 
     hidePopup (objectIndex) {
@@ -460,6 +526,19 @@ class MapMarker extends MapAbstract {
         object.popup = null;
     }
 }
-
 // Singleton
+var MapMarker = (function () {
+    "use strict";
+    var instance;
+    function Singleton() {
+        if (!instance) {
+            instance = new MapMarkerClass();
+        }
+        instance.initialise();
+    }
+    Singleton.getInstance = function () {
+        return instance || new Singleton();
+    }
+    return Singleton;
+}());
 new MapMarker();

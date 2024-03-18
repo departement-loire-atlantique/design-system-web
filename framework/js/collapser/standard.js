@@ -1,12 +1,23 @@
-class CollapserStandard {
+class CollapserStandardClass {
     constructor () {
+        Debug.log("CollapserStandard -> Constructor");
         this.objects = [];
+    }
 
+    initialise() {
+        Debug.log("CollapserStandard -> Initialise");
         document
-            .querySelectorAll('.ds44-collapser_button')
-            .forEach((buttonElement) => {
-                this.create(buttonElement);
-            });
+          .querySelectorAll('.ds44-collapser_button')
+          .forEach((buttonElement) => {
+              if(MiscComponent.checkAndCreate(buttonElement, "collapser")) {
+                  this.create(buttonElement);
+              }
+          });
+    }
+
+    clearObject() {
+        Debug.log("CollapserStandard -> Clear object");
+        this.objects = [];
     }
 
     create (buttonElement) {
@@ -31,8 +42,10 @@ class CollapserStandard {
         MiscEvent.addListener('click', this.showHide.bind(this, objectIndex), buttonElement);
     }
 
-    showHide (objectIndex) {
+    showHide (objectIndex, evt) {
         const object = this.objects[objectIndex];
+        evt.stopPropagation();
+        evt.preventDefault();
         if (!object || !object.buttonElement) {
             return;
         }
@@ -64,6 +77,14 @@ class CollapserStandard {
         panel.style.maxHeight = (panel.style.maxHeight ? null : panel.scrollHeight + 60 + 'px');
         MiscAccessibility.show(panel);
         panel.style.visibility = 'visible';
+
+        const icon = object.buttonElement.querySelector(".icon");
+        if(icon)
+        {
+            icon.classList.remove("icon-down");
+            icon.classList.add("icon-up");
+        }
+
     }
 
     hide (objectIndex) {
@@ -82,6 +103,13 @@ class CollapserStandard {
         panel.style.maxHeight = null;
         MiscAccessibility.hide(panel);
         panel.style.visibility = 'hidden';
+
+        const icon = object.buttonElement.querySelector(".icon");
+        if(icon)
+        {
+            icon.classList.remove("icon-up");
+            icon.classList.add("icon-down");
+        }
     }
 
     escape (objectIndex) {
@@ -100,6 +128,20 @@ class CollapserStandard {
         this.hide(objectIndex);
     }
 }
-
 // Singleton
+var CollapserStandard = (function () {
+    "use strict";
+    var instance;
+    function Singleton() {
+        if (!instance) {
+            instance = new CollapserStandardClass();
+        }
+        instance.initialise();
+    }
+    Singleton.getInstance = function () {
+        return instance || new Singleton();
+    }
+    return Singleton;
+}());
 new CollapserStandard();
+

@@ -1,0 +1,111 @@
+---
+layout: pattern
+---
+
+<p class="h4-like">Tuile focus image à gauche</p>
+{% include card/card--focus-objet.html  title="Magot chinois (détail)" date="Entre 1800 et 1825. Terre crue" arialevel="3" %}
+
+<hr />
+
+<p class="h4-like">Tuile focus image à droite</p>
+{% include card/card--focus-objet.html  title="Le laraire de Rezé" date="Fin Ier-début du IIe s. Terre cuite" arialevel="4" direction="ds44-frw" %}
+
+<hr />
+
+<p class="h4-like">Deux tuiles à côté</p>
+<ul class="grid-2-tiny-1 ds44-mosaique has-gutter-l ds44-list">
+    <li>
+        {% include card/card--dobree.html
+            has-picture="true"
+            titreTuile="Le musée fête sa réouverture"
+            idTuile="8"
+            cardContent='<p class="ds44-docListElem "><i class="icon icon-date ds44-docListIco" aria-hidden="true"></i><span class="visually-hidden">Date de l&#39;événement : </span>4 avril 2024</p>'
+        %}    </li>
+        <li>
+        {% include card/card--dobree.html
+            has-picture="true"
+            titreTuile="C'est bientôt la nuit des musées"
+            idTuile="8"
+            cardContent='<p class="ds44-docListElem ds44-mt-std"><i class="icon icon-date ds44-docListIco" aria-hidden="true"></i><span class="visually-hidden">Date de l&#39;événement : </span>18 mai 2024</p>'
+        %}
+        </li>
+</ul>
+
+<hr />
+
+<p class="h4-like">Deux tuiles à côté - Contenu Vidéo</p>
+<ul class="grid-2-tiny-1 ds44-mosaique ds44-gutter ds44-list">
+    <li>
+        {% include card/card--dobree.html
+            has-picture="true"
+            has-video="true"
+            titreTuile="Les collections en 3D"
+            idTuile="8"
+            cardContent='<p>Explorez une sélection d&apos;oeuvres en 3D</p>'
+        %}    </li>
+        <li>
+            {% include card/card--dobree.html
+                has-picture="true"
+                has-video="true"
+                titreTuile="Espace ressources éducatives"
+                idTuile="8"
+                cardContent='<p>Un espace réservé aux enseignants</p>'
+            %}    </li>
+</ul>
+
+<hr />
+
+<p class="h4-like">Tuiles format portait</p>
+<ul class="grid-3-tiny-1 ds44-mosaique ds44-gutter ds44-list">
+    <li>
+        {% include card/card--dobree-portrait.html
+            has-picture="true"
+            titreTuile="Les collections en 3D"
+            idTuile="8"
+        %}
+    </li>
+    <li>
+        {% include card/card--dobree-portrait.html
+            has-picture="true"
+            titreTuile="Les collections en 3D"
+            idTuile="8"
+        %}
+    </li>
+    <li>
+        {% include card/card--dobree-portrait.html
+            has-picture="true"
+            titreTuile="Les collections en 3D"
+            idTuile="8"
+        %}
+    </li>
+</ul>
+
+
+<hr />
+
+<p class="h4-like">Tuiles tarifs</p>
+{% include card/card--tarifs.html title="Entrée collection permanente" aria-level="3" %}
+
+<hr />
+
+<p class="h4-like">Tuiles tarifs avec petite image</p>
+{% include card/card--tarifs.html title="Entrée collection permanente" aria-level="3" imgdim="--dim80" %}
+
+<hr />
+
+<p class="h4-like">Tuiles contenant une liste</p>
+<section class="ds44-card ds44-card--noLink ds44-card--horizontal ds44-card--focus dobree-card--tarif">
+  <div class="ds44-flex-container ds44-flex-valign-center">
+    <div class="ds44-card__section--horizontal">
+        <p role="heading" aria-level="3">Entrée gratuite</p>
+        <ul class="ds44-mb2 ds44-listDisc">
+            <li>Moins de 26 ans</li>
+            <li>Étudiant.es</li>
+            <li>Demandeurs.euses d’emploi inscrit.es à Pôle Emploi</li>
+            <li>Bénéficiaires de minima sociaux (RSA, ASS...)</li>
+            <li>Personnes en situation de handicap</li>
+        </ul>
+      <p><a class="ds44-btnStd"><span class="ds44-btnInnerText">Voir tous les tarifs réduits</span><i class="icon icon-long-arrow-right" aria-hidden="true"></i></a></p>
+    </div>
+  </div>
+</section>

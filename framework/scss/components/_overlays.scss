@@ -104,6 +104,9 @@
 .ds44-modal-gab {
     padding: $ds44-padding-box;
     margin-top: $ds44-padding-box;
+    p.ds44-btnIco--carre {
+        display: none;
+    }
 }
 
 .ds44-modal-column {
@@ -231,6 +234,22 @@
             max-width: 80%;
             display: inline-block;
             background: linear-gradient(to bottom, rgba(255, 255, 255, 0) calc(100% - 16px), $ds44-contextual-color 0px);
+        }
+    }
+}
+
+.orejimeBody-WithModalOpen {
+    /* Orejime */
+    #orejime {
+        height: 100%;
+        width: 100%;
+        .orejime-ModalPortal {
+            height: 100%;
+            width: 100%;
+            position: fixed;
+            z-index: 100;
+            left: 0;
+            top: 0;
         }
     }
 }

@@ -4,6 +4,10 @@ layout: pattern
 
 {% include form/field/input/standard.html label="Champ standard" required="true" %}
 
+{% include form/field/input/standard.html label="Champ standard - Non obligatoire" %}
+
+{% include form/field/input/standard.html label="Champ standard" required="true" value="Value" %}
+
 {% include form/field/input/standard.html label="Champ large" required="true" class="ds44-inpLarge" %}
 
 {% include form/field/input/standard.html label="Champ avec label exterieur" labelClass="ds44-formLabel--external" required="true" placeholder="Placeholder" title="Placeholder" %}
@@ -12,15 +16,15 @@ layout: pattern
 
 <p role="heading" aria-level="2" class="h3-like">Cases à cocher et boutons radio</p>
 
-{% include form/layout/checkboxes.html choices="m:Homme,f:Femme" required="true" %}
+{% include form/layout/checkboxes.html label="Au moins une de ces cases doit être cochée" choices="m:Homme,f:Femme" required="true" %}
 
-{% include form/layout/radios.html name="radio1" choices="m:Homme,f:Femme" required="true" %}
+{% include form/layout/radios.html  label="Au moins une de ces cases doit être cochée" name="radio1" choices="m:Homme,f:Femme" required="true" %}
 
 <p role="heading" aria-level="2" class="h3-like">Cases à cocher et boutons radio en liste horizontale</p>
 
-{% include form/layout/checkboxes.html choices="m:Homme,f:Femme" required="true" list="true" %}
+{% include form/layout/checkboxes.html label="Au moins une de ces cases doit être cochée" choices="m:Homme,f:Femme" required="true" list="true" %}
 
-{% include form/layout/radios.html name="radio2" choices="m:Homme,f:Femme" required="true" list="true" %}
+{% include form/layout/radios.html  label="Au moins une de ces cases doit être cochée" name="radio2" choices="m:Homme,f:Femme" required="true" list="true" %}
 
 <hr />
 
@@ -38,6 +42,12 @@ layout: pattern
 
 <hr />
 
+
+<p role="heading" aria-level="2" class="h3-like">Time</p>
+{% include form/field/input/time.html label="Heure" title="le : heure:minute" explanation="Ex : 13h30" required="true" %}
+
+<hr />
+
 <p role="heading" aria-level="2" class="h3-like">Champ de téléchargement de fichier</p>
 
 {% include form/field/input/file.html label="Mon fichier" attributes='data-file-extensions="doc,pdf"' explanation="Formats : PDF ou DOC, taille max. : 10Mo" required="true" %}
@@ -47,6 +57,13 @@ layout: pattern
 <p role="heading" aria-level="2" class="h3-like">Champ de mot de passe</p>
 
 {% include form/field/input/standard.html label="Mot de passe" type="password" showPassword="true" explanation="Info complémentaire" required="true" %}
+
+<hr />
+
+<p role="heading" aria-level="2" class="h3-like">Champ de mot de passe avec confirmation</p>
+
+{% include form/field/input/standard.html id="password" label="Mot de passe" type="password" showPassword="true" explanation="Info complémentaire" required="true" %}
+{% include form/field/input/standard.html id="password_verif" attributes='data-field-compare="#password"' label="Confirmation du mot de passe" type="password" showPassword="true" required="true" %}
 
 <hr />
 

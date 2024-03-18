@@ -1,6 +1,7 @@
-class FormFieldSelectRadio extends FormFieldSelectAbstract {
+class FormFieldSelectRadioClass extends FormFieldSelectAbstract {
     constructor () {
         super(
+          "FormFieldSelectRadio",
             '.ds44-selectDisplay.ds44-js-select-radio',
             'selectRadio'
         );
@@ -219,6 +220,19 @@ class FormFieldSelectRadio extends FormFieldSelectAbstract {
         return object.selectListElement.querySelectorAll('input');
     }
 }
-
 // Singleton
+var FormFieldSelectRadio = (function () {
+    "use strict";
+    var instance;
+    function Singleton() {
+        if (!instance) {
+            instance = new FormFieldSelectRadioClass();
+        }
+        instance.initialise();
+    }
+    Singleton.getInstance = function () {
+        return instance || new Singleton();
+    }
+    return Singleton;
+}());
 new FormFieldSelectRadio();

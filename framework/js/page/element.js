@@ -1,20 +1,34 @@
-class PageElement {
+class PageElementClass {
     constructor () {
+        Debug.log("PageElement -> Constructor");
         this.visibilityCounter = 0;
         this.objects = []
+    }
+
+    initialise() {
+        Debug.log("PageElement -> Initialise");
+        document
+          .querySelectorAll('footer, main')
+          .forEach((pageElement) => {
+              if(MiscComponent.checkAndCreate(pageElement, "page-element")) {
+                  this.create(pageElement);
+              }
+          });
 
         document
-            .querySelectorAll('footer, main')
-            .forEach((pageElement) => {
-                this.create(pageElement);
-            });
-        
-        document
-            .querySelectorAll('a[href^="#"]')
-            .forEach((link) => {
-                link.addEventListener("click", this.scrollToHyperlink);
-            });
+          .querySelectorAll('a[href^="#"]')
+          .forEach((link) => {
+              if(MiscComponent.checkAndCreate(link, "link-scroll")) {
+                  MiscEvent.addListener("click", (event) => {
+                      this.scrollToHyperlink(event, link);
+                  }, link);
+              }
+          });
+    }
 
+    clearObject() {
+        Debug.log("PageElement -> Clear object");
+        this.objects = [];
     }
 
     create (pageElement) {
@@ -27,7 +41,6 @@ class PageElement {
 
     show () {
         this.visibilityCounter = Math.min(0, (this.visibilityCounter + 1));
-        console.log(this.visibilityCounter);
         if (this.visibilityCounter === 0) {
             for (let objectIndex = 0; objectIndex < this.objects.length; objectIndex++) {
                 MiscAccessibility.show(this.objects[objectIndex].element, true, false);
@@ -44,12 +57,13 @@ class PageElement {
         this.visibilityCounter--;
     }
         
-    scrollToHyperlink(event) {
+    scrollToHyperlink(event, button) {
         event.preventDefault();
-        var targetHref = event.target.getAttribute('href');
+        var targetHref = button.getAttribute('href');
         if(targetHref)
         {
-            const scrollTo = MiscUtils.getPositionY(document.getElementById(targetHref.replace('#', '')));
+            let elementToScroll = document.getElementById(targetHref.replace('#', ''));
+            const scrollTo = MiscUtils.getPositionY(elementToScroll);
             if (MiscUtils.getScrollTop() > scrollTo) {
                 // Going up, the header will show
                 MiscUtils.scrollTo(
@@ -65,9 +79,31 @@ class PageElement {
                   'linear'
                 );
             }
+            // Create first hidden focus element
+            const fakeElement = document.createElement('span');
+            fakeElement.classList.add('ds44-tmpFocusHidden');
+            fakeElement.setAttribute('tabindex', '-1');
+            elementToScroll.prepend(fakeElement);
+            fakeElement.focus();
+            MiscEvent.addListener("blur", (event) => {
+                fakeElement.remove();
+            }, fakeElement);
         }
     }
 }
-
 // Singleton
+var PageElement = (function () {
+    "use strict";
+    var instance;
+    function Singleton() {
+        if (!instance) {
+            instance = new PageElementClass();
+        }
+        instance.initialise();
+    }
+    Singleton.getInstance = function () {
+        return instance || new Singleton();
+    }
+    return Singleton;
+}());
 new PageElement();

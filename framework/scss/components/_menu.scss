@@ -157,7 +157,7 @@
     width: 100%;
     position: relative;
 
-    a, div {
+    a, button, div {
       text-decoration: none;
       display: inline-block;
       margin: 0;
@@ -252,6 +252,192 @@
   }
 }
 
+/* Musée Dobrée Header Menu */
+.dobree-menu.ds44-blocMenu .ds44-multiCol3 {
+  -webkit-column-count: 3;
+  -moz-column-count: 3;
+  column-count: 3;
+  display: block;
+  padding: 3em 0;
+
+  > div {
+      overflow: auto;
+      padding:0 4rem;
+
+      &:nth-child(2) {
+          border-left : 1px $ds44-color-base solid;
+          border-right : 1px $ds44-color-base solid;
+      }
+      .ds44-navListN2 {
+          margin-bottom: 0;
+      }
+  }
+}
+
+.dobree-menu.ds44-blocMenu {
+    .ds44-navContainer {
+      padding-top: 0rem;
+
+      & > .ds44-inner-container {
+          max-height: inherit;
+        }
+    }
+    .ds44-logoContainer img {
+         display: block;
+         margin: 0 0 0 4em;
+       }
+       .ds44-colLeft {
+          flex: 2 1;
+        }
+        .ds44-colRight {
+               margin-right: 10em;
+         }
+
+  .h3-like {
+      font-family: $ds44-font-family-baseModern;
+      font-size: 26px;
+      font-weight: 700;
+      margin-bottom: 1em;
+  }
+  .ds44-menuLink {
+      font-family: $ds44-font-family-baseModern;
+      font-size: 16px;
+      margin-bottom: 1rem;
+      position: relative;
+
+      &::before {
+        content: '';
+        display: block;
+        width: 10px;
+        height: 4px;
+        background: $ds44-color-base;
+        margin-left: -15px;
+        position: absolute;
+        top: 8px;
+        transition: all ease-in-out .25s;
+        opacity: 0;
+      }
+      &:hover, &:focus {
+          &::before {
+            opacity: 1;
+          }
+      }
+  }
+  &.mobile {
+      .ds44-logoContainer img {
+              height: 62px;
+              margin: 0;
+          }
+    #subMenu-choixLangue, #subMenu-choixLangueMobile {
+        top : 6rem;
+        right: 6rem !important;
+        width: 20rem;
+        z-index: 1;
+    }
+    #subMenu-choixLangueMobile {
+      background-color: white;
+    }
+    .ds44-collapser {
+        margin: 0;
+    }
+    .ds44-collapser_button {
+        font-family: $ds44-font-family-baseModern;
+        font-size: 20px;
+        font-weight: 700;
+    }
+    .ds44-collapser_content {
+      background-color: transparent;
+      ul {
+          padding-top: 0;
+          .ds44-collapser_content--link {
+              padding: 0rem 1rem 0rem 3rem;
+              font-size: 14px;
+            }
+      }
+    }
+    .dobree-listAccessibility > div{
+        background-color: rgba(255, 255, 255, 0.4);
+        color: $ds44-dark;
+    }
+  }
+  //Zoom à 200% passe le menu visible entièrement
+  @media (-webkit-device-pixel-ratio: 4) {
+  .ds44-navContainer > .ds44-inner-container  {
+    max-height: inherit;
+  }
+}
+
+
+.mobile {
+  .ds44-collapser_content {
+    background-color: transparent;
+  }
+
+  ul .ds44-collapser_content--link {
+    padding: 0rem 1rem 0rem 3rem;
+    font-size: 14px;
+  }
+
+  .dobree-listAccessibility > div {
+    background-color: rgba(255, 255, 255, 0.4);
+    color: #000;
+  }
+
+  .ds44-collapser_button {
+    font-family: Helvetica, Arial, sans-serif;
+    font-size: 20px;
+    font-weight: 700;
+  }
+  .ds44-logoContainer img {
+    height: 62px;
+    margin: 0;
+  }
+}
+
+
+#subMenu-choixLangue, #subMenu-choixLangueMobile {
+  top : 6rem;
+  right: 6rem !important;
+  width: 20rem;
+  z-index: 1;
+}
+
+#subMenu-choixLangueMobile {
+  background-color: white;
+}
+
+
+.ds44-navList.align-first-col-title div:first-child {
+  margin-top: -5px;
+}
+
+}
+.dobree-menu.ds44-blocMenu .dobree-blocVousEtes {
+    background-color: $ds44-lightgray ;
+    padding: 5em 0;
+
+    .ds44-multiCol5 {
+      -webkit-column-count: 5;
+      -moz-column-count: 5;
+      column-count: 5;
+      display: block;
+
+      > div {
+          overflow: auto;
+          padding:0 4rem;
+
+          .ds44-navListN2 {
+              margin-bottom: 0;
+          }
+
+      }
+    }
+}
+
+
+
+
+
 
 // -------------
 //   TABLETTE
@@ -265,6 +451,10 @@
 
     .ds44-navListApplis {
         padding-left: 2.5rem;
+    }
+
+    .dobree-menu.ds44-blocMenu  .ds44-navListN2 {
+        margin: 0 ;
     }
 
 }
@@ -356,7 +546,7 @@
       .ds44-nav-step {
         text-align: left;
         margin: 10px 0;
-        a, div {
+        a, button, div {
           text-decoration: none;
           display: inline-block;
 
@@ -377,6 +567,14 @@
         }
       }
     }
+    .dobree-menu .ds44-fieldContainer.ds44-small-fg1 {
+        text-align: center;
+        > .ds44-btnStd {
+              width: auto;
+            }
+    }
+
+
 
 }
 

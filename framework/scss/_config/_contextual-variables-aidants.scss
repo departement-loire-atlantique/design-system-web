@@ -8,3 +8,9 @@
 
 $ds44-contextual-color : #e1664d !default;
 $ds44-contextual-hover : lighten($ds44-contextual-color, 10%) !default;
+
+@media (min-width: 64em) {
+  .ds44-menuBtn {
+    font-size: 2em !important;
+  }
+}

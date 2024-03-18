@@ -15,6 +15,23 @@ class FormFieldInputAbstract extends FormFieldAbstract {
         object.labelElement = MiscDom.getPreviousSibling(element, 'label');
         object.resetButtonElement = MiscDom.getNextSibling(element, '.ds44-reset');
         object.showPasswordButton = MiscDom.getNextSibling(element, ".ds44-showPassword");
+
+        if(object.element.dataset.fieldCompare)
+        {
+            let fieldCompare = document.querySelector(object.element.dataset.fieldCompare);
+            if(fieldCompare) {
+                object.fieldCompare = {
+                    "element":  fieldCompare,
+                    "label":    MiscDom.getPreviousSibling(fieldCompare, 'label'),
+                    "error":    false
+                };
+            }
+        }
+        let fieldsToCompare = document.querySelectorAll("*[data-field-compare='#"+element.getAttribute("id")+"']");
+        if(fieldsToCompare) {
+            object.fieldsToCompare = fieldsToCompare;
+        }
+
     }
 
     initialize () {
@@ -31,8 +48,12 @@ class FormFieldInputAbstract extends FormFieldAbstract {
             MiscEvent.addListener('blur', this.blur.bind(this, objectIndex), object.textElement);
             MiscEvent.addListener('invalid', this.invalid.bind(this, objectIndex), object.textElement);
             MiscEvent.addListener('keyUp:*', this.write.bind(this, objectIndex));
+            MiscEvent.addListener('field:check-value', this.checkValue.bind(this, objectIndex), object.textElement);
+
             if (object.resetButtonElement) {
-                MiscEvent.addListener('click', this.reset.bind(this, objectIndex), object.resetButtonElement);
+                MiscEvent.addListener('click', ()=>{
+                    MiscEvent.dispatch("field:reset", {}, object.textElement);
+                }, object.resetButtonElement);
             }
             if (object.labelElement) {
                 MiscEvent.addListener('click', this.focusOnTextElement.bind(this, objectIndex), object.labelElement);
@@ -58,8 +79,33 @@ class FormFieldInputAbstract extends FormFieldAbstract {
         ) {
             return;
         }
-
+        this.checkValue(objectIndex);
+        this.toggleContainerByValue(objectIndex, object.element.value);
         this.showNotEmpty(objectIndex);
+    }
+
+    checkValue(objectIndex) {
+        const object = this.objects[objectIndex];
+        if (!object) {
+            return;
+        }
+
+        if(object.fieldCompare) {
+            if(object.fieldCompare.element.value !== null && object.fieldCompare.element.value !== object.element.value) {
+                object.fieldCompare.error = true;
+                this.invalid(objectIndex);
+            }
+            else {
+                object.fieldCompare.error = false;
+                this.removeInvalid(objectIndex);
+            }
+        }
+        if(object.fieldsToCompare.length > 0) {
+            object.fieldsToCompare.forEach((element) => {
+                MiscEvent.dispatch("field:check-value", {}, element);
+            });
+        }
+
     }
 
     showNotEmpty (objectIndex) {
@@ -68,10 +114,13 @@ class FormFieldInputAbstract extends FormFieldAbstract {
         this.showHideResetButton(objectIndex);
     }
 
-    reset (objectIndex) {
+    reset (objectIndex, evt) {
         this.empty(objectIndex);
 
-        this.focusOnTextElement(objectIndex);
+        if(evt.detail.focus === undefined || evt.detail.focus !== false)
+        {
+            this.focusOnTextElement(objectIndex);
+        }
     }
 
     enableElements (objectIndex, evt) {
@@ -244,6 +293,13 @@ class FormFieldInputAbstract extends FormFieldAbstract {
             return this.formatErrorMessage(objectIndex);
         }
 
+        if(object.fieldCompare && object.fieldCompare.error) {
+            let pattern = {
+                "fieldNameCompare": object.fieldCompare.label.innerText.replace(/\*$/, '')
+            }
+            return this.formatErrorMessage(objectIndex, 'FIELD_VALID_COMPARE', pattern);
+        }
+
         const autocomplete = object.textElement.getAttribute('autocomplete');
         if (
             autocomplete === 'email' &&
@@ -280,7 +336,6 @@ class FormFieldInputAbstract extends FormFieldAbstract {
         if (!object || !object.textElement) {
             return true;
         }
-
         const data = this.getData(objectIndex);
         if (!data) {
             return true;

@@ -32,6 +32,59 @@
 
 }
 
+/* Style custom Modern */
+body.modern .ds44-contenuArticle {
+    margin: 0 auto 5rem auto;
+
+    h2, h3, h4 {
+        font-family: $ds44-font-family-baseModern;
+        font-weight: normal;
+        padding: 0;
+        background: transparent;
+        margin-top: 4rem;
+        margin-bottom: 2rem;
+        display: block;
+    }
+
+    h2 {
+        font-size: 1.875em;
+
+        @media (max-width: $ds44-medium - .625) {
+            font-size: 1.5em;
+        }
+        @media (max-width: $ds44-small - .625) {
+            font-size: 1.25em;
+        }
+    }
+    h3{
+        font-size: 1.25em;
+        font-weight: bold;
+
+        @media (max-width: $ds44-medium - .625) {
+            font-size: 1.25em;
+        }
+        @media (max-width: $ds44-small - .625) {
+            font-size: 1em;
+        }
+    }
+    h4{
+        font-size: 1.125em;
+    }
+    ul:not(.ds44-list):not(.ds44-collapser) > li {
+      list-style-position: outside;
+      list-style-image: none;
+      list-style-type: disc;
+    }
+    .grid-12 {
+        margin: 3rem 0;
+        h2,
+        h3,
+        h4 {
+            margin-top: 0;
+        }
+    }
+}
+
 .ds44-bgDark {
   .ds44-contenuArticle {
 
@@ -226,6 +279,7 @@ table.ds44-tableau_4col tr {
 table.ds44-tableau_5col tr {
     width: 20%;
 }
+/* Tables Inforoutes */
 table.inforoutes {
   text-align: left;
   width: 100%;
@@ -273,16 +327,119 @@ table.inforoutes {
     }
   }
 }
+/* Tables Déclaration d'accueil des assmats */
+table.historiqueAssmat {
+  text-align: left;
+  width: 100%;
+
+  thead th {
+    font-size: 16px;
+    font-weight: bold;
+  }
+  tbody tr td:nth-of-type(1) {
+    font-weight: bold;
+  }
+  td, th {
+    padding: 1rem;
+    vertical-align: middle;
+  }
+  td ul li {
+    margin-top:0 !important;
+  }
+}
+
+/* Tables Déclaration d'accueil des assmats */
+table.selection {
+  text-align: left;
+  width: 100%;
+
+  thead th {
+    font-size: 14px;
+    font-weight: normal;
+  }
+  td, th {
+    padding: 1rem;
+    vertical-align: top;
+  }
+  td {
+    padding: 3rem;
+  }
+}
+
+/* Tables */
+table.ds44-table {
+    th {
+        text-align: left;
+        background-color: $ds44-light-bg;
+    }
+    tr td {
+        text-align: left;
+    }
+    tr:nth-child(odd) {
+        background-color: $ds44-light-bg;
+    }
+}
+table.ds44-table {
+    &.ds44-table_favoris {
+        tr td:first-child,
+        tr td:last-child {
+            text-align: center;
+        }
+        .ds44-form__container {
+            margin: 0;
+
+            .ds44-boxLabel::before {
+                left:auto;
+            }
+        }
+    }
+}
+
+.tableau_dobree {
+    th, td {
+        border: 1px solid $ds44-light  ;
+    }
+    tr > td:first-of-type {
+        text-align: left;
+    }
+    tr:nth-child(2n+1) {
+      background-color: #fff;
+    }
+    tr:nth-child(2n) {
+      background-color: $ds44-light-bg;
+    }
+    &.tableau_dobree--mobile {
+        th, td {
+            border: 0;  ;
+        }
+        tr:nth-child(2n+1) {
+          background-color: $ds44-light-bg;
+        }
+        tr:nth-child(2n) {
+          background-color: #fff;
+        }
+        tr.last td {
+            padding-bottom: 25px;
+        }
+    }
+}
+
+
 
 @media (max-width: 64em) {
   .col.mrl ,
-  .col.mll {
+  .col.mll,
+  .col-4.mrl ,
+  .col-6.mll,
+  .col-6.mrl ,
+  .col-4.mll {
       margin-left: 0;
       margin-right: 0;
   }
 }
 @media (max-width: 64em) {
-  table.inforoutes {
+  table.inforoutes,
+  table.historiqueAssmat {
     width: 100%;
 
     thead th {

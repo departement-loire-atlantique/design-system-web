@@ -8,6 +8,7 @@ class FormFieldSelectAbstract extends FormFieldAbstract {
         let valueElement = document.createElement('input');
         valueElement.classList.add('ds44-input-value');
         valueElement.setAttribute('type', 'hidden');
+        valueElement.setAttribute('name', element.hasAttribute("data-name") ? element.getAttribute("data-name") : element.getAttribute("id"));
         element.parentNode.insertBefore(valueElement, element);
 
         const objectIndex = (this.objects.length - 1);
@@ -45,6 +46,10 @@ class FormFieldSelectAbstract extends FormFieldAbstract {
                 continue;
             }
             object.isSubInitialized = true;
+
+            if(!MiscComponent.isInit(object.element, "form-field")) {
+                MiscComponent.create(object.element, "form-field")
+            }
 
             MiscEvent.addListener('keyUp:escape', this.escape.bind(this, objectIndex));
             MiscEvent.addListener('keyUp:arrowup', this.previousOption.bind(this, objectIndex));
@@ -138,7 +143,6 @@ class FormFieldSelectAbstract extends FormFieldAbstract {
             evt.stopPropagation();
             evt.preventDefault();
         }
-
         this.empty(objectIndex);
         this.focusOnButtonElement(objectIndex);
         this.autoSubmit(objectIndex);
@@ -432,7 +436,12 @@ class FormFieldSelectAbstract extends FormFieldAbstract {
             return;
         }
 
-        const subSelectListElement = object.selectListElement.querySelector('.ds44-list');
+        let subSelectListElement = object.selectListElement.querySelector('.ds44-list');
+        if(object.selectListElement.classList.contains("ds44-collapser"))
+        {
+            subSelectListElement = object.selectListElement;
+        }
+
         if (!subSelectListElement) {
             return;
         }
@@ -441,6 +450,7 @@ class FormFieldSelectAbstract extends FormFieldAbstract {
         Array.from(subSelectListElement.children).map((childElement) => {
             childElement.remove();
         });
+        subSelectListElement.innerHTML = "";
 
         if (Object.keys(results).length === 0) {
             // No result
@@ -455,13 +465,13 @@ class FormFieldSelectAbstract extends FormFieldAbstract {
                     continue;
                 }
 
-                let elementSelectListItem = this.getListElement(object, (results[key].id || key), results[key].value);
+                let elementSelectListItem = this.getListElement(object, (results[key].id || key), results[key].value,  results[key].children !== undefined ? results[key].children : null, objectIndex);
                 subSelectListElement.appendChild(elementSelectListItem);
 
                 this.setListElementEvents(elementSelectListItem, objectIndex);
             }
         }
-
+        let collapser = new CollapserStandard();
         this.selectFromValue(objectIndex);
         MiscAccessibility.hide(object.selectContainerElement);
     }

@@ -1,5 +1,6 @@
-class NumberDynamic {
+class NumberDynamicClass {
     constructor () {
+      Debug.log("NumberDynamic -> Constructor");
         this.duration = 3000; // Seconds
         this.increment = 100;
 
@@ -66,6 +67,18 @@ class NumberDynamic {
         return c * (t /= d) * t + b;
     }
 }
-
 // Singleton
+var NumberDynamic = (function () {
+  "use strict";
+  var instance;
+  function Singleton() {
+    if (!instance) {
+      instance = new NumberDynamicClass();
+    }
+  }
+  Singleton.getInstance = function () {
+    return instance || new Singleton();
+  }
+  return Singleton;
+}());
 new NumberDynamic();

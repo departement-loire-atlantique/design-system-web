@@ -59,6 +59,10 @@
     padding: 0 !important;
 }
 
+.ds44--noPdg-t {
+    padding-top: 0 !important; // 0
+}
+
 .ds44--s-padding {
     padding: $ds44-padding-medium/2 !important; // 1rem
 }
@@ -182,6 +186,10 @@
     padding-left: $ds44-padding-xlarge*3 !important; // 9rem
 }
 
+.ds44--3xl-padding-r {
+    padding-right: $ds44-padding-xlarge*3 !important; // 9rem
+}
+
 .ds44--3xl-padding-t {
     padding-top: $ds44-padding-xlarge*3 !important; // 9rem
 }
@@ -194,6 +202,14 @@
 
 .ds44-noMrg {
     margin: 0 !important;
+}
+
+.ds44-noMrgb {
+    margin-bottom: 0 !important;
+}
+
+.ds44-noMrgt {
+    margin-top: 0 !important;
 }
 
 .ds44-hmt {
@@ -240,6 +256,10 @@
 
 .ds44-mr-std {
     margin-right: $ds44-medium-vmargin; // 1.5rem
+}
+
+.ds44-ml-std {
+    margin-left: $ds44-medium-vmargin; // 1.5rem
 }
 
 .ds44-m-std {
@@ -317,6 +337,10 @@
 
 .ds44-mt4 {
     margin-top: 4rem !important; // 4rem
+}
+
+.ds44-mb4 {
+    margin-bottom: 4rem !important; // 4rem
 }
 
 .ds44-mtb4 {
@@ -407,6 +431,10 @@
     align-items: center;
 }
 
+.ds44-flex-valign-stretch {
+    align-items: stretch;
+}
+
 .ds44-flex-align-center {
     justify-content: center;
 }
@@ -484,6 +512,10 @@
     align-self: center !important;
 }
 
+.ds44-fgap1 {
+    gap : 1em;
+}
+
 @media (max-width: $ds44-large - .0625) {
 
     .ds44-flex-wrap-large {
@@ -526,8 +558,17 @@
 
     }
 
+    .ds44-flex-dir-reverse,
+     .ds44-card--focus .ds44-flex-container.ds44-flex-dir-reverse {
+        flex-direction: column-reverse;
+    }
+
     .ds44-medium-flex-col { // change l'orientation flex de row à column sur les écrans moyens et petits
         flex-direction: column;
+    }
+
+    .ds44-tiny-to-med-noPdg {
+        padding: 0 !important;
     }
 
 }
@@ -693,10 +734,20 @@
     height: 100%;
 }
 
+/* === Float === */
+
+.ds44-flRight {
+    float : right;
+}
+
 /* === Color utils === */
 
 .ds44-darkContext {
     background-color: $ds44-color-inverse !important;
+}
+
+.ds44-darkText {
+    color: $ds44-color-base !important;
 }
 
 /* === Text utils === */
@@ -768,6 +819,14 @@
 
 .ds44-img50 {
     background: linear-gradient(to bottom, $ds44-light-bg 50%, $ds44-light 50%);
+}
+
+// Thematic color button More / Less Espace Collection
+.ds44-green {
+    background-color: #99E6D1;
+}
+.ds44-red {
+    background-color: #DC3545;
 }
 
 // Thematic color dataviz
@@ -896,6 +955,53 @@
     line-height: 0.25;
 }
 
+/* === Icons GPLA === */
+
+.icon {
+    position: relative;
+    &.icon--simple,
+    &.icon--full,
+    &.icon--circle {
+        width: 45px;
+        height: 45px;
+        border : 2px solid  $ds44-dark;
+        vertical-align: middle;
+        text-align: center;
+        border-radius: 30px;
+        vertical-align: middle;
+        display: inline-flex;
+        justify-content: center;
+        align-items: center;
+        &::before {
+            vertical-align: middle;
+            display: table;
+        }
+    }
+    &.icon--full {
+        background: $ds44-dark;
+        &::before {
+            color: $ds44-light ;
+        }
+    }
+    &.icon--circle {
+        background: $ds44-light;
+    }
+    &.icon--simple {
+        border : 2px solid  transparent;
+    }
+    &.icon--forbidden::after {
+        content: '';
+        position: absolute;
+        width: 100%;
+        height: 3px;
+        background: $ds44-error;
+        top: calc(50% - 1.5px);
+        left: 0;
+        transform: rotate(45deg);
+        display: block;
+    }
+}
+
 // icon margins
 .icon + .ds44-iconInnerText,
 .ds44-iconInnerText + .icon {
@@ -1006,6 +1112,14 @@
     p {
         z-index: 10;
     }
+}
+
+.ds44-separator_light {
+    height: 1px;
+    width: 100%;
+    background-color: $ds44-lightgray;
+    z-index: 1;
+    margin: 30px 0;
 }
 
 
@@ -1173,8 +1287,8 @@ h6.visually-hidden + * {
     }
 
     .ds44--xxl-padding-tb {
-        padding-top: $ds44-padding-xlarge; // 3rem
-        padding-bottom: $ds44-padding-xlarge; // 3rem
+        padding-top: $ds44-padding-xlarge !important; // 3rem
+        padding-bottom: $ds44-padding-xlarge !important; // 3rem
     }
 
     .ds44-xl-margin-tb {
@@ -1227,9 +1341,21 @@ h6.visually-hidden + * {
         margin-top: 1.5rem;
     }
 
+    .ds44-tablet-xxl-padding-lr {
+        padding-left: $ds44-padding-large*2 !important; // 1rem
+        padding-right: $ds44-padding-large*2 !important; // 1rem
+    }
+
     .ds44-tablet-padding-tb {
         padding-top: $ds44-padding-medium; // 1rem
         padding-bottom: $ds44-padding-medium; // 1rem
+    }
+    .ds44--xxl-padding-tb {
+        padding-top: $ds44-padding-large*2 !important; // 4rem
+        padding-bottom: $ds44-padding-large*2 !important; // 4rem
+    }
+    .ds44--tablet--m-padding-b {
+        padding-bottom: $ds44-padding-medium !important; // 1rem
     }
 
 }
@@ -1241,6 +1367,9 @@ h6.visually-hidden + * {
     }
     .ds44-posTopCont {
         top: $ds44-margin-base;
+    }
+    .ds44-tablet-augment-pt {
+        padding-top: 9rem !important;
     }
 
 }

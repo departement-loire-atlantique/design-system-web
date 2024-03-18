@@ -142,7 +142,7 @@
 
         &.ds44-not-edge-42 {
             .icon::before {
-                font-size: 45px;
+                font-size: 55px;
 
                 @media screen and (max-width: $ds44-medium - .0625) {
                     font-size: 30px;
@@ -264,7 +264,7 @@
 
 .ds44-bgDark {
 
-  .swipper-carousel-wrap {
+  .swipper-carousel-wrap  {
 
       .swiper-button-next,
       .swiper-button-prev {
@@ -357,8 +357,54 @@
       .col-7-small-1 {
         margin: 0 !important;
       }
+
+
     }
 
+}
+
+// Musée Dobrée Carrousel - ajout puces et positionnement des flèches sous le carroussel en mobile
+.swipper-carousel-wrap--dobree {
+        .swiper-thumbs  {
+            display: none;
+        }
+}
+
+@media screen and (max-width: $ds44-medium - .0625) {
+    // Musée Dobrée Carrousel - ajout puces et positionnement des flèches sous le carroussel
+    .swipper-carousel-wrap--dobree {
+            .swiper-thumbs  {
+              background-color: $ds44-light;
+              display: flex;
+
+              .swiper-thumbs-container .swiper-container {
+                  display: flex;
+
+                  > * {
+                      display: inline-flex;
+                      align-items: center;
+                  }
+                   .swiper-wrapper .swiper-slide .ds44-diaporama-thumb {
+                      width: 9px;
+                      height: 9px;
+                      padding: 0;
+                      border: 1px solid $ds44-dark;
+                  }
+                   .swiper-wrapper .swiper-slide.swiper-slide-thumb-active  .ds44-diaporama-thumb  {
+                      background: $ds44-dark;
+                      border: 2px solid $ds44-dark;
+                  }
+            }
+            }
+            .swiper-button-next,
+            .swiper-button-prev {
+                color: $ds44-dark;
+                background: $ds44-light;
+                top: auto;
+                bottom: -5px;
+            }
+
+    }
 }
 
 

@@ -10,6 +10,9 @@ variations:
 - title: Bandeau standard
   description: Header Loire Atlantique
   pattern: header/header-LA.html
+- title: Variante ASSMAT Connecté
+  description: Header avec le menu Mon compte
+  pattern: header/header-assmat-connected.html
 - title: Variante type site Handicap
   description: Header avec menu supplémentaire
   pattern: header/header-variante-1.html
@@ -22,6 +25,12 @@ variations:
 - title: Variante Aidants
   description: Header avec logo très large
   pattern: header/header-aidants.html  
+- title: Variante Musée Dobrée
+  description: Header du site du Musée Dobrée
+  pattern: header/header-dobree.html  
+- title: Variante Musée Dobrée Vidéo
+  description: Header du site du Musée Dobrée de la page d'accueil qui est sur la vidéo
+  pattern: header/header-dobree-video.html  
 ---
 
 ## Notes d'intégration

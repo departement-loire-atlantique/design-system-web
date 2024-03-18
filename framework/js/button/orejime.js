@@ -1,8 +1,12 @@
-class ButtonOrejime {
+class ButtonOrejimeClass {
     constructor () {
+        Debug.log("ButtonOrejime -> Constructor");
         this.isInitialized = false;
         this.nbTrial = 3;
+    }
 
+    initialise() {
+        Debug.log("ButtonOrejime -> Initialise");
         MiscEvent.addListener('load', this.initialize.bind(this), window);
     }
 
@@ -44,12 +48,32 @@ class ButtonOrejime {
     showMore() {
         const modalWrapperElement = document.querySelector('.orejime-ModalWrapper');
         if(modalWrapperElement) {
+            MiscAccessibility.hide(modalWrapperElement);
+
             modalWrapperElement.setAttribute('aria-modal', 'true');
+            modalWrapperElement.removeAttribute('tabindex');
+            [].forEach.call(document.querySelectorAll("*[data-react-modal-body-trap]"), (el) => {
+                el.remove();
+            });
+
+            const closeButton = modalWrapperElement.querySelector('.orejime-CloseIcon');
+            MiscAccessibility.show(modalWrapperElement);
+            const firstField = modalWrapperElement.querySelector('input, button, textarea, a, select')
+            if (firstField) {
+                MiscAccessibility.setFocus(firstField);
+            } else {
+                MiscAccessibility.setFocus(closeButton);
+            }
+            MiscAccessibility.addFocusLoop(modalWrapperElement);
+
         }
     }
     show () {
         if (window.orejime) {
             window.orejime.show();
+            setTimeout(() => {
+                this.showMore();
+            }, 300);
         }
     }
     consentMedia() {
@@ -61,6 +85,19 @@ class ButtonOrejime {
         }
     }
 }
-
 // Singleton
+var ButtonOrejime = (function () {
+    "use strict";
+    var instance;
+    function Singleton() {
+        if (!instance) {
+            instance = new ButtonOrejimeClass();
+        }
+        instance.initialise();
+    }
+    Singleton.getInstance = function () {
+        return instance || new Singleton();
+    }
+    return Singleton;
+}());
 new ButtonOrejime();

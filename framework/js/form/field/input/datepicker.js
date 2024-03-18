@@ -1,6 +1,6 @@
-class FormFieldInputDatepicker extends FormFieldInputAbstract {
+class FormFieldInputDatepickerClass extends FormFieldInputAbstract {
     constructor () {
-        super('.ds44-datepicker__shape', 'datepicker');
+        super("FormFieldInputDatepicker", '.ds44-datepicker__shape', 'datepicker');
 
         this.lastInputValue = null;
         this.calendar = null;
@@ -11,11 +11,15 @@ class FormFieldInputDatepicker extends FormFieldInputAbstract {
     create (element) {
         super.create(element);
 
-        // Create corresponding hidden input to store the value
-        let valueElement = document.createElement('input');
-        valueElement.classList.add('ds44-input-value');
-        valueElement.setAttribute('type', 'hidden');
-        element.parentNode.insertBefore(valueElement, element);
+        let valueElement = element.parentNode.querySelector(".ds44-input-value");
+        if(!valueElement)
+        {
+            // Create corresponding hidden input to store the value
+            valueElement = document.createElement('input');
+            valueElement.classList.add('ds44-input-value');
+            valueElement.setAttribute('type', 'hidden');
+            element.parentNode.insertBefore(valueElement, element);
+        }
 
         const objectIndex = (this.objects.length - 1);
         const object = this.objects[objectIndex];
@@ -57,7 +61,22 @@ class FormFieldInputDatepicker extends FormFieldInputAbstract {
             if (object.calendarButtonElement) {
                 MiscEvent.addListener('click', this.showHideCalendar.bind(this, objectIndex), object.calendarButtonElement);
             }
+
+            if(object.inputElements[0].value && object.inputElements[1].value && object.inputElements[2].value)
+            {
+                this.record(objectIndex);
+                this.showHideResetButton(objectIndex);
+            }
+            else
+            {
+                object.element.classList.remove('show');
+                object.inputElements[2].value = null;
+                object.inputElements[1].value = null;
+                object.inputElements[0].value = null;
+            }
+
         }
+
     }
 
     write (objectIndex) {
@@ -76,6 +95,7 @@ class FormFieldInputDatepicker extends FormFieldInputAbstract {
 
     reset (objectIndex) {
         const object = this.objects[objectIndex];
+        Debug.log("Reset Date");
         if (object) {
             object.inputElements[0].value = null;
             object.inputElements[1].value = null;
@@ -100,6 +120,7 @@ class FormFieldInputDatepicker extends FormFieldInputAbstract {
 
     disableElements (objectIndex, evt) {
         const object = this.objects[objectIndex];
+        Debug.log("Disable Date");
         if (object) {
             object.inputElements[0].value = null;
             object.inputElements[1].value = null;
@@ -256,6 +277,7 @@ class FormFieldInputDatepicker extends FormFieldInputAbstract {
             // If the date object is invalid it
             // will return 'NaN' on getTime()
             // and NaN is never equal to itself.
+
             this.empty(objectIndex);
 
             return;
@@ -452,6 +474,10 @@ class FormFieldInputDatepicker extends FormFieldInputAbstract {
         object.inputElements[0].value = (selectedData.getDate() + '').padStart(2, '0');
         object.inputElements[1].value = ((selectedData.getMonth() + 1) + '').padStart(2, '0');
         object.inputElements[2].value = (selectedData.getFullYear() + '').padStart(2, '0');
+
+        Debug.log("Day : "+object.inputElements[0].value);
+        Debug.log("Month : "+object.inputElements[1].value);
+        Debug.log("Year : "+object.inputElements[2].value);
     }
 
     getErrorMessage (objectIndex) {
@@ -483,6 +509,19 @@ class FormFieldInputDatepicker extends FormFieldInputAbstract {
         }
     }
 }
-
 // Singleton
+var FormFieldInputDatepicker = (function () {
+    "use strict";
+    var instance;
+    function Singleton() {
+        if (!instance) {
+            instance = new FormFieldInputDatepickerClass();
+        }
+        instance.initialise();
+    }
+    Singleton.getInstance = function () {
+        return instance || new Singleton();
+    }
+    return Singleton;
+}());
 new FormFieldInputDatepicker();

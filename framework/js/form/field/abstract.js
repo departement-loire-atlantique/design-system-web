@@ -1,30 +1,45 @@
 class FormFieldAbstract {
-    constructor (selector, category) {
+    constructor (className, selector, category) {
+        this.className = className;
+        this.selector = selector;
         this.category = category;
         this.objects = [];
         this.labelClassName = 'ds44-moveLabel';
         this.errorMessage = 'FIELD_MANDATORY_ERROR_MESSAGE';
 
-        if (typeof selector === 'object') {
-            // Elements passed as parameter, not text selector
-            selector
-                .forEach((element) => {
-                    this.create(element);
-                });
-        } else {
-            document
-                .querySelectorAll(selector)
-                .forEach((element) => {
-                    this.create(element);
-                });
-        }
-        this.initialize();
-        this.fill();
-
         MiscEvent.addListener('field:add', this.add.bind(this));
         MiscEvent.addListener('field:destroy', this.destroy.bind(this));
         MiscEvent.addListener('form:validate', this.validate.bind(this));
         MiscEvent.addListener('form:clear', this.clear.bind(this));
+    }
+
+    initialise()
+    {
+        Debug.log(this.className+" -> Initialise");
+        if (typeof this.selector === 'object') {
+            // Elements passed as parameter, not text selector
+            this.selector
+              .forEach((element) => {
+                  if(MiscComponent.checkAndCreate(element, this.category)) {
+                      this.create(element);
+                  }
+              });
+        } else {
+            document
+              .querySelectorAll(this.selector)
+              .forEach((element) => {
+                  if(MiscComponent.checkAndCreate(element, this.category)) {
+                      this.create(element);
+                  }
+              });
+        }
+        this.initialize();
+        this.fill();
+    }
+
+    clearObject() {
+        Debug.log(this.className+" -> Clear object");
+        this.objects = [];
     }
 
     create (element) {
@@ -37,14 +52,14 @@ class FormFieldAbstract {
             'isSubInitialized': false,
             'isSubSubInitialized': false,
             'isFilled': false,
-            "titleDefault": element.getAttribute("title"),
+            "titleDefault": element.getAttribute("title") ? element.getAttribute("title") : null,
             'isRequired': (element.getAttribute('required') !== null || element.getAttribute('data-required') === 'true'),
-            'isEnabled': !(element.getAttribute('readonly') !== null || element.getAttribute('disabled') !== null || element.getAttribute('data-disabled') === 'true')
+            'isEnabled': !(element.getAttribute('readonly') !== null || element.getAttribute('disabled') !== null || element.getAttribute('data-disabled') === 'true'),
         };
+
         object.position = this.getPosition(object.containerElement);
         element.removeAttribute('data-required');
         element.removeAttribute('data-disabled');
-
         const valuesAllowed = element.getAttribute('data-values');
         if (valuesAllowed) {
             object.valuesAllowed = JSON.parse(valuesAllowed);
@@ -61,6 +76,11 @@ class FormFieldAbstract {
                 continue;
             }
             object.isInitialized = true;
+            if(!MiscComponent.isInit(object.element, "form-field")) {
+                MiscComponent.create(object.element, "form-field")
+            }
+
+            this.toggleContainerByValue(objectIndex, object.element.value);
 
             this.addBackupAttributes(objectIndex);
 
@@ -80,10 +100,20 @@ class FormFieldAbstract {
                 );
             }
 
+            if(object.labelElement !== undefined && !object.titleDefault)
+            {
+                object.titleDefault = object.labelElement.textContent;
+            }
             this.changeTitle(objectIndex);
+            MiscEvent.addListener('field:reset', this.reset.bind(this, objectIndex), object.element);
             MiscEvent.addListener('field:enable', this.enable.bind(this, objectIndex), object.containerElement);
             MiscEvent.addListener('field:disable', this.disable.bind(this, objectIndex), object.containerElement);
             MiscEvent.addListener('field:' + object.name + ':set', this.set.bind(this, objectIndex));
+            MiscEvent.addListener('field:label-move', () => {
+                if(!object.labelElement.classList.contains(this.labelClassName)) {
+                    object.labelElement.classList.add(this.labelClassName);
+                }
+            }, object.element);
         }
     }
 
@@ -206,6 +236,12 @@ class FormFieldAbstract {
     empty (objectIndex) {
         this.setData(objectIndex);
         this.showNotEmpty(objectIndex);
+        this.toggleContainerByValue(objectIndex, null);
+    }
+
+    reset (objectIndex) {
+        this.empty(objectIndex);
+        this.quit(objectIndex);
     }
 
     showNotEmpty (objectIndex) {
@@ -267,11 +303,11 @@ class FormFieldAbstract {
             }
             else
             {
-                element.setAttribute('title', data[object.name].text + " - "+MiscTranslate._("INPUT_REQUIRED"));
+                element.setAttribute('title', data[object.name].text + ( element.hasAttribute("required") ? " - "+MiscTranslate._("INPUT_REQUIRED") : ""));
             }
         }
         else {
-            element.setAttribute('title', object.titleDefault);
+            element.setAttribute('title', object.titleDefault ? object.titleDefault : "");
         }
     }
 
@@ -287,16 +323,27 @@ class FormFieldAbstract {
             return;
         }
 
-        const secondLinkedFieldElement = MiscDom.getNextSibling(object.containerElement);
+        let secondLinkedFieldElement = null;
+        if(linkedFieldsContainerElement.hasAttribute("data-linked-fields-content"))
+        {
+            secondLinkedFieldElement = document.querySelector(linkedFieldsContainerElement.getAttribute("data-linked-fields-content")+" .ds44-form__container");
+        }
+        else
+        {
+            secondLinkedFieldElement = MiscDom.getNextSibling(object.containerElement);
+        }
+
         if (
-            !secondLinkedFieldElement ||
-            secondLinkedFieldElement === object.containerElement
+          !secondLinkedFieldElement ||
+          secondLinkedFieldElement === object.containerElement
         ) {
             return;
         }
 
+
         // Has a linked field
         const areMaskedLinkedFields = !!object.containerElement.closest('.ds44-js-masked-fields');
+
         let data = this.getData(objectIndex);
 
         if (
@@ -469,7 +516,17 @@ class FormFieldAbstract {
             return;
         }
 
-        object.labelElement.classList.remove(this.labelClassName);
+        if(object.element.value !== undefined && object.element.value)
+        {
+            if(!object.labelElement.classList.contains(this.labelClassName)) {
+                object.labelElement.classList.add(this.labelClassName);
+            }
+        }
+        else
+        {
+            object.labelElement.classList.remove(this.labelClassName);
+        }
+
     }
 
     clear (evt) {
@@ -510,6 +567,7 @@ class FormFieldAbstract {
 
         let isValid = true;
         let data = {};
+
         for (let objectIndex = 0; objectIndex < this.objects.length; objectIndex++) {
             const object = this.objects[objectIndex];
 
@@ -576,6 +634,126 @@ class FormFieldAbstract {
 
     checkFormat (objectIndex) {
         return true;
+    }
+
+    toggleContainerByValue(objectIndex, value = null) {
+        const object = this.objects[objectIndex];
+        if (!object) {
+            return;
+        }
+        this.toggleContainer(object.element, value);
+    }
+
+    toggleContainer(field, value = null)
+    {
+        let valueEnabled = field.getAttribute("data-enabled-field-value");
+        let containerFields = document.querySelectorAll("*[data-enabled-by-field='#"+field.getAttribute("id")+"'], *[data-enabled-by-"+field.getAttribute("id")+"]");
+        let disableFields = document.querySelectorAll("*[data-disabled-by-field='#"+field.getAttribute("id")+"'], *[data-disabled-by-"+field.getAttribute("id")+"]");
+        let valueIsEqual = false;
+        if(containerFields.length > 0 || disableFields.length > 0) {
+
+            if(field.tagName === "INPUT" && (field.type === "radio" || field.type === "checkbox"))
+            {
+                valueIsEqual = field.checked;
+            }
+            else if(value)
+            {
+                if(valueEnabled.startsWith("*"))
+                {
+                    let valueEnd = valueEnabled.replace("*", "");
+                    valueIsEqual = value.endsWith(valueEnd);
+                }
+                else if(valueEnabled.endsWith("*"))
+                {
+                    let valueStart = valueEnabled.replace("*", "");
+                    valueIsEqual = value.startsWith(valueStart);
+                }
+                else
+                {
+                    valueIsEqual = valueEnabled === value;
+                }
+            }
+
+            containerFields.forEach((containerField) => {
+                let condition = containerField.hasAttribute("data-enabled-field-condition") ?
+                  containerField.getAttribute("data-enabled-field-condition") :
+                  "equal";
+                let viewElement = condition === "diff" ? !valueIsEqual : valueIsEqual;
+
+                if(containerField.querySelectorAll("*[data-component-form-field-uuid]").length > 0)
+                {
+                    containerField.querySelectorAll("*[data-component-form-field-uuid]").forEach((childField) => {
+                        let autoSubmit = false;
+                        if(childField.hasAttribute('data-auto-submit'))
+                        {
+                            autoSubmit = true;
+                            childField.removeAttribute('data-auto-submit');
+                        }
+
+                        if(viewElement) {
+                            MiscEvent.dispatch("field:enable", {}, childField);
+                        }
+                        else {
+                            if(!containerField.hasAttribute("data-fields-no-reset"))
+                            {
+                                MiscEvent.dispatch("field:reset", {focus: false}, childField);
+                            }
+                            MiscEvent.dispatch("field:disable", {}, childField);
+                        }
+                        if(autoSubmit === true)
+                        {
+                            childField.setAttribute('data-auto-submit', true);
+                        }
+                    })
+                }
+                if(viewElement) {
+                    containerField.classList.remove('hidden');
+                    containerField.querySelectorAll("input, select, textarea").forEach((field) => {
+                        if(field.hasAttribute("data-field-required"))
+                        {
+                            field.setAttribute("required", "");
+                            field.removeAttribute("data-field-required");
+                        }
+                    });
+                }
+                else {
+                    containerField.classList.add('hidden');
+                    containerField.querySelectorAll("input, select, textarea").forEach((field) => {
+                        if(field.hasAttribute("required"))
+                        {
+                            field.setAttribute("data-field-required", "");
+                            field.removeAttribute("required");
+                        }
+                    });
+                }
+            });
+
+            disableFields.forEach((field) => {
+                let condition = field.hasAttribute("data-enabled-field-condition") ?
+                  field.getAttribute("data-enabled-field-condition") :
+                  "equal";
+                let hiddenElement = condition === "diff" ? !valueIsEqual : valueIsEqual;
+                let fieldContainer = (field.closest('.ds44-form__container') || field);
+                if(!hiddenElement) {
+                    MiscEvent.dispatch("field:enable", {}, fieldContainer);
+                    if(field.getAttribute("data-required-disable"))
+                    {
+                        field.setAttribute("data-required", field.getAttribute("data-required-disable"));
+                        field.setAttribute("required", "");
+                        field.removeAttribute("data-required-disable");
+                    }
+                }
+                else {
+                    MiscEvent.dispatch("field:disable", {}, fieldContainer);
+                    if(field.getAttribute("data-required"))
+                    {
+                        field.setAttribute("data-required-disable", field.getAttribute("data-required"));
+                        field.removeAttribute("data-required");
+                        field.removeAttribute("required");
+                    }
+                }
+            });
+        }
     }
 
     isValid (objectIndex) {

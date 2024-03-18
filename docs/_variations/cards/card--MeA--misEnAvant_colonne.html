@@ -1,0 +1,28 @@
+---
+layout: pattern
+---
+
+<p class="h3-like">Tuiles mise en avant</p>
+<br>
+<p class="h4-like">Contenu mise en avant deux colonnes + aside</p>
+
+<section class="ds44-container-large">
+    <div class="ds44-mt3 ds44--xl-padding-t">
+        <div class="ds44-inner-container">
+            <div class="grid-12-medium-1 grid-12-small-1">
+
+                <aside class="col-4 ds44-hide-tinyToLarge ds44-js-aside-summary ds44-mb35" data-component-aside-summary-uuid="f3c6a2e4-2259-4c79-a3e7-f18bd2de1d86">
+                    <div class="ds44-innerBoxContainer ">
+                       La colonne de droite
+                    </div>
+                </aside>
+
+                <div class="col-1 grid-offset ds44-hide-tinyToLarge"></div>
+
+                <article class="col-7 ds44-contenuDossier">
+                    {% include card/card--miseEnAvant--2col.html title="Exposition Précieux poisons d’Amazonie" sizeBlock="fullW" date="Du 29/06/19 au 01/09/19" localisation="Domaine Garenne Lemot"%}                    
+                </article>
+            </div>
+        </div>
+    </div>
+</section>

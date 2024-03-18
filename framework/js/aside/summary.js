@@ -1,5 +1,17 @@
-class AsideSummary {
+class AsideSummaryClass {
     constructor () {
+        Debug.log("AsideSummary -> Constructor");
+        this.menu = null;
+        this.borderTop = 20;
+        this.isMoving = false;
+        this.isGoingTo = false;
+        this.lastScrollTop = 0;
+        this.scrollDirection = 'down';
+        this.eventWindowListenerInit = false;
+    }
+
+    initialise()
+    {
         this.containerElement = document.querySelector('.ds44-js-aside-summary');
         if (!this.containerElement) {
             return;
@@ -8,40 +20,49 @@ class AsideSummary {
         if (!this.summaryElement) {
             return;
         }
+        Debug.log("AsideSummary -> Initialise");
 
-        this.menu = null;
-        this.borderTop = 20;
-        this.isMoving = false;
-        this.isGoingTo = false;
-        this.lastScrollTop = 0;
-        this.scrollDirection = 'down';
+        if(MiscComponent.checkAndCreate(this.containerElement, "aside-summary") &&
+          MiscComponent.checkAndCreate(this.summaryElement, "aside-summary")) {
+            this.menu = document.querySelector('#summaryMenu');
+            MiscAccessibility.hide(this.menu);
 
-        this.resize();
-
-        MiscEvent.addListener('scroll', this.scroll.bind(this), window);
-        MiscEvent.addListener('resize', this.resize.bind(this), window);
-        MiscEvent.addListener('load', this.resize.bind(this), window);
-        MiscEvent.addListener('keyUp:escape', this.hideMenu.bind(this));
-
-        this.menu = document.querySelector('#summaryMenu');
-        MiscAccessibility.hide(this.menu);
-        window.setTimeout(this.resize.bind(this), 1000);
-
-        const aElements = new Set([
-            ...this.summaryElement.querySelectorAll('.ds44-list--puces a'),
-            ...document.querySelectorAll('#summaryMenu .ds44-list--puces a')
-        ]);
-        aElements
-            .forEach((aElement) => {
-                MiscEvent.addListener('click', this.goTo.bind(this), aElement);
-            });
-        const showModalButtonElement = document.querySelector('#ds44-summary-button');
-        if (showModalButtonElement) {
-            MiscEvent.addListener('click', this.showMenu.bind(this), showModalButtonElement);
+            const aElements = new Set([
+                ...this.summaryElement.querySelectorAll('.ds44-list--puces a'),
+                ...document.querySelectorAll('#summaryMenu .ds44-list--puces a')
+            ]);
+            aElements
+              .forEach((aElement) => {
+                  MiscEvent.addListener('click', this.goTo.bind(this), aElement);
+                  const sectionId = aElement.getAttribute('href').replace(/^#/, '');
+                  const sectionElement = document.querySelector('#' + sectionId);
+                  const titleElement = sectionElement.querySelector('h2');
+                  if (titleElement) {
+                      sectionElement.removeAttribute("tabindex");
+                      if(titleElement.getAttribute('tabindex') === undefined || !titleElement.getAttribute('tabindex')) {
+                          titleElement.setAttribute('tabindex', -1);
+                      }
+                  }
+              });
+            const showModalButtonElement = document.querySelector('#ds44-summary-button');
+            if (showModalButtonElement) {
+                MiscEvent.addListener('click', this.showMenu.bind(this), showModalButtonElement);
+            }
+            const hideModalButtonElement = document.querySelector('#summaryMenu .ds44-btnOverlay--closeOverlay');
+            if (hideModalButtonElement) {
+                MiscEvent.addListener('click', this.hideMenu.bind(this), hideModalButtonElement);
+            }
         }
-        const hideModalButtonElement = document.querySelector('#summaryMenu .ds44-btnOverlay--closeOverlay');
-        if (hideModalButtonElement) {
-            MiscEvent.addListener('click', this.hideMenu.bind(this), hideModalButtonElement);
+
+        if(!this.eventWindowListenerInit)
+        {
+            this.eventWindowListenerInit = true;
+            this.resize();
+            MiscEvent.addListener('scroll', this.scroll.bind(this), window);
+            MiscEvent.addListener('resize', this.resize.bind(this), window);
+            MiscEvent.addListener('load', this.resize.bind(this), window);
+            MiscEvent.addListener('keyUp:escape', this.hideMenu.bind(this));
+            window.setTimeout(this.resize.bind(this), 1000);
         }
     }
 
@@ -151,18 +172,27 @@ class AsideSummary {
 
         // Deselect all bullets
         this.summaryElement
-            .querySelectorAll('.ds44-list--puces a')
+            .querySelectorAll('.ds44-list--puces li > .active')
             .forEach((aElement) => {
                 aElement.classList.remove('active');
-                aElement.removeAttribute('aria-current');
+                if(aElement.closest("li")) {
+                    aElement.closest("li").removeAttribute('aria-current', 'true');
+                }
+                else {
+                    aElement.removeAttribute('aria-current', 'true');
+                }
                 aElement.removeAttribute('tabindex');
             });
 
         // Select active bullets
         const aElement = evt.currentTarget;
         aElement.classList.add('active');
-        aElement.setAttribute('aria-current', 'true');
-        aElement.setAttribute('tabindex', '-1');
+        if(aElement.closest("li")) {
+            aElement.closest("li").setAttribute('aria-current', 'true');
+        }
+        else {
+            aElement.setAttribute('aria-current', 'true');
+        }
 
         const sectionId = aElement.getAttribute('href').replace(/^#/, '');
         const sectionElement = document.querySelector('#' + sectionId);
@@ -189,7 +219,7 @@ class AsideSummary {
             const titleElement = sectionElement.querySelector('h2');
             if (titleElement) {
                 if(titleElement.getAttribute('tabindex') === undefined || !titleElement.getAttribute('tabindex')) {
-                    titleElement.setAttribute('tabindex', 1);
+                    titleElement.setAttribute('tabindex', -1);
                 }
                 MiscAccessibility.setFocus(titleElement);
             }
@@ -251,6 +281,20 @@ class AsideSummary {
         MiscEvent.dispatch('menu:hide');
     }
 }
-
 // Singleton
+var AsideSummary = (function () {
+    "use strict";
+    var instance;
+    function Singleton() {
+        if (!instance) {
+            instance = new AsideSummaryClass();
+        }
+        instance.initialise();
+    }
+    Singleton.getInstance = function () {
+        return instance || new Singleton();
+    }
+    return Singleton;
+}());
 new AsideSummary();
+

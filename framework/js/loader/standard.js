@@ -1,4 +1,4 @@
-class LoaderStandard {
+class LoaderStandardClass {
     constructor () {
         // Counter that prevents from hiding the loader if it has been requested several times
         this.counter = 0;
@@ -6,12 +6,15 @@ class LoaderStandard {
 
         this.scrollWindow = 0;
 
-        if(document.querySelector('.ds44-loader')) {
-            MiscAccessibility.hide(document.querySelector('.ds44-loader'));
-        }
         MiscEvent.addListener('loader:requestShow', this.show.bind(this));
         MiscEvent.addListener('loader:requestHide', this.hide.bind(this));
         MiscEvent.addListener('loader:setFocus', this.setFocusedElement.bind(this));
+    }
+
+    initialise() {
+        if(document.querySelector('.ds44-loader')) {
+            MiscAccessibility.hide(document.querySelector('.ds44-loader'));
+        }
     }
 
     show () {
@@ -74,7 +77,19 @@ class LoaderStandard {
 
         this.previousFocusedElement = evt.detail.focusedElement;
     }
-}
-
-// Singleton
+}// Singleton
+var LoaderStandard = (function () {
+    "use strict";
+    var instance;
+    function Singleton() {
+        if (!instance) {
+            instance = new LoaderStandardClass();
+        }
+        instance.initialise();
+    }
+    Singleton.getInstance = function () {
+        return instance || new Singleton();
+    }
+    return Singleton;
+}());
 new LoaderStandard();

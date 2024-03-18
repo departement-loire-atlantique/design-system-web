@@ -22,6 +22,9 @@ variations:
 - title: Pied de page Inforoutes
   description: Pied de page site inforoutes
   pattern: footer/footer-inforoutes.html
+- title: Pied de page Musée Dobrée
+  description: Pied de page site Musée Dobrée
+  pattern: footer/footer-dobree.html
 ---
 
 ## Usage
