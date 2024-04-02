@@ -439,6 +439,10 @@
     justify-content: center;
 }
 
+.ds44-flex-align-left {
+    justify-content: left;
+}
+
 .ds44-fse {
     justify-content: space-evenly;
 }
@@ -791,6 +795,10 @@
 
 .ds44-gray-border {
     border: 1px solid $ds44-lightgray;
+}
+
+.ds44-no-border {
+    border : none !important;
 }
 
 /* === Backgrounds === */
