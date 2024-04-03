@@ -19,10 +19,13 @@ class PageElementClass {
           .querySelectorAll('a[href^="#"]')
           .forEach((link) => {
               if(MiscComponent.checkAndCreate(link, "link-scroll")) {
-                  MiscEvent.addListener("click", (event) => {
-                      this.scrollToHyperlink(event, link);
-                  }, link);
-                  MiscEvent.addListener("scroll.init", (event) => {
+                  if(!link.classList.contains(".ds44-tabs__link"))
+                  {
+                      MiscEvent.addListener("click", (event) => {
+                          this.scrollToHyperlink(event, link);
+                      }, link);
+                  }
+                  MiscEvent.addListener("scroll.element", (event) => {
                       this.scrollToHyperlink(event, link);
                   }, link);
               }
@@ -62,7 +65,7 @@ class PageElementClass {
         
     scrollToHyperlink(event, button) {
         event.preventDefault();
-        var targetHref = button.getAttribute('href');
+        var targetHref = event.detail.target !== undefined ? event.detail.target : button.getAttribute('href');
         if(targetHref)
         {
             let elementToScroll = document.getElementById(targetHref.replace('#', ''));

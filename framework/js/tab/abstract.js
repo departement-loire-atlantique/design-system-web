@@ -13,6 +13,7 @@ class TabAbstract {
               if(MiscComponent.checkAndCreate(containerElement, "tab")) {
                   MiscEvent.addListener('keyDown:shiftTab', this.goBackToTab.bind(this, this.selector));
                   this.create(containerElement);
+                  MiscEvent.addListener("resize", this.refresh.bind(this, containerElement), window);
               }
           });
     }
@@ -22,6 +23,9 @@ class TabAbstract {
     }
 
     create (containerElement) {
+
+
+        const isTabsCollapseMobile = containerElement.hasAttribute("data-tabs-collapse-mobile");
         containerElement
             .querySelectorAll('.js-tablist__link')
             .forEach((tabHandleElement) => {
@@ -40,6 +44,17 @@ class TabAbstract {
                 if (tabPanelExitElement) {
                     MiscEvent.addListener('click', this.back.bind(this), tabPanelExitElement);
                 }
+
+                if(isTabsCollapseMobile) {
+                    const tabPanelMobile = document.createElement("div");
+                    tabPanelMobile.classList.add("ds44-tabs__content_mobile");
+                    tabPanelMobile.setAttribute("id", tabHref.replace("#", "")+"_mobile");
+                    tabPanelMobile.innerHTML = tabPanel.innerHTML;
+                    tabPanelMobile.style.display = "none";
+                    tabPanelMobile.style.opacity = 0;
+                    tabHandleElement.parentNode.insertBefore(tabPanelMobile, tabHandleElement.nextSibling);
+                }
+
             });
 
         let selectedTabHandle = null;
@@ -58,6 +73,7 @@ class TabAbstract {
         if (selectedTabHandle) {
             MiscEvent.dispatch("click", {init: true}, selectedTabHandle);
         }
+
     }
 
     getDefaultTabHandle (containerElement) {
@@ -81,29 +97,72 @@ class TabAbstract {
             return;
         }
 
-        this.changeTab(tabHandleElement, tabPanel, scrollTarget);
+        const tabPanelMobile = document.querySelector(tabHref+"_mobile");
+        if(tabPanelMobile && MiscUtils.isMobileSize())
+        {
+            this.changeTab(tabHandleElement, tabPanelMobile, scrollTarget);
+        }
+        else
+        {
+            this.changeTab(tabHandleElement, tabPanel, scrollTarget);
+        }
     }
 
+    refresh(containerElement) {
+        const isTabsCollapseMobile = containerElement.hasAttribute("data-tabs-collapse-mobile");
+        if(isTabsCollapseMobile) {
+            let tabHandleElement = containerElement.querySelector(".ds44-tabs__linkSelected");
+            let tabPanelMobile = containerElement.querySelector(tabHandleElement.getAttribute("href")+"_mobile");
+            let tabPanel = containerElement.querySelector(tabHandleElement.getAttribute("href"));
+            if(MiscUtils.isMobileSize())
+            {
+                if(!tabPanelMobile.classList.contains("current"))
+                {
+                    this.hideTab(tabHandleElement, tabPanel);
+                    this.showTab(tabHandleElement, tabPanelMobile, false);
+                }
+            }
+            else
+            {
+                if(!tabPanel.classList.contains("current"))
+                {
+                    this.hideTab(tabHandleElement, tabPanelMobile);
+                    this.showTab(tabHandleElement, tabPanel, false);
+                }
+            }
+        }
+    }
+
+
     changeTab (tabHandleElement, tabPanel, scrollTarget = true) {
+
         const tabsElement = tabPanel.parentElement;
         tabsElement.style.height = tabsElement.offsetHeight + 'px';
         // Hide others
         tabHandleElement
-            .closest('.js-tabs')
-            .querySelectorAll('.js-tablist__link')
-            .forEach((tabHandleElement) => {
-                const tabHref = this.getTabFromHref(this.getHrefFromElement(tabHandleElement));
-                const tabPanel = document.querySelector(tabHref);
-                if (!tabPanel) {
-                    return;
-                }
+          .closest('.js-tabs')
+          .querySelectorAll('.js-tablist__link')
+          .forEach((tabHandleElement) => {
+              const tabHref = this.getTabFromHref(this.getHrefFromElement(tabHandleElement));
+              const tabPanel = document.querySelector(tabHref);
+              if (!tabPanel) {
+                  return;
+              }
+              tabHandleElement.classList.remove('ds44-tabs__linkSelected');
+              tabHandleElement.setAttribute('aria-disabled', 'true');
+              tabHandleElement.removeAttribute('aria-current');
+              this.hideTab(tabHandleElement, tabPanel);
+              MiscAccessibility.hide(tabPanel);
 
-                tabHandleElement.classList.remove('ds44-tabs__linkSelected');
-                tabHandleElement.setAttribute('aria-disabled', 'true');
-                tabHandleElement.removeAttribute('aria-current');
-                this.hideTab(tabHandleElement, tabPanel);
-                MiscAccessibility.hide(tabPanel);
-            });
+              const tabPanelMobile = document.querySelector(tabHref+"_mobile");
+              if (tabPanelMobile) {
+                  this.hideTab(tabHandleElement, tabPanelMobile);
+                  MiscAccessibility.hide(tabPanelMobile);
+              }
+
+
+          });
+
 
         // Show selected tab
         tabHandleElement.classList.add('ds44-tabs__linkSelected');
@@ -128,13 +187,20 @@ class TabAbstract {
         if (h2Element) {
             MiscAccessibility.setFocus(h2Element);
         }
+        tabPanel.classList.add('current');
         if(scrollTarget) {
-            MiscEvent.dispatch("scroll.init", {}, tabHandleElement);
+            let target = tabHandleElement.getAttribute("href");
+            if(tabPanel.classList.contains("ds44-tabs__content_mobile"))
+            {
+                target = target+"_mobile";
+            }
+            MiscEvent.dispatch("scroll.element", {target: target}, tabHandleElement);
         }
     }
 
     hideTab (tabHandleElement, tabPanel) {
         tabPanel.style.opacity = 0;
+        tabPanel.classList.remove('current');
 
         window.setTimeout(this.hideTabCallback.bind(this, tabHandleElement, tabPanel), 150);
     }
