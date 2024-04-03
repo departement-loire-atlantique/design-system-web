@@ -22,6 +22,9 @@ class PageElementClass {
                   MiscEvent.addListener("click", (event) => {
                       this.scrollToHyperlink(event, link);
                   }, link);
+                  MiscEvent.addListener("scroll.init", (event) => {
+                      this.scrollToHyperlink(event, link);
+                  }, link);
               }
           });
     }
@@ -63,31 +66,34 @@ class PageElementClass {
         if(targetHref)
         {
             let elementToScroll = document.getElementById(targetHref.replace('#', ''));
-            const scrollTo = MiscUtils.getPositionY(elementToScroll);
-            if (MiscUtils.getScrollTop() > scrollTo) {
-                // Going up, the header will show
-                MiscUtils.scrollTo(
-                  scrollTo - MiscDom.getHeaderHeight(true),
-                  400,
-                  'linear'
-                );
-            } else {
-                // Going down, the header will hide
-                MiscUtils.scrollTo(
-                  scrollTo,
-                  400,
-                  'linear'
-                );
+            if(elementToScroll.style.display !== "none")
+            {
+                const scrollTo = MiscUtils.getPositionY(elementToScroll);
+                if (MiscUtils.getScrollTop() > scrollTo) {
+                    // Going up, the header will show
+                    MiscUtils.scrollTo(
+                      scrollTo - MiscDom.getHeaderHeight(true),
+                      400,
+                      'linear'
+                    );
+                } else {
+                    // Going down, the header will hide
+                    MiscUtils.scrollTo(
+                      scrollTo,
+                      400,
+                      'linear'
+                    );
+                }
+                // Create first hidden focus element
+                const fakeElement = document.createElement('span');
+                fakeElement.classList.add('ds44-tmpFocusHidden');
+                fakeElement.setAttribute('tabindex', '-1');
+                elementToScroll.prepend(fakeElement);
+                fakeElement.focus();
+                MiscEvent.addListener("blur", (event) => {
+                    fakeElement.remove();
+                }, fakeElement);
             }
-            // Create first hidden focus element
-            const fakeElement = document.createElement('span');
-            fakeElement.classList.add('ds44-tmpFocusHidden');
-            fakeElement.setAttribute('tabindex', '-1');
-            elementToScroll.prepend(fakeElement);
-            fakeElement.focus();
-            MiscEvent.addListener("blur", (event) => {
-                fakeElement.remove();
-            }, fakeElement);
         }
     }
 }

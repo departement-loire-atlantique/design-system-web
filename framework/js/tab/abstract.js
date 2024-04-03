@@ -56,7 +56,7 @@ class TabAbstract {
             }
         }
         if (selectedTabHandle) {
-            selectedTabHandle.click();
+            MiscEvent.dispatch("click", {init: true}, selectedTabHandle);
         }
     }
 
@@ -69,6 +69,7 @@ class TabAbstract {
             evt.preventDefault();
         }
 
+        const scrollTarget = evt.detail.init === undefined;
         const tabHandleElement = evt.currentTarget;
         if (tabHandleElement.classList.contains('ds44-tabs__linkSelected')) {
             return;
@@ -80,13 +81,12 @@ class TabAbstract {
             return;
         }
 
-        this.changeTab(tabHandleElement, tabPanel);
+        this.changeTab(tabHandleElement, tabPanel, scrollTarget);
     }
 
-    changeTab (tabHandleElement, tabPanel) {
+    changeTab (tabHandleElement, tabPanel, scrollTarget = true) {
         const tabsElement = tabPanel.parentElement;
         tabsElement.style.height = tabsElement.offsetHeight + 'px';
-
         // Hide others
         tabHandleElement
             .closest('.js-tabs')
@@ -109,15 +109,15 @@ class TabAbstract {
         tabHandleElement.classList.add('ds44-tabs__linkSelected');
         tabHandleElement.setAttribute('aria-current', 'true');
         tabHandleElement.removeAttribute('aria-disabled');
-        this.showTab(tabHandleElement, tabPanel);
+        this.showTab(tabHandleElement, tabPanel, scrollTarget);
         MiscAccessibility.show(tabPanel);
     }
 
-    showTab (tabHandleElement, tabPanel) {
-        window.setTimeout(this.showTabCallback.bind(this, tabHandleElement, tabPanel), 300);
+    showTab (tabHandleElement, tabPanel, scrollTarget = true) {
+        window.setTimeout(this.showTabCallback.bind(this, tabHandleElement, tabPanel, scrollTarget), 300);
     }
 
-    showTabCallback (tabHandleElement, tabPanel) {
+    showTabCallback (tabHandleElement, tabPanel, scrollTarget = true) {
         tabPanel.style.opacity = 1;
         tabPanel.style.display = 'block';
 
@@ -127,6 +127,9 @@ class TabAbstract {
         const h2Element = tabPanel.querySelector('h2.visually-hidden');
         if (h2Element) {
             MiscAccessibility.setFocus(h2Element);
+        }
+        if(scrollTarget) {
+            MiscEvent.dispatch("scroll.init", {}, tabHandleElement);
         }
     }
 
