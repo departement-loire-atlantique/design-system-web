@@ -263,15 +263,6 @@ body.modern {
       padding-left: 2.5rem;
       line-height: 1.4;
     }
-    ul:not(.ds44-list):not(.ds44-collapser) {
-
-      padding-left:  2rem;
-      // first-level
-      > li {
-          list-style-type: disc !important;
-          list-style-image: unset;
-      }
-    }
 
 }
 
@@ -287,7 +278,7 @@ body.modern {
 .ds44-container-fixed {
     position: fixed;
     width: 100%;
-    left: 0; 
+    left: 0;
 }
 
 .ds44-contenuArticle, .ds44-contenuMedia {
