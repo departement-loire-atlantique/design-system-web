@@ -27,20 +27,10 @@
                             </ul>
                         </div>
                     </div>
-                    <button class="ds44-btn--menu ds44-btnIcoText--maxi ds44--xl-padding ds44-hide-tinyToLarge choixLangue"  aria-controls="menu" data-open-sub-menu="#subMenu-choixLangue" title="Choisir une langue - langue sélectionnée : Français - FR">
+                    <button type="button" class="ds44-btn--menu ds44-btnIcoText--maxi ds44--xl-padding ds44-hide-tinyToLarge choixLangue"  aria-controls="menu" data-open-sub-menu="#subMenu-choixLangue" title="Choisir une langue - langue sélectionnée : Français - FR">
                         <img class="flag" src="../../assets/icons/icon-flag-fr.svg" alt="langue sélectionnée : Français - FR"><span class="ds44-btnInnerText">FR</span><i class="icon icon-toggle icon--medium icon-down" aria-hidden="true"></i>
                     </button>
-                    <div id="subMenu-choixLangue" class="ds44-subMenu" data-sub-menu="">
-                        <p role="heading" aria-level="1" class="visually-hidden">Choix de la langue</p>
-                        <ul class="ds44-list">
-                            <li>
-                                <a href="#" class="ds44-tmpFirstFocus"><img class="flag" src="../../assets/icons/icon-flag-fr.svg" alt="Langue : Français">FR</a>
-                            </li>
-                            <li>
-                                <a href="#" class="ds44-tmpLastFocus" lang="en"><img class="flag"  src="../../assets/icons/icon-flag-en.svg" alt="Language : English">EN</a>
-                            </li>
-                        </ul>
-                    </div>
+
                     <a href="#" class="ds44-btn--menu ds44-btn--contextual ds44-btnIcoText--maxi ds44--xl-padding"><span class="ds44-btnInnerText">Billetterie</span><i class="icon icon-long-arrow-right icon--large" aria-hidden="true"></i></a>
                     <button type="button" class="ds44-btn--menu ds44-btnIcoText--maxi ds44--xl-padding ds44-btn--invert" aria-label="Ouvrir le menu de navigation" aria-controls="menu" data-open-overlay="true" id="open-menu">
                         <span class="ds44-btnInnerText">Menu</span><i class="icon icon-burger icon--large" aria-hidden="true"></i>
@@ -48,6 +38,18 @@
                 </div>
             </div>
         </div>
+        <div id="subMenu-choixLangue" class="ds44-subMenu" data-sub-menu=""  aria-hidden="true">
+            <p role="heading" aria-level="1" class="visually-hidden">Choix de la langue</p>
+            <ul class="ds44-list">
+                <li>
+                    <a href="#" class="ds44-tmpFirstFocus"><img class="flag" src="../../assets/icons/icon-flag-fr.svg" alt="Langue : Français">FR</a>
+                </li>
+                <li>
+                    <a href="#" class="ds44-tmpLastFocus" lang="en"><img class="flag"  src="../../assets/icons/icon-flag-en.svg" alt="Language : English">EN</a>
+                </li>
+            </ul>
+        </div>
+
 
         {% include menu/inc-menu-dobree.html %}
     </div>
