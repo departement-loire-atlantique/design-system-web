@@ -43,6 +43,18 @@
     }
 }
 
+@media (max-width: $ds44-small - .0625) {
+    .ds44-tabs__link-mobile {
+        background-color: #F1F1F1 !important;
+        margin-bottom: 28px;
+        padding: 1.5rem 2rem 1.5rem 2rem !important;
+    }
+
+    .ds44-tabs__content_mobile {
+        margin-bottom: 45px;
+    }
+}
+
 .ds44-tabs__linkSelected.ds44-tabs__link,
 .ds44-tabs__link:hover,
 .ds44-tabs__link:focus,

@@ -16,7 +16,7 @@ class PageElementClass {
           });
 
         document
-          .querySelectorAll('a[href^="#"]')
+          .querySelectorAll('a[href*="#"]')
           .forEach((link) => {
               if(MiscComponent.checkAndCreate(link, "link-scroll")) {
                   if(!link.classList.contains(".ds44-tabs__link"))
@@ -68,7 +68,7 @@ class PageElementClass {
         var targetHref = event.detail.target !== undefined ? event.detail.target : button.getAttribute('href');
         if(targetHref)
         {
-            let elementToScroll = document.getElementById(targetHref.replace('#', ''));
+            let elementToScroll = document.getElementById(targetHref.match("#.*")[0].replace('#', ''));
             if(elementToScroll.style.display !== "none")
             {
                 const scrollTo = MiscUtils.getPositionY(elementToScroll);
