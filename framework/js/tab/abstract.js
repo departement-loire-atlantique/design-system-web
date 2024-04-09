@@ -111,11 +111,9 @@ class TabAbstract {
     refresh(containerElement) {
         const isTabsCollapseMobile = containerElement.hasAttribute("data-tabs-collapse-mobile");
         if(isTabsCollapseMobile) {
-            let tabHandleElement = containerElement.querySelector(".ds44-tabs__linkSelected");           
-            let ancre = tabHandleElement.getAttribute("href").match("#.*")[0];            
-            let tabPanelMobile = containerElement.querySelector(ancre+"_mobile");
-            let tabPanel = containerElement.querySelector(ancre);
-
+            let tabHandleElement = containerElement.querySelector(".ds44-tabs__linkSelected");
+            let tabPanelMobile = containerElement.querySelector(tabHandleElement.getAttribute("href")+"_mobile");
+            let tabPanel = containerElement.querySelector(tabHandleElement.getAttribute("href"));
             if(MiscUtils.isMobileSize())
             {
                 if(!tabPanelMobile.classList.contains("current"))
