@@ -405,7 +405,7 @@ table.ds44-table {
     th, td {
         border: 1px solid $ds44-light  ;
     }
-    tr > td:first-of-type {
+    tr > th[scope=row] {
         text-align: left;
     }
     tr:nth-child(2n+1) {
