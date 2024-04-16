@@ -185,13 +185,22 @@ class CarouselAbstract {
         if (object.paginationElement) {
             swiperParameters.pagination = {
                 'el': object.paginationElement,
+                'clickable': true,
                 'renderBullet': (index, className) => {
                     const textElements = object.swiperElement.querySelectorAll('.swiper-slide:not(.swiper-slide-duplicate) .ds44-diaporama-vignette-text');
-                    if (!textElements || !textElements.length) {
-                        return '';
+                    if (textElements && textElements.length) {
+                        return '<p id="' + MiscUtils.generateId() + '"><span class="' + className + '">' + textElements[index].innerHTML + '</span></p>';
                     }
 
-                    return '<p id="' + MiscUtils.generateId() + '"><span class="' + className + '">' + textElements[index].innerHTML + '</span></p>';
+                    if(object.paginationElement.classList.contains("bullet"))
+                    {
+                        const titleElement = object.swiperElement.querySelectorAll('.swiper-slide:not(.swiper-slide-duplicate) .ds44-cardTitle');
+                        if (titleElement && titleElement.length) {
+                            return '<li class="' + className + '"><span class="entitled visually-hidden">' + titleElement[index].innerHTML + '</span></li>';
+                        }
+                    }
+
+                    return "";
                 }
             }
         }
