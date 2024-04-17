@@ -295,6 +295,10 @@ class FormFieldAbstract {
         if(element === undefined || element === null) {
             element = object.element;
         }
+        if(element.hasAttribute("data-no-change-title"))
+        {
+            return;
+        }
         let data = this.getData(objectIndex);
         if(data && data[object.name] && data[object.name].text) {
             if(element.type === "password")
