@@ -16,7 +16,7 @@ class MiscAccessibility {
         if (!element) {
             return false;
         }
-        return !(window.getComputedStyle(element).display === "none");
+        return !(window.getComputedStyle(element).display.includes("none"));
     }
 
     // Fonction qui va forcer le focus à faire une boucle sur un élément
