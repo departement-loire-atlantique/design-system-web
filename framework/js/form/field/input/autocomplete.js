@@ -232,6 +232,13 @@ class FormFieldInputAutoCompleteClass extends FormFieldInputAbstract {
             this.autoComplete(objectIndex);
         }
         else {
+            this.setData(
+              objectIndex,
+              {
+                  'text': object.textElement.value,
+                  'value': object.textElement.value
+              }
+            );
             object.autoCompleterElement.classList.add('hidden');
             MiscAccessibility.hide(object.autoCompleterElement);
             object.textElement.setAttribute('aria-expanded', 'false');
