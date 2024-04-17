@@ -83,7 +83,15 @@ class MenuHeaderClass {
         }
 
         // Get corresponding close button
-        const closeButton = mainMenu.querySelector('.ds44-btnOverlay--closeOverlay');
+        const closeButtons = mainMenu.querySelectorAll('.ds44-btnOverlay--closeOverlay');
+
+        let closeButton = null;
+        closeButtons.forEach((element)=>{
+            if (MiscAccessibility.isDisplayed(element) && closeButton === null) {
+                closeButton = element;
+            }
+        });
+
         if (!closeButton) {
             return;
         }
