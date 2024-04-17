@@ -149,7 +149,7 @@ class TabAbstract {
                   return;
               }
               tabHandleElement.classList.remove('ds44-tabs__linkSelected');
-              tabHandleElement.setAttribute('aria-disabled', 'true');
+              //tabHandleElement.setAttribute('aria-disabled', 'true');
               tabHandleElement.removeAttribute('aria-current');
               this.hideTab(tabHandleElement, tabPanel);
               MiscAccessibility.hide(tabPanel);
@@ -167,7 +167,7 @@ class TabAbstract {
         // Show selected tab
         tabHandleElement.classList.add('ds44-tabs__linkSelected');
         tabHandleElement.setAttribute('aria-current', 'true');
-        tabHandleElement.removeAttribute('aria-disabled');
+        //tabHandleElement.removeAttribute('aria-disabled');
         this.showTab(tabHandleElement, tabPanel, scrollTarget);
         MiscAccessibility.show(tabPanel);
     }
