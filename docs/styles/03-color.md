@@ -110,6 +110,7 @@ Les informations essentielles de type "alerte" sont de couleur rouge
 {% include color-preview.html name="Pôle Archéologie de Loire-Atlantique" hexcode="#FF646E" %}
 {% include color-preview.html name="Laboratoire Arc’Antique" hexcode="#1496dc" %}
 {% include color-preview.html name="Musée Dobrée" hexcode="#FFBED2" %} 
+{% include color-preview.html name="Ports de Loire-Atlantique" hexcode="#00B3BC" %} 
 
 
 
