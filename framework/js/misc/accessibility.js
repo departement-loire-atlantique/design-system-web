@@ -16,7 +16,7 @@ class MiscAccessibility {
         if (!element) {
             return false;
         }
-        return !(window.getComputedStyle(element).display.includes("none"));
+        return !(window.getComputedStyle(element).display === "none");
     }
 
     // Fonction qui va forcer le focus à faire une boucle sur un élément
@@ -118,6 +118,8 @@ class MiscAccessibility {
         fakeLastElement.setAttribute('tabindex', '0');
         element.appendChild(fakeLastElement);
 
+
+        console.log("Add focus Loop");
         // Add events
         MiscEvent.addListener('focus', MiscAccessibility.setFocus.bind(this, null, '.ds44-tmpLastFocus'), fakeFirstElement);
         MiscEvent.addListener('focus', MiscAccessibility.setFocus.bind(this, null, '.ds44-tmpFirstFocus'), fakeLastElement);
@@ -147,6 +149,7 @@ class MiscAccessibility {
         if (!element && selector) {
             element = document.querySelector(selector);
         }
+        console.log(element, selector);
         if (element !== undefined && element && element.innerHTML !== undefined ) {
             if(element.getAttribute('tabindex') !== null && element.getAttribute('tabindex') !== "") {
                 element.setAttribute('data-old-tabindex', element.getAttribute('tabindex'));
@@ -158,6 +161,7 @@ class MiscAccessibility {
             {
                 element.setAttribute('tabindex', -1);
             }
+            console.log(element);
             element.focus();
             MiscEvent.addListener('blur', MiscAccessibility.restoreFocus, element);
         }
