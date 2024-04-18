@@ -10,11 +10,11 @@
                         <p class="ds44-logoContainer">
                             <picture class="ds44-logo"><img src="../../assets/images/logos/logo-musee-Dobree-mobile.svg" alt="Musée Dobrée"></picture>
                         </p>
-                        <button type="button" class="ds44-btn--menu ds44-btnIcoText--maxi ds44--xl-padding choixLangue" aria-label="Ouvrir le menu pour choisir une langue" aria-controls="menu" data-open-sub-menu="#subMenu-choixLangue-menu">
-                            <img class="flag" src="../../assets/icons/icon-flag-fr.svg" alt="Langue : FR - Français"><span class="ds44-btnInnerText" aria-label="Langue sélectionné : FR - Français">FR</span><i class="icon icon-toggle icon-down icon--medium" aria-hidden="true"></i>
-                        </button>
                         <button class="ds44-btnOverlay ds44-btnOverlay--closeOverlay" type="button" aria-label="Fermer le menu de navigation">
                             <i class="icon icon-cross icon--xlarge" aria-hidden="true"></i><span class="ds44-btnInnerText--bottom">Fermer</span>
+                        </button>
+                        <button type="button" class="ds44-btn--menu ds44-btnIcoText--maxi ds44--xl-padding choixLangue" aria-label="Ouvrir le menu pour choisir une langue" aria-controls="menu" data-open-sub-menu="#subMenu-choixLangue-menu">
+                            <img class="flag" src="../../assets/icons/icon-flag-fr.svg" alt="Langue : FR - Français"><span class="ds44-btnInnerText" aria-label="Langue sélectionné : FR - Français">FR</span><i class="icon icon-toggle icon-down icon--medium" aria-hidden="true"></i>
                         </button>
                     </div>
                     <div class="ds44--xl-padding ds44-flex-container ds44-small-flex-col">
@@ -126,7 +126,9 @@
                             </p>
                     </div>
                     <div class="ds44-colRight">
-
+                        <button class="ds44-btnOverlay ds44-btnOverlay--closeOverlay" type="button" aria-label="Fermer le menu de navigation">
+                            <i class="icon icon-cross icon--xlarge" aria-hidden="true"></i><span class="ds44-btnInnerText--bottom">Fermer</span>
+                        </button>
                         <div class="ds44--xl-padding ds44-flex-container ds44-small-flex-col">
                             <div class="ds44-fieldContainer ds44-fg1">
                                 {% include form/field/input/standard.html label="Saisissez un ou plusieurs mots-clé" %}
@@ -137,9 +139,6 @@
                                 </button>
                             </div>
                         </div>
-                        <button class="ds44-btnOverlay ds44-btnOverlay--closeOverlay" type="button" aria-label="Fermer le menu de navigation">
-                            <i class="icon icon-cross icon--xlarge" aria-hidden="true"></i><span class="ds44-btnInnerText--bottom">Fermer</span>
-                        </button>
                     </div>
                 </div>
                 <div class="ds44-inner-container ds44-flex-mauto">
