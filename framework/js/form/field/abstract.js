@@ -307,6 +307,9 @@ class FormFieldAbstract {
                 element.setAttribute('title', object.titleDefault ? object.titleDefault : "");
             }
         }
+        else {
+            element.setAttribute('title', object.titleDefault ? object.titleDefault + (element.hasAttribute("required") ? " - " + MiscTranslate._("INPUT_REQUIRED") : "") : "");
+        }
     }
 
     enableDisableLinkedField (objectIndex) {
