@@ -19,6 +19,21 @@ class MiscAccessibility {
         return !(window.getComputedStyle(element).display === "none");
     }
 
+    // Fonction qui détermine si un élément est affiché dans le DOM (display != none)
+    static isViewByDevice(element) {
+        if (!element) {
+            return false;
+        }
+        if(MiscUtils.isMobileSize())
+        {
+            return !element.closest(".ds44-hide-mobile");
+        }
+        else
+        {
+            return !element.closest(".ds44-hide-medium");
+        }
+    }
+
     // Fonction qui va forcer le focus à faire une boucle sur un élément
     // en ajoutant deux inputs 'hidden' qui peuvent être focus, au début
     // et à la fin
@@ -38,7 +53,7 @@ class MiscAccessibility {
         // For loops to make sure the first and last focusable elements are displayed
         for (let indexElem in Array.prototype.slice.call(focusableElements)) {
             let itElem = Array.prototype.slice.call(focusableElements)[indexElem];
-            if (MiscAccessibility.isDisplayed(itElem)) {
+            if (MiscAccessibility.isDisplayed(itElem) && MiscAccessibility.isViewByDevice(itElem)) {
                 itElem.classList.add('ds44-tmpFirstFocus');
                 break;
             }
@@ -46,7 +61,7 @@ class MiscAccessibility {
         // Starting from the end
         for (let indexElem in Array.prototype.slice.call(focusableElements).reverse()) {
             let itElem = Array.prototype.slice.call(focusableElements).reverse()[indexElem];
-            if (MiscAccessibility.isDisplayed(itElem)) {
+            if (MiscAccessibility.isDisplayed(itElem) && MiscAccessibility.isViewByDevice(itElem)) {
                 itElem.classList.add('ds44-tmpLastFocus');
                 break;
             }
@@ -92,7 +107,7 @@ class MiscAccessibility {
         // For loops to make sure the first and last focusable elements are displayed
         for (let indexElem in Array.prototype.slice.call(focusableElements)) {
         	let itElem = Array.prototype.slice.call(focusableElements)[indexElem];
-            if (MiscAccessibility.isDisplayed(itElem)) {
+            if (MiscAccessibility.isDisplayed(itElem) && MiscAccessibility.isViewByDevice(itElem)) {
             	itElem.classList.add('ds44-tmpFirstFocus');
                 break;
             }
@@ -100,7 +115,7 @@ class MiscAccessibility {
         // Starting from the end
         for (let indexElem in Array.prototype.slice.call(focusableElements).reverse()) {
         	let itElem = Array.prototype.slice.call(focusableElements).reverse()[indexElem];
-            if (MiscAccessibility.isDisplayed(itElem)) {
+            if (MiscAccessibility.isDisplayed(itElem) && MiscAccessibility.isViewByDevice(itElem)) {
             	itElem.classList.add('ds44-tmpLastFocus');
                 break;
             }
@@ -118,8 +133,6 @@ class MiscAccessibility {
         fakeLastElement.setAttribute('tabindex', '0');
         element.appendChild(fakeLastElement);
 
-
-        console.log("Add focus Loop");
         // Add events
         MiscEvent.addListener('focus', MiscAccessibility.setFocus.bind(this, null, '.ds44-tmpLastFocus'), fakeFirstElement);
         MiscEvent.addListener('focus', MiscAccessibility.setFocus.bind(this, null, '.ds44-tmpFirstFocus'), fakeLastElement);
@@ -149,7 +162,6 @@ class MiscAccessibility {
         if (!element && selector) {
             element = document.querySelector(selector);
         }
-        console.log(element, selector);
         if (element !== undefined && element && element.innerHTML !== undefined ) {
             if(element.getAttribute('tabindex') !== null && element.getAttribute('tabindex') !== "") {
                 element.setAttribute('data-old-tabindex', element.getAttribute('tabindex'));
@@ -161,7 +173,6 @@ class MiscAccessibility {
             {
                 element.setAttribute('tabindex', -1);
             }
-            console.log(element);
             element.focus();
             MiscEvent.addListener('blur', MiscAccessibility.restoreFocus, element);
         }
