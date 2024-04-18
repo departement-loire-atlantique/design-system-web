@@ -295,23 +295,17 @@ class FormFieldAbstract {
         if(element === undefined || element === null) {
             element = object.element;
         }
-        if(element.hasAttribute("data-no-change-title"))
-        {
-            return;
-        }
-        let data = this.getData(objectIndex);
-        if(data && data[object.name] && data[object.name].text) {
-            if(element.type === "password")
-            {
-                element.setAttribute('title', "*".repeat(data[object.name].text.length) + " - "+MiscTranslate._("INPUT_REQUIRED"));
+        if(element.hasAttribute("data-change-title")) {
+            let data = this.getData(objectIndex);
+            if (data && data[object.name] && data[object.name].text) {
+                if (element.type === "password") {
+                    element.setAttribute('title', "*".repeat(data[object.name].text.length) + " - " + MiscTranslate._("INPUT_REQUIRED"));
+                } else {
+                    element.setAttribute('title', data[object.name].text + (element.hasAttribute("required") ? " - " + MiscTranslate._("INPUT_REQUIRED") : ""));
+                }
+            } else {
+                element.setAttribute('title', object.titleDefault ? object.titleDefault : "");
             }
-            else
-            {
-                element.setAttribute('title', data[object.name].text + ( element.hasAttribute("required") ? " - "+MiscTranslate._("INPUT_REQUIRED") : ""));
-            }
-        }
-        else {
-            element.setAttribute('title', object.titleDefault ? object.titleDefault : "");
         }
     }
 
