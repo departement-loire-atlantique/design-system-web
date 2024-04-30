@@ -43,6 +43,19 @@
     }
 }
 
+
+@media (max-width: 991px) {
+    .ds44-tabs__link-mobile {
+        background-color: #F1F1F1 !important;
+        margin-bottom: 28px;
+        padding: 1.5rem 2rem 1.5rem 2rem !important;
+    }
+
+    .ds44-tabs__content_mobile {
+        margin-bottom: 45px;
+    }
+}
+
 .ds44-tabs__linkSelected.ds44-tabs__link,
 .ds44-tabs__link:hover,
 .ds44-tabs__link:focus,
@@ -98,7 +111,6 @@
       padding: 3rem 2rem 3rem 2rem;
       font-size: 1.25em;
       text-align: left;
-      font-weight: bold;
       &:after {
           display: none;
       }

@@ -340,6 +340,11 @@
   .ds44-show-mobile,
   .ds44-hide-medium {
     display: none !important;
+    visibility: hidden !important;
+    * {
+      display: none !important;
+      visibility: hidden !important;
+    }
   }
 
   .ds44-medToXlarge-pl3 {

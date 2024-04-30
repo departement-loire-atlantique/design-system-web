@@ -14,7 +14,7 @@ variations:
 - title: Les bonnes raisons
   pattern: page/MD__raisons.html
 
-- title: Horaires, tarifs
+- title: Horaires-tarifs
   pattern: page/MD__horaires-tarifs.html
 
 - title: Dossier

@@ -157,4 +157,13 @@ class MiscUtils {
 
         return hash;
     }
+
+    static isMobileSize() {
+        return  MiscUtils.isMatchMedia("(max-width: 991px)");
+    }
+
+    static isMatchMedia(media) {
+        return  (window.matchMedia(media).matches);
+    }
+
 }

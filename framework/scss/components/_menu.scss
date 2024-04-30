@@ -274,6 +274,30 @@
   }
 }
 
+.dobree-menu.ds44-blocMenu .ds44-multiCol4 {
+  -webkit-column-count: 4;
+  -moz-column-count: 4;
+  column-count: 4;
+  display: block;
+  padding: 3em 0;
+
+  > div {
+      overflow: auto;
+      padding:0 4rem;
+
+      &:nth-child(2) {
+          border-left : 1px $ds44-color-base solid;
+          border-right : 1px $ds44-color-base solid;
+      }
+      &:nth-child(3) {
+        border-right : 1px $ds44-color-base solid;
+    }
+      .ds44-navListN2 {
+          margin-bottom: 0;
+      }
+  }
+}
+
 .dobree-menu.ds44-blocMenu {
     .ds44-navContainer {
       padding-top: 0rem;

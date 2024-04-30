@@ -2,7 +2,123 @@
     <section class="ds44-menuBox" id="menu">
         <div class="ds44-overlay ds44-theme ds44-bg-br ds44-overlay--navNiv1 {{ include.surchargeN2 }}" aria-labelledby="logoMuseeDobree" role="dialog" aria-modal="true" id="nav1" aria-hidden="true" >
             <p role="heading" aria-level="1" class="visually-hidden" id="logoMuseeDobree">Menu de navigation</p>
-            <nav role="navigation" class="ds44-navContainer ds44-flex-container--column" aria-label="Menu de navigation">
+
+            <!-- Menu Mobile -->
+            <nav role="navigation" class="mobile ds44-show-mobile-flex ds44-hide-medium ds44-hide-tinyToLarge ds44-navContainer ds44-flex-container--column ds44-fsb" aria-label="Menu de navigation">
+                <div class="">
+                    <div class="ds44-flex-container ds44-flex-valign-center ds44-fsb">
+                        <p class="ds44-logoContainer">
+                            <picture class="ds44-logo"><img src="../../assets/images/logos/logo-musee-Dobree-mobile.svg" alt="Musée Dobrée"></picture>
+                        </p>
+                        <button class="ds44-btnOverlay ds44-btnOverlay--closeOverlay" type="button" aria-label="Fermer le menu de navigation">
+                            <i class="icon icon-cross icon--xlarge" aria-hidden="true"></i><span class="ds44-btnInnerText--bottom">Fermer</span>
+                        </button>
+                        <button type="button" class="ds44-btn--menu ds44-btnIcoText--maxi ds44--xl-padding choixLangue" aria-label="Ouvrir le menu pour choisir une langue" aria-controls="menu" data-open-sub-menu="#subMenu-choixLangue-menu">
+                            <img class="flag" src="../../assets/icons/icon-flag-fr.svg" alt="Langue : FR - Français"><span class="ds44-btnInnerText" aria-label="Langue sélectionné : FR - Français">FR</span><i class="icon icon-toggle icon-down icon--medium" aria-hidden="true"></i>
+                        </button>
+                    </div>
+                    <div class="ds44--xl-padding ds44-flex-container ds44-small-flex-col">
+                        <div class="ds44-fieldContainer ds44-fg1">
+                            {% include form/field/input/standard.html label="Saisissez un ou plusieurs mots-clé" %}
+                        </div>
+                        <div class="ds44-fieldContainer ds44-small-fg1">
+                            <button type="submit" class="ds44-btnStd ds44-btn--invert " title="Valider votre recherche par mots-clés">
+                                <span class="ds44-btnInnerText">Valider</span><i class="icon icon-long-arrow-right" aria-hidden="true"></i>
+                            </button>
+                        </div>
+                    </div>
+                    <ul class="ds44-inner-container ds44-collapser">
+                        <li class="ds44-collapser_element">
+                    		<p role="heading" aria-level="2">
+                    			<button type="button" class="ds44-collapser_button">Infos pratiques<i class="icon icon-down" aria-hidden="true"></i></button>
+                            </p>
+                    		<div class="ds44-collapser_content">
+                                <ul class="ds44-list ds44-collapser_content--level2">
+                                    <li><a href="#" class="ds44-collapser_content--link">Horaires, tarifs</a></li>
+                                    <li><a href="#" class="ds44-collapser_content--link">Accès</a></li>
+                                    <li><a href="#" class="ds44-collapser_content--link">Services</a></li>
+                                    <li><a href="#" class="ds44-collapser_content--link">Plan</a></li>
+                                    <li><a href="#" class="ds44-collapser_content--link">Accessibilité / Handicaps</a></li>
+                                </ul>
+                            </div>
+                        </li>
+                        <li class="ds44-collapser_element">
+                    		<p role="heading" aria-level="2">
+                    			<button type="button" class="ds44-collapser_button">Visites<i class="icon icon-down" aria-hidden="true"></i></button>
+                            </p>
+                    		<div class="ds44-collapser_content">
+                                <ul class="ds44-list ds44-collapser_content--level2">
+                                    <li><a href="#" class="ds44-collapser_content--link">Parcours et conseils de visite</a></li>
+                                    <li><a href="#" class="ds44-collapser_content--link">Visites guidées</a></li>
+                                    <li><a href="#" class="ds44-collapser_content--link">Agenda</a></li>
+                                    <li><a href="#" class="ds44-collapser_content--link">Expositions</a></li>
+                                    <li><a href="#" class="ds44-collapser_content--link">Évènements</a></li>
+                                    <li><a href="#" class="ds44-collapser_content--link">Conférences</a></li>
+                                    <li><a href="#" class="ds44-collapser_content--link">Ateliers et activités</a></li>
+                                </ul>
+                            </div>
+                        </li>
+                        <li class="ds44-collapser_element">
+                    		<p role="heading" aria-level="2">
+                    			<button type="button" class="ds44-collapser_button">Musée et collections<i class="icon icon-down" aria-hidden="true"></i></button>
+                            </p>
+                    		<div class="ds44-collapser_content">
+                                <ul class="ds44-list ds44-collapser_content--level2">
+                                    <li><a href="#" class="ds44-collapser_content--link">Histoire du musée</a></li>
+                                    <li><a href="#" class="ds44-collapser_content--link">Architecture, le lieu</a></li>
+                                    <li><a href="#" class="ds44-collapser_content--link">Collections</a></li>
+                                    <li><a href="#" class="ds44-collapser_content--link">Équipe et métiers</a></li>
+                                    <li><a href="#" class="ds44-collapser_content--link">Projet scientifique et culture</a></li>
+                                </ul>
+                            </div>
+                        </li>
+                        <li class="ds44-collapser_element">
+                    		<p role="heading" aria-level="2">
+                    			<button type="button" class="ds44-collapser_button">Vous êtes<i class="icon icon-down" aria-hidden="true"></i></button>
+                            </p>
+                    		<div class="ds44-collapser_content">
+                                <ul class="ds44-list ds44-collapser_content--level2">
+                                    <li><a href="#" class="ds44-collapser_content--link">En famille</a></li>
+                                    <li><a href="#" class="ds44-collapser_content--link">En situation de handicap</a></li>
+                                    <li><a href="#" class="ds44-collapser_content--link">En groupe</a></li>
+                                    <li><a href="#" class="ds44-collapser_content--link">Une entreprise</a></li>
+                                    <li><a href="#" class="ds44-collapser_content--link">Enseignant</a></li>
+                                    <li><a href="#" class="ds44-collapser_content--link">Chercheur</a></li>
+                                    <li><a href="#" class="ds44-collapser_content--link">Ami du musée</a></li>
+                                    <li><a href="#" class="ds44-collapser_content--link">Journaliste</a></li>
+                                    <li><a href="#" class="ds44-collapser_content--link">Toutes et tous</a></li>
+                                </ul>
+                            </div>
+                        </li>
+                    </ul>
+                    <div id="subMenu-choixLangue-menu" class="ds44-subMenu" data-sub-menu="" aria-hidden="true">
+                        <p role="heading" aria-level="1" class="visually-hidden">Choix de la langue</p>
+                        <ul class="ds44-list">
+                            <li>
+                                <a href="#"><img class="flag" src="../../assets/icons/icon-flag-fr.svg" alt="Langue : FR - Français">Français</a>
+                            </li>
+                            <li>
+                                <a href="#"><img class="flag" src="../../assets/icons/icon-flag-en.svg" alt="Language : EN - English">English</a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="ds44-mb2">
+                    <div class="ds44-inner-container dobree-listAccessibility ds44-center">
+                        <div class="ds44-flex-container ds44-flex-align-center ds44--m-padding">
+                            <p><a href="#" title="Accessibilité du musée : Handicap auditif, Handicap mental, Handicap moteur, Handicap visuel">Accessibilité du musée :</a></p>
+                            <ul class="ds44-list ds44-flex-container ds44-flex-align-center ds44-fse">
+                                <li><i class="icon icon-handicap-auditif icon--sizeL" aria-hidden="true"></i><span class="visually-hidden">Handicap auditif</span></li>
+                                <li><i class="icon icon-handicap-mental icon--sizeL" aria-hidden="true"></i><span class="visually-hidden">Handicap mental</span></li>
+                                <li><i class="icon icon-handicap-moteur icon--sizeL" aria-hidden="true"></i><span class="visually-hidden">Handicap moteur</span></li>
+                                <li><i class="icon icon-handicap-visuel icon--sizeL" aria-hidden="true"></i><span class="visually-hidden">Handicap visuel</span></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </nav>
+            <!-- Menu Desktop -->
+            <nav role="navigation" class="ds44-hide-mobile ds44-navContainer ds44-flex-container--column" aria-label="Menu de navigation">
                 <div class="ds44-flex-container ds44-flex-valign-center">
                     <div class="ds44-colLeft">
                             <p class="ds44-logoContainer">
@@ -10,7 +126,9 @@
                             </p>
                     </div>
                     <div class="ds44-colRight">
-
+                        <button class="ds44-btnOverlay ds44-btnOverlay--closeOverlay" type="button" aria-label="Fermer le menu de navigation">
+                            <i class="icon icon-cross icon--xlarge" aria-hidden="true"></i><span class="ds44-btnInnerText--bottom">Fermer</span>
+                        </button>
                         <div class="ds44--xl-padding ds44-flex-container ds44-small-flex-col">
                             <div class="ds44-fieldContainer ds44-fg1">
                                 {% include form/field/input/standard.html label="Saisissez un ou plusieurs mots-clé" %}
@@ -21,9 +139,6 @@
                                 </button>
                             </div>
                         </div>
-                        <button class="ds44-btnOverlay ds44-btnOverlay--closeOverlay" type="button" aria-label="Fermer le menu de navigation">
-                            <i class="icon icon-cross icon--xlarge" aria-hidden="true"></i><span class="ds44-btnInnerText--bottom">Fermer</span>
-                        </button>
                     </div>
                 </div>
                 <div class="ds44-inner-container ds44-flex-mauto">
