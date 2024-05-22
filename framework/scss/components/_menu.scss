@@ -368,8 +368,9 @@
         font-family: $ds44-font-family-baseModern;
         font-size: 20px;
         font-weight: 700;
+        color: $ds44-dark !important;
 
-        * {
+        > * {
             color: $ds44-dark !important;
         }
     }
