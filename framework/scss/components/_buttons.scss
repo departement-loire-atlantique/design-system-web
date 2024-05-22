@@ -368,6 +368,9 @@ a > .ds44-btn--contextual,
     right: $ds44-components-vmargin; // 3rem
     z-index: 10;
 }
+.ds44-btnOverlay * {
+    color: $ds44-dark  !important;
+}
 
 .ds44-btnOverlay--modale {
     position: absolute;
