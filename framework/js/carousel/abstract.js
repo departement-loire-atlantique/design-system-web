@@ -70,7 +70,7 @@ class CarouselAbstract {
         };
 
         const paginationElement = wrapElement.querySelector('.swiper-pagination');
-        if (paginationElement) {
+        if (paginationElement && nbSlides > nbVisibleSlides) {
             object.paginationElement = paginationElement;
         }
         const previousElement = wrapElement.querySelector('.swiper-button-prev');
