@@ -106,6 +106,10 @@ class FormFieldAbstract {
             }
             this.changeTitle(objectIndex);
             MiscEvent.addListener('field:reset', this.reset.bind(this, objectIndex), object.element);
+            MiscEvent.addListener('field:setData', (ev)=>{
+                this.setData(objectIndex, ev.detail);
+                MiscEvent.dispatch("field:label-move", {}, object.element);
+            }, object.element);
             MiscEvent.addListener('field:enable', this.enable.bind(this, objectIndex), object.containerElement);
             MiscEvent.addListener('field:disable', this.disable.bind(this, objectIndex), object.containerElement);
             MiscEvent.addListener('field:' + object.name + ':set', this.set.bind(this, objectIndex));
