@@ -92,55 +92,96 @@ class DuplicateLineClass {
     for (let objectIndex = 0; objectIndex < this.objects.length; objectIndex++) {
       const object = this.objects[objectIndex];
 
-      if(object.firstLineTransform)
+      let hasDataLine = false;
+      let parameters = MiscUrl.getQueryParameters();
+      if(parameters.line === undefined)
+      {
+        parameters = MiscUrl.getHashParameters();
+      }
+      if(parameters.line === undefined) {
+        parameters = {};
+      }
+      for (const [linesKey, lines] of Object.entries(parameters)) {
+        for (const [lineKey, line] of Object.entries(lines)) {
+          this.addLine(objectIndex, lineKey, hasDataLine === false);
+          if(hasDataLine === false)
+          {
+            object.firstLine.querySelectorAll("*[data-no-first-line]").forEach((element) => {
+              element.remove();
+            });
+            object.duplicateLine.querySelectorAll("*[data-no-duplicate]").forEach((element) => {
+              element.remove();
+            });
+          }
+          hasDataLine = true;
+          for (const [fieldId, data] of Object.entries(line))
+          {
+            let field = document.querySelector("#line_"+lineKey+"_"+fieldId);
+            if(field) {
+              setTimeout(()=>{
+                MiscEvent.dispatch("field:setData", data, field);
+              }, 100);
+            }
+          }
+        }
+      }
+
+      if(object.firstLineTransform && !hasDataLine)
       {
         object.firstLine.innerHTML = this.generateHtml(objectIndex);
         object.firstLine.classList.add("line-is-duplicate");
+        object.firstLine.querySelectorAll("*[data-no-first-line]").forEach((element) => {
+          element.remove();
+        });
+        object.duplicateLine.querySelectorAll("*[data-no-duplicate]").forEach((element) => {
+          element.remove();
+        });
       }
-      object.firstLine.querySelectorAll("*[data-no-first-line]").forEach((element) => {
-        element.remove();
-      });
 
-      object.duplicateLine.querySelectorAll("*[data-no-duplicate]").forEach((element) => {
-        element.remove();
-      });
-
-      MiscEvent.addListener('click', this.addLine.bind(this, objectIndex), object.firstLine.querySelector("*[data-line-add]"));
+      MiscEvent.addListener('click', this.addLine.bind(this, objectIndex ,null, false), object.firstLine.querySelector("*[data-line-add]"));
     }
   }
 
-  addLine(objectIndex, evt) {
-    evt.preventDefault()
-    evt.stopPropagation();
+  addLine(objectIndex, duplicateLineKeyDefined, isFirstLine, evt) {
+    if(evt !== undefined) {
+      evt.preventDefault()
+      evt.stopPropagation();
+    }
 
     // Mark the component category as answered
     const object = this.objects[objectIndex];
     if (!object) {
       return;
     }
-
-    var newLine = document.createElement('div');
-    newLine.classList = object.firstLine.classList;
+    var newLine = null;
+    if(isFirstLine === true) {
+      newLine = object.firstLine;
+    }
+    else {
+      newLine = document.createElement('div');
+      newLine.classList = object.firstLine.classList;
+    }
     newLine.classList.add("line-is-duplicate");
-    newLine.innerHTML = this.generateHtml(objectIndex);
+    newLine.innerHTML = this.generateHtml(objectIndex, duplicateLineKeyDefined);
 
-    let children = object.container.querySelectorAll(".line-is-duplicate");
-
-    object.container.insertBefore(newLine, children[children.length - 1].nextSibling);
-    MiscEvent.addListener('click', this.removeLine.bind(this, objectIndex), newLine.querySelector("*[data-line-remove]"));
+    if(isFirstLine !== true) {
+      let children = object.container.querySelectorAll(".line-is-duplicate");
+      object.container.insertBefore(newLine, children[children.length - 1].nextSibling);
+      MiscEvent.addListener('click', this.removeLine.bind(this, objectIndex), newLine.querySelector("*[data-line-remove]"));
+    }
     MiscEvent.dispatch('fields:initialise', {});
     return false;
   }
 
-  generateHtml(objectIndex) {
+  generateHtml(objectIndex, duplicateLineKeyDefined) {
     // Mark the component category as answered
     const object = this.objects[objectIndex];
     if (!object) {
       return;
     }
-    let duplicateLinKey = MiscUtils.generateKey();
-    let innerHTML = object.duplicateLine.innerHTML.replace(/__LINE_DUPLICATE_NAME__/gi, "line["+duplicateLinKey+"]");
-    innerHTML = innerHTML.replace(/__LINE_DUPLICATE_ID__/gi, "line_"+duplicateLinKey);
+    let duplicateLineKey = duplicateLineKeyDefined ? duplicateLineKeyDefined : MiscUtils.generateKey();
+    let innerHTML = object.duplicateLine.innerHTML.replace(/__LINE_DUPLICATE_NAME__/gi, "line["+duplicateLineKey+"]");
+    innerHTML = innerHTML.replace(/__LINE_DUPLICATE_ID__/gi, "line_"+duplicateLineKey);
     return innerHTML;
   }
 
