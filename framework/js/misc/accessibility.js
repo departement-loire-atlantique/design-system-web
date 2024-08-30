@@ -108,7 +108,6 @@ class MiscAccessibility {
         for (let indexElem in Array.prototype.slice.call(focusableElements)) {
         	let itElem = Array.prototype.slice.call(focusableElements)[indexElem];
             if (MiscAccessibility.isDisplayed(itElem) && MiscAccessibility.isViewByDevice(itElem)) {
-                console.log(MiscAccessibility.isViewByDevice(itElem), itElem);
             	itElem.classList.add('ds44-tmpFirstFocus');
                 break;
             }
@@ -117,7 +116,6 @@ class MiscAccessibility {
         for (let indexElem in Array.prototype.slice.call(focusableElements).reverse()) {
         	let itElem = Array.prototype.slice.call(focusableElements).reverse()[indexElem];
             if (MiscAccessibility.isDisplayed(itElem) && MiscAccessibility.isViewByDevice(itElem)) {
-                console.log(MiscAccessibility.isViewByDevice(itElem), itElem);
             	itElem.classList.add('ds44-tmpLastFocus');
                 break;
             }
