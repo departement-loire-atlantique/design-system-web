@@ -17,6 +17,7 @@ class CarouselAbstract {
         );
 
         this.breakpoint.addListener(this.breakpointChecker.bind(this));
+        this.paginationClick = false;
     }
 
     clearObject() {
@@ -56,6 +57,7 @@ class CarouselAbstract {
         // Get nb visible slides
         const nbSlides = slideElements.length;
         const nbVisibleSlides = parseInt(wrapElement.getAttribute('data-nb-visible-slides'), 10);
+        const nbLimitBullet = parseInt(wrapElement.getAttribute('data-limit-bullet'), 10);
         const mobileOnly = (wrapElement.getAttribute('data-mobile-only') === 'true');
 
         // Create object
@@ -65,6 +67,7 @@ class CarouselAbstract {
             'swiperElement': swiperElement,
             'nbSlides': nbSlides,
             'nbVisibleSlides': nbVisibleSlides,
+            'nbLimitBullet': nbLimitBullet,
             'mobileOnly': mobileOnly,
             'isInitialized': false
         };
@@ -110,6 +113,49 @@ class CarouselAbstract {
         object.swiper.on('slidePrevTransitionEnd', this.slide.bind(this, objectIndex, 'backward'));
         object.swiper.on('slideNextTransitionEnd', this.slide.bind(this, objectIndex, 'forward'));
 
+        object.swiper.on('paginationRender', (paginationElement)=>{
+            let indexElement = 0;
+            paginationElement.querySelectorAll("button").forEach((focusElement)=>{
+                if(indexElement === 0) {
+                    focusElement.setAttribute("aria-current", "true");
+                }
+                let parentPaginationFocus = focusElement.closest(".swiper-pagination-bullet");
+
+                MiscEvent.addListener("focus", ()=>{
+                    let paginationFocus = object.paginationElement.querySelector(".swiper-pagination-bullet-focus");
+                    if(paginationFocus) {
+                        paginationFocus.classList.remove("swiper-pagination-bullet-focus");
+                    }
+                    if(parentPaginationFocus) {
+                        parentPaginationFocus.classList.add("swiper-pagination-bullet-focus");
+                    }
+                }, focusElement);
+                MiscEvent.addListener("blur", ()=>{
+                    if(parentPaginationFocus) {
+                        parentPaginationFocus.classList.remove("swiper-pagination-bullet-focus");
+                    }
+                }, focusElement);
+
+                MiscEvent.addListener("click", ()=>{
+                    this.paginationButtonSelected(paginationElement, focusElement);
+                    object.swiper.slideTo(indexElement);
+                }, focusElement);
+
+                MiscEvent.addListener("click", ()=>{
+                    this.paginationButtonSelected(paginationElement, focusElement);
+                }, parentPaginationFocus);
+
+                indexElement = indexElement+1;
+                if(indexElement > (object.nbLimitBullet-1)) {
+                    let paginationElement = focusElement.closest(".swiper-pagination-bullet");
+                    if(paginationElement)
+                    {
+                        paginationElement.style.display = "none";
+                    }
+                }
+            });
+        });
+
         object.swiper.init();
         object.isInitialized = true;
 
@@ -135,6 +181,15 @@ class CarouselAbstract {
                 }, thumb);
             });
         }
+    }
+
+    paginationButtonSelected(paginationElement, button) {
+        let buttonAriaCurrent = paginationElement.querySelector("button[aria-current='true']");
+        if(buttonAriaCurrent) {
+            buttonAriaCurrent.removeAttribute("aria-current");
+        }
+        button.setAttribute("aria-current", "true");
+        this.paginationClick = true;
     }
 
     destroySwipper (objectIndex) {
@@ -186,6 +241,7 @@ class CarouselAbstract {
             swiperParameters.pagination = {
                 'el': object.paginationElement,
                 'clickable': true,
+                "bulletElement": "button",
                 'renderBullet': (index, className) => {
                     const textElements = object.swiperElement.querySelectorAll('.swiper-slide:not(.swiper-slide-duplicate) .ds44-diaporama-vignette-text');
                     if (textElements && textElements.length) {
@@ -196,7 +252,7 @@ class CarouselAbstract {
                     {
                         const titleElement = object.swiperElement.querySelectorAll('.swiper-slide:not(.swiper-slide-duplicate) .ds44-cardTitle');
                         if (titleElement && titleElement.length) {
-                            return '<li class="' + className + '"><span class="entitled visually-hidden">' + titleElement[index].innerHTML + '</span></li>';
+                            return '<li class="' + className + '"><span class="entitled visually-hidden"><button type="button">' + titleElement[index].innerText + '</button></span></li>';
                         }
                     }
 
@@ -204,6 +260,8 @@ class CarouselAbstract {
                 }
             }
         }
+
+
 
         if (object.previousElement && object.nextElement) {
             swiperParameters.navigation = {
@@ -310,11 +368,17 @@ class CarouselAbstract {
 
         if (object.isInitialized) {
             let slideElement = null;
-            const visibleSlideElements = object.swiperElement.querySelectorAll('.swiper-slide.swiper-slide-visible');
-            if (direction === 'backward') {
-                slideElement = visibleSlideElements[0];
-            } else {
-                slideElement = visibleSlideElements[visibleSlideElements.length - 1];
+            if(this.paginationClick) {
+                slideElement = object.swiperElement.querySelector   ('.swiper-slide-active');
+            }
+            else
+            {
+                const visibleSlideElements = object.swiperElement.querySelectorAll('.swiper-slide.swiper-slide-visible');
+                if (direction === 'backward') {
+                    slideElement = visibleSlideElements[0];
+                } else {
+                    slideElement = visibleSlideElements[visibleSlideElements.length - 1];
+                }
             }
             if (slideElement) {
                 MiscAccessibility.setFocus(slideElement.querySelector(this.queryTitreTuile));
@@ -336,10 +400,14 @@ class CarouselAbstract {
             return;
         }
 
-        if (object.previousElement && object.nextElement) {
-            this.updatePreviousAndNextSlideMessage(objectIndex);
+        if(this.paginationClick === false)
+        {
+            if (object.previousElement && object.nextElement) {
+                this.updatePreviousAndNextSlideMessage(objectIndex);
+            }
         }
         this.updateCardAccessibility(objectIndex, direction);
+        this.paginationClick = false;
     }
 
     resize () {

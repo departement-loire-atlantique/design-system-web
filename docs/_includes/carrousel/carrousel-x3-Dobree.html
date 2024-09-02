@@ -1,6 +1,6 @@
 <div class="ds44-mt1">
     <div class="mod--hidden ds44-list swipper-carousel-wrap swipper-carousel-wrap--dobree ds44-posRel" data-nb-visible-slides="3">
-        <div class="swiper-container">
+        <div class="swiper-container swiper-not-button-next-previous">
             <ul class="swiper-wrapper ds44-list grid-3-small-1 has-gutter-l ds44-carousel-swiper">
                 <li class="swiper-slide">
                     {% include card/card--dobree.html
@@ -45,35 +45,5 @@
             </ul>
         </div>
         <ul class="ds44-hide-tiny-to-medium ds44-hide-mobile swiper-pagination bullet"></ul>
-        <button class="swiper-button-prev swiper-button-disabled" type="button">
-            <i class="icon icon-left" aria-hidden="true"></i>
-            <span class="visually-hidden"></span>
-        </button>
-        <button class="swiper-button-next swiper-button-disabled" type="button">
-            <i class="icon icon-right" aria-hidden="true"></i>
-            <span class="visually-hidden"></span>
-        </button>
-        <div class="swiper-thumbs">
-            <div class="swiper-thumbs-container">
-                <nav class="swiper-container" aria-label="Navigation au sein des vignettes - L’agenda du musée">
-
-                    <ul class="swiper-wrapper ds44-list">
-                        <li class="swiper-slide">
-                            {% include carrousel/diaporama/diaporama-thumb-puces.html title="Ceci est la tuile numéro 1" %}
-                        </li>
-                        <li class="swiper-slide">
-                            {% include carrousel/diaporama/diaporama-thumb-puces.html title="Ceci est la tuile numéro 2" %}
-                        </li>
-                        <li class="swiper-slide">
-                            {% include carrousel/diaporama/diaporama-thumb-puces.html title="Ceci est la tuile numéro 3" %}
-                        </li>
-                        <li class="swiper-slide">
-                            {% include carrousel/diaporama/diaporama-thumb-puces.html title="Ceci est la tuile numéro 4" %}
-                        </li>
-                    </ul>
-                </nav>
-            </div>
-        </div>
-
     </div>
 </div>
