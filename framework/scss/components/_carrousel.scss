@@ -16,6 +16,10 @@
         padding: 1rem 1.6rem 3rem 1.6rem;
         margin: 0 calc(5.5% - 1.6rem);
         margin: 0 -webkit-calc(5.5% - 1.6rem);
+        &.swiper-not-button-next-previous {
+          margin: 0;
+          padding: 1rem 0 3rem;
+        }
 
         @media screen and (max-width: $ds44-medium - .0625) {
             padding: 1rem 0 0 0;
@@ -115,6 +119,10 @@
             &.swiper-pagination-bullet-active {
               background-color: #fff;
             }
+            &.swiper-pagination-bullet-focus {
+              background-color: #fff;
+              border:0.4rem solid #000000;
+            }
           }
         }
 
@@ -131,6 +139,10 @@
 
             &.swiper-pagination-bullet-active {
                 display: block;
+            }
+            &.swiper-pagination-bullet-focus {
+              background-color: #fff;
+              border:0.4rem solid #000000;
             }
         }
     }
