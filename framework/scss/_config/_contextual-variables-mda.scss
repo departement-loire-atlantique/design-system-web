@@ -10,3 +10,12 @@ $ds44-contextual-color : #988bc1 !default;
 $ds44-contextual-hover : darken($ds44-contextual-color, 10%) !default;
 $ds44-font-family-base      : Helvetica, Arial, sans-serif;  
 $ds44-font-family-headings  : "gigalypse", sans-serif;
+
+body.mda {
+    .PortletMiseEnAvantDeContenus {
+        .h1-like {
+            font-size: 2.375em;
+            margin-bottom: 3rem;
+        }
+    }
+}
