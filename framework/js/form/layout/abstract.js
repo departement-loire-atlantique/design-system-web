@@ -76,7 +76,6 @@ class FormLayoutAbstract {
         }
 
         if (object.formElement.getAttribute('data-auto-load') === 'true') {
-            console.log("Auto load");
             MiscEvent.dispatch('submit', { 'dryRun': true }, object.formElement);
         }
     }
@@ -116,6 +115,7 @@ class FormLayoutAbstract {
             }
         }
 
+        console.log(object.validationCategories, isFinished);
         // All the component categories answered the call, we can carry on with the form validation
         if (isFinished) {
             this.submit(objectIndex, evt);
@@ -144,7 +144,7 @@ class FormLayoutAbstract {
         }
 
         if(this.submitter && this.submitter.hasAttribute("data-form-no-validate"))
-        {console.log("Submit Start - 1");
+        {
             return true;
         }
 
@@ -163,13 +163,13 @@ class FormLayoutAbstract {
                     'formElement': object.formElement,
                     'dryRun': ((evt.detail || { 'dryRun': false }).dryRun || false)
                 });
-                console.log("Submit Start - 2");
                 return false;
             }
             object.hasBeenChecked = false;
 
             // Check if the components are all valid
             const formValidity = MiscForm.checkValidity(object.validationCategories);
+            console.log(formValidity);
             if (!formValidity.isValid) {
                 // At least one was not valid
                 evt.stopPropagation();
@@ -187,7 +187,6 @@ class FormLayoutAbstract {
                     submitBtn.removeAttribute("disabled");
                     submitBtn.removeAttribute("aria-disabled");
                 }
-                console.log("Submit Start - 3");
                 return false;
             }
             else if(!this.submitter || !this.submitter.hasAttribute("data-send-native")) {
