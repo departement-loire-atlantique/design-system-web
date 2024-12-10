@@ -71,12 +71,14 @@ class MiscAccessibility {
         const fakeFirstElement = document.createElement('span');
         fakeFirstElement.classList.add('ds44-tmpFocusHidden');
         fakeFirstElement.setAttribute('tabindex', '0');
+        fakeFirstElement.setAttribute('aria-hidden', 'true');
         element.prepend(fakeFirstElement);
 
         // Create last hidden focus element
         const fakeLastElement = document.createElement('span');
         fakeLastElement.classList.add('ds44-tmpFocusHidden');
         fakeLastElement.setAttribute('tabindex', '0');
+        fakeLastElement.setAttribute('aria-hidden', 'true');
         element.appendChild(fakeLastElement);
 
         // Add events
@@ -125,12 +127,14 @@ class MiscAccessibility {
         const fakeFirstElement = document.createElement('span');
         fakeFirstElement.classList.add('ds44-tmpFocusHidden');
         fakeFirstElement.setAttribute('tabindex', '0');
+        fakeFirstElement.setAttribute('aria-hidden', 'true');
         element.prepend(fakeFirstElement);
 
         // Create last hidden focus element
         const fakeLastElement = document.createElement('span');
         fakeLastElement.classList.add('ds44-tmpFocusHidden');
         fakeLastElement.setAttribute('tabindex', '0');
+        fakeLastElement.setAttribute('aria-hidden', 'true');
         element.appendChild(fakeLastElement);
 
         // Add events
