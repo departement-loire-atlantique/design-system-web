@@ -144,7 +144,7 @@ class FormLayoutAbstract {
         }
 
         if(this.submitter && this.submitter.hasAttribute("data-form-no-validate"))
-        {
+        {console.log("Submit Start - 1");
             return true;
         }
 
@@ -163,7 +163,7 @@ class FormLayoutAbstract {
                     'formElement': object.formElement,
                     'dryRun': ((evt.detail || { 'dryRun': false }).dryRun || false)
                 });
-
+                console.log("Submit Start - 2");
                 return false;
             }
             object.hasBeenChecked = false;
@@ -187,7 +187,7 @@ class FormLayoutAbstract {
                     submitBtn.removeAttribute("disabled");
                     submitBtn.removeAttribute("aria-disabled");
                 }
-
+                console.log("Submit Start - 3");
                 return false;
             }
             else if(!this.submitter || !this.submitter.hasAttribute("data-send-native")) {
