@@ -418,6 +418,15 @@ body.modern {
     top: 0;
     left: 0;
     background: $ds44-background-dark;
+    transition: outline .4s ease-out;
+    img {
+        outline: 5px solid transparent;
+    }
+    a:focus-visible {
+        img {
+            outline: 5px solid $ds44-hover-LA;
+        }
+    }
 }
 
 .ds44-pageHeaderContainer--deuxCol .ds44-bgGray {
