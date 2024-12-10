@@ -2,230 +2,230 @@
 
 // DS 44 icons style
 .i-name {
-    padding-left: 10px;
+  padding-left: 10px;
 }
 
 /* Ratio img générique tuile 3/2 */
 .ds44-container-imgRatio {
-    width: 100%;
-    height: 0;
-    display: block;
-    padding-top: 66.6667%;
-    position: relative;
+  width: 100%;
+  height: 0;
+  display: block;
+  padding-top: 66.6667%;
+  position: relative;
 
-    &.dobree-icon-player {
-        cursor: pointer;
-        &::after {
-            content: '';
-            background-image: url("../../assets/icons/icon-player.svg") ;
-            display: block;
-            width: 64px;
-            height: 65px;
-            position: absolute;
-            top:calc(50% - 17px);
-            left: calc(50% - 17px);
-        }
+  &.dobree-icon-player {
+    cursor: pointer;
+    &::after {
+      content: '';
+      background-image: url("../../assets/icons/icon-player.svg") ;
+      display: block;
+      width: 64px;
+      height: 65px;
+      position: absolute;
+      top:calc(50% - 17px);
+      left: calc(50% - 17px);
     }
+  }
 }
 
 .ds44-container-imgZoom {
-    overflow: hidden;
-    &:after {
-        transition: all $ds44-timing-standard ease-in-out;
-        content: "";
-        width: 100%;
-        height:100%;
-        position:absolute;
-        top:0;
-        left: 0;
-        border: 3px solid $ds44-dark ;
-        opacity:0;
-    }
-    &.focus,
-    &:hover {
-        img {
-            border: 1px dotted;
-            transform: scale(1.1);
-        }
-    }
-    &.focus {
-        &:after {
-            opacity: 1;
-        }
-    }
+  overflow: hidden;
+  &:after {
+    transition: all $ds44-timing-standard ease-in-out;
+    content: "";
+    width: 100%;
+    height:100%;
+    position:absolute;
+    top:0;
+    left: 0;
+    border: 3px solid $ds44-dark ;
+    opacity:0;
+  }
+  &.focus,
+  &:hover {
     img {
-        transition: all $ds44-timing-standard ease-in-out;
-
-        &:hover {
-            transform: scale(1.1);
-        }
+      border: 1px dotted;
+      transform: scale(1.1);
     }
+  }
+  &.focus {
+    &:after {
+      opacity: 1;
+    }
+  }
+  img {
+    transition: all $ds44-timing-standard ease-in-out;
+
+    &:hover {
+      transform: scale(1.1);
+    }
+  }
 }
 
 .ds44-imgLoupe {
-    background-position: 50% 50%;
-    position: relative;
-    overflow: hidden;
-    background-size: 200% 200%;
+  background-position: 50% 50%;
+  position: relative;
+  overflow: hidden;
+  background-size: 200% 200%;
 
-    img {
-        transition: opacity .5s;
-        display: block;
-        width: 100%;
-    }
+  img {
+    transition: opacity .5s;
+    display: block;
+    width: 100%;
+  }
 
-    .ds44-js-magnifier {
-        position: absolute;
-        border: 3px solid #000;
-        cursor: none;
-        width: 500px;
-        height: 200px;
-    }
+  .ds44-js-magnifier {
+    position: absolute;
+    border: 3px solid #000;
+    cursor: none;
+    width: 500px;
+    height: 200px;
+  }
 }
 
 .ds44-imgRatio {
-    width: 100%;
-    height: 100%;
-    position: absolute;
-    top: 0;
-    left: 0;
-    display: block;
-    object-fit: cover;
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  display: block;
+  object-fit: cover;
 }
 
 /* Spécifique image seule dans modale */
 
 .ds44-modal-container.show {
-    .ds44-imgRatio {
-        object-fit: contain;
-    }
+  .ds44-imgRatio {
+    object-fit: contain;
+  }
 }
 
 /* Ratio img tuile 1/1 */
 .ds44-container-imgRatio--carre {
-    padding-top: 100%;
+  padding-top: 100%;
 }
 
 /* Ratio img tuile 3/1 */
 .ds44-container-imgRatio--tuileMiseEnAvant {
-    padding-top: 33.3333%;
+  padding-top: 33.3333%;
 
-    p {
-        font-size: 0.875em;
-    }
+  p {
+    font-size: 0.875em;
+  }
 }
 
 /* legend block positionnement */
 .ds44-legendeContainer .ds44-blockAbsolute {
-    position: absolute;
-    z-index: 1;
-    width: 27.5vw;
+  position: absolute;
+  z-index: 1;
+  width: 27.5vw;
 
-    &.fullW{
-        width: 100%;
-    }
+  &.fullW{
+    width: 100%;
+  }
 }
 
 .ds44-legendeContainer .ds44-blockAbsolute--br {
-    bottom: 0;
-    right: 0;
+  bottom: 0;
+  right: 0;
 }
 
 .ds44-legendeContainer .ds44-blockAbsolute--bl {
-    bottom: 0;
-    left: 0;
+  bottom: 0;
+  left: 0;
 }
 
 .ds44-legendeContainer .ds44-blockAbsolute--tl {
-    top: 0;
-    left: 0;
+  top: 0;
+  left: 0;
 }
 
 .ds44-legendeContainer .ds44-blockAbsolute--tr {
-    top: 0;
-    right: 0;
+  top: 0;
+  right: 0;
 }
 
 /* Ratio img profil */
 .ds44-container-imgRatio--profil {
-    padding-top: 0;
-    width: 110px;
-    height: 110px;
+  padding-top: 0;
+  width: 110px;
+  height: 110px;
 }
 
 .ds44-container-imgRatio--profilXL {
-    padding-top: 0;
-    width: 160px;
-    height: 160px;
+  padding-top: 0;
+  width: 160px;
+  height: 160px;
 }
 
 .ds44-imgRatio--profil {
-    border-radius: 50%;
+  border-radius: 50%;
 }
 
 /* Ratio img A4 99:70 */
 .ds44-container-imgRatio--A4 {
-    padding-top: 141.43%;
+  padding-top: 141.43%;
 }
 
 /* Ratio img carré allongé en hauteur */
 .ds44-container-imgRatio--carreAllonge {
-    padding-top: 112% ;
+  padding-top: 112% ;
 }
 
 
 /* légende d'image */
 figure {
-    margin: 0;
+  margin: 0;
 }
 
 .ds44-legendeContainer {
-    position: relative;
+  position: relative;
 }
 
 .ds44-imgCaption {
-    position: absolute;
-    bottom: 0;
-    right: 0;
-    background: $ds44-color-dark-text;
-    color: $ds44-color-inverse;
-    padding: 0 .5rem;
-    z-index: 15;
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  background: $ds44-color-dark-text;
+  color: $ds44-color-inverse;
+  padding: 0 .5rem;
+  z-index: 15;
 }
 
 /* loader */
 .ds44-loader {
-    width: 100vw;
-    height: 100vh;
-    background: rgba(255, 255, 255, 0.9);
-    position: fixed;
-    top: 0;
-    left: 0;
-    z-index: 10000;
+  width: 100vw;
+  height: 100vh;
+  background: rgba(255, 255, 255, 0.9);
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 10000;
 
-    .ds44-loader-body {
-        position: absolute;
-        width: $ds44-loader-size;
-        height: $ds44-loader-size;
-        top: 50%;
-        left: 50%;
-        transform: translate(-50%, -50%);
+  .ds44-loader-body {
+    position: absolute;
+    width: $ds44-loader-size;
+    height: $ds44-loader-size;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
 
-        .ds44-loader-circular {
-            animation: rotate 2s linear infinite;
-            height: $ds44-loader-size;
-            position: relative;
-            width: $ds44-loader-size;
+    .ds44-loader-circular {
+      animation: rotate 2s linear infinite;
+      height: $ds44-loader-size;
+      position: relative;
+      width: $ds44-loader-size;
 
-            .ds44-loader-path {
-                stroke-dasharray: 1, 200;
-                stroke-dashoffset: 0;
-                stroke: $ds44-dark;
-                animation: dash 1.5s ease-in-out infinite;
-                stroke-linecap: round;
-            }
-        }
+      .ds44-loader-path {
+        stroke-dasharray: 1, 200;
+        stroke-dashoffset: 0;
+        stroke: $ds44-dark;
+        animation: dash 1.5s ease-in-out infinite;
+        stroke-linecap: round;
+      }
     }
+  }
 
 }
 
@@ -237,150 +237,150 @@ figure {
 
 /* Mosaiques */
 .ds44-mosaique {
-    margin: 0;
-    padding: 0;
+  margin: 0;
+  padding: 0;
 
-    & + .ds44-mosaique {
-        margin-top: $ds44-medium-vmargin;
-    }
+  & + .ds44-mosaique {
+    margin-top: $ds44-medium-vmargin;
+  }
 
-    li {
-        cursor: pointer;
-    }
+  li {
+    cursor: pointer;
+  }
 
-    li.row-2 + li {
-        margin-bottom: $ds44-medium-vmargin;
-    }
+  li.row-2 + li {
+    margin-bottom: $ds44-medium-vmargin;
+  }
 
-    .ds44-legendeContainer.ds44-container-imgRatio {
-        height: 100%;
-    }
+  .ds44-legendeContainer.ds44-container-imgRatio {
+    height: 100%;
+  }
 }
 
 .ds44-gutter {
-    grid-column-gap: $ds44-medium-vmargin;
+  grid-column-gap: $ds44-medium-vmargin;
 }
 
 
 @keyframes rotate {
-    100% {
-        transform: rotate(360deg);
-    }
+  100% {
+    transform: rotate(360deg);
+  }
 }
 
 @keyframes dash {
-    0% {
-        stroke-dasharray: 1, 200;
-        stroke-dashoffset: 0;
-    }
-    50% {
-        stroke-dasharray: 89, 200;
-        stroke-dashoffset: -35;
-    }
-    100% {
-        stroke-dasharray: 89, 200;
-        stroke-dashoffset: -124;
-    }
+  0% {
+    stroke-dasharray: 1, 200;
+    stroke-dashoffset: 0;
+  }
+  50% {
+    stroke-dasharray: 89, 200;
+    stroke-dashoffset: -35;
+  }
+  100% {
+    stroke-dasharray: 89, 200;
+    stroke-dashoffset: -124;
+  }
 }
 
 /* Emoji présents dans les fils twitter */
 .emoji-tweet {
-    height: 1.25em;
-    width: 1.25em;
-    padding: 0px 0.05em 0px 0.1em;
-    vertical-align: -0.2em;
- }
+  height: 1.25em;
+  width: 1.25em;
+  padding: 0px 0.05em 0px 0.1em;
+  vertical-align: -0.2em;
+}
 
- .iframe_inforoutes > * {
-   width: 100%;
- }
+.iframe_inforoutes > * {
+  width: 100%;
+}
 
- /* Video Full size Dobrée */
- .dobree-video-container  {
-     .h1-like   {
-         position: absolute;
-         top: calc(50% - 64px);
-         left: calc(50% - 195px);
-         color: $ds44-light ;
-         z-index: 500;
-         text-align: center;
-     }
-     .bandeau-info {
-         position: absolute;
-         bottom: 0;
-         left: 0;
-         z-index: 50;
-         width: 100%;
-         height: auto;
-         background: linear-gradient(0deg, rgba(0,0,0,1) 0%, rgba(0,0,0,0.70) 50%, rgba(0,0,0,0) 100%);
+/* Video Full size Dobrée */
+.dobree-video-container  {
+  .h1-like   {
+    position: absolute;
+    top: calc(50% - 64px);
+    left: calc(50% - 195px);
+    color: $ds44-light ;
+    z-index: 500;
+    text-align: center;
+  }
+  .bandeau-info {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    z-index: 50;
+    width: 100%;
+    height: auto;
+    background: linear-gradient(0deg, rgba(0,0,0,1) 0%, rgba(0,0,0,0.70) 50%, rgba(0,0,0,0) 100%);
 
-         .logoLA {
-             text-decoration: none;
+    .logoLA {
+      text-decoration: none;
 
-             picture {
-                 display: inline-block;
-             }
-             span {
-                 font-size: 20px;
-                  display: inline-block;
-                  margin-left: 20px;
-                  line-height: 23px;
-             }
-             &:hover, &:focus {
-                 color: $ds44-light ;
-                 text-decoration: underline;
-             }
-         }
-         .flecheAncre {
-             position: absolute;
-             top: 50%;
-             left: calc(50% - 10px);
-         }
-         .ds44-btnIco {
-             border-radius: 44px;
-             width: 30px;
-             height: 30px;
-             text-align: center;
-             .icon::before {
-              line-height: 0.7;
-            }
-         }
+      picture {
+        display: inline-block;
+      }
+      span {
+        font-size: 20px;
+        display: inline-block;
+        margin-left: 20px;
+        line-height: 23px;
+      }
+      &:hover, &:focus {
+        color: $ds44-light ;
+        text-decoration: underline;
+      }
+    }
+    .flecheAncre {
+      position: absolute;
+      top: 50%;
+      left: calc(50% - 10px);
+    }
+    .ds44-btnIco {
+      border-radius: 44px;
+      width: 30px;
+      height: 30px;
+      text-align: center;
+      .icon::before {
+        line-height: 0.7;
+      }
+    }
 
-     }
-     .dobree-video {
-         &::after {
-             content: '';
-             display: block;
-             width: 100%;
-             height: 100vh;
-             background: rgba(0,0,0,0.5);
-             position: absolute;
-             top:0;
-             left: 0;
-             z-index: 2;
-         }
-         video {
-             position: relative;
-              width: 100%;
-              height: 100vh;
-              z-index: 1;
-              display: flex;
-              object-fit: cover;
-              top: 0;
-              right: 0;
-              overflow: hidden;
-         }
-     }
- }
+  }
+  .dobree-video {
+    &::after {
+      content: '';
+      display: block;
+      width: 100%;
+      height: 100vh;
+      background: rgba(0,0,0,0.5);
+      position: absolute;
+      top:0;
+      left: 0;
+      z-index: 2;
+    }
+    video {
+      position: relative;
+      width: 100%;
+      height: 100vh;
+      z-index: 1;
+      display: flex;
+      object-fit: cover;
+      top: 0;
+      right: 0;
+      overflow: hidden;
+    }
+  }
+}
 
 .dobree-img_bandeau {
-     max-height: 380px;
-     width: 100%;
-     object-fit: cover;
- }
+  max-height: 380px;
+  width: 100%;
+  object-fit: cover;
+}
 
 .flag {
-    margin-right:10px;
+  margin-right:10px;
 }
 
 
@@ -390,96 +390,96 @@ figure {
 
 @media (max-width: $ds44-large - .625) {
 
-    .ds44-legendeContainer .ds44-blockAbsolute {
+  .ds44-legendeContainer .ds44-blockAbsolute {
+    width: 100%;
+    position: relative;
+  }
+  .ds44-legendeContainer.ds44-container-imgRatio,
+  .ds44-legendeContainer.ds44-container-imgRatio .ds44-imgRatio {
+    position: relative;
+    padding-top: 0%;
+  }
+  .ds44-legendeContainer.ds44-container-imgRatio {
+    height: auto;
+  }
+  .ds44-container-imgRatio--tuileMiseEnAvant .ds44-legendeContainer.ds44-container-imgRatio .ds44-imgRatio {
+    height: 400px;
+  }
+  /* Logo tous nos sites page accueil sites patrimoines */
+  .ds44-logoCard {
+    margin: 0px;
+  }
+
+  /* Video Full size Dobrée */
+  .dobree-video-container  {
+    .h1-like   {
+      top: calc(50% - 64px);
+      left: calc(50% - 86px);
+
+      img {
+        width: 192px;
+      }
+
+      // span {
+      //     font-family: $ds44-font-family-baseModern;
+      //     font-size: 14px;
+      //     font-weight: normal;
+      //     max-width: 192px;
+      //     display: block;
+      //     margin-top: 4rem;
+      //     line-height: 1.2;
+      // }
+    }
+    .bandeau-info {
+      padding: 3rem !important;
+
+      .ds44-flex-container.mobile {
+        justify-content: space-between;
         width: 100%;
-        position: relative;
-    }
-    .ds44-legendeContainer.ds44-container-imgRatio,
-    .ds44-legendeContainer.ds44-container-imgRatio .ds44-imgRatio {
-        position: relative;
-        padding-top: 0%;
-    }
-    .ds44-legendeContainer.ds44-container-imgRatio {
-        height: auto;
-    }
-    .ds44-container-imgRatio--tuileMiseEnAvant .ds44-legendeContainer.ds44-container-imgRatio .ds44-imgRatio {
-        height: 400px;
-    }
-    /* Logo tous nos sites page accueil sites patrimoines */
-    .ds44-logoCard {
-      margin: 0px;
-    }
-
-    /* Video Full size Dobrée */
-    .dobree-video-container  {
-        .h1-like   {
-            top: calc(50% - 64px);
-            left: calc(50% - 86px);
-
-            img {
-                width: 192px;
-            }
-
-            // span {
-            //     font-family: $ds44-font-family-baseModern;
-            //     font-size: 14px;
-            //     font-weight: normal;
-            //     max-width: 192px;
-            //     display: block;
-            //     margin-top: 4rem;
-            //     line-height: 1.2;
-            // }
+        flex-direction: row-reverse;
+        .ds44-btnIco {
+          margin: 0;
         }
-        .bandeau-info {
-            padding: 3rem !important;
-
-            .ds44-flex-container.mobile {
-                justify-content: space-between;
-                 width: 100%;
-                 flex-direction: row-reverse;
-                 .ds44-btnIco {
-                     margin: 0;
-                 }
-                 .horairesOuverture {
-                     margin-left:2rem;
-                 }
-            }
-            .dobree-listAccessibility > div {
-                background-color: transparent;
-                color: $ds44-light ;
-                font-size: 0.875em;
-                padding: 0 !important;
-
-                a {
-                    color: $ds44-light ;
-                    margin-right: 10px;
-                }
-            }
-            .logoLA {
-                .ds44-logo img {
-                    height: 35px;
-                }
-                span {
-                    font-size:  0.875em;
-                    line-height: 1.25em;
-                }
-            }
-            .flecheAncre {
-                position: absolute;
-                top: 0;
-                left: calc(50% - 10px);
-            }
-
+        .horairesOuverture {
+          margin-left:2rem;
         }
+      }
+      .dobree-listAccessibility > div {
+        background-color: transparent;
+        color: $ds44-light ;
+        font-size: 0.875em;
+        padding: 0 !important;
+
+        a {
+          color: $ds44-light ;
+          margin-right: 10px;
+        }
+      }
+      .logoLA {
+        .ds44-logo img {
+          height: 35px;
+        }
+        span {
+          font-size:  0.875em;
+          line-height: 1.25em;
+        }
+      }
+      .flecheAncre {
+        position: absolute;
+        top: 0;
+        left: calc(50% - 10px);
+      }
+
     }
+  }
 
 }
 
 @media (min-width: $ds44-large - .625) {
 
-    .grid-12-small-1 .ds44-container-imgRatio--tuileMiseEnAvant {
-        padding-top: 85%;
-    }
+  .grid-12-small-1 .ds44-container-imgRatio--tuileMiseEnAvant {
+    padding-top: 85%;
+  }
 
 
 }
@@ -495,14 +495,14 @@ figure {
 
 @media (min-width: $ds44-medium) {
 
-    .grid-12-small-1 .col-6 {
-        margin-right: $ds44-medium-vmargin/2;
-    }
-    .grid-12-small-1 .col-6:last-of-type {
-        margin-right: 0;
-        margin-left: $ds44-medium-vmargin/2;
-        margin-top: 0;
-    }
+  .grid-12-small-1 .col-6 {
+    margin-right: $ds44-medium-vmargin/2;
+  }
+  .grid-12-small-1 .col-6:last-of-type {
+    margin-right: 0;
+    margin-left: $ds44-medium-vmargin/2;
+    margin-top: 0;
+  }
 
 }
 
@@ -510,57 +510,53 @@ figure {
 @media (max-width: $ds44-small - .625) {
 
 
-    .ds44-mosaique {
-        .ds44-legendeContainer.ds44-container-imgRatio .ds44-imgRatio,
-        .ds44-legendeContainer.ds44-container-imgRatio {
-            height: 100%;
-        }
+  .ds44-mosaique {
+    .ds44-legendeContainer.ds44-container-imgRatio .ds44-imgRatio,
+    .ds44-legendeContainer.ds44-container-imgRatio {
+      height: 100%;
     }
+  }
 
-    .ds44-legendeContainer .ds44-blockAbsolute {
-        position: relative;
-        z-index: 1;
-        width: 100%;
-        bottom: 0;
-        left: 0;
-    }
+  .ds44-legendeContainer .ds44-blockAbsolute {
+    position: relative;
+    z-index: 1;
+    width: 100%;
+    bottom: 0;
+    left: 0;
+  }
 
-    .ds44-container-imgRatio--tuileMiseEnAvant .ds44-legendeContainer.ds44-container-imgRatio .ds44-imgRatio {
-        height: 300px;
-    }
+  .ds44-container-imgRatio--tuileMiseEnAvant .ds44-legendeContainer.ds44-container-imgRatio .ds44-imgRatio {
+    height: 300px;
+  }
 
-    .ds44-imgCaption { /* equivault à sr-only : masquage accessible */
-      position: absolute;
-      width: 1px;
-      height: 1px;
-      padding: 0;
-      margin: -1px;
-      overflow: hidden;
-      clip: rect(0, 0, 0, 0);
-      white-space: nowrap; /* added line */
-      border: 0;
-    }
+  .ds44-imgCaption {
+    font-size: 1rem;
+    position: absolute;
+    overflow: hidden;
+    border: 0;
+    max-width: 100%;
+  }
 
 }
 
 @media (min-width: $ds44-small) {
-    .ds44-container-imgRatio--tuileMiseEnAvant .ds44-card__title {
-        font-size: 2.4rem; // 24px
-    }
-    .col .ds44-container-imgRatio--tuileMiseEnAvant .ds44-card__title {
-        font-size: 1.7rem; // 17px
-    }
+  .ds44-container-imgRatio--tuileMiseEnAvant .ds44-card__title {
+    font-size: 2.4rem; // 24px
+  }
+  .col .ds44-container-imgRatio--tuileMiseEnAvant .ds44-card__title {
+    font-size: 1.7rem; // 17px
+  }
 }
 
 @media (max-width: $ds44-tiny) {
 
-    /* Mosaiques */
-    .ds44-gutter {
+  /* Mosaiques */
+  .ds44-gutter {
 
-        li {
-            margin-bottom: $ds44-medium-vmargin;
-        }
+    li {
+      margin-bottom: $ds44-medium-vmargin;
     }
+  }
 
 }
 
@@ -568,43 +564,43 @@ figure {
 /* Media Queries Print / Impression */
 @media print {
 
-    .ds44-container-imgRatio {
-        width: auto !important;
-        height: auto !important;
-        padding-top: 0 !important;
-    }
-    img,
-    iframe {
-        max-width: 300px !important;
-        width: auto !important;
-        max-height: 200px !important;
-        height: 100% !important;
-        overflow: hidden;
-        position: relative !important;
-    }
+  .ds44-container-imgRatio {
+    width: auto !important;
+    height: auto !important;
+    padding-top: 0 !important;
+  }
+  img,
+  iframe {
+    max-width: 300px !important;
+    width: auto !important;
+    max-height: 200px !important;
+    height: 100% !important;
+    overflow: hidden;
+    position: relative !important;
+  }
 
-    .ds44-pictoStore {
-        height: 32px !important;
-        width: auto !important;
-    }
+  .ds44-pictoStore {
+    height: 32px !important;
+    width: auto !important;
+  }
 
-    .ds44-logoContainer img {
-        height: 62px !important;
-        margin-bottom: 3rem !important;
-    }
+  .ds44-logoContainer img {
+    height: 62px !important;
+    margin-bottom: 3rem !important;
+  }
 
-    .ds44-card__section--horizontal--img,
-    .swiper-slide img,
-    .swiper-slide picture,
-    .swiper-slide figure,
-    .ds44-container-imgRatio,
-    .ds44-hiddenPrint,
-    .ds44-box__img,
-    .ds44-mediaIndicator {
-        display: none !important;
-        visibility: hidden;
-        opacity: 0;
-    }
+  .ds44-card__section--horizontal--img,
+  .swiper-slide img,
+  .swiper-slide picture,
+  .swiper-slide figure,
+  .ds44-container-imgRatio,
+  .ds44-hiddenPrint,
+  .ds44-box__img,
+  .ds44-mediaIndicator {
+    display: none !important;
+    visibility: hidden;
+    opacity: 0;
+  }
 
 
 }

@@ -76,7 +76,9 @@ class FormLayoutAbstract {
         }
 
         if (object.formElement.getAttribute('data-auto-load') === 'true') {
-            MiscEvent.dispatch('submit', { 'dryRun': true }, object.formElement);
+            setTimeout(()=>{
+                MiscEvent.dispatch('submit', { 'dryRun': true }, object.formElement);
+            }, 200);
         }
     }
 
@@ -123,6 +125,7 @@ class FormLayoutAbstract {
 
     submit (objectIndex, evt) {
         const object = this.objects[objectIndex];
+
         if (!object) {
             return false;
         }
@@ -160,7 +163,6 @@ class FormLayoutAbstract {
                     'formElement': object.formElement,
                     'dryRun': ((evt.detail || { 'dryRun': false }).dryRun || false)
                 });
-
                 return false;
             }
             object.hasBeenChecked = false;
@@ -184,7 +186,6 @@ class FormLayoutAbstract {
                     submitBtn.removeAttribute("disabled");
                     submitBtn.removeAttribute("aria-disabled");
                 }
-
                 return false;
             }
             else if(!this.submitter || !this.submitter.hasAttribute("data-send-native")) {
@@ -269,6 +270,7 @@ class FormLayoutAbstract {
                 }
 
                 if (object.formElement.getAttribute('data-is-ajax') === 'true') {
+
                     // Ajax submission
                     this.recaptchaSubmit(objectIndex, sortedData);
 

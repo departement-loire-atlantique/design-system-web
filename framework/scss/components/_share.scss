@@ -96,6 +96,8 @@
 
     .ds44-partage-sliderHome {
         width: 100%;
+        flex-direction: column;
+        padding: 1rem;
 
         > .ds44-list {
             flex-wrap: inherit;

@@ -46,6 +46,7 @@ a {
   color: $ds44-link-color;
   text-decoration: $ds44-link-decoration;
   transition: color .4s ease-out;
+  word-break: break-all;
 
   &:focus,
   &:hover,
