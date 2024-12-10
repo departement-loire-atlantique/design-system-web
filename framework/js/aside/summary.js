@@ -130,7 +130,7 @@ class AsideSummaryClass {
         if (activeAElement) {
             activeAElement.classList.add('active');
             activeAElement.setAttribute('aria-current', 'true');
-            activeAElement.setAttribute('tabindex', '-1');
+            //activeAElement.setAttribute('tabindex', '-1');
         }
     }
 
