@@ -76,7 +76,9 @@ class FormLayoutAbstract {
         }
 
         if (object.formElement.getAttribute('data-auto-load') === 'true') {
-            MiscEvent.dispatch('submit', { 'dryRun': true }, object.formElement);
+            setTimeout(()=>{
+                MiscEvent.dispatch('submit', { 'dryRun': true }, object.formElement);
+            }, 200);
         }
     }
 
@@ -115,7 +117,6 @@ class FormLayoutAbstract {
             }
         }
 
-        console.log(object.validationCategories, isFinished);
         // All the component categories answered the call, we can carry on with the form validation
         if (isFinished) {
             this.submit(objectIndex, evt);
@@ -125,7 +126,6 @@ class FormLayoutAbstract {
     submit (objectIndex, evt) {
         const object = this.objects[objectIndex];
 
-        console.log("Submit Start");
         if (!object) {
             return false;
         }
@@ -169,7 +169,6 @@ class FormLayoutAbstract {
 
             // Check if the components are all valid
             const formValidity = MiscForm.checkValidity(object.validationCategories);
-            console.log(formValidity);
             if (!formValidity.isValid) {
                 // At least one was not valid
                 evt.stopPropagation();
@@ -272,7 +271,6 @@ class FormLayoutAbstract {
 
                 if (object.formElement.getAttribute('data-is-ajax') === 'true') {
 
-                    console.log("Data is ajax");
                     // Ajax submission
                     this.recaptchaSubmit(objectIndex, sortedData);
 
