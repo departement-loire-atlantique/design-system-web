@@ -76,6 +76,7 @@ class FormLayoutAbstract {
         }
 
         if (object.formElement.getAttribute('data-auto-load') === 'true') {
+            console.log("Auto load");
             MiscEvent.dispatch('submit', { 'dryRun': true }, object.formElement);
         }
     }
@@ -123,6 +124,8 @@ class FormLayoutAbstract {
 
     submit (objectIndex, evt) {
         const object = this.objects[objectIndex];
+
+        console.log("Submit Start");
         if (!object) {
             return false;
         }
@@ -269,6 +272,8 @@ class FormLayoutAbstract {
                 }
 
                 if (object.formElement.getAttribute('data-is-ajax') === 'true') {
+
+                    console.log("Data is ajax");
                     // Ajax submission
                     this.recaptchaSubmit(objectIndex, sortedData);
 

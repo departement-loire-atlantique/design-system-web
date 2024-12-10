@@ -136,6 +136,7 @@ class FormLayoutSearchClass extends FormLayoutAbstract {
 
     ajaxSubmit (objectIndex, formData) {
         const object = this.objects[objectIndex];
+        console.log("Ajax submit");
         if (!object) {
             return;
         }
