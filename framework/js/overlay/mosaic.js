@@ -10,7 +10,12 @@ class OverlayMosaicClass extends OverlayAbstract {
             return;
         }
 
-        destinationFigureElement.innerHTML = sourceFigureElement.innerHTML;
+        let img = sourceFigureElement.querySelector('img').cloneNode(true);
+        let figcaption = sourceFigureElement.querySelector('figcaption').cloneNode(true);
+        let sourceFigureFinal = document.createElement('figure');
+        sourceFigureFinal.appendChild(img);
+        sourceFigureFinal.appendChild(figcaption);
+        destinationFigureElement.innerHTML = sourceFigureFinal.innerHTML;
     }
 }
 // Singleton
