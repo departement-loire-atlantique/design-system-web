@@ -446,6 +446,24 @@
     }
 }
 
+.swipper-carousel-wrap.mobile-button-bottom {
+  @media (max-width: $ds44-large - .0625) {
+    padding-bottom: 8rem;
+    .swiper-button-prev,
+    .swiper-container-rtl .swiper-button-prev,
+    .swiper-button-next,
+    .swiper-container-rtl .swiper-button-next{
+      top:auto;
+      bottom: -0.5rem;
+    }
+    .swiper-button-prev,
+    .swiper-container-rtl .swiper-button-prev {
+      left: auto;
+      right: 6rem;
+    }
+  }
+}
+
 
 /* Media Queries Print / Impression */
 @media print {

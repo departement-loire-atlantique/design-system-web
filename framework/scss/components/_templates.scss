@@ -362,6 +362,9 @@ body.modern {
             position: absolute;
             z-index: 1;
             padding: 0;
+            @media (max-width: $ds44-large - .0625) {
+                height: 60%;
+            }
         }
 
         .ds44-imgCaption {
