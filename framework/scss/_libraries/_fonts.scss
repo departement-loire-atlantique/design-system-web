@@ -50,6 +50,23 @@
   font-style: normal;
 }
 
+@font-face {
+  font-family: 'HansomFYW05';
+  src: url('../fonts/HansomFYW05-Regular.woff2') format('woff2'),
+       url('../fonts/HansomFYW05-Regular.woff') format('woff'),
+       url('../fonts/HansomFYW05-Regular.svg#HansomFYW05-Regular') format('svg');
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'HansomFYW05';
+  src: url('../fonts/HansomFYW05-Bold.woff2') format('woff2'),
+       url('../fonts/HansomFYW05-Bold.woff') format('woff'),
+       url('../fonts/HansomFYW05-Bold.svg#HansomFYW05-Bold') format('svg');
+  font-weight: bold;
+  font-style: normal;
+}
 
 // Fonts dedicated to Musée Dobrée
 

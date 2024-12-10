@@ -46,7 +46,7 @@ class MenuHeaderClass {
         document
           .querySelectorAll('#ds44-btn-applis, header .ds44-navList .ds44-menuBtn')
           .forEach((element) => {
-              if(MiscComponent.checkAndCreate(element, "navigation-sub-menu-shwo")) {
+              if(MiscComponent.checkAndCreate(element, "navigation-sub-menu-show")) {
                   MiscEvent.addListener('click', this.showSubNavigationMenu.bind(this), element);
               }
           });
@@ -83,7 +83,15 @@ class MenuHeaderClass {
         }
 
         // Get corresponding close button
-        const closeButton = mainMenu.querySelector('.ds44-btnOverlay--closeOverlay');
+        const closeButtons = mainMenu.querySelectorAll('.ds44-btnOverlay--closeOverlay');
+
+        let closeButton = null;
+        closeButtons.forEach((element)=>{
+            if (MiscAccessibility.isDisplayed(element) && closeButton === null) {
+                closeButton = element;
+            }
+        });
+
         if (!closeButton) {
             return;
         }

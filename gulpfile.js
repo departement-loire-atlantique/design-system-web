@@ -28,6 +28,8 @@ var jekyllDir = "docs/",
     scssFoliesSiffaitFile = 'framework/scss/SP-jardinsFoliesSiffait.scss',
     scssSaintSulpiceFile = 'framework/scss/SP-egliseVieuxBourg.scss',
     scssDobreeFile = 'framework/scss/SP-museeDobree.scss',
+    scssPortsFile = 'framework/scss/ports.scss',
+    scssMdaFile = 'framework/scss/mda.scss',
     scssFileSwiper = 'node_modules/swiper/css/swiper.min.css',
     scssFileAos = 'node_modules/aos/dist/aos.css',
     cssDest = 'dist/css',
@@ -210,6 +212,30 @@ gulp.task('build:css:dobree:dev', function () {
         .pipe(gulp.dest(cssDest));
 });
 
+gulp.task('build:css:ports:dev', function () {
+    return gulp.src([scssFileSwiper, scssFileAos, scssPortsFile])
+        .pipe(sass({
+            // CSS non minifiée plus lisible ('}' à la ligne)
+            outputStyle: 'expanded'
+        }))
+        .pipe(postcss(postCssPluginsDev))
+        .pipe(concat('ports.css'))
+        .pipe(browserSync.stream())
+        .pipe(gulp.dest(cssDest));
+});
+
+gulp.task('build:css:mda:dev', function () {
+    return gulp.src([scssFileSwiper, scssFileAos, scssMdaFile])
+        .pipe(sass({
+            // CSS non minifiée plus lisible ('}' à la ligne)
+            outputStyle: 'expanded'
+        }))
+        .pipe(postcss(postCssPluginsDev))
+        .pipe(concat('mda.css'))
+        .pipe(browserSync.stream())
+        .pipe(gulp.dest(cssDest));
+});
+
 gulp.task('build:css:cd44:prod', function () {
     return gulp.src([scssFileSwiper, scssFileAos, scssFile])
         .pipe(sass())
@@ -304,6 +330,8 @@ gulp.task('build:ds', gulp.parallel(
     'build:css:folies-siffait:dev',
     'build:css:saint-sulpice:dev',
     'build:css:dobree:dev',
+    'build:css:ports:dev',
+    'build:css:mda:dev',    
     'build:glyphicons',
     'build:demoicons',
     'build:js',

@@ -13,6 +13,7 @@ class TabAbstract {
               if(MiscComponent.checkAndCreate(containerElement, "tab")) {
                   MiscEvent.addListener('keyDown:shiftTab', this.goBackToTab.bind(this, this.selector));
                   this.create(containerElement);
+                  MiscEvent.addListener("resize", this.refresh.bind(this, containerElement), window);
               }
           });
     }
@@ -22,6 +23,9 @@ class TabAbstract {
     }
 
     create (containerElement) {
+
+
+        const isTabsCollapseMobile = containerElement.hasAttribute("data-tabs-collapse-mobile");
         containerElement
             .querySelectorAll('.js-tablist__link')
             .forEach((tabHandleElement) => {
@@ -40,6 +44,17 @@ class TabAbstract {
                 if (tabPanelExitElement) {
                     MiscEvent.addListener('click', this.back.bind(this), tabPanelExitElement);
                 }
+
+                if(isTabsCollapseMobile) {
+                    const tabPanelMobile = document.createElement("div");
+                    tabPanelMobile.classList.add("ds44-tabs__content_mobile");
+                    tabPanelMobile.setAttribute("id", tabHref.replace("#", "")+"_mobile");
+                    tabPanelMobile.innerHTML = tabPanel.innerHTML;
+                    tabPanelMobile.style.display = "none";
+                    tabPanelMobile.style.opacity = 0;
+                    tabHandleElement.parentNode.insertBefore(tabPanelMobile, tabHandleElement.nextSibling);
+                }
+
             });
 
         let selectedTabHandle = null;
@@ -55,9 +70,10 @@ class TabAbstract {
                 selectedTabHandle = this.getDefaultTabHandle(containerElement);
             }
         }
-        if (selectedTabHandle) {
-            selectedTabHandle.click();
+        if (selectedTabHandle && !MiscUtils.isMobileSize()) {
+            MiscEvent.dispatch("click", {init: true}, selectedTabHandle);
         }
+
     }
 
     getDefaultTabHandle (containerElement) {
@@ -69,10 +85,8 @@ class TabAbstract {
             evt.preventDefault();
         }
 
+        const scrollTarget = evt.detail.init === undefined;
         const tabHandleElement = evt.currentTarget;
-        if (tabHandleElement.classList.contains('ds44-tabs__linkSelected')) {
-            return;
-        }
 
         const tabHref = this.getTabFromHref(this.getHrefFromElement(tabHandleElement));
         const tabPanel = document.querySelector(tabHref);
@@ -80,44 +94,90 @@ class TabAbstract {
             return;
         }
 
-        this.changeTab(tabHandleElement, tabPanel);
+        const tabPanelMobile = document.querySelector(tabHref+"_mobile");
+        if(tabPanelMobile && MiscUtils.isMobileSize())
+        {
+            this.changeTab(tabHandleElement, tabPanelMobile, false);
+        }
+        else if(!tabHandleElement.classList.contains('ds44-tabs__linkSelected'))
+        {
+            this.changeTab(tabHandleElement, tabPanel, scrollTarget);
+        }
     }
 
-    changeTab (tabHandleElement, tabPanel) {
-        const tabsElement = tabPanel.parentElement;
-        tabsElement.style.height = tabsElement.offsetHeight + 'px';
-
-        // Hide others
-        tabHandleElement
-            .closest('.js-tabs')
-            .querySelectorAll('.js-tablist__link')
-            .forEach((tabHandleElement) => {
-                const tabHref = this.getTabFromHref(this.getHrefFromElement(tabHandleElement));
-                const tabPanel = document.querySelector(tabHref);
-                if (!tabPanel) {
-                    return;
+    refresh(containerElement) {
+        const isTabsCollapseMobile = containerElement.hasAttribute("data-tabs-collapse-mobile");
+        if(isTabsCollapseMobile) {
+            let tabHandleElement = containerElement.querySelector(".ds44-tabs__linkSelected");
+            if(tabHandleElement)
+            {
+                let tabPanelMobile = containerElement.querySelector(tabHandleElement.getAttribute("href")+"_mobile");
+                let tabPanel = containerElement.querySelector(tabHandleElement.getAttribute("href"));
+                if(MiscUtils.isMobileSize())
+                {
+                    if(!tabPanelMobile.classList.contains("current"))
+                    {
+                        this.hideTab(tabHandleElement, tabPanel);
+                        this.showTab(tabHandleElement, tabPanelMobile, false);
+                    }
                 }
-
-                tabHandleElement.classList.remove('ds44-tabs__linkSelected');
-                tabHandleElement.setAttribute('aria-disabled', 'true');
-                tabHandleElement.removeAttribute('aria-current');
-                this.hideTab(tabHandleElement, tabPanel);
-                MiscAccessibility.hide(tabPanel);
-            });
-
-        // Show selected tab
-        tabHandleElement.classList.add('ds44-tabs__linkSelected');
-        tabHandleElement.setAttribute('aria-current', 'true');
-        tabHandleElement.removeAttribute('aria-disabled');
-        this.showTab(tabHandleElement, tabPanel);
-        MiscAccessibility.show(tabPanel);
+                else
+                {
+                    if(!tabPanel.classList.contains("current"))
+                    {
+                        this.hideTab(tabHandleElement, tabPanelMobile);
+                        this.showTab(tabHandleElement, tabPanel, false);
+                    }
+                }
+            }
+        }
     }
 
-    showTab (tabHandleElement, tabPanel) {
-        window.setTimeout(this.showTabCallback.bind(this, tabHandleElement, tabPanel), 300);
+
+    changeTab (tabHandleElement, tabPanel, scrollTarget = true) {
+        if(!MiscUtils.isMobileSize())
+        {
+            // Hide others
+            tabHandleElement
+              .closest('.js-tabs')
+              .querySelectorAll('.js-tablist__link')
+              .forEach((tabHandleElementRemove) => {
+                  const tabHref = this.getTabFromHref(this.getHrefFromElement(tabHandleElementRemove));
+                  const tabPanel = document.querySelector(tabHref);
+                  if (!tabPanel) {
+                      return;
+                  }
+                  tabHandleElementRemove.classList.remove('ds44-tabs__linkSelected');
+                  tabHandleElementRemove.setAttribute('aria-disabled', 'true');
+                  tabHandleElementRemove.removeAttribute('aria-current');
+                  this.hideTab(tabHandleElementRemove, tabPanel);
+                  MiscAccessibility.hide(tabPanel);
+              });
+        }
+        if(MiscUtils.isMobileSize() && tabHandleElement.classList.contains("ds44-tabs__linkSelected"))
+        {
+            tabHandleElement.classList.remove('ds44-tabs__linkSelected');
+            tabHandleElement.removeAttribute('aria-current');
+            this.hideTab(tabHandleElement, tabPanel);
+            MiscAccessibility.hide(tabPanel);
+        }
+        else
+        {
+            const tabsElement = tabPanel.parentElement;
+            tabsElement.style.height = tabsElement.offsetHeight + 'px';
+            // Show selected tab
+            tabHandleElement.classList.add('ds44-tabs__linkSelected');
+            tabHandleElement.setAttribute('aria-current', 'true');
+            this.showTab(tabHandleElement, tabPanel, scrollTarget);
+            MiscAccessibility.show(tabPanel);
+        }
     }
 
-    showTabCallback (tabHandleElement, tabPanel) {
+    showTab (tabHandleElement, tabPanel, scrollTarget = true) {
+        window.setTimeout(this.showTabCallback.bind(this, tabHandleElement, tabPanel, scrollTarget), 300);
+    }
+
+    showTabCallback (tabHandleElement, tabPanel, scrollTarget = true) {
         tabPanel.style.opacity = 1;
         tabPanel.style.display = 'block';
 
@@ -128,10 +188,20 @@ class TabAbstract {
         if (h2Element) {
             MiscAccessibility.setFocus(h2Element);
         }
+        tabPanel.classList.add('current');
+        if(scrollTarget) {
+            let target = tabHandleElement.getAttribute("href");
+            if(tabPanel.classList.contains("ds44-tabs__content_mobile"))
+            {
+                target = target+"_mobile";
+            }
+            MiscEvent.dispatch("scroll.element", {target: target}, tabHandleElement);
+        }
     }
 
     hideTab (tabHandleElement, tabPanel) {
         tabPanel.style.opacity = 0;
+        tabPanel.classList.remove('current');
 
         window.setTimeout(this.hideTabCallback.bind(this, tabHandleElement, tabPanel), 150);
     }

@@ -77,6 +77,10 @@ class CollapserStandardClass {
         panel.style.maxHeight = (panel.style.maxHeight ? null : panel.scrollHeight + 60 + 'px');
         MiscAccessibility.show(panel);
         panel.style.visibility = 'visible';
+        setTimeout(()=>{
+            panel.style.maxHeight = "none";
+        }, 400);
+
 
         const icon = object.buttonElement.querySelector(".icon");
         if(icon)
@@ -100,9 +104,12 @@ class CollapserStandardClass {
         }
         object.buttonElement.firstElementChild.classList.remove('show');
         object.buttonElement.firstElementChild.setAttribute('aria-expanded', 'false');
-        panel.style.maxHeight = null;
-        MiscAccessibility.hide(panel);
-        panel.style.visibility = 'hidden';
+        panel.style.maxHeight = panel.offsetHeight+"px";
+        setTimeout(()=>{
+            panel.style.maxHeight = null;
+            MiscAccessibility.hide(panel);
+            panel.style.visibility = 'hidden';
+        }, 100);
 
         const icon = object.buttonElement.querySelector(".icon");
         if(icon)
