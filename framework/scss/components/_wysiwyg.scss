@@ -228,9 +228,15 @@ blockquote {
 }
 
 .ds44-wsg-encadreContour {
-    padding: $ds44-padding-xlarge;
-    border: 1px solid $ds44-contextual-color;
-    margin: 2rem 0 !important;
+  padding: $ds44-padding-xlarge;
+  border: 1px solid $ds44-contextual-color;
+  margin: 2rem 0 !important;
+  @media (max-width: $ds44-large - .0625) {
+    ul:not(.ds44-list):not(.ds44-collapser) {
+      padding-left: 0;
+    }
+  }
+
 }
 
 .ds44-wsg-encadreApplat {
