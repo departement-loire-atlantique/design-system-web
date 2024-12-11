@@ -344,7 +344,7 @@ gulp.task('build:ds', gulp.parallel(
     'build:css:saint-sulpice:dev',
     'build:css:dobree:dev',
     'build:css:ports:dev',
-    'build:css:mda:dev',    
+    'build:css:mda:dev',
     'build:css:parents:dev',
     'build:glyphicons',
     'build:demoicons',
