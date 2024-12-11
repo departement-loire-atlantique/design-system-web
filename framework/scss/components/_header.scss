@@ -7,10 +7,16 @@
     text-decoration: none;
     margin: 0;
 
+    &.ds44-logoContainer--medium{
+        img {
+            height: 85px;
+        }    
+    }
     img {
         height: 62px;
     }
 }
+
 
 .ds44-logo {
     display: block;

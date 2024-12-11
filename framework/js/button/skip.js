@@ -28,6 +28,7 @@ class ButtonSkipClass {
         }
 
         MiscAccessibility.setFocus(focusElement);
+        MiscUtils.scrollTo(focusElement, 400, 'linear');
     }
 }
 // Singleton

@@ -362,6 +362,9 @@ body.modern {
             position: absolute;
             z-index: 1;
             padding: 0;
+            @media (max-width: $ds44-large - .0625) {
+                height: 60%;
+            }
         }
 
         .ds44-imgCaption {
@@ -380,7 +383,7 @@ body.modern {
         bottom: 0;
         left: 0;
         z-index: 100;
-        font-weight: normal;
+        font-weight: $weight-regular;
     }
 
 }
@@ -415,6 +418,15 @@ body.modern {
     top: 0;
     left: 0;
     background: $ds44-background-dark;
+    transition: outline .4s ease-out;
+    img {
+        outline: 5px solid transparent;
+    }
+    a:focus-visible {
+        img {
+            outline: 5px solid $ds44-hover-LA;
+        }
+    }
 }
 
 .ds44-pageHeaderContainer--deuxCol .ds44-bgGray {

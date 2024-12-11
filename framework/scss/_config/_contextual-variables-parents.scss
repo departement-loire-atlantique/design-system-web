@@ -1,0 +1,16 @@
+/*
+* CD44 Design System - contextual variables for Abbaye de blanche Couronne
+*/
+
+// ----------------
+// ---- COLORS ----
+// ----------------
+
+$ds44-contextual-color : #fed037 !default;
+$ds44-contextual-hover : darken($ds44-contextual-color, 10%) !default;
+$ds44-font-family-base      : "Plus Jakarta Sans", sans-serif;  
+$ds44-font-family-headings  : "Dela Gothic One", sans-serif;
+
+.ds44-btnIcoText--maxi {
+    font-size: 1em!important;
+}

@@ -69,7 +69,7 @@ class PageElementClass {
         if(targetHref)
         {
             let elementToScroll = document.getElementById(targetHref.replace('#', ''));
-            if(elementToScroll.style.display !== "none")
+            if(elementToScroll && elementToScroll.style.display !== "none")
             {
                 const scrollTo = MiscUtils.getPositionY(elementToScroll);
                 if (MiscUtils.getScrollTop() > scrollTo) {
