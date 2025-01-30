@@ -134,8 +134,11 @@ $ds44-font-sizes: (
   font-size: 1.875em!important;
 }
 .ds44-card .ds44-cardTitle{
-  font-family : "Plus Jakarta Sans", sans-serif;
+  font-family: "Plus Jakarta Sans", sans-serif;
   font-weight: 700;
+}
+.ds44-collapser_button{
+  font-size: 1.5625em;
 }
 
 @media (min-width: 64em) {
