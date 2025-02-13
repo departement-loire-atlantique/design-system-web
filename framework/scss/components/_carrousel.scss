@@ -5,11 +5,30 @@
         padding-right: $ds44-container-large-margin;
     }
 
+    &.ds44-carroussel-swiper-mobile {
+      display:none;
+      @media screen and (max-width: $ds44-medium - .0625) {
+        display:block;
+      }
+    }
+
+    &.ds44-carroussel-swiper-desktop {
+      @media screen and (max-width: $ds44-medium - .0625) {
+        display:none;
+      }
+    }
+
+
     &.ds44-container-large,
     .ds44-homepage-container & {
         @media screen and (max-width: $ds44-medium - .0625) {
             margin: 0;
         }
+    }
+    &.swiper-button-prev-next-hidden {
+      .swiper-container {
+        margin: 0;
+      }
     }
 
     .swiper-container {
@@ -352,6 +371,7 @@
 
           img {
             height: 100%;
+            width: 100%;
             object-fit: cover;
           }
         }
