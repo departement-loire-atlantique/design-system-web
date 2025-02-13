@@ -57,7 +57,6 @@ class CarouselAbstract {
         // Get nb visible slides
         const nbSlides = slideElements.length;
         const nbVisibleSlides = parseInt(wrapElement.getAttribute('data-nb-visible-slides'), 10);
-        const nbLimitBullet = parseInt(wrapElement.getAttribute('data-limit-bullet'), 10);
         const mobileOnly = (wrapElement.getAttribute('data-mobile-only') === 'true');
 
         // Create object
@@ -67,13 +66,12 @@ class CarouselAbstract {
             'swiperElement': swiperElement,
             'nbSlides': nbSlides,
             'nbVisibleSlides': nbVisibleSlides,
-            'nbLimitBullet': nbLimitBullet,
             'mobileOnly': mobileOnly,
             'isInitialized': false
         };
 
         const paginationElement = wrapElement.querySelector('.swiper-pagination');
-        if (paginationElement && nbSlides > nbVisibleSlides) {
+        if (paginationElement) {
             object.paginationElement = paginationElement;
         }
         const previousElement = wrapElement.querySelector('.swiper-button-prev');
