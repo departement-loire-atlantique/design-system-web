@@ -82,7 +82,7 @@ class CollapserStandardClass {
         }, 400);
 
 
-        const icon = object.buttonElement.querySelector(".icon");
+        const icon = object.buttonElement.querySelector(".icon-collapser");
         if(icon)
         {
             icon.classList.remove("icon-down");
@@ -111,7 +111,7 @@ class CollapserStandardClass {
             panel.style.visibility = 'hidden';
         }, 100);
 
-        const icon = object.buttonElement.querySelector(".icon");
+        const icon = object.buttonElement.querySelector(".icon-collapser");
         if(icon)
         {
             icon.classList.remove("icon-up");

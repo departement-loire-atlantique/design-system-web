@@ -31,3 +31,6 @@ gem "jekyll-sitemap", "~> 1.2"
 
 # Added at 2018-10-25 10:19:23 +0200 by martin.svoboda:
 gem "jekyll-minifier", "~> 0.1.6"
+
+# Added at 2025-02-13 06:56:23 +0200 by matthieu.beurel:
+gem "ffi", "< 1.17.0"
