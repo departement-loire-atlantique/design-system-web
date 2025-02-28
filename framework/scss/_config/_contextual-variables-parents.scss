@@ -8,8 +8,8 @@
 
 $ds44-contextual-color : #fed037 !default;
 $ds44-contextual-hover : darken($ds44-contextual-color, 10%) !default;
-$ds44-font-family-base      : "Plus Jakarta Sans", sans-serif;  
-$ds44-font-family-headings  : "Dela Gothic One", sans-serif;
+$ds44-font-family-base      : "Poppins", sans-serif;  
+$ds44-font-family-headings  : "Poppins", sans-serif;
 
 /* On redéfini toute la map définie dans _variables.scss
    Juste pour modifier les tailles de h1-->h4
@@ -28,7 +28,7 @@ $ds44-font-sizes: (
   ),
   h2: (
     mobile  : 1.75em,   // 28px
-    tablet  : 1.875,      // 30px
+    tablet  : 1.875em,      // 30px
     desktop : 1.875em   // 30px
   ),
   h3: (
