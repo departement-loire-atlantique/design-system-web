@@ -359,7 +359,9 @@
         z-index: 1;
     }
     #subMenu-choixLangueMobile {
-      background-color: white;
+      a {
+        color: $ds44-light;
+      }
     }
     .ds44-collapser {
         margin: 0;
@@ -424,15 +426,16 @@
 }
 
 
-#subMenu-choixLangue, #subMenu-choixLangueMobile {
+#subMenu-choixLangue, #subMenu-choixLangue-mobile {
   top : 6rem;
   right: 6rem !important;
   width: 20rem;
   z-index: 1;
 }
-
 #subMenu-choixLangueMobile {
-  background-color: white;
+  a {
+    color: $ds44-light;
+  }
 }
 
 
