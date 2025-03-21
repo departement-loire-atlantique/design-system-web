@@ -68,6 +68,23 @@
   font-style: normal;
 }
 
+@font-face {
+  font-family: 'Poppins';
+  src: url('../fonts/Poppins-Regular.woff2') format('woff2'),
+       url('../fonts/Poppins-Regular.woff') format('woff');
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Poppins';
+  src: url('../fonts/Poppins-Regular.woff2') format('woff2'),
+       url('../fonts/Poppins-Regular.woff') format('woff');
+  font-weight: bold;
+  font-style: normal;
+}
+
+
 // Fonts dedicated to Musée Dobrée
 
 // ----------------

@@ -31,6 +31,9 @@ $ds44-font-family-headingsModern  : "Monotype Modern Std", Arial, Helvetica, san
 $ds44-font-family-monospace : consolas, courier, monospace;                   // font for code and samples
 $ds44-font-icon             : "ds44-icons";                                   // icons
 
+// Font weights
+$weight-semibold: 600 !default; // Graisse absente de la grillade
+
 // Font sizes (1rem value is "10px" equivalent)
 $ds44-font-size-base : 1.6em !default;
 
@@ -43,26 +46,26 @@ $ds44-font-sizes: (
   h1: (
     mobile  : 2.125em,  // 34px
     tablet  : 3em,      // 48px
-    desktop : 3.75em    // 60px
+    desktop : 3.125em    // 50px
   ),
   h2: (
-    mobile  : 1.75em,   // 28px
-    tablet  : 2em,      // 32px
-    desktop : 2.375em   // 38px
+    mobile  : 1.75em,  // 28px
+    tablet  : 7.75em,  // 28px
+    desktop : 1.75em   // 28px
   ),
   h3: (
-    mobile  : 1.3125em, // 21px
-    tablet  : 1.5em,    // 24px
-    desktop : 1.75em    // 28px
+    mobile  : 1.375em,  // 22px
+    tablet  : 1.375em,  // 22px
+    desktop : 1.375em   // 22px
   ),
   h4: (
-    mobile  : 1.1875em, // 19px
-    tablet  : 1.375em,  // 22px
-    desktop : 1.5em     // 24px
+    mobile  : 1.25em, // 20px
+    tablet  : 1.25em, // 20px
+    desktop : 1.25em  // 20px
   ),
   h5: (
     mobile  : 1.125em,  // 18px
-    desktop : 1.25em    // 20px
+    desktop : 1.125em    // 20px
   ),
   h6: (
     mobile  : 1.0625em, // 17px

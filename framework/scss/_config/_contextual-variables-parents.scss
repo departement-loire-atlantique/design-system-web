@@ -24,12 +24,12 @@ $ds44-font-sizes: (
   h1: (
     mobile  : 2.125em,  // 34px
     tablet  : 3em,      // 48px
-    desktop : 3.125em    // 50px
+    desktop : 3.75em    // 60px OK
   ),
   h2: (
     mobile  : 1.75em,   // 28px
     tablet  : 1.875em,      // 30px
-    desktop : 1.875em   // 30px
+    desktop : 2.125em   // 34px
   ),
   h3: (
     mobile  : 1.125em, // 18px
@@ -37,9 +37,9 @@ $ds44-font-sizes: (
     desktop : 1.25em    // 20px
   ),
   h4: (
-    mobile  : 1.125em, // 16px
-    tablet  : 1.125em,  // 16px
-    desktop : 1.125em     // 16px
+    mobile  : 1.125em, // 18px
+    tablet  : 1.125em,  // 18px
+    desktop : 1.25em     // 20px
   ),
   h5: (
     mobile  : 1.125em,  // 18px
@@ -125,18 +125,9 @@ $ds44-font-sizes: (
 
 .ds44-btnIcoText--maxi {
     font-size: 1em!important;
+    font-weight: $weight-semibold!important
 }
 
-.ds44-ssTitreH1_home {
-  font-size: 3rem!important;
-}
-.ds44-cardDateNumber {
-  font-size: 1.875em!important;
-}
-.ds44-card .ds44-cardTitle{
-  font-family: "Plus Jakarta Sans", sans-serif;
-  font-weight: 700;
-}
 .ds44-collapser_button{
   font-size: 1.5625em!important;
 }

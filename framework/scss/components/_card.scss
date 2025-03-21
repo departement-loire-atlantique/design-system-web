@@ -289,7 +289,7 @@ figure[role=figure]  + .ds44-card__section {
     margin-bottom: $headings-margin-bottom;
     padding: 0;
     font-size: 1.7rem; // 17px
-    font-weight: bold;
+    font-weight: $weight-semibold;
     line-height: 1.2;
     background: transparent;
     font-family: $ds44-font-family-base;
