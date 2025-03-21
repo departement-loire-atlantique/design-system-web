@@ -29,7 +29,7 @@ button, a.ds44-btnStd, a > .ds44-btnStd, .ds44-btnStd > a, .ds44-btnIcoText--max
     padding: 1rem $ds44-padding-box;
     border-radius: $ds44-border-radius;
     border: 1px solid $ds44-dark;
-    font-weight: bold;
+    font-weight: $weight-semibold;
     line-height: 1.3;
     min-height: $ds44-normalHeight;
 

@@ -383,7 +383,7 @@ body.modern {
         bottom: 0;
         left: 0;
         z-index: 100;
-        font-weight: $weight-regular;
+        font-weight: $weight-bold;
     }
 
 }
@@ -437,9 +437,11 @@ body.modern {
 .ds44-introduction, .ds44-introduction-like, .ds44-component-chapo {
     @include ds44-font-sizes(chapoStyle);
     background: transparent;
-    font-weight: $weight-bold;
     margin-top: $ds44-large-vmargin;
     margin-bottom: $ds44-large-vmargin;
+}
+.ds44-introduction, .ds44-introduction-like {
+    font-weight: $weight-bold;
 }
 .dobree-introduction {
     font-size: 1.25em;
