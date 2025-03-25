@@ -225,6 +225,18 @@ blockquote {
         bottom: .5rem;
     }
 
+    @media (max-width: $ds44-tiny - .0625) {
+      border-left: none;
+      padding: 0 3.5rem;
+      
+      &::before {
+        left: .5rem;
+      }
+
+      &::after {
+        right: .5rem;
+      }
+    }      
 }
 
 .ds44-wsg-encadreContour {
