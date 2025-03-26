@@ -17,6 +17,7 @@ var fs = require('fs');
 
 var jekyllDir = "docs/",
     scssFile = 'framework/scss/cd44.scss',
+    scssFontImportFile = 'framework/scss/_libraries/fontsImport.scss',
     scssAidantsFile = 'framework/scss/aidants.scss',
     scssHandicapFile = 'framework/scss/handicap.scss',
     scssClissonFile = 'framework/scss/SP-chateauClisson.scss',
@@ -70,7 +71,7 @@ var postCssPluginsProd = [
 ];
 
 gulp.task('build:css:cd44:dev', function () {
-    return gulp.src([scssFileSwiper, scssFileAos, scssFile])
+    return gulp.src([scssFontImportFile, scssFileSwiper, scssFileAos, scssFile])
         .pipe(sass({
             // CSS non minifiée plus lisible ('}' à la ligne)
             outputStyle: 'expanded'
@@ -238,7 +239,7 @@ gulp.task('build:css:mda:dev', function () {
 });
 
 gulp.task('build:css:parents:dev', function () {
-    return gulp.src([scssFileSwiper, scssFileAos, scssParentsFile])
+    return gulp.src([scssFontImportFile, scssFileSwiper, scssFileAos, scssParentsFile])
         .pipe(sass({
             // CSS non minifiée plus lisible ('}' à la ligne)
             outputStyle: 'expanded'
