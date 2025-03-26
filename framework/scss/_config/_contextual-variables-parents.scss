@@ -22,7 +22,17 @@ $ds44-font-family-headings  : "Poppins", sans-serif;
 
 @media (min-width: 64em) {
     
-    .ds44-menuBtn {
-        font-size: 1.875em!important;
-    }
+  .ds44-menuBtn {
+    font-size: 1.875em!important;
   }
+}
+
+/* Hotfix temporaire pour avoir les images sur les tuiles
+Le temps de trouver un fix global à tous les sites.
+*/
+.ds44-card__section--horizontal--img {
+  min-width: 38%!important;
+  @media (min-width: $ds44-small) and (max-width: ($ds44-large - .0625)) {
+      min-width: 20%!important;
+  }
+}
