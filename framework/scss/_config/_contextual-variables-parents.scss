@@ -17,7 +17,7 @@ $ds44-font-family-headings  : "Poppins", sans-serif;
 }
 
 .ds44-collapser_button{
-  font-size: 1.5625em!important;
+  font-size: 1.5em!important;
 }
 
 @media (min-width: 64em) {
@@ -27,6 +27,15 @@ $ds44-font-family-headings  : "Poppins", sans-serif;
   }
 }
 
+@media (max-width: $ds44-small) {
+  .ds44-collapser_button{
+    font-size: 1.25em!important;
+  }
+}
+
+.ds44-card .ds44-cardTitle {
+  font-size: 2.2rem!important;
+}
 /* Hotfix temporaire pour avoir les images sur les tuiles
 Le temps de trouver un fix global à tous les sites.
 */
