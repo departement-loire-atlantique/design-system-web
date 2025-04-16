@@ -147,6 +147,13 @@
 }
 
 /* Ratio img profil */
+
+.ds44-card__section--horizontal--img {
+  .ds44-container-imgRatio--profil {
+    width: calc(100% - 2rem);
+  }
+}
+
 .ds44-container-imgRatio--profil {
   padding-top: 0;
   max-width: 11rem;
@@ -154,9 +161,6 @@
   width: 100%;
   height: auto;
   aspect-ratio: 1/1;
-  &.ds44-m-std {
-    width: calc(100% - 3rem);
-  }
   img {
     width: 100%;
   }
