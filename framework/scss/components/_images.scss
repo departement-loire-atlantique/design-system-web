@@ -150,7 +150,7 @@
 
 .ds44-card__section--horizontal--img {
   .ds44-container-imgRatio--profil {
-    width: 80%;
+    width: calc(100% - 2rem);
   }
 }
 
