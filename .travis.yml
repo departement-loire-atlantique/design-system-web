@@ -51,11 +51,13 @@ before_deploy:
 
 deploy:
   - provider: script
+    edge: false
     skip_cleanup: true
     script: rsync -r --delete-after --quiet --exclude .ssh $TRAVIS_BUILD_DIR/dist/ loireatl-ds@ssh.cluster011.hosting.ovh.net:/home/loireatl-ds/
     on:
       branch: master
   - provider: script
+    edge: false
     skip_cleanup: true
     script: rsync -r --delete-after --quiet --exclude .ssh $TRAVIS_BUILD_DIR/dist/ loireatl-devds@ssh.cluster011.hosting.ovh.net:/home/loireatl-devds/
     on:
