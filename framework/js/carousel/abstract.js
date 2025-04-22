@@ -71,7 +71,6 @@ class CarouselAbstract {
         };
 
         let buttonPrevNextShow = true;
-        console.log(nbVisibleSlides, nbSlides)
         if(nbSlides <= nbVisibleSlides)
         {
             wrapElement.classList.add('swiper-button-prev-next-hidden');
