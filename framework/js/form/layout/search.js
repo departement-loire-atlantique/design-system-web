@@ -171,9 +171,11 @@ class FormLayoutSearchClass extends FormLayoutAbstract {
         }
 
         let autoFocusLoaderDisabled = false;
+        let autoFocusResult = false;
         if(object.startNotFocus === true)
         {
             autoFocusLoaderDisabled = true;
+            autoFocusResult = true;
             object.startNotFocus = false;
         }
 
@@ -181,7 +183,9 @@ class FormLayoutSearchClass extends FormLayoutAbstract {
         MiscEvent.dispatch('loader:requestShow', {autoFocusDisabled: autoFocusLoaderDisabled});
 
         // Manage parameters
-        const options = {};
+        const options = {
+            autoFocusDisabled: autoFocusResult
+        };
         if (evt.detail.next) {
             // Go to next set of results
             object.parameters.page = parseInt(object.searchData.pageIndex, 10) + 1;
