@@ -31,6 +31,7 @@ class FormFieldSelectStandardClass extends FormFieldSelectAbstract {
 
             if (this.objects[objectIndex]["selectedOption"]) {
                 this.objects[objectIndex]["selectedOption"].classList.add('selected_option');
+                this.objects[objectIndex]["selectedOption"].setAttribute('aria-selected', 'true');
                 this.record(objectIndex);
             }
 

@@ -152,12 +152,14 @@ class FormFieldSelectRadioClass extends FormFieldSelectAbstract {
                 ) {
                     // Is checked
                     listElement.classList.add('selected_option');
+                    listElement.setAttribute('aria-selected', 'true');
                     if (listChildElement) {
                         listChildElement.classList.remove('hidden');
                     }
                 } else {
                     // Is not checked
                     listElement.classList.remove('selected_option');
+                    listElement.removeAttribute('aria-selected');
                     if (listChildElement) {
                         listChildElement.classList.add('hidden');
                     }
