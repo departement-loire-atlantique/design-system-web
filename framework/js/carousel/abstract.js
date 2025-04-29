@@ -7,7 +7,7 @@ class CarouselAbstract {
         this.nextSlideMessage = MiscTranslate._('CAROUSEL_WATCH_NEXT_CONTENT');
         this.queryTitreTuile = '.ds44-card__title a[href]:not([disabled])';
         this.objects = [];
-        this.breakpoint = window.matchMedia('(max-width: 63.375em)');
+        this.breakpoint = window.matchMedia('(max-width: 768px)');
         MiscEvent.addListener('resize', this.resize.bind(this), window);
         window.setTimeout(
           () => {
@@ -70,24 +70,16 @@ class CarouselAbstract {
             'isInitialized': false
         };
 
-        let buttonPrevNextShow = true;
-        if(nbSlides <= nbVisibleSlides)
-        {
-            wrapElement.classList.add('swiper-button-prev-next-hidden');
-            buttonPrevNextShow = false;
-        }
-        object.buttonPrevNextShow = buttonPrevNextShow;
-
         const paginationElement = wrapElement.querySelector('.swiper-pagination');
         if (paginationElement) {
             object.paginationElement = paginationElement;
         }
         const previousElement = wrapElement.querySelector('.swiper-button-prev');
-        if (previousElement && buttonPrevNextShow) {
+        if (previousElement) {
             object.previousElement = previousElement;
         }
         const nextElement = wrapElement.querySelector('.swiper-button-next');
-        if (nextElement && buttonPrevNextShow) {
+        if (nextElement) {
             object.nextElement = nextElement;
         }
         const galleryElement = MiscDom.getNextSibling(swiperElement, '.swiper-thumbs');
@@ -101,11 +93,28 @@ class CarouselAbstract {
 
     createSwipper (objectIndex) {
         const object = this.objects[objectIndex];
-        if (!object || object.swiper) {
+
+        if (!object) {
             return;
         }
 
-        if(object.buttonPrevNextShow) {
+        let buttonPrevNextShow = true;
+        if(object.nbSlides <= object.nbVisibleSlides && window.matchMedia("(min-width: 768px)").matches === true)
+        {
+            object.wrapElement.classList.add('swiper-button-prev-next-hidden');
+            this.destroySwipper(objectIndex);
+            buttonPrevNextShow = false;
+        }
+        else
+        {
+            object.wrapElement.classList.remove('swiper-button-prev-next-hidden');
+        }
+
+        if(object.swiper) {
+            return;
+        }
+
+        if(buttonPrevNextShow) {
             // Component initialization in full JS mode
             object.wrapperElement.classList.remove.apply(
               object.wrapperElement.classList,
