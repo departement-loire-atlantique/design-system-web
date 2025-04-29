@@ -71,7 +71,6 @@ class CarouselAbstract {
         };
 
         let buttonPrevNextShow = true;
-        console.log(nbVisibleSlides, nbSlides)
         if(nbSlides <= nbVisibleSlides)
         {
             wrapElement.classList.add('swiper-button-prev-next-hidden');
@@ -106,13 +105,13 @@ class CarouselAbstract {
             return;
         }
 
-        // Component initialization in full JS mode
-        object.wrapperElement.classList.remove.apply(
-            object.wrapperElement.classList,
-            Array.from(object.wrapperElement.classList).filter(className => className.startsWith('grid-'))
-        );
-
         if(object.buttonPrevNextShow) {
+            // Component initialization in full JS mode
+            object.wrapperElement.classList.remove.apply(
+              object.wrapperElement.classList,
+              Array.from(object.wrapperElement.classList).filter(className => className.startsWith('grid-'))
+            );
+
             object.swiper = new Swiper(
               object.swiperElement,
               this.getSwiperParameters(object)
@@ -188,6 +187,15 @@ class CarouselAbstract {
                     }, thumb);
                 });
             }
+        } else {
+            // Component initialization in full JS mode
+            object.wrapperElement.classList.remove.apply(
+              object.wrapperElement.classList,
+              Array.from(object.wrapperElement.classList).filter(className => className.startsWith('grid-'))
+            );
+            object.wrapperElement.classList.add("grid-"+object.nbSlides+"-small-1");
+
+
         }
     }
 
