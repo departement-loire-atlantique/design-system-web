@@ -22,8 +22,7 @@ class AsideSummaryClass {
         }
         Debug.log("AsideSummary -> Initialise");
 
-        if(MiscComponent.checkAndCreate(this.containerElement, "aside-summary") &&
-          MiscComponent.checkAndCreate(this.summaryElement, "aside-summary")) {
+        if(MiscComponent.checkAndCreate(this.containerElement, "aside-summary")) {
             this.menu = document.querySelector('#summaryMenu');
             MiscAccessibility.hide(this.menu);
 
@@ -106,13 +105,22 @@ class AsideSummaryClass {
     calculateChapter () {
         // Highlight sections
         let activeAElement = null;
+        let activeAElementMenu = null;
         const cursorPosition = this.getCursorPosition();
         this.summaryElement
-            .querySelectorAll('.ds44-list--puces a')
+            .querySelectorAll('.ds44-list--puces li > a')
             .forEach((aElement) => {
                 aElement.classList.remove('active');
                 aElement.removeAttribute('aria-current');
                 aElement.removeAttribute('tabindex');
+
+                if(aElement.closest("li")) {
+                    aElement.closest("li").removeAttribute('aria-current', 'true');
+                }
+                else {
+                    aElement.removeAttribute('aria-current', 'true');
+                }
+
                 if (!activeAElement) {
                     activeAElement = aElement
                 }
@@ -127,10 +135,55 @@ class AsideSummaryClass {
                     }
                 }
             });
+        if(this.menu)
+        {
+            this.menu
+              .querySelectorAll('.ds44-list--puces li > a')
+              .forEach((aElement) => {
+                  aElement.classList.remove('active');
+                  aElement.removeAttribute('aria-current');
+                  aElement.removeAttribute('tabindex');
+                  if(aElement.closest("li")) {
+                      aElement.closest("li").removeAttribute('aria-current', 'true');
+                  }
+                  else {
+                      aElement.removeAttribute('aria-current', 'true');
+                  }
+
+                  if (!activeAElementMenu) {
+                      activeAElementMenu = aElement
+                  }
+
+                  const sectionId = aElement.getAttribute('href').replace(/^#/, '');
+                  const sectionElement = document.querySelector('#' + sectionId);
+                  if (sectionElement) {
+                      const sectionElementStyle = sectionElement.currentStyle || window.getComputedStyle(sectionElement);
+                      const startTop = MiscUtils.getPositionY(sectionElement) + parseInt(sectionElementStyle.marginTop, 10);
+                      if (cursorPosition >= startTop) {
+                          activeAElementMenu = aElement
+                      }
+                  }
+              });
+        }
+
         if (activeAElement) {
             activeAElement.classList.add('active');
-            activeAElement.setAttribute('aria-current', 'true');
-            //activeAElement.setAttribute('tabindex', '-1');
+            if(activeAElement.closest("li")) {
+                activeAElement.closest("li").setAttribute('aria-current', 'true');
+            }
+            else {
+                activeAElement.setAttribute('aria-current', 'true');
+            }
+        }
+
+        if (activeAElementMenu) {
+            activeAElementMenu.classList.add('active');
+            if(activeAElementMenu.closest("li")) {
+                activeAElementMenu.closest("li").setAttribute('aria-current', 'true');
+            }
+            else {
+                activeAElementMenu.setAttribute('aria-current', 'true');
+            }
         }
     }
 
@@ -183,6 +236,23 @@ class AsideSummaryClass {
                 }
                 aElement.removeAttribute('tabindex');
             });
+
+        if(this.menu)
+        {
+            // Deselect all bullets
+            this.menu
+              .querySelectorAll('.ds44-list--puces li > .active')
+              .forEach((aElement) => {
+                  aElement.classList.remove('active');
+                  if(aElement.closest("li")) {
+                      aElement.closest("li").removeAttribute('aria-current', 'true');
+                  }
+                  else {
+                      aElement.removeAttribute('aria-current', 'true');
+                  }
+                  aElement.removeAttribute('tabindex');
+              });
+        }
 
         // Select active bullets
         const aElement = evt.currentTarget;
