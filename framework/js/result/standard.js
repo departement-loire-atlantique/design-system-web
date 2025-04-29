@@ -307,27 +307,35 @@ class ResultStandardClass {
 
         let siteName = document.body.dataset.sitename !== undefined ? document.body.dataset.sitename : "Loire-atlantique.fr"
         // Sinon, changer le nom de page pour afficher le nb de résultats
-        if (!evt.detail.nbResults) {
-            let titleElementHtml = MiscTranslate._('NO_RESULTS_FOR_SEARCH:') + ' ' + evt.detail.searchText + '.<br>' + MiscTranslate._('NO_RESULTS_NEW_SEARCH') + '.';
-            titleElement.innerHTML = titleElementHtml;
-            if (!elemCancellingRename) {
-                document.title = titleElementHtml + ' - '+siteName;
-                titleElement.setAttribute('tabindex', '-1');
-                focusElement = titleElement;
-            }
-        } else {
-            let titleElementHtml = evt.detail.nbResults;
-            if (evt.detail.nbResults > 1) {
-                titleElementHtml += ' ' + MiscTranslate._('RESULTS');
+
+        if(containerElement.dataset.titleDisabled === undefined || containerElement.dataset.titleDisabled === false) {
+            if (!evt.detail.nbResults) {
+                let titleElementHtml = MiscTranslate._('NO_RESULTS_FOR_SEARCH:') + ' ' + evt.detail.searchText + '.<br>' + MiscTranslate._('NO_RESULTS_NEW_SEARCH') + '.';
+                if(containerElement.dataset.titleSingular) {
+                    titleElementHtml = MiscTranslate._('NO_RESULT_FOR_SEARCH:') + ' ' + containerElement.dataset.titleSingular + ' ' + MiscTranslate._('NB_RESULTS_FOR_SEARCH:') + ' ' + evt.detail.searchText + '.<br>' + MiscTranslate._('NO_RESULTS_NEW_SEARCH') + '.';
+                }
+
+                titleElement.innerHTML = titleElementHtml;
+                if (!elemCancellingRename) {
+                    document.title = titleElementHtml + ' - ' + siteName;
+                    titleElement.setAttribute('tabindex', '-1');
+                    focusElement = titleElement;
+                }
             } else {
-                titleElementHtml += ' ' + MiscTranslate._('RESULT');
-            }
-            let accessibleSentence = MiscTranslate._('NB_RESULTS_FOR_SEARCH:') + ' ' + (evt.detail.searchText === '' ? MiscTranslate._('EMPTY_SEARCH_CRITERIA') : evt.detail.searchText);
-            titleElement.innerHTML = titleElementHtml + ' <p class="visually-hidden" tabindex="-1">&nbsp;' + accessibleSentence + '</p>';
-            if (!elemCancellingRename) {
-                document.title = titleElementHtml + ' ' + accessibleSentence + ' - '+siteName;
-                titleElement.removeAttribute('tabindex');
-                focusElement = titleElement.querySelector('.visually-hidden');
+                let titleElementHtml = evt.detail.nbResults;
+
+                if (evt.detail.nbResults > 1) {
+                    titleElementHtml += ' ' + (containerElement.dataset.titlePlural !== undefined ? containerElement.dataset.titlePlural : MiscTranslate._('RESULTS'));
+                } else {
+                    titleElementHtml += ' ' + (containerElement.dataset.titleSingular !== undefined ? containerElement.dataset.titlePlural : MiscTranslate._('RESULT'));
+                }
+                let accessibleSentence = MiscTranslate._('NB_RESULTS_FOR_SEARCH:') + ' ' + (evt.detail.searchText === '' ? MiscTranslate._('EMPTY_SEARCH_CRITERIA') : evt.detail.searchText);
+                titleElement.innerHTML = titleElementHtml + ' <p class="visually-hidden" tabindex="-1">&nbsp;' + accessibleSentence + '</p>';
+                if (!elemCancellingRename) {
+                    document.title = titleElementHtml + ' ' + accessibleSentence + ' - ' + siteName;
+                    titleElement.removeAttribute('tabindex');
+                    focusElement = titleElement.querySelector('.visually-hidden');
+                }
             }
         }
 
