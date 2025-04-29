@@ -194,8 +194,6 @@ class CarouselAbstract {
               Array.from(object.wrapperElement.classList).filter(className => className.startsWith('grid-'))
             );
             object.wrapperElement.classList.add("grid-"+object.nbSlides+"-small-1");
-
-
         }
     }
 
@@ -450,6 +448,13 @@ class CarouselAbstract {
                 this.createSwipper(objectIndex);
 
                 continue;
+            }
+            else {
+                object.wrapperElement.classList.remove.apply(
+                  object.wrapperElement.classList,
+                  Array.from(object.wrapperElement.classList).filter(className => className.startsWith('grid-'))
+                );
+                object.wrapperElement.classList.add("grid-"+object.nbVisibleSlides+"-small-1");
             }
 
             if (this.breakpoint.matches === true) {
