@@ -311,7 +311,7 @@ class ResultStandardClass {
         if(containerElement.dataset.titleDisabled === undefined || containerElement.dataset.titleDisabled === false) {
             if (!evt.detail.nbResults) {
                 let titleElementHtml = MiscTranslate._('NO_RESULTS_FOR_SEARCH:') + ' ' + evt.detail.searchText + '.<br>' + MiscTranslate._('NO_RESULTS_NEW_SEARCH') + '.';
-                if(containerElement.dataset.titleSingular) {
+                if(containerElement.dataset.titleSingular !== undefined && containerElement.dataset.titleSingular) {
                     titleElementHtml = MiscTranslate._('NO_RESULT_FOR_SEARCH:') + ' ' + containerElement.dataset.titleSingular + ' ' + MiscTranslate._('NB_RESULTS_FOR_SEARCH:') + ' ' + evt.detail.searchText + '.<br>' + MiscTranslate._('NO_RESULTS_NEW_SEARCH') + '.';
                 }
 
@@ -325,9 +325,9 @@ class ResultStandardClass {
                 let titleElementHtml = evt.detail.nbResults;
 
                 if (evt.detail.nbResults > 1) {
-                    titleElementHtml += ' ' + (containerElement.dataset.titlePlural !== undefined ? containerElement.dataset.titlePlural : MiscTranslate._('RESULTS'));
+                    titleElementHtml += ' ' + (containerElement.dataset.titlePlural !== undefined && containerElement.dataset.titlePlural ? containerElement.dataset.titlePlural : MiscTranslate._('RESULTS'));
                 } else {
-                    titleElementHtml += ' ' + (containerElement.dataset.titleSingular !== undefined ? containerElement.dataset.titlePlural : MiscTranslate._('RESULT'));
+                    titleElementHtml += ' ' + (containerElement.dataset.titleSingular !== undefined && containerElement.dataset.titleSingular ? containerElement.dataset.titlePlural : MiscTranslate._('RESULT'));
                 }
                 let accessibleSentence = MiscTranslate._('NB_RESULTS_FOR_SEARCH:') + ' ' + (evt.detail.searchText === '' ? MiscTranslate._('EMPTY_SEARCH_CRITERIA') : evt.detail.searchText);
                 titleElement.innerHTML = titleElementHtml + ' <p class="visually-hidden" tabindex="-1">&nbsp;' + accessibleSentence + '</p>';
