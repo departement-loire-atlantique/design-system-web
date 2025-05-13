@@ -396,6 +396,10 @@ class FormFieldInputAutoCompleteClass extends FormFieldInputAbstract {
                 object.autoCompleterListElement.appendChild(elementAutoCompleterListItem);
 
                 MiscEvent.addListener('focus', this.fakeSelect.bind(this, objectIndex), elementAutoCompleterListItem);
+                MiscEvent.addListener('blur', (evt)=>{
+                    const currentListItem = evt.currentTarget;
+                    currentListItem.removeAttribute("aria-selected");
+                }, elementAutoCompleterListItem);
                 MiscEvent.addListener('mousedown', this.select.bind(this, objectIndex), elementAutoCompleterListItem);
             }
 
@@ -609,6 +613,7 @@ class FormFieldInputAutoCompleteClass extends FormFieldInputAbstract {
 
         const currentListItem = evt.currentTarget;
         object.textElement.value = currentListItem.innerText;
+        currentListItem.setAttribute("aria-selected", true);
         MiscAccessibility.setFocus(currentListItem);
     }
 
