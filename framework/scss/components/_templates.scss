@@ -422,9 +422,13 @@ body.modern {
     img {
         outline: 5px solid transparent;
     }
+    a {
+        display:block;
+        height: 100%;
+    }
     a:focus-visible {
         img {
-            outline: 5px solid $ds44-hover-LA;
+            //outline: 5px solid $ds44-color-soft-text;
         }
     }
 }
