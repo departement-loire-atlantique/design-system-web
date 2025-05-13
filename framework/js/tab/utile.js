@@ -16,6 +16,8 @@ class TabUtileClass extends TabAbstract {
             .forEach((tabHandleElement) => {
                 tabHandleElement.classList.remove('ds44-bgDark');
                 tabHandleElement.setAttribute('aria-pressed', 'false');
+                tabHandleElement.removeAttribute('aria-disabled');
+                tabHandleElement.removeAttribute('aria-current');
             });
 
         tabHandleElement.classList.add('ds44-bgDark');
