@@ -6,7 +6,7 @@
 
 <div id="{{ id }}" data-name="{{ name }}" class="ds44-form__checkbox_container {{ containerClass }}" {{ containerAttributes }}>
     {% if include.required == 'true' %}
-    {% if include.label is not null %}
+    {% if include.label %}
         <p id="mandatory-message-{{ id }}" class="">{{ include.label }}{{ requiredStar }}</p>
     {% endif %}
     {% capture ariaDescribedBy %}mandatory-message-{{ id }}{% if ariaDescribedBy and ariaDescribedBy != '' %} {{ ariaDescribedBy }}{% endif %}{% endcapture %}
