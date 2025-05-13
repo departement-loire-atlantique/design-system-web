@@ -144,11 +144,13 @@ class MiscAccessibility {
 
     // Delete loop elements
     static removeFocusLoop () {
-        document
-            .querySelectorAll('.ds44-tmpFocusHidden')
-            .forEach((element) => {
-                element.remove();
-            })
+        setTimeout(() => {
+            document
+              .querySelectorAll('.ds44-tmpFocusHidden')
+              .forEach((element) => {
+                  element.remove();
+              });
+        }, 0);
 
         const firstFocusableElement = document.querySelector('.ds44-tmpFirstFocus');
         if (firstFocusableElement) {

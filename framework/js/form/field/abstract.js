@@ -307,12 +307,12 @@ class FormFieldAbstract {
                 } else {
                     element.setAttribute('title', data[object.name].text + (element.hasAttribute("required") ? " - " + MiscTranslate._("INPUT_REQUIRED") : ""));
                 }
-            } else {
-                element.setAttribute('title', object.titleDefault ? object.titleDefault : "");
+            } else if (object.titleDefault) {
+                element.setAttribute('title', object.titleDefault);
             }
         }
-        else {
-            element.setAttribute('title', object.titleDefault ? object.titleDefault + (element.hasAttribute("required") ? " - " + MiscTranslate._("INPUT_REQUIRED") : "") : "");
+        else if (object.titleDefault) {
+            element.setAttribute('title', object.titleDefault + (element.hasAttribute("required") ? " - " + MiscTranslate._("INPUT_REQUIRED") : ""));
         }
     }
 

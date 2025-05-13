@@ -190,7 +190,7 @@ class CarouselAbstract {
             if (object.galleryElement) {
                 [].forEach.call(object.galleryElement.querySelectorAll('.swiper-slide'), (thumb, i) => {
                     MiscEvent.addListener("keyup", (event) => {
-                        if (event.key === "Enter") {
+                        if (event.key === "Enter" || event.key === " ") {
                             object.swiper.slideTo(i + 1);
                         }
                     }, thumb);
