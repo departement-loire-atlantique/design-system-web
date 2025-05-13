@@ -1,9 +1,9 @@
 {% include form/_variables.html %}
 
 {% if include.required == 'true' %}
-    {% capture dayLabel %}title="{{ label }} : Jour (ex. 20) - obligatoire"{% endcapture %}
-    {% capture monthLabel %}title="{{ label }} : Mois (ex. 05) - obligatoire"{% endcapture %}
-    {% capture yearLabel %}title="{{ label }} : Année (ex. 2020) - obligatoire"{% endcapture %}
+    {% capture dayLabel %}title="{{ label }} : Jour (ex. 20)"{% endcapture %}
+    {% capture monthLabel %}title="{{ label }} : Mois (ex. 05)"{% endcapture %}
+    {% capture yearLabel %}title="{{ label }} : Année (ex. 2020)"{% endcapture %}
 {% else %}
     {% capture dayLabel %}title="{{ label }} : Jour (ex. 20)"{% endcapture %}
     {% capture monthLabel %}title="{{ label }} : Mois (ex. 05)"{% endcapture %}

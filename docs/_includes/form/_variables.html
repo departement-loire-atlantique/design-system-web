@@ -30,13 +30,13 @@
 
 {% if include.title %}
     {% if include.required == 'true' %}
-        {% assign title = 'title="' | append: include.title | append: ' - obligatoire"' %}
+        {% assign title = 'title="' | append: include.title | append: '"' %}
     {% else %}
         {% assign title = 'title="' | append: include.title | append: '"' %}
     {% endif %}
 {% else %}
     {% if include.label and include.required == 'true' %}
-        {% assign title = 'title="' | append: include.label | append: ' - obligatoire"' %}
+        {% assign title = 'title="' | append: include.label | append: '"'%}
     {% else %}
         {% assign title = '' %}
     {% endif %}

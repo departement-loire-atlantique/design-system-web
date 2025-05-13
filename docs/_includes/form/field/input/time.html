@@ -1,8 +1,8 @@
 {% include form/_variables.html %}
 
 {% if include.required == 'true' %}
-    {% capture hourLabel %}title="{{ label }} : Heure (ex. 14) - obligatoire"{% endcapture %}
-    {% capture minuteLabel %}title="{{ label }} : Minute (ex. 05) - obligatoire"{% endcapture %}
+    {% capture hourLabel %}title="{{ label }} : Heure (ex. 14)"{% endcapture %}
+    {% capture minuteLabel %}title="{{ label }} : Minute (ex. 05)"{% endcapture %}
 {% else %}
     {% capture hourLabel %}title="{{ label }} : Heure (ex. 14)"{% endcapture %}
     {% capture minuteLabel %}title="{{ label }} : Minute (ex. 05)"{% endcapture %}
