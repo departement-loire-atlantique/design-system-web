@@ -167,6 +167,9 @@
           margin: 0 3rem;
       }
     }
+    #subMenu-choixLangueMobile {
+        top: 65px;
+    }
 }
 .dobree-header .ds44-logoContainer img {
   margin-left: 4em;
@@ -220,10 +223,10 @@
         background-color: rgba(0, 0, 0, 0.6);
         color: $ds44-light ;
     }
-    .ds44-subMenu {
-        background-color: rgba(0, 0, 0, 0.6);
+    #subMenu-choixLangue {
+        background-color: rgba(0, 0, 0, 0.8);
         top:65px;
-        &#subMenu-choixLangue a {
+        a {
             color: $ds44-light ;
         }
     }

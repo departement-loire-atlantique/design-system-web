@@ -16,7 +16,9 @@ var iconfontCss = require("gulp-iconfont-css");
 var fs = require('fs');
 
 var jekyllDir = "docs/",
+    scssFontImportFile = 'framework/scss/_libraries/fontsImport.scss',
     scssFile = 'framework/scss/cd44.scss',
+    scssInstitutionnelFile = 'framework/scss/institutionnel.scss',
     scssAidantsFile = 'framework/scss/aidants.scss',
     scssHandicapFile = 'framework/scss/handicap.scss',
     scssClissonFile = 'framework/scss/SP-chateauClisson.scss',
@@ -70,13 +72,25 @@ var postCssPluginsProd = [
 ];
 
 gulp.task('build:css:cd44:dev', function () {
-    return gulp.src([scssFileSwiper, scssFileAos, scssFile])
+    return gulp.src([scssFontImportFile, scssFileSwiper, scssFileAos, scssFile])
         .pipe(sass({
             // CSS non minifiée plus lisible ('}' à la ligne)
             outputStyle: 'expanded'
         }))
         .pipe(postcss(postCssPluginsDev))
         .pipe(concat('cd44.css'))
+        .pipe(browserSync.stream())
+        .pipe(gulp.dest(cssDest));
+});
+
+gulp.task('build:css:institutionnel:dev', function () {
+    return gulp.src([scssFileSwiper, scssFileAos, scssInstitutionnelFile])
+        .pipe(sass({
+            // CSS non minifiée plus lisible ('}' à la ligne)
+            outputStyle: 'expanded'
+        }))
+        .pipe(postcss(postCssPluginsDev))
+        .pipe(concat('institutionnel.css'))
         .pipe(browserSync.stream())
         .pipe(gulp.dest(cssDest));
 });
@@ -238,7 +252,7 @@ gulp.task('build:css:mda:dev', function () {
 });
 
 gulp.task('build:css:parents:dev', function () {
-    return gulp.src([scssFileSwiper, scssFileAos, scssParentsFile])
+    return gulp.src([scssFontImportFile, scssFileSwiper, scssFileAos, scssParentsFile])
         .pipe(sass({
             // CSS non minifiée plus lisible ('}' à la ligne)
             outputStyle: 'expanded'
@@ -332,6 +346,7 @@ gulp.task('createComponent', function () {
 gulp.task('build:ds', gulp.parallel(
     'build:css:cd44:dev',
     'build:css:cd44:prod',
+    'build:css:institutionnel:dev',
     'build:css:aidants:dev',
     'build:css:handicap:dev',
     'build:css:clisson:dev',

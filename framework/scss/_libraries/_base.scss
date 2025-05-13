@@ -64,7 +64,7 @@ h1, .h1-like {
     font-family: $ds44-font-family-headings;
   }
   background: transparent;
-  font-weight: $weight-medium;
+  font-weight: $weight-bold;
   line-height: 1;
   padding: 0;
   display: block;
@@ -133,7 +133,7 @@ h3, .h3-like {
     font-family: $ds44-font-family-headings;
   }
   background: transparent;
-  font-weight: $weight-bold;
+  font-weight: $weight-semibold;
   line-height: 1.2;
   padding: 0;
   margin-bottom: $ds44-small-vmargin; // 1rem
@@ -146,7 +146,7 @@ h4, .h4-like {
     font-family: $ds44-font-family-headings;
   }
   background: transparent;
-  font-weight: $weight-medium;
+  font-weight: $weight-semibold;
   padding: 0;
   display: block;
   line-height: 1.2;
@@ -189,7 +189,6 @@ h6, .h6-like {
 
 
 [role="heading"] {
-  font-weight: bold;
 
   a {
     text-decoration: none;
