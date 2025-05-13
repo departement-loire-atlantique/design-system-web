@@ -93,8 +93,10 @@ class FormFieldSelectMultilevelClass extends FormFieldSelectCheckboxClass {
                 listInputElement.checked = categoryInputElement.checked;
                 if (listInputElement.checked) {
                     listElement.classList.add('selected_option');
+                    listElement.setAttribute('aria-selected', 'true');
                 } else {
                     listElement.classList.remove('selected_option');
+                    listElement.removeAttribute('aria-selected');
                 }
             });
     }

@@ -147,10 +147,23 @@
 }
 
 /* Ratio img profil */
+
+.ds44-card__section--horizontal--img {
+  .ds44-container-imgRatio--profil {
+    width: calc(100% - 2rem);
+  }
+}
+
 .ds44-container-imgRatio--profil {
   padding-top: 0;
-  width: 110px;
-  height: 110px;
+  max-width: 11rem;
+  max-height: 11rem;
+  width: 100%;
+  height: auto;
+  aspect-ratio: 1/1;
+  img {
+    width: 100%;
+  }
 }
 
 .ds44-container-imgRatio--profilXL {

@@ -5,11 +5,30 @@
         padding-right: $ds44-container-large-margin;
     }
 
+    &.ds44-carroussel-swiper-mobile {
+      display:none;
+      @media screen and (max-width: $ds44-medium - .0625) {
+        display:block;
+      }
+    }
+
+    &.ds44-carroussel-swiper-desktop {
+      @media screen and (max-width: $ds44-medium - .0625) {
+        display:none;
+      }
+    }
+
+
     &.ds44-container-large,
     .ds44-homepage-container & {
         @media screen and (max-width: $ds44-medium - .0625) {
             margin: 0;
         }
+    }
+    &.swiper-button-prev-next-hidden {
+      .swiper-container {
+        margin: 0;
+      }
     }
 
     .swiper-container {
@@ -316,7 +335,7 @@
     font-size: 3.4rem;
 
     @media screen and (max-width: $ds44-small - .0625) {
-        font-size: 2.4rem;
+        font-size: 2.8rem;
     }
 }
 
@@ -352,6 +371,7 @@
 
           img {
             height: 100%;
+            width: 100%;
             object-fit: cover;
           }
         }
@@ -458,8 +478,8 @@
     }
     .swiper-button-prev,
     .swiper-container-rtl .swiper-button-prev {
-      left: auto;
-      right: 6rem;
+      left: 0;
+      right: auto;
     }
   }
 }

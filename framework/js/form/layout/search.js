@@ -16,6 +16,8 @@ class FormLayoutSearchClass extends FormLayoutAbstract {
         object.parameters = {};
         object.searchData = {};
         object.hasSearched = false;
+
+        object.startNotFocus = formElement.getAttribute('data-is-ajax') === 'true' && formElement.getAttribute('data-auto-load') === 'true';
     }
 
     initialize () {
@@ -168,11 +170,22 @@ class FormLayoutSearchClass extends FormLayoutAbstract {
             return;
         }
 
+        let autoFocusLoaderDisabled = false;
+        let autoFocusResult = false;
+        if(object.startNotFocus === true)
+        {
+            autoFocusLoaderDisabled = true;
+            autoFocusResult = true;
+            object.startNotFocus = false;
+        }
+
         // Show loader
-        MiscEvent.dispatch('loader:requestShow');
+        MiscEvent.dispatch('loader:requestShow', {autoFocusDisabled: autoFocusLoaderDisabled});
 
         // Manage parameters
-        const options = {};
+        const options = {
+            autoFocusDisabled: autoFocusResult
+        };
         if (evt.detail.next) {
             // Go to next set of results
             object.parameters.page = parseInt(object.searchData.pageIndex, 10) + 1;

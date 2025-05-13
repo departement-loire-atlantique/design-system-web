@@ -17,7 +17,7 @@ class LoaderStandardClass {
         }
     }
 
-    show () {
+    show (event) {
         const loaderElement = document.querySelector('.ds44-loader');
         const loaderTextElement = document.querySelector('.ds44-loader-text');
         if (!loaderElement || !loaderTextElement) {
@@ -32,7 +32,9 @@ class LoaderStandardClass {
         loaderElement.classList.remove('hidden');
         MiscAccessibility.show(loaderElement);
         loaderTextElement.innerHTML = '<p>' + MiscTranslate._('LOADING') + '</p>';
-        MiscAccessibility.setFocus(loaderTextElement);
+        if(event.detail.autoFocusDisabled === undefined || event.detail.autoFocusDisabled === false) {
+            MiscAccessibility.setFocus(loaderTextElement);
+        }
         MiscEvent.dispatch('loader:show');
     }
 

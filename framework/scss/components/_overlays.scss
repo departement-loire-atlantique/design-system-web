@@ -35,7 +35,7 @@
 
         * {
             visibility: visible;
-            z-index: 1100;
+            /*z-index: 1100;*/
         }
     }
 }
@@ -160,7 +160,8 @@
         margin: 0 !important;
 
         .ds44-cardTitle {
-            font-size: 1.7rem;
+            font-family: $ds44-font-family-headings;
+            font-size: 1.8rem!important;
         }
 
         &.ds44-cardIsFocus {

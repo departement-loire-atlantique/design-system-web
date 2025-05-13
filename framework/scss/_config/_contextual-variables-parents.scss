@@ -8,8 +8,8 @@
 
 $ds44-contextual-color : #fed037 !default;
 $ds44-contextual-hover : darken($ds44-contextual-color, 10%) !default;
-$ds44-font-family-base      : "Plus Jakarta Sans", sans-serif;  
-$ds44-font-family-headings  : "Dela Gothic One", sans-serif;
+$ds44-font-family-base      : "Poppins", sans-serif;  
+$ds44-font-family-headings  : "Poppins", sans-serif;
 
 /* On redéfini toute la map définie dans _variables.scss
    Juste pour modifier les tailles de h1-->h4
@@ -125,6 +125,28 @@ $ds44-font-sizes: (
 
 .ds44-btnIcoText--maxi {
     font-size: 1em!important;
+    font-weight: $weight-semibold!important
+}
+
+.ds44-collapser_button{
+  font-size: 1.5em!important;
+}
+
+@media (min-width: 64em) {
+    
+  .ds44-menuBtn {
+    font-size: 1.875em!important;
+  }
+}
+
+@media (max-width: $ds44-small) {
+  .ds44-collapser_button{
+    font-size: 1.25em!important;
+  }
+}
+
+.ds44-card .ds44-cardTitle {
+  font-size: 2.2rem!important;
 }
 
 .ds44-ssTitreH1_home {

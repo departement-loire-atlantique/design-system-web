@@ -7,7 +7,7 @@ class CarouselAbstract {
         this.nextSlideMessage = MiscTranslate._('CAROUSEL_WATCH_NEXT_CONTENT');
         this.queryTitreTuile = '.ds44-card__title a[href]:not([disabled])';
         this.objects = [];
-        this.breakpoint = window.matchMedia('(max-width: 63.375em)');
+        this.breakpoint = window.matchMedia('(max-width: 768px)');
         MiscEvent.addListener('resize', this.resize.bind(this), window);
         window.setTimeout(
           () => {
@@ -93,91 +93,116 @@ class CarouselAbstract {
 
     createSwipper (objectIndex) {
         const object = this.objects[objectIndex];
-        if (!object || object.swiper) {
+
+        if (!object) {
             return;
         }
 
-        // Component initialization in full JS mode
-        object.wrapperElement.classList.remove.apply(
-            object.wrapperElement.classList,
-            Array.from(object.wrapperElement.classList).filter(className => className.startsWith('grid-'))
-        );
-
-        object.swiper = new Swiper(
-            object.swiperElement,
-            this.getSwiperParameters(object)
-        );
-
-        object.swiper.on('slidePrevTransitionEnd', this.slide.bind(this, objectIndex, 'backward'));
-        object.swiper.on('slideNextTransitionEnd', this.slide.bind(this, objectIndex, 'forward'));
-
-        object.swiper.on('paginationRender', (paginationElement)=>{
-            let indexElement = 0;
-            paginationElement.querySelectorAll("button").forEach((focusElement)=>{
-                if(indexElement === 0) {
-                    focusElement.setAttribute("aria-current", "true");
-                }
-                let parentPaginationFocus = focusElement.closest(".swiper-pagination-bullet");
-
-                MiscEvent.addListener("focus", ()=>{
-                    let paginationFocus = object.paginationElement.querySelector(".swiper-pagination-bullet-focus");
-                    if(paginationFocus) {
-                        paginationFocus.classList.remove("swiper-pagination-bullet-focus");
-                    }
-                    if(parentPaginationFocus) {
-                        parentPaginationFocus.classList.add("swiper-pagination-bullet-focus");
-                    }
-                }, focusElement);
-                MiscEvent.addListener("blur", ()=>{
-                    if(parentPaginationFocus) {
-                        parentPaginationFocus.classList.remove("swiper-pagination-bullet-focus");
-                    }
-                }, focusElement);
-
-                MiscEvent.addListener("click", ()=>{
-                    this.paginationButtonSelected(paginationElement, focusElement);
-                    object.swiper.slideTo(indexElement);
-                }, focusElement);
-
-                MiscEvent.addListener("click", ()=>{
-                    this.paginationButtonSelected(paginationElement, focusElement);
-                }, parentPaginationFocus);
-
-                indexElement = indexElement+1;
-                if(indexElement > (object.nbLimitBullet-1)) {
-                    let paginationElement = focusElement.closest(".swiper-pagination-bullet");
-                    if(paginationElement)
-                    {
-                        paginationElement.style.display = "none";
-                    }
-                }
-            });
-        });
-
-        object.swiper.init();
-        object.isInitialized = true;
-
-        // Enable previous and next buttons
-        if (object.previousElement && object.nextElement) {
-            [object.previousElement, object.nextElement]
-                .forEach(button => {
-                    button.classList.remove('swiper-button-disabled');
-
-                    const ua = navigator.userAgent;
-                    if (!ua.includes('Edge/42')) {
-                        button.classList.add('ds44-not-edge-42');
-                    }
-                });
+        let buttonPrevNextShow = true;
+        if(object.nbSlides <= object.nbVisibleSlides && window.matchMedia("(min-width: 768px)").matches === true)
+        {
+            object.wrapElement.classList.add('swiper-button-prev-next-hidden');
+            this.destroySwipper(objectIndex);
+            buttonPrevNextShow = false;
+        }
+        else
+        {
+            object.wrapElement.classList.remove('swiper-button-prev-next-hidden');
         }
 
-        if(object.galleryElement) {
-            [].forEach.call(object.galleryElement.querySelectorAll('.swiper-slide'), (thumb, i) => {
-                MiscEvent.addListener("keyup", (event) => {
-                    if(event.key === "Enter") {
-                        object.swiper.slideTo(i+1);
+        if(object.swiper) {
+            return;
+        }
+
+        if(buttonPrevNextShow) {
+            // Component initialization in full JS mode
+            object.wrapperElement.classList.remove.apply(
+              object.wrapperElement.classList,
+              Array.from(object.wrapperElement.classList).filter(className => className.startsWith('grid-'))
+            );
+
+            object.swiper = new Swiper(
+              object.swiperElement,
+              this.getSwiperParameters(object)
+            );
+
+            object.swiper.on('slidePrevTransitionEnd', this.slide.bind(this, objectIndex, 'backward'));
+            object.swiper.on('slideNextTransitionEnd', this.slide.bind(this, objectIndex, 'forward'));
+
+            object.swiper.on('paginationRender', (paginationElement) => {
+                let indexElement = 0;
+                paginationElement.querySelectorAll("button").forEach((focusElement) => {
+                    if (indexElement === 0) {
+                        focusElement.setAttribute("aria-current", "true");
                     }
-                }, thumb);
+                    let parentPaginationFocus = focusElement.closest(".swiper-pagination-bullet");
+
+                    MiscEvent.addListener("focus", () => {
+                        let paginationFocus = object.paginationElement.querySelector(".swiper-pagination-bullet-focus");
+                        if (paginationFocus) {
+                            paginationFocus.classList.remove("swiper-pagination-bullet-focus");
+                        }
+                        if (parentPaginationFocus) {
+                            parentPaginationFocus.classList.add("swiper-pagination-bullet-focus");
+                        }
+                    }, focusElement);
+                    MiscEvent.addListener("blur", () => {
+                        if (parentPaginationFocus) {
+                            parentPaginationFocus.classList.remove("swiper-pagination-bullet-focus");
+                        }
+                    }, focusElement);
+
+                    MiscEvent.addListener("click", () => {
+                        this.paginationButtonSelected(paginationElement, focusElement);
+                        object.swiper.slideTo(indexElement);
+                    }, focusElement);
+
+                    MiscEvent.addListener("click", () => {
+                        this.paginationButtonSelected(paginationElement, focusElement);
+                    }, parentPaginationFocus);
+
+                    indexElement = indexElement + 1;
+                    if (indexElement > (object.nbLimitBullet - 1)) {
+                        let paginationElement = focusElement.closest(".swiper-pagination-bullet");
+                        if (paginationElement) {
+                            paginationElement.style.display = "none";
+                        }
+                    }
+                });
             });
+
+            object.swiper.init();
+            object.isInitialized = true;
+
+            // Enable previous and next buttons
+            if (object.previousElement && object.nextElement) {
+                [object.previousElement, object.nextElement]
+                  .forEach(button => {
+                      button.classList.remove('swiper-button-disabled');
+
+                      const ua = navigator.userAgent;
+                      if (!ua.includes('Edge/42')) {
+                          button.classList.add('ds44-not-edge-42');
+                      }
+                  });
+            }
+
+            if (object.galleryElement) {
+                [].forEach.call(object.galleryElement.querySelectorAll('.swiper-slide'), (thumb, i) => {
+                    MiscEvent.addListener("keyup", (event) => {
+                        if (event.key === "Enter") {
+                            object.swiper.slideTo(i + 1);
+                        }
+                    }, thumb);
+                });
+            }
+        } else {
+            // Component initialization in full JS mode
+            object.wrapperElement.classList.remove.apply(
+              object.wrapperElement.classList,
+              Array.from(object.wrapperElement.classList).filter(className => className.startsWith('grid-'))
+            );
+            object.wrapperElement.classList.add("grid-"+object.nbSlides+"-small-1");
         }
     }
 
@@ -432,6 +457,13 @@ class CarouselAbstract {
                 this.createSwipper(objectIndex);
 
                 continue;
+            }
+            else {
+                object.wrapperElement.classList.remove.apply(
+                  object.wrapperElement.classList,
+                  Array.from(object.wrapperElement.classList).filter(className => className.startsWith('grid-'))
+                );
+                object.wrapperElement.classList.add("grid-"+object.nbVisibleSlides+"-small-1");
             }
 
             if (this.breakpoint.matches === true) {
