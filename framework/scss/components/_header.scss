@@ -58,7 +58,7 @@
 .ds44-header {
     min-height: $header-height-large;
     max-height: $header-height-medium;
-    overflow: hidden;
+    /* --- overflow: hidden; ---- Pour ajout shape Logo */
     position: fixed;
     top: 0;
     padding: 0;
