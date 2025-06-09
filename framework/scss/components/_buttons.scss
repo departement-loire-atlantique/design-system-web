@@ -250,7 +250,7 @@ a > .ds44-btn--contextual,
 // Buttons for header (full height)
 .ds44-btnIcoText--maxi {
     font-size: .97em;
-    font-weight: bold;
+    font-weight: $weight-medium;
     text-transform: uppercase;
     cursor: pointer;
     text-decoration: none;
