@@ -10,7 +10,7 @@
     &.ds44-logoContainer--medium{
         img {
             height: 85px;
-        }    
+        }
     }
     img {
         height: 62px;
@@ -82,6 +82,20 @@
 
     .ds44-colRight {
       min-height: $header-height-large;
+    }
+    .ds44-container-large .ds44-flex-container {
+        position: relative;
+    }
+    .ds44-container-large .ds44-flex-container:before {
+        content: '';
+        width: 100px;
+        height: 43px;
+        bottom: -43px;
+        left: 0;
+        position: absolute;
+        display: block;
+        background-image: url(../../../assets/images/shape_logo.svg);
+        background-repeat: no-repeat;
     }
 }
 
