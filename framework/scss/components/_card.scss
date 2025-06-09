@@ -58,12 +58,12 @@
             left: 0;
             padding: 0.625rem;
             background: $ds44-contextual-color;
-            font-weight: bold;
+            font-weight: 600;
             line-height: normal;
         }
 
         .ds44-cardTitle {
-            padding-top: $ds44-padding-large;
+            padding-top: $ds44-padding-xlarge;
         }
 
     }
@@ -125,7 +125,7 @@
         .ds44-cardTitle {
             font-size: 1.25em;
             font-family: $ds44-font-family-baseModern;
-            font-weight: 400;
+            font-weight: 600;
         }
         .ds44-docListElem {
           font-size: 0.875em;
@@ -406,7 +406,7 @@ body.modern {
         }
         .ds44-card__title {
             font-size: 1.875em;
-            font-weight: normal;
+            font-weight: 600;
             margin-bottom: 1em;
             padding-bottom: 1em;
             position: relative;
@@ -487,6 +487,7 @@ body.modern {
             p[role=heading] {
                 font-size: 1.25em;
                 margin-bottom: 2rem;
+                font-weight: $weight-medium;
             }
             .tarif::before {
                 content: '';
