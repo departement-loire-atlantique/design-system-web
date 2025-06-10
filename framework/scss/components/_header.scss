@@ -88,10 +88,10 @@
     }
     .ds44-container-large .ds44-flex-container:before {
         content: '';
-        width: 100px;
-        height: 43px;
-        bottom: -43px;
-        left: 0;
+        width: 80px;
+        height: 34px;
+        bottom: -34px;
+        left: 24px;
         position: absolute;
         display: block;
         background-image: url(../../../assets/images/shape_logo.svg);
@@ -295,6 +295,7 @@
             align-items: center;
             line-height: 1.2;
             padding: $ds44-padding-xlarge  $ds44-padding-large;
+            height: $header-height-medium;
 
             .icon + .ds44-btnInnerText,
             .ds44-btnInnerText + .icon,
@@ -413,6 +414,7 @@
 
       .ds44-btnIcoText--maxi {
           margin-left: 0;
+          height: $header-height-small;
 
           &.ds44--xl-padding {
               padding: .5rem 1rem 1rem 1rem;
@@ -431,6 +433,13 @@
 
   .ds44-header {
       min-height: $header-height-small;
+
+        .ds44-container-large .ds44-flex-container::before {
+          width: 50px;
+          height: 23px;
+          bottom: -22px;
+          left: 14px;
+        }
   }
 
   .ds44-header.dobree-header .ds44-colRight .ds44-btnIcoText--maxi.ds44-btn--menu {
