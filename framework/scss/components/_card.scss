@@ -288,7 +288,7 @@ figure[role=figure]  + .ds44-card__section {
 .ds44-facette__title {
     margin-bottom: $headings-margin-bottom;
     padding: 0;
-    font-size: 1.7rem; // 17px
+    font-size: 1.9rem; // 19px
     font-weight: $weight-semibold;
     line-height: 1.2;
     background: transparent;
@@ -329,6 +329,10 @@ body.modern {
     align-items: flex-start;
     display: flex;
     flex-direction: column;
+
+    .ds44-card__title {
+        font-size: 1.7rem;
+    }
 
     @media (max-width: $ds44-small - .0625) {
         padding-right: $ds44-padding-box;
