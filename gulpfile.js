@@ -84,7 +84,7 @@ gulp.task('build:css:cd44:dev', function () {
 });
 
 gulp.task('build:css:institutionnel:dev', function () {
-    return gulp.src([scssFileSwiper, scssFileAos, scssInstitutionnelFile])
+    return gulp.src([scssFontImportFile, scssFileSwiper, scssFileAos, scssInstitutionnelFile])
         .pipe(sass({
             // CSS non minifiée plus lisible ('}' à la ligne)
             outputStyle: 'expanded'
@@ -144,7 +144,7 @@ gulp.task('build:css:aidants:dev', function () {
 });
 
 gulp.task('build:css:handicap:dev', function () {
-    return gulp.src([scssFileSwiper, scssFileAos, scssHandicapFile])
+    return gulp.src([scssFontImportFile, scssFileSwiper, scssFileAos, scssHandicapFile])
         .pipe(sass({
             // CSS non minifiée plus lisible ('}' à la ligne)
             outputStyle: 'expanded'
@@ -168,7 +168,7 @@ gulp.task('build:css:garenne-lemot:dev', function () {
 });
 
 gulp.task('build:css:chateaubriant:dev', function () {
-    return gulp.src([scssFileSwiper, scssFileAos, scssChateaubriantFile])
+    return gulp.src([scssFontImportFile, scssFileSwiper, scssFileAos, scssChateaubriantFile])
         .pipe(sass({
             // CSS non minifiée plus lisible ('}' à la ligne)
             outputStyle: 'expanded'
