@@ -24,15 +24,16 @@ $medium: 65em !default;     // 1024px (KNACSS crée ses breakpoints en retirant 
 // ----------
 
 // Font families
-$ds44-font-family-base      : Muli, Arial, Helvetica, sans-serif;             // texts standard font
+$ds44-font-family-base      : "Poppins", Arial, Helvetica, sans-serif;             // texts standard font
 $ds44-font-family-baseModern: Helvetica, Arial, sans-serif;                   // texts standard font for Musée Dobrée
-$ds44-font-family-headings  : "Blogger Sans", Arial, Helvetica, sans-serif;   // font for h1, h2.. h6
+$ds44-font-family-headings  : "Poppins", Arial, Helvetica, sans-serif;   // font for h1, h2.. h6
 $ds44-font-family-headingsModern  : "Monotype Modern Std", Arial, Helvetica, sans-serif;   // font for h1, h2 for Musée Dobrée
 $ds44-font-family-monospace : consolas, courier, monospace;                   // font for code and samples
 $ds44-font-icon             : "ds44-icons";                                   // icons
 
 // Font weights
 $weight-semibold: 600 !default; // Graisse absente de la grillade
+$weight-medium: 500 !default; // Graisse absente de la grillade
 
 // Font sizes (1rem value is "10px" equivalent)
 $ds44-font-size-base : 1.6em !default;
@@ -44,14 +45,14 @@ $ds44-font-sizes: (
     desktop : $ds44-font-size-base   // 16px
   ),
   h1: (
-    mobile  : 2.125em,  // 34px
-    tablet  : 3em,      // 48px
-    desktop : 3.125em    // 50px
+    mobile  : 2.125em,   // 34px
+    tablet  : 2.625em,   // 42px
+    desktop : 2.875em    // 46px
   ),
   h2: (
     mobile  : 1.75em,  // 28px
-    tablet  : 1.75em,  // 28px
-    desktop : 1.75em   // 28px
+    tablet  : 1.875em, // 30px
+    desktop : 2em      // 32px
   ),
   h3: (
     mobile  : 1.375em,  // 22px
@@ -93,6 +94,10 @@ $ds44-font-sizes: (
   ),
   chapoStyle: (
     mobile  : 1.0625em, // 17px
+    desktop : 1.0625em // 17px
+  ),
+  introduction: (
+    mobile  : 1.1875em, // 19px
     desktop : 1.1875em  // 19px
   ),
   menuHeaders: (
@@ -108,20 +113,20 @@ $ds44-font-sizes: (
     desktop : 1.75em    // 28px
   ),
   collapserLinks: (
-    mobile  : 1.125em,  // 18px
+    mobile  : 1em,  // 18px
     desktop : 1.125em   // 18px
   ),
   button: (
-    mobile  : 1em,   // 16px
-    desktop : 1em    // 16px
+    mobile  : 1em,      // 16px
+    desktop : 1.0625em  // 17px
   ),
   largeButton: (
     mobile  : 1em,      // 16px
-    desktop : 1em       // 16px
+    desktop : 1.0625em  // 17px
   ),
   pushTitle : (
-    mobile  : 1.75em,   // 28px
-    desktop : 1.75em    // 28px
+    mobile  : 1.5em,     // 24px
+    desktop : 1.5em     // 24px
   ),
   quotes: (
     mobile  : 2.375em,  // 38px
@@ -197,6 +202,13 @@ $ds44-darkgray          : #333                !default;
 $ds44-LA                : #99E6D1             !default;
 $ds44-Agenda            : #FFD883             !default;
 $ds44-Dobree            : #FFBED2             !default;
+$ds44-Yellow            : #FFF15F             !default;
+$ds44-Green             : #EEF0A8             !default;
+$ds44-Coral             : #FFCABC             !default;
+$ds44-Purple            : #C3C5FA             !default;
+$ds44-Orange            : #F9CA97             !default;
+$ds44-Pink              : #C3C5FA             !default;
+$ds44-Blue              : #9ADCFF             !default;
 $ds44-dataviz-color     : #ff4a90             !default;
 $ds44-valid             : #24883E             !default;
 $ds44-valid-bg          : #F3F9F5             !default;

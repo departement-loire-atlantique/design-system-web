@@ -14,14 +14,18 @@
     }
     p + .h3-like,
     p + h3,
+    div + h3,
     blockquote + h3,
     blockquote + h3-like,
     ul:not(.ds44-list):not(.ds44-collapser) + h3,
     ul:not(.ds44-list):not(.ds44-collapser) + .h3-like,
     p + .h4-like,
     p + h4,
+    div + h4,
     blockquote + h4,
-    blockquote + h4-like {
+    blockquote + h4-like,
+    ul:not(.ds44-list):not(.ds44-collapser) + h4,
+    ul:not(.ds44-list):not(.ds44-collapser) + .h4-like {
       margin-top: $ds44-components-vmargin ;
     }
     ul:not(.ds44-list):not(.ds44-collapser) > li {
@@ -232,7 +236,7 @@ blockquote {
     @media (max-width: $ds44-tiny - .0625) {
       border-left: none;
       padding: 0 3.5rem;
-      
+
       &::before {
         left: .5rem;
       }
@@ -240,7 +244,7 @@ blockquote {
       &::after {
         right: .5rem;
       }
-    }      
+    }
 }
 
 .ds44-wsg-encadreContour {

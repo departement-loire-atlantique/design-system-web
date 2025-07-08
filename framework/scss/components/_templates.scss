@@ -439,13 +439,18 @@ body.modern {
 
 
 .ds44-introduction, .ds44-introduction-like, .ds44-component-chapo {
-    @include ds44-font-sizes(chapoStyle);
     background: transparent;
     margin-top: $ds44-large-vmargin;
     margin-bottom: $ds44-large-vmargin;
 }
+.ds44-component-chapo {
+    @include ds44-font-sizes(chapoStyle);
+}
 .ds44-introduction, .ds44-introduction-like {
-    font-weight: $weight-bold;
+    @include ds44-font-sizes(introduction);
+}
+.ds44-introduction, .ds44-introduction-like {
+    font-weight: $weight-medium;
 }
 .dobree-introduction {
     font-size: 1.25em;

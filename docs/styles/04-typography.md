@@ -6,31 +6,19 @@ group: styles
 permalink: /styles/typography.html
 description:
 ---
-Le design system du Département de Loire-Atlantique utilise deux familles de typographies pour hiérarchiser ses contenus :
-#### La typographie Blogger :
+Le design system du Département de Loire-Atlantique utilise une seul famille de typographie pour hiérarchiser ses contenus :
 
-Utilisée pour les titres
+#### La typographie Poppins :
 
-Variantes Medium et Bold
+Utilisée pour les titres = Variantes Medium, Semibold et Bold
 
-Licence CC No Derivatives (pas de modification)
+Utilisée pour les textes courants, titres d’encadrés, boutons, … = Variantes Regular, Semibold et Bold
 
-<p>Source : <a href="https://www.fontsquirrel.com/fonts/blogger-sans">https://www.fontsquirrel.com/fonts/blogger-sans</a></p>
+Licence SIL OPEN FONT LICENSE Version 1.1 - 26 February 2007
 
-<a href="../fonts/Blogger-sans.zip" class="ds44-btnStd ds44-btn--invert"><span class="ds44-btnInnerText">Télécharger la typographie Blogger</span></a>
+<p>Source : <a href="https://fonts.google.com/specimen/Poppins"</a></p>
 
-
-#### La typographie Muli :
-
-Utilisée pour les textes courants, titres d’encadrés, boutons, …
-
-Variantes Regular, Bold
-
-Licence SIL Open Font
-
-<p>Source : <a href="https://www.fontsquirrel.com/fonts/muli">https://www.fontsquirrel.com/fonts/muli</a></p>
-
-<a href="../fonts/Muli.zip" class="ds44-btnStd ds44-btn--invert"><span class="ds44-btnInnerText">Télécharger la typographie Muli</span></a>
+<a href="../fonts/Poppins.zip" class="ds44-btnStd ds44-btn--invert"><span class="ds44-btnInnerText">Télécharger la typographie Poppins</span></a>
 
 
 ## Titres
