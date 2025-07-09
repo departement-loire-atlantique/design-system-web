@@ -235,7 +235,7 @@ h5,
 h6,
 dd {
   margin-top: 0;
-  margin-bottom: $headings-margin-bottom;
+  margin-bottom: $ds44-margin-base;
 }
 
 p,
@@ -245,7 +245,7 @@ ul,
 dl,
 blockquote {
   margin-top: 0;
-  margin-bottom: $ds44-paragraph-margin-bottom;
+  margin-bottom: $ds44-margin-base;
 }
 
 /* Avoid margins on nested elements */

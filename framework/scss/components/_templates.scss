@@ -20,6 +20,11 @@
     margin-right: auto;
     max-width: $ds44-max-inner-size;
     position: relative;
+
+    .ds44-introduction,
+    .ds44-collapser {
+        margin-bottom: 4rem;
+    }
 }
 
 .ds44-inner-container--mag {
@@ -429,6 +434,11 @@ body.modern {
     a:focus-visible {
         img {
             //outline: 5px solid $ds44-color-soft-text;
+        }
+    }
+    @media (max-width: $ds44-small - .0625) {
+        .ds44-imgCaption {
+            visibility: hidden;
         }
     }
 }

@@ -484,6 +484,10 @@ body.modern {
             }
             @media (max-width: ($ds44-medium - .0625)) {
                 text-align: left !important;
+
+                .ds44-btnStd {
+                    text-align: center !important;
+                }
             }
         }
     }
@@ -532,7 +536,7 @@ body.modern {
             flex-direction: column;
 
             .ds44-card__section--horizontal {
-                padding: 4rem;
+                padding: 2rem; 
                 text-align: center;
                 align-items: center;
                 .date {
