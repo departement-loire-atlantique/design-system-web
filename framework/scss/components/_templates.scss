@@ -32,6 +32,11 @@
     margin-right: auto;
     max-width: $ds44-max-inner-mag-size;
     position: relative;
+
+    ul.ds44-list .ds44-btnStd i {
+        visibility: hidden;
+        display: none;
+    }
 }
 
 .ds44-video-container {

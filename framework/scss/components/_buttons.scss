@@ -433,7 +433,7 @@ button.ds44-theme {
 .ds44-btnStd--retourPage,
 a.ds44-btnStd--retourPage {
     position: absolute;
-    top: 20px;
+    top: 50px;
     left: 20px;
     max-width: 14%;
     text-align: center;
@@ -444,7 +444,7 @@ a.ds44-btnStd--retourPage {
 
 .ds44-btnStd--nextPrevPage {
     position: absolute;
-    top: 20px;
+    top: 50px;
     right: 20px;
     text-align: center;
     z-index:10;
@@ -708,11 +708,11 @@ a.ds44-btnStd--retourPage {
     .ds44-btnStd--retourPage,
     a.ds44-btnStd--retourPage {
         left: 5%;
-        top: 1.5rem;
+        top: 2.5rem;
     }
     .ds44-btnStd--nextPrevPage {
         right: 5%;
-        top: 1.5rem;
+        top: 2.5rem;
     }
 
     .ds44-btnStd, a.ds44-btnStd, a > .ds44-btnStd, .ds44-btnStd > a {

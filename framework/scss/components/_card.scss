@@ -287,7 +287,7 @@ figure[role=figure]  + .ds44-card__section {
 .ds44-facette__title {
     margin-bottom: $headings-margin-bottom;
     padding: 0;
-    font-size: 1.9rem; // 19px
+    font-size: 1.0625em;  // 17px
     font-weight: $weight-semibold;
     line-height: 1.2;
     background: transparent;
@@ -340,6 +340,10 @@ body.modern {
     @media (max-width: $ds44-small - .0625) {
         padding-right: $ds44-padding-box;
         padding-left: $ds44-padding-box;
+
+        .ds44-card__title {
+            font-size: 1.6rem;
+        }
     }
 }
 
@@ -536,7 +540,7 @@ body.modern {
             flex-direction: column;
 
             .ds44-card__section--horizontal {
-                padding: 2rem; 
+                padding: 2rem;
                 text-align: center;
                 align-items: center;
                 .date {
