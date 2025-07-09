@@ -8,7 +8,7 @@
 
 $ds44-contextual-color : #fed037 !default;
 $ds44-contextual-hover : darken($ds44-contextual-color, 10%) !default;
-$ds44-font-family-base      : "Poppins", sans-serif;  
+$ds44-font-family-base      : "Poppins", sans-serif;
 $ds44-font-family-headings  : "Poppins", sans-serif;
 
 .ds44-btnIcoText--maxi {
@@ -20,12 +20,6 @@ $ds44-font-family-headings  : "Poppins", sans-serif;
   font-size: 1.5em!important;
 }
 
-@media (min-width: 64em) {
-    
-  .ds44-menuBtn {
-    font-size: 1.875em!important;
-  }
-}
 
 @media (max-width: $ds44-small) {
   .ds44-collapser_button{

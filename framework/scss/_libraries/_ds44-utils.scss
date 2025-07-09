@@ -1117,14 +1117,19 @@
     &::before {
         position: absolute;
         content: "";
-        height: 100%;
-        width: 2px;
-        background-color: #000;
-        z-index: 1;
+        height: 100% !important;
+          width: 2px !important;
+          background-color: #000;
+          z-index: 1;
+          left: 50% !important;
+          bottom: 0 !important;
     }
 
     p {
         z-index: 10;
+    }
+    .ds44-txtBulle {
+        font-size: 1.125em;
     }
 }
 
@@ -1144,8 +1149,10 @@
         padding: $ds44-padding-xlarge;
 
         &::before {
-            height: 2px;
-            width: 100%;
+            height: 2px !important;
+            width: 100% !important;
+            left: 0 !important;
+            bottom: 50% !important;
         }
 
     }

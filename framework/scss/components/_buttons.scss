@@ -264,7 +264,6 @@ a > .ds44-btn--contextual,
 .ds44-btnInnerText--bottom {
     @include ds44-font-sizes(tinyText);
     text-transform: uppercase;
-    font-weight: bold;
     display: block;
 }
 

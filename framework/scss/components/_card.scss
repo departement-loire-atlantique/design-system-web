@@ -101,7 +101,6 @@
     }
 
     .ds44-cardTitle {
-        font-size: 2.4rem;
 
         a {
           text-decoration: none;
@@ -293,6 +292,10 @@ figure[role=figure]  + .ds44-card__section {
     line-height: 1.2;
     background: transparent;
     font-family: $ds44-font-family-base;
+
+    @media (max-width: $ds44-small - .0625) {
+        font-size: 1.0625em // 17px
+    }
 }
 
 body.modern {

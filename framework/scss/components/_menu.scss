@@ -23,6 +23,7 @@
 
 .ds44-rsHeaderContainer {
     width: 100%;
+    margin-bottom: $ds44-large-vmargin;
 }
 
 .ds44-navListN2 {
@@ -550,7 +551,7 @@
       margin: $ds44-components-vmargin 0;
     }
 
-    li:first-child .ds44-menuBtn {
+    li:first-child menuHeaders {
         margin-top: 0;
     }
 
@@ -562,7 +563,7 @@
 
     .ds44-navListApplis {
         margin-left: $ds44-large-margin;
-        margin-top: 8rem;
+        margin-top: 10rem;
     }
 
     // Stepper

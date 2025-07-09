@@ -79,7 +79,7 @@ h2, .h2-like {
   @if variable_exists(ds44-font-family-headings) and $ds44-font-family-headings != $ds44-font-family-base{
     font-family: $ds44-font-family-headings;
   }
-  font-weight: $weight-bold;
+  font-weight: $weight-semibold;
   padding: 0 1.5rem;
   line-height: 1.2;
   background: linear-gradient(to bottom, rgba(255,255,255,0) 55%,$ds44-contextual-color 55%);

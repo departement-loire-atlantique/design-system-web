@@ -112,7 +112,14 @@
 
   p {
     font-size: 0.875em;
+
+    a {
+        @media (max-width: $ds44-small - .0625) {
+            font-size: 17px; // 17px
+        }
+    }
   }
+
 }
 
 /* legend block positionnement */
