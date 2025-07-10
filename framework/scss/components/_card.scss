@@ -62,7 +62,7 @@
             line-height: normal;
         }
 
-        .ds44-cardTitle {
+        .ds44-card__title {
             padding-top: $ds44-padding-xlarge;
         }
 
@@ -100,7 +100,7 @@
         }
     }
 
-    .ds44-cardTitle {
+    .ds44-card__title {
 
         a {
           text-decoration: none;
@@ -121,7 +121,7 @@
             }
         }
 
-        .ds44-cardTitle {
+        .ds44-card__title {
             font-size: 1.25em;
             font-family: $ds44-font-family-baseModern;
             font-weight: 600;
@@ -136,7 +136,7 @@
           color: $ds44-dark ;
         }
         .ds44-container-imgRatio--carreAllonge + .ds44-card__section {
-            .ds44-cardTitle a {
+            .ds44-card__title a {
                 font-size: 1.5em;
                 @media (max-width: ($ds44-medium - .0625)) {
                     font-size: 1em;
@@ -195,7 +195,7 @@
         transition-timing-function: ease;
     }
 
-    .ds44-cardTitle {
+    .ds44-card__title {
         .ds44-icoInfoRoutes {
           margin-right: 15px;
           padding: 5px;
