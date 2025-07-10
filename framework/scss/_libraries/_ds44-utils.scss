@@ -854,6 +854,11 @@
 
 .ds44-alphaGradient--header {
     padding: $ds44-padding-xxlarge*2 $ds44-padding-xlarge $ds44-padding-xlarge $ds44-padding-xlarge;
+
+    @media (max-width: $ds44-small - .0625) {
+        padding: $ds44-padding-xxlarge*2 $ds44-padding-large $ds44-padding-large $ds44-padding-large;
+    }
+
 }
 
 /* ----- Nouvelle charte CD44 : Masque pour ne plus afficher ----

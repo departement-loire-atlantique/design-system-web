@@ -588,6 +588,8 @@ body.modern {
 
         .ds44-textLegend {
             padding-right: 20%;
+            margin-right: 1.5rem;
+            font-size: .875em;
 
             @media (max-width: $ds44-medium - .0625) {
                 padding-right: 0;
