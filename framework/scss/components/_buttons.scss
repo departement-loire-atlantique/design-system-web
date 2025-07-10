@@ -737,7 +737,7 @@ a.ds44-btnStd--retourPage {
         min-width: 6rem;
 
         .ds44-btnInnerText {
-            font-size: .86rem;
+            @include ds44-font-sizes(tinyText);
             position: absolute;
             bottom: 0;
             left: 0;
