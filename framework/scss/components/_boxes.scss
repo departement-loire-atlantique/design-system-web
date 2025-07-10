@@ -51,6 +51,7 @@
     background: transparent;
     padding: 0;
     line-height: 1.2em;
+    margin-bottom: 2rem;
 }
 
 .ds44-innerBoxContainer {
@@ -123,6 +124,12 @@
     &--light {
       width: 100px;
     }
+
+    + p, + div {
+        .wysiwyg strong {
+            font-weight: 400;
+        }
+    }
 }
 
 // Chiffres clés
@@ -130,6 +137,7 @@
 .ds44-numberIncrement {
   display: inline-block !important;
   flex-shrink: 0;
+  font-weight: 600;
 
   + .h1-like {
     display: inline-block !important;
@@ -158,7 +166,7 @@
       font-family: $ds44-font-family-headings;
     }
     line-height: 1.1;
-    font-weight:$weight-medium;
+    font-weight:$weight-semibold;
 }
 
 .ds44-boxPushContent {
@@ -266,6 +274,10 @@
 
       .ds44-collapser_element {
         border : 0;
+
+        > p {
+            margin-bottom: 0;
+        }
 
         .ds44-collapser_button {
           text-align: center;

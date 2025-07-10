@@ -37,11 +37,13 @@ $weight-medium: 500 !default; // Graisse absente de la grillade
 
 // Font sizes (1rem value is "10px" equivalent)
 $ds44-font-size-base : 1.6em !default;
+$ds44-font-size-base-mobile : $ds44-font-size-base *0.875 !default; //14px
+$ds44-font-size-base-tablet : $ds44-font-size-base *0.9375 !default; //15px
 
 $ds44-font-sizes: (
   base: (
-    mobile  : $ds44-font-size-base,  // 16px
-    tablet  : $ds44-font-size-base,  // 16px
+    mobile  : $ds44-font-size-base-mobile,  // 14px
+    tablet  : $ds44-font-size-base-tablet,  // 15px
     desktop : $ds44-font-size-base   // 16px
   ),
   h1: (
@@ -66,7 +68,7 @@ $ds44-font-sizes: (
   ),
   h5: (
     mobile  : 1.125em,  // 18px
-    desktop : 1.125em    // 20px
+    desktop : 1.125em    // 18px
   ),
   h6: (
     mobile  : 1.0625em, // 17px
@@ -77,8 +79,8 @@ $ds44-font-sizes: (
     desktop : .875em    // 14px
   ),
   tinyText: (
-    mobile  : .5625em,  // 9px
-    desktop : .5625em   // 9px
+    mobile  : .625em,  // 10px
+    desktop : .625em   // 10px
   ),
   bodySize: (
     mobile  : 1em,      // 16px
@@ -94,7 +96,7 @@ $ds44-font-sizes: (
   ),
   chapoStyle: (
     mobile  : 1.0625em, // 17px
-    desktop : 1.0625em // 17px
+    desktop : 1.125em  // 18px
   ),
   introduction: (
     mobile  : 1.0625em, // 17px
@@ -113,8 +115,8 @@ $ds44-font-sizes: (
     desktop : 1.5em    // 24px
   ),
   collapserLinks: (
-    mobile  : 1em,  // 18px
-    desktop : 1.125em   // 18px
+    mobile  : 1em,  // 16px
+    desktop : 1em   // 18px
   ),
   button: (
     mobile  : 1em,      // 16px
@@ -125,8 +127,8 @@ $ds44-font-sizes: (
     desktop : 1em       // 16px
   ),
   pushTitle : (
-    mobile  : 1.5em,     // 24px
-    desktop : 1.5em     // 24px
+      mobile  : 1.125em,  // 18px
+      desktop : 1.25em    // 20px
   ),
   quotes: (
     mobile  : 2.375em,  // 38px
@@ -141,12 +143,12 @@ $ds44-font-sizes: (
     desktop : 1.125em   // 18px
   ),
   input: (
-    mobile  : 1.6rem,   // 16px
-    desktop : 1.6rem    // 16px
+    mobile  : 1em,   // 16px
+    desktop : 1em    // 16px
   ),
   smallTitle: (
-    mobile  : 1.6rem,   // 16px
-    desktop : 1.6rem    // 16px
+    mobile  : 1em,   // 16px
+    desktop : 1em    // 16px
   )
 ) !default;
 

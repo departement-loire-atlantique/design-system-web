@@ -23,7 +23,10 @@
 
     .ds44-introduction,
     .ds44-collapser {
-        margin-bottom: 4rem;
+        margin-bottom: 3rem;
+    }
+    .ds44-cardDate, .ds44-cardLocalisation {
+        font-size: 1em;
     }
 }
 
@@ -578,11 +581,15 @@ body.modern {
 
             .ds44-js-results-list > .h3-like[role="heading"]{
                 margin-left: $ds44-medium-vmargin ;
+                font-size: 1em;
+                font-weight: 400;
             }
         }
 
         .ds44-textLegend {
             padding-right: 20%;
+            margin-right: 1.5rem;
+            font-size: .875em;
 
             @media (max-width: $ds44-medium - .0625) {
                 padding-right: 0;

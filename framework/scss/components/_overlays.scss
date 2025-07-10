@@ -159,9 +159,9 @@
         background: #ffffff !important;
         margin: 0 !important;
 
-        .ds44-cardTitle {
+        .ds44-card__title {
             font-family: $ds44-font-family-headings;
-            font-size: 1.8rem!important;
+            font-size: 1em !important;
         }
 
         &.ds44-cardIsFocus {
@@ -209,6 +209,10 @@
         &:hover {
             background-color: rgba(255, 255, 255, 1);
         }
+    }
+
+    .mapboxgl-map {
+        font-family: $ds44-font-family-base;
     }
 }
 

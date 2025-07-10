@@ -91,7 +91,7 @@ input:-webkit-autofill {
 
     .ds44-labelTypePlaceholderLarge {
         span {
-            font-size: 1.6rem;
+            font-size: 1em;
             margin-top: $ds44-padding-large;
         }
     }
@@ -158,7 +158,7 @@ textarea {
     }
 
     .ds44-selectLabel {
-        font-size: 0.875em;
+        font-size: 1em;
     }
     &.ds44-time__shape {
         padding: 1.1rem 2.5rem 1rem 0.5rem;
@@ -606,7 +606,7 @@ input[type=radio],
 }
 
 .ds44-labelLarge {
-    font-size: 1.6rem;
+    font-size: 1em;
     line-height: 1rem;
 }
 

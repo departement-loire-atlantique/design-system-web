@@ -92,7 +92,7 @@ h2, .h2-like {
   }
 
   &.ds44-theme {
-    background: linear-gradient(to bottom, $ds44-contextual-color 55%, rgba(255, 255, 255, 1) 55% )!important;
+    background: linear-gradient(to bottom, rgba(255, 255, 255, 0) 55%, rgba(255, 255, 255, 1) 55% )!important;
   }
 
   &.ds44-dark {
@@ -430,6 +430,10 @@ caption {
   margin-bottom: $ds44-medium-vmargin;
   text-align: left;
   font-weight: normal;
+}
+
+strong {
+    font-weight: 600; //semibold
 }
 
 /* Global classes */
