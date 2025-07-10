@@ -29,6 +29,7 @@ var jekyllDir = "docs/",
     scssBlancheCouronneFile = 'framework/scss/SP-abbayeBlancheCouronne.scss',
     scssFoliesSiffaitFile = 'framework/scss/SP-jardinsFoliesSiffait.scss',
     scssSaintSulpiceFile = 'framework/scss/SP-egliseVieuxBourg.scss',
+    scssRessourcesEducativesFile = 'framework/scss/SP-ressourcesEducatives.scss',
     scssDobreeFile = 'framework/scss/SP-museeDobree.scss',
     scssPortsFile = 'framework/scss/ports.scss',
     scssMdaFile = 'framework/scss/mda.scss',
@@ -263,6 +264,18 @@ gulp.task('build:css:parents:dev', function () {
         .pipe(gulp.dest(cssDest));
 });
 
+gulp.task('build:css:ressources-educatives:dev', function () {
+    return gulp.src([scssFileSwiper, scssFileAos, scssRessourcesEducativesFile])
+        .pipe(sass({
+            // CSS non minifiée plus lisible ('}' à la ligne)
+            outputStyle: 'expanded'
+        }))
+        .pipe(postcss(postCssPluginsDev))
+        .pipe(concat('ressources-educatives.css'))
+        .pipe(browserSync.stream())
+        .pipe(gulp.dest(cssDest));
+});
+
 gulp.task('build:css:cd44:prod', function () {
     return gulp.src([scssFileSwiper, scssFileAos, scssFile])
         .pipe(sass())
@@ -361,6 +374,7 @@ gulp.task('build:ds', gulp.parallel(
     'build:css:ports:dev',
     'build:css:mda:dev',
     'build:css:parents:dev',
+    'build:css:ressources-educatives:dev',
     'build:glyphicons',
     'build:demoicons',
     'build:js',
