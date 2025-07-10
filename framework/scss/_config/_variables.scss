@@ -37,11 +37,13 @@ $weight-medium: 500 !default; // Graisse absente de la grillade
 
 // Font sizes (1rem value is "10px" equivalent)
 $ds44-font-size-base : 1.6em !default;
+$ds44-font-size-base-mobile : $ds44-font-size-base *0.875 !default; //14px
+$ds44-font-size-base-tablet : $ds44-font-size-base *0.9375 !default; //15px
 
 $ds44-font-sizes: (
   base: (
-    mobile  : $ds44-font-size-base,  // 16px
-    tablet  : $ds44-font-size-base,  // 16px
+    mobile  : $ds44-font-size-base-mobile,  // 14px
+    tablet  : $ds44-font-size-base-tablet,  // 15px
     desktop : $ds44-font-size-base   // 16px
   ),
   h1: (

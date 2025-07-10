@@ -171,6 +171,9 @@
   img {
     width: 100%;
   }
+  + .ds44-card__section .ds44-card__title {
+      font-size: 1em;
+  }
 }
 
 .ds44-container-imgRatio--profilXL {
@@ -561,7 +564,7 @@ figure {
 
 @media (min-width: $ds44-small) {
   .ds44-container-imgRatio--tuileMiseEnAvant .ds44-card__title {
-    font-size: 2.4rem; // 24px
+    font-size: 2.2rem; // 24px
   }
   .col .ds44-container-imgRatio--tuileMiseEnAvant .ds44-card__title {
     font-size: 1.7rem; // 17px

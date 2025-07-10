@@ -23,7 +23,10 @@
 
     .ds44-introduction,
     .ds44-collapser {
-        margin-bottom: 4rem;
+        margin-bottom: 3rem;
+    }
+    .ds44-cardDate, .ds44-cardLocalisation {
+        font-size: 1em;
     }
 }
 
@@ -32,11 +35,6 @@
     margin-right: auto;
     max-width: $ds44-max-inner-mag-size;
     position: relative;
-
-    ul.ds44-list .ds44-btnStd i {
-        visibility: hidden;
-        display: none;
-    }
 }
 
 .ds44-video-container {
@@ -583,6 +581,8 @@ body.modern {
 
             .ds44-js-results-list > .h3-like[role="heading"]{
                 margin-left: $ds44-medium-vmargin ;
+                font-size: 1em;
+                font-weight: 400;
             }
         }
 
