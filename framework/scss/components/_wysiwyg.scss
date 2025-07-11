@@ -280,7 +280,7 @@ blockquote {
     padding: .5rem 1rem;
     display: inline-block;
     margin: 1.5rem 0 1rem 0 !important;
-    font-size: 16px !important;
+    font-size: 1em !important;
     line-height: 1.4em ;
     font-family: $ds44-font-family-base;
 }
@@ -364,7 +364,7 @@ table.historiqueAssmat {
   width: 100%;
 
   thead th {
-    font-size: 16px;
+    font-size: 1em;
     font-weight: bold;
   }
   tbody tr td:nth-of-type(1) {
@@ -385,7 +385,7 @@ table.selection {
   width: 100%;
 
   thead th {
-    font-size: 14px;
+    font-size: .875em;
     font-weight: normal;
   }
   td, th {
