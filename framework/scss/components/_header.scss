@@ -30,6 +30,20 @@
     margin-left: 2rem;
 }
 
+/* Phylactère */
+
+.phylactere .ds44-container-large .ds44-flex-container:before {
+    content: '';
+    width: 80px;
+    height: 34px;
+    bottom: -34px;
+    left: 24px;
+    position: absolute;
+    display: block;
+    background-image: url(../../../assets/images/shape_logo.svg);
+    background-repeat: no-repeat;
+}
+
 /* Skip links */
 
 
@@ -85,17 +99,6 @@
     }
     .ds44-container-large .ds44-flex-container {
         position: relative;
-    }
-    .ds44-container-large .ds44-flex-container:before {
-        content: '';
-        width: 80px;
-        height: 34px;
-        bottom: -34px;
-        left: 24px;
-        position: absolute;
-        display: block;
-        background-image: url(../../../assets/images/shape_logo.svg);
-        background-repeat: no-repeat;
     }
 }
 
