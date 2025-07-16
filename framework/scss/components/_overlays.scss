@@ -160,8 +160,8 @@
         margin: 0 !important;
 
         .ds44-card__title {
-            font-family: $ds44-font-family-headings;
-            font-size: 1em !important;
+            font-family: $ds44-font-family-headings !important;
+            font-size: 1.6rem !important;
         }
 
         &.ds44-cardIsFocus {
@@ -171,6 +171,8 @@
 
         .ds44-docListElem {
             margin-top: 1rem !important;
+            font-size: 1.2rem !important;
+            font-family: $ds44-font-family-headings !important;
         }
 
         .ds44-flex-container {

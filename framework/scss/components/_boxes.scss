@@ -259,15 +259,25 @@
         padding-left: $ds44-padding-xxlarge;
         display: inline-block;
 
+        @media (max-width: $ds44-medium  - .0625) {
+            .icon {
+               display: none;
+           }
+        }
+
        .icon {
           left: 0;
           top: -5px;
           right: inherit;
 
+
+
           &:before {
             color: $ds44-error;
             transform: none;
             margin-top: 0;
+
+
           }
         }
       }
