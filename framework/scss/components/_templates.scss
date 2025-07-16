@@ -27,6 +27,11 @@
     }
     .ds44-cardDate, .ds44-cardLocalisation {
         font-size: 1em;
+        margin-top : 0 !important;
+
+        .icon {
+            font-size: 1em;
+        }
     }
 }
 
@@ -392,6 +397,7 @@ body.modern {
         left: 0;
         z-index: 100;
         font-weight: $weight-bold;
+        font-size: 3em;
     }
 
 }
