@@ -252,7 +252,8 @@
       border: 0;
 
       .ds44-card__title {
-        font-size: 2.4rem;
+        font-size: 1.25em ; // 20px
+        font-weight: 600;
         text-align: center;
         margin: 0;
         position: relative;
@@ -261,7 +262,7 @@
 
        .icon {
           left: 0;
-          top: -5px;
+          top: 0;
           right: inherit;
 
 

@@ -8,3 +8,32 @@
 
 $ds44-contextual-color : #FFBED2 !default;
 $ds44-contextual-hover : lighten($ds44-contextual-color, 5%) !default;
+
+body.modern {
+
+    /* ----------------------------- */
+    /* ==Collapser                   */
+    /* ----------------------------- */
+
+    /* component structure */
+    .ds44-collapser, ul.ds44-collapser {
+
+      &.dobree-collapser {
+          .ds44-collapser_element{
+              border: 0;
+              margin-bottom: 5px;
+          }
+          .ds44-collapser_button {
+              background: $ds44-contextual-color;
+              font-size: 1.75em;
+              padding: 2rem 8rem 2rem 4rem;
+
+              .icon {
+                  right: 4rem;
+                  top: 2rem;
+                }
+          }
+    }
+
+    }
+}
