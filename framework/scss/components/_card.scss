@@ -287,7 +287,7 @@ figure[role=figure]  + .ds44-card__section {
 .ds44-facette__title {
     margin-bottom: $headings-margin-bottom;
     padding: 0;
-    font-size: 1.0625em;  // 17px
+    font-size: 1.125em;  // 18px
     font-weight: $weight-semibold;
     line-height: 1.2;
     background: transparent;
@@ -299,7 +299,46 @@ figure[role=figure]  + .ds44-card__section {
 }
 
 body.modern {
-    .ds44-card__title,
+
+élément {
+}
+.ds44-card .ds44-card__title a {
+  text-decoration: none;
+
+}
+[role="heading"] a {
+  text-decoration: none;
+
+}
+.ds44-card__globalLink {
+  text-decoration: none;
+
+  color: #000000;
+
+}
+a {
+  color: #000;
+
+  text-decoration: underline;
+
+  -webkit-transition: color .4s ease-out;
+
+  transition: color .4s ease-out;
+
+  overflow-wrap: break-word;
+
+}
+*, ::before, ::after {
+  -webkit-box-sizing: inherit;
+
+  box-sizing: inherit;
+
+  min-width: 0;
+
+  min-height: 0;
+
+}
+.ds44-card__section--horizontal,
     .ds44-facette__title {
         &.h2-like + * {
             margin-top: 0 !important;
@@ -334,7 +373,7 @@ body.modern {
     flex-direction: column;
 
     .ds44-card__title {
-        font-size: 1.7rem;
+        font-size: 1.125em ; // 18px
     }
 
     @media (max-width: $ds44-small - .0625) {

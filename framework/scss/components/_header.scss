@@ -36,7 +36,7 @@
     content: '';
     width: 80px;
     height: 34px;
-    bottom: -34px;
+    bottom: -33px;
     left: 24px;
     position: absolute;
     display: block;
@@ -434,13 +434,13 @@
       }
   }
 
-  .ds44-header {
+  .phylactere .ds44-header {
       min-height: $header-height-small;
 
         .ds44-container-large .ds44-flex-container::before {
           width: 50px;
           height: 23px;
-          bottom: -22px;
+          bottom: -21px;
           left: 14px;
         }
   }
