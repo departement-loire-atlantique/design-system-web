@@ -175,6 +175,16 @@
             font-family: $ds44-font-family-headings !important;
         }
 
+        @media (max-width: $ds44-small) {
+            .ds44-card__title {
+                font-size: 1.4rem !important;
+            }
+
+            .ds44-docListElem {
+                font-size: 1rem !important;
+            }
+        }
+
         .ds44-flex-container {
             flex-direction: column;
 
