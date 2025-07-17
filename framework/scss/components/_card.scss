@@ -460,9 +460,14 @@ a {
             font-size: 1.875em;
             font-weight: 600;
             margin-bottom: 1em;
-            padding-bottom: 1em;
+            padding: 0 0 1em 0;
             position: relative;
             width:100%;
+            background: none;
+
+            + .wysiwyg {
+                margin-top:0;
+            }
 
             &:after {
                 content: '';
