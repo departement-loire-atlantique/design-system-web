@@ -20,6 +20,19 @@
     margin-right: auto;
     max-width: $ds44-max-inner-size;
     position: relative;
+
+    .ds44-introduction,
+    .ds44-collapser {
+        margin-bottom: 3rem;
+    }
+    .ds44-cardDate, .ds44-cardLocalisation {
+        font-size: 1em;
+        margin-top : 0 !important;
+
+        .icon {
+            font-size: 1em;
+        }
+    }
 }
 
 .ds44-inner-container--mag {
@@ -384,6 +397,7 @@ body.modern {
         left: 0;
         z-index: 100;
         font-weight: $weight-bold;
+        font-size: 3em;
     }
 
 }
@@ -431,6 +445,11 @@ body.modern {
             //outline: 5px solid $ds44-color-soft-text;
         }
     }
+    @media (max-width: $ds44-small - .0625) {
+        .ds44-imgCaption {
+            visibility: hidden;
+        }
+    }
 }
 
 .ds44-pageHeaderContainer--deuxCol .ds44-bgGray {
@@ -439,13 +458,18 @@ body.modern {
 
 
 .ds44-introduction, .ds44-introduction-like, .ds44-component-chapo {
-    @include ds44-font-sizes(chapoStyle);
     background: transparent;
     margin-top: $ds44-large-vmargin;
     margin-bottom: $ds44-large-vmargin;
 }
+.ds44-component-chapo {
+    @include ds44-font-sizes(chapoStyle);
+}
 .ds44-introduction, .ds44-introduction-like {
-    font-weight: $weight-bold;
+    @include ds44-font-sizes(introduction);
+}
+.ds44-introduction, .ds44-introduction-like {
+    font-weight: $weight-medium;
 }
 .dobree-introduction {
     font-size: 1.25em;
@@ -563,11 +587,15 @@ body.modern {
 
             .ds44-js-results-list > .h3-like[role="heading"]{
                 margin-left: $ds44-medium-vmargin ;
+                font-size: 1em;
+                font-weight: 400;
             }
         }
 
         .ds44-textLegend {
             padding-right: 20%;
+            margin-right: 1.5rem;
+            font-size: .875em;
 
             @media (max-width: $ds44-medium - .0625) {
                 padding-right: 0;

@@ -44,7 +44,7 @@ script:
 
 # Unlock private key
 before_deploy:
-  - echo $key_password | gpg --passphrase-fd 0 deploy_rsa.gpg
+  - echo "$key_password" | gpg --batch --yes --passphrase-fd 0 --output deploy_rsa --decrypt deploy_rsa.gpg
   - eval "$(ssh-agent -s)"
   - chmod 600 deploy_rsa
   - ssh-add deploy_rsa

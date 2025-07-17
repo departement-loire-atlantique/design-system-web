@@ -45,7 +45,7 @@ class MapGeojsonClass extends MapAbstract {
             <section class="ds44-card ds44-js-card ds44-card--contact ds44-box ds44-bgGray">
                 <div class="ds44-card__section">
                     <div class="ds44-innerBoxContainer">
-                        <p role="heading" aria-level="3" class="h4-like ds44-cardTitle mts">${evt.features[0].properties.description}</p>
+                        <p role="heading" aria-level="3" class="h4-like ds44-card__title mts">${evt.features[0].properties.description}</p>
                     </div>
                 </div>
             </section>

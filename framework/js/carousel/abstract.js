@@ -273,7 +273,7 @@ class CarouselAbstract {
 
                     if(object.paginationElement.classList.contains("bullet"))
                     {
-                        const titleElement = object.swiperElement.querySelectorAll('.swiper-slide:not(.swiper-slide-duplicate) .ds44-cardTitle');
+                        const titleElement = object.swiperElement.querySelectorAll('.swiper-slide:not(.swiper-slide-duplicate) .ds44-card__title');
                         if (titleElement && titleElement.length) {
                             return '<li class="' + className + '"><span class="entitled visually-hidden"><button type="button">' + titleElement[index].innerText + '</button></span></li>';
                         }

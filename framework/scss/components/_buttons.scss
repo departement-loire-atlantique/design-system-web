@@ -250,7 +250,7 @@ a > .ds44-btn--contextual,
 // Buttons for header (full height)
 .ds44-btnIcoText--maxi {
     font-size: .97em;
-    font-weight: bold;
+    font-weight: $weight-medium;
     text-transform: uppercase;
     cursor: pointer;
     text-decoration: none;
@@ -264,7 +264,6 @@ a > .ds44-btn--contextual,
 .ds44-btnInnerText--bottom {
     @include ds44-font-sizes(tinyText);
     text-transform: uppercase;
-    font-weight: bold;
     display: block;
 }
 
@@ -434,7 +433,7 @@ button.ds44-theme {
 .ds44-btnStd--retourPage,
 a.ds44-btnStd--retourPage {
     position: absolute;
-    top: 20px;
+    top: 50px;
     left: 20px;
     max-width: 14%;
     text-align: center;
@@ -445,7 +444,7 @@ a.ds44-btnStd--retourPage {
 
 .ds44-btnStd--nextPrevPage {
     position: absolute;
-    top: 20px;
+    top: 50px;
     right: 20px;
     text-align: center;
     z-index:10;
@@ -595,7 +594,7 @@ a.ds44-btnStd--retourPage {
     }
 }
 .dobree-link-2 {
-    font-size: 16px;
+    font-size: 1em;
     margin-bottom: 1rem;
     position: relative;
     text-decoration: none;
@@ -709,11 +708,11 @@ a.ds44-btnStd--retourPage {
     .ds44-btnStd--retourPage,
     a.ds44-btnStd--retourPage {
         left: 5%;
-        top: 1.5rem;
+        top: 2.5rem;
     }
     .ds44-btnStd--nextPrevPage {
         right: 5%;
-        top: 1.5rem;
+        top: 2.5rem;
     }
 
     .ds44-btnStd, a.ds44-btnStd, a > .ds44-btnStd, .ds44-btnStd > a {
@@ -738,7 +737,7 @@ a.ds44-btnStd--retourPage {
         min-width: 6rem;
 
         .ds44-btnInnerText {
-            font-size: .86rem;
+            @include ds44-font-sizes(tinyText);
             position: absolute;
             bottom: 0;
             left: 0;

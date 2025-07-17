@@ -15,7 +15,7 @@ html {
   box-sizing: border-box;
   //scroll-behavior: smooth; // all browsers but Safari
 }
-
+ 
 *,
 *::before,
 *::after {
@@ -46,7 +46,7 @@ a {
   color: $ds44-link-color;
   text-decoration: $ds44-link-decoration;
   transition: color .4s ease-out;
-  word-break: break-word;
+  overflow-wrap: break-word;
 
   &:focus,
   &:hover,
@@ -65,12 +65,12 @@ h1, .h1-like {
   }
   background: transparent;
   font-weight: $weight-bold;
-  line-height: 1;
+  line-height: 1.2;
   padding: 0;
   display: block;
 
   &--bigger {
-    font-size: 11rem;
+    font-size: 4em;
   }
 }
 
@@ -79,7 +79,7 @@ h2, .h2-like {
   @if variable_exists(ds44-font-family-headings) and $ds44-font-family-headings != $ds44-font-family-base{
     font-family: $ds44-font-family-headings;
   }
-  font-weight: $weight-bold;
+  font-weight: $weight-semibold;
   padding: 0 1.5rem;
   line-height: 1.2;
   background: linear-gradient(to bottom, rgba(255,255,255,0) 55%,$ds44-contextual-color 55%);
@@ -92,7 +92,7 @@ h2, .h2-like {
   }
 
   &.ds44-theme {
-    background: linear-gradient(to bottom, $ds44-contextual-color 55%, rgba(255, 255, 255, 1) 55% )!important;
+    background: linear-gradient(to bottom, rgba(255, 255, 255, 0) 55%, rgba(255, 255, 255, 1) 55% )!important;
   }
 
   &.ds44-dark {
@@ -204,7 +204,7 @@ h6, .h6-like {
 .p-like {
   margin: 0 !important;
   padding: 0 !important;
-  font-size: 16px;
+  font-size: 1em;
   color: $ds44-color-base;
   font-family: $ds44-font-family-base;
   line-height: $ds44-line-height-base;
@@ -235,7 +235,7 @@ h5,
 h6,
 dd {
   margin-top: 0;
-  margin-bottom: $headings-margin-bottom;
+  margin-bottom: $ds44-margin-base;
 }
 
 p,
@@ -245,7 +245,7 @@ ul,
 dl,
 blockquote {
   margin-top: 0;
-  margin-bottom: $ds44-paragraph-margin-bottom;
+  margin-bottom: $ds44-margin-base;
 }
 
 /* Avoid margins on nested elements */
@@ -430,6 +430,10 @@ caption {
   margin-bottom: $ds44-medium-vmargin;
   text-align: left;
   font-weight: normal;
+}
+
+strong {
+    font-weight: 600; //semibold
 }
 
 /* Global classes */

@@ -29,6 +29,7 @@ var jekyllDir = "docs/",
     scssBlancheCouronneFile = 'framework/scss/SP-abbayeBlancheCouronne.scss',
     scssFoliesSiffaitFile = 'framework/scss/SP-jardinsFoliesSiffait.scss',
     scssSaintSulpiceFile = 'framework/scss/SP-egliseVieuxBourg.scss',
+    scssRessourcesEducativesFile = 'framework/scss/SP-ressourcesEducatives.scss',
     scssDobreeFile = 'framework/scss/SP-museeDobree.scss',
     scssPortsFile = 'framework/scss/ports.scss',
     scssMdaFile = 'framework/scss/mda.scss',
@@ -84,7 +85,7 @@ gulp.task('build:css:cd44:dev', function () {
 });
 
 gulp.task('build:css:institutionnel:dev', function () {
-    return gulp.src([scssFileSwiper, scssFileAos, scssInstitutionnelFile])
+    return gulp.src([scssFontImportFile, scssFileSwiper, scssFileAos, scssInstitutionnelFile])
         .pipe(sass({
             // CSS non minifiée plus lisible ('}' à la ligne)
             outputStyle: 'expanded'
@@ -96,7 +97,7 @@ gulp.task('build:css:institutionnel:dev', function () {
 });
 
 gulp.task('build:css:arcantique:dev', function () {
-    return gulp.src([scssFileSwiper, scssFileAos, scssArcAntiqueFile])
+    return gulp.src([scssFontImportFile, scssFileSwiper, scssFileAos, scssArcAntiqueFile])
         .pipe(sass({
             // CSS non minifiée plus lisible ('}' à la ligne)
             outputStyle: 'expanded'
@@ -108,7 +109,7 @@ gulp.task('build:css:arcantique:dev', function () {
 });
 
 gulp.task('build:css:archeo:dev', function () {
-    return gulp.src([scssFileSwiper, scssFileAos, scssArcheoFile])
+    return gulp.src([scssFontImportFile, scssFileSwiper, scssFileAos, scssArcheoFile])
         .pipe(sass({
             // CSS non minifiée plus lisible ('}' à la ligne)
             outputStyle: 'expanded'
@@ -120,7 +121,7 @@ gulp.task('build:css:archeo:dev', function () {
 });
 
 gulp.task('build:css:clisson:dev', function () {
-    return gulp.src([scssFileSwiper, scssFileAos, scssClissonFile])
+    return gulp.src([scssFontImportFile, scssFileSwiper, scssFileAos, scssClissonFile])
         .pipe(sass({
             // CSS non minifiée plus lisible ('}' à la ligne)
             outputStyle: 'expanded'
@@ -132,7 +133,7 @@ gulp.task('build:css:clisson:dev', function () {
 });
 
 gulp.task('build:css:aidants:dev', function () {
-    return gulp.src([scssFileSwiper, scssFileAos, scssAidantsFile])
+    return gulp.src([scssFontImportFile, scssFileSwiper, scssFileAos, scssAidantsFile])
         .pipe(sass({
             // CSS non minifiée plus lisible ('}' à la ligne)
             outputStyle: 'expanded'
@@ -144,7 +145,7 @@ gulp.task('build:css:aidants:dev', function () {
 });
 
 gulp.task('build:css:handicap:dev', function () {
-    return gulp.src([scssFileSwiper, scssFileAos, scssHandicapFile])
+    return gulp.src([scssFontImportFile, scssFileSwiper, scssFileAos, scssHandicapFile])
         .pipe(sass({
             // CSS non minifiée plus lisible ('}' à la ligne)
             outputStyle: 'expanded'
@@ -156,7 +157,7 @@ gulp.task('build:css:handicap:dev', function () {
 });
 
 gulp.task('build:css:garenne-lemot:dev', function () {
-    return gulp.src([scssFileSwiper, scssFileAos, scssGarenneMemotFile])
+    return gulp.src([scssFontImportFile, scssFileSwiper, scssFileAos, scssGarenneMemotFile])
         .pipe(sass({
             // CSS non minifiée plus lisible ('}' à la ligne)
             outputStyle: 'expanded'
@@ -168,7 +169,7 @@ gulp.task('build:css:garenne-lemot:dev', function () {
 });
 
 gulp.task('build:css:chateaubriant:dev', function () {
-    return gulp.src([scssFileSwiper, scssFileAos, scssChateaubriantFile])
+    return gulp.src([scssFontImportFile, scssFileSwiper, scssFileAos, scssChateaubriantFile])
         .pipe(sass({
             // CSS non minifiée plus lisible ('}' à la ligne)
             outputStyle: 'expanded'
@@ -180,7 +181,7 @@ gulp.task('build:css:chateaubriant:dev', function () {
 });
 
 gulp.task('build:css:blanche-couronne:dev', function () {
-    return gulp.src([scssFileSwiper, scssFileAos, scssBlancheCouronneFile])
+    return gulp.src([scssFontImportFile, scssFileSwiper, scssFileAos, scssBlancheCouronneFile])
         .pipe(sass({
             // CSS non minifiée plus lisible ('}' à la ligne)
             outputStyle: 'expanded'
@@ -192,7 +193,7 @@ gulp.task('build:css:blanche-couronne:dev', function () {
 });
 
 gulp.task('build:css:folies-siffait:dev', function () {
-    return gulp.src([scssFileSwiper, scssFileAos, scssFoliesSiffaitFile])
+    return gulp.src([scssFontImportFile, scssFileSwiper, scssFileAos, scssFoliesSiffaitFile])
         .pipe(sass({
             // CSS non minifiée plus lisible ('}' à la ligne)
             outputStyle: 'expanded'
@@ -204,7 +205,7 @@ gulp.task('build:css:folies-siffait:dev', function () {
 });
 
 gulp.task('build:css:saint-sulpice:dev', function () {
-    return gulp.src([scssFileSwiper, scssFileAos, scssSaintSulpiceFile])
+    return gulp.src([scssFontImportFile, scssFileSwiper, scssFileAos, scssSaintSulpiceFile])
         .pipe(sass({
             // CSS non minifiée plus lisible ('}' à la ligne)
             outputStyle: 'expanded'
@@ -228,7 +229,7 @@ gulp.task('build:css:dobree:dev', function () {
 });
 
 gulp.task('build:css:ports:dev', function () {
-    return gulp.src([scssFileSwiper, scssFileAos, scssPortsFile])
+    return gulp.src([scssFontImportFile, scssFileSwiper, scssFileAos, scssPortsFile])
         .pipe(sass({
             // CSS non minifiée plus lisible ('}' à la ligne)
             outputStyle: 'expanded'
@@ -263,8 +264,20 @@ gulp.task('build:css:parents:dev', function () {
         .pipe(gulp.dest(cssDest));
 });
 
+gulp.task('build:css:ressources-educatives:dev', function () {
+    return gulp.src([scssFileSwiper, scssFileAos, scssRessourcesEducativesFile])
+        .pipe(sass({
+            // CSS non minifiée plus lisible ('}' à la ligne)
+            outputStyle: 'expanded'
+        }))
+        .pipe(postcss(postCssPluginsDev))
+        .pipe(concat('ressources-educatives.css'))
+        .pipe(browserSync.stream())
+        .pipe(gulp.dest(cssDest));
+});
+
 gulp.task('build:css:cd44:prod', function () {
-    return gulp.src([scssFileSwiper, scssFileAos, scssFile])
+    return gulp.src([scssFontImportFile, scssFileSwiper, scssFileAos, scssFile])
         .pipe(sass())
         .pipe(postcss(postCssPluginsProd))
         .pipe(concat('cd44.min.css'))
@@ -361,6 +374,7 @@ gulp.task('build:ds', gulp.parallel(
     'build:css:ports:dev',
     'build:css:mda:dev',
     'build:css:parents:dev',
+    'build:css:ressources-educatives:dev',
     'build:glyphicons',
     'build:demoicons',
     'build:js',

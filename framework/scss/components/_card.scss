@@ -58,12 +58,12 @@
             left: 0;
             padding: 0.625rem;
             background: $ds44-contextual-color;
-            font-weight: bold;
+            font-weight: 600;
             line-height: normal;
         }
 
-        .ds44-cardTitle {
-            padding-top: $ds44-padding-large;
+        .ds44-card__title {
+            padding-top: $ds44-padding-xlarge;
         }
 
     }
@@ -100,8 +100,7 @@
         }
     }
 
-    .ds44-cardTitle {
-        font-size: 2.4rem;
+    .ds44-card__title {
 
         a {
           text-decoration: none;
@@ -109,6 +108,25 @@
                 text-decoration: underline;
             }
         }
+    }
+
+    .ds44-card__title,
+    .ds44-facette__title {
+        margin-bottom: $headings-margin-bottom;
+        padding: 0;
+        font-size: 1.0625em ; // 17px
+        font-weight: $weight-semibold;
+        line-height: 1.3;
+        background: transparent;
+        font-family: $ds44-font-family-base;
+    }
+
+    .ds44-cardDate,
+    .ds44-cardLocalisation,
+    .ds44-docListElem,
+    p,
+    .ds44-btnStd--tag {
+        font-size: .875em ; // 14px
     }
 
     &.ds44-card--dobree {
@@ -122,10 +140,10 @@
             }
         }
 
-        .ds44-cardTitle {
+        .ds44-card__title {
             font-size: 1.25em;
             font-family: $ds44-font-family-baseModern;
-            font-weight: 400;
+            font-weight: 600;
         }
         .ds44-docListElem {
           font-size: 0.875em;
@@ -137,7 +155,7 @@
           color: $ds44-dark ;
         }
         .ds44-container-imgRatio--carreAllonge + .ds44-card__section {
-            .ds44-cardTitle a {
+            .ds44-card__title a {
                 font-size: 1.5em;
                 @media (max-width: ($ds44-medium - .0625)) {
                     font-size: 1em;
@@ -196,7 +214,7 @@
         transition-timing-function: ease;
     }
 
-    .ds44-cardTitle {
+    .ds44-card__title {
         .ds44-icoInfoRoutes {
           margin-right: 15px;
           padding: 5px;
@@ -284,19 +302,45 @@ figure[role=figure]  + .ds44-card__section {
     }
 }
 
-.ds44-card__title,
-.ds44-facette__title {
-    margin-bottom: $headings-margin-bottom;
-    padding: 0;
-    font-size: 1.7rem; // 17px
-    font-weight: $weight-semibold;
-    line-height: 1.2;
-    background: transparent;
-    font-family: $ds44-font-family-base;
-}
-
 body.modern {
-    .ds44-card__title,
+
+.ds44-card .ds44-card__title a {
+  text-decoration: none;
+
+}
+[role="heading"] a {
+  text-decoration: none;
+
+}
+.ds44-card__globalLink {
+  text-decoration: none;
+
+  color: #000000;
+
+}
+a {
+  color: #000;
+
+  text-decoration: underline;
+
+  -webkit-transition: color .4s ease-out;
+
+  transition: color .4s ease-out;
+
+  overflow-wrap: break-word;
+
+}
+*, ::before, ::after {
+  -webkit-box-sizing: inherit;
+
+  box-sizing: inherit;
+
+  min-width: 0;
+
+  min-height: 0;
+
+}
+.ds44-card__section--horizontal,
     .ds44-facette__title {
         &.h2-like + * {
             margin-top: 0 !important;
@@ -330,9 +374,17 @@ body.modern {
     display: flex;
     flex-direction: column;
 
+    .ds44-card__title {
+        font-size: 1.0625em ;  // 17px
+    }
+
     @media (max-width: $ds44-small - .0625) {
         padding-right: $ds44-padding-box;
         padding-left: $ds44-padding-box;
+
+        .ds44-card__title {
+            font-size: 1em;
+        }
     }
 }
 
@@ -406,11 +458,16 @@ body.modern {
         }
         .ds44-card__title {
             font-size: 1.875em;
-            font-weight: normal;
+            font-weight: 600;
             margin-bottom: 1em;
-            padding-bottom: 1em;
+            padding: 0 0 1em 0;
             position: relative;
             width:100%;
+            background: none;
+
+            + .wysiwyg {
+                margin-top:0 !important;
+            }
 
             &:after {
                 content: '';
@@ -477,6 +534,10 @@ body.modern {
             }
             @media (max-width: ($ds44-medium - .0625)) {
                 text-align: left !important;
+
+                .ds44-btnStd {
+                    text-align: center !important;
+                }
             }
         }
     }
@@ -487,6 +548,7 @@ body.modern {
             p[role=heading] {
                 font-size: 1.25em;
                 margin-bottom: 2rem;
+                font-weight: $weight-medium;
             }
             .tarif::before {
                 content: '';
@@ -524,7 +586,7 @@ body.modern {
             flex-direction: column;
 
             .ds44-card__section--horizontal {
-                padding: 4rem;
+                padding: 2rem;
                 text-align: center;
                 align-items: center;
                 .date {
@@ -612,7 +674,6 @@ body.modern {
 
 .ds44-cardDate,
 .ds44-cardLocalisation {
-    font-size: .875em;
 
     .icon {
         font-size: 1.2rem;

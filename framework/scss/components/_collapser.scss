@@ -70,19 +70,15 @@
     border: none;
   }
 
-  &.dobree-collapser {
+  &.ds44-collapser--bigger {
       .ds44-collapser_element{
           border: 0;
           margin-bottom: 5px;
       }
       .ds44-collapser_button {
           background: $ds44-contextual-color;
-          font-size: 1.875em;
+          font-size: 1.375em;
           padding: 2rem 8rem 2rem 4rem;
-
-          @media (max-width: $medium - .0625) {
-              font-size: 1.25em;
-          }
 
           .icon {
               right: 4rem;

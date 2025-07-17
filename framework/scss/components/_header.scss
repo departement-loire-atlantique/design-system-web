@@ -10,7 +10,7 @@
     &.ds44-logoContainer--medium{
         img {
             height: 85px;
-        }    
+        }
     }
     img {
         height: 62px;
@@ -24,10 +24,24 @@
 
 .ds44-titreLogo {
     text-decoration: none;
-    font-size: 1.6rem;
+    font-size: 1em;
     line-height: 1.2;
     font-weight: bold;
     margin-left: 2rem;
+}
+
+/* Phylactère */
+
+.phylactere .ds44-header .ds44-container-large .ds44-flex-container:before {
+    content: '';
+    width: 80px;
+    height: 34px;
+    bottom: -33px;
+    left: 24px;
+    position: absolute;
+    display: block;
+    background-image: url(../../../assets/images/shape_logo.svg);
+    background-repeat: no-repeat;
 }
 
 /* Skip links */
@@ -58,7 +72,7 @@
 .ds44-header {
     min-height: $header-height-large;
     max-height: $header-height-medium;
-    overflow: hidden;
+    /* --- overflow: hidden; ---- Pour ajout shape Logo */
     position: fixed;
     top: 0;
     padding: 0;
@@ -82,6 +96,9 @@
 
     .ds44-colRight {
       min-height: $header-height-large;
+    }
+    .ds44-container-large .ds44-flex-container {
+        position: relative;
     }
 }
 
@@ -281,6 +298,7 @@
             align-items: center;
             line-height: 1.2;
             padding: $ds44-padding-xlarge  $ds44-padding-large;
+            height: $header-height-medium;
 
             .icon + .ds44-btnInnerText,
             .ds44-btnInnerText + .icon,
@@ -399,6 +417,7 @@
 
       .ds44-btnIcoText--maxi {
           margin-left: 0;
+          height: $header-height-small;
 
           &.ds44--xl-padding {
               padding: .5rem 1rem 1rem 1rem;
@@ -415,8 +434,15 @@
       }
   }
 
-  .ds44-header {
+  .phylactere .ds44-header {
       min-height: $header-height-small;
+
+        .ds44-container-large .ds44-flex-container::before {
+          width: 50px;
+          height: 23px;
+          bottom: -21px;
+          left: 14px;
+        }
   }
 
   .ds44-header.dobree-header .ds44-colRight .ds44-btnIcoText--maxi.ds44-btn--menu {
