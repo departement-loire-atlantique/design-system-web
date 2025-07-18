@@ -433,10 +433,21 @@
           }
       }
   }
+  
+  .ds44-header {
+    min-height: $header-height-small;
+  }
 
   .phylactere .ds44-header {
-      min-height: $header-height-small;
-
+        .ds44-container-large .ds44-flex-container::before {
+          width: 50px;
+          height: 23px;
+          bottom: -21px;
+          left: 14px;
+        }
+  }
+  
+  .phylactere .ds44-header {
         .ds44-container-large .ds44-flex-container::before {
           width: 50px;
           height: 23px;
