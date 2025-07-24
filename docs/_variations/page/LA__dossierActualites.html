@@ -24,9 +24,23 @@ style: phylactere
     <section class="ds44-container-large">
         <div class="ds44-mt3 ds44--xl-padding-t">
 
-            <button class="ds44-btnStd ds44-btn--invert ds44-fullWBtn ds44-show-tinyToLarge ds44-hide-large" id="ds44-summary-button" type="button" data-target="#navSommaire">
-                <span class="ds44-btnInnerText">Sommaire</span><i class="icon icon-summary" aria-hidden="true"></i>
-            </button>
+            <ul class="ds44-collapser ds44-noMrgt ds44-no-border ds44-show-tinyToLarge ds44-hide-large">
+                <li class="ds44-collapser_element ds44-no-border">
+                    <button type="button" class="ds44-collapser_button ds44-btnStd ds44-btn--invert">Sommaire<i class="icon icon-down" aria-hidden="true"></i>
+                    </button>
+                    <div class="ds44-collapser_content">
+                        <ul class="ds44-list ds44-collapser_content--level2">
+                            <li class="ds44--l-padding-lr">
+                                <ul class="ds44-list ds44-list--puces">
+                                    <li><a href="#section1">Rattachement à la Bretagne : pas de droit d’option mais le souhait d’un référendum</a></li>
+                                    <li><a href="#section2">Le résumé de la première journée</a></li>
+                                    <li><a href="#section3">Revoir les débats du lundi</a></li>
+                                </ul>
+                            </li>
+                        </ul>
+                    </div>
+                </li>
+            </ul>
 
             <div class="ds44-inner-container">
                 <div class="grid-12-medium-1 grid-12-small-1">
@@ -267,7 +281,5 @@ style: phylactere
     </section>
 
 </main>
-
-{% include menu/inc-menu-sommaire.html %}
 
 {% include footer/footer-LA.html %}
