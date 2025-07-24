@@ -91,4 +91,9 @@ body.modern {
             }
         }
     }
+
+    *, ::before, ::after {
+      -webkit-box-sizing: inherit;
+      box-sizing: inherit;
+    }
 }
