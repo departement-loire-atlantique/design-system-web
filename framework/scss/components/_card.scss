@@ -141,8 +141,8 @@
         }
 
         .ds44-card__title {
-            font-size: 1.25em;
-            font-family: $ds44-font-family-baseModern;
+            font-size: 1.0625em; //17px
+            font-family: $ds44-font-family-base;
             font-weight: 600;
         }
         .ds44-docListElem {
@@ -716,7 +716,7 @@ a {
       }
       &--bacs {
         .h3-like {
-          font-size: 41px;
+          font-size: 2em;
         }
         .ds44-bacs-info {
           background-color: $ds44-light;

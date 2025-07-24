@@ -36,4 +36,59 @@ body.modern {
     }
 
     }
+
+    .ds44-card {
+        &.ds44-card--dobree {
+            height: 100%;
+            margin-bottom: 0;
+
+            .ds44-card__section {
+              padding: 2rem;
+                  .ds44-innerBoxContainer {
+                      padding: 0;
+                }
+            }
+
+            .ds44-card__title {
+                font-size: 1.25em;
+                font-family: $ds44-font-family-baseModern;
+                font-weight: 600;
+            }
+            .ds44-docListElem {
+              font-size: 0.875em;
+              .icon-marker {
+                  left: 0;
+                }
+            }
+            .ds44-cardArrow {
+              color: $ds44-dark ;
+            }
+            .ds44-container-imgRatio--carreAllonge + .ds44-card__section {
+                .ds44-card__title a {
+                    font-size: 1.5em;
+                    @media (max-width: ($ds44-medium - .0625)) {
+                        font-size: 1em;
+                    }
+                }
+                .ds44-cardArrow {
+                    bottom: 2rem;
+                    right: 1rem;
+                }
+            }
+            &.ds44-container-imgZoom {
+                overflow: hidden;
+                .ds44-container-imgRatio {
+                    overflow: hidden;
+                    img {
+                    transition: all $ds44-timing-standard ease-in-out;
+                    border: 0;
+
+                    &:hover {
+                        transform: scale(1.1);
+                    }
+                    }
+                }
+            }
+        }
+    }
 }
