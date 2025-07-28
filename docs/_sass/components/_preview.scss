@@ -16,7 +16,17 @@
     height: auto;
     background-color: $main_background_color;
     margin-bottom: 0rem;
+
+    &.c-text-passage :not(table) {
+      max-width: 100%;
+    }
   //transition: width 0.6s $anim-base-easing;
+}
+
+.c-text-passage {
+    & :not(table) {
+       max-width: 100% !important;
+    }
 }
 
 .preview--noborder {
@@ -30,7 +40,7 @@
 .preview__iframe {
     width: 100%;
     overflow: auto;
-    overflow-x: auto !important;    
+    overflow-x: auto !important;
     min-height: 400px;
 }
 
