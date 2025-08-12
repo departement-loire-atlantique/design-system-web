@@ -26,9 +26,9 @@
       }
     }
 
-    .ds44-collapser_content li {
+    .ds44-collapser_content > li {
       //list-style: none;
-      margin-top: 0;
+      margin-top: 0rem;
 
       > ul > li:first-child {
         margin-top: 0;
@@ -144,6 +144,10 @@
       transform: rotate(180deg);
       margin-top: 5px;
     }
+  }
+
+  &.ds44-btnStd {
+      padding: $ds44-padding-box 3.5rem $ds44-padding-box $ds44-padding-box ;
   }
 
 }
