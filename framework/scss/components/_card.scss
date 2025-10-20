@@ -676,7 +676,10 @@ figure[role=figure]  + .ds44-card__section {
       }
       &--bacs {
         .h3-like {
-          font-size: 2em;
+          font-size: 1.8em;
+        }
+        .ds44-textLegend {
+          font-size: 12px;
         }
         .ds44-bacs-info {
           background-color: $ds44-light;
