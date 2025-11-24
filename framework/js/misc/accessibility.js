@@ -123,6 +123,7 @@ class MiscAccessibility {
             }
         }
 
+      setTimeout(() => {
         // Create first hidden focus element
         const fakeFirstElement = document.createElement('span');
         fakeFirstElement.classList.add('ds44-tmpFocusHidden');
@@ -140,17 +141,17 @@ class MiscAccessibility {
         // Add events
         MiscEvent.addListener('focus', MiscAccessibility.setFocus.bind(this, null, '.ds44-tmpLastFocus'), fakeFirstElement);
         MiscEvent.addListener('focus', MiscAccessibility.setFocus.bind(this, null, '.ds44-tmpFirstFocus'), fakeLastElement);
+
+      }, 0);
     }
 
     // Delete loop elements
     static removeFocusLoop () {
-        setTimeout(() => {
-            document
-              .querySelectorAll('.ds44-tmpFocusHidden')
-              .forEach((element) => {
-                  element.remove();
-              });
-        }, 0);
+        document
+          .querySelectorAll('.ds44-tmpFocusHidden')
+          .forEach((element) => {
+              element.remove();
+          });
 
         const firstFocusableElement = document.querySelector('.ds44-tmpFirstFocus');
         if (firstFocusableElement) {
