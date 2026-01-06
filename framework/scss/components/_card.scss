@@ -302,10 +302,49 @@ figure[role=figure]  + .ds44-card__section {
     }
 }
 
+body.modern {
+
+.ds44-card .ds44-card__title a {
+  text-decoration: none;
+
+}
+[role="heading"] a {
+  text-decoration: none;
+
+}
+.ds44-card__globalLink {
+  text-decoration: none;
+
+  color: #000000;
+
+}
+a {
+  color: #000;
+
+  text-decoration: underline;
+
+  -webkit-transition: color .4s ease-out;
+
+  transition: color .4s ease-out;
+
+  overflow-wrap: break-word;
+
+}
+*, ::before, ::after {
+  -webkit-box-sizing: inherit;
+
+  box-sizing: inherit;
+
+  min-width: 0;
+
+  min-height: 0;
+
+}
 .ds44-card__section--horizontal,
-.ds44-facette__title {
-    &.h2-like + * {
-        margin-top: 0 !important;
+    .ds44-facette__title {
+        &.h2-like + * {
+            margin-top: 0 !important;
+        }
     }
 }
 
@@ -364,6 +403,7 @@ figure[role=figure]  + .ds44-card__section {
 
     &--dim80 {
         max-width: 25%;
+        width: 100%;
         @media (min-width: $ds44-extra-large) {
             min-width: 80px;
         }
@@ -676,10 +716,7 @@ figure[role=figure]  + .ds44-card__section {
       }
       &--bacs {
         .h3-like {
-          font-size: 1.8em;
-        }
-        .ds44-textLegend {
-          font-size: 12px;
+          font-size: 41px;
         }
         .ds44-bacs-info {
           background-color: $ds44-light;
@@ -724,6 +761,13 @@ figure[role=figure]  + .ds44-card__section {
     MEDIA QUERIES
     */
 
+@media (max-width: $ds44-tiny - .0625) {
+
+    .ds44-tiny-reducedFont .ds44-card__globalLink {
+        font-size: smaller;
+    }
+
+}
 
 /* Media Queries Print / Impression */
 @media print {
