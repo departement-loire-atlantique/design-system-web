@@ -6,7 +6,10 @@ group: styles
 permalink: /styles/typography.html
 description:
 ---
-Le design system du Département de Loire-Atlantique utilise une seul famille de typographie pour hiérarchiser ses contenus :
+
+Le design system du Département de Loire-Atlantique utilise une seul famille de typographie pour hiérarchiser ses contenus : la typographie Poppins.
+
+La taille par défaut varie selon le device (16px en desktop, 15px en tablette et 14px en mobile) ; des variables s'appliquent sur l'ensemble des textes pour garder une cohérence homogène entre le texte courant et les titres (em).
 
 #### La typographie Poppins :
 

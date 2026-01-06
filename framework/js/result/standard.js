@@ -84,12 +84,12 @@ class ResultStandardClass {
     cardOpenNewTab(evt) {
         let viewCard = true;
         let linkMaster = null;
-        if(evt.target.tagName === "A" && evt.target.getAttribute("href") && !evt.target.closest(".ds44-cardTitle")) {
+        if(evt.target.tagName === "A" && evt.target.getAttribute("href") && !evt.target.closest(".ds44-card__title")) {
             viewCard = false;
         }
         else {
 
-            linkMaster = evt.target.closest(".ds44-js-results-item").querySelector(".ds44-cardTitle a");
+            linkMaster = evt.target.closest(".ds44-js-results-item").querySelector(".ds44-card__title a");
         }
         if(viewCard && linkMaster && evt.ctrlKey === true) {
             evt.stopPropagation();

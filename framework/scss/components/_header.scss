@@ -24,10 +24,24 @@
 
 .ds44-titreLogo {
     text-decoration: none;
-    font-size: 1.6rem;
+    font-size: 1em;
     line-height: 1.2;
     font-weight: bold;
     margin-left: 2rem;
+}
+
+/* Phylactère */
+
+.phylactere .ds44-header .ds44-container-large .ds44-flex-container:before {
+    content: '';
+    width: 80px;
+    height: 34px;
+    bottom: -33px;
+    left: 24px;
+    position: absolute;
+    display: block;
+    background-image: url(../../../assets/images/shape_logo.svg);
+    background-repeat: no-repeat;
 }
 
 /* Skip links */
@@ -85,17 +99,6 @@
     }
     .ds44-container-large .ds44-flex-container {
         position: relative;
-    }
-    .ds44-container-large .ds44-flex-container:before {
-        content: '';
-        width: 80px;
-        height: 34px;
-        bottom: -34px;
-        left: 24px;
-        position: absolute;
-        display: block;
-        background-image: url(../../../assets/images/shape_logo.svg);
-        background-repeat: no-repeat;
     }
 }
 
@@ -430,14 +433,16 @@
           }
       }
   }
-
+  
   .ds44-header {
-      min-height: $header-height-small;
+    min-height: $header-height-small;
+  }
 
+  .phylactere .ds44-header {
         .ds44-container-large .ds44-flex-container::before {
           width: 50px;
           height: 23px;
-          bottom: -22px;
+          bottom: -21px;
           left: 14px;
         }
   }
