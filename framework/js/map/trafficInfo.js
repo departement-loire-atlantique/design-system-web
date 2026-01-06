@@ -144,8 +144,7 @@ class InfoTrafficClass extends MapAbstract {
             const result = object.newResults[resultIndex];
 
             if (
-              !result.metadata ||
-              !result.metadata.html_marker
+              (!result.metadata || !result.metadata.html_marker) && (!result.id)
             ) {
                 continue;
             }
@@ -246,7 +245,7 @@ class InfoTrafficClass extends MapAbstract {
                     'line-cap': 'round'
                 },
                 'paint': {
-                    'line-color': '#BF93E4',
+                    'line-color': ['get', 'lineColor'],
                     'line-width': 5,
                     'line-opacity': [
                         'case',
@@ -414,7 +413,8 @@ class InfoTrafficClass extends MapAbstract {
                 'id':           result.id+"_line",
                 "snm":          result.snm,
                 'description':  result.metadata.html_marker,
-                "type":         "line"
+                "type":         "line",
+                'lineColor': result.lineColor || '#BF93E4'
             },
             'geometry': {
                 'type': 'LineString',
