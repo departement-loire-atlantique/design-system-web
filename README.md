@@ -63,6 +63,8 @@ Description de l'arborescence du framework (sous dossier framework) :
 * gulpfile.js : Tâches de compilation et de développemnet
 * package.json : Dépendances NodeJS pour les tâches GULP
 
+Pour compiler et générer les .min: `npm run build`
+
 ### Contribuer simultanément à la documentation et au framework scss/js
 
 Ce mode permet de recharger automatiquement le navigateur en temps réel suite à toute modification dans la documentation ou le framework.

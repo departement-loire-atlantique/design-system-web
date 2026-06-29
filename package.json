@@ -16,6 +16,9 @@
     "url": "https://github.com/departement-loire-atlantique/design-system-web/issues"
   },
   "homepage": "https://github.com/departement-loire-atlantique/design-system-web#readme",
+  "scripts": {
+    "build": "gulp build:ds"
+  },
   "devDependencies": {
     "aos": "^2.3.4",
     "autoprefixer": "^9.7.4",
