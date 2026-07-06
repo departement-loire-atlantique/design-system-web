@@ -44,7 +44,25 @@
                     '_gat_' + GTM_UA
                 ],
                 purposes: ['analytics']
-            }
+            },
+            {
+                name: 'streaming-video',
+                title: 'Streaming vidéo',
+                purposes: ['streamingvideo'],
+                optOut: false,
+                required: false,
+                onlyOnce: false,
+                callback: function(consent, app){
+                    // This is an example callback function.
+                    const overlays = document.querySelectorAll('.ds44-media-overlay');
+                    consent ? overlays.forEach((overlay) => {
+                        overlay.style.display = "none";
+                    }) : overlays.forEach((overlay) => {
+                        overlay.style.display = "table";
+                    });
+                    console.log("User consent for app " + app.name + ": consent=" + consent)
+                },
+            },
         ],
     };
 </script>
@@ -64,5 +82,5 @@
 </script>
 <!-- End Google Tag Manager -->
 
-<link rel="stylesheet" href="https://unpkg.com/orejime@latest/dist/orejime.css"/>
-<script src="https://unpkg.com/orejime@latest/dist/orejime.js"></script>
+<link rel="stylesheet" href="https://unpkg.com/orejime@1.2.3/dist/orejime.css" />
+<script src="https://unpkg.com/orejime@1.2.3/dist/orejime.js"></script>

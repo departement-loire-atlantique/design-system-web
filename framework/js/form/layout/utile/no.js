@@ -1,8 +1,21 @@
-class FormLayoutUtileNo extends FormLayoutUtileAbstract {
+class FormLayoutUtileNoClass extends FormLayoutUtileAbstract {
     constructor () {
-        super('#ds44-choiceN form');
+        super("FormLayoutUtileNo", '#ds44-choiceN form');
     }
 }
-
 // Singleton
+var FormLayoutUtileNo = (function () {
+    "use strict";
+    var instance;
+    function Singleton() {
+        if (!instance) {
+            instance = new FormLayoutUtileNoClass();
+        }
+        instance.initialise();
+    }
+    Singleton.getInstance = function () {
+        return instance || new Singleton();
+    }
+    return Singleton;
+}());
 new FormLayoutUtileNo();

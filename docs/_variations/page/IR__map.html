@@ -1,0 +1,31 @@
+---
+layout: pattern
+---
+
+{% include header/inc-header.html %}
+
+<main role="main" id="content">
+
+  <section class="ds44-container-large">
+    <div class="ds44-pageHeaderContainer">
+      <picture class="ds44-pageHeaderContainer__pictureContainer">
+        <img src="../../assets/images/header-page-annuaire.png" alt="" class="ds44-headerImg" />
+      </picture>
+      <div class="ds44-titleContainer">
+        <div class="ds44-alphaGradient ds44-alphaGradient--header">
+          {% include breadcrumb/breadcrumb--invert.html %}
+          <h1 class="h1-like ds44-text--colorInvert">Info trafic</h1>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  {% include page/recherche__infotrafic.html url="/json/recherche-info-trafic.json" no-padding="true" iconsMarker="icon-marker-info-trafic.json" geoJsonAttributes='data-geojson-url="/json/geojson/departement_communes.geojson" data-geojson-refine="true"' %}
+
+  {% include partage/partage-interne.html %}
+
+  {% include modal/legendMap.html %}
+
+</main>
+
+{% include footer/footer-LA.html %}

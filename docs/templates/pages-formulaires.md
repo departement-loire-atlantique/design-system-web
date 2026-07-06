@@ -24,11 +24,20 @@ variations:
 - title: Formulaire Site Archives
   pattern: page/AD__formulaire.html
 
-- title: Template carrefour
-  pattern: templates/template-entryMenu.html
-
 - title: Formulaire avec recaptcha
   pattern: page/LA__recaptcha.html
+
+- title: Authentification Assmat
+  pattern: page/AM_authentification.html
+
+- title: Formulaire Assmat
+  pattern: page/AM_formulaire.html
+
+- title: Favoris / Sélection
+  pattern: page/RE__favoris.html
+
+- title: Template carrefour
+  pattern: templates/template-entryMenu.html
 
 ---
 ## Utilisation

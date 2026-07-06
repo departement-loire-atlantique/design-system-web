@@ -1,7 +1,8 @@
-class FormFieldSelectCheckbox extends FormFieldSelectAbstract {
-    constructor (selector, category) {
+class FormFieldSelectCheckboxClass extends FormFieldSelectAbstract {
+    constructor (className, selector, category) {
         if (selector && category) {
             super(
+              className,
                 selector,
                 category
             );
@@ -10,6 +11,7 @@ class FormFieldSelectCheckbox extends FormFieldSelectAbstract {
         }
 
         super(
+            "FormFieldSelectCheckbox",
             '.ds44-selectDisplay.ds44-js-select-checkbox',
             'selectCheckbox'
         );
@@ -24,7 +26,7 @@ class FormFieldSelectCheckbox extends FormFieldSelectAbstract {
                 continue;
             }
             object.isSubSubInitialized = true;
-
+            this.initByChecked(objectIndex);
             const flexContainerElement = object.containerElement.querySelector('.ds44-flex-container');
             const checkAllElement = flexContainerElement.querySelector('button:first-child');
             if (checkAllElement) {
@@ -37,6 +39,38 @@ class FormFieldSelectCheckbox extends FormFieldSelectAbstract {
         }
     }
 
+    initByChecked(objectIndex) {
+        const checkboxElements = this.getCheckboxElements(objectIndex);
+        if (!checkboxElements) {
+            return;
+        }
+
+        var value = [];
+        var texts = [];
+        checkboxElements.forEach((checkboxElement) => {
+            if(checkboxElement.checked) {
+                value.push(checkboxElement.value);
+                let labelText = "";
+                var label = MiscDom.getNextSibling(checkboxElement, 'label');
+                if (label) {
+                    labelText = label.innerText.replace(/\*$/, '')
+                }
+                texts.push(labelText);
+            }
+        });
+        if(value.length > 0)
+        {
+            this.setData(
+              objectIndex,
+              {
+                  'value': value,
+                  'text': texts.join(', '),
+              }
+            );
+            this.enter(objectIndex);
+        }
+    }
+
     setListElementEvents (listElement, objectIndex) {
         const listInputElement = listElement.querySelector('input');
         if (!listInputElement) {
@@ -44,6 +78,22 @@ class FormFieldSelectCheckbox extends FormFieldSelectAbstract {
         }
 
         MiscEvent.addListener('change', this.select.bind(this, objectIndex), listInputElement);
+    }
+
+    selectAfterShow (objectIndex) {
+        const object = this.objects[objectIndex];
+        if (!object || !object.containerElement) {
+            return;
+        }
+
+        // Select "Check all"
+        const checkAllElement = object.containerElement.querySelector('.ds44-flex-container button:first-child');
+        if (checkAllElement) {
+            MiscAccessibility.setFocus(checkAllElement);
+            return;
+        }
+
+        super.selectAfterShow(objectIndex);
     }
 
     getListItems (parentElement) {
@@ -137,17 +187,20 @@ class FormFieldSelectCheckbox extends FormFieldSelectAbstract {
                 ) {
                     // Is checked
                     listElement.classList.add('selected_option');
+                    listElement.setAttribute('aria-selected', 'true');
                     if (listChildElement) {
                         listChildElement.classList.remove('hidden');
                     }
                 } else {
                     // Is not checked
                     listElement.classList.remove('selected_option');
+                    listElement.removeAttribute('aria-selected');
                     if (listChildElement) {
                         listChildElement.classList.add('hidden');
                     }
                 }
             });
+        super.changeTitle(objectIndex, object.buttonElement);
     }
 
     selectFromValue (objectIndex) {
@@ -238,6 +291,19 @@ class FormFieldSelectCheckbox extends FormFieldSelectAbstract {
         return object.selectListElement.querySelectorAll('input');
     }
 }
-
 // Singleton
+var FormFieldSelectCheckbox = (function () {
+    "use strict";
+    var instance;
+    function Singleton() {
+        if (!instance) {
+            instance = new FormFieldSelectCheckboxClass();
+        }
+        instance.initialise();
+    }
+    Singleton.getInstance = function () {
+        return instance || new Singleton();
+    }
+    return Singleton;
+}());
 new FormFieldSelectCheckbox();

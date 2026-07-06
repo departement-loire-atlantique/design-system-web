@@ -1,4 +1,4 @@
-// Requires
+// Requires 
 var gulp = require('gulp');
 var postcss = require('gulp-postcss');
 var sass = require('gulp-sass')(require('sass'));
@@ -15,13 +15,35 @@ var iconfont = require("gulp-iconfont");
 var iconfontCss = require("gulp-iconfont-css");
 var fs = require('fs');
 
+
 var jekyllDir = "docs/",
+    scssFontImportFile = 'framework/scss/_libraries/fontsImport.scss',
     scssFile = 'framework/scss/cd44.scss',
+    scssInstitutionnelFile = 'framework/scss/institutionnel.scss',
+    scssAidantsFile = 'framework/scss/aidants.scss',
+    scssHandicapFile = 'framework/scss/handicap.scss',
+    scssClissonFile = 'framework/scss/SP-chateauClisson.scss',
+    scssArcAntiqueFile = 'framework/scss/SP-laboArcAntique.scss',
+    scssArcheoFile = 'framework/scss/SP-poleArcheoLA.scss',
+    scssGarenneMemotFile = 'framework/scss/SP-garenneLemot.scss',
+    scssChateaubriantFile = 'framework/scss/SP-chateauChateaubriant.scss',
+    scssBlancheCouronneFile = 'framework/scss/SP-abbayeBlancheCouronne.scss',
+    scssFoliesSiffaitFile = 'framework/scss/SP-jardinsFoliesSiffait.scss',
+    scssSaintSulpiceFile = 'framework/scss/SP-egliseVieuxBourg.scss',
+    scssRessourcesEducativesFile = 'framework/scss/SP-ressourcesEducatives.scss',
+    scssDobreeFile = 'framework/scss/SP-museeDobree.scss',
+    scssPortsFile = 'framework/scss/ports.scss',
+    scssMdaFile = 'framework/scss/mda.scss',
+    scssParentsFile = 'framework/scss/parents.scss',
     scssFileSwiper = 'node_modules/swiper/css/swiper.min.css',
     scssFileAos = 'node_modules/aos/dist/aos.css',
     cssDest = 'dist/css',
+    jsMultiPlanning = 'framework/js/planning/multiPlanning.js',
+    jsPlanning = 'framework/js/planning/planning.js',
     jsMiscFiles = 'framework/js/misc/*.js',
     jsAbstractFiles = 'framework/js/**/abstract.js',
+    jsDuplicateLine = 'framework/js/form/field/duplicateLine.js',
+    jsFormFields = 'framework/js/form/field/formFields.js',
     jsFieldAbstractFile = 'framework/js/form/field/abstract.js',
     jsFieldFiles = 'framework/js/form/field/**/*.js',
     jsFormFiles = 'framework/js/form/layout/**/!(standard)*.js',
@@ -52,7 +74,7 @@ var postCssPluginsProd = [
 ];
 
 gulp.task('build:css:cd44:dev', function () {
-    return gulp.src([scssFileSwiper, scssFileAos, scssFile])
+    return gulp.src([scssFontImportFile, scssFileSwiper, scssFileAos, scssFile])
         .pipe(sass({
             // CSS non minifiée plus lisible ('}' à la ligne)
             outputStyle: 'expanded'
@@ -63,8 +85,200 @@ gulp.task('build:css:cd44:dev', function () {
         .pipe(gulp.dest(cssDest));
 });
 
+gulp.task('build:css:institutionnel:dev', function () {
+    return gulp.src([scssFontImportFile, scssFileSwiper, scssFileAos, scssInstitutionnelFile])
+        .pipe(sass({
+            // CSS non minifiée plus lisible ('}' à la ligne)
+            outputStyle: 'expanded'
+        }))
+        .pipe(postcss(postCssPluginsDev))
+        .pipe(concat('institutionnel.css'))
+        .pipe(browserSync.stream())
+        .pipe(gulp.dest(cssDest));
+});
+
+gulp.task('build:css:arcantique:dev', function () {
+    return gulp.src([scssFontImportFile, scssFileSwiper, scssFileAos, scssArcAntiqueFile])
+        .pipe(sass({
+            // CSS non minifiée plus lisible ('}' à la ligne)
+            outputStyle: 'expanded'
+        }))
+        .pipe(postcss(postCssPluginsDev))
+        .pipe(concat('arcantique.css'))
+        .pipe(browserSync.stream())
+        .pipe(gulp.dest(cssDest));
+});
+
+gulp.task('build:css:archeo:dev', function () {
+    return gulp.src([scssFontImportFile, scssFileSwiper, scssFileAos, scssArcheoFile])
+        .pipe(sass({
+            // CSS non minifiée plus lisible ('}' à la ligne)
+            outputStyle: 'expanded'
+        }))
+        .pipe(postcss(postCssPluginsDev))
+        .pipe(concat('archeo.css'))
+        .pipe(browserSync.stream())
+        .pipe(gulp.dest(cssDest));
+});
+
+gulp.task('build:css:clisson:dev', function () {
+    return gulp.src([scssFontImportFile, scssFileSwiper, scssFileAos, scssClissonFile])
+        .pipe(sass({
+            // CSS non minifiée plus lisible ('}' à la ligne)
+            outputStyle: 'expanded'
+        }))
+        .pipe(postcss(postCssPluginsDev))
+        .pipe(concat('clisson.css'))
+        .pipe(browserSync.stream())
+        .pipe(gulp.dest(cssDest));
+});
+
+gulp.task('build:css:aidants:dev', function () {
+    return gulp.src([scssFontImportFile, scssFileSwiper, scssFileAos, scssAidantsFile])
+        .pipe(sass({
+            // CSS non minifiée plus lisible ('}' à la ligne)
+            outputStyle: 'expanded'
+        }))
+        .pipe(postcss(postCssPluginsDev))
+        .pipe(concat('aidants.css'))
+        .pipe(browserSync.stream())
+        .pipe(gulp.dest(cssDest));
+});
+
+gulp.task('build:css:handicap:dev', function () {
+    return gulp.src([scssFontImportFile, scssFileSwiper, scssFileAos, scssHandicapFile])
+        .pipe(sass({
+            // CSS non minifiée plus lisible ('}' à la ligne)
+            outputStyle: 'expanded'
+        }))
+        .pipe(postcss(postCssPluginsDev))
+        .pipe(concat('handicap.css'))
+        .pipe(browserSync.stream())
+        .pipe(gulp.dest(cssDest));
+});
+
+gulp.task('build:css:garenne-lemot:dev', function () {
+    return gulp.src([scssFontImportFile, scssFileSwiper, scssFileAos, scssGarenneMemotFile])
+        .pipe(sass({
+            // CSS non minifiée plus lisible ('}' à la ligne)
+            outputStyle: 'expanded'
+        }))
+        .pipe(postcss(postCssPluginsDev))
+        .pipe(concat('garenne-lemot.css'))
+        .pipe(browserSync.stream())
+        .pipe(gulp.dest(cssDest));
+});
+
+gulp.task('build:css:chateaubriant:dev', function () {
+    return gulp.src([scssFontImportFile, scssFileSwiper, scssFileAos, scssChateaubriantFile])
+        .pipe(sass({
+            // CSS non minifiée plus lisible ('}' à la ligne)
+            outputStyle: 'expanded'
+        }))
+        .pipe(postcss(postCssPluginsDev))
+        .pipe(concat('chateaubriant.css'))
+        .pipe(browserSync.stream())
+        .pipe(gulp.dest(cssDest));
+});
+
+gulp.task('build:css:blanche-couronne:dev', function () {
+    return gulp.src([scssFontImportFile, scssFileSwiper, scssFileAos, scssBlancheCouronneFile])
+        .pipe(sass({
+            // CSS non minifiée plus lisible ('}' à la ligne)
+            outputStyle: 'expanded'
+        }))
+        .pipe(postcss(postCssPluginsDev))
+        .pipe(concat('blanche-couronne.css'))
+        .pipe(browserSync.stream())
+        .pipe(gulp.dest(cssDest));
+});
+
+gulp.task('build:css:folies-siffait:dev', function () {
+    return gulp.src([scssFontImportFile, scssFileSwiper, scssFileAos, scssFoliesSiffaitFile])
+        .pipe(sass({
+            // CSS non minifiée plus lisible ('}' à la ligne)
+            outputStyle: 'expanded'
+        }))
+        .pipe(postcss(postCssPluginsDev))
+        .pipe(concat('folies-siffait.css'))
+        .pipe(browserSync.stream())
+        .pipe(gulp.dest(cssDest));
+});
+
+gulp.task('build:css:saint-sulpice:dev', function () {
+    return gulp.src([scssFontImportFile, scssFileSwiper, scssFileAos, scssSaintSulpiceFile])
+        .pipe(sass({
+            // CSS non minifiée plus lisible ('}' à la ligne)
+            outputStyle: 'expanded'
+        }))
+        .pipe(postcss(postCssPluginsDev))
+        .pipe(concat('saint-sulpice.css'))
+        .pipe(browserSync.stream())
+        .pipe(gulp.dest(cssDest));
+});
+
+gulp.task('build:css:dobree:dev', function () {
+    return gulp.src([scssFileSwiper, scssFileAos, scssDobreeFile])
+        .pipe(sass({
+            // CSS non minifiée plus lisible ('}' à la ligne)
+            outputStyle: 'expanded'
+        }))
+        .pipe(postcss(postCssPluginsDev))
+        .pipe(concat('dobree.css'))
+        .pipe(browserSync.stream())
+        .pipe(gulp.dest(cssDest));
+});
+
+gulp.task('build:css:ports:dev', function () {
+    return gulp.src([scssFontImportFile, scssFileSwiper, scssFileAos, scssPortsFile])
+        .pipe(sass({
+            // CSS non minifiée plus lisible ('}' à la ligne)
+            outputStyle: 'expanded'
+        }))
+        .pipe(postcss(postCssPluginsDev))
+        .pipe(concat('ports.css'))
+        .pipe(browserSync.stream())
+        .pipe(gulp.dest(cssDest));
+});
+
+gulp.task('build:css:mda:dev', function () {
+    return gulp.src([scssFileSwiper, scssFileAos, scssMdaFile])
+        .pipe(sass({
+            // CSS non minifiée plus lisible ('}' à la ligne)
+            outputStyle: 'expanded'
+        }))
+        .pipe(postcss(postCssPluginsDev))
+        .pipe(concat('mda.css'))
+        .pipe(browserSync.stream())
+        .pipe(gulp.dest(cssDest));
+});
+
+gulp.task('build:css:parents:dev', function () {
+    return gulp.src([scssFontImportFile, scssFileSwiper, scssFileAos, scssParentsFile])
+        .pipe(sass({
+            // CSS non minifiée plus lisible ('}' à la ligne)
+            outputStyle: 'expanded'
+        }))
+        .pipe(postcss(postCssPluginsDev))
+        .pipe(concat('parents.css'))
+        .pipe(browserSync.stream())
+        .pipe(gulp.dest(cssDest));
+});
+
+gulp.task('build:css:ressources-educatives:dev', function () {
+    return gulp.src([scssFileSwiper, scssFileAos, scssRessourcesEducativesFile])
+        .pipe(sass({
+            // CSS non minifiée plus lisible ('}' à la ligne)
+            outputStyle: 'expanded'
+        }))
+        .pipe(postcss(postCssPluginsDev))
+        .pipe(concat('ressources-educatives.css'))
+        .pipe(browserSync.stream())
+        .pipe(gulp.dest(cssDest));
+});
+
 gulp.task('build:css:cd44:prod', function () {
-    return gulp.src([scssFileSwiper, scssFileAos, scssFile])
+    return gulp.src([scssFontImportFile, scssFileSwiper, scssFileAos, scssFile])
         .pipe(sass())
         .pipe(postcss(postCssPluginsProd))
         .pipe(concat('cd44.min.css'))
@@ -72,7 +286,7 @@ gulp.task('build:css:cd44:prod', function () {
 });
 
 gulp.task('build:js', function () {
-    return gulp.src([jsFileSwiper, jsFileAos, jsMiscFiles, jsFieldAbstractFile, jsAbstractFiles, jsFieldFiles, jsFormFiles, jsComponentFiles])
+    return gulp.src([jsFileSwiper, jsFileAos, jsMiscFiles, jsDuplicateLine, jsMultiPlanning, jsPlanning, jsFieldAbstractFile, jsAbstractFiles, jsFieldFiles, jsFormFiles, jsComponentFiles, jsFormFields])
         .pipe(concat('cd44.js'))
         .pipe(gulp.dest(jsDest));
 });
@@ -146,6 +360,22 @@ gulp.task('createComponent', function () {
 gulp.task('build:ds', gulp.parallel(
     'build:css:cd44:dev',
     'build:css:cd44:prod',
+    'build:css:institutionnel:dev',
+    'build:css:aidants:dev',
+    'build:css:handicap:dev',
+    'build:css:clisson:dev',
+    'build:css:arcantique:dev',
+    'build:css:archeo:dev',
+    'build:css:garenne-lemot:dev',
+    'build:css:chateaubriant:dev',
+    'build:css:blanche-couronne:dev',
+    'build:css:folies-siffait:dev',
+    'build:css:saint-sulpice:dev',
+    'build:css:dobree:dev',
+    'build:css:ports:dev',
+    'build:css:mda:dev',
+    'build:css:parents:dev',
+    'build:css:ressources-educatives:dev',
     'build:glyphicons',
     'build:demoicons',
     'build:js',
@@ -164,7 +394,12 @@ gulp.task('serve', gulp.series('build', function () {
 
     browserSync.init({
         server: {
-            baseDir: 'dist'
+            baseDir: 'dist',
+            middleware: function (req, res, next) {
+              res.setHeader('Access-Control-Allow-Origin', '*');
+              res.setHeader('Access-Control-Allow-Headers', '*');
+              next();
+            }
         },
         port: 4000,
         ghostMode: false, // do not mirror clicks, reloads, etc. (performance optimization)

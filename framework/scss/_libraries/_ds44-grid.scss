@@ -34,3 +34,16 @@
    grid-column: 1 / -1;
  }
 }
+
+.list-logos img {
+  height: 100px;
+  max-width: 100%;
+  padding: 2rem;
+}
+
+@media (max-width: ($ds44-large - .0625)) {
+    .ds44-noGapCol {
+        grid-column-gap: 0 !important;
+        grid-row-gap: 4rem !important;
+    }
+ }

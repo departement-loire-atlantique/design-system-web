@@ -1,10 +1,11 @@
 ---
 layout: pattern
+style: phylactere
 ---
 
 {% include header/inc-header.html %}
 
-<main role="main" id="content" tabindex="-1">
+<main role="main" id="content">
 
     <section class="ds44-container-large">
         <div class="ds44-pageHeaderContainer">
@@ -29,7 +30,7 @@ layout: pattern
         </div>
     </section>
 
-    {% include page/recherche__cantons.html url="/json/recherche-cantons.json" no-padding="true" geoJsonAttributes='data-geojson-url="/json/geojson/cantons.geojson" data-geojson-refine="true"' %}
+    {% include page/recherche__cantons.html url="/json/recherche-cantons.json" no-padding="true" geoJsonAttributes='data-geojson-url="/json/geojson/delegations.geojson" data-geojson-refine="true"' %}
 
     {% include partage/partage-interne.html %}
 

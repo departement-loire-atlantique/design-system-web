@@ -1,0 +1,12 @@
+/*
+* CD44 Design System - contextual variables for Loire Atlantique
+* NOTE SGU 15/05/2025 : on surcharge en attendant un changmeent global de police (Poppins) et de tailles;
+*/
+
+// ----------------
+// ---- COLORS ----
+// ----------------
+
+$ds44-contextual-color : #99E6D1 !default;
+$ds44-contextual-hover : lighten($ds44-contextual-color, 10%) !default;
+

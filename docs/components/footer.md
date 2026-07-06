@@ -4,7 +4,7 @@ group: components
 status: Validé
 
 title: Footer
-description:
+description: Le Footer désigne le bas d’une page, il s’agit d’un élément qui doit être étudié attentivement car le bas d’une page doit pouvoir permettre au visiteur de retrouver toutes les informations principales afin qu’il n’ait pas besoin de remonter sur la page.
 
 variations:
 - title: Pied de page Loire-Atlantique
@@ -14,8 +14,17 @@ variations:
   description:
   pattern: footer/footer-MDPH.html
 - title: Pied de page Archive
-  description:
+  description: Pied de page site Archive
   pattern: footer/footer-archive.html
+- title: Pied de page Chateau de Clisson
+  description: Pied de page Chateau de Clisson site Grand Patrimoine
+  pattern: footer/footer-chateauClisson.html
+- title: Pied de page Inforoutes
+  description: Pied de page site inforoutes
+  pattern: footer/footer-inforoutes.html
+- title: Pied de page Musée Dobrée
+  description: Pied de page site Musée Dobrée
+  pattern: footer/footer-dobree.html
 ---
 
 ## Usage

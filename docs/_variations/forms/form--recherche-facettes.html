@@ -17,10 +17,13 @@ layout: pattern
 {% capture ariaDescribedBy %}filter-by-{{ formId }}{% endcapture %}
 {% capture fields %}
     <div class="ds44-fieldContainer ds44-fg1">
-        {% include form/field/input/standard.html label="Votre recherche" required="false" title="Zone de saisie de votre recherche" ariaDescribedBy="idTitre2" %}
+        {% include form/field/input/autocomplete.html label="Champ texte libre" id="form-element-66359" required="true" type="address" url="https://api-adresse.data.gouv.fr/search/?limit=5" attributes='data-url-prefix=", 44" data-enabled-field-value="44109" data-mode="select-only"' %}
     </div>
 {% endcapture %}
 {% capture subfields %}
+    <div class="ds44-fieldContainer  ds44-fg1 ds44-fieldContainer--select hidden" data-enabled-by-field="#form-element-66359">
+        {% include form/field/select/radio.html label="Choix unique" ariaDescribedBy=ariaDescribedBy %}
+    </div>
     <div class="ds44-fieldContainer ds44-fg1 ds44-fieldContainer--select">
         {% include form/field/select/checkbox.html label="Choix multiple" containerAttributes='data-auto-submit="true"' ariaDescribedBy=ariaDescribedBy %}
     </div>

@@ -3,8 +3,8 @@ layout: component-detail
 group: components
 
 title: Overlays
-description: Affichage des modals (pop-ins).
-status: A valider
+description: Affichage des modals (pop-ins). On entend par popups les fenêtres qui s’affichent automatiquement sur l’écran lorsqu’un internaute clique sur un élément sur le site.
+status: Validé
 
 variations:
 - title: Modale simple

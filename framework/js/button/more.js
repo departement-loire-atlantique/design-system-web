@@ -1,12 +1,18 @@
-class ButtonMore {
+class ButtonMoreClass {
     constructor () {
+        Debug.log("ButtonMore -> Constructor");
         this.nbResults = 5;
-
+    }
+    initialise() {
+        Debug.log("ButtonMore -> Initialise");
         document
-            .querySelectorAll('.ds44-js-more-button')
-            .forEach((buttonElement) => {
-                MiscEvent.addListener('click', this.showMore.bind(this), buttonElement);
-            });
+          .querySelectorAll('.ds44-js-more-button')
+          .forEach((buttonElement) => {
+              if(MiscComponent.checkAndCreate(buttonElement, "button-more"))
+              {
+                  MiscEvent.addListener('click', this.showMore.bind(this), buttonElement);
+              }
+          });
     }
 
     showMore (evt) {
@@ -37,6 +43,19 @@ class ButtonMore {
         }
     }
 }
-
 // Singleton
+var ButtonMore = (function () {
+    "use strict";
+    var instance;
+    function Singleton() {
+        if (!instance) {
+            instance = new ButtonMoreClass();
+        }
+        instance.initialise();
+    }
+    Singleton.getInstance = function () {
+        return instance || new Singleton();
+    }
+    return Singleton;
+}());
 new ButtonMore();

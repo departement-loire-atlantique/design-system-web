@@ -1,6 +1,6 @@
-class FormLayoutSearch extends FormLayoutAbstract {
+class FormLayoutSearchClass extends FormLayoutAbstract {
     constructor () {
-        super('.ds44-facette form');
+        super("FormLayoutSearch", '.ds44-facette form');
     }
 
     create (formElement) {
@@ -16,24 +16,29 @@ class FormLayoutSearch extends FormLayoutAbstract {
         object.parameters = {};
         object.searchData = {};
         object.hasSearched = false;
+
+        object.startNotFocus = formElement.getAttribute('data-is-ajax') === 'true' && formElement.getAttribute('data-auto-load') === 'true';
     }
 
     initialize () {
         // Initialize each object
         for (let objectIndex = 0; objectIndex < this.objects.length; objectIndex++) {
             const object = this.objects[objectIndex];
-            if (object.isSubInitialized) {
-                continue;
-            }
-            object.isSubInitialized = true;
+            if(!MiscComponent.isInit(object.formElement, "form-layout"))
+            {
+                if (object.isSubInitialized) {
+                    continue;
+                }
+                object.isSubInitialized = true;
 
-            // Bind events
-            MiscEvent.addListener('search:refresh', this.search.bind(this, objectIndex));
-            object.containerElement
-                .querySelectorAll('.ds44-js-toggle-search-view')
-                .forEach((searchToggleViewElement) => {
-                    MiscEvent.addListener('click', this.toggleSearchView.bind(this, objectIndex), searchToggleViewElement);
-                });
+                // Bind events
+                MiscEvent.addListener('search:refresh', this.search.bind(this, objectIndex));
+                object.containerElement
+                    .querySelectorAll('.ds44-js-toggle-search-view')
+                    .forEach((searchToggleViewElement) => {
+                        MiscEvent.addListener('click', this.toggleSearchView.bind(this, objectIndex), searchToggleViewElement);
+                    });
+            }
         }
 
         super.initialize();
@@ -89,7 +94,7 @@ class FormLayoutSearch extends FormLayoutAbstract {
             return false;
         }
 
-        if (MiscUtils.isInDevMode) {
+        if (MiscUtils.isInDevMode()) {
             // Get the search data from the local storage
             const searchData = window.sessionStorage.getItem('search_' + searchId);
             if (!searchData) {
@@ -116,6 +121,10 @@ class FormLayoutSearch extends FormLayoutAbstract {
     }
 
     loadFromUrlSuccess (objectIndex, response) {
+        if (typeof response === 'string') {
+            response = MiscUrl.urlToJson(response);
+        }
+
         for (const objectName in response) {
             if (!response.hasOwnProperty(objectName)) {
                 continue;
@@ -161,11 +170,22 @@ class FormLayoutSearch extends FormLayoutAbstract {
             return;
         }
 
+        let autoFocusLoaderDisabled = false;
+        let autoFocusResult = false;
+        if(object.startNotFocus === true)
+        {
+            autoFocusLoaderDisabled = true;
+            autoFocusResult = true;
+            object.startNotFocus = false;
+        }
+
         // Show loader
-        MiscEvent.dispatch('loader:requestShow');
+        MiscEvent.dispatch('loader:requestShow', {autoFocusDisabled: autoFocusLoaderDisabled});
 
         // Manage parameters
-        const options = {};
+        const options = {
+            autoFocusDisabled: autoFocusResult
+        };
         if (evt.detail.next) {
             // Go to next set of results
             object.parameters.page = parseInt(object.searchData.pageIndex, 10) + 1;
@@ -203,13 +223,14 @@ class FormLayoutSearch extends FormLayoutAbstract {
         if (!object) {
             return;
         }
-
+        localStorage.setItem("LaDesignSystem.urlSearch", window.location.href);
         // Save search data
         object.searchData = this.formatSearchData(
             response,
             object.parameters,
             (options.addUp ? object.searchData.results : null)
         );
+
 
         // Set url with the search parameters
         this.setSearchHash(objectIndex, response.id);
@@ -265,9 +286,12 @@ class FormLayoutSearch extends FormLayoutAbstract {
             'pageIndex': response['page-index'] || 1,
             'nbResultsPerPage': response['nb-result-per-page'] || response['max-result'],
             'nbResults': response['nb-result'],
+            'nbResultHtml': response['html-nb-result'] !== undefined ? response["html-nb-result"] : null,
             'maxNbResults': response['max-result'],
             'results': results,
+            'geojsonId' : response.hasOwnProperty("geojsonId") ? response['geojsonId'] : null,
             'newResults': response['result'],
+            "modal":  response["result-modal"] !== undefined ? response["result-modal"] : [],
             'searchText': searchText.join(', ')
         };
     }
@@ -279,9 +303,15 @@ class FormLayoutSearch extends FormLayoutAbstract {
         }
 
         if (object.containerElement.classList.contains('ds44-facette-mobile-expanded')) {
-            object.containerElement.classList.remove('ds44-facette-mobile-expanded')
+            object.containerElement.classList.remove('ds44-facette-mobile-expanded');
         } else {
-            object.containerElement.classList.add('ds44-facette-mobile-expanded')
+            object.containerElement.classList.add('ds44-facette-mobile-expanded');
+
+            // Focus on first form element
+            const firstFocusableElement = object.formElement.querySelector(MiscAccessibility.getEnabledElementsSelector());
+            if (firstFocusableElement) {
+                MiscAccessibility.setFocus(firstFocusableElement);
+            }
         }
     }
 
@@ -291,22 +321,34 @@ class FormLayoutSearch extends FormLayoutAbstract {
             return;
         }
 
-        if (MiscUtils.isInDevMode) {
+        if (MiscUtils.isInDevMode()) {
             // In dev mode, generate the search id and use the local storage to store the search data
             // as there is no back end
             const parameters = JSON.stringify(object.parameters);
             searchId = await MiscUtils.digestMessage(parameters);
             window.sessionStorage.setItem('search_' + searchId, parameters);
-        } else if (!searchId) {
-            return;
         }
 
         if (object.formElement.getAttribute('data-seo-url') !== 'true') {
             MiscUrl.setHashParameters(object.parameters);
-        } else {
+        } else if(searchId) {
             MiscUrl.setSeoHashParameters(object.parameters, searchId);
         }
     }
 }
-
+// Singleton
+var FormLayoutSearch = (function () {
+    "use strict";
+    var instance;
+    function Singleton() {
+        if (!instance) {
+            instance = new FormLayoutSearchClass();
+        }
+        instance.initialise();
+    }
+    Singleton.getInstance = function () {
+        return instance || new Singleton();
+    }
+    return Singleton;
+}());
 new FormLayoutSearch();

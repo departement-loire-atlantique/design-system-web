@@ -11,7 +11,9 @@ layout: pattern
 </div>
 <hr />
 <div class="ds44-flex-container ds44-fse">
-    <a class="ds44-icoLink" href="#top"><i class="icon icon-arrow-up icon--sizeXL" aria-hidden="true"></i><span class="ds44-icoTxtWrapper">Haut de page</span></a>
+    <p id="backToTop" class="ds44-posRi ds44-hide-mobile ds44-btn-fixed ds44-js-button-sticky" data-is-delayed="true">
+        <a class="ds44-icoLink ds44-icoLink--footer" href="#top"><i class="icon icon-arrow-up icon--sizeXL" aria-hidden="true"></i><span class="ds44-icoTxtWrapper">Haut de page</span></a>
+    </p>
 
     <button><i class="icon icon-cross icon--xlarge" aria-hidden="true"></i><span class="ds44-btnInnerText--bottom">Fermer</span></button>
 
@@ -20,6 +22,26 @@ layout: pattern
     <button><i class="icon icon-magnifier icon--xlarge" aria-hidden="true"></i><span class="ds44-btnInnerText--bottom">Rechercher</span></button>
 
     <button><i class="icon icon-arrow-left icon--xlarge" aria-hidden="true"></i><span class="ds44-btnInnerText--bottom">Retour</span></button>
+</div>
+<hr />
+<div style="height:100px; position:relative; margin:40px;">
+  <div class="ds44-container-menuBackLink">
+      <button type="button" title="Retour au premier niveau du menu de navigation" class="ds44-btn-backOverlay"><i class="icon icon-arrow-left icon--xlarge" aria-hidden="true"></i><span class="ds44-btnInnerText--bottom">Retour</span></button>
+      <p role="heading" aria-level="1" class="ds44-menuBackLink">Sites et applis du Département</p>
+  </div>
+</div>
+<hr />
+<div class="ds44-flex-container ds44-fse">
+  <button class="ds44-btnStd ds44-btn--invert ds44-btnQuestion ds44-btn-fixed ds44-js-button-sticky" type="button" data-target="#navFAQ" data-js="ds44-modal">
+      <span class="ds44-btnInnerText">Posez une question</span><i class="icon icon-discussion icon--sizeL" aria-hidden="true"></i>
+  </button>
+  <button class="ds44-btnStd ds44-btn--invert ds44-btnQuestion" type="button" data-target="#navFAQ" data-js="ds44-modal">
+      <span class="ds44-btnInnerText">Posez une question</span><i class="icon icon-discussion icon--sizeL" aria-hidden="true"></i>
+  </button>
+</div>
+<hr />
+<div class="ds44-bgDark ds44--l-padding ds44-flex-container ds44-fse">
+  <a class="ds44-btnStd ds44-btn--invertWhite" title="Réserver : Exposition Amazonie"><span class="ds44-btnInnerText">Réserver</span><i class="icon icon-long-arrow-right" aria-hidden="true"></i></a>
 </div>
 <hr />
 <div class="ds44-flex-container ds44-fse">
@@ -53,9 +75,18 @@ layout: pattern
 
   <button class="ds44-btnStd ds44-btnStd--cluster ds44-btnStd--cluster--bigger" aria-expanded="false"><span class="ds44-btnInnerText">124</span></button>
 
-  <button aria-expanded="false"><i class="ds44-map-marker" aria-hidden="true"></i></button>
+  <!-- <button aria-expanded="false"><i class="ds44-map-marker" aria-hidden="true"></i></button>
 
-  <button aria-expanded="false"><i class="ds44-map-marker active" aria-hidden="true"></i></button>
+  <button aria-expanded="false"><i class="ds44-map-marker active" aria-hidden="true"></i></button> -->
+
+  <button class="ds44-btnStd--inforoutes"><i class="icon icon-accident ds44-icoInfoRoutes redFlag" aria-hidden="true"></i><span class="visually-hidden">Accident</span></button>
+  <button class="ds44-btnStd--inforoutes"><i class="icon icon-bouchons ds44-icoInfoRoutes redFlag" aria-hidden="true"><span class="visually-hidden">Bouchons</span></i></button>
+  <button class="ds44-btnStd--inforoutes"><i class="icon icon-glaces ds44-icoInfoRoutes redFlag" aria-hidden="true"><span class="visually-hidden">Verglas et neige</span></i></button>
+  <button class="ds44-btnStd--inforoutes"><i class="icon icon-vent ds44-icoInfoRoutes redFlag" aria-hidden="true"></i><span class="visually-hidden">Vent</span></button>
+  <button class="ds44-btnStd--inforoutes"><i class="icon icon-travaux ds44-icoInfoRoutes orangeFlag" aria-hidden="true"></i><span class="visually-hidden">Chantier</span></button>
+  <button class="ds44-btnStd--inforoutes"><i class="icon icon-deviation ds44-icoInfoRoutes orangeFlag" aria-hidden="true"></i><span class="visually-hidden">Déviation</span></button>
+  <button class="ds44-btnStd--inforoutes"><i class="icon icon-bacs ds44-icoInfoRoutes orangeFlag" aria-hidden="true"></i><span class="visually-hidden">Bacs de Loire</span></button>
+  <button class="ds44-btnStd--inforoutes"><i class="icon icon-attention ds44-icoInfoRoutes orangeFlag" aria-hidden="true"></i><span class="visually-hidden">Autre danger</span></button>
 
 </div>
 

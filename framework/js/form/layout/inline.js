@@ -1,6 +1,6 @@
-class FormLayoutInline extends FormLayoutAbstract {
+class FormLayoutInlineClass extends FormLayoutAbstract {
     constructor () {
-        super('form[data-is-inline="true"]');
+        super("FormLayoutInline", 'form[data-is-inline="true"]');
     }
 
     ajaxSubmit (objectIndex, formData) {
@@ -30,7 +30,9 @@ class FormLayoutInline extends FormLayoutAbstract {
             this.notification(objectIndex, null, response.message, response.message_list, response.status || 'information');
         }
 
-        this.clear(objectIndex);
+        if (response.status !== 'error') {
+            this.clear(objectIndex);
+        }
 
         MiscEvent.dispatch('loader:requestHide');
     }
@@ -59,5 +61,19 @@ class FormLayoutInline extends FormLayoutAbstract {
         destinationElement.innerHTML = inlineData.content_html;
     }
 }
-
+// Singleton
+var FormLayoutInline = (function () {
+    "use strict";
+    var instance;
+    function Singleton() {
+        if (!instance) {
+            instance = new FormLayoutInlineClass();
+        }
+        instance.initialise();
+    }
+    Singleton.getInstance = function () {
+        return instance || new Singleton();
+    }
+    return Singleton;
+}());
 new FormLayoutInline();

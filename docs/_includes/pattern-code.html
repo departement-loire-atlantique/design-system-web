@@ -6,5 +6,5 @@
         <button class="preview-links-btn pattern-code-copy-btn" data-clipboard-target="#pattern-code-{{ forloop.index }}">{{ site.data.locale['copy'] | default:'Copy'}}</button>
     </div>
     
-    <pre class="highlight pattern-code-block"><code class="language-html" id="pattern-code-{{ forloop.index }}">{% highlight liquid %}{{ pattern.content }}{% endhighlight %}</code></pre>
+    <pre class="highlight pattern-code-block"><code class="language-html" id="pattern-code-{{ forloop.index }}">{% highlight liquid %}{{ pattern.content|trim }}{% endhighlight %}</code></pre>
 </div>

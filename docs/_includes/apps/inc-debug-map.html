@@ -40,64 +40,64 @@ Zone :
 /* Fonctions debug uniquement */
 
 function CheckDebugVars(){
-//champs vérifiés
-var ModeCirculation = document.getElementById("SelectPontMode").value;
-var traficNord = document.getElementById("SelectTraficNord").value;
-var traficSud = document.getElementById("SelectTraficSud").value;
-var PerturbationType = document.getElementById("SelectPerturbationType").value;
-var PerturbationZone = document.getElementById("SelectPerturbationZone").value;
+	//champs vérifiés
+	var ModeCirculation = document.getElementById("SelectPontMode").value;
+	var traficNord = document.getElementById("SelectTraficNord").value;
+	var traficSud = document.getElementById("SelectTraficSud").value;
+	var PerturbationType = document.getElementById("SelectPerturbationType").value;
+	var PerturbationZone = document.getElementById("SelectPerturbationZone").value;
 
-//activation conditionnelle du champ zone si type de perturbation est vent
-if(PerturbationType=="vent"){
-    document.getElementById("SelectPerturbationZone").disabled = true;
- }
-else{
-     document.getElementById("SelectPerturbationZone").disabled = false;
- }
+	//activation conditionnelle du champ zone si type de perturbation est vent
+	if(PerturbationType=="vent"){
+		document.getElementById("SelectPerturbationZone").disabled = true;
+	 }
+	else{
+		 document.getElementById("SelectPerturbationZone").disabled = false;
+	 }
 
-ChangeMapState(ModeCirculation, traficNord, traficSud);
+	ChangeMapState(ModeCirculation, traficNord, traficSud);
 }
 
 
 function AddPerturbation(){
-var PerturbationType = document.getElementById("SelectPerturbationType").value;
-var PerturbationZone = document.getElementById("SelectPerturbationZone").value;
-ShowPerturbation(PerturbationType,PerturbationZone)
+	var PerturbationType = document.getElementById("SelectPerturbationType").value;
+	var PerturbationZone = document.getElementById("SelectPerturbationZone").value;
+	ShowPerturbation(PerturbationType,PerturbationZone)
 }
 
 /* Fonctions d'affichage des elements de la carte (utilisable en prod) */
 
 //affichage d'une ou plusieurs bulles perturbation sur la carte
 function ShowPerturbation(PerturbationType,PerturbationZone){
-//PerturbationType:vent,panne,accident,deviation
-//perturbationzone:nord,a,b,c,d,e,sud
-if(PerturbationType !== 'vent'){
-   document.getElementById("perturbation-"+PerturbationZone).classList.add('pertubation-visible');
-    document.getElementById("perturbation-"+PerturbationZone).querySelector("[id*="+PerturbationType+"]").classList.add('pertubation-visible');
-}else{
-    document.getElementById("perturbation-vent").classList.add('pertubation-visible');
-}
-console.log("ShowPerturbation (type : "+PerturbationType+", zone : "+PerturbationZone+")");
+	//PerturbationType:vent,panne,accident,deviation
+	//perturbationzone:nord,a,b,c,d,e,sud
+	if(PerturbationType !== 'vent'){
+	   document.getElementById("perturbation-"+PerturbationZone).classList.add('pertubation-visible');
+		document.getElementById("perturbation-"+PerturbationZone).querySelector("[id*="+PerturbationType+"]").classList.add('pertubation-visible');
+	}else{
+		document.getElementById("perturbation-vent").classList.add('pertubation-visible');
+	}
+	console.log("ShowPerturbation (type : "+PerturbationType+", zone : "+PerturbationZone+")");
 }
 
 //changement de l'affichage de la carte par changement des attributs data sur l'element souhaité
 function ChangeMapState(ModeCirculation, traficNord, traficSud){
-var DataElement = document.getElementById("main-container");
-DataElement.setAttribute("data-mode-circulation", ModeCirculation);
-DataElement.setAttribute("data-trafic-nord", traficNord);
-DataElement.setAttribute("data-trafic-sud", traficSud);
-console.log("ChangeMapState (ModeCirculation : "+ModeCirculation+", traficNord : "+traficNord+", traficSud : "+traficSud+")");
+	var DataElement = document.getElementById("main-container");
+	DataElement.setAttribute("data-mode-circulation", ModeCirculation);
+	DataElement.setAttribute("data-trafic-nord", traficNord);
+	DataElement.setAttribute("data-trafic-sud", traficSud);
+	console.log("ChangeMapState (ModeCirculation : "+ModeCirculation+", traficNord : "+traficNord+", traficSud : "+traficSud+")");
 }
 
 //masquage de toutes les perturbations
 function HideAllPerturbations(){
-document.querySelectorAll('.pertubation-visible').forEach(el => el.classList.remove('pertubation-visible'));
-console.log("HideAllPerturbations()");
+	document.querySelectorAll('.pertubation-visible').forEach(el => el.classList.remove('pertubation-visible'));
+	console.log("HideAllPerturbations()");
 }
 
 //exemples à l'init de l'application
 HideAllPerturbations();
-//ShowPerturbation("accident","c");
-//ShowPerturbation("vent","");
+ShowPerturbation("accident","c");
+ShowPerturbation("vent","");
 
 </script>

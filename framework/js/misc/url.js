@@ -26,11 +26,27 @@ class MiscUrl {
         const rawUrlParameters = MiscUrl.jsonToUrl(parameters);
         for (const [key, value] of rawUrlParameters.entries()) {
             if (key.match(/\[text\]$/)) {
-                urlParameters.push(value.trim().replace(/, /gi, ','));
+                urlParameters.push(
+                    value.trim()
+                        .replace(/, /gi, ',')
+                        .replace(/\(/gi, '')
+                        .replace(/\)/gi, '')
+                );
             }
         }
         urlParameters.push(parametersHash);
         document.location.href = document.location.href.split('#')[0] + '#' + urlParameters.join('/').replace(/ /gi, '-');
+    }
+	
+	static parseBoolean(str) {
+    	switch (str.toLowerCase ()) {
+        case "true":
+          return true;
+        case "false":
+          return false;
+        default:
+          return str;
+      }
     }
 
     static jsonToUrl (parameters) {
@@ -47,7 +63,7 @@ class MiscUrl {
             if (!matches) {
                 // No square brackets
                 json[key] = {
-                    'value': value
+                    'value':  MiscUrl.parseBoolean(value)
                 };
 
                 continue;
@@ -71,7 +87,7 @@ class MiscUrl {
                     }
                     nestedValue = nestedValue[subKey];
                 } else {
-                    nestedValue[subKey] = value;
+                    nestedValue[subKey] =  MiscUrl.parseBoolean(value);
                 }
             }
         }

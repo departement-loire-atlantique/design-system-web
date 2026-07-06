@@ -11,7 +11,7 @@
         {% assign attributes = attributes | append : ' autocomplete="email"' %}
     {% elsif include.type == 'password' %}
         {% assign type = 'password' %}
-        {% assign attributes = attributes | append : ' autocomplete="off"' %}
+        {% assign attributes = attributes | append : ' autocomplete="current-password"' %}
     {% elsif include.type == 'tel-national' %}
         {% assign attributes = attributes | append : ' autocomplete="tel-national"' %}
     {% elsif include.type == 'postcode' %}
@@ -22,11 +22,18 @@
         {% assign attributes = attributes | append : ' autocomplete="address-line1"' %}
     {% elsif include.type == 'address-level2' %}
         {% assign attributes = attributes | append : ' autocomplete="address-level2"' %}
+    {% elsif include.type == 'country' %}
+        {% assign attributes = attributes | append : ' autocomplete="country"' %}
     {% endif %}
 {% endif %}
 
 {% capture mainContent %}
-    <input type="{{ type }}" id="{{ id }}" name="{{ name }}" class="{{ mainClass }}" {{ title }} {{ attributes }} {{ inputAttributes }} {{ placeholder }} {% if ariaDescribedBy and ariaDescribedBy != '' %}aria-describedby="{{ ariaDescribedBy }}"{% endif %} />{% include form/field/partial/reset.html %}
+    <input type="{{ type }}" id="{{ id }}" name="{{ name }}" value="{% if include.value %}{{ include.value }}{% endif %}" class="{{ mainClass }}" {{ title }} {{ attributes }} {{ inputAttributes }} {{ placeholder }} {% if ariaDescribedBy and ariaDescribedBy != '' %}aria-describedby="{{ ariaDescribedBy }}"{% endif %} />
+    {% if include.showPassword == 'true' %}
+        {% include form/field/partial/showPassword.html %}
+    {% endif %}
+    {% include form/field/partial/reset.html %}
+
 {% endcapture %}
 
 {% capture labelContent %}
@@ -36,5 +43,6 @@
 {% if include.hidden == 'true' %}
     {% assign containerClass = containerClass | append : ' hidden' %}
 {% endif %}
+
 
 {% include form/field/partial/container.html id=id content=labelContent containerClass=containerClass explanation=include.explanation %}

@@ -5,20 +5,43 @@
         padding-right: $ds44-container-large-margin;
     }
 
+    &.ds44-carroussel-swiper-mobile {
+      display:none;
+      @media screen and (max-width: $ds44-medium - .0625) {
+        display:block;
+      }
+    }
+
+    &.ds44-carroussel-swiper-desktop {
+      @media screen and (max-width: $ds44-medium - .0625) {
+        display:none;
+      }
+    }
+
+
     &.ds44-container-large,
     .ds44-homepage-container & {
         @media screen and (max-width: $ds44-medium - .0625) {
             margin: 0;
         }
     }
+    &.swiper-button-prev-next-hidden {
+      .swiper-container {
+        margin: 0;
+      }
+    }
 
     .swiper-container {
         padding: 1rem 1.6rem 3rem 1.6rem;
         margin: 0 calc(5.5% - 1.6rem);
         margin: 0 -webkit-calc(5.5% - 1.6rem);
+        &.swiper-not-button-next-previous {
+          margin: 0;
+          padding: 1rem 0 3rem;
+        }
 
         @media screen and (max-width: $ds44-medium - .0625) {
-            padding: 1rem 0 0 0;
+            padding: 1rem 0 2rem 0;
             margin: 0 auto;
         }
 
@@ -57,12 +80,14 @@
                     }
                 }
 
+
                 .ds44-diaporama-thumb {
                     display: block;
                     width: 7.8rem;
                     height: 7.8rem;
                     background-position: center center;
                     background-size: cover;
+
                 }
 
                 .ds44-card {
@@ -88,6 +113,41 @@
         text-align: center;
         padding: 1rem 0;
         min-height: 4rem;
+        &.bullet{
+          @media screen and (max-width: $ds44-small - .0625) {
+            display: none;
+          }
+          margin: 0 -1rem;
+          display:flex;
+          align-items: center;
+          align-content: center;
+          justify-content: center;
+          background-color: transparent;
+          li {
+            list-style: none;
+            margin: 0 1rem;
+          }
+          .swiper-pagination-bullet {
+            border-radius: 0;
+            display:block;
+            width: 1.5rem;
+            height: 1.5rem;
+            background-color: #000000;
+            opacity:1;
+            border:0.1rem solid #000000;
+            &.swiper-pagination-bullet-active {
+              background-color: #fff;
+            }
+            &.swiper-pagination-bullet-focus {
+              background-color: #fff;
+              border:0.4rem solid #000000;
+            }
+          }
+        }
+
+        p {
+          margin: 0;
+        }
 
         .swiper-pagination-bullet {
             background: none;
@@ -98,6 +158,10 @@
 
             &.swiper-pagination-bullet-active {
                 display: block;
+            }
+            &.swiper-pagination-bullet-focus {
+              background-color: #fff;
+              border:0.4rem solid #000000;
             }
         }
     }
@@ -126,11 +190,17 @@
 
         &.swiper-button-white {
             color: #fff;
+            border: 2px solid transparent;
+
+            &:focus,
+            &:-moz-focusring {
+              background: $ds44-hover-dark;
+            }
         }
 
         &.ds44-not-edge-42 {
             .icon::before {
-                font-size: 45px;
+                font-size: 55px;
 
                 @media screen and (max-width: $ds44-medium - .0625) {
                     font-size: 30px;
@@ -177,12 +247,34 @@
 
             .swiper-container {
                 .swiper-wrapper {
+                  padding: 5px 16px 16px 16px;
+
                     .swiper-slide {
                         width: auto;
                         cursor: pointer;
 
+                        .ds44-diaporama-thumb {
+                            border: 3px solid transparent;
+
+                            &:hover {
+                                box-shadow: $ds44-smallShadow ;
+                            }
+
+                            &:focus {
+                                border: 3px solid $ds44-background-dark;
+                                box-shadow: $ds44-smallShadow ;
+                            }
+                        }
+
+
                         &.swiper-slide-thumb-active {
-                            border-bottom: 2px solid $ds44-LA;
+                          .ds44-diaporama-thumb {
+                              border: 3px solid $ds44-contextual-color;
+                          }
+                        }
+
+                        &:last-child {
+                          margin-right: 0 !important;
                         }
                     }
                 }
@@ -213,6 +305,7 @@
             bottom: 0;
             left: 0;
             z-index: 100;
+            border: 2px solid transparent;
         }
     }
 
@@ -227,11 +320,22 @@
     }
 }
 
+.ds44-bgDark {
+
+  .swipper-carousel-wrap  {
+
+      .swiper-button-next,
+      .swiper-button-prev {
+          color: #ffffff;
+        }
+      }
+}
+
 .ds44-ssTitreH1_home {
     font-size: 3.4rem;
 
     @media screen and (max-width: $ds44-small - .0625) {
-        font-size: 2.4rem;
+        font-size: 2.8rem;
     }
 }
 
@@ -257,7 +361,127 @@
             position: static;
         }
     }
+    .col-7-small-1 {
+      .ds44-card__title {
+        font-size: 2.4rem; // 24px
+      }
+      .ds44-card {
+        picture {
+          height: 100%;
 
+          img {
+            height: 100%;
+            width: 100%;
+            object-fit: cover;
+          }
+        }
+        .ds44-card__section {
+          position: absolute;
+          bottom: 0;
+          left: 0;
+          width: 60%;
+          background: $ds44-lightgray;
+          padding: 3rem;
+        }
+      }
+    }
+    .col-3-small-1 {
+      .ds44-card__title {
+        font-size: 1.7rem; // 17px
+      }
+    }
+    .col-2-small-1 {
+      .ds44-card__title {
+        font-size: 1.4rem; // 14px
+      }
+    }
+
+    @media screen and (max-width: $ds44-small - .0625) {
+
+      .col-7-small-1,
+      .col-3-small-1,
+      .col-2-small-1 {
+        .ds44-card__title {
+          font-size: 1.7rem; // 17px
+        }
+        .ds44-card {
+          height: auto;
+          .ds44-card__section {
+            position: relative;
+            width: auto;
+            padding: 1rem 1.5rem;
+          }
+        }
+      }
+      .col-7-small-1 {
+        margin: 0 !important;
+      }
+
+
+    }
+
+}
+
+// Musée Dobrée Carrousel - ajout puces et positionnement des flèches sous le carroussel en mobile
+.swipper-carousel-wrap--dobree {
+        .swiper-thumbs  {
+            display: none;
+        }
+}
+
+@media screen and (max-width: $ds44-medium - .0625) {
+    // Musée Dobrée Carrousel - ajout puces et positionnement des flèches sous le carroussel
+    .swipper-carousel-wrap--dobree {
+            .swiper-thumbs  {
+              background-color: $ds44-light;
+              display: flex;
+
+              .swiper-thumbs-container .swiper-container {
+                  display: flex;
+
+                  > * {
+                      display: inline-flex;
+                      align-items: center;
+                  }
+                   .swiper-wrapper .swiper-slide .ds44-diaporama-thumb {
+                      width: 9px;
+                      height: 9px;
+                      padding: 0;
+                      border: 1px solid $ds44-dark;
+                  }
+                   .swiper-wrapper .swiper-slide.swiper-slide-thumb-active  .ds44-diaporama-thumb  {
+                      background: $ds44-dark;
+                      border: 2px solid $ds44-dark;
+                  }
+            }
+            }
+            .swiper-button-next,
+            .swiper-button-prev {
+                color: $ds44-dark;
+                background: $ds44-light;
+                top: auto;
+                bottom: -5px;
+            }
+
+    }
+}
+
+.swipper-carousel-wrap.mobile-button-bottom {
+  @media (max-width: $ds44-large - .0625) {
+    padding-bottom: 8rem;
+    .swiper-button-prev,
+    .swiper-container-rtl .swiper-button-prev,
+    .swiper-button-next,
+    .swiper-container-rtl .swiper-button-next{
+      top:auto;
+      bottom: -0.5rem;
+    }
+    .swiper-button-prev,
+    .swiper-container-rtl .swiper-button-prev {
+      left: 0;
+      right: auto;
+    }
+  }
 }
 
 

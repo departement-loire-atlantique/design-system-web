@@ -4,7 +4,7 @@ group: components
 
 title: Titres
 description: Titres de page (titre principal).
-status: A valider
+status: Validé
 
 variations:
 - title: Hiérarchie des titres
@@ -22,6 +22,9 @@ variations:
 - title: Titre de page centré sans image
   description: Titre principal pour les pages sans bandeau image
   pattern: titres/main-title-centered.html
+- title: Titre et texte (colonnes)
+  description: Titre associé à un paragraphe à droite pour le musée Dobrée
+  pattern: titres/main-title-text.html
 ---
 
 ## General guidelines
@@ -59,4 +62,3 @@ Si le titre ne comporte aucune image, il peut être soit ferré à gauche, soit 
 ## Accessibilité
 
 * Ajouter `aria-current="location"` sur l'élément de liste actif.
-

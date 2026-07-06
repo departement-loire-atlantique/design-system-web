@@ -1,0 +1,16 @@
+---
+layout: pattern
+---
+
+<p role="heading" aria-level="2" class="h3-like">Créneaux</p>
+{% include form/field/input/planning.html creneauName="planning"%}
+<hr />
+<p role="heading" aria-level="2" class="h3-like">Créneaux avec choix des jours</p>
+{% include form/field/input/planning.html choiceDays="oui" creneauName="planning_2" %}
+<hr />
+<p role="heading" aria-level="2" class="h3-like">Créneaux avec choix des jours et ajout de semaine</p>
+{% include form/field/input/planning.html choiceDays="oui" creneauName="planning___NUM_PLANNING__" addPlanning=1 %}
+<hr />
+<p role="heading" aria-level="2" class="h3-like">Adresses</p>
+{% include form/field/input/address.html%}
+

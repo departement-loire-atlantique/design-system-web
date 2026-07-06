@@ -1,0 +1,55 @@
+<section id="menuRechObservatoire">
+    <div class="ds44-overlay ds44-overlay--navNiv2 ds44-wave-grey ds44-bg-pdr ds44-whiteBG" role="dialog" aria-modal="true" aria-label="Menu de recherche" aria-hidden="true" {{ include.surcharge }}>
+
+        <button type="button" class="ds44-btnOverlay ds44-btnOverlay--closeOverlay" aria-label="Fermer le menu Rechercher">
+            <i class="icon icon-cross icon--xlarge" aria-hidden="true"></i><span class="ds44-btnInnerText--bottom">Fermer</span>
+        </button>
+
+        <div class="ds44-container-menuBackLink">
+            <p role="heading" aria-level="1" class="ds44-menuBackLink" id="titreRechercher">Rechercher</p>
+        </div>
+
+        <div class="ds44-flex-container ds44-flex-valign-center ds44-flex-align-center ds44-hv100 ds44-container-large ds44-tiny-to-med-atop ds44-ttl-pt9">
+            <div class="grid-12-small-1 ds44-grid-valign-center ds44-w98">
+
+                <div class="col-5-small-1 txtcenter">
+                    <p class="h4-like" id="inp-rech" role="heading" aria-level="2">Recherchez :</p>
+                    <form role="search">
+                        <div class="grid-12">
+                            <div class="col-12">
+                              {% include form/field/input/standard.html label="Saisissez un ou plusieurs mots-clé" required="true" class="ds44-inpLarge" ariaDescribedBy="inp-rech" %}
+                            </div>
+                            <div class="col-6 ds44-minTiny-margin-r">
+                                {% include form/field/select/standard.html label="Catégories" class="ds44-inpLarge" %}
+                            </div>
+                            <div class="col-6 ds44-minTiny-margin-l">
+                              {% include form/field/select/standard.html label="Thématiques" class="ds44-inpLarge" %}
+                            </div>
+                        </div>
+                        <button type="submit" class="ds44-btnStd ds44-btn--invert" title="Valider votre recherche par mots-clés">
+                            <span class="ds44-btnInnerText">Valider</span><i class="icon icon-long-arrow-right" aria-hidden="true"></i>
+                        </button>
+                    </form>
+                </div>
+
+                <div class="col-2-small-1 txtcenter ds44-h100">
+                    <div class="ds44-separator ds44-flex-valign-center ds44-flex-align-center ds44-flex-container">
+                        <p class="ds44-txtBulle ds44-theme">Ou</p>
+                    </div>
+                </div>
+
+                <div class="col-5-small-1">
+                    <h2 class="h4-like" id="titreContenus">Accédez aux contenus les plus recherchés :</h2>
+                    <ul class="ds44-list">
+                        <li><a href="#" class="ds44-arrowLink">Repères<i class="icon icon-arrow-right" aria-hidden="true"></i></a></li>
+                        <li><a href="#" class="ds44-arrowLink">Cartes intéractives<i class="icon icon-arrow-right" aria-hidden="true"></i></a></li>
+                        <li><a href="#" class="ds44-arrowLink">Communes de Loire-Atlantique au 1er janvier 2020<i class="icon icon-arrow-right" aria-hidden="true"></i></a></li>
+                        <li><a href="#" class="ds44-arrowLink">Repères chiffres-clés - Combien d’habitants  en Loire-Atlantique ?<i class="icon icon-arrow-right" aria-hidden="true"></i></a></li>
+                        <li><a href="#" class="ds44-arrowLink">Etude - Loire-Atlantique : moins de fragilités sociales, mais quelques territoires ou quartiers cumulent les difficultés (novembre 2019)<i class="icon icon-arrow-right" aria-hidden="true"></i></a></li>
+                    </ul>
+                </div>
+
+            </div>
+        </div>
+    </div>
+</section>

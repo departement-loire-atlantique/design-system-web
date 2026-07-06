@@ -43,6 +43,19 @@
     }
 }
 
+
+@media (max-width: 991px) {
+    .ds44-tabs__link-mobile {
+        background-color: #F1F1F1 !important;
+        margin-bottom: 28px;
+        padding: 1.5rem 2rem 1.5rem 2rem !important;
+    }
+
+    .ds44-tabs__content_mobile {
+        margin-bottom: 45px;
+    }
+}
+
 .ds44-tabs__linkSelected.ds44-tabs__link,
 .ds44-tabs__link:hover,
 .ds44-tabs__link:focus,
@@ -78,6 +91,34 @@
     margin-top: -$ds44-padding-xxlarge; // annule le padding bottom de l'onglet
 }
 
+
+/* =======
+  MUSEE DOBREE ONGLET LATERAL
+  === */
+
+.dobree-ongletsContainer {
+    .ds44-tabs__list {
+      margin: 0 2rem 0 0;
+      padding: 0;
+    }
+    .ds44-tabs__item {
+      align-self: flex-start;
+      display: block;
+      width: 100%;
+      margin-bottom: 10px;
+    }
+    .ds44-tabs__link {
+      padding: 3rem 2rem 3rem 2rem;
+      font-size: 1.25em;
+      text-align: left;
+      &:after {
+          display: none;
+      }
+    }
+    .ds44-tabs__linkSelected.ds44-tabs__link, .ds44-tabs__link:hover, .ds44-tabs__link:focus, .ds44-tabs__link:active {
+      background-color: $ds44-contextual-color;
+    }
+}
 
 /* =======
   GENERIC MEDIA QUERIES
@@ -152,6 +193,11 @@
                     z-index: 10;
                     right: .4rem;
                     top: 1.5rem;
+                }
+
+                &:focus {
+                  background: $ds44-color-inverse !important;
+                  color: $ds44-color-base !important;
                 }
             }
 

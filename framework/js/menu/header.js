@@ -1,5 +1,6 @@
-class MenuHeader {
+class MenuHeaderClass {
     constructor () {
+        Debug.log("MenuHeader -> Constructor");
         this.triggerMenuElement = null;
         this.triggerSubMenuElement = null;
         this.menuSelector = null;
@@ -10,32 +11,52 @@ class MenuHeader {
         this.clickOutListener = this.clickOut.bind(this);
 
         MiscEvent.addListener('keyUp:escape', this.hideMenuListener);
+    }
 
+    initialise() {
+        Debug.log("MenuHeader -> Initialise");
         document
-            .querySelectorAll('header #open-menu')
-            .forEach((element) => {
-                MiscEvent.addListener('click', this.showNavigation.bind(this), element);
-            });
+          .querySelectorAll('header #open-menu')
+          .forEach((element) => {
+              if(MiscComponent.checkAndCreate(element, "navigation-show")) {
+                  MiscEvent.addListener('click', this.showNavigation.bind(this), element);
+              }
+          });
         document
-            .querySelectorAll('header #open-search')
-            .forEach((element) => {
-                MiscEvent.addListener('click', this.showSearch.bind(this), element);
-            });
+          .querySelectorAll('header #open-search')
+          .forEach((element) => {
+              if(MiscComponent.checkAndCreate(element, "search-show")) {
+                  MiscEvent.addListener('click', this.showSearch.bind(this), element);
+              }
+          });
         document
-            .querySelectorAll('header .ds44-btnOverlay--closeOverlay')
-            .forEach((element) => {
-                MiscEvent.addListener('click', this.hideMenuListener, element);
-            });
+          .querySelectorAll('header #open-search-observatoire')
+          .forEach((element) => {
+              if(MiscComponent.checkAndCreate(element, "observatoire-show")) {
+                  MiscEvent.addListener('click', this.showSearchObservatoire.bind(this), element);
+              }
+          });
         document
-            .querySelectorAll('#ds44-btn-applis, header .ds44-navList .ds44-menuBtn')
-            .forEach((element) => {
-                MiscEvent.addListener('click', this.showSubNavigationMenu.bind(this), element);
-            });
+          .querySelectorAll('header .ds44-btnOverlay--closeOverlay')
+          .forEach((element) => {
+              if(MiscComponent.checkAndCreate(element, "closeOverlay")) {
+                  MiscEvent.addListener('click', this.hideMenuListener, element);
+              }
+          });
         document
-            .querySelectorAll('header .ds44-btn-backOverlay')
-            .forEach((element) => {
-                MiscEvent.addListener('click', this.hideSubNavigationMenu.bind(this), element);
-            });
+          .querySelectorAll('#ds44-btn-applis, header .ds44-navList .ds44-menuBtn')
+          .forEach((element) => {
+              if(MiscComponent.checkAndCreate(element, "navigation-sub-menu-show")) {
+                  MiscEvent.addListener('click', this.showSubNavigationMenu.bind(this), element);
+              }
+          });
+        document
+          .querySelectorAll('header .ds44-btn-backOverlay')
+          .forEach((element) => {
+              if(MiscComponent.checkAndCreate(element, "navigation-sub-menu-hide")) {
+                  MiscEvent.addListener('click', this.hideSubNavigationMenu.bind(this), element);
+              }
+          });
 
         MiscAccessibility.hide(document.querySelector('header .ds44-blocMenu'));
     }
@@ -62,7 +83,15 @@ class MenuHeader {
         }
 
         // Get corresponding close button
-        const closeButton = mainMenu.querySelector('.ds44-btnOverlay--closeOverlay');
+        const closeButtons = mainMenu.querySelectorAll('.ds44-btnOverlay--closeOverlay');
+
+        let closeButton = null;
+        closeButtons.forEach((element)=>{
+            if (MiscAccessibility.isDisplayed(element) && closeButton === null) {
+                closeButton = element;
+            }
+        });
+
         if (!closeButton) {
             return;
         }
@@ -100,6 +129,11 @@ class MenuHeader {
 
     showSearch (evt) {
         this.menuSelector = '#menuRech .ds44-overlay';
+        this.showMenu(evt);
+    }
+
+    showSearchObservatoire (evt) {
+        this.menuSelector = '#menuRechObservatoire .ds44-overlay';
         this.showMenu(evt);
     }
 
@@ -145,7 +179,8 @@ class MenuHeader {
         MiscAccessibility.hide(this.menu);
 
         if (this.triggerMenuElement) {
-            MiscAccessibility.setFocus(this.triggerMenuElement)
+            MiscAccessibility.show(this.triggerMenuElement); // nécessaire pour empêcher l'apparition d'un tabindex -1 sur l'élément déclencheur 
+            MiscAccessibility.setFocus(this.triggerMenuElement);
         }
 
         this.triggerMenuElement = null;
@@ -252,6 +287,20 @@ class MenuHeader {
         this.hideMenu();
     }
 }
-
+// Singleton
+var MenuHeader = (function () {
+    "use strict";
+    var instance;
+    function Singleton() {
+        if (!instance) {
+            instance = new MenuHeaderClass();
+        }
+        instance.initialise();
+    }
+    Singleton.getInstance = function () {
+        return instance || new Singleton();
+    }
+    return Singleton;
+}());
 // Singleton
 new MenuHeader();

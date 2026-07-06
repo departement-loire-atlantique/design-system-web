@@ -4,12 +4,14 @@ group: templates
 permalink:
 
 title: Page Carrefour
-description: Modèle de page sommaire basée sur le template "carrefour". 
+description: Modèle de page sommaire basée sur le template "carrefour".
 status: Validé
 
 variations:
 - title: Page type "Carrefour"
   pattern: page/LA__EntryMenu.html
+- title: Page type "Carrefour Actualité - Article"
+  pattern: page/RE__listing-actus.html
 - title: Template carrefour
   pattern: templates/template-entryMenu.html
 ---

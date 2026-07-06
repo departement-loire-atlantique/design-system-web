@@ -27,6 +27,12 @@
             cursor: pointer;
         }
     }
+    &.ds44-theme {
+          hr {
+            color: $ds44-gray;
+            background-color: $ds44-gray;
+          }
+  }
 }
 
 .ds44-box--push {
@@ -39,16 +45,50 @@
 }
 
 .ds44-box-heading {
-    @include ds44-font-sizes(h4);
-    font-weight: $weight-bold;
+    @include ds44-font-sizes(h3);
+    font-weight: $weight-semibold;
     font-family: $ds44-font-family-base;
     background: transparent;
     padding: 0;
     line-height: 1.2em;
+    margin-bottom: 2rem;
 }
 
 .ds44-innerBoxContainer {
     padding: $ds44-padding-xlarge;
+}
+
+// Box Dataviz
+.ds44-innerBoxContainer {
+    &.ds44-box--custom {
+      picture {
+        width: 40%;
+        margin-right: 5%;
+        text-align: center;
+
+        img {
+          height: 150px;
+          width: 100%;
+          display: block;
+        }
+      }
+      .ds44-chiffreCustom {
+        font-size: 1.5em;
+        background: $ds44-light ;
+        padding: 0px 10px;
+        border-radius: 10px;
+        display: inline-block;
+        font-weight: bold;
+
+        + span {
+          display: block;
+          margin-top: 10px;
+        }
+      }
+      .ds44-pushCustomText {
+        width: 55%;
+      }
+    }
 }
 
 // Témoignages
@@ -76,6 +116,20 @@
     margin-right: $ds44-margin-base;
     width: 150px;
     min-width: max-content;
+
+    img {
+      width: 100%;
+    }
+
+    &--light {
+      width: 100px;
+    }
+
+    + p, + div {
+        .wysiwyg strong {
+            font-weight: 400;
+        }
+    }
 }
 
 // Chiffres clés
@@ -83,6 +137,7 @@
 .ds44-numberIncrement {
   display: inline-block !important;
   flex-shrink: 0;
+  font-weight: 600;
 
   + .h1-like {
     display: inline-block !important;
@@ -97,6 +152,10 @@
 .ds44-borderContainer {
     border: 1px solid $ds44-contextual-color;
     padding: $ds44-padding-xlarge;
+
+    .ds44-innerBoxContainer {
+      padding: 0;
+    }
 }
 
 // Pushs
@@ -107,6 +166,7 @@
       font-family: $ds44-font-family-headings;
     }
     line-height: 1.1;
+    font-weight:$weight-semibold;
 }
 
 .ds44-boxPushContent {
@@ -114,7 +174,7 @@
     max-width: -webkit-calc(55% + 15px);
     align-self: center;
     padding: $ds44-padding-box;
-    min-height: 110px;
+    min-height: 108px;
 
     &--fluid {
         width: 100%;
@@ -132,9 +192,14 @@
             max-width: 30%;
         }
 
+        li > p:first-child::after {
+            display: none;
+        }
+
         p {
             margin: 0;
             padding-left: 1.5rem;
+            display: block !important;
         }
 
     }
@@ -160,6 +225,19 @@
 .ds44-pictoStore {
     height: 32px;
     margin-bottom: 10px;
+
+    &--bigger {
+      height: 45px;
+    }
+}
+
+// .PortletCarousel + .PortletPush {
+//   padding-top: 0;
+//   margin-top: -4rem;
+// }
+
+.PortletPush {
+  padding: 2rem 2rem 4rem 2rem;
 }
 
 // Alert
@@ -174,22 +252,27 @@
       border: 0;
 
       .ds44-card__title {
-        font-size: 2.4rem;
+        font-size: 1.25em ; // 20px
+        font-weight: 600;
         text-align: center;
         margin: 0;
         position: relative;
-        padding-left: $ds44-padding-xxlarge;
+        padding-left: $ds44-padding-xlarge;
         display: inline-block;
 
-       .icon-attention {
+       .icon {
           left: 0;
-          top: -5px;
+          top: 0;
           right: inherit;
+
+
 
           &:before {
             color: $ds44-error;
             transform: none;
             margin-top: 0;
+
+
           }
         }
       }
@@ -197,8 +280,22 @@
       .ds44-collapser_element {
         border : 0;
 
+        > p {
+            margin-bottom: 0;
+        }
+
         .ds44-collapser_button {
           text-align: center;
+          border: 2px solid transparent;
+          padding: 1.5rem 5rem 1.5rem 5rem;
+
+          @media (max-width: $ds44-small - .0625) {
+              padding: 1.5rem 4rem 1.5rem 4rem;
+          }
+
+          &:focus {
+              border: 2px solid $ds44-error;
+          }
 
           .icon--sizeXL {
             right: 1.5rem;
@@ -214,8 +311,50 @@
           padding-left: $ds44-padding-xxlarge;
           padding-right: $ds44-padding-xxlarge;
           padding-bottom: $ds44-padding-large;
+
+          h2, h3, h4 {
+              font-size: 1em;
+                font-family: 'Muli', Arial, Helvetica, sans-serif;
+                background: none;
+                font-weight: bold;
+                padding: 0;
+                margin: 0;
+
+                + * {
+                    margin-top: 0.5rem;
+                }
+          }
+          ul , ol {
+            padding:0 ;
+
+              li {
+              display: inline-block;
+              margin: 0 .5rem;
+            }
+          }
         }
       }
+    }
+    &.dobree-alert {
+        background-color: #FFF2C3;
+        text-align: left;
+        .ds44-collapser .ds44-card__title .icon::before {
+          color: #D9AA00;
+        }
+        .ds44-collapser .ds44-collapser_element .ds44-collapser_button:focus {
+          border: 2px solid #D9AA00;
+        }
+        .ds44-collapser .ds44-collapser_content {
+          background-color: #FFF2C3;
+          padding: 0 16%;
+        }
+        .ds44-collapser .ds44-collapser_content .ds44-collapser_content--level2 ul.ds44-listDisc {
+          padding-left: 2rem;
+          li {
+              display: list-item;
+              list-style: disc !important;
+          }
+        }
     }
 }
 
@@ -245,6 +384,38 @@
 }
 .grid-12-small-1 .colFocusProjets:first-of-type{
   align-self: auto;
+}
+
+
+// Bloc logos et tarfis Musée Dobrée
+.dobree-bloc-tarif {
+    .list-logos {
+        border-radius: 36px 0 0 36px;
+        padding: 4rem;
+
+        @media (max-width: $ds44-tiny) {
+            border-radius: 36px 36px 0 0 ;
+            margin-bottom: 0;
+        }
+        li img {
+            height: 43px;
+            padding: 0;
+            margin-bottom: 2rem;
+        }
+        li:last-child img {
+            margin-bottom: 0;
+        }
+    }
+    .prix {
+        border-radius: 0 36px 36px 0;
+        font-weight: bold;
+        display: flex;
+
+        @media (max-width: $ds44-tiny) {
+            border-radius:  0 0 36px 36px;
+            padding: 3rem 0;
+        }
+    }
 }
 
 
@@ -346,6 +517,40 @@
             }
         }
 
+    }
+
+    // Box Dataviz
+    .ds44-innerBoxContainer {
+        &.ds44-theme--dataviz {
+          picture {
+            width: 30%;
+          }
+          .ds44-pushDataVizText {
+            width: 65%;
+          }
+        }
+    }
+
+    // Alert
+
+    .ds44-alertMsg-container {
+
+        .ds44-collapser {
+
+          .ds44-card__title {
+            font-size: 2rem;
+            padding: 0 1rem 0 3rem;
+        }
+
+          .ds44-collapser_content {
+
+            .ds44-collapser_content--level2 {
+              padding-left: $ds44-padding-large;
+              padding-right: $ds44-padding-large;
+
+            }
+        }
+      }
     }
 
 }

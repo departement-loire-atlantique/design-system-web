@@ -1,6 +1,6 @@
-class CarouselSlideshow extends CarouselAbstract {
+class CarouselSlideshowClass extends CarouselAbstract {
     constructor () {
-        super('.swipper-carousel-wrap.swipper-carousel-slideshow');
+        super("CarouselSlideshow", '.swipper-carousel-wrap.swipper-carousel-slideshow');
     }
 
     create (wrapElement) {
@@ -138,6 +138,19 @@ class CarouselSlideshow extends CarouselAbstract {
         }
     }
 }
-
 // Singleton
+var CarouselSlideshow = (function () {
+    "use strict";
+    var instance;
+    function Singleton() {
+        if (!instance) {
+            instance = new CarouselSlideshowClass();
+        }
+        instance.initialise();
+    }
+    Singleton.getInstance = function () {
+        return instance || new Singleton();
+    }
+    return Singleton;
+}());
 new CarouselSlideshow();

@@ -1,7 +1,7 @@
 # Design System
 
-<a href="https://travis-ci.org/departement-loire-atlantique/design-system-web">
-<img src="https://travis-ci.org/departement-loire-atlantique/design-system-web.svg?branch=master" />
+<a href="https://travis-ci.com/departement-loire-atlantique/design-system-web">
+<img src="https://travis-ci.com/departement-loire-atlantique/design-system-web.svg?branch=master" />
 </a>
 
 Le design system est divisé en deux parties : la documentation et le framework CSS/JS.
@@ -147,4 +147,4 @@ docker-compose exec site gulp build:glyphicons
 Ce projet est basé sur un [modèle de site design-system](https://github.com/lundegaard/design-system-template) et est rendu sous public en open source suivant les termes de la licence [MIT License](https://opensource.org/licenses/MIT).
 
 ## Notes
-1. Si une erreur liée au certificat se produit, vous pouvez lancer la commande "npm set strict-ssl false" avant de lancer la commande "npm intall"
+1. Si une erreur liée au certificat se produit, vous pouvez lancer la commande "npm set strict-ssl false" avant de lancer la commande "npm install"

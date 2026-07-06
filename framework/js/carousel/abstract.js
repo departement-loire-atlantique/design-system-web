@@ -1,26 +1,41 @@
 class CarouselAbstract {
-    constructor (selector) {
+    constructor (className, selector) {
+        this.selector = selector;
+        this.className = className;
+        Debug.log(this.className+" -> Constructor");
         this.previousSlideMessage = MiscTranslate._('CAROUSEL_WATCH_PREVIOUS_CONTENT');
         this.nextSlideMessage = MiscTranslate._('CAROUSEL_WATCH_NEXT_CONTENT');
         this.queryTitreTuile = '.ds44-card__title a[href]:not([disabled])';
         this.objects = [];
-        this.breakpoint = window.matchMedia('(max-width: 63.375em)');
-
-        document
-            .querySelectorAll(selector)
-            .forEach((wrapElement) => {
-                this.create(wrapElement);
-            });
-
+        this.breakpoint = window.matchMedia('(max-width: 768px)');
         MiscEvent.addListener('resize', this.resize.bind(this), window);
         window.setTimeout(
-            () => {
-                MiscEvent.dispatch('resize', null, window);
-            },
-            1000
+          () => {
+              MiscEvent.dispatch('resize', null, window);
+          },
+          1000
         );
 
         this.breakpoint.addListener(this.breakpointChecker.bind(this));
+        this.paginationClick = false;
+    }
+
+    clearObject() {
+        Debug.log(this.className+" -> Clear object");
+        this.objects = [];
+    }
+
+    initialise()
+    {
+        Debug.log(this.className+" -> Initialise");
+        document
+          .querySelectorAll(this.selector)
+          .forEach((wrapElement) => {
+            if(MiscComponent.checkAndCreate(wrapElement, "carousel"))
+            {
+                this.create(wrapElement);
+            }
+        });
         this.breakpointChecker();
     }
 
@@ -78,39 +93,126 @@ class CarouselAbstract {
 
     createSwipper (objectIndex) {
         const object = this.objects[objectIndex];
-        if (!object || object.swiper) {
+
+        if (!object) {
             return;
         }
 
-        // Component initialization in full JS mode
-        object.wrapperElement.classList.remove.apply(
-            object.wrapperElement.classList,
-            Array.from(object.wrapperElement.classList).filter(className => className.startsWith('grid-'))
-        );
+        let buttonPrevNextShow = true;
+        if(object.nbSlides <= object.nbVisibleSlides && window.matchMedia("(min-width: 768px)").matches === true)
+        {
+            object.wrapElement.classList.add('swiper-button-prev-next-hidden');
+            this.destroySwipper(objectIndex);
+            buttonPrevNextShow = false;
+        }
+        else
+        {
+            object.wrapElement.classList.remove('swiper-button-prev-next-hidden');
+        }
 
-        object.swiper = new Swiper(
-            object.swiperElement,
-            this.getSwiperParameters(object)
-        );
+        if(object.swiper) {
+            return;
+        }
 
-        object.swiper.on('slidePrevTransitionEnd', this.slide.bind(this, objectIndex, 'backward'));
-        object.swiper.on('slideNextTransitionEnd', this.slide.bind(this, objectIndex, 'forward'));
+        if(buttonPrevNextShow) {
+            // Component initialization in full JS mode
+            object.wrapperElement.classList.remove.apply(
+              object.wrapperElement.classList,
+              Array.from(object.wrapperElement.classList).filter(className => className.startsWith('grid-'))
+            );
 
-        object.swiper.init();
-        object.isInitialized = true;
+            object.swiper = new Swiper(
+              object.swiperElement,
+              this.getSwiperParameters(object)
+            );
 
-        // Enable previous and next buttons
-        if (object.previousElement && object.nextElement) {
-            [object.previousElement, object.nextElement]
-                .forEach(button => {
-                    button.classList.remove('swiper-button-disabled');
+            object.swiper.on('slidePrevTransitionEnd', this.slide.bind(this, objectIndex, 'backward'));
+            object.swiper.on('slideNextTransitionEnd', this.slide.bind(this, objectIndex, 'forward'));
 
-                    const ua = navigator.userAgent;
-                    if (!ua.includes('Edge/42')) {
-                        button.classList.add('ds44-not-edge-42');
+            object.swiper.on('paginationRender', (paginationElement) => {
+                let indexElement = 0;
+                paginationElement.querySelectorAll("button").forEach((focusElement) => {
+                    if (indexElement === 0) {
+                        focusElement.setAttribute("aria-current", "true");
+                    }
+                    let parentPaginationFocus = focusElement.closest(".swiper-pagination-bullet");
+
+                    MiscEvent.addListener("focus", () => {
+                        let paginationFocus = object.paginationElement.querySelector(".swiper-pagination-bullet-focus");
+                        if (paginationFocus) {
+                            paginationFocus.classList.remove("swiper-pagination-bullet-focus");
+                        }
+                        if (parentPaginationFocus) {
+                            parentPaginationFocus.classList.add("swiper-pagination-bullet-focus");
+                        }
+                    }, focusElement);
+                    MiscEvent.addListener("blur", () => {
+                        if (parentPaginationFocus) {
+                            parentPaginationFocus.classList.remove("swiper-pagination-bullet-focus");
+                        }
+                    }, focusElement);
+
+                    MiscEvent.addListener("click", () => {
+                        this.paginationButtonSelected(paginationElement, focusElement);
+                        object.swiper.slideTo(indexElement);
+                    }, focusElement);
+
+                    MiscEvent.addListener("click", () => {
+                        this.paginationButtonSelected(paginationElement, focusElement);
+                    }, parentPaginationFocus);
+
+                    indexElement = indexElement + 1;
+                    if (indexElement > (object.nbLimitBullet - 1)) {
+                        let paginationElement = focusElement.closest(".swiper-pagination-bullet");
+                        if (paginationElement) {
+                            paginationElement.style.display = "none";
+                        }
                     }
                 });
+            });
+
+            object.swiper.init();
+            object.isInitialized = true;
+
+            // Enable previous and next buttons
+            if (object.previousElement && object.nextElement) {
+                [object.previousElement, object.nextElement]
+                  .forEach(button => {
+                      button.classList.remove('swiper-button-disabled');
+
+                      const ua = navigator.userAgent;
+                      if (!ua.includes('Edge/42')) {
+                          button.classList.add('ds44-not-edge-42');
+                      }
+                  });
+            }
+
+            if (object.galleryElement) {
+                [].forEach.call(object.galleryElement.querySelectorAll('.swiper-slide'), (thumb, i) => {
+                    MiscEvent.addListener("keyup", (event) => {
+                        if (event.key === "Enter" || event.key === " ") {
+                            object.swiper.slideTo(i + 1);
+                        }
+                    }, thumb);
+                });
+            }
+        } else {
+            // Component initialization in full JS mode
+            object.wrapperElement.classList.remove.apply(
+              object.wrapperElement.classList,
+              Array.from(object.wrapperElement.classList).filter(className => className.startsWith('grid-'))
+            );
+            object.wrapperElement.classList.add("grid-"+object.nbSlides+"-small-1");
         }
+    }
+
+    paginationButtonSelected(paginationElement, button) {
+        let buttonAriaCurrent = paginationElement.querySelector("button[aria-current='true']");
+        if(buttonAriaCurrent) {
+            buttonAriaCurrent.removeAttribute("aria-current");
+        }
+        button.setAttribute("aria-current", "true");
+        this.paginationClick = true;
     }
 
     destroySwipper (objectIndex) {
@@ -161,16 +263,28 @@ class CarouselAbstract {
         if (object.paginationElement) {
             swiperParameters.pagination = {
                 'el': object.paginationElement,
+                'clickable': true,
+                "bulletElement": "button",
                 'renderBullet': (index, className) => {
                     const textElements = object.swiperElement.querySelectorAll('.swiper-slide:not(.swiper-slide-duplicate) .ds44-diaporama-vignette-text');
-                    if (!textElements) {
-                        return '';
+                    if (textElements && textElements.length) {
+                        return '<p id="' + MiscUtils.generateId() + '"><span class="' + className + '">' + textElements[index].innerHTML + '</span></p>';
                     }
 
-                    return '<span class="' + className + '">' + textElements[index].innerHTML + '</span>';
+                    if(object.paginationElement.classList.contains("bullet"))
+                    {
+                        const titleElement = object.swiperElement.querySelectorAll('.swiper-slide:not(.swiper-slide-duplicate) .ds44-card__title');
+                        if (titleElement && titleElement.length) {
+                            return '<li class="' + className + '"><span class="entitled visually-hidden"><button type="button">' + titleElement[index].innerText + '</button></span></li>';
+                        }
+                    }
+
+                    return "";
                 }
             }
         }
+
+
 
         if (object.previousElement && object.nextElement) {
             swiperParameters.navigation = {
@@ -210,19 +324,25 @@ class CarouselAbstract {
         }
 
         let titleElement = null;
-        let blocTitleElement = object.wrapElement.previousElementSibling;
-        if (blocTitleElement) {
-            // On est dans le composant simple
-            titleElement = blocTitleElement;
-        } else {
-            // On est dans une page
-            blocTitleElement = object.wrapElement.parentElement.previousElementSibling;
+        let titleCarousel = null;
+        if(object.wrapElement.hasAttribute("data-swiper-title")) {
+            titleCarousel = object.wrapElement.getAttribute("data-swiper-title");
+        }
+        else {
+            let blocTitleElement = object.wrapElement.previousElementSibling;
             if (blocTitleElement) {
-                titleElement = blocTitleElement.querySelector('.h2-like');
+                // On est dans le composant simple
+                titleElement = blocTitleElement;
+            } else {
+                // On est dans une page
+                blocTitleElement = object.wrapElement.parentElement.previousElementSibling;
+                if (blocTitleElement) {
+                    titleElement = blocTitleElement.querySelector('.h2-like');
+                }
             }
+            titleCarousel = (titleElement &&  titleElement.innerText ? titleElement.innerText : 'Carousel n°' + (objectIndex + 1));
         }
 
-        const titleCarousel = (titleElement ? titleElement.innerText : 'Carousel n°' + (objectIndex + 1));
         const indexPreviousElement = (object.swiper.realIndex === 0 ? object.nbSlides : object.swiper.realIndex);
         const nbVisibleSlides = object.swiperElement.querySelectorAll('.swiper-slide.swiper-slide-visible').length;
         let indexNextElement = object.swiper.realIndex + nbVisibleSlides + 1;
@@ -262,15 +382,26 @@ class CarouselAbstract {
                     // Hide slide
                     this.hideSlide(slideElement);
                 }
+                if(slideElement.classList.contains('swiper-slide-active')) {
+                    slideElement.setAttribute('aria-current', 'true');
+                } else {
+                    slideElement.removeAttribute('aria-current');
+                }
             });
 
         if (object.isInitialized) {
             let slideElement = null;
-            const visibleSlideElements = object.swiperElement.querySelectorAll('.swiper-slide.swiper-slide-visible');
-            if (direction === 'backward') {
-                slideElement = visibleSlideElements[0];
-            } else {
-                slideElement = visibleSlideElements[visibleSlideElements.length - 1];
+            if(this.paginationClick) {
+                slideElement = object.swiperElement.querySelector   ('.swiper-slide-active');
+            }
+            else
+            {
+                const visibleSlideElements = object.swiperElement.querySelectorAll('.swiper-slide.swiper-slide-visible');
+                if (direction === 'backward') {
+                    slideElement = visibleSlideElements[0];
+                } else {
+                    slideElement = visibleSlideElements[visibleSlideElements.length - 1];
+                }
             }
             if (slideElement) {
                 MiscAccessibility.setFocus(slideElement.querySelector(this.queryTitreTuile));
@@ -292,10 +423,14 @@ class CarouselAbstract {
             return;
         }
 
-        if (object.previousElement && object.nextElement) {
-            this.updatePreviousAndNextSlideMessage(objectIndex);
+        if(this.paginationClick === false)
+        {
+            if (object.previousElement && object.nextElement) {
+                this.updatePreviousAndNextSlideMessage(objectIndex);
+            }
         }
         this.updateCardAccessibility(objectIndex, direction);
+        this.paginationClick = false;
     }
 
     resize () {
@@ -322,6 +457,13 @@ class CarouselAbstract {
                 this.createSwipper(objectIndex);
 
                 continue;
+            }
+            else {
+                object.wrapperElement.classList.remove.apply(
+                  object.wrapperElement.classList,
+                  Array.from(object.wrapperElement.classList).filter(className => className.startsWith('grid-'))
+                );
+                object.wrapperElement.classList.add("grid-"+object.nbVisibleSlides+"-small-1");
             }
 
             if (this.breakpoint.matches === true) {

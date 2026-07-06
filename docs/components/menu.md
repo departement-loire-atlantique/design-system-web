@@ -23,13 +23,30 @@ variations:
   description: Menu de recherche. Afin de simuler l'apparition du menu dans le DS, deux surcharges de style ont été effectuées directement sur la section de l'overlay (opacité et positionnement à droite rectifiés). Ces surcharges ne doivent pas être reproduites dans l'intégration finale.
   pattern: menu/nav-rechercher.html
 
+- title: Sommaire
+  description: Menu de navigation lors d'une mise en place d'un sommaire.
+  pattern: menu/nav-sommaire.html
+
 - title: Applications
   description: Menu des applis et sites, ouvert depuis le menu de navigation principal niveau 1 (sous les réseaux sociaux)
   pattern: menu/navigation-applis.html
-  
+
 - title: Menu intérieur
   description: Menu de navigation intérieur de type "accordéon"
   pattern: menu/menu-navigation-interieur.html
+
+- title: Menu Étapes
+  description: Menu de navigation étapes par étapes (stepper)
+  pattern: menu/nav-stepper.html
+
+- title: Menu Dobrée
+  description: Menu de navigation du Musée Dobrée
+  pattern: menu/nav-musee-dobree.html
+
+- title: Menu Dobrée Mobile
+  description: Menu de navigation du Musée Dobrée en version mobile
+  pattern: menu/nav-musee-dobree-mobile.html
+
 ---
 
 ## Note d'intégration

@@ -1,5 +1,17 @@
-class AsideSummary {
+class AsideSummaryClass {
     constructor () {
+        Debug.log("AsideSummary -> Constructor");
+        this.menu = null;
+        this.borderTop = 20;
+        this.isMoving = false;
+        this.isGoingTo = false;
+        this.lastScrollTop = 0;
+        this.scrollDirection = 'down';
+        this.eventWindowListenerInit = false;
+    }
+
+    initialise()
+    {
         this.containerElement = document.querySelector('.ds44-js-aside-summary');
         if (!this.containerElement) {
             return;
@@ -8,36 +20,48 @@ class AsideSummary {
         if (!this.summaryElement) {
             return;
         }
+        Debug.log("AsideSummary -> Initialise");
 
-        this.menu = null;
-        this.borderTop = 20;
-        this.isMoving = false;
-        this.isGoingTo = false;
-        this.lastScrollTop = 0;
-        this.scrollDirection = 'down';
+        if(MiscComponent.checkAndCreate(this.containerElement, "aside-summary")) {
+            this.menu = document.querySelector('#summaryMenu');
+            MiscAccessibility.hide(this.menu);
 
-        this.resize();
-
-        MiscEvent.addListener('scroll', this.scroll.bind(this), window);
-        MiscEvent.addListener('resize', this.resize.bind(this), window);
-        MiscEvent.addListener('load', this.resize.bind(this), window);
-        window.setTimeout(this.resize.bind(this), 1000);
-
-        const aElements = new Set([
-            ...this.summaryElement.querySelectorAll('.ds44-list--puces a'),
-            ...document.querySelectorAll('#summaryMenu .ds44-list--puces a')
-        ]);
-        aElements
-            .forEach((aElement) => {
-                MiscEvent.addListener('click', this.goTo.bind(this), aElement);
-            });
-        const showModalButtonElement = document.querySelector('#ds44-summary-button');
-        if (showModalButtonElement) {
-            MiscEvent.addListener('click', this.showMenu.bind(this), showModalButtonElement);
+            const aElements = new Set([
+                ...this.summaryElement.querySelectorAll('.ds44-list--puces a'),
+                ...document.querySelectorAll('#summaryMenu .ds44-list--puces a')
+            ]);
+            aElements
+              .forEach((aElement) => {
+                  MiscEvent.addListener('click', this.goTo.bind(this), aElement);
+                  const sectionId = aElement.getAttribute('href').replace(/^#/, '');
+                  const sectionElement = document.querySelector('#' + sectionId);
+                  const titleElement = sectionElement.querySelector('h2');
+                  if (titleElement) {
+                      sectionElement.removeAttribute("tabindex");
+                      if(titleElement.getAttribute('tabindex') === undefined || !titleElement.getAttribute('tabindex')) {
+                          titleElement.setAttribute('tabindex', -1);
+                      }
+                  }
+              });
+            const showModalButtonElement = document.querySelector('#ds44-summary-button');
+            if (showModalButtonElement) {
+                MiscEvent.addListener('click', this.showMenu.bind(this), showModalButtonElement);
+            }
+            const hideModalButtonElement = document.querySelector('#summaryMenu .ds44-btnOverlay--closeOverlay');
+            if (hideModalButtonElement) {
+                MiscEvent.addListener('click', this.hideMenu.bind(this), hideModalButtonElement);
+            }
         }
-        const hideModalButtonElement = document.querySelector('#summaryMenu .ds44-btnOverlay--closeOverlay');
-        if (hideModalButtonElement) {
-            MiscEvent.addListener('click', this.hideMenu.bind(this), hideModalButtonElement);
+
+        if(!this.eventWindowListenerInit)
+        {
+            this.eventWindowListenerInit = true;
+            this.resize();
+            MiscEvent.addListener('scroll', this.scroll.bind(this), window);
+            MiscEvent.addListener('resize', this.resize.bind(this), window);
+            MiscEvent.addListener('load', this.resize.bind(this), window);
+            MiscEvent.addListener('keyUp:escape', this.hideMenu.bind(this));
+            window.setTimeout(this.resize.bind(this), 1000);
         }
     }
 
@@ -81,12 +105,22 @@ class AsideSummary {
     calculateChapter () {
         // Highlight sections
         let activeAElement = null;
+        let activeAElementMenu = null;
         const cursorPosition = this.getCursorPosition();
         this.summaryElement
-            .querySelectorAll('.ds44-list--puces a')
+            .querySelectorAll('.ds44-list--puces li > a')
             .forEach((aElement) => {
                 aElement.classList.remove('active');
-                aElement.removeAttribute('aria-location');
+                aElement.removeAttribute('aria-current');
+                aElement.removeAttribute('tabindex');
+
+                if(aElement.closest("li")) {
+                    aElement.closest("li").removeAttribute('aria-current', 'true');
+                }
+                else {
+                    aElement.removeAttribute('aria-current', 'true');
+                }
+
                 if (!activeAElement) {
                     activeAElement = aElement
                 }
@@ -101,9 +135,55 @@ class AsideSummary {
                     }
                 }
             });
+        if(this.menu)
+        {
+            this.menu
+              .querySelectorAll('.ds44-list--puces li > a')
+              .forEach((aElement) => {
+                  aElement.classList.remove('active');
+                  aElement.removeAttribute('aria-current');
+                  aElement.removeAttribute('tabindex');
+                  if(aElement.closest("li")) {
+                      aElement.closest("li").removeAttribute('aria-current', 'true');
+                  }
+                  else {
+                      aElement.removeAttribute('aria-current', 'true');
+                  }
+
+                  if (!activeAElementMenu) {
+                      activeAElementMenu = aElement
+                  }
+
+                  const sectionId = aElement.getAttribute('href').replace(/^#/, '');
+                  const sectionElement = document.querySelector('#' + sectionId);
+                  if (sectionElement) {
+                      const sectionElementStyle = sectionElement.currentStyle || window.getComputedStyle(sectionElement);
+                      const startTop = MiscUtils.getPositionY(sectionElement) + parseInt(sectionElementStyle.marginTop, 10);
+                      if (cursorPosition >= startTop) {
+                          activeAElementMenu = aElement
+                      }
+                  }
+              });
+        }
+
         if (activeAElement) {
             activeAElement.classList.add('active');
-            activeAElement.setAttribute('aria-location', 'true');
+            if(activeAElement.closest("li")) {
+                activeAElement.closest("li").setAttribute('aria-current', 'true');
+            }
+            else {
+                activeAElement.setAttribute('aria-current', 'true');
+            }
+        }
+
+        if (activeAElementMenu) {
+            activeAElementMenu.classList.add('active');
+            if(activeAElementMenu.closest("li")) {
+                activeAElementMenu.closest("li").setAttribute('aria-current', 'true');
+            }
+            else {
+                activeAElementMenu.setAttribute('aria-current', 'true');
+            }
         }
     }
 
@@ -145,16 +225,44 @@ class AsideSummary {
 
         // Deselect all bullets
         this.summaryElement
-            .querySelectorAll('.ds44-list--puces a')
+            .querySelectorAll('.ds44-list--puces li > .active')
             .forEach((aElement) => {
                 aElement.classList.remove('active');
-                aElement.removeAttribute('aria-location');
+                if(aElement.closest("li")) {
+                    aElement.closest("li").removeAttribute('aria-current', 'true');
+                }
+                else {
+                    aElement.removeAttribute('aria-current', 'true');
+                }
+                aElement.removeAttribute('tabindex');
             });
+
+        if(this.menu)
+        {
+            // Deselect all bullets
+            this.menu
+              .querySelectorAll('.ds44-list--puces li > .active')
+              .forEach((aElement) => {
+                  aElement.classList.remove('active');
+                  if(aElement.closest("li")) {
+                      aElement.closest("li").removeAttribute('aria-current', 'true');
+                  }
+                  else {
+                      aElement.removeAttribute('aria-current', 'true');
+                  }
+                  aElement.removeAttribute('tabindex');
+              });
+        }
 
         // Select active bullets
         const aElement = evt.currentTarget;
         aElement.classList.add('active');
-        aElement.setAttribute('aria-location', 'true');
+        if(aElement.closest("li")) {
+            aElement.closest("li").setAttribute('aria-current', 'true');
+        }
+        else {
+            aElement.setAttribute('aria-current', 'true');
+        }
 
         const sectionId = aElement.getAttribute('href').replace(/^#/, '');
         const sectionElement = document.querySelector('#' + sectionId);
@@ -180,6 +288,9 @@ class AsideSummary {
 
             const titleElement = sectionElement.querySelector('h2');
             if (titleElement) {
+                if(titleElement.getAttribute('tabindex') === undefined || !titleElement.getAttribute('tabindex')) {
+                    titleElement.setAttribute('tabindex', -1);
+                }
                 MiscAccessibility.setFocus(titleElement);
             }
         }
@@ -195,7 +306,7 @@ class AsideSummary {
     }
 
     showMenu () {
-        this.menu = document.querySelector('#summaryMenu');
+
         if (!this.menu) {
             return;
         }
@@ -240,6 +351,20 @@ class AsideSummary {
         MiscEvent.dispatch('menu:hide');
     }
 }
-
 // Singleton
+var AsideSummary = (function () {
+    "use strict";
+    var instance;
+    function Singleton() {
+        if (!instance) {
+            instance = new AsideSummaryClass();
+        }
+        instance.initialise();
+    }
+    Singleton.getInstance = function () {
+        return instance || new Singleton();
+    }
+    return Singleton;
+}());
 new AsideSummary();
+

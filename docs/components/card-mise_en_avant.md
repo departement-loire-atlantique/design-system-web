@@ -1,7 +1,7 @@
 ---
 layout: component-detail
 group: components
-status: A valider
+status: Validé
 
 title: Tuiles Mise en avant
 alternative_title: Cards Mise en avant
@@ -31,6 +31,10 @@ variations:
 - title: Élu
   description: La classe `ds44-card--verticalPicture` définit une tuile verticale prévue pour recevoir une image en en-tête de forme ronde et par la suite le descriptif de l élu.
   pattern: cards/card--MeA--elu.html
+
+- title: Assmat
+  description: On retrouve ce type de tuile sur la page d'accueil de l'espace personnel assmat.
+  pattern: cards/card--MeA--assmat.html
 ---
 
 ## Documentation
@@ -46,4 +50,3 @@ Les composants de tuile sont intégrés via des inclusions dans le DS. Certains 
 `include card/card--horizontal.html title="Bien vieillir en Loire-Atlantique - PDF - 291,3 Ko - nouvelle fenêtre" text="PDF - 291,3 Ko" target='target="_blank"' arialevel='"aria-level="3"'`
 
 **Ne pas oublier ces paramètres lors de l'intégration du composant dans le CMS**.
-

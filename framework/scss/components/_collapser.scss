@@ -9,7 +9,7 @@
   margin: 2rem 0 3rem 0;
   border-top: 1px solid $ds44-contextual-color;
 
-  li.ds44-collapser_element, li {
+  li.ds44-collapser_element {
     list-style: none!important;
   }
 
@@ -18,13 +18,28 @@
     border-bottom: 1px solid $ds44-contextual-color;
     list-style: none; // if collapser is a list
 
-    .ds44-collapser_content li {
-      list-style: none;
-      margin-top: 0;
+    > p[role="heading"] {
+      font-weight: normal;
+
+      &:after {
+          padding-bottom: 0;
+      }
+    }
+
+    .ds44-collapser_content > li {
+      //list-style: none;
+      margin-top: 0rem;
 
       > ul > li:first-child {
         margin-top: 0;
       }
+    }
+
+    .ds44-collapser_button {
+        &:hover,
+        &:focus {
+            text-decoration: underline;
+        }
     }
 
     /* Specific collapser for select multilevel */
@@ -55,6 +70,46 @@
     border: none;
   }
 
+  &.ds44-collapser--bigger {
+      .ds44-collapser_element{
+          border: 0;
+          margin-bottom: 5px;
+      }
+      .ds44-collapser_button {
+          background: $ds44-contextual-color;
+          font-size: 1.375em;
+          padding: 2rem 8rem 2rem 4rem;
+
+          .icon {
+              right: 4rem;
+              top: 2rem;
+            }
+      }
+      .ds44-collapser_content {
+          background-color: transparent;
+
+          p[role=heading] {
+              font-size: 1.25em;
+          }
+        }
+        @media (max-width: $medium - .0625) {
+            .ds44-card--focus .ds44-flex-container, .ds44-card--focus .ds44-frw {
+               flex-direction: row;
+
+               .ds44-card__section--horizontal--img {
+                  min-width: 25%;
+                }
+               .ds44-card__section--horizontal {
+                  padding: 2rem;
+                  text-align: left;
+                  align-items: flex-start;
+                }
+             }
+        }
+
+
+  }
+
 }
 
 /* row-like button */
@@ -67,6 +122,7 @@
   background-color: transparent;
   position: relative;
   line-height: 1.4;
+  font-weight: inherit;
 
   .icon {
     position: absolute;
@@ -88,6 +144,10 @@
       transform: rotate(180deg);
       margin-top: 5px;
     }
+  }
+
+  &.ds44-btnStd {
+      padding: $ds44-padding-box 3.5rem $ds44-padding-box $ds44-padding-box ;
   }
 
 }

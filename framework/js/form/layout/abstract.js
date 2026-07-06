@@ -1,16 +1,31 @@
 class FormLayoutAbstract {
-    constructor (selector) {
+    constructor (className, selector) {
+        this.className = className;
+        this.selector = selector;
+        Debug.log(this.className+" -> Constructor");
         this.objects = [];
+        this.submitter = null;
+    }
 
+    clearObject() {
+        Debug.log(this.className+" -> Clear object");
+        this.objects = [];
+        this.submitter = null;
+    }
+
+    initialise()
+    {
+        Debug.log(this.className+" -> Initialise");
         document
-            .querySelectorAll(selector)
-            .forEach((formElement) => {
-                if (formElement.getAttribute('data-is-initialized') !== 'true') {
-                    this.create(formElement);
-                }
-            });
+          .querySelectorAll(this.selector)
+          .forEach((formElement) => {
+              if (formElement.getAttribute('data-is-initialized') !== 'true' && !MiscComponent.isInit(formElement, "form-layout")) {
+                  this.create(formElement);
+              }
+          });
         this.initialize();
     }
+
 
     create (formElement) {
         const object = {
@@ -23,6 +38,18 @@ class FormLayoutAbstract {
         formElement.setAttribute('novalidate', 'true');
         formElement.setAttribute('data-is-initialized', 'true');
 
+        const msgContainerElement = formElement.querySelector('.ds44-msg-container');
+        if (msgContainerElement) {
+            this.delayedFocus(msgContainerElement);
+        }
+
+        formElement.querySelectorAll("button").forEach((button) => {
+            MiscEvent.addListener("click", () => {
+                this.submitter = button;
+            }, button);
+        });
+
+
         this.objects.push(object);
     }
 
@@ -30,12 +57,15 @@ class FormLayoutAbstract {
         // Initialize each object
         for (let objectIndex = 0; objectIndex < this.objects.length; objectIndex++) {
             const object = this.objects[objectIndex];
+            if(!MiscComponent.isInit(object.formElement, "form-layout"))
+            {
+                MiscComponent.create(object.formElement, "form-layout")
+                // Bind events
+                MiscEvent.addListener('submit', this.submit.bind(this, objectIndex), object.formElement);
+                MiscEvent.addListener('form:validation', this.validation.bind(this, objectIndex), object.formElement);
 
-            // Bind events
-            MiscEvent.addListener('submit', this.submit.bind(this, objectIndex), object.formElement);
-            MiscEvent.addListener('form:validation', this.validation.bind(this, objectIndex), object.formElement);
-
-            this.start(objectIndex);
+                this.start(objectIndex);
+            }
         }
     }
 
@@ -46,7 +76,9 @@ class FormLayoutAbstract {
         }
 
         if (object.formElement.getAttribute('data-auto-load') === 'true') {
-            MiscEvent.dispatch('submit', { 'dryRun': true }, object.formElement);
+            setTimeout(()=>{
+                MiscEvent.dispatch('submit', { 'dryRun': true }, object.formElement);
+            }, 200);
         }
     }
 
@@ -93,8 +125,27 @@ class FormLayoutAbstract {
 
     submit (objectIndex, evt) {
         const object = this.objects[objectIndex];
+
         if (!object) {
             return false;
+        }
+
+        if(evt.submitter) {
+            this.submitter = evt.submitter
+        }
+
+        // We need to deactivate the submit button once clicked
+        // If the form is incorrect, it shall be reactivated
+        let submitBtn = object.formElement.querySelector('.ds44-btnStd');
+        let isFormWithBlockedSubmit = object.formElement.classList.contains("ds44-js-oneSubmit");
+        if (submitBtn && isFormWithBlockedSubmit) {
+            submitBtn.setAttribute("disabled", true);
+            submitBtn.setAttribute("aria-disabled", true);
+        }
+
+        if(this.submitter && this.submitter.hasAttribute("data-form-no-validate"))
+        {
+            return true;
         }
 
         // Submission is in two steps :
@@ -112,7 +163,6 @@ class FormLayoutAbstract {
                     'formElement': object.formElement,
                     'dryRun': ((evt.detail || { 'dryRun': false }).dryRun || false)
                 });
-
                 return false;
             }
             object.hasBeenChecked = false;
@@ -130,111 +180,178 @@ class FormLayoutAbstract {
                     MiscAccessibility.setFocus(firstErrorField);
                 }
 
+                // We need to activate the submit button if the form is incorrect
+                let isFormWithBlockedSubmit = object.formElement.classList.contains("ds44-js-oneSubmit");
+                if (submitBtn && isFormWithBlockedSubmit) {
+                    submitBtn.removeAttribute("disabled");
+                    submitBtn.removeAttribute("aria-disabled");
+                }
                 return false;
             }
+            else if(!this.submitter || !this.submitter.hasAttribute("data-send-native")) {
 
-            // Organize data
-            const formattedData = {};
-            const dataPositionByKey = {};
-            for (let dataKey in formValidity.data) {
-                if (!formValidity.data.hasOwnProperty(dataKey)) {
-                    continue;
+                Debug.log("Form - Send default");
+                // Organize data
+                const formattedData = {};
+                const dataPositionByKey = {};
+                for (let dataKey in formValidity.data) {
+                    if (!formValidity.data.hasOwnProperty(dataKey)) {
+                        continue;
+                    }
+
+                    let dataValue = formValidity.data[dataKey];
+                    try {
+                        // Try if it is JSON
+                        dataValue = JSON.parse(dataValue);
+                    } catch (ex) {
+                    }
+                    dataPositionByKey[dataKey] = dataValue.position;
+                    delete dataValue.position;
+                    formattedData[dataKey] = dataValue;
                 }
 
-                let dataValue = formValidity.data[dataKey];
-                try {
-                    // Try if it is JSON
-                    dataValue = JSON.parse(dataValue);
-                } catch (ex) {
-                }
-                dataPositionByKey[dataKey] = dataValue.position;
-                delete dataValue.position;
-                formattedData[dataKey] = dataValue;
-            }
+                // Add technical hidden fields
+                object.formElement
+                  .querySelectorAll('input[type="hidden"][name][data-technical-field]')
+                  .forEach((hiddenInputElement) => {
+                      const hiddenInputName = hiddenInputElement.getAttribute('name');
+                      formattedData[hiddenInputName] = {
+                          'value': hiddenInputElement.value
+                      };
+                      dataPositionByKey[hiddenInputName] = 999;
+                  });
 
-            // Add technical hidden fields
-            object.formElement
-                .querySelectorAll('input[type="hidden"][name][data-technical-field]')
-                .forEach((hiddenInputElement) => {
-                    const hiddenInputName = hiddenInputElement.getAttribute('name');
-                    const hiddenInputData = {
-                        'value': hiddenInputElement.value
-                    };
-                    formattedData[hiddenInputName] = hiddenInputData;
-                    dataPositionByKey[hiddenInputName] = 999;
+                if (this.submitter !== null) {
+                    let submitKey = "submit";
+                    if (this.submitter.dataset.submitKey !== undefined && this.submitter.dataset.submitKey) {
+                        submitKey = this.submitter.dataset.submitKey
+                    }
+                    if (this.submitter.dataset.submitValue !== undefined && this.submitter.dataset.submitValue) {
+                        formattedData[submitKey] = {
+                            "value": this.submitter.dataset.submitValue
+                        };
+                        dataPositionByKey[submitKey] = 1010;
+                    }
+                }
+
+                // Sort formatted data
+                const sortedKeys = Object.keys(dataPositionByKey).sort(function (a, b) {
+                    return parseInt(dataPositionByKey[a], 10) - parseInt(dataPositionByKey[b], 10);
+                });
+                const sortedData = {};
+                for (let i = 0; i < sortedKeys.length; i++) {
+                    if (object.formElement.dataset.noEncoding !== undefined && object.formElement.dataset.noEncoding) {
+                        sortedData[sortedKeys[i]] = formattedData[sortedKeys[i]]["value"];
+                    } else {
+                        sortedData[sortedKeys[i]] = formattedData[sortedKeys[i]];
+                    }
+                }
+
+                // Save city and adresse in local storage
+                const fieldParameters = JSON.parse(window.sessionStorage.getItem('fields') || '{}');
+                ['commune', 'adresse'].forEach((key) => {
+                    if (sortedData[key]) {
+                        fieldParameters[key] = sortedData[key];
+                    } else if (fieldParameters[key]) {
+                        delete fieldParameters[key];
+                    }
                 });
 
-            // Sort formatted data
-            const sortedKeys = Object.keys(dataPositionByKey).sort(function (a, b) {
-                return parseInt(dataPositionByKey[a], 10) - parseInt(dataPositionByKey[b], 10);
-            });
-            const sortedData = {};
-            for (let i = 0; i < sortedKeys.length; i++) {
-                sortedData[sortedKeys[i]] = formattedData[sortedKeys[i]];
-            }
+                window.sessionStorage.setItem('fields', JSON.stringify(fieldParameters));
 
-            // Save city and adresse in local storage
-            const fieldParameters = JSON.parse(window.sessionStorage.getItem('fields') || '{}');
-            ['commune', 'adresse'].forEach((key) => {
-                if (sortedData[key]) {
-                    fieldParameters[key] = sortedData[key];
-                } else if (fieldParameters[key]) {
-                    delete fieldParameters[key];
+                // Statistics
+                if (object.formElement.getAttribute('data-statistic')) {
+                    MiscEvent.dispatch(
+                      'statistic:gtag:event',
+                      {
+                          'statistic': JSON.parse(object.formElement.getAttribute('data-statistic')),
+                          'data': sortedData
+                      });
                 }
-            });
-            window.sessionStorage.setItem('fields', JSON.stringify(fieldParameters));
 
-            // Statistics
-            if (object.formElement.getAttribute('data-statistic')) {
-                MiscEvent.dispatch(
-                    'statistic:gtag:event',
-                    {
-                        'statistic': JSON.parse(object.formElement.getAttribute('data-statistic')),
-                        'data': sortedData
-                    });
-            }
+                if (object.formElement.getAttribute('data-is-ajax') === 'true') {
 
-            if (object.formElement.getAttribute('data-is-ajax') === 'true') {
-                // Ajax submission
+                    // Ajax submission
+                    this.recaptchaSubmit(objectIndex, sortedData);
+
+                    evt.stopPropagation();
+                    evt.preventDefault();
+
+                    return false;
+                }
+
+                // Regular submission
+                let hasFile = false;
+                object.formElement
+                  .querySelectorAll('[name][type="file"]')
+                  .forEach((inputFileElement) => {
+                      hasFile = true;
+                      inputFileElement.setAttribute('name', inputFileElement.getAttribute('name') + '[value]');
+                  });
+                if (hasFile) {
+                    object.formElement.setAttribute('method', 'post');
+                    object.formElement.setAttribute('enctype', 'multipart/form-data');
+                }
+
+                // Remove name from all elements not to interfere with the next step
+                object.formElement
+                  .querySelectorAll('[name]:not([type="file"])')
+                  .forEach((element) => {
+                      element.removeAttribute('name');
+                  });
+
+                // Regular submission
+                const formData = MiscForm.jsonToFormData(sortedData);
+                for (var [key, value] of formData.entries()) {
+                    let hiddenInputElement = document.createElement('input');
+                    hiddenInputElement.setAttribute('type', 'hidden');
+                    hiddenInputElement.setAttribute('name', key);
+                    hiddenInputElement.value = value;
+                    object.formElement.appendChild(hiddenInputElement);
+                }
+
+                // Affiche les valeurs
                 this.recaptchaSubmit(objectIndex, sortedData);
-
-                evt.stopPropagation();
-                evt.preventDefault();
-
-                return false;
             }
+            else {
+                Debug.log("Form - Send native");
+                if (this.submitter !== null) {
+                    let submitKey = "submit";
+                    if (this.submitter.dataset.submitKey !== undefined && this.submitter.dataset.submitKey) {
+                        submitKey = this.submitter.dataset.submitKey
+                    }
+                    if (this.submitter.dataset.submitValue !== undefined && this.submitter.dataset.submitValue) {
+                        let buttonHiddenField = document.createElement("input");
+                        buttonHiddenField.setAttribute('type', 'hidden');
+                        if(submitKey === "submit")
+                        {
+                            submitKey = "submit_button"
+                        }
+                        buttonHiddenField.setAttribute('name', submitKey);
+                        buttonHiddenField.value = this.submitter.dataset.submitValue;
+                        object.formElement.appendChild(buttonHiddenField);
+                    }
+                }
 
-            // Regular submission
-            let hasFile = false;
-            object.formElement
-                .querySelectorAll('[name][type="file"]')
-                .forEach((inputFileElement) => {
-                    hasFile = true;
-                    inputFileElement.setAttribute('name', inputFileElement.getAttribute('name') + '[value]');
-                });
-            if (hasFile) {
-                object.formElement.setAttribute('method', 'post');
-                object.formElement.setAttribute('enctype', 'multipart/form-data');
+                for (let dataKey in formValidity.data) {
+                    if (!formValidity.data.hasOwnProperty(dataKey)) {
+                        continue;
+                    }
+                    try {
+                        if(!object.formElement.querySelector("*[name='"+dataKey+"']"))
+                        {
+                            let dataValue = formValidity.data[dataKey];
+                            let hiddenField = document.createElement("input");
+                            hiddenField.setAttribute('type', 'hidden');
+                            hiddenField.setAttribute('name', dataKey);
+                            hiddenField.value = dataValue.value;
+                            object.formElement.appendChild(hiddenField);
+                        }
+                    } catch (ex) {
+                    }
+                }
+                object.formElement.submit();
             }
-
-            // Remove name from all elements not to interfere with the next step
-            object.formElement
-                .querySelectorAll('[name]:not([type="file"])')
-                .forEach((element) => {
-                    element.removeAttribute('name');
-                });
-
-            // Regular submission
-            const formData = MiscForm.jsonToFormData(sortedData);
-            for (var [key, value] of formData.entries()) {
-                let hiddenInputElement = document.createElement('input');
-                hiddenInputElement.setAttribute('type', 'hidden');
-                hiddenInputElement.setAttribute('name', key);
-                hiddenInputElement.value = value;
-                object.formElement.appendChild(hiddenInputElement);
-            }
-
-            this.recaptchaSubmit(objectIndex, sortedData);
         } catch (ex) {
             console.log(ex);
 
@@ -325,15 +442,14 @@ class FormLayoutAbstract {
         containerElement = document.createElement('div');
         containerElement.classList.add('ds44-msg-container');
         containerElement.classList.add(notificationType);
-        containerElement.setAttribute('aria-live', 'polite');
+        containerElement.setAttribute('tabindex', '-1');
+        if (messageId) {
+            containerElement.setAttribute('id', messageId);
+        }
         object.formElement.insertBefore(containerElement, object.formElement.firstChild);
 
         const textElement = document.createElement('p');
-        if (messageId) {
-            textElement.setAttribute('id', messageId);
-        }
         textElement.classList.add('ds44-message-text');
-        textElement.setAttribute('tabindex', '-1');
         containerElement.appendChild(textElement);
 
         const iconElement = document.createElement('i');
@@ -366,6 +482,17 @@ class FormLayoutAbstract {
             }
         }
 
-        MiscAccessibility.setFocus(textElement);
+        this.delayedFocus(containerElement);
+    }
+
+    delayedFocus (element) {
+        window.setTimeout(
+            (function (element) {
+                return function () {
+                    MiscAccessibility.setFocus(element);
+                }
+            })(element),
+            1000
+        );
     }
 }

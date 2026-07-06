@@ -8,6 +8,7 @@ class FormFieldSelectAbstract extends FormFieldAbstract {
         let valueElement = document.createElement('input');
         valueElement.classList.add('ds44-input-value');
         valueElement.setAttribute('type', 'hidden');
+        valueElement.setAttribute('name', element.hasAttribute("data-name") ? element.getAttribute("data-name") : element.getAttribute("id"));
         element.parentNode.insertBefore(valueElement, element);
 
         const objectIndex = (this.objects.length - 1);
@@ -32,6 +33,7 @@ class FormFieldSelectAbstract extends FormFieldAbstract {
             object.selectButtonElement = object.selectContainerElement.querySelector('.ds44-btnSelect');
         }
         object.isExpanded = false;
+        object.titleDefault = object.buttonElement.getAttribute("title");
         object.validationCategories = MiscForm.getValidationCategories();
     }
 
@@ -44,6 +46,10 @@ class FormFieldSelectAbstract extends FormFieldAbstract {
                 continue;
             }
             object.isSubInitialized = true;
+
+            if(!MiscComponent.isInit(object.element, "form-field")) {
+                MiscComponent.create(object.element, "form-field")
+            }
 
             MiscEvent.addListener('keyUp:escape', this.escape.bind(this, objectIndex));
             MiscEvent.addListener('keyUp:arrowup', this.previousOption.bind(this, objectIndex));
@@ -114,7 +120,7 @@ class FormFieldSelectAbstract extends FormFieldAbstract {
             } else if (object.selectListElement) {
                 const firstErrorField = object.selectListElement.querySelector('[aria-invalid="true"]');
                 if (firstErrorField) {
-                    MiscAccessibility.setFocus(firstErrorField);
+                    this.setFocus(objectIndex, firstErrorField);
                 }
             }
         }
@@ -137,7 +143,6 @@ class FormFieldSelectAbstract extends FormFieldAbstract {
             evt.stopPropagation();
             evt.preventDefault();
         }
-
         this.empty(objectIndex);
         this.focusOnButtonElement(objectIndex);
         this.autoSubmit(objectIndex);
@@ -149,7 +154,7 @@ class FormFieldSelectAbstract extends FormFieldAbstract {
             return;
         }
 
-        MiscAccessibility.setFocus(object.buttonElement);
+        this.setFocus(objectIndex, object.buttonElement);
     }
 
     setListElementEvents (listElement, objectIndex) {
@@ -348,7 +353,7 @@ class FormFieldSelectAbstract extends FormFieldAbstract {
         object.buttonIconElement.classList.add('icon-up');
         object.isExpanded = true;
 
-        this.nextOption(objectIndex);
+        this.selectAfterShow(objectIndex);
     }
 
     hide (objectIndex) {
@@ -369,6 +374,8 @@ class FormFieldSelectAbstract extends FormFieldAbstract {
         object.buttonIconElement.classList.add('icon-down');
         object.buttonIconElement.classList.remove('icon-up');
         object.isExpanded = false;
+
+        this.selectAfterHide(objectIndex);
     }
 
     escape (objectIndex) {
@@ -429,7 +436,12 @@ class FormFieldSelectAbstract extends FormFieldAbstract {
             return;
         }
 
-        const subSelectListElement = object.selectListElement.querySelector('.ds44-list');
+        let subSelectListElement = object.selectListElement.querySelector('.ds44-list');
+        if(object.selectListElement.classList.contains("ds44-collapser"))
+        {
+            subSelectListElement = object.selectListElement;
+        }
+
         if (!subSelectListElement) {
             return;
         }
@@ -438,6 +450,7 @@ class FormFieldSelectAbstract extends FormFieldAbstract {
         Array.from(subSelectListElement.children).map((childElement) => {
             childElement.remove();
         });
+        subSelectListElement.innerHTML = "";
 
         if (Object.keys(results).length === 0) {
             // No result
@@ -452,13 +465,13 @@ class FormFieldSelectAbstract extends FormFieldAbstract {
                     continue;
                 }
 
-                let elementSelectListItem = this.getListElement(object, (results[key].id || key), results[key].value);
+                let elementSelectListItem = this.getListElement(object, (results[key].id || key), results[key].value,  results[key].children !== undefined ? results[key].children : null, objectIndex);
                 subSelectListElement.appendChild(elementSelectListItem);
 
                 this.setListElementEvents(elementSelectListItem, objectIndex);
             }
         }
-
+        let collapser = new CollapserStandard();
         this.selectFromValue(objectIndex);
         MiscAccessibility.hide(object.selectContainerElement);
     }
@@ -496,10 +509,10 @@ class FormFieldSelectAbstract extends FormFieldAbstract {
             listItems.selected === listItems.last
         ) {
             // Select first
-            MiscAccessibility.setFocus(listItems.first)
+            this.setFocus(objectIndex, listItems.first)
         } else {
             // Select next
-            MiscAccessibility.setFocus(listItems.next);
+            this.setFocus(objectIndex, listItems.next);
         }
     }
 
@@ -520,10 +533,10 @@ class FormFieldSelectAbstract extends FormFieldAbstract {
             listItems.selected === listItems.first
         ) {
             // Select last
-            MiscAccessibility.setFocus(listItems.last)
+            this.setFocus(objectIndex, listItems.last)
         } else {
             // Select previous
-            MiscAccessibility.setFocus(listItems.previous);
+            this.setFocus(objectIndex, listItems.previous);
         }
     }
 
@@ -539,8 +552,20 @@ class FormFieldSelectAbstract extends FormFieldAbstract {
         // Abstract method
     }
 
+    selectAfterShow (objectIndex) {
+        this.nextOption(objectIndex);
+    }
+
+    selectAfterHide (objectIndex) {
+        // Abstract method
+    }
+
     getDomData (listElement) {
         // Abstract method
+    }
+
+    setFocus (objectIndex, element) {
+        MiscAccessibility.setFocus(element);
     }
 
     record (objectIndex, evt) {

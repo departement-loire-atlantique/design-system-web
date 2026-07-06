@@ -8,12 +8,22 @@ description: Modèle de page agenda basée sur le template "home".
 status: Validé
 
 variations:
-- title: Page type "Accueil"
+- title: Accueil Loire-Atlantique
   pattern: page/LA__accueil.html
-- title: Template home
-  pattern: templates/template-home.html
+
+- title: Accueil Handicap
+  pattern: page/HA__accueil.html
+
+- title: Accueil Sites Grand Patrimoines
+  pattern: page/SP_clisson__accueil.html
+
+- title: Accueil Site Observatoire
+  pattern: page/SO__accueil.html
+
+- title: Accueil Assmat
+  pattern: page/AM__accueil-2.html
 
 ---
 ## Utilisation
 
-Page d'accueil du site Loire-Atlantique.fr
+Les pages d'accueil des sites Loire-Atlantique.fr, Handicap, Patrimoniaux, Observatoire et Assmat.
