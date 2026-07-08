@@ -39,6 +39,9 @@ input[type="file"] {
     position: absolute;
     z-index: -1;
 }
+input:-webkit-autofill {
+    content: "autofill";
+}
 
 .ds44-form__container {
     position: relative;
@@ -88,7 +91,7 @@ input[type="file"] {
 
     .ds44-labelTypePlaceholderLarge {
         span {
-            font-size: 1.6rem;
+            font-size: 1em;
             margin-top: $ds44-padding-large;
         }
     }
@@ -140,7 +143,7 @@ textarea {
     @include ds44-font-sizes(input);
     font-family: $ds44-font-family-base;
     border-radius: $ds44-border-radius;
-    padding: $ds44-padding-medium 4rem $ds44-padding-medium $ds44-padding-box;
+    padding: 1.1rem 4rem $ds44-padding-medium $ds44-padding-box;
     border: 1px solid $ds44-gray;
     min-width: 100%;
     vertical-align: middle;
@@ -155,8 +158,11 @@ textarea {
     }
 
     .ds44-selectLabel {
-        font-size: 0.875em;
-    } 
+        font-size: 1em;
+    }
+    &.ds44-time__shape {
+        padding: 1.1rem 2.5rem 1rem 0.5rem;
+    }
 }
 
 .ds44-inpLarge {
@@ -240,6 +246,19 @@ textarea {
 
 .ds44-formLabel--external ~ .ds44-reset {
     top: 53%;
+}
+
+
+/* Bouton de d'affichage / masquage du mot de passe */
+
+.ds44-showPassword {
+    position: absolute;
+    right: 25px;
+    top: calc(50% - 13px);
+    top: -webkit-calc(50% - 15px);
+    padding-right: 1.5rem;
+    color: $ds44-color-dark-text;
+    cursor: pointer;
 }
 
 /**
@@ -401,6 +420,14 @@ input[type=radio],
             }
 
             &.ds44-theme {
+                .ds44-flex-container {
+                    max-width: 80%;
+
+                    @media (max-width: $ds44-medium - .0625) {
+                        max-width: 100%;
+                    }
+                }
+
                 .ds44-fieldContainer {
 
                     flex: none;
@@ -447,7 +474,7 @@ input[type=radio],
                     li {
                         display: inline-block;
                         margin: 0.6em $ds44-padding-medium;
-
+                        span,
                         a {
                             text-decoration: none;
                             width: auto;
@@ -456,7 +483,25 @@ input[type=radio],
                         }
                     }
                 }
+                &.ds44-sixSelect {
+                    .ds44-flex-container {
+                        max-width: 100%;
+                    }
+                    .ds44-fieldContainer {
+                        flex: none;
+                        width: 14%;
+                        }
+                }
             }
+        }
+
+        .ds44-facette__title {
+          font-size: 2.4rem;
+          color: $ds44-color-inverse;
+          padding: $ds44-padding-large ;
+          padding-bottom: 0;
+          margin: 0;
+          background: $ds44-dark;
         }
     }
 
@@ -482,7 +527,8 @@ input[type=radio],
                 margin-right: $ds44-margin-base;
                 padding-left: 1.9rem;
 
-                i ~ a {
+                i ~ a,
+                i ~ span{
                     text-decoration: none;
                     width: auto;
                     font-weight: bold;
@@ -542,12 +588,25 @@ input[type=radio],
     }
 }
 
+.ds44-fieldVertical .ds44-fieldContainer {
+	margin-right: 0;
+	margin-bottom: 2.5rem; // marge identique au padding du ds44-facetteContainer
+
+	&:first-child {
+		margin-top: 2.5rem;
+	}
+
+	&:last-child {
+		margin-bottom: 0;
+	}
+}
+
 .ds44-labelStd {
     font-size: 1.4rem;
 }
 
 .ds44-labelLarge {
-    font-size: 1.6rem;
+    font-size: 1em;
     line-height: 1rem;
 }
 
@@ -561,9 +620,11 @@ input[type=radio],
     padding: $ds44-padding-large/2 $ds44-padding-large 0 $ds44-padding-large;
 }
 
+
 .ds44-select__shape {
     cursor: pointer;
     background-color: $ds44-light-color;
+
 
     &.ds44-boxError {
         border-color: $ds44-error;
@@ -572,6 +633,12 @@ input[type=radio],
     &.ds44-error {
         .ds44-btnIco .icon {
             color: $ds44-error;
+        }
+    }
+
+    .ds44-btnOpen {
+        &:focus{
+            border:2px solid $ds44-color-dark-text;
         }
     }
 }
@@ -919,7 +986,7 @@ input[type=radio],
 }
 
 /**
- * Date picker
+ * Date picker & Time
  */
 .ds44-datepicker__shape {
     cursor: pointer;
@@ -946,6 +1013,28 @@ input[type=radio],
             display: inline;
         }
     }
+}
+
+/**
+ * Time
+ */
+.ds44-time__shape {
+
+    cursor: pointer;
+    background-color: $ds44-light-color;
+    input {
+        border: none;
+        outline: none;
+        text-align: center;
+        width: 2.6rem;
+        background-color: transparent;
+    }
+    span {
+        display: inline;
+    }
+}
+.ds44-time__shape + .ds44-reset {
+    padding-right: 1rem;
 }
 
 /**
@@ -1009,6 +1098,7 @@ input[type=radio],
         input,
         .ds44-select__shape,
         .ds44-datepicker__shape,
+        .ds44-time__shape,
         .ds44-file__shape {
             border-radius: 3px 0 0 3px;
         }
@@ -1024,6 +1114,7 @@ input[type=radio],
         input,
         .ds44-select__shape,
         .ds44-datepicker__shape,
+        .ds44-time__shape,
         .ds44-file__shape {
             border-radius: 0 3px 3px 0;
             margin-left: -1px;
@@ -1039,6 +1130,43 @@ input[type=radio],
     }
 
 }
+
+.ds44-inputDisabled,
+.ds44-inputDisabled ~ input,
+.ds44-inputDisabled ~ textarea,
+.ds44-inputDisabled ~ label {
+    background: $ds44-lightgray;
+    cursor: default;
+}
+
+
+.ds44-fieldVertical .ds44-champsLies {
+
+	> .ds44-form__container,
+	> .ds44-form__checkbox_container,
+	> .ds44-form__radio_container {
+		display: block;
+	}
+
+	> .ds44-form__container:first-of-type,
+	> .ds44-form__checkbox_container:first-of-type,
+	> .ds44-form__radio_container:first-of-type {
+		width: 100%;
+		margin: 0;
+	}
+
+	> .ds44-form__container:last-of-type,
+	> .ds44-form__checkbox_container:last-of-type,
+	> .ds44-form__radio_container:last-of-type {
+		width: 100%;
+		margin: 0;
+	}
+
+	> .ds44-form__container:last-of-type {
+		margin-top: 2.5rem;
+	}
+}
+
 
 .ds44-fieldContainer--select {
     .ds44-champsLies.ds44-fieldContainer {
@@ -1160,6 +1288,7 @@ input[type=radio],
             input,
             .ds44-select__shape,
             .ds44-datepicker__shape,
+            .ds44-time__shape,
             .ds44-file__shape {
                 border-radius: 3px 3px 0 0;
             }
@@ -1174,6 +1303,7 @@ input[type=radio],
             input,
             .ds44-select__shape,
             .ds44-datepicker__shape,
+            .ds44-time__shape,
             .ds44-file__shape {
                 border-radius: 0 0 3px 3px;
                 margin: -1px 0 0 0;
@@ -1182,6 +1312,54 @@ input[type=radio],
 
         > .ds44-form__container:last-of-type {
             margin-top: 2.5rem;
+        }
+    }
+}
+
+.ds44-plannings {
+    .ds44-planning {
+        margin: 4rem 0;
+    }
+}
+
+.ds44-planning {
+    .ds44-planing-table-button {
+        margin: 2rem -1rem;
+        display: flex;
+        .content-button,
+        .ds44-planning-table {
+            margin: 0 1rem;
+        }
+    }
+    th {
+      height: 4.5rem;
+    }
+    thead .second th:first-child,
+    thead .first th[data-col-key] {
+        background: $ds44-LA;
+    }
+    thead .second th {
+        background: $ds44-lightgray;
+    }
+    td {
+        height: 8.5rem;
+        .ds44-form__container {
+            margin: 1rem 0;
+        }
+    }
+    thead .first th:last-child,
+    *[data-value-key="end"]:last-child {
+        padding-right: 2rem;
+    }
+    td {
+        &:first-child {
+            width: 10rem;
+        }
+        &:nth-child(2) {
+            padding-left: 2rem;
+        }
+        label {
+            display:none;
         }
     }
 }

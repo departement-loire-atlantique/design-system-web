@@ -1,6 +1,7 @@
 class FormFieldBoxAbstract extends FormFieldAbstract {
-    constructor (category) {
+    constructor (className, category) {
         super(
+          className,
             '.ds44-form__' + category + '_container',
             category
         );
@@ -18,19 +19,25 @@ class FormFieldBoxAbstract extends FormFieldAbstract {
         }
 
         object.inputElements = element.querySelectorAll('input[type="' + this.category + '"]');
+        object.inputElements.forEach((input) => {
+            MiscEvent.addListener("change", this.changeValue.bind(this, objectIndex, input), input);
+        });
     }
 
     initialize () {
         super.initialize();
-
         for (let objectIndex = 0; objectIndex < this.objects.length; objectIndex++) {
             const object = this.objects[objectIndex];
             if (object.isSubInitialized) {
                 continue;
             }
             object.isSubInitialized = true;
-
+            object.autoSubmit = false;
             object.inputElements.forEach((inputElement) => {
+                if(inputElement.dataset.autoSubmit !== undefined) {
+                    object.autoSubmit = true;
+                }
+                this.toggleContainer(inputElement);
                 MiscEvent.addListener('click', this.toggleCheck.bind(this, objectIndex), inputElement);
             });
         }
@@ -73,7 +80,42 @@ class FormFieldBoxAbstract extends FormFieldAbstract {
             return;
         }
 
+        if(object.autoSubmit) {
+            MiscEvent.dispatch('submit', {}, object.containerElement.closest("form"));
+        }
+
+
         this.showNotEmpty(objectIndex);
+    }
+
+    changeValue(objectIndex, input, evt) {
+        const object = this.objects[objectIndex];
+        if (!object || !object.isEnabled) {
+            evt.stopPropagation();
+            evt.preventDefault();
+
+            return;
+        }
+        if(input.checked)
+        {
+            object.inputElements.forEach((inputElement) => {
+                if(inputElement !== input) {
+                    this.toggleContainer(inputElement);
+                }
+            });
+            this.toggleContainer(input);
+            MiscEvent.dispatch("field:change-value", {checked: true}, input);
+        }
+        else
+        {
+            this.toggleContainer(input);
+            object.inputElements.forEach((inputElement) => {
+                if(inputElement !== input) {
+                    this.toggleContainer(inputElement);
+                }
+            });
+            MiscEvent.dispatch("field:change-value", {checked: false}, input);
+        }
     }
 
     setData (objectIndex, data = null) {

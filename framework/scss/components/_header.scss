@@ -1,4 +1,5 @@
 /*
+/*
 * CD44 Design System - Headers
 */
 
@@ -6,10 +7,16 @@
     text-decoration: none;
     margin: 0;
 
+    &.ds44-logoContainer--medium{
+        img {
+            height: 85px;
+        }
+    }
     img {
         height: 62px;
     }
 }
+
 
 .ds44-logo {
     display: block;
@@ -17,10 +24,24 @@
 
 .ds44-titreLogo {
     text-decoration: none;
-    font-size: 1.6rem;
+    font-size: 1em;
     line-height: 1.2;
     font-weight: bold;
     margin-left: 2rem;
+}
+
+/* Phylactère */
+
+.phylactere .ds44-header .ds44-container-large .ds44-flex-container:before {
+    content: '';
+    width: 80px;
+    height: 34px;
+    bottom: -33px;
+    left: 24px;
+    position: absolute;
+    display: block;
+    background-image: url(../../../assets/images/shape_logo.svg);
+    background-repeat: no-repeat;
 }
 
 /* Skip links */
@@ -51,7 +72,7 @@
 .ds44-header {
     min-height: $header-height-large;
     max-height: $header-height-medium;
-    overflow: hidden;
+    /* --- overflow: hidden; ---- Pour ajout shape Logo */
     position: fixed;
     top: 0;
     padding: 0;
@@ -76,6 +97,9 @@
     .ds44-colRight {
       min-height: $header-height-large;
     }
+    .ds44-container-large .ds44-flex-container {
+        position: relative;
+    }
 }
 
 /* Bandeau */
@@ -96,6 +120,137 @@
     display: none;
   }
 }
+
+.ds44-subMenu {
+    position:fixed;
+    background: $ds44-light-color;
+    display:none;
+    opacity: 0;
+    pointer-events: none;
+    box-shadow: 0px 13px 20px 0px rgba(0, 0, 0, 0.35);
+    width: 35rem;
+    &.full {
+        width: auto;
+    }
+    &.view {
+        display:block;
+        opacity: 1;
+        pointer-events: all;
+    }
+    &#subMenu-choixLangue {
+        text-align: left;
+        width: 10rem;
+        &#subMenu-choixLangue a {
+            font-size: 1em;
+        }
+    }
+    .ds44-list {
+        padding: 2rem;
+        li {
+            &:last-child {
+                padding-bottom: 0;
+            }
+            padding-bottom: 3rem;
+        }
+        a {
+            font-size: 1.2em;
+            text-decoration: none;
+            display: block;
+            &:hover {
+                text-decoration: underline;
+            }
+        }
+    }
+}
+
+/* Musée Dobrée Header */
+.dobree-header {
+    min-height: inherit;
+    background: $ds44-light;
+    .ds44-colRight {
+      min-height: inherit;
+      > * {
+          margin-right: -4px;
+      }
+      .ds44-btn--menu:focus-visible.ds44-btn--contextual,
+      #open-menu:focus-visible {
+          border: 1px solid blue;
+      }
+      .choixLangue {
+          border-radius: 3px;
+          background-color: rgba(0, 0, 0, 0);
+          color: $ds44-dark ;
+          padding: 1rem;
+          margin: 0 3rem;
+      }
+    }
+    #subMenu-choixLangueMobile {
+        top: 65px;
+    }
+}
+.dobree-header .ds44-logoContainer img {
+  margin-left: 4em;
+}
+.dobree-header.ds44-header .ds44-colRight {
+  min-height: inherit;
+  flex: auto;
+}
+
+.dobree-listAccessibility {
+    vertical-align: middle;
+        > div {
+            border-radius: 3px;
+            background-color: rgba(0, 0, 0, 0.06);
+            color: $ds44-dark ;
+            transition: all ease-in-out .25s;
+
+            a {
+                text-decoration: none;
+            }
+
+            &:hover {
+                background-color: rgba(255, 255, 255, 1);
+                color: $ds44-dark ;
+            }
+
+            ul.ds44-list {
+                margin-bottom: 0;
+                li {
+                    margin: 0 5px;
+                }
+            }
+        }
+        p {margin-bottom:0;}
+}
+/* Musée Dobrée Header Homepage vidéo */
+.dobree-header.containerVideo {
+    background: none;
+    .ds44-colRight .dobree-listAccessibility > div {
+        background-color: rgba(0, 0, 0, 0.6);
+        color: $ds44-light ;
+
+        a {
+            color: $ds44-light ;
+        }
+    }
+     .ds44-logoContainer img {
+      display: none;
+    }
+    .choixLangue {
+        background-color: rgba(0, 0, 0, 0.6);
+        color: $ds44-light ;
+    }
+    #subMenu-choixLangue {
+        background-color: rgba(0, 0, 0, 0.8);
+        top:65px;
+        a {
+            color: $ds44-light ;
+        }
+    }
+}
+
+
+
 
 
 
@@ -124,6 +279,9 @@
         padding: 0;
         left: 0;
     }
+   .ds44-header.dobree-header {
+        min-height: 5.8rem ;
+    }
 
     .ds44-header .ds44-colRight {
         display: flex;
@@ -140,9 +298,11 @@
             align-items: center;
             line-height: 1.2;
             padding: $ds44-padding-xlarge  $ds44-padding-large;
+            height: $header-height-medium;
 
             .icon + .ds44-btnInnerText,
-            .ds44-btnInnerText + .icon {
+            .ds44-btnInnerText + .icon,
+            .icon + .icon {
                 margin-left: 0;
             }
 
@@ -151,9 +311,43 @@
                 white-space: nowrap;
             }
 
+            &[data-open-sub-menu] {
+                .icon-toggle {
+                    display:none;
+                }
+            }
         }
 
     }
+
+    .ds44-subMenu {
+        .ds44-list {
+            li {
+                padding-bottom: 1rem;
+            }
+            a {
+                font-size: 1em;
+            }
+        }
+    }
+
+    .dobree-header .ds44-colRight .ds44-btnIcoText--maxi {
+      flex-direction: row;
+      margin: 0 ;
+      padding: 1em 2rem ;
+
+      .ds44-btnInnerText + .icon, .icon + .icon {
+        margin-left: 1.5rem;
+      }
+    }
+    .dobree-header .ds44-logoDobree img {
+          margin-left: 1em;
+          height: 59px;
+    }
+
+
+
+
 }
 
 @media (max-width: $ds44-medium - .0625) {
@@ -223,6 +417,7 @@
 
       .ds44-btnIcoText--maxi {
           margin-left: 0;
+          height: $header-height-small;
 
           &.ds44--xl-padding {
               padding: .5rem 1rem 1rem 1rem;
@@ -231,12 +426,47 @@
           &.ds44-btn--menu {
               padding: .5rem 1rem 1rem 1rem;
           }
+          &[data-open-sub-menu] {
+            .icon-toggle {
+                display:none;
+            }
+          }
       }
   }
-
+  
   .ds44-header {
-      min-height: $header-height-small;
+    min-height: $header-height-small;
   }
+
+  .phylactere .ds44-header {
+        .ds44-container-large .ds44-flex-container::before {
+          width: 50px;
+          height: 23px;
+          bottom: -21px;
+          left: 14px;
+        }
+  }
+
+  .ds44-header.dobree-header .ds44-colRight .ds44-btnIcoText--maxi.ds44-btn--menu {
+   padding: 1em;
+
+    .ds44-btnInnerText {
+     font-size: 1.4rem;
+   }
+   .icon-long-arrow-right {
+      margin-left: 0.5rem ;
+
+      &::before {
+         font-size: 1em !important;
+       }
+    }
+    .icon-burger {
+       margin-left: 0.5rem ;
+     }
+
+
+ }
+
 
 }
 

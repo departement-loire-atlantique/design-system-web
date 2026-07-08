@@ -11,8 +11,9 @@
     height: 100%;
 
     p[role="heading"] {
-      font-size: 2.4rem;
+      font-size: 2.2rem;
       line-height: 1.2em;
+      font-weight: $weight-medium;
     }
     p.hashtag {
       font-size: 1.9rem;
@@ -38,6 +39,54 @@
     }
   }
 
+  .ds44-partage-patrimoine {
+    .icon {
+      font-size: 1.7em;
+    }
+
+    .ds44-noteRS .ds44-list {
+      padding: 1em 2em;
+      margin: 0;
+      justify-content: space-evenly;
+
+      li {
+        text-align: center;
+        margin: 0 10px;
+
+        p {
+          margin: 0;
+          padding: 0;
+          font-size: 1.4rem;
+        }
+      }
+
+      a {
+        text-decoration: none;
+
+        &:hover,
+        &:active,
+        &:focus {
+          color : $ds44-hover-dark;
+        }
+      }
+      .icon {
+        font-size: 3em;
+        min-height: 54px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+
+        &.icon-tripadvisor {
+          font-size: 4em;
+        }
+      }
+      .h1-like {
+        font-size: 2.5em ;
+        margin: 20px 0 5px 0;
+      }
+    }
+  }
+
   .ds44-partage {
       > ul {
           margin-top: 0;
@@ -48,10 +97,31 @@
 
     .ds44-partage-sliderHome {
         width: 100%;
+        flex-direction: column;
+        padding: 1rem;
 
         > .ds44-list {
             flex-wrap: inherit;
         }
+    }
+
+    .ds44-partage-patrimoine {
+      .icon {
+        font-size: 1.2em;
+      }
+
+      .ds44-noteRS .ds44-list {
+        .icon {
+          font-size: 2em;
+
+          &.icon-tripadvisor {
+            font-size: 3em;
+          }
+        }
+        .h1-like {
+          font-size: 1.5em ;
+        }
+      }
     }
 
   }

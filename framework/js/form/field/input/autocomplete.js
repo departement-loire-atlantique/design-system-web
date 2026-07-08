@@ -1,6 +1,7 @@
-class FormFieldInputAutoComplete extends FormFieldInputAbstract {
+class FormFieldInputAutoCompleteClass extends FormFieldInputAbstract {
     constructor () {
         super(
+          "FormFieldInputAutoComplete",
             'input[aria-autocomplete="list"]',
             'inputAutocomplete'
         );
@@ -15,6 +16,7 @@ class FormFieldInputAutoComplete extends FormFieldInputAbstract {
         // Create corresponding hidden input to store the value
         let valueElement = document.createElement('input');
         valueElement.classList.add('ds44-input-value');
+        valueElement.setAttribute("id",element.getAttribute("id")+"-value");
         valueElement.setAttribute('type', 'hidden');
         element.parentNode.insertBefore(valueElement, element);
 
@@ -30,9 +32,25 @@ class FormFieldInputAutoComplete extends FormFieldInputAbstract {
             return;
         }
 
+        if(object.element.hasAttribute("data-disabled-metadata")) {
+            valueElement.value = object.element.value;
+        }
+
+        this.timeSendAutocomplete = 0;
+
         object.valueElement = valueElement;
         object.metadataElement = metadataElement;
         object.autoCompleterElement = object.containerElement.querySelector('.ds44-autocomp-container');
+        object.nbResultsElement = object.autoCompleterElement.querySelector('.ds44-js-nb-results');
+        if(!object.nbResultsElement) {
+            object.nbResultsElement = document.createElement('div');
+            object.nbResultsElement.classList.add('visually-hidden');
+            object.nbResultsElement.classList.add('ds44-js-nb-results');
+            object.nbResultsElement.setAttribute('aria-live', 'polite');
+
+            const autoCompleterListElement = object.autoCompleterElement.querySelector('.ds44-autocomp-list')
+            autoCompleterListElement.insertBefore(object.nbResultsElement, autoCompleterListElement.firstChild);
+        }
         object.autoCompleterListElement = null;
         if (object.autoCompleterElement) {
             object.autoCompleterListElement = object.autoCompleterElement.querySelector('.ds44-list');
@@ -43,6 +61,8 @@ class FormFieldInputAutoComplete extends FormFieldInputAbstract {
             object.mode = this.FREE_TEXT_MODE;
         }
         object.isExpanded = false;
+
+        object.autocompleteSubFields = document.querySelectorAll("*[data-"+object.element.getAttribute("id")+"]");
     }
 
     initialize () {
@@ -78,6 +98,7 @@ class FormFieldInputAutoComplete extends FormFieldInputAbstract {
                 .forEach((buttonElement) => {
                     MiscEvent.addListener('click', this.select.bind(this, objectIndex), buttonElement);
                 });
+
         }
     }
 
@@ -85,6 +106,25 @@ class FormFieldInputAutoComplete extends FormFieldInputAbstract {
         super.disableElements(objectIndex, evt);
 
         this.hide(objectIndex);
+    }
+
+    reset (objectIndex, evt) {
+        const object = this.objects[objectIndex];
+        if (
+          !object ||
+          !object.textElement
+        ) {
+            return;
+        }
+        super.reset(objectIndex, evt);
+        if(object.autocompleteSubFields) {
+            object.autocompleteSubFields.forEach((input) => {
+                if(evt.detail && input !== evt.detail.input) {
+                    MiscEvent.dispatch("field:reset", {focus: false}, input);
+                }
+            });
+            this.enableElements(objectIndex);
+        }
     }
 
     setData (objectIndex, data = null) {
@@ -99,6 +139,7 @@ class FormFieldInputAutoComplete extends FormFieldInputAbstract {
             return;
         }
 
+        this.toggleContainerByValue(objectIndex, object.valueElement.value);
         object.currentElementValue = ((data && data.text) ? data.text : null);
         if (object.currentElementValue) {
             object.textElement.setAttribute('value', object.currentElementValue);
@@ -117,6 +158,17 @@ class FormFieldInputAutoComplete extends FormFieldInputAbstract {
         } else {
             object.metadataElement.value = null;
         }
+
+        const locationElement = object.containerElement.querySelector('.ds44-location');
+        if (locationElement) {
+            document.querySelectorAll(".ds44-js-map").forEach((map) => {
+                if(object.metadataElement.value) {
+                    map.setAttribute("data-around-me", object.metadataElement.value);
+                    MiscEvent.dispatch("map:aroundMe", {metadata: JSON.parse(object.metadataElement.value)}, map);
+                }
+            });
+        }
+
     }
 
     getData (objectIndex) {
@@ -148,6 +200,7 @@ class FormFieldInputAutoComplete extends FormFieldInputAbstract {
         ) {
             return;
         }
+        Debug.log("Autocomplete - Record");
 
         object.currentElementValue = object.textElement.value;
         if (object.currentElementValue) {
@@ -168,8 +221,30 @@ class FormFieldInputAutoComplete extends FormFieldInputAbstract {
         ) {
             return;
         }
+        Debug.log("Autocomplete - write");
 
-        this.autoComplete(objectIndex);
+        let limitNbChar = object.textElement.hasAttribute("data-limit-char") ?
+          object.textElement.getAttribute("data-limit-char") :
+          0;
+        let value = object.textElement.value;
+
+        if (value && value.length >= limitNbChar) {
+            this.autoComplete(objectIndex);
+        }
+        else {
+            this.setData(
+              objectIndex,
+              {
+                  'text': object.textElement.value,
+                  'value': object.textElement.value
+              }
+            );
+            object.autoCompleterElement.classList.add('hidden');
+            MiscAccessibility.hide(object.autoCompleterElement);
+            object.textElement.setAttribute('aria-expanded', 'false');
+            object.isExpanded = false;
+        }
+
     }
 
     autoComplete (objectIndex) {
@@ -183,6 +258,7 @@ class FormFieldInputAutoComplete extends FormFieldInputAbstract {
         ) {
             return;
         }
+        Debug.log("Autocomplete - Autocomplete");
 
         if (
             object.mode === this.FREE_TEXT_MODE ||
@@ -216,11 +292,40 @@ class FormFieldInputAutoComplete extends FormFieldInputAbstract {
         if (url.includes('$parentValue')) {
             url = url.replace('$parentValue', object.parentValue);
         }
-        MiscRequest.send(
-            url + (url.includes('?') ? '&' : '?') + 'q=' + encodeURIComponent(object.textElement.value),
-            this.autoCompleteSuccess.bind(this, objectIndex),
-            this.autoCompleteError.bind(this, objectIndex)
-        );
+        let query = encodeURIComponent(object.textElement.value);
+
+        if(object.textElement.hasAttribute('data-url-prefix'))
+        {
+            let prefix = object.textElement.getAttribute('data-url-prefix');
+            query = query + "" + prefix;
+        }
+
+        let timeLatence = 0;
+        if(object.textElement.hasAttribute("data-latence"))
+        {
+            timeLatence = parseFloat(object.textElement.getAttribute("data-latence"));
+        }
+
+        if(timeLatence > 0)
+        {
+            clearTimeout(this.timeSendAutocomplete);
+            this.timeSendAutocomplete = setTimeout(() => {
+                MiscRequest.send(
+                  url = url + (url.includes('?') ? '&' : '?') + 'q=' + query,
+                  this.autoCompleteSuccess.bind(this, objectIndex),
+                  this.autoCompleteError.bind(this, objectIndex)
+                );
+            }, timeLatence);
+        }
+        else
+        {
+            MiscRequest.send(
+              url = url + (url.includes('?') ? '&' : '?') + 'q=' + query,
+              this.autoCompleteSuccess.bind(this, objectIndex),
+              this.autoCompleteError.bind(this, objectIndex)
+            );
+        }
+        Debug.log("Autocomplete - Autocomplete - End");
     }
 
     autoCompleteSuccess (objectIndex, results) {
@@ -249,12 +354,18 @@ class FormFieldInputAutoComplete extends FormFieldInputAbstract {
             childElement.remove();
         });
 
+
         if (Object.keys(results).length === 0) {
             // No result
             let elementAutoCompleterListItem = document.createElement('li');
             elementAutoCompleterListItem.classList.add('ds44-autocomp-list_no_elem');
             elementAutoCompleterListItem.innerHTML = MiscTranslate._('NO_RESULTS_FOUND');
             object.autoCompleterListElement.appendChild(elementAutoCompleterListItem);
+
+            if (object.nbResultsElement) {
+                object.nbResultsElement.setAttribute('aria-atomic', 'true');
+                object.nbResultsElement.innerHTML = '<p>' + MiscTranslate._('NO_SUGGESTIONS', { search: object.textElement.value }) + '</p>';
+            }
         } else {
             // Some result
             for (let key in results) {
@@ -272,13 +383,29 @@ class FormFieldInputAutoComplete extends FormFieldInputAbstract {
                 } else {
                     elementAutoCompleterListItem.setAttribute('data-value', (results[key].id || key));
                 }
+
+                elementAutoCompleterListItem.setAttribute('data-value-libelle', (results[key].libelle));
+                elementAutoCompleterListItem.setAttribute('data-value-postCode', (results[key].postcode));
+                elementAutoCompleterListItem.setAttribute('data-value-city', (results[key].city));
+
+
+                elementAutoCompleterListItem.setAttribute('data-key', key);
                 elementAutoCompleterListItem.setAttribute('data-metadata', (results[key].metadata ? JSON.stringify(results[key].metadata) : null));
                 elementAutoCompleterListItem.setAttribute('tabindex', '0');
                 elementAutoCompleterListItem.innerHTML = this.highlightSearch(results[key].value, object.textElement.value);
                 object.autoCompleterListElement.appendChild(elementAutoCompleterListItem);
 
                 MiscEvent.addListener('focus', this.fakeSelect.bind(this, objectIndex), elementAutoCompleterListItem);
+                MiscEvent.addListener('blur', (evt)=>{
+                    const currentListItem = evt.currentTarget;
+                    currentListItem.removeAttribute("aria-selected");
+                }, elementAutoCompleterListItem);
                 MiscEvent.addListener('mousedown', this.select.bind(this, objectIndex), elementAutoCompleterListItem);
+            }
+
+            if (object.nbResultsElement) {
+                object.nbResultsElement.setAttribute('aria-atomic', 'true');
+                object.nbResultsElement.innerHTML = '<p>' + MiscTranslate._('SUGGESTIONS', { nbResults: Object.keys(results).length }) + '</p>';
             }
         }
 
@@ -304,7 +431,10 @@ class FormFieldInputAutoComplete extends FormFieldInputAbstract {
                         metadata: {
                             latitude: feature.geometry.coordinates[1],
                             longitude: feature.geometry.coordinates[0]
-                        }
+                        },
+                        libelle:    feature.properties.name,
+                        postcode:   feature.properties.postcode,
+                        city:       feature.properties.city
                     }
                 }
             }
@@ -391,6 +521,10 @@ class FormFieldInputAutoComplete extends FormFieldInputAbstract {
             object.textElement.value = object.currentElementValue;
         }
 
+        if (object.nbResultsElement) {
+            object.nbResultsElement.removeAttribute('aria-atomic');
+            object.nbResultsElement.innerHTML = '';
+        }
         object.autoCompleterElement.classList.add('hidden');
         MiscAccessibility.hide(object.autoCompleterElement);
         object.textElement.setAttribute('aria-expanded', 'false');
@@ -479,6 +613,7 @@ class FormFieldInputAutoComplete extends FormFieldInputAbstract {
 
         const currentListItem = evt.currentTarget;
         object.textElement.value = currentListItem.innerText;
+        currentListItem.setAttribute("aria-selected", true);
         MiscAccessibility.setFocus(currentListItem);
     }
 
@@ -506,11 +641,24 @@ class FormFieldInputAutoComplete extends FormFieldInputAbstract {
         currentItem.setAttribute('id', 'selected_option_' + object.id);
         object.textElement.setAttribute('aria-activedescendant', 'selected_option_' + object.id);
 
+        this.toggleContainerByValue(objectIndex, currentItem.getAttribute('data-value'))
         if (this[currentItem.getAttribute('data-value')]) {
             // Call corresponding function
             this[currentItem.getAttribute('data-value')](objectIndex, currentItem);
             return;
         }
+
+        if(object.autocompleteSubFields.length > 0) {
+            object.autocompleteSubFields.forEach((input) => {
+                let keyValue = input.getAttribute("data-"+object.element.getAttribute("id"));
+                if(currentItem.hasAttribute("data-value-"+keyValue))
+                {
+                    MiscEvent.dispatch("field:"+this.getName(input)+":set", {value: currentItem.getAttribute("data-value-"+keyValue)});
+                }
+            });
+        }
+
+
 
         this.selectRecord(objectIndex, currentItem);
     }
@@ -537,19 +685,21 @@ class FormFieldInputAutoComplete extends FormFieldInputAbstract {
 
     aroundMe (objectIndex, currentItem) {
         if (currentItem instanceof Event) {
+            let event = currentItem;
+            event.stopPropagation();
+            event.preventDefault();
             // Only accept dom elements
             currentItem = null;
         }
 
         if (navigator.geolocation) {
-            navigator.geolocation.getCurrentPosition(this.aroundMeSuccess.bind(this, objectIndex, currentItem));
-
-            return;
+            navigator.geolocation.getCurrentPosition(this.aroundMeSuccess.bind(this, objectIndex, currentItem), (error) => {console.log(error)});
         }
 
         if (currentItem) {
             this.selectRecord(objectIndex, currentItem);
         }
+        return false;
     }
 
     aroundMeSuccess (objectIndex, currentItem, position) {
@@ -585,6 +735,19 @@ class FormFieldInputAutoComplete extends FormFieldInputAbstract {
         this.checkValidity(objectIndex);
     }
 }
-
 // Singleton
+var FormFieldInputAutoComplete = (function () {
+    "use strict";
+    var instance;
+    function Singleton() {
+        if (!instance) {
+            instance = new FormFieldInputAutoCompleteClass();
+        }
+        instance.initialise();
+    }
+    Singleton.getInstance = function () {
+        return instance || new Singleton();
+    }
+    return Singleton;
+}());
 new FormFieldInputAutoComplete();

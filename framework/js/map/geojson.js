@@ -1,6 +1,6 @@
-class MapGeojson extends MapAbstract {
+class MapGeojsonClass extends MapAbstract {
     constructor () {
-        super('.ds44-js-map[data-geojson-mode="dynamic"]');
+        super("MapGeojson", '.ds44-js-map[data-geojson-mode="dynamic"]');
     }
 
     create (element) {
@@ -36,15 +36,6 @@ class MapGeojson extends MapAbstract {
     }
 
     showAreaPopup (objectIndex, evt) {
-        if (
-            evt.originalEvent &&
-            evt.originalEvent.target &&
-            evt.originalEvent.target.classList.contains('ds44-map-marker')
-        ) {
-            // Clicked on a marker
-            return;
-        }
-
         const object = this.objects[objectIndex];
         if (!object) {
             return;
@@ -54,7 +45,7 @@ class MapGeojson extends MapAbstract {
             <section class="ds44-card ds44-js-card ds44-card--contact ds44-box ds44-bgGray">
                 <div class="ds44-card__section">
                     <div class="ds44-innerBoxContainer">
-                        <p role="heading" aria-level="3" class="h4-like ds44-cardTitle mts">${evt.features[0].properties.description}</p>
+                        <p role="heading" aria-level="3" class="h4-like ds44-card__title mts">${evt.features[0].properties.description}</p>
                     </div>
                 </div>
             </section>
@@ -188,6 +179,19 @@ class MapGeojson extends MapAbstract {
         }
     }
 }
-
 // Singleton
+var MapGeojson = (function () {
+    "use strict";
+    var instance;
+    function Singleton() {
+        if (!instance) {
+            instance = new MapGeojsonClass();
+        }
+        instance.initialise();
+    }
+    Singleton.getInstance = function () {
+        return instance || new Singleton();
+    }
+    return Singleton;
+}());
 new MapGeojson();

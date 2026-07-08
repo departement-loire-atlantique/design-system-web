@@ -1,6 +1,7 @@
-class FormFieldInputFile extends FormFieldInputAbstract {
+class FormFieldInputFileClass extends FormFieldInputAbstract {
     constructor () {
         super(
+          "FormFieldInputFile",
             'input[type="file"]',
             'inputFile'
         );
@@ -86,6 +87,7 @@ class FormFieldInputFile extends FormFieldInputAbstract {
         object.textElement = MiscDom.getNextSibling(element, '.ds44-fileDisplay');
         object.labelElement = MiscDom.getPreviousSibling(element.parentNode, 'label');
         object.resetButtonElement = MiscDom.getNextSibling(element.parentNode, '.ds44-reset');
+        object.iconButton = MiscDom.getNextSibling(element.parentNode, '.ds44-file');
         object.fileExtensions = element.getAttribute('data-file-extensions');
     }
 
@@ -307,6 +309,19 @@ class FormFieldInputFile extends FormFieldInputAbstract {
         return false;
     }
 }
-
 // Singleton
+var FormFieldInputFile = (function () {
+    "use strict";
+    var instance;
+    function Singleton() {
+        if (!instance) {
+            instance = new FormFieldInputFileClass();
+        }
+        instance.initialise();
+    }
+    Singleton.getInstance = function () {
+        return instance || new Singleton();
+    }
+    return Singleton;
+}());
 new FormFieldInputFile();

@@ -1,0 +1,12 @@
+{% if include.fieldStyle == 'large' %}
+    {% assign buttonClass = class | append: ' ds44-btnStd--large' %}
+{% else %}
+    {% assign buttonClass = class %}
+{% endif %}
+
+<div class="ds44-facetteContainer ds44-bgDark">
+    <div class="ds44-flex-container ds44--l-padding-b ds44-medium-flex-col" data-duplicate-line>
+        {{ include.fields }}
+    </div>
+    <button class="ds44-btnStd ds44-theme ds44-w100 {{ buttonClass }}" title="Lancer la recherche"><span class="ds44-btnInnerText">Rechercher</span><i class="icon icon-long-arrow-right" aria-hidden="true"></i></button>
+</div>

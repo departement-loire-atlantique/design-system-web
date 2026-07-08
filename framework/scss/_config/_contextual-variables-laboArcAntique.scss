@@ -1,0 +1,15 @@
+/*
+* CD44 Design System - contextual variables for Laboratoire Arc’Antique
+*/
+
+// ----------------
+// ---- COLORS ----
+// ----------------
+
+$ds44-contextual-color : #1496dc !default;
+$ds44-contextual-hover : lighten($ds44-contextual-color, 10%) !default;
+
+#sousTitre.h2-like {
+    background: none !important;
+    padding: 0 0 0 0 !important;
+}

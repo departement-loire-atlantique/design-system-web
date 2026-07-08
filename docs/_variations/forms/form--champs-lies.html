@@ -25,6 +25,16 @@ layout: pattern
 <br>
 <form>
     <div class="ds44-fieldContainer ds44-champsLies ds44-js-linked-fields">
+        {% include form/field/select/standard.html label="Nom thème" required="true" %}
+        {% include form/field/select/multilevel-data-url.html label="Nom du sous-thème" required="true" disabled="true" containerAttributes='data-url="/json/select-options-multilevel.json"' %}
+    </div>
+    <div><input type="submit" class="ds44-btnStd" value="Tester les champs" /></div>
+</form>
+<br>
+<hr/>
+<br>
+<form>
+    <div class="ds44-fieldContainer ds44-champsLies ds44-js-linked-fields">
         {% include form/field/input/autocomplete.html label="Champ adresse" required="true" type="address" url="https://api-adresse.data.gouv.fr/search/?limit=5&citycode=44109" attributes='data-mode="select-only"' class="ds44-inpLarge" title="Sélectionner Champ adresse - mise à jour automatique des sous-thèmes Rayon triés par ordre alphabétique" hasLocation="true" %}
         {% include form/field/select/standard.html label="Rayon" required="true" disabled="true" class="ds44-inpLarge" %}
     </div>
@@ -36,6 +46,19 @@ layout: pattern
 <form>
     <div class="ds44-fieldContainer ds44-champsLies ds44-js-linked-fields">
         {% include form/field/input/autocomplete.html label="Champ commune" required="true" type="address-level2" url="/json/autocomplete-city.json" attributes='data-mode="select-only"' class="ds44-inpLarge" title="Sélectionner Champ commune - mise à jour automatique des sous-thèmes Rayon triés par ordre alphabétique" %}
+        {% include form/field/input/autocomplete.html label="Champ adresse" required="true" disabled="true" type="address" url="https://api-adresse.data.gouv.fr/search/?limit=5&citycode=$parentValue" attributes='data-mode="select-only"' class="ds44-inpLarge" %}
+    </div>
+    <div><input type="submit" class="ds44-btnStd" value="Tester les champs" /></div>
+</form>
+<br>
+<hr/>
+<br>
+<form>
+    <div class="ds44-js-linked-fields" data-linked-fields-content=".ds44-js-linked-fields-content">
+        {% include form/field/input/autocomplete.html label="Champ commune" required="true" type="address-level2" url="/json/autocomplete-city.json" attributes='data-mode="select-only"' class="ds44-inpLarge" title="Sélectionner Champ commune - mise à jour automatique des sous-thèmes Rayon triés par ordre alphabétique" %}
+    </div>
+    {% include form/field/input/autocomplete.html label="Autre" required="true" type="address" url="https://api-adresse.data.gouv.fr/search/?limit=5" attributes='data-mode="select-only"' class="ds44-inpLarge" %}
+    <div class="ds44-js-linked-fields-content">
         {% include form/field/input/autocomplete.html label="Champ adresse" required="true" disabled="true" type="address" url="https://api-adresse.data.gouv.fr/search/?limit=5&citycode=$parentValue" attributes='data-mode="select-only"' class="ds44-inpLarge" %}
     </div>
     <div><input type="submit" class="ds44-btnStd" value="Tester les champs" /></div>
@@ -60,6 +83,87 @@ layout: pattern
     </div>
     <div><input type="submit" class="ds44-btnStd" value="Tester les champs" /></div>
 </form>
+
+
+<br><br><br>
+<p role="heading" aria-level="2" class="h3-like">Container Masqué avec une valeur exact</p>
+<br>
+<form>
+    <p>Les champs suivis d’un * sont obligatoires.</p>
+    <div class="ds44-mb3" >
+        {% include form/field/input/standard.html type="last-name" label="Pour afficher le container : Voir" id="nom-field" required="false" attributes='data-enabled-field-value="Voir"'%}
+    </div>
+    <div class="ds44-mb3" data-enabled-by-field="#nom-field">
+        {% include form/field/input/standard.html type="first-name" label="Prénom" required="true" %}
+    </div>
+    <div><input type="submit" class="ds44-btnStd" value="Tester les champs" /></div>
+</form>
+
+
+<br><br><br>
+<p role="heading" aria-level="2" class="h3-like">Container Masqué avec une valeur commençant par "Voir" </p>
+<br>
+<form>
+    <p>Les champs suivis d’un * sont obligatoires.</p>
+    <div class="ds44-mb3" >
+        {% include form/field/input/standard.html type="last-name" label="Pour afficher le container : Voir" id="nom-field-2" required="false" attributes='data-enabled-field-value="Voir*"'%}
+    </div>
+    <div class="ds44-mb3" data-enabled-by-field="#nom-field-2">
+        {% include form/field/input/standard.html type="first-name" label="Prénom" required="true" %}
+    </div>
+    <div><input type="submit" class="ds44-btnStd" value="Tester les champs" /></div>
+</form>
+
+
+<br><br><br>
+<p role="heading" aria-level="2" class="h3-like">Container Masqué avec une valeur finissant par "voir"</p>
+<br>
+<form>
+    <p>Les champs suivis d’un * sont obligatoires.</p>
+    <div class="ds44-mb3" >
+        {% include form/field/input/standard.html type="last-name" label="Pour afficher le container : voir" id="nom-field-3" required="false" attributes='data-enabled-field-value="*voir"'%}
+    </div>
+    <div class="ds44-mb3" data-enabled-by-field="#nom-field-3">
+        {% include form/field/input/standard.html type="first-name" label="Prénom" required="true" %}
+    </div>
+    <div><input type="submit" class="ds44-btnStd" value="Tester les champs" /></div>
+</form>
+
+<br><br><br>
+<p role="heading" aria-level="2" class="h3-like">Container Masqué via un input radio</p>
+<br>
+<form>
+    <p>Les champs suivis d’un * sont obligatoires.</p>
+    <div class="ds44-mb3" >
+        {% include form/layout/radios.html name="radio2" id="radio-field" choices="1:Voir Cadre 1,2:Voir Cadre 2,3:Rien" required="true" list="true" %}
+    </div>
+    <div class="ds44-mb3" data-enabled-by-field="#name-radio-radio-field-1">
+        {% include form/field/input/standard.html type="first-name" label="Valeur 1" required="true" %}
+    </div>
+    <div class="ds44-mb3" data-enabled-by-field="#name-radio-radio-field-2">
+        {% include form/field/input/standard.html type="first-name" label="Valuer 2" required="true" %}
+    </div>
+    <div><input type="submit" class="ds44-btnStd" value="Tester les champs" /></div>
+</form>
+
+<br><br><br>
+<p role="heading" aria-level="2" class="h3-like">Container Masqué via un input checkbox</p>
+<br>
+<form>
+    <p>Les champs suivis d’un * sont obligatoires.</p>
+    <div class="ds44-mb3" >
+        {% include form/layout/checkboxes.html name="radio2" id="checkbox-field" choices="1:Voir Cadre 1,2:Voir Cadre 2,3:Rien" required="true" list="true" %}
+    </div>
+    <div class="ds44-mb3" data-enabled-by-name-check-checkbox-field-1>
+        {% include form/field/input/standard.html type="first-name" label="Valeur 1" required="true" %}
+    </div>
+    <div class="ds44-mb3" data-enabled-by-name-check-checkbox-field-1 data-enabled-by-name-check-checkbox-field-2 >
+        {% include form/field/input/standard.html type="first-name" label="Valuer 2" required="true" %}
+    </div>
+    <div><input type="submit" class="ds44-btnStd" value="Tester les champs" /></div>
+</form>
+
+
 
 
 

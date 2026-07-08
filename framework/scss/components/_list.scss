@@ -17,6 +17,7 @@
             position: relative;
             padding-left: $ds44-padding-large;
 
+            > span,
             > a {
                 text-decoration: none;
                 transition: all $ds44-timing-standard $ds44-transition-std;
@@ -38,6 +39,7 @@
                 }
             }
 
+            > span.active,
             > a.active {
                 &:hover {
                     text-decoration: none;
@@ -119,6 +121,16 @@
             }
         }
     }
+
+    /* Liste de tag étiquettes servant pour les mots clés par exemple  */
+    &--tag {
+
+        > li {
+            display: inline-block;
+            margin-right: .5rem;
+            margin-top: .5rem;
+          }
+      }
 }
 
 .ds44-footerList {
@@ -136,6 +148,7 @@
         padding-left: 0;
     }
 
+    i ~ span,
     i ~ a {
         display: inline-block;
         vertical-align: top;
@@ -148,9 +161,6 @@
     }
 }
 
-.ds44-list .ds44-docListElem .ds44-cardFile {
-    padding-left: $ds44-padding-ico;
-}
 
 .ds44-uList {
     > li {
@@ -166,7 +176,38 @@
         padding-left: 20px;
         background: url(/assets/images/right.svg) no-repeat left -9px;
         background-size: 20px;
-        font-size: 1.6rem;
+        font-size: 1em;
+    }
+}
+
+
+// Dobrée list Title
+ul:not(.ds44-list):not(.ds44-collapser).dobree-list-title {
+    margin: 0;
+    padding: 0;
+
+    li {
+        list-style : none !important;
+        margin: 0 0 1em 0;
+
+        a {
+            text-decoration: none;
+            font-family: $ds44-font-family-baseModern;
+            font-size: 1.875em;
+            font-weight: 400;
+
+            .icon::before {
+              font-size: 0.9em;
+              line-height: .5;
+              padding: 0 .5em 0 .5em;
+              transition: all $ds44-timing-standard ease;
+            }
+            &:hover, &:focus {
+                .icon::before {
+                  padding: 0 0 0 1em;
+                }
+            }
+        }
     }
 }
 
@@ -179,6 +220,14 @@
         display: block;
         column-count: 2;
         text-align: left;
+    }
+    // Dobrée list Title
+    ul:not(.ds44-list):not(.ds44-collapser).dobree-list-title {
+        li {
+            a {
+                font-size: 1.125em;
+            }
+        }
     }
 
 }

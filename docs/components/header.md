@@ -3,19 +3,34 @@ layout: component-detail
 group: components
 
 title: Header
-description: Header
-status: A valider
+description: Un header désigne le haut d'une page sur un site web. On y retrouve le logo du site ainsi que le menu principal sous forme de munu appelé burger. C'est ce qui va permettre de capter l'attention des visiteurs et leur donner envie de rester sur le site puis de visiter les autres pages de ce même site.
+status: Validé
 
 variations:
 - title: Bandeau standard
   description: Header Loire Atlantique
   pattern: header/header-LA.html
+- title: Variante ASSMAT Connecté
+  description: Header avec le menu Mon compte
+  pattern: header/header-assmat-connected.html
 - title: Variante type site Handicap
   description: Header avec menu supplémentaire
   pattern: header/header-variante-1.html
 - title: Variante type site Archives
   description: Header sans recherche
   pattern: header/header-variante-2.html
+- title: Variante Grand Patrimoine
+  description: Header Grand Patrimoine - Chateau de Clisson
+  pattern: header/header-chateauClisson.html
+- title: Variante Aidants
+  description: Header avec logo très large
+  pattern: header/header-aidants.html  
+- title: Variante Musée Dobrée
+  description: Header du site du Musée Dobrée
+  pattern: header/header-dobree.html  
+- title: Variante Musée Dobrée Vidéo
+  description: Header du site du Musée Dobrée de la page d'accueil qui est sur la vidéo
+  pattern: header/header-dobree-video.html  
 ---
 
 ## Notes d'intégration

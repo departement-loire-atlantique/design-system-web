@@ -1,10 +1,8 @@
 class MapAbstract {
-    constructor (selector) {
-        const maps = document.querySelectorAll(selector);
-        if (maps.length === 0) {
-            return;
-        }
-
+    constructor (className, selector) {
+        this.selector = selector;
+        this.className = className;
+        Debug.log(this.className+" -> Construct ");
         this.objects = [];
         this.isMapLanguageLoaded = false;
         this.isMapLoaded = false;
@@ -14,11 +12,36 @@ class MapAbstract {
         this.geojsonFillsId = 'geojson-fills';
         this.geojsonLinesId = 'geojson-lines';
 
+        MiscEvent.addListener('search:focus', this.resultFocus.bind(this));
+        MiscEvent.addListener('search:blur', this.resultBlur.bind(this));
+    }
+
+    initialise() {
+        Debug.log(this.className+" -> Initialise ");
+        const maps = document.querySelectorAll(this.selector);
+
+        if (maps.length === 0) {
+            return;
+        }
         maps
-            .forEach((element) => {
-                this.create(element);
-            });
+          .forEach((element) => {
+              if(MiscComponent.checkAndCreate(element, "maps")) {
+                  this.create(element);
+              }
+          });
         this.initialize();
+
+        this.submit = false;
+        [].forEach.call(document.querySelectorAll("form"), (el)=>{
+            MiscEvent.addListener("submit", () => {
+                this.submit = true;
+            }, el);
+        });
+    }
+
+    clearObject() {
+        Debug.log(this.className+" -> Clear object");
+        this.objects = [];
     }
 
     create (element) {
@@ -34,15 +57,16 @@ class MapAbstract {
             'isVisible': true,
             'isMoving': false,
             'maximumTop': null,
-            'geojson': null
+            'geojson': null,
+            "geojsonId": null,
+            'iconsMarker': [],
+            "popinIdsByElementIds": {}
         };
         object.mapElement.setAttribute('id', object.id);
         this.objects.push(object);
     }
 
     initialize () {
-        MiscEvent.addListener('search:focus', this.resultFocus.bind(this));
-        MiscEvent.addListener('search:blur', this.resultBlur.bind(this));
 
         for (let objectIndex = 0; objectIndex < this.objects.length; objectIndex++) {
             const object = this.objects[objectIndex];
@@ -50,6 +74,7 @@ class MapAbstract {
             MiscEvent.addListener('search:update', this.search.bind(this, objectIndex));
             MiscEvent.addListener('resize', this.resize.bind(this, objectIndex), window);
             MiscEvent.addListener('scroll', this.scroll.bind(this, objectIndex), window);
+            MiscEvent.addListener("map:aroundMe", this.aroundMe.bind(this, objectIndex), object.mapElement);
 
             // Show results at startup for mobiles
             const breakpoint = window.matchMedia('(max-width: 767px)');
@@ -96,8 +121,60 @@ class MapAbstract {
 
     mapScriptLoaded () {
         this.isMapLoaded = true;
-        window.mapboxgl.accessToken = 'pk.eyJ1IjoiemF6aWZmaWMiLCJhIjoiY2s3bmtxYXh2MDNqZzNkdDc3NzJ0aGdqayJ9.TuhsI1ZKXwKSGw2F3bVy5g';
+        window.mapboxgl.accessToken = 'pk.eyJ1IjoibG9pcmVhdGxhbnRpcXVlIiwiYSI6ImNqaHZ5YnNnazBkbWIza21tbWQ2NHF4aWMifQ.oAN8kiv6TejIMjHDVLelXA';
         this.mapLoad();
+    }
+
+    aroundMe(objectIndex, evt) {
+        const object = this.objects[objectIndex];
+        if (!object) {
+            return;
+        }
+        if(evt.detail.metadata)
+        {
+            if(!object.map.getSource('currentMarker'))
+            {
+                object.map.addSource('currentMarker', {
+                    'type': 'geojson',
+                    'data': {
+                        'type': 'FeatureCollection',
+                        'features': [
+                            {
+                                'type': 'Feature',
+                                'geometry': {
+                                    'type': 'Point',
+                                    'coordinates': [evt.detail.metadata.longitude, evt.detail.metadata.latitude]
+                                }
+                            }
+                        ]
+                    }
+                });
+
+                // Add a layer to use the image to represent the data.
+                object.map.addLayer({
+                    'id': 'currentMarker',
+                    'type': 'symbol',
+                    'source': 'currentMarker', // reference the data source
+                    'layout': {
+                        'icon-image': 'current-marker', // reference the image
+                        'icon-size': 0.30
+                    }
+                });
+            }
+            else
+            {
+                object.map.getSource('currentMarker').setData({
+                  'type': 'Feature',
+                  'geometry': {
+                      'type': 'Point',
+                      'coordinates': [evt.detail.metadata.longitude, evt.detail.metadata.latitude]
+                  }
+              });
+            }
+
+        }
+
+
     }
 
     mapLoad () {
@@ -115,6 +192,28 @@ class MapAbstract {
                     zoom: 8
                 });
                 object.map.on('load', this.afterLoad.bind(this, objectIndex));
+                // Add Icon Marker
+                let iconsMarker = object.mapElement.getAttribute('data-icons-marker');
+                if(iconsMarker)
+                {
+                    iconsMarker = JSON.parse(iconsMarker);
+                    if(iconsMarker[0] !== undefined)
+                    {
+                        for (const [key, pathImage] of Object.entries(iconsMarker[0])) {
+                            if(!object.map.hasImage(key)) {
+                                object.map.loadImage(
+                                  pathImage,
+                                  (error, image) => {
+                                      if (!error) {
+                                          object.map.addImage(key, image);
+                                          object.iconsMarker.push(key);
+                                      }
+                                  }
+                                );
+                            }
+                        }
+                    }
+                }
             }
         }
     }
@@ -137,6 +236,17 @@ class MapAbstract {
             );
         }
 
+        object.map.loadImage(
+          "https://design-loire-atlantique.yipikai.dev/assets/images/apps/assmat/icones/png/icon-current.png",
+          (error, image) => {
+              if (error) throw error;
+              object.map.addImage("current-marker", image);
+              if(object.mapElement.hasAttribute("data-around-me")) {
+                  MiscEvent.dispatch("map:aroundMe", {metadata: JSON.parse(object.mapElement.getAttribute("data-around-me"))}, object.mapElement);
+              }
+          }
+        );
+
         object.map.addControl(new window.mapboxgl.NavigationControl(), 'bottom-right');
         object.map.addControl(new window.mapboxgl.FullscreenControl(), 'bottom-left');
         object.map.addControl(new window.MapboxLanguage({ defaultLanguage: 'fr' }));
@@ -151,9 +261,11 @@ class MapAbstract {
             .forEach((mapToggleViewElement) => {
                 MiscEvent.addListener('click', this.toggleView.bind(this, objectIndex), mapToggleViewElement);
             });
+
     }
 
     loadGeojson (objectIndex, geojson) {
+
         if (geojson) {
             const object = this.objects[objectIndex];
             if (!object || object.geojson) {
@@ -216,7 +328,25 @@ class MapAbstract {
         }
 
         // Show current geojson
-        const geojsonIds = [...new Set(this.getGeojsonIds(objectIndex))];
+        let geojsonIds = [...new Set(this.getGeojsonIds(objectIndex))];
+
+		    // Select specific zone in geojson
+        let geojsonCode = object.mapElement.getAttribute('data-geojson-code');
+
+        if(object.geojsonId !== undefined && object.geojsonId !== null)
+        {
+            geojsonCode = object.geojsonId ? object.geojsonId : "0";
+            geojsonIds = [geojsonCode];
+            if(this.submit)
+            {
+                object.zoom = true;
+            }
+        }
+        else if(geojsonCode != null) {
+        	geojsonIds = [geojsonCode];
+          object.zoom = true;
+        }
+
         let filterParameters = [];
         if (geojsonIds.length === 0) {
             filterParameters = ['!has', 'name'];
@@ -233,8 +363,9 @@ class MapAbstract {
         object.map.setFilter(this.geojsonFillsId, filterParameters);
         object.map.setFilter(this.geojsonLinesId, filterParameters);
 
+
         // Zoom the map
-        if (object.zoom && geojsonIds.length !== 0) {
+        if (((geojsonCode != null && geojsonCode !== "0") && object.zoom) && geojsonIds.length !== 0) {
             let hasBoundingBox = false;
             let boundingBox = null;
 
@@ -242,15 +373,17 @@ class MapAbstract {
             for (let i = 0; i < features.length; i++) {
                 if (geojsonIds.includes(features[i].properties.name)) {
                     hasBoundingBox = true;
+                    if(features[i].geometry.coordinates !== undefined)
+                    {
+                        for (let j = 0; j < features[i].geometry.coordinates.length; j++) {
+                            const subCoordinates = features[i].geometry.coordinates[j];
 
-                    for (let j = 0; j < features[i].geometry.coordinates.length; j++) {
-                        const subCoordinates = features[i].geometry.coordinates[j];
-
-                        for (let k = 0; k < subCoordinates.length; k++) {
-                            if (!boundingBox) {
-                                boundingBox = new window.mapboxgl.LngLatBounds(subCoordinates[k], subCoordinates[k]);
-                            } else {
-                                boundingBox = boundingBox.extend(new window.mapboxgl.LngLatBounds(subCoordinates[k], subCoordinates[k]));
+                            for (let k = 0; k < subCoordinates.length; k++) {
+                                if (!boundingBox) {
+                                    boundingBox = new window.mapboxgl.LngLatBounds(subCoordinates[k], subCoordinates[k]);
+                                } else {
+                                    boundingBox = boundingBox.extend(new window.mapboxgl.LngLatBounds(subCoordinates[k], subCoordinates[k]));
+                                }
                             }
                         }
                     }
@@ -264,8 +397,11 @@ class MapAbstract {
                     {
                         padding: 50,
                         maxZoom: 15
+                    }, {
+                        refresh:     (this.submit && object.geojsonId !== undefined)
                     }
                 );
+                this.submit = false;
             }
         }
     }
@@ -379,12 +515,14 @@ class MapAbstract {
     }
 
     search (objectIndex, evt) {
+
         const object = this.objects[objectIndex];
         if (!object) {
             return;
         }
 
         object.newResults = evt.detail.newResults;
+        object.geojsonId = evt.detail.geojsonId;
         object.zoom = evt.detail.zoom;
         object.addUp = evt.detail.addUp;
 

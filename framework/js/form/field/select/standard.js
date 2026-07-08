@@ -1,12 +1,22 @@
-class FormFieldSelectStandard extends FormFieldSelectAbstract {
+class FormFieldSelectStandardClass extends FormFieldSelectAbstract {
     constructor () {
         super(
+          "FormFieldSelectStandard",
             '.ds44-selectDisplay.ds44-js-select-standard',
             'selectStandard'
         );
     }
 
     initialize () {
+
+        for (let objectIndex = 0; objectIndex < this.objects.length; objectIndex++) {
+            const object = this.objects[objectIndex];
+            if (object.isSubSubInitialized) {
+                continue;
+            }
+            this.objects[objectIndex]["selectedOption"] = object.selectListElement.querySelector('.selected_option');
+        }
+
         super.initialize();
 
         for (let objectIndex = 0; objectIndex < this.objects.length; objectIndex++) {
@@ -18,7 +28,15 @@ class FormFieldSelectStandard extends FormFieldSelectAbstract {
 
             MiscEvent.addListener('keyPress:spacebar', this.selectOption.bind(this, objectIndex));
             MiscEvent.addListener('keyPress:enter', this.selectOption.bind(this, objectIndex));
+
+            if (this.objects[objectIndex]["selectedOption"]) {
+                this.objects[objectIndex]["selectedOption"].classList.add('selected_option');
+                this.objects[objectIndex]["selectedOption"].setAttribute('aria-selected', 'true');
+                this.record(objectIndex);
+            }
+
         }
+
     }
 
     selectOption (objectIndex, evt) {
@@ -90,7 +108,7 @@ class FormFieldSelectStandard extends FormFieldSelectAbstract {
         }
 
         const object = this.objects[objectIndex];
-        if(!object) {
+        if (!object) {
             return;
         }
 
@@ -120,6 +138,54 @@ class FormFieldSelectStandard extends FormFieldSelectAbstract {
         });
     }
 
+    selectAfterShow (objectIndex) {
+        const optionElements = this.getOptionElements(objectIndex);
+        if (!optionElements) {
+            return;
+        }
+
+        const object = this.objects[objectIndex];
+        if (!object) {
+            return;
+        }
+
+        const data = this.getData(objectIndex);
+        if (!data || !data[object.name].value) {
+            this.nextOption(objectIndex);
+            return;
+        }
+
+        let values = data[object.name].value;
+        if (typeof values !== 'object') {
+            values = [values];
+        }
+
+        optionElements.forEach((optionElement) => {
+            let value = optionElement.getAttribute('data-value');
+            if (value == parseFloat(value, 10)) {
+                value = parseFloat(value, 10);
+            }
+            if (values.includes(value)) {
+                // Selected
+                this.setFocus(objectIndex, optionElement);
+            }
+        });
+    }
+
+    selectAfterHide (objectIndex) {
+        this.selectFromValue(objectIndex);
+    }
+
+    setFocus (objectIndex, element) {
+        super.setFocus(objectIndex, element);
+
+        const optionElements = this.getOptionElements(objectIndex);
+        optionElements.forEach((optionElement) => {
+            optionElement.removeAttribute('aria-selected');
+        });
+        element.setAttribute('aria-selected', 'true');
+    }
+
     getDomData (listElement) {
         return {
             'value': listElement.getAttribute('data-value'),
@@ -136,6 +202,19 @@ class FormFieldSelectStandard extends FormFieldSelectAbstract {
         return object.selectListElement.querySelectorAll('.ds44-select-list_elem');
     }
 }
-
 // Singleton
+var FormFieldSelectStandard = (function () {
+    "use strict";
+    var instance;
+    function Singleton() {
+        if (!instance) {
+            instance = new FormFieldSelectStandardClass();
+        }
+        instance.initialise();
+    }
+    Singleton.getInstance = function () {
+        return instance || new Singleton();
+    }
+    return Singleton;
+}());
 new FormFieldSelectStandard();

@@ -11542,8 +11542,8 @@ table.ds44-tableau_5col tr {
 #map-container svg #echangeur-nord-voie1-fleche, #map-container svg #echangeur-nord-voie1-croix,
 #map-container svg #echangeur-nord-voie2-fleche, #map-container svg #echangeur-nord-voie2-croix,
 #map-container svg #echangeur-nord-voie3-fleche, #map-container svg #echangeur-nord-voie3-croix,
-#map-container svg #traficolor-nord g[id*=trafic-vert], #map-container svg #traficolor-nord g[id*=trafic-orange], #map-container svg #traficolor-nord g[id*=trafic-rouge],
-#map-container svg #traficolor-sud g[id*=trafic-vert], #map-container svg #traficolor-sud g[id*=trafic-orange], #map-container svg #traficolor-sud g[id*=trafic-rouge],
+#map-container svg #traficolor-nord g[id*=trafic-vert], #map-container svg #traficolor-nord g[id*=trafic-orange], #map-container svg #traficolor-nord g[id*=trafic-rouge], #map-container svg #traficolor-nord g[id*=trafic-gris],
+#map-container svg #traficolor-sud g[id*=trafic-vert], #map-container svg #traficolor-sud g[id*=trafic-orange], #map-container svg #traficolor-sud g[id*=trafic-rouge], #map-container svg #traficolor-sud g[id*=trafic-gris],
 #map-container svg #perturbation-vent, #map-container svg #perturbation-nord-ouest, #map-container svg #perturbation-nord-est, #map-container svg #perturbation-sud-ouest, #map-container svg #perturbation-sud-est, #map-container svg #perturbation-a, #map-container svg #perturbation-b, #map-container svg #perturbation-c, #map-container svg #perturbation-d, #map-container svg #perturbation-e {
   display: none;
 }
@@ -11559,8 +11559,8 @@ table.ds44-tableau_5col tr {
 #main-container[data-mode-circulation=mode-particulier] #map-container svg #voie1-particulier, #main-container[data-mode-circulation=mode-particulier] #map-container svg #voie2-particulier, #main-container[data-mode-circulation=mode-particulier] #map-container svg #voie3-particulier {
   display: block;
 }
-#main-container[data-mode-circulation=mode-particulier] #map-container svg #traficolor-nord g[id*=trafic-vert], #main-container[data-mode-circulation=mode-particulier] #map-container svg #traficolor-nord g[id*=trafic-orange], #main-container[data-mode-circulation=mode-particulier] #map-container svg #traficolor-nord g[id*=trafic-rouge],
-#main-container[data-mode-circulation=mode-particulier] #map-container svg #traficolor-sud g[id*=trafic-vert], #main-container[data-mode-circulation=mode-particulier] #map-container svg #traficolor-sud g[id*=trafic-orange], #main-container[data-mode-circulation=mode-particulier] #map-container svg #traficolor-sud g[id*=trafic-rouge] {
+#main-container[data-mode-circulation=mode-particulier] #map-container svg #traficolor-nord g[id*=trafic-vert], #main-container[data-mode-circulation=mode-particulier] #map-container svg #traficolor-nord g[id*=trafic-orange], #main-container[data-mode-circulation=mode-particulier] #map-container svg #traficolor-nord g[id*=trafic-rouge], #main-container[data-mode-circulation=mode-particulier] #map-container svg #traficolor-nord g[id*=trafic-gris],
+#main-container[data-mode-circulation=mode-particulier] #map-container svg #traficolor-sud g[id*=trafic-vert], #main-container[data-mode-circulation=mode-particulier] #map-container svg #traficolor-sud g[id*=trafic-orange], #main-container[data-mode-circulation=mode-particulier] #map-container svg #traficolor-sud g[id*=trafic-rouge], #main-container[data-mode-circulation=mode-particulier] #map-container svg #traficolor-sud g[id*=trafic-rouge], #main-container[data-mode-circulation=mode-particulier] #map-container svg #traficolor-sud g[id*=trafic-gris] {
   display: none;
 }
 
@@ -11569,8 +11569,8 @@ table.ds44-tableau_5col tr {
 #main-container[data-mode-circulation=m000] #map-container svg #echangeur-sud-voie1-croix, #main-container[data-mode-circulation=m000] #map-container svg #echangeur-sud-voie2-croix, #main-container[data-mode-circulation=m000] #map-container svg #echangeur-sud-voie3-croix {
   display: block;
 }
-#main-container[data-mode-circulation=m000] #map-container svg #traficolor-nord g[id*=trafic-vert], #main-container[data-mode-circulation=m000] #map-container svg #traficolor-nord g[id*=trafic-orange], #main-container[data-mode-circulation=m000] #map-container svg #traficolor-nord g[id*=trafic-rouge],
-#main-container[data-mode-circulation=m000] #map-container svg #traficolor-sud g[id*=trafic-vert], #main-container[data-mode-circulation=m000] #map-container svg #traficolor-sud g[id*=trafic-orange], #main-container[data-mode-circulation=m000] #map-container svg #traficolor-sud g[id*=trafic-rouge] {
+#main-container[data-mode-circulation=m000] #map-container svg #traficolor-nord g[id*=trafic-vert], #main-container[data-mode-circulation=m000] #map-container svg #traficolor-nord g[id*=trafic-orange], #main-container[data-mode-circulation=m000] #map-container svg #traficolor-nord g[id*=trafic-rouge], #main-container[data-mode-circulation=m000] #map-container svg #traficolor-nord g[id*=trafic-gris],
+#main-container[data-mode-circulation=m000] #map-container svg #traficolor-sud g[id*=trafic-vert], #main-container[data-mode-circulation=m000] #map-container svg #traficolor-sud g[id*=trafic-orange], #main-container[data-mode-circulation=m000] #map-container svg #traficolor-sud g[id*=trafic-rouge], #main-container[data-mode-circulation=m000] #map-container svg #traficolor-sud g[id*=trafic-gris] {
   display: none;
 }
 
@@ -11871,6 +11871,16 @@ table.ds44-tableau_5col tr {
   display: block;
 }
 
+#main-container[data-trafic-nord=gris] #voie1 path[id*=voie-couleur], #main-container[data-trafic-nord=gris] #voie1-seule path[id*=voie-couleur], #main-container[data-trafic-nord=gris] #voie2n path[id*=voie-couleur], #main-container[data-trafic-nord=gris] #voie2n-seule path[id*=voie-couleur] {
+  fill: #ccc;
+}
+#main-container[data-trafic-nord=gris] #voie1 path[id*=fleche-couleur], #main-container[data-trafic-nord=gris] #voie1-seule path[id*=fleche-couleur], #main-container[data-trafic-nord=gris] #voie2n path[id*=fleche-couleur], #main-container[data-trafic-nord=gris] #voie2n-seule path[id*=fleche-couleur] {
+  fill: #000;
+}
+#main-container[data-trafic-nord=gris] #traficolor-nord g[id*=trafic-gris] {
+  display: block;
+}
+
 #main-container[data-trafic-sud=vert] #voie2s path[id*=voie-couleur], #main-container[data-trafic-sud=vert] #voie2s-seule path[id*=voie-couleur], #main-container[data-trafic-sud=vert] #voie3 path[id*=voie-couleur], #main-container[data-trafic-sud=vert] #voie3-seule path[id*=voie-couleur] {
   fill: #99e6d1;
 }
@@ -11898,6 +11908,16 @@ table.ds44-tableau_5col tr {
   fill: #fff;
 }
 #main-container[data-trafic-sud=rouge] #traficolor-sud g[id*=trafic-rouge] {
+  display: block;
+}
+
+#main-container[data-trafic-sud=gris] #voie2s path[id*=voie-couleur], #main-container[data-trafic-sud=gris] #voie2s-seule path[id*=voie-couleur], #main-container[data-trafic-sud=gris] #voie3 path[id*=voie-couleur], #main-container[data-trafic-sud=gris] #voie3-seule path[id*=voie-couleur] {
+  fill: #ccc;
+}
+#main-container[data-trafic-sud=gris] #voie2s path[id*=fleche-couleur], #main-container[data-trafic-sud=gris] #voie2s-seule path[id*=fleche-couleur], #main-container[data-trafic-sud=gris] #voie3 path[id*=fleche-couleur], #main-container[data-trafic-sud=gris] #voie3-seule path[id*=fleche-couleur] {
+  fill: #000;
+}
+#main-container[data-trafic-sud=gris] #traficolor-sud g[id*=trafic-gris] {
   display: block;
 }
 

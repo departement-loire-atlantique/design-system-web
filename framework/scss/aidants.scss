@@ -1,0 +1,85 @@
+@charset "UTF-8";
+/*
+* CD44 Design System - Main SCSS
+*/
+
+
+/* ----------------------------*/
+/* ------ - 1 - Config ------- */
+/* --------------------------- */
+
+// Base KNACSS config
+@import "./node_modules/knacss/sass/_config/variables";
+@import "./node_modules/knacss/sass/_config/mixins";
+
+// CD44 config
+@import "_config/variables";
+@import "_config/contextual-variables-aidants.scss";  // Abbaye de blanche Couronne - site Patrimoine marron  /!\
+@import "_config/mixins";
+
+/* -------------------------------*/
+/* ------ - 2 - Libraries ------- */
+/* ------------------------------ */
+
+// KNACSS Libraries
+
+@import "./node_modules/knacss/sass/_library/print";                // print quick reset
+@import "./node_modules/knacss/sass/_library/utilities";            // width and spacer helpers
+@import "./node_modules/knacss/sass/_library/grillade-grid";        // Grid System
+@import "./node_modules/knacss/sass/_library/layout";               // alignment, modules, positionning
+
+// KNACSS modified Libraries
+
+@import "_libraries/base";
+@import "_libraries/ds44-grid";                                     // DS44 specific grid custo
+@import "_libraries/ds44-utils";                                    // DS44 utilities
+@import "_libraries/responsive";                                    // Responsive Web Design helpers
+
+// CD44 specific Libraries
+
+@import "_libraries/fonts";
+
+/* ---------------------------------------------------*/
+/* ------ - 3 - KNACSS components             ------- */
+/* -------------------------------------------------- */
+
+@import "./node_modules/knacss/sass/components/skip-links";   // Accessibility tool
+//@import "./node_modules/knacss/sass/components/buttons";    // KNACSS buttons
+//@import "./node_modules/knacss/sass/components/media";      // media object
+//@import "./node_modules/knacss/sass/components/tables";     // data tables consistency
+//@import "./node_modules/knacss/sass/components/forms";      // forms consistency and styles
+//@import "./node_modules/knacss/sass/components/checkbox";   // checkbox, radio, switch styles
+//@import "./node_modules/knacss/sass/components/tabs";       // tabs styles
+//@import "./node_modules/knacss/sass/components/arrows";     // arrows styles
+//@import "./node_modules/knacss/sass/components/tags";       // tags styles
+//@import "./node_modules/knacss/sass/components/badges";     // badges styles
+//@import "./node_modules/knacss/sass/components/alerts";     // alerts styles
+
+/* ---------------------------------------------------*/
+/* ------ - 4 - CD44 components               ------- */
+/* -------------------------------------------------- */
+
+@import "components/collapser";
+@import "components/calendar";
+@import "components/card";
+@import "components/carrousel";
+@import "components/templates.scss";
+@import "components/boxes.scss";
+@import "components/list.scss";
+@import "components/forms.scss";
+@import "components/buttons.scss";
+@import "components/header.scss";
+@import "components/breadcrumb.scss";
+@import "components/footer.scss";
+@import "components/menu.scss";
+@import "components/onglets.scss";
+@import "components/overlays.scss";
+@import "components/share.scss";
+@import "components/images.scss";
+@import "components/wysiwyg.scss";
+@import "components/carrousel.scss";
+@import "components/timeline.scss";
+@import "tooltip/abstract.scss";
+@import "aside/summary.scss";
+
+@import "apps/pont.scss"; // à retirer une fois la séparation entre applis et web effectuée dans le DS

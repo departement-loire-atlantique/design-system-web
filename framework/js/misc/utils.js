@@ -14,6 +14,18 @@ class MiscUtils {
         return 'id' + Math.random().toString(36).substring(2, 15);
     }
 
+    static generateKey(length = 4) {
+        let result = '';
+        const characters = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789';
+        const charactersLength = characters.length;
+        let counter = 0;
+        while (counter < length) {
+            result += characters.charAt(Math.floor(Math.random() * charactersLength));
+            counter += 1;
+        }
+        return result;
+    }
+
     static isInDevMode () {
         return (document.location.hostname === 'localhost');
     }
@@ -104,9 +116,10 @@ class MiscUtils {
             const now = 'now' in window.performance ? performance.now() : new Date().getTime();
             const time = Math.min(1, ((now - startTime) / duration));
             const timeFunction = easings[easing](time);
-            window.scroll(0, Math.ceil((timeFunction * (destinationOffsetToScroll - start)) + start));
+            var scrollValue = Math.ceil((timeFunction * (destinationOffsetToScroll - start)) + start);
+            window.scroll(0, scrollValue);
 
-            if (Math.round(window.pageYOffset) === destinationOffsetToScroll) {
+        if (Math.round(window.pageYOffset) === destinationOffsetToScroll || scrollValue === destinationOffsetToScroll ) {
                 if (callback) {
                     callback();
                 }
@@ -144,4 +157,13 @@ class MiscUtils {
 
         return hash;
     }
+
+    static isMobileSize() {
+        return  MiscUtils.isMatchMedia("(max-width: 991px)");
+    }
+
+    static isMatchMedia(media) {
+        return  (window.matchMedia(media).matches);
+    }
+
 }

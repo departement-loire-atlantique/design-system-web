@@ -1,0 +1,12 @@
+[
+  {
+    "accident": "/assets/images/apps/ponts/icones/png/iconAccident.png",
+    "bacs": "/assets/images/apps/ponts/icones/png/iconBacs.png",
+    "vent": "/assets/images/apps/ponts/icones/png/iconVent.png",
+    "verglasneige": "/assets/images/apps/ponts/icones/png/iconGlaces.png",
+    "bouchons": "/assets/images/apps/ponts/icones/png/iconBouchons.png",
+    "deviation": "/assets/images/apps/ponts/icones/png/iconDeviation.png",
+    "chantier": "/assets/images/apps/ponts/icones/png/iconTravaux.png",
+    "autres": "/assets/images/apps/ponts/icones/png/iconAutres.png"
+  }
+]

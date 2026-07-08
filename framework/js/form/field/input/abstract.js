@@ -11,8 +11,27 @@ class FormFieldInputAbstract extends FormFieldAbstract {
         object.textElement = element;
         object.valueElement = element;
         object.inputElements = [element];
+        object.iconButton = null;
         object.labelElement = MiscDom.getPreviousSibling(element, 'label');
         object.resetButtonElement = MiscDom.getNextSibling(element, '.ds44-reset');
+        object.showPasswordButton = MiscDom.getNextSibling(element, ".ds44-showPassword");
+
+        if(object.element.dataset.fieldCompare)
+        {
+            let fieldCompare = document.querySelector(object.element.dataset.fieldCompare);
+            if(fieldCompare) {
+                object.fieldCompare = {
+                    "element":  fieldCompare,
+                    "label":    MiscDom.getPreviousSibling(fieldCompare, 'label'),
+                    "error":    false
+                };
+            }
+        }
+        let fieldsToCompare = document.querySelectorAll("*[data-field-compare='#"+element.getAttribute("id")+"']");
+        if(fieldsToCompare) {
+            object.fieldsToCompare = fieldsToCompare;
+        }
+
     }
 
     initialize () {
@@ -29,11 +48,23 @@ class FormFieldInputAbstract extends FormFieldAbstract {
             MiscEvent.addListener('blur', this.blur.bind(this, objectIndex), object.textElement);
             MiscEvent.addListener('invalid', this.invalid.bind(this, objectIndex), object.textElement);
             MiscEvent.addListener('keyUp:*', this.write.bind(this, objectIndex));
+            MiscEvent.addListener('field:check-value', this.checkValue.bind(this, objectIndex), object.textElement);
+
             if (object.resetButtonElement) {
-                MiscEvent.addListener('click', this.reset.bind(this, objectIndex), object.resetButtonElement);
+                MiscEvent.addListener('click', ()=>{
+                    MiscEvent.dispatch("field:reset", {}, object.textElement);
+                }, object.resetButtonElement);
             }
             if (object.labelElement) {
                 MiscEvent.addListener('click', this.focusOnTextElement.bind(this, objectIndex), object.labelElement);
+            }
+            if(object.iconButton) {
+                MiscEvent.addListener('click', () => {
+                    object.valueElement.click();
+                }, object.iconButton);
+            }
+            if(object.showPasswordButton) {
+                MiscEvent.addListener('click', this.tooglePasswordField.bind(this, objectIndex), object.showPasswordButton);
             }
             this.quit(objectIndex);
         }
@@ -48,8 +79,33 @@ class FormFieldInputAbstract extends FormFieldAbstract {
         ) {
             return;
         }
-
+        this.checkValue(objectIndex);
+        this.toggleContainerByValue(objectIndex, object.element.value);
         this.showNotEmpty(objectIndex);
+    }
+
+    checkValue(objectIndex) {
+        const object = this.objects[objectIndex];
+        if (!object) {
+            return;
+        }
+
+        if(object.fieldCompare) {
+            if(object.fieldCompare.element.value !== null && object.fieldCompare.element.value !== object.element.value) {
+                object.fieldCompare.error = true;
+                this.invalid(objectIndex);
+            }
+            else {
+                object.fieldCompare.error = false;
+                this.removeInvalid(objectIndex);
+            }
+        }
+        if(object.fieldsToCompare.length > 0) {
+            object.fieldsToCompare.forEach((element) => {
+                MiscEvent.dispatch("field:check-value", {}, element);
+            });
+        }
+
     }
 
     showNotEmpty (objectIndex) {
@@ -58,10 +114,13 @@ class FormFieldInputAbstract extends FormFieldAbstract {
         this.showHideResetButton(objectIndex);
     }
 
-    reset (objectIndex) {
+    reset (objectIndex, evt) {
         this.empty(objectIndex);
 
-        this.focusOnTextElement(objectIndex);
+        if(evt.detail.focus === undefined || evt.detail.focus !== false)
+        {
+            this.focusOnTextElement(objectIndex);
+        }
     }
 
     enableElements (objectIndex, evt) {
@@ -234,6 +293,13 @@ class FormFieldInputAbstract extends FormFieldAbstract {
             return this.formatErrorMessage(objectIndex);
         }
 
+        if(object.fieldCompare && object.fieldCompare.error) {
+            let pattern = {
+                "fieldNameCompare": object.fieldCompare.label.innerText.replace(/\*$/, '')
+            }
+            return this.formatErrorMessage(objectIndex, 'FIELD_VALID_COMPARE', pattern);
+        }
+
         const autocomplete = object.textElement.getAttribute('autocomplete');
         if (
             autocomplete === 'email' &&
@@ -242,7 +308,7 @@ class FormFieldInputAbstract extends FormFieldAbstract {
             return this.formatErrorMessage(objectIndex, 'FIELD_VALID_EMAIL_MESSAGE');
         }
         if (
-            autocomplete === 'tel' &&
+            autocomplete === 'tel-national' &&
             !MiscForm.isPhone(data[object.name].value)
         ) {
             return this.formatErrorMessage(objectIndex, 'FIELD_VALID_PHONE_MESSAGE');
@@ -270,7 +336,6 @@ class FormFieldInputAbstract extends FormFieldAbstract {
         if (!object || !object.textElement) {
             return true;
         }
-
         const data = this.getData(objectIndex);
         if (!data) {
             return true;
@@ -284,7 +349,7 @@ class FormFieldInputAbstract extends FormFieldAbstract {
             return false;
         }
         if (
-            autocomplete === 'tel' &&
+            autocomplete === 'tel-national' &&
             !MiscForm.isPhone(data[object.name].value)
         ) {
             return false;
@@ -349,5 +414,45 @@ class FormFieldInputAbstract extends FormFieldAbstract {
             inputElement.setAttribute('aria-invalid', 'true');
         });
         object.textElement.classList.add('ds44-error');
+    }
+
+    tooglePasswordField(objectIndex) {
+        const object = this.objects[objectIndex];
+        if (!object || !object.textElement) {
+            return;
+        }
+        let icon = object.showPasswordButton.querySelector(".icon");
+        let iconShow = "icon-visuel";
+        let iconHide = "icon-handicap-visuel";
+
+        let entitled = object.showPasswordButton.querySelector(".visually-hidden");
+        let entitledShow = MiscTranslate._('FIELD_PASSWORD_VIEW')+" : "+object.labelElement.textContent.replace("*", "");
+        let entitledHide = MiscTranslate._('FIELD_PASSWORD_NOT_VIEW')+" : "+object.labelElement.textContent.replace("*", "");
+
+        if(object.showPasswordButton.classList.contains("show")) {
+            object.showPasswordButton.classList.remove("show");
+            object.inputElements[0].type = "password";
+            object.inputElements[0].setAttribute("aria-hidden", true);
+            if(icon) {
+                icon.classList.remove(iconHide);
+                icon.classList.add(iconShow);
+            }
+            if(entitled) {
+                entitled.innerText = entitledHide;
+            }
+        }
+        else {
+            object.showPasswordButton.classList.add("show");
+            object.inputElements[0].removeAttribute("aria-hidden");
+            object.inputElements[0].type = "text";
+            if(icon) {
+                icon.classList.add(iconHide);
+                icon.classList.remove(iconShow);
+            }
+            if(entitled) {
+                entitled.innerText = entitledShow;
+            }
+        }
+        this.showNotEmpty(objectIndex);
     }
 }

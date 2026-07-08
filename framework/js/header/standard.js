@@ -1,8 +1,9 @@
-class HeaderStandard {
+class HeaderStandardClass {
     constructor () {
         this.lastScroll = 0;
         this.headerVisibilityCounter = 0;
         this.menuVisibilityCounter = 0;
+        this.isInitialized = false;
 
         // Bind events
         MiscEvent.addListener('scroll', this.scroll.bind(this), window);
@@ -119,6 +120,18 @@ class HeaderStandard {
         }
     }
 }
-
 // Singleton
+var HeaderStandard = (function () {
+    "use strict";
+    var instance;
+    function Singleton() {
+        if (!instance) {
+            instance = new HeaderStandardClass();
+        }
+    }
+    Singleton.getInstance = function () {
+        return instance || new Singleton();
+    }
+    return Singleton;
+}());
 new HeaderStandard();

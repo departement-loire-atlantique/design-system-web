@@ -1,10 +1,11 @@
 ---
 layout: pattern
+style: phylactere
 ---
 
 {% include header/inc-header.html %}
 
-<main role="main" id="content" tabindex="-1">
+<main role="main" id="content">
 
     <section class="ds44-container-large">
         <div class="ds44-pageHeaderContainer">
@@ -22,19 +23,38 @@ layout: pattern
 
     <section class="ds44-container-large">
         <div class="ds44-mt3 ds44--xl-padding-t">
+
+            <ul class="ds44-collapser ds44-noMrgt ds44-no-border ds44-show-tinyToLarge ds44-hide-large">
+                <li class="ds44-collapser_element ds44-no-border">
+                    <button type="button" class="ds44-collapser_button ds44-btnStd ds44-btn--invert">Sommaire<i class="icon icon-down" aria-hidden="true"></i>
+                    </button>
+                    <div class="ds44-collapser_content">
+                        <ul class="ds44-list ds44-collapser_content--level2">
+                            <li class="ds44--l-padding-lr">
+                                <ul class="ds44-list ds44-list--puces">
+                                    <li><a href="#section1">Rattachement à la Bretagne : pas de droit d’option mais le souhait d’un référendum</a></li>
+                                    <li><a href="#section2">Le résumé de la première journée</a></li>
+                                    <li><a href="#section3">Revoir les débats du lundi</a></li>
+                                </ul>
+                            </li>
+                        </ul>
+                    </div>
+                </li>
+            </ul>
+
             <div class="ds44-inner-container">
                 <div class="grid-12-medium-1 grid-12-small-1">
 
                     <aside class="col-4 ds44-hide-tinyToLarge ds44-js-aside-summary">
                         <section class="ds44-box ds44-theme">
-                            <div class="ds44-innerBoxContainer">
+                            <nav role="navigation" class="ds44-innerBoxContainer">
                                 <p role="heading" aria-level="2" class="ds44-box-heading">Sommaire</p>
                                 <ul class="ds44-list ds44-list--puces">
                                     <li><a href="#section1">Rattachement à la Bretagne : pas de droit d’option mais le souhait d’un référendum</a></li>
                                     <li><a href="#section2">Le résumé de la première journée</a></li>
                                     <li><a href="#section3">Revoir les débats du lundi</a></li>
                                 </ul>
-                            </div>
+                            </nav>
                         </section>
                     </aside>
 
@@ -52,8 +72,19 @@ layout: pattern
                             <p>Ce vœu a été approuvé : 55 « oui », 3 « non » et 3 abstentions.</p>
                             <div class="ds44-contenuMedia">
                                 <div class="ds44-inner-container ds44-mtb3">
-                                    <div class="ds44-js-youtube-video" data-video-id="qUBOVeb7ocY">
-                                        <img src="../../assets/images/img_video_bigger@2x.jpg" alt="Vidéo : le Canal ouvre à la navigation" class="ds44-w100 ds44-hiddenPrint">
+                                    <div class="ds44-cookie-overlay-container">
+                                        <div class="ds44-js-youtube-video" data-video-id="qUBOVeb7ocY">
+                                            <img src="../../assets/images/img_video_bigger@2x.jpg" alt="Vidéo : le Canal ouvre à la navigation" class="ds44-w100 ds44-hiddenPrint">
+                                            <div class="ds44-media-overlay" style="display:table;">
+                                                <div class="ds44-msg-media-desactive">
+                                                    <p>Vidéo désactivée</p>
+                                                    <p>Vous devez accepter le dépôt de <span lang="en">cookies</span> de <span lang="en">streaming</span> pour lire la vidéo.</p>
+                                                    <button class="ds44-btnStd ds44-btn--contextual" data-consent="accept-streaming-cookie">
+                                                        <span class="ds44-btnInnerText">Accepter les <span lang="en">cookies</span><i class="icon icon-long-arrow-right" aria-hidden="true"></i>
+                                                    </button>
+                                                </div>
+                                            </div>
+                                        </div>
                                     </div>
                                 </div>
                             </div>
@@ -127,8 +158,19 @@ layout: pattern
                             <p class="ds44-introduction" aria-level="3" role="heading">Retrouvez les débats en vidéo, du lundi 17 décembre.</p>
                             <div class="ds44-contenuMedia">
                                 <div class="ds44-inner-container ds44-mtb3">
-                                    <div class="ds44-js-youtube-video" data-video-id="xf79mws2lEM">
-                                        <img src="../../assets/images/img_video_bigger@2x.jpg" alt="Vidéo : le Canal ouvre à la navigation" class="ds44-w100 ds44-hiddenPrint">
+                                    <div class="ds44-cookie-overlay-container">
+                                        <div class="ds44-js-youtube-video" data-video-id="xf79mws2lEM">
+                                            <img src="../../assets/images/img_video_bigger@2x.jpg" alt="Vidéo : le Canal ouvre à la navigation" class="ds44-w100 ds44-hiddenPrint">
+                                            <div class="ds44-media-overlay" style="display:table;">
+                                                <div class="ds44-msg-media-desactive">
+                                                    <p>Vidéo désactivée</p>
+                                                    <p>Vous devez accepter le dépôt de <span lang="en">cookies</span> de <span lang="en">streaming</span> pour lire la vidéo.</p>
+                                                    <button class="ds44-btnStd ds44-btn--contextual" data-consent="accept-streaming-cookie">
+                                                        <span class="ds44-btnInnerText">Accepter les <span lang="en">cookies</span><i class="icon icon-long-arrow-right" aria-hidden="true"></i>
+                                                    </button>
+                                                </div>
+                                            </div>
+                                        </div>
                                     </div>
                                 </div>
                             </div>
@@ -147,8 +189,19 @@ layout: pattern
                             </ul>
                             <div class="ds44-contenuMedia">
                                 <div class="ds44-inner-container ds44-mtb3">
-                                    <div class="ds44-js-youtube-video" data-video-id="bEsQKIKFmmc">
-                                        <img src="../../assets/images/img_video_bigger@2x.jpg" alt="Vidéo : le Canal ouvre à la navigation" class="ds44-w100">
+                                    <div class="ds44-cookie-overlay-container">
+                                        <div class="ds44-js-youtube-video" data-video-id="bEsQKIKFmmc">
+                                            <img src="../../assets/images/img_video_bigger@2x.jpg" alt="Vidéo : le Canal ouvre à la navigation" class="ds44-w100">
+                                            <div class="ds44-media-overlay" style="display:table;">
+                                                <div class="ds44-msg-media-desactive">
+                                                    <p>Vidéo désactivée</p>
+                                                    <p>Vous devez accepter le dépôt de <span lang="en">cookies</span> de <span lang="en">streaming</span> pour lire la vidéo.</p>
+                                                    <button class="ds44-btnStd ds44-btn--contextual" data-consent="accept-streaming-cookie">
+                                                        <span class="ds44-btnInnerText">Accepter les <span lang="en">cookies</span><i class="icon icon-long-arrow-right" aria-hidden="true"></i>
+                                                    </button>
+                                                </div>
+                                            </div>
+                                        </div>
                                     </div>
                                 </div>
                             </div>
@@ -193,7 +246,7 @@ layout: pattern
 
     {% include partage/partage-interne.html %}
 
-    <section class="ds44-container-fluid ds44--l-padding">
+    <section class="ds44-container-fluid PortletPush">
         <div class="ds44-box ds44-theme ds44-bgTriangle-left">
             <div class="ds44-flex-container ds44-flex-container--colMed ds44-flex-container--colMed--colRev">
                 <picture class="ds44-boxPushPic ds44-boxPushPic--horizontal">
@@ -228,11 +281,5 @@ layout: pattern
     </section>
 
 </main>
-
-<button class="ds44-btnStd ds44-btn--invert ds44-fullWBtn ds44-btn-fixed ds44-show-tinyToLarge ds44-hide-large" id="ds44-summary-button" type="button" data-target="#navSommaire">
-    <span class="ds44-btnInnerText">Sommaire</span><i class="icon icon-summary" aria-hidden="true"></i>
-</button>
-
-{% include menu/inc-menu-sommaire.html %}
 
 {% include footer/footer-LA.html %}

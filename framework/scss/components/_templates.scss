@@ -20,6 +20,19 @@
     margin-right: auto;
     max-width: $ds44-max-inner-size;
     position: relative;
+
+    .ds44-introduction,
+    .ds44-collapser {
+        margin-bottom: 3rem;
+    }
+    .ds44-cardDate, .ds44-cardLocalisation {
+        font-size: 1em;
+        margin-top : 0 !important;
+
+        .icon {
+            font-size: 1em;
+        }
+    }
 }
 
 .ds44-inner-container--mag {
@@ -32,7 +45,7 @@
 .ds44-video-container {
     position: relative;
     width: 100%;
-    padding-bottom: 56.25%;
+    height:480px;
 
     .ds44-video-item {
         position: absolute;
@@ -42,6 +55,44 @@
         height: 100%;
         border: 0;
     }
+}
+
+.ds44-cookie-overlay-container {
+	position: relative;
+    width: 100%;
+    overflow: hidden;
+
+    .ds44-media-overlay {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        border: 0;
+        background-color: #000;
+    }
+
+    .ds44-msg-media-desactive {
+        color: #fff;
+        display:table-cell;
+        text-align:center;
+        vertical-align:middle
+    }
+}
+
+
+
+
+
+/*RS-1436 reprise de code bootstrap pour l'apparence de video insere dans un wysiwyg*/
+.embed-responsive.embed-responsive-16by9 {
+    position: relative;
+    padding-bottom: 56.25%;
+}
+.embed-responsive iframe.embed-responsive-item {
+    height: 100%;
+    width: 100%;
+    position: absolute;
 }
 
 .ds44-homepage-container {
@@ -68,6 +119,21 @@
         height: 2em;
         width: 4rem;
         background: url(/assets/icons/long-arrow-down.svg) no-repeat;
+    }
+
+}
+
+.ds44-expositionHeader-container {
+
+    &:after {
+        content: "";
+        display: block;
+        position: absolute;
+        bottom: 0;
+        left: 50%;
+        height: 2em;
+        width: 4rem;
+        background: url(../../../assets/icons/long-arrow-down-white.svg) no-repeat;
     }
 
 }
@@ -106,6 +172,109 @@ main {
 
     .ds44-inner-container {
         max-width: $ds44-max-inner-size;
+    }
+
+}
+
+/* Body Modern spécifique pour le musée Dobrée par exemple */
+body.modern {
+    font-family: $ds44-font-family-baseModern;
+
+    main {
+        padding-top: 8.8rem;
+        @media (max-width: $ds44-large - .0625) {
+            padding-top: 5.8rem;
+        }
+        @media (max-width: $ds44-small - .0625) {
+            padding-top: 5.8rem;
+        }
+    }
+    .ds44-introduction {
+        font-weight: normal;
+    }
+    .ds44-contenuDossier .ds44-contenuArticle h2:first-of-type {
+        margin-top: 0;
+    }
+
+    /* Title Monotype */
+    .h1-like,
+    .h1-like.h1-like--light,
+    h1 {
+        font-family: $ds44-font-family-headingsModern;
+        font-weight: normal;
+        line-height: 1.2em;
+        margin-bottom: 3rem;
+
+        @media (max-width: $ds44-medium - .625) {
+            margin-bottom: 2rem;
+        }
+        @media (max-width: $ds44-small - .625) {
+            margin-bottom: 1rem;
+        }
+    }
+    .h1-like{
+        font-size: 3.5em;
+
+        @media (max-width: $ds44-medium - .625) {
+            font-size: 2.5em;
+        }
+        @media (max-width: $ds44-small - .625) {
+            font-size: 1.5em;
+        }
+    }
+    .h1-like.h1-like--light{
+        font-size: 2.5em;
+
+        @media (max-width: $ds44-medium - .625) {
+            font-size: 2em;
+        }
+        @media (max-width: $ds44-small - .625) {
+            font-size: 1.25em;
+        }
+    }
+    .h2-like,
+    .h3-like,
+    .h4-like,
+    .h5-like {
+        font-family: $ds44-font-family-baseModern;
+        padding: 0;
+        background: none;
+        display: block;
+        font-weight: inherit;
+    }
+    .h2-like{
+        font-size: 1.875em;
+
+        @media (max-width: $ds44-medium - .625) {
+            font-size: 1.5em;
+        }
+        @media (max-width: $ds44-small - .625) {
+            font-size: 1.25em;
+        }
+    }
+    .h3-like{
+        font-size: 1.25em;
+        font-weight: bold;
+
+        @media (max-width: $ds44-medium - .625) {
+            font-size: 1.25em;
+        }
+        @media (max-width: $ds44-small - .625) {
+            font-size: 1.125em;
+        }
+    }
+    .h4-like{
+        font-size: 1.125em;
+    }
+    .h5-like{
+        font-size: 1em;
+        font-weight: bold;
+    }
+
+    .ds44-img50--event .ds44-theme .ds44-docListElem {
+      margin: .25em .5em;
+      padding-left: 2.5rem;
+      line-height: 1.4;
     }
 
 }
@@ -168,6 +337,9 @@ main {
         display: flex;
         justify-content: flex-start;
         position: relative;
+        figure {
+          position: initial;
+        }
     }
 
     &__right {
@@ -203,6 +375,9 @@ main {
             position: absolute;
             z-index: 1;
             padding: 0;
+            @media (max-width: $ds44-large - .0625) {
+                height: 80%;
+            }
         }
 
         .ds44-imgCaption {
@@ -221,9 +396,39 @@ main {
         bottom: 0;
         left: 0;
         z-index: 100;
-        font-weight: normal;
+        font-weight: $weight-bold;
+        font-size: 3em;
+        max-width: 95vw;
+
+        @media (max-width: $ds44-small - .0625) {
+            padding: 10rem 2rem 5rem 2rem;
+            font-size: 2.4em;
+        }
+
     }
 
+}
+
+.ds44-titleContainer--home {
+
+  &.ds44-home-assmat {
+    justify-content: center;
+
+    .h1-like {
+        padding: 3rem 5rem 2rem 5rem;
+        position: relative;
+    }
+
+    .ds44-form-assmat {
+      z-index: 2;
+      padding: 0 5rem 3rem 5rem;
+    }
+
+    .ds44-alphaGradient--header {
+      height: 70%;
+      bottom: 0;
+    }
+  }
 }
 
 
@@ -234,6 +439,24 @@ main {
     top: 0;
     left: 0;
     background: $ds44-background-dark;
+    transition: outline .4s ease-out;
+    img {
+        outline: 5px solid transparent;
+    }
+    a {
+        display:block;
+        height: 100%;
+    }
+    a:focus-visible {
+        img {
+            //outline: 5px solid $ds44-color-soft-text;
+        }
+    }
+    @media (max-width: $ds44-small - .0625) {
+        .ds44-imgCaption {
+            visibility: hidden;
+        }
+    }
 }
 
 .ds44-pageHeaderContainer--deuxCol .ds44-bgGray {
@@ -242,11 +465,24 @@ main {
 
 
 .ds44-introduction, .ds44-introduction-like, .ds44-component-chapo {
-    @include ds44-font-sizes(chapoStyle);
     background: transparent;
-    font-weight: $weight-bold;
     margin-top: $ds44-large-vmargin;
     margin-bottom: $ds44-large-vmargin;
+}
+.ds44-component-chapo {
+    @include ds44-font-sizes(chapoStyle);
+}
+.ds44-introduction, .ds44-introduction-like {
+    @include ds44-font-sizes(introduction);
+}
+.ds44-introduction, .ds44-introduction-like {
+    font-weight: $weight-medium;
+}
+.dobree-introduction {
+    font-size: 1.25em;
+    @media (max-width: $ds44-medium - .0625) {
+        font-size: 1em;
+    }
 }
 
 /* Links */
@@ -288,6 +524,10 @@ main {
     display: block;
     position: relative;
 
+    .ds44-js-html-result {
+        margin: 0 1.5rem;
+    }
+
     .ds44-listResults {
         width: 100%;
         transition: width $ds44-timing-x2 $ds44-transition-std;
@@ -323,6 +563,24 @@ main {
                 #ds44-results-new-search {
                     display: none;
                 }
+
+                &[data-multi-links="true"] {
+                   .ds44-card {
+                       a {
+                           text-decoration: underline;
+                           &:hover {
+                               text-decoration: none ;
+                           }
+                       }
+                   }
+                   .ds44-card:focus, .ds44-card:hover, .ds44-card:active, .ds44-card.active {
+                       box-shadow:none;
+
+                       .ds44-cardArrow {
+                           opacity: 0;
+                       }
+                   }
+                }
             }
 
             &.ds44-js-show-card .ds44-js-results-card {
@@ -336,11 +594,15 @@ main {
 
             .ds44-js-results-list > .h3-like[role="heading"]{
                 margin-left: $ds44-medium-vmargin ;
+                font-size: 1em;
+                font-weight: 400;
             }
         }
 
         .ds44-textLegend {
             padding-right: 20%;
+            margin-right: 1.5rem;
+            font-size: .875em;
 
             @media (max-width: $ds44-medium - .0625) {
                 padding-right: 0;
@@ -358,7 +620,16 @@ main {
                     margin: $ds44-medium-vmargin;
                     width: calc(33.33% - 3rem);
                     max-width: calc(33.33% - 3rem);
-
+                    &.first {
+                        margin-bottom: 0;
+                    }
+                    &.middle {
+                        margin-bottom: 0;
+                        margin-top: 0.1rem;
+                    }
+                    &.last {
+                        margin-top: 0.1rem;
+                    }
                     @media (max-width: $ds44-large - .0625) {
                         width: calc(50% - 3rem);
                         max-width: calc(50% - 3rem);
@@ -402,6 +673,14 @@ main {
             left: 0;
             width: 100%;
         }
+    }
+
+    .ds44-btnStd-showLegend {
+        position: absolute;
+        top: 10px;
+        right: 10px;
+        display: block;
+        z-index: 5;
     }
 
     /* -------Resultats vide */
@@ -694,22 +973,6 @@ main {
     }
 }
 
-.ds44-map-marker {
-    background: url('/assets/images/cd44-marker-big-black.svg') no-repeat center center transparent;
-    background-size: cover;
-    width: 40px;
-    height: 40px;
-    cursor: pointer;
-    display: block;
-
-    &:hover,
-    &:active,
-    &:focus,
-    &.active {
-        background-image: url('/assets/images/cd44-marker-hover-big-black.svg');
-    }
-}
-
 
 /* Fiche lieu événements */
 
@@ -727,6 +990,24 @@ main {
     }
 }
 
+
+/* Sites grand patrimoine */
+
+.ds44-homepage-container--gp {
+    .ds44-titleContainer--home .h1-like {
+        background: #000;
+        width: 100%;
+        padding: 3rem 3rem 5rem 3rem !important;
+        margin: 0;
+    }
+    .ds44-imgCaption {
+      z-index: 115;
+    }
+    .ds44-alphaGradient--header {
+      display: none;
+    }
+}
+
 /* =======
   GENERIC MEDIA QUERIES
   === */
@@ -739,6 +1020,9 @@ main {
         &--home {
             min-height: 620px;
         }
+    }
+    .ds44-homepage-container--assmat > div {
+        height: auto !important;
     }
 
 }
@@ -770,6 +1054,7 @@ main {
             }
         }
     }
+
 }
 
 @media (max-width: $ds44-medium - .0625) {
@@ -802,12 +1087,15 @@ main {
 
     .ds44-component-chapo {
         max-width: 85%;
-        display: none;
     }
 
+    .ds44-homepage-container--gp ,
     .ds44-homepage-container--ha {
         &:after {
             display: none;
+        }
+        .ds44-titleContainer--home .h1-like {
+            padding: 3rem !important;
         }
     }
 
@@ -816,7 +1104,15 @@ main {
             padding: 10rem 3rem 3rem 3rem;
             margin: 0;
         }
+
+        .ds44-titleContainer--home.ds44-home-assmat {
+          .ds44-form-assmat {
+            z-index: 2;
+            padding:  0 3rem 5rem 3rem;
+          }
+        }
     }
+
 
 }
 

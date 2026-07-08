@@ -1,18 +1,22 @@
 ---
 layout: pattern
+style: phylactere
 ---
 
 {% include header/inc-header.html %}
 
-<main role="main" id="content" tabindex="-1">
+<main role="main" id="content">
 
 	<section class="ds44-container-large">
 
 		<div class="ds44-pageHeaderContainer ds44-pageHeaderContainer--deuxCol">
 		  <div class="ds44-pageHeaderContainer__left">
-		    <picture class="ds44-pageHeaderContainer__pictureContainer">
-		        <img src="../../assets/images/header-page-carrefour.jpg" alt="" class="ds44-headerImg" />
-		    </picture>
+				<figure>
+					<picture class="ds44-pageHeaderContainer__pictureContainer">
+			        <img src="../../assets/images/header-page-carrefour.jpg" alt="" class="ds44-headerImg" />
+			    </picture>
+					<figcaption class="ds44-imgCaption">Texte de la légende ici © Copyright</figcaption>
+				</figure>
 		    <div class="ds44-titleContainer">
 		        <div class="ds44-alphaGradient ds44-alphaGradient--header">
 		            {% include breadcrumb/breadcrumb--invert.html %}
@@ -55,7 +59,7 @@ layout: pattern
 		<div class="ds44-inner-container ds44--mobile--m-padding-b">
 			<header class="txtcenter">
 				<h2 class="h2-like center">En ce moment</h2>
-				<p class="ds44-component-chapo ds44-centeredBlock">Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut</p>
+				<p id="idTitre1" class="ds44-component-chapo ds44-centeredBlock">Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut</p>
 			</header>
 		</div>
 		<div class="ds44-container-large">
@@ -69,13 +73,13 @@ layout: pattern
 		<div class="ds44-inner-container">
 			<header class="txtcenter">
 				<h2 class="h2-like center">Vos rendez-vous</h2>
-				<p class="ds44-component-chapo ds44-centeredBlock">Les idées de sorties dans la région de Saint-Nazaire, consetetur sadipscing elitr, sed diam nonumy.</p>
+				<p id="idTitre2" class="ds44-component-chapo ds44-centeredBlock">Les idées de sorties dans la région de Saint-Nazaire, consetetur sadipscing elitr, sed diam nonumy.</p>
 			</header>
 		</div>
 		{% include carrousel/carrousel-x3--date.html %}
 	</section>
 
-	<section class="ds44-container-fluid ds44--l-padding">
+	<section class="ds44-container-fluid PortletPush">
 		<div class="ds44-box ds44-theme ds44-bgTriangle-left">
 		  <div class="ds44-flex-container ds44-flex-container--colMed ds44-flex-container--colMed--colRev">
 		    <picture class="ds44-boxPushPic ds44-boxPushPic--horizontal">

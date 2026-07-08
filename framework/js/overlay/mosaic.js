@@ -1,4 +1,4 @@
-class OverlayMosaic extends OverlayAbstract {
+class OverlayMosaicClass extends OverlayAbstract {
     fill () {
         const sourceFigureElement = this.triggerElement;
         if (!sourceFigureElement) {
@@ -10,9 +10,27 @@ class OverlayMosaic extends OverlayAbstract {
             return;
         }
 
-        destinationFigureElement.innerHTML = sourceFigureElement.innerHTML;
+        let img = sourceFigureElement.querySelector('img').cloneNode(true);
+        let figcaption = sourceFigureElement.querySelector('figcaption').cloneNode(true);
+        let sourceFigureFinal = document.createElement('figure');
+        sourceFigureFinal.appendChild(img);
+        sourceFigureFinal.appendChild(figcaption);
+        destinationFigureElement.innerHTML = sourceFigureFinal.innerHTML;
     }
 }
-
 // Singleton
-new OverlayMosaic('[data-js="ds44-modal"][data-target="#overlay-mosaique"]');
+var OverlayMosaic = (function () {
+    "use strict";
+    var instance;
+    function Singleton() {
+        if (!instance) {
+            instance = new OverlayMosaicClass("OverlayMosaic", '[data-js="ds44-modal"][data-target="#overlay-mosaique"]');
+        }
+        instance.initialise();
+    }
+    Singleton.getInstance = function () {
+        return instance || new Singleton();
+    }
+    return Singleton;
+}());
+new OverlayMosaic();

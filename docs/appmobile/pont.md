@@ -73,5 +73,6 @@ Trois valeurs permettent de déterminer la couleur des voies :
 * Vert
 * Orange
 * Rouge
+* Gris
 
 ...

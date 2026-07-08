@@ -11,6 +11,7 @@ source "http://rubygems.org"
 # This is the default theme for new Jekyll sites. You may change this to anything you like.
 gem "minima", "~> 2.0"
 
+gem 'unf_ext', '< 0.0.9'
 gem "github-pages", group: :jekyll_plugins
 
 # If you have any plugins, put them here!
@@ -30,3 +31,6 @@ gem "jekyll-sitemap", "~> 1.2"
 
 # Added at 2018-10-25 10:19:23 +0200 by martin.svoboda:
 gem "jekyll-minifier", "~> 0.1.6"
+
+# Added at 2025-02-13 06:56:23 +0200 by matthieu.beurel:
+gem "ffi", "< 1.17.0"

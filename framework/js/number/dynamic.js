@@ -1,5 +1,6 @@
-class NumberDynamic {
+class NumberDynamicClass {
     constructor () {
+      Debug.log("NumberDynamic -> Constructor");
         this.duration = 3000; // Seconds
         this.increment = 100;
 
@@ -33,11 +34,13 @@ class NumberDynamic {
     start (dynamicNumberElement) {
         dynamicNumberElement.classList.add('started');
 
+        const stopStr = dynamicNumberElement.getAttribute('data-stop');
         const start = parseFloat(dynamicNumberElement.getAttribute('data-start') || 0);
-        const stop = parseFloat(dynamicNumberElement.getAttribute('data-stop'));
+        const stop = parseFloat(stopStr);
         const languageIso = (MiscTranslate.getLanguage() === 'fr' ? 'fr-FR' : 'en-GB');
         const isInteger = (stop === parseInt(stop, 10));
-        const fractionDigits = (isInteger ? 0 : 1);
+        const decimales = stopStr.indexOf(".") > -1 ? stopStr.substring(stopStr.indexOf(".")+1, stopStr.length) : "0";
+        const fractionDigits = (isInteger ? 0 : decimales.length);
 
         let value = start;
         for (let i = 0; i <= this.duration; i = (i + this.increment)) {
@@ -64,6 +67,18 @@ class NumberDynamic {
         return c * (t /= d) * t + b;
     }
 }
-
 // Singleton
+var NumberDynamic = (function () {
+  "use strict";
+  var instance;
+  function Singleton() {
+    if (!instance) {
+      instance = new NumberDynamicClass();
+    }
+  }
+  Singleton.getInstance = function () {
+    return instance || new Singleton();
+  }
+  return Singleton;
+}());
 new NumberDynamic();

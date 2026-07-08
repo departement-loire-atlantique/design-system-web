@@ -35,7 +35,7 @@ branding:
   navigation_link_color: '#444'
   navigation_link_color_hover: 'gray'
   main_background_color: '#fff'
-  highlight_color: '#2c8abd'
+  highlight_color: '#004461'
   code_background_color: '#f9f9f9'
 
 # Do not delete or change any file of the design system

@@ -31,9 +31,11 @@
         top: 0;
         opacity: 1;
         visibility: visible;
+        z-index: 1100;
 
         * {
             visibility: visible;
+            /*z-index: 1100;*/
         }
     }
 }
@@ -104,6 +106,9 @@
 .ds44-modal-gab {
     padding: $ds44-padding-box;
     margin-top: $ds44-padding-box;
+    .ds44-btnIco--carre {
+        display: none;
+    }
 }
 
 .ds44-modal-column {
@@ -138,6 +143,40 @@
     box-shadow: 0 1px 2px rgba(0, 0, 0, .1);
     padding: 0;
     pointer-events: auto;
+    max-height: 600px;
+    overflow: auto;
+    .ds44-flex-container {
+        border-bottom: 1px solid $ds44-flat-overlay;
+        &:last-child {
+            border-bottom:0;
+        }
+    }
+
+    .ds44-card__title {
+        font-family: $ds44-font-family-headings !important;
+        font-size: 1.6rem !important;
+        font-weight: $weight-semibold;
+    }
+
+    .ds44-docListElem {
+        margin-top: 1rem !important;
+        font-size: 1.2rem !important;
+        font-family: $ds44-font-family-headings !important;
+    }
+    .ds44-cardDate, .ds44-cardLocalisation {
+        font-size: 1.2rem !important;
+        font-family: $ds44-font-family-headings !important;
+    }
+
+    @media (max-width: $ds44-small) {
+        .ds44-card__title {
+            font-size: 1.4rem !important;
+        }
+
+        .ds44-docListElem {
+            font-size: 1rem !important;
+        }
+    }
 
     & .ds44-js-card {
         cursor: pointer;
@@ -146,17 +185,9 @@
         background: #ffffff !important;
         margin: 0 !important;
 
-        .ds44-cardTitle {
-            font-size: 1.7rem;
-        }
-
         &.ds44-cardIsFocus {
             background-color: #99E6D1 !important;
             border-color: #666;
-        }
-
-        .ds44-docListElem {
-            margin-top: 1rem !important;
         }
 
         .ds44-flex-container {
@@ -196,6 +227,10 @@
             background-color: rgba(255, 255, 255, 1);
         }
     }
+
+    .mapboxgl-map {
+        font-family: $ds44-font-family-base;
+    }
 }
 
 @media (max-width: $ds44-large) {
@@ -223,6 +258,22 @@
             max-width: 80%;
             display: inline-block;
             background: linear-gradient(to bottom, rgba(255, 255, 255, 0) calc(100% - 16px), $ds44-contextual-color 0px);
+        }
+    }
+}
+
+.orejimeBody-WithModalOpen {
+    /* Orejime */
+    #orejime {
+        height: 100%;
+        width: 100%;
+        .orejime-ModalPortal {
+            height: 100%;
+            width: 100%;
+            position: fixed;
+            z-index: 100;
+            left: 0;
+            top: 0;
         }
     }
 }
@@ -283,10 +334,6 @@
                     }
                 }
 
-                .orejime-Notice-actionItem--decline {
-                    display: none;
-                    visibility: hidden;
-                }
             }
 
             .orejime-Notice-body {
@@ -348,6 +395,14 @@
 
                     .orejime-AppItem-input[disabled] ~ label {
                         filter: none;
+                        opacity: 1;
+                    }
+
+                    .orejime-AppItem-optOut,
+                    .orejime-AppItem-required,
+                    .orejime-AppItem-purposes,
+                    .orejime-AppItem-switch--disabled .orejime-AppItem-switchLabel {
+                        color: $ds44-gray;
                     }
 
                     .orejime-Button[disabled] {

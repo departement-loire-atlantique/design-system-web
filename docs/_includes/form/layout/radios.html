@@ -6,7 +6,7 @@
 
 <div id="{{ id }}" data-name="{{ name }}" class="ds44-form__radio_container {{ containerClass }}" {{ containerAttributes }}>
     {% if include.required == 'true' %}
-        <p id="mandatory-message-{{ id }}" class="ds44-mandatory_message">Au moins une de ces cases doit être cochée :</p>
+        <p id="mandatory-message-{{ id }}" class="">{{ include.label }}{{ requiredStar }}</p>
         {% capture ariaDescribedBy %}mandatory-message-{{ id }}{% if ariaDescribedBy and ariaDescribedBy != '' %} {{ ariaDescribedBy }}{% endif %}{% endcapture %}
     {% endif %}
 

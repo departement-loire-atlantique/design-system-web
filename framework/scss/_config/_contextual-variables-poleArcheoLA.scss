@@ -1,0 +1,15 @@
+/*
+* CD44 Design System - contextual variables for Pôle Archéologie de Loire-Atlantique
+*/
+
+// ----------------
+// ---- COLORS ----
+// ----------------
+
+$ds44-contextual-color : #FF646E !default;
+$ds44-contextual-hover : lighten($ds44-contextual-color, 10%) !default;
+
+#sousTitre.h2-like {
+    background: none !important;
+    padding: 0 0 0 0 !important;
+}

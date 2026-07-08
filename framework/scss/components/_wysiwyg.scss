@@ -14,15 +14,196 @@
     }
     p + .h3-like,
     p + h3,
+    div + h3,
+    blockquote + h3,
+    blockquote + h3-like,
     ul:not(.ds44-list):not(.ds44-collapser) + h3,
     ul:not(.ds44-list):not(.ds44-collapser) + .h3-like,
     p + .h4-like,
-    p + h4 {
+    p + h4,
+    div + h4,
+    blockquote + h4,
+    blockquote + h4-like,
+    ul:not(.ds44-list):not(.ds44-collapser) + h4,
+    ul:not(.ds44-list):not(.ds44-collapser) + .h4-like {
       margin-top: $ds44-components-vmargin ;
     }
     ul:not(.ds44-list):not(.ds44-collapser) > li {
       margin-top: 0;
     }
+    .wysiwyg ol > li > * {
+        display: inline-block;
+    }
+    .wysiwyg > div > .ds44-box {
+        margin-bottom: $ds44-components-vmargin ;
+    }
+
+}
+
+/* Style custom Modern */
+body.modern .ds44-contenuArticle {
+    margin: 0 auto 5rem auto;
+
+    h2, h3, h4 {
+        font-family: $ds44-font-family-baseModern;
+        font-weight: normal;
+        padding: 0;
+        background: transparent;
+        margin-top: 4rem;
+        margin-bottom: 2rem;
+        display: block;
+    }
+
+    h2 {
+        font-size: 1.875em;
+
+        @media (max-width: $ds44-medium - .625) {
+            font-size: 1.5em;
+        }
+        @media (max-width: $ds44-small - .625) {
+            font-size: 1.25em;
+        }
+    }
+    h3{
+        font-size: 1.25em;
+        font-weight: bold;
+
+        @media (max-width: $ds44-medium - .625) {
+            font-size: 1.25em;
+        }
+        @media (max-width: $ds44-small - .625) {
+            font-size: 1em;
+        }
+    }
+    h4{
+        font-size: 1.125em;
+    }
+    ul:not(.ds44-list):not(.ds44-collapser) > li {
+      list-style-position: outside;
+      list-style-image: none;
+      list-style-type: disc;
+    }
+    .grid-12 {
+        margin: 3rem 0;
+        h2,
+        h3,
+        h4 {
+            margin-top: 0;
+        }
+    }
+    .ds44-box-heading {
+        font-family: $ds44-font-family-baseModern;
+        display: block;
+        font-size: 1.25em;
+        font-weight: bold;
+    }
+}
+
+.ds44-bgDark {
+  .ds44-contenuArticle {
+
+    ul:not(.ds44-list):not(.ds44-collapser) {
+      // first-level
+      > li {
+        list-style-image: url(../../../assets/images/right-white.svg);
+      }
+    }
+
+    .ds44-docListElem i ~ a {
+        color: $ds44-color-inverse;
+    }
+
+    .wysiwyg p a {
+      color: $ds44-color-inverse;
+    }
+
+    .ds44-wsg-encadreApplat {
+        color: $ds44-color-base;
+
+        ul:not(.ds44-list):not(.ds44-collapser) {
+          // first-level
+          > li {
+            list-style-image: url(../../../assets/images/right.svg);
+          }
+        }
+    }
+
+    &:last-child ,
+    &.ds44-contenuMedia {
+      margin: 0 auto;
+
+      .ds44-inner-container {
+        margin-bottom: 0;
+
+        .ds44-grid12-offset-2 > div {
+          margin-bottom: 0 !important;
+        }
+      }
+    }
+
+    .ds44-wsg-exergue {
+        color: $ds44-color-base;
+    }
+  }
+
+  .ds44-partage {
+    .ds44-rsLink {
+      color: $ds44-color-inverse;
+    }
+  }
+
+  &.ds44-container-large ~ .ds44-container-large {
+    padding-left:  0;
+    padding-right:  0;
+  }
+
+}
+
+
+
+
+.wysiwyg {
+    .icon {
+      margin-right: 5px;
+    }
+
+    figure {
+      display: inline-block;
+    }
+
+    + .ds44-btnStd {
+      margin-top: 3rem;
+    }
+
+    .ds44-wsg-transparent {
+
+        background-color: transparent !important;
+
+        &:hover,
+        &:focus,
+        &:active {
+            box-shadow : none !important;
+        }
+    }
+
+    .ds44-wsg-noPadding {
+        padding: 0 !important;
+    }
+}
+
+.ds44-tabs__content {
+  .grid-12-small-1 {
+    .wysiwyg {
+      .ds44-inner-container + .ds44--xl-padding-lr {
+        padding: 0;
+
+        .grid-12-small-1 {
+          display: block;
+        }
+      }
+
+    }
+  }
 }
 
 blockquote {
@@ -52,12 +233,29 @@ blockquote {
         bottom: .5rem;
     }
 
+    @media (max-width: $ds44-tiny - .0625) {
+      border-left: none;
+      padding: 0 3.5rem;
+
+      &::before {
+        left: .5rem;
+      }
+
+      &::after {
+        right: .5rem;
+      }
+    }
 }
 
 .ds44-wsg-encadreContour {
-    padding: $ds44-padding-xlarge;
-    border: 1px solid $ds44-contextual-color;
-    margin: 2rem 0 !important;
+  padding: $ds44-padding-xlarge;
+  border: 1px solid $ds44-contextual-color;
+  margin: 2rem 0 !important;
+  @media (max-width: $ds44-large - .0625) {
+    ul:not(.ds44-list):not(.ds44-collapser) {
+      padding-left: 0;
+    }
+  }
 }
 
 .ds44-wsg-encadreApplat {
@@ -81,7 +279,10 @@ blockquote {
     background-color: $ds44-contextual-color;
     padding: .5rem 1rem;
     display: inline-block;
-    margin: 1.5rem 0 1rem 0;
+    margin: 1.5rem 0 1rem 0 !important;
+    font-size: 1em !important;
+    line-height: 1.4em ;
+    font-family: $ds44-font-family-base;
 }
 
 /* Tables */
@@ -109,11 +310,191 @@ table.ds44-tableau_4col tr {
 table.ds44-tableau_5col tr {
     width: 20%;
 }
+/* Tables Inforoutes */
+table.inforoutes {
+  text-align: left;
+  width: 100%;
+
+  thead th {
+    font-size: 14px;
+    font-weight: normal;
+  }
+  tbody tr td:nth-of-type(2) {
+    font-weight: bold;
+  }
+  tbody tr td img {
+    width: 50px;
+    height: 50px;
+    object-fit: cover;
+    margin-right: 15px;
+    vertical-align: top;
+  }
+  tbody tr td span {
+    display: inline-block;
+    width: calc(100% - 70px);
+  }
+  td, th {
+    padding: 1rem;
+    vertical-align: top;
+  }
+
+  .ds44-icoInfoRoutes {
+    margin-right: 15px;
+    padding: 6px;
+    font-size: 2em;
+    vertical-align: baseline;
+    display: inline-block;
+    width: 51px;
+    height: 51px;
+    text-align: center;
+
+    &.orangeFlag {
+      background: $ds44-app-orangeFlag;
+      color: $ds44-dark;
+    }
+    &.redFlag {
+      background: $ds44-app-redFlag;
+      color: $ds44-light;
+    }
+  }
+}
+/* Tables Déclaration d'accueil des assmats */
+table.historiqueAssmat {
+  text-align: left;
+  width: 100%;
+
+  thead th {
+    font-size: 1em;
+    font-weight: bold;
+  }
+  tbody tr td:nth-of-type(1) {
+    font-weight: bold;
+  }
+  td, th {
+    padding: 1rem;
+    vertical-align: middle;
+  }
+  td ul li {
+    margin-top:0 !important;
+  }
+}
+
+/* Tables Déclaration d'accueil des assmats */
+table.selection {
+  text-align: left;
+  width: 100%;
+
+  thead th {
+    font-size: .875em;
+    font-weight: normal;
+  }
+  td, th {
+    padding: 1rem;
+    vertical-align: top;
+  }
+  td {
+    padding: 3rem;
+  }
+}
+
+/* Tables */
+table.ds44-table {
+    th {
+        text-align: left;
+        background-color: $ds44-light-bg;
+    }
+    tr td {
+        text-align: left;
+    }
+    tr:nth-child(odd) {
+        background-color: $ds44-light-bg;
+    }
+}
+table.ds44-table {
+    &.ds44-table_favoris {
+        tr td:first-child,
+        tr td:last-child {
+            text-align: center;
+        }
+        .ds44-form__container {
+            margin: 0;
+
+            .ds44-boxLabel::before {
+                left:auto;
+            }
+        }
+    }
+}
+
+.tableau_dobree {
+    th, td {
+        border: 1px solid $ds44-light  ;
+    }
+    tr > th[scope=row] {
+        text-align: left;
+    }
+    tr:nth-child(2n+1) {
+      background-color: #fff;
+    }
+    tr:nth-child(2n) {
+      background-color: $ds44-light-bg;
+    }
+    &.tableau_dobree--mobile {
+        th, td {
+            border: 0;  ;
+        }
+        tr:nth-child(2n+1) {
+          background-color: $ds44-light-bg;
+        }
+        tr:nth-child(2n) {
+          background-color: #fff;
+        }
+        tr.last td {
+            padding-bottom: 25px;
+        }
+    }
+}
+
+
 
 @media (max-width: 64em) {
   .col.mrl ,
-  .col.mll {
+  .col.mll,
+  .col-4.mrl ,
+  .col-6.mll,
+  .col-6.mrl ,
+  .col-4.mll {
       margin-left: 0;
       margin-right: 0;
+  }
+}
+@media (max-width: 64em) {
+  table.inforoutes,
+  table.historiqueAssmat {
+    width: 100%;
+
+    thead th {
+      display: none;
+    }
+    tbody tr td:first-child {
+      font-weight: bold;
+    }
+    tbody tr td img {
+      width: 50px;
+      height: 50px;
+      object-fit: cover;
+      margin-right: 15px;
+      vertical-align: top;
+    }
+    tbody tr td span {
+      display: inline-block;
+      width: calc(100% - 70px);
+    }
+    td, th {
+      padding: 1rem;
+      vertical-align: top;
+      display: block;
+      width: 100%;
+    }
   }
 }

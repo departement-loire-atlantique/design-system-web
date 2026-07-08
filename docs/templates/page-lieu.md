@@ -17,6 +17,9 @@ variations:
 - title: Page type Lieu long
   pattern: page/LA__lieu--long.html
 
+- title: Page type canton
+  pattern: page/LA__canton.html
+
 - title: Template centré
   pattern: templates/template-generique-centre.html
 ---

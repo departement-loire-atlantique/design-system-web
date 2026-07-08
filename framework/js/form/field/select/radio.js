@@ -1,6 +1,7 @@
-class FormFieldSelectRadio extends FormFieldSelectAbstract {
+class FormFieldSelectRadioClass extends FormFieldSelectAbstract {
     constructor () {
         super(
+          "FormFieldSelectRadio",
             '.ds44-selectDisplay.ds44-js-select-radio',
             'selectRadio'
         );
@@ -33,7 +34,7 @@ class FormFieldSelectRadio extends FormFieldSelectAbstract {
         const listItems = this.getListItems(object.selectListElement);
         if (!listItems.selected) {
             // Select first
-            MiscAccessibility.setFocus(listItems.first);
+            this.setFocus(objectIndex, listItems.first);
         }
     }
 
@@ -55,7 +56,7 @@ class FormFieldSelectRadio extends FormFieldSelectAbstract {
         const listItems = this.getListItems(object.selectListElement);
         if (!listItems.selected) {
             // Select last
-            MiscAccessibility.setFocus(listItems.last);
+            this.setFocus(objectIndex, listItems.last);
         }
     }
 
@@ -151,12 +152,14 @@ class FormFieldSelectRadio extends FormFieldSelectAbstract {
                 ) {
                     // Is checked
                     listElement.classList.add('selected_option');
+                    listElement.setAttribute('aria-selected', 'true');
                     if (listChildElement) {
                         listChildElement.classList.remove('hidden');
                     }
                 } else {
                     // Is not checked
                     listElement.classList.remove('selected_option');
+                    listElement.removeAttribute('aria-selected');
                     if (listChildElement) {
                         listChildElement.classList.add('hidden');
                     }
@@ -219,6 +222,19 @@ class FormFieldSelectRadio extends FormFieldSelectAbstract {
         return object.selectListElement.querySelectorAll('input');
     }
 }
-
 // Singleton
+var FormFieldSelectRadio = (function () {
+    "use strict";
+    var instance;
+    function Singleton() {
+        if (!instance) {
+            instance = new FormFieldSelectRadioClass();
+        }
+        instance.initialise();
+    }
+    Singleton.getInstance = function () {
+        return instance || new Singleton();
+    }
+    return Singleton;
+}());
 new FormFieldSelectRadio();

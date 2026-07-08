@@ -3,8 +3,8 @@ layout: component-detail
 group: components
 
 title: Images
-description: Composants et éléments d'images
-status: A valider
+description: Composants et éléments d'images. Les images sont verrouillé dans leur conteneur avec un ratio particulier, elles s'adaptent pour avoir un rendu homogène sur l'ensemble du site.
+status: Validé
 
 variations:
 - title: Images sous différents ratios
@@ -23,10 +23,17 @@ variations:
   description: Image que l'on affiche quand la page charge quand elle est en attente de contenu
   pattern: images/loader.html
 
-
 - title: Mosaïques
   description: Mosaïques d'images sous différentes formes
   pattern: images/mosaiques.html
+
+- title: Vidéo
+  description: Vidéo du Musée Dobrée
+  pattern: images/video-dobree.html
+
+- title: Image pleine largeur
+  description: Image bandeau décorative du Musée Dobrée
+  pattern: images/img_bandeau.html
 ---
 
 

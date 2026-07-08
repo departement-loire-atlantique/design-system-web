@@ -18,6 +18,18 @@ variations:
 - title: Recherche Geojson
   pattern: page/LA__resultatsRecherche-geojson.html
 
+- title: Page inforoutes "Info Trafic"
+  pattern: page/IR__map.html
+
+- title: Page Assmat "Résultats"
+  pattern: page/AM__recherche.html
+
+- title: Recherche 3 lignes
+  pattern: page/EC__resultatsRecherche_3lignesFacette.html
+
+- title: Recherche Avancée
+  pattern: page/EC__resultatsRecherche_avancee.html
+
 - title: Template home
   pattern: templates/template-home.html
 

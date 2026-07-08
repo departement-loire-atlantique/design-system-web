@@ -58,12 +58,12 @@
             left: 0;
             padding: 0.625rem;
             background: $ds44-contextual-color;
-            font-weight: bold;
+            font-weight: 600;
             line-height: normal;
         }
 
-        .ds44-cardTitle {
-            padding-top: $ds44-padding-large;
+        .ds44-card__title {
+            padding-top: $ds44-padding-xlarge;
         }
 
     }
@@ -100,8 +100,7 @@
         }
     }
 
-    .ds44-cardTitle {
-        font-size: 2.4rem;
+    .ds44-card__title {
 
         a {
           text-decoration: none;
@@ -110,6 +109,79 @@
             }
         }
     }
+
+    .ds44-card__title,
+    .ds44-facette__title {
+        margin-bottom: $headings-margin-bottom;
+        padding: 0;
+        font-size: 1.0625em ; // 17px
+        font-weight: $weight-semibold;
+        line-height: 1.3;
+        background: transparent;
+        font-family: $ds44-font-family-base;
+    }
+
+    .ds44-cardDate,
+    .ds44-cardLocalisation,
+    .ds44-docListElem,
+    p,
+    .ds44-btnStd--tag {
+        font-size: .875em ; // 14px
+    }
+
+    &.ds44-card--dobree {
+        height: 100%;
+        margin-bottom: 0;
+
+        .ds44-card__section {
+          padding: 2rem;
+              .ds44-innerBoxContainer {
+                  padding: 0;
+            }
+        }
+
+        .ds44-card__title {
+            font-size: 1.0625em; //17px
+            font-family: $ds44-font-family-base;
+            font-weight: 600;
+        }
+        .ds44-docListElem {
+          font-size: 0.875em;
+          .icon-marker {
+              left: 0;
+            }
+        }
+        .ds44-cardArrow {
+          color: $ds44-dark ;
+        }
+        .ds44-container-imgRatio--carreAllonge + .ds44-card__section {
+            .ds44-card__title a {
+                font-size: 1.5em;
+                @media (max-width: ($ds44-medium - .0625)) {
+                    font-size: 1em;
+                }
+            }
+            .ds44-cardArrow {
+                bottom: 2rem;
+                right: 1rem;
+            }
+        }
+        &.ds44-container-imgZoom {
+            overflow: hidden;
+            .ds44-container-imgRatio {
+                overflow: hidden;
+                img {
+                transition: all $ds44-timing-standard ease-in-out;
+                border: 0;
+
+                &:hover {
+                    transform: scale(1.1);
+                }
+                }
+            }
+        }
+    }
+
 
     .ds44-cardGlobalLink {
         text-decoration: none;
@@ -141,7 +213,51 @@
         transition-property: opacity;
         transition-timing-function: ease;
     }
+
+    .ds44-card__title {
+        .ds44-icoInfoRoutes {
+          margin-right: 15px;
+          padding: 5px;
+          border-radius: 50%;
+          font-size: 1.2em;
+          vertical-align: baseline;
+          display: inline-block;
+          width: 50px;
+          height: 50px;
+          text-align: center;
+
+          &.orangeFlag {
+            background: $ds44-app-orangeFlag;
+            color: $ds44-dark;
+          }
+          &.redFlag {
+            background: $ds44-app-redFlag;
+            color: $ds44-light;
+          }
+        }
+    }
+    &.ds44-card--noLink {
+      border: 0;
+
+      &:hover,
+      &:focus,
+      &:active {
+        box-shadow: none;
+      }
+    }
+    &.ds44-card--border {
+      background-color: $ds44-light;
+      border: 2px dashed $ds44-lightgray;
+      height: 100%;
+      min-height: 306px;
+      display: flex;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
 }
+
+
 
 a.ds44-card {
   display: block;
@@ -186,14 +302,39 @@ figure[role=figure]  + .ds44-card__section {
     }
 }
 
-.ds44-card__title {
-    margin-bottom: $headings-margin-bottom;
-    padding: 0;
-    font-size: 1.7rem; // 17px
-    font-weight: bold;
-    line-height: 1.2;
-    background: transparent;
-    font-family: $ds44-font-family-base;
+body.modern {
+
+.ds44-card .ds44-card__title a {
+  text-decoration: none;
+
+}
+[role="heading"] a {
+  text-decoration: none;
+
+}
+.ds44-card__globalLink {
+  text-decoration: none;
+
+  color: #000000;
+
+}
+
+*, ::before, ::after {
+  -webkit-box-sizing: inherit;
+
+  box-sizing: inherit;
+
+  min-width: 0;
+
+  min-height: 0;
+
+}
+.ds44-card__section--horizontal,
+    .ds44-facette__title {
+        &.h2-like + * {
+            margin-top: 0 !important;
+        }
+    }
 }
 
 .ds44-cardPicture {
@@ -222,28 +363,250 @@ figure[role=figure]  + .ds44-card__section {
     display: flex;
     flex-direction: column;
 
+    .ds44-card__title {
+        font-size: 1.0625em ;  // 17px
+    }
+
     @media (max-width: $ds44-small - .0625) {
         padding-right: $ds44-padding-box;
         padding-left: $ds44-padding-box;
+
+        .ds44-card__title {
+            font-size: 1em;
+        }
     }
 }
 
 .ds44-card__section--horizontal--img {
-    width: auto;
     min-width: 38%;
-
     @media (min-width: $ds44-small) and (max-width: ($ds44-large - .0625)) {
         min-width: 20%;
     }
 
     &--dim110 {
         min-width: 31%;
-
         @media (min-width: $ds44-extra-large) {
             min-width: 110px;
         }
     }
+
+    &--dim80 {
+        max-width: 25%;
+        width: 100%;
+        @media (min-width: $ds44-extra-large) {
+            min-width: 80px;
+        }
+    }
 }
+.ds44-homepage-container .ds44-card__section--horizontal--img {
+    &--dim110 {
+        min-width: 31%;
+        @media (min-width: $ds44-extra-large) {
+            min-width: 90px;
+        }
+        @media (min-width: $ds44-large) and (max-width: ($ds44-extra-large - .0625)) {
+            min-width: 80px;
+        }
+    }
+}
+
+
+
+// Horizontal card specific Musée Dobrée Focus object
+
+.ds44-card__no-padding-left .ds44-card--focus .ds44-card__section--horizontal {
+    padding-left: 0;
+}
+
+.ds44-card--focus {
+    .ds44-card__section--horizontal--img {
+        width: 50%;
+        min-width: 50%;
+        height: 430px;
+
+        @media (min-width: $ds44-medium) and (max-width: ($ds44-large - .0625)) {
+            width: 50%;
+            min-width: 50%;
+        }
+        @media (max-width: ($ds44-medium - .0625)) {
+            min-width: 100%;
+        }
+        .dobree-imgFocus {
+              width: 100%;
+              height: 430px;
+              object-fit: cover;
+              overflow: hidden;
+        }
+    }
+    .ds44-card__section--horizontal {
+        width: 100%;
+        padding: 2rem 7rem 2rem 9rem;
+        .date {
+            font-size: 1.125em;
+            order: -1;
+        }
+        .ds44-card__title {
+            font-size: 1.875em;
+            font-weight: 600;
+            margin-bottom: 1em;
+            padding: 0 0 1em 0;
+            position: relative;
+            width:100%;
+            background: none;
+
+            + .wysiwyg {
+                margin-top:0 !important;
+            }
+
+            &:after {
+                content: '';
+                display: block;
+                width: 135%;
+                height: 1px;
+                background-color: $ds44-contextual-color;
+                position: absolute;
+                bottom: 0;
+                right: 0;
+            }
+        }
+    }
+    .ds44-frw .ds44-card__section--horizontal {
+        .ds44-card__title {
+            &:after {
+                left: 0;
+            }
+        }
+    }
+
+    &.dobree-text-image {
+        .ds44-card__section--horizontal--img {
+            width: 50%;
+            min-width: 50%;
+            height: auto;
+            position: relative;
+
+            &:hover, :active, :focus {
+                cursor: pointer;
+            }
+            .ds44-btnIco {
+                position: absolute;
+                top: 10px;
+                right:10px;
+                height: 30px;
+                  width: 30px;
+                  border-radius: 30px;
+                  background-color: rgba(0,0,0,0.5);
+                  text-align: center;
+
+                  .icon::before {
+                      line-height: .9;
+                    }
+            }
+
+            .ds44-container-imgRatio {
+              height: 100%;
+              button {
+                  padding: 0;
+              }
+            }
+            @media (max-width: ($ds44-medium - .0625)) {
+                min-width: 100%;
+            }
+        }
+        .ds44-card__section--horizontal  {
+            .ds44-card__title {
+                margin-bottom: 0;
+
+                &::after {
+                    display: none;
+                }
+            }
+            @media (max-width: ($ds44-medium - .0625)) {
+                text-align: left !important;
+
+                .ds44-btnStd {
+                    text-align: center !important;
+                }
+            }
+        }
+    }
+
+    &.dobree-card--tarif {
+        .ds44-card__section--horizontal {
+            padding: 2rem 3rem;
+            p[role=heading] {
+                font-size: 1.25em;
+                margin-bottom: 2rem;
+                font-weight: $weight-medium;
+            }
+            .tarif::before {
+                content: '';
+                display: inline-block;
+                width: 80px;
+                height: 1px;
+                background: $ds44-color-base;
+                margin: 4px 10px;
+            }
+            .txtTarif {
+                width: 90px;
+                display: inline-block;
+            }
+            ul:not(.ds44-list) {
+                padding-left: 2rem;
+            }
+        }
+        .ds44-card__section--horizontal--img,
+        .ds44-card__section--horizontal--img--dim80 {
+            picture {
+                height: 100%;
+                .dobree-imgFocus {
+                  height: 100%;
+                  object-fit: cover;
+                }
+            }
+        }
+        .ds44-card__section--horizontal--img {
+            height: 240px;
+        }
+    }
+    @media (max-width: ($ds44-medium - .0625)) {
+        .ds44-flex-container,
+         .ds44-frw {
+            flex-direction: column;
+
+            .ds44-card__section--horizontal {
+                padding: 2rem;
+                text-align: center;
+                align-items: center;
+                .date {
+                    font-size: 0.875em;
+                }
+                .ds44-card__title {
+                    font-size: 1.25em;
+                    margin-bottom: 2rem;
+                    padding-bottom: 0;
+
+                    &:after {
+                        display: none;
+                    }
+                }
+            }
+        }
+    }
+}
+
+
+.ds44-homepage-container .ds44-card {
+    z-index: 10;
+}
+
+.dobree-fontSize-20 {
+    font-size: 1.25em;
+    @media (max-width: ($ds44-medium - .0625)) {
+        font-size: 1em;
+    }
+}
+
 
 // Calendar card
 
@@ -300,7 +663,6 @@ figure[role=figure]  + .ds44-card__section {
 
 .ds44-cardDate,
 .ds44-cardLocalisation {
-    font-size: .8125em;
 
     .icon {
         font-size: 1.2rem;
@@ -318,6 +680,63 @@ figure[role=figure]  + .ds44-card__section {
         @media (max-width: $ds44-small - .0625) {
             min-height: 100%;
         }
+    }
+}
+
+.ds44-card--horizontal {
+    &--inforoutes {
+
+      &:hover,
+      &:focus,
+      &:active,
+      &.active {
+        box-shadow: none;
+      }
+      .ds44-card__section--horizontal {
+        padding: 1rem;
+        display: block;
+        width: 100%;
+        text-align: center;
+
+        p {
+          margin: 0;
+          line-height: 1.2em;
+        }
+      }
+      &--bacs {
+        .h3-like {
+          font-size: 41px;
+        }
+        .ds44-bacs-info {
+          background-color: $ds44-light;
+          background-image: url(../../../assets/images/apps/ponts/img/file-attente.svg);
+          background-position: bottom;
+          background-repeat: no-repeat;
+          border: 1px solid $ds44-lightgray;
+          padding: 10px 0 40px 0;
+
+          &.no-img {
+            background-image: none;
+            padding: 10px 0;
+          }
+
+          > * {
+            padding: 0 10px;
+          }
+
+           li {
+            display: inline-block;
+            padding: 10px 20px 10px 0;
+            background: url(../../../assets/images/right.png) no-repeat right 5px center;
+            font-size: 14px;
+
+            &:last-child {
+              padding-right: 0;
+              background: none;
+            }
+          }
+        }
+      }
     }
 }
 
