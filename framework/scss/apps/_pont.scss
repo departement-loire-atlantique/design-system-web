@@ -229,9 +229,9 @@
 	#echangeur-nord-voie1-fleche, #echangeur-nord-voie1-croix,
 	#echangeur-nord-voie2-fleche, #echangeur-nord-voie2-croix,
 	#echangeur-nord-voie3-fleche, #echangeur-nord-voie3-croix,
-	#traficolor-nord g[id*=trafic-vert], #traficolor-nord g[id*=trafic-orange], #traficolor-nord g[id*=trafic-rouge],
-	#traficolor-sud g[id*=trafic-vert], #traficolor-sud g[id*=trafic-orange], #traficolor-sud g[id*=trafic-rouge],
-	#perturbation-vent, #perturbation-nord-ouest, #perturbation-nord-est, #perturbation-sud-est, #perturbation-sud-ouest, #perturbation-a, #perturbation-b, #perturbation-c, #perturbation-d, #perturbation-e
+	#traficolor-nord g[id*=trafic-vert], #traficolor-nord g[id*=trafic-orange], #traficolor-nord g[id*=trafic-rouge], #traficolor-nord g[id*=trafic-gris],
+	#traficolor-sud g[id*=trafic-vert], #traficolor-sud g[id*=trafic-orange], #traficolor-sud g[id*=trafic-rouge],#traficolor-sud g[id*=trafic-gris],
+	#perturbation-vent, #perturbation-nord-ouest, #perturbation-nord-est, #perturbation-sud-ouest, #perturbation-sud-est, #perturbation-a, #perturbation-b, #perturbation-c, #perturbation-d, #perturbation-e
 	{
 	  display: none;
 	}
@@ -252,12 +252,27 @@ $ModesCirculation102: 'm102', 'me102a', 'me102ab', 'me102b', 'me102bc', 'me102c'
 $ModesCirculation112: 'm112', 'me112a', 'me112ab', 'me112b', 'me112bc', 'me112c', 'me112cd', 'me112d', 'me112de', 'me112e','mu112n','mu112s';
 $ModesCirculation120: 'm120', 'mu120';
 $ModesCirculation122: 'm122', 'me122a', 'me122ab', 'me122b', 'me122bc', 'me122c', 'me122cd', 'me122d', 'me122de', 'me122e';
+#main-container[data-mode-circulation='mode-particulier']{
+	#map-container svg{
+		#voie1-particulier, #voie2-particulier, #voie3-particulier{
+		  display:block;
+		}
+		#traficolor-nord g[id*=trafic-vert], #traficolor-nord g[id*=trafic-orange], #traficolor-nord g[id*=trafic-rouge], #traficolor-nord g[id*=trafic-gris],
+		#traficolor-sud g[id*=trafic-vert], #traficolor-sud g[id*=trafic-orange], #traficolor-sud g[id*=trafic-rouge], #traficolor-sud g[id*=trafic-rouge], #traficolor-sud g[id*=trafic-gris]{
+		  display:none;
+		}
+	}
+}
 #main-container[data-mode-circulation='m000']{
 	#map-container svg{
 		#voie1-travaux, #voie2-travaux, #voie3-travaux,
 		#echangeur-nord-voie1-croix,#echangeur-nord-voie2-croix,#echangeur-nord-voie3-croix,
 		#echangeur-sud-voie1-croix,#echangeur-sud-voie2-croix,#echangeur-sud-voie3-croix{
 		  display:block;
+		}
+		#traficolor-nord g[id*=trafic-vert], #traficolor-nord g[id*=trafic-orange], #traficolor-nord g[id*=trafic-rouge], #traficolor-nord g[id*=trafic-gris],
+		#traficolor-sud g[id*=trafic-vert], #traficolor-sud g[id*=trafic-orange], #traficolor-sud g[id*=trafic-rouge], #traficolor-sud g[id*=trafic-gris]{
+		  display:none;
 		}
 	}
 }
@@ -313,7 +328,7 @@ $ModesCirculation122: 'm122', 'me122a', 'me122ab', 'me122b', 'me122bc', 'me122c'
 }
 
 /* Qualité du Trafic */
-$TraficNord: 'vert', 'orange', 'rouge';
+$TraficNord: 'vert', 'orange', 'rouge', 'gris';
 @each $i in $TraficNord {
   #main-container[data-trafic-nord=#{$i}] {
     #voie1, #voie1-seule, #voie2n, #voie2n-seule{
@@ -327,6 +342,9 @@ $TraficNord: 'vert', 'orange', 'rouge';
 			  @if $i == 'rouge' {
 				  fill:#dc3545;
 			  }
+			  @if $i == 'gris' {
+					fill: #ccc;
+			  }
 		  }
 		  path[id*=fleche-couleur]{
 			  @if $i == 'vert' {
@@ -338,6 +356,9 @@ $TraficNord: 'vert', 'orange', 'rouge';
 			  @if $i == 'rouge' {
 				  fill:#fff;
 			  }
+			  @if $i == 'gris' {
+					fill: #000;
+			  }
 		  }
 	}
 	#traficolor-nord g[id*=trafic-#{$i}]{
@@ -346,7 +367,7 @@ $TraficNord: 'vert', 'orange', 'rouge';
   }
 
 }
-$TraficSud: 'vert', 'orange', 'rouge';
+$TraficSud: 'vert', 'orange', 'rouge', 'gris';
 @each $i in $TraficSud {
   #main-container[data-trafic-sud=#{$i}] {
 	#voie2s, #voie2s-seule, #voie3, #voie3-seule{
@@ -360,6 +381,9 @@ $TraficSud: 'vert', 'orange', 'rouge';
 			  @if $i == 'rouge' {
 				  fill:#dc3545;
 			  }
+			@if $i == 'gris' {
+				  fill: #ccc;
+			  }
 		  }
 		  path[id*=fleche-couleur]{
 			  @if $i == 'vert' {
@@ -370,6 +394,9 @@ $TraficSud: 'vert', 'orange', 'rouge';
 			  }
 			  @if $i == 'rouge' {
 				  fill:#fff;
+			  }
+			  @if $i == 'gris' {
+				  fill: #000;
 			  }
 		  }
 
