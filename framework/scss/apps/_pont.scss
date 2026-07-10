@@ -259,6 +259,12 @@ $ModesCirculation122: 'm122', 'me122a', 'me122ab', 'me122b', 'me122bc', 'me122c'
 		#echangeur-sud-voie1-croix,#echangeur-sud-voie2-croix,#echangeur-sud-voie3-croix{
 		  display:block;
 		}
+		#traficolor-nord g[id*=trafic-vert], #traficolor-nord g[id*=trafic-orange], #traficolor-nord g[id*=trafic-rouge],
+		#traficolor-sud g[id*=trafic-vert], #traficolor-sud g[id*=trafic-orange], #traficolor-sud g[id*=trafic-rouge],
+		#perturbation-vent, #perturbation-nord-ouest, #perturbation-nord-est, #perturbation-sud-est, #perturbation-sud-ouest, #perturbation-a, #perturbation-b, #perturbation-c, #perturbation-d, #perturbation-e
+		{
+		  display: none !important;
+		}
 	}
 }
 @each $i in $ModesCirculation012 {
