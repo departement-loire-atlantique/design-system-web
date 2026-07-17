@@ -16,6 +16,13 @@
 	display: block;
 	background: transparent;
 }
+.h2-app-like#overlay-alerte-title {
+	display: flex;
+	align-items: center;
+	img {
+		margin-right: 1rem;
+	}
+}
 
 .h4-app-bacs {
 	display: block;
@@ -194,6 +201,10 @@
 	height: 50px;
 	border-radius: 25px;
 	vertical-align: top;
+}
+.ds44-modal-box-full .ds44-app-pictoOverlay {
+	width: 100px;
+	height: 100px;
 }
 
 /* -----

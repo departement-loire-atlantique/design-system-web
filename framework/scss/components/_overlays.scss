@@ -103,6 +103,16 @@
     overflow-x: auto;
 }
 
+.ds44-modal-box-full {
+    width: 100vw;
+    height: 100vh;
+    padding: $ds44-padding-box $ds44-padding-xlarge;
+    background-color: $ds44-light-color;
+    position: relative;
+    z-index: 10;
+    overflow-x: auto;
+}
+
 .ds44-modal-gab {
     padding: $ds44-padding-box;
     margin-top: $ds44-padding-box;
