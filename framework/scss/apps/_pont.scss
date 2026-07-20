@@ -16,6 +16,13 @@
 	display: block;
 	background: transparent;
 }
+.h2-app-like#overlay-alerte-title {
+	display: flex;
+	align-items: center;
+	img {
+		margin-right: 1rem;
+	}
+}
 
 .h4-app-bacs {
 	display: block;
@@ -68,6 +75,10 @@
 	display: block;
 	padding: 1rem 1rem 1rem 0;
 	position: relative;
+
+	i {
+		float: right;
+	}
 }
 
 /* Tuiles */
@@ -191,6 +202,10 @@
 	border-radius: 25px;
 	vertical-align: top;
 }
+.ds44-modal-box-full .ds44-app-pictoOverlay {
+	width: 100px;
+	height: 100px;
+}
 
 /* -----
 	Gestion de la carte SVG PONT DE ST NAZAIRE
@@ -271,7 +286,8 @@ $ModesCirculation122: 'm122', 'me122a', 'me122ab', 'me122b', 'me122bc', 'me122c'
 		  display:block;
 		}
 		#traficolor-nord g[id*=trafic-vert], #traficolor-nord g[id*=trafic-orange], #traficolor-nord g[id*=trafic-rouge], #traficolor-nord g[id*=trafic-gris],
-		#traficolor-sud g[id*=trafic-vert], #traficolor-sud g[id*=trafic-orange], #traficolor-sud g[id*=trafic-rouge], #traficolor-sud g[id*=trafic-gris]{
+		#traficolor-sud g[id*=trafic-vert], #traficolor-sud g[id*=trafic-orange], #traficolor-sud g[id*=trafic-rouge], #traficolor-sud g[id*=trafic-gris],
+		#perturbation-vent, #perturbation-nord-ouest, #perturbation-nord-est, #perturbation-sud-est, #perturbation-sud-ouest, #perturbation-a, #perturbation-b, #perturbation-c, #perturbation-d, #perturbation-e {
 		  display:none;
 		}
 	}
