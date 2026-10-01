@@ -613,12 +613,12 @@ body.modern {
 
 // Calendar card
 
-.ds44-card__dateContainer {
+body .ds44-card__dateContainer {
     padding: $ds44-padding-small;
     background-color: $ds44-contextual-color;
     text-align: center;
-    min-height: 14rem;
-    min-width: 25%;
+    min-height: 14rem ;
+    min-width: 25% ;
     flex-direction: column;
 
     @media (max-width: $ds44-small - .0625) {
