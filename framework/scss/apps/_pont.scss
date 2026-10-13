@@ -244,14 +244,14 @@
 	#echangeur-nord-voie1-fleche, #echangeur-nord-voie1-croix,
 	#echangeur-nord-voie2-fleche, #echangeur-nord-voie2-croix,
 	#echangeur-nord-voie3-fleche, #echangeur-nord-voie3-croix,
-	#traficolor-nord g[id*=trafic-vert], #traficolor-nord g[id*=trafic-orange], #traficolor-nord g[id*=trafic-rouge],
-	#traficolor-sud g[id*=trafic-vert], #traficolor-sud g[id*=trafic-orange], #traficolor-sud g[id*=trafic-rouge],
+	#traficolor-nord g[id*=trafic-vert], #traficolor-nord g[id*=trafic-orange], #traficolor-nord g[id*=trafic-rouge], #traficolor-nord g[id*=trafic-gris],
+	#traficolor-sud g[id*=trafic-vert], #traficolor-sud g[id*=trafic-orange], #traficolor-sud g[id*=trafic-rouge], #traficolor-sud g[id*=trafic-gris],
 	#perturbation-vent, #perturbation-nord-ouest, #perturbation-nord-est, #perturbation-sud-est, #perturbation-sud-ouest, #perturbation-a, #perturbation-b, #perturbation-c, #perturbation-d, #perturbation-e
 	{
 	  display: none;
 	}
 	#perturbation-vent, #perturbation-nord-ouest, #perturbation-nord-est, #perturbation-sud-est, #perturbation-sud-ouest, #perturbation-a, #perturbation-b, #perturbation-c, #perturbation-d, #perturbation-e{
-		g[id*=panne], g[id*=accident], g[id*=deviation]{
+		g[id*=panne], g[id*=accident], g[id*=deviation], g[id*=obstacle], g[id*=travaux]{
 			display: none;
 		}
 	}
@@ -274,8 +274,8 @@ $ModesCirculation122: 'm122', 'me122a', 'me122ab', 'me122b', 'me122bc', 'me122c'
 		#echangeur-sud-voie1-croix,#echangeur-sud-voie2-croix,#echangeur-sud-voie3-croix{
 		  display:block;
 		}
-		#traficolor-nord g[id*=trafic-vert], #traficolor-nord g[id*=trafic-orange], #traficolor-nord g[id*=trafic-rouge],
-		#traficolor-sud g[id*=trafic-vert], #traficolor-sud g[id*=trafic-orange], #traficolor-sud g[id*=trafic-rouge],
+		#traficolor-nord g[id*=trafic-vert], #traficolor-nord g[id*=trafic-orange], #traficolor-nord g[id*=trafic-rouge], #traficolor-nord g[id*=trafic-gris],
+		#traficolor-sud g[id*=trafic-vert], #traficolor-sud g[id*=trafic-orange], #traficolor-sud g[id*=trafic-rouge], #traficolor-sud g[id*=trafic-gris],
 		#perturbation-vent, #perturbation-nord-ouest, #perturbation-nord-est, #perturbation-sud-est, #perturbation-sud-ouest, #perturbation-a, #perturbation-b, #perturbation-c, #perturbation-d, #perturbation-e
 		{
 		  display: none !important;
@@ -334,7 +334,7 @@ $ModesCirculation122: 'm122', 'me122a', 'me122ab', 'me122b', 'me122bc', 'me122c'
 }
 
 /* Qualité du Trafic */
-$TraficNord: 'vert', 'orange', 'rouge';
+$TraficNord: 'vert', 'orange', 'rouge', 'gris';
 @each $i in $TraficNord {
   #main-container[data-trafic-nord=#{$i}] {
     #voie1, #voie1-seule, #voie2n, #voie2n-seule{
@@ -348,6 +348,9 @@ $TraficNord: 'vert', 'orange', 'rouge';
 			  @if $i == 'rouge' {
 				  fill:#dc3545;
 			  }
+			  @if $i == 'gris' {
+				  fill:#cccccc;
+			  }
 		  }
 		  path[id*=fleche-couleur]{
 			  @if $i == 'vert' {
@@ -359,6 +362,9 @@ $TraficNord: 'vert', 'orange', 'rouge';
 			  @if $i == 'rouge' {
 				  fill:#fff;
 			  }
+			  @if $i == 'gris' {
+				  fill:#000;
+			  }
 		  }
 	}
 	#traficolor-nord g[id*=trafic-#{$i}]{
@@ -367,7 +373,7 @@ $TraficNord: 'vert', 'orange', 'rouge';
   }
 
 }
-$TraficSud: 'vert', 'orange', 'rouge';
+$TraficSud: 'vert', 'orange', 'rouge', 'gris';
 @each $i in $TraficSud {
   #main-container[data-trafic-sud=#{$i}] {
 	#voie2s, #voie2s-seule, #voie3, #voie3-seule{
@@ -381,6 +387,9 @@ $TraficSud: 'vert', 'orange', 'rouge';
 			  @if $i == 'rouge' {
 				  fill:#dc3545;
 			  }
+			  @if $i == 'gris' {
+				  fill:#cccccc;
+			  }
 		  }
 		  path[id*=fleche-couleur]{
 			  @if $i == 'vert' {
@@ -391,6 +400,9 @@ $TraficSud: 'vert', 'orange', 'rouge';
 			  }
 			  @if $i == 'rouge' {
 				  fill:#fff;
+			  }
+			  @if $i == 'gris' {
+				  fill:#000;
 			  }
 		  }
 

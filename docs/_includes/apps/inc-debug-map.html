@@ -6,11 +6,11 @@
 	</select>
 	Trafic Nord :
 	<select onchange="CheckDebugVars()" id="SelectTraficNord">
-		<option>vert</option><option>orange</option><option>rouge</option>
+		<option>vert</option><option>orange</option><option>rouge</option><option>gris</option>
 	</select>
 	Trafic Sud :
 	<select onchange="CheckDebugVars()" id="SelectTraficSud">
-		<option>vert</option><option>orange</option><option>rouge</option>
+		<option>vert</option><option>orange</option><option>rouge</option><option>gris</option>
 	</select>
 	- Perturbation : Type :
 	<select onchange="CheckDebugVars()" id="SelectPerturbationType">
@@ -18,6 +18,8 @@
 		<option>panne</option>
 		<option>deviation</option>
 		<option>vent</option>
+		<option>obstacle</option>
+		<option>travaux</option>
 	</select>
 	Zone :
 	<select onchange="CheckDebugVars()" id="SelectPerturbationZone">
@@ -69,7 +71,7 @@ function AddPerturbation(){
 
 //affichage d'une ou plusieurs bulles perturbation sur la carte
 function ShowPerturbation(PerturbationType,PerturbationZone){
-	//PerturbationType:vent,panne,accident,deviation
+	//PerturbationType:vent,panne,accident,deviation,obstacle,travaux
 	//perturbationzone:nord,a,b,c,d,e,sud
 	if(PerturbationType !== 'vent'){
 	   document.getElementById("perturbation-"+PerturbationZone).classList.add('pertubation-visible');

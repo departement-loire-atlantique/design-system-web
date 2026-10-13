@@ -68,10 +68,11 @@ Ecran principal de l'application mobile "Pont de Saint Nazaire"
 
 ### Paramètres du trafic
 
-Trois valeurs permettent de déterminer la couleur des voies :
+Quatre valeurs permettent de déterminer la couleur des voies :
 
 * Vert
 * Orange
 * Rouge
+* Gris (information indisponible)
 
 ...
