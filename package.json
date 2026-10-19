@@ -60,6 +60,6 @@
     "dist/js/"
   ],
   "dependencies": {
-    "sass": "^1.69.5"
+    "sass": "1.32.13"
   }
 }
