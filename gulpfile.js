@@ -314,12 +314,12 @@ gulp.task('build:glyphicons', function () {
             iconfontCss({
                 fontName: "ds44-icons",
                 targetPath: "css/icons.css",
-                fontPath: "/fonts/",
+                fontPath: "../fonts/",
             }),
         )
         .pipe(
             iconfont({
-                formats: ['ttf', 'eot', 'woff', 'woff2'],
+                formats: ['ttf', 'eot', 'woff', 'woff2', 'svg'],
                 fontName: "fonts/ds44-icons", // identique au nom de iconfontCss
             }),
         )
