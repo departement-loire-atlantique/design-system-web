@@ -22,9 +22,10 @@
       text-align: center;
       flex-wrap: wrap;
       justify-content: space-evenly;
+      gap: 16px;
 
       li {
-        width: 50%;
+        flex-basis: calc((100% - (2 * 16px)) / 3); 
 
           a {
             display: inline-block;

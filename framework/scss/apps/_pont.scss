@@ -251,7 +251,7 @@
 	  display: none;
 	}
 	#perturbation-vent, #perturbation-nord-ouest, #perturbation-nord-est, #perturbation-sud-est, #perturbation-sud-ouest, #perturbation-a, #perturbation-b, #perturbation-c, #perturbation-d, #perturbation-e{
-		g[id*=panne], g[id*=accident], g[id*=deviation]{
+		g[id*=panne], g[id*=accident], g[id*=deviation], g[id*=obstacle], g[id*=travaux]{
 			display: none;
 		}
 	}
