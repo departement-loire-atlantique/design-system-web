@@ -55,6 +55,7 @@
   ],
   "files": [
     "dist/assets/images/",
+    "dist/assets/icons/",
     "dist/fonts/",
     "dist/css/",
     "dist/js/"

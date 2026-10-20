@@ -7301,7 +7301,7 @@ body .ds44-card__dateContainer {
   left: 50%;
   height: 2em;
   width: 4rem;
-  background: url(/assets/icons/long-arrow-down.svg) no-repeat;
+  background: : url(../assets/icons/long-arrow-down.svg) no-repeat;
 }
 
 .ds44-expositionHeader-container:after {
