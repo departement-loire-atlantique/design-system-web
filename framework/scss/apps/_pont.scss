@@ -430,8 +430,17 @@ $TraficSud: 'vert', 'orange', 'rouge', 'gris';
 	---
 */
 
+#map-container.map-container--bacs {
+  position: relative;
+}
+
 #map-container.map-container--bacs svg {
-	width: 100%;
+width: auto;
+  position: relative;
+  top: 0;
+  left: 50%;
+  height: 100%;
+  transform: translate(-50%);
 }
 
 @media (min-width: $ds44-small - .0625) {
