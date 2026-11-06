@@ -15738,8 +15738,18 @@ table.historiqueAssmat th {
 	Gestion de la carte SVG BACS DE LOIRE
 	---
 */
+#map-container.map-container--bacs {
+  position: relative;
+}
+
 #map-container.map-container--bacs svg {
-  width: 100%;
+  width: auto;
+  position: relative;
+  top: 0;
+  left: 50%;
+  height: 100%;
+  -webkit-transform: translate(-50%);
+          transform: translate(-50%);
 }
 
 @media (min-width: 35.9375em) {
