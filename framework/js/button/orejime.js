@@ -18,9 +18,9 @@ class ButtonOrejimeClass {
         if (window.orejime) {
             const learnMoreButtonElement = document.querySelector('.orejime-Notice-learnMoreButton');
             const modifyPrefsButtonElement = document.querySelector('.ds44-js-orejime-show');
-            const consentMediaButtonElement = document.querySelectorAll('[data-consent="accept-streaming-cookie"]');
+            const consentMediaButtonElement = document.querySelectorAll('[data-consent]');
 
-            if (learnMoreButtonElement || modifyPrefsButtonElement || consentMediaButtonElement) {
+            if (learnMoreButtonElement || modifyPrefsButtonElement || consentMediaButtonElement.length > 0) {
                 this.isInitialized = true;
                 if (learnMoreButtonElement) {
                     MiscEvent.addListener('click', this.showMore.bind(this), learnMoreButtonElement);
@@ -28,11 +28,9 @@ class ButtonOrejimeClass {
                 if (modifyPrefsButtonElement) {
                     MiscEvent.addListener('click', this.show.bind(this), modifyPrefsButtonElement);
                 }
-                if (consentMediaButtonElement) {
-                	consentMediaButtonElement.forEach((element) => {
-                		MiscEvent.addListener('click', this.consentMedia.bind(this), element);
-                    });
-                }
+                consentMediaButtonElement.forEach((element) => {
+                    MiscEvent.addListener('click', this.consentMedia.bind(this), element);
+                });
             }
             else {
                 this.nbTrial--;
@@ -76,13 +74,22 @@ class ButtonOrejimeClass {
             }, 300);
         }
     }
-    consentMedia() {
-        if (window.orejime) {
-        	var app = window.orejime.internals.manager.getApp("streaming-video");
-        	console.log(window.orejime.internals.manager.getConsent(app));
-            window.orejime.internals.manager.updateConsent(app,true);
-            window.orejime.internals.manager.saveAndApplyConsents();
+    consentMedia(event) {
+        if (!window.orejime) {
+            return;
         }
+        const button = event.target.closest('[data-consent]');
+        if (!button) {
+            return;
+        }
+        const appName = button.getAttribute('data-consent-app') || 'streaming-video';
+        const manager = window.orejime.internals.manager;
+        const app = manager.getApp(appName);
+        if (!app) {
+            return;
+        }
+        manager.updateConsent(app, true);
+        manager.saveAndApplyConsents();
     }
 }
 // Singleton
